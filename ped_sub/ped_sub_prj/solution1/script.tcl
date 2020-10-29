@@ -1,0 +1,17 @@
+############################################################
+## This file is generated automatically by Vivado HLS.
+## Please DO NOT edit it.
+## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
+############################################################
+open_project ped_sub_prj
+set_top ped_sub
+add_files functions.cpp
+add_files -tb pedsub_test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+open_solution "solution1"
+set_part {xczu9eg-ffvb1156-2-e}
+create_clock -period 250MHz -name default
+#source "./ped_sub_prj/solution1/directives.tcl"
+csim_design
+csynth_design
+cosim_design
+export_design -format ip_catalog

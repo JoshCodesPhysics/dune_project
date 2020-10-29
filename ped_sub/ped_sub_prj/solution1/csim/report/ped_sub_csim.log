@@ -1,0 +1,80 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../pedsub_test.cpp in debug mode
+   Compiling ../../../../functions.cpp in debug mode
+   Generating csim.exe
+New ADC value for index 0 is: 153
+New ADC value for index 1 is: 12
+New ADC value for index 2 is: 304
+New ADC value for index 3 is: 272
+New ADC value for index 4 is: 262
+New ADC value for index 5 is: 37
+New ADC value for index 6 is: 17
+New ADC value for index 7 is: 182
+New ADC value for index 8 is: 256
+New ADC value for index 9 is: 26
+New ADC value for index 10 is: 360
+New ADC value for index 11 is: 251
+New ADC value for index 12 is: 360
+New ADC value for index 13 is: 337
+New ADC value for index 14 is: 140
+New ADC value for index 15 is: 10
+New ADC value for index 16 is: 335
+New ADC value for index 17 is: 150
+New ADC value for index 18 is: 281
+New ADC value for index 19 is: 49
+New ADC value for index 20 is: 280
+New ADC value for index 21 is: 340
+New ADC value for index 22 is: 83
+New ADC value for index 23 is: 98
+New ADC value for index 24 is: 227
+New ADC value for index 25 is: 305
+New ADC value for index 26 is: 9
+New ADC value for index 27 is: 2
+New ADC value for index 28 is: 212
+New ADC value for index 29 is: 368
+New ADC value for index 30 is: 269
+New ADC value for index 31 is: 266
+New ADC value for index 32 is: 329
+New ADC value for index 33 is: 113
+New ADC value for index 34 is: 298
+New ADC value for index 35 is: 204
+New ADC value for index 36 is: 373
+New ADC value for index 37 is: 271
+New ADC value for index 38 is: 201
+New ADC value for index 39 is: 154
+New ADC value for index 40 is: 232
+New ADC value for index 41 is: 10
+New ADC value for index 42 is: 100
+New ADC value for index 43 is: 192
+New ADC value for index 44 is: 245
+New ADC value for index 45 is: 264
+New ADC value for index 46 is: 132
+New ADC value for index 47 is: 311
+New ADC value for index 48 is: 121
+New ADC value for index 49 is: 107
+New ADC value for index 50 is: 147
+New ADC value for index 51 is: 10
+New ADC value for index 52 is: 366
+New ADC value for index 53 is: 156
+New ADC value for index 54 is: 16
+New ADC value for index 55 is: 86
+New ADC value for index 56 is: 199
+New ADC value for index 57 is: 196
+New ADC value for index 58 is: 251
+New ADC value for index 59 is: 152
+New ADC value for index 60 is: 19
+New ADC value for index 61 is: 284
+New ADC value for index 62 is: 95
+New ADC value for index 63 is: 218
+
+Initial pedestal value: 410
+Final accumulator value for ADC packet is: 6
+Final pedestal value for ADC packet is: 415
+
+Expected pedestal change: 6
+R_MIN: 400  R_MAX: 800  N_SAMPLES: 64
+
+To properly utilise this testbench, set PED_EST to be either > R_MAX + floor(N_SAMPLES/10), or < R_MIN - floor(N_SAMPLES/10). However it can still be used to observe the data regardless of the value of PED_EST.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,305 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\author{Joshua Horswill}
+\title{Particle Physics with Research Year Abroad Info}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{DUNE's DAQ architecture; Envisaging the Alternatives}
+
+Background info:
+
+\begin{itemize}
+	\item There are four modules of liquid argon; each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA.
+	\item There are 10 fibres/data streams in the APA, each with 256 wires - hence the APA total of 2560
+	\item The MGT module processes the data stream into computational bits
+	\item The Hit Finder (HF) processor is 10 times faster than the incoming data stream.
+	\item The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
+	\item Each TPG unit processes 64 wires, and so there are 4 of them
+	\item In electronics, a multiplexer, also known as a data selector, is a device that selects between several analog or digital input signals and forwards it to a single output line. This is what happens after the data comes out of the TPG chain.
+	\item The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of data for hit finding.
+	\item TPC stands for time projection chamber.
+	\item Readout window per event between 3-5.5 ms for a 2.25 ms drift time.
+
+\end{itemize}
+
+Why liquid argon? (See TPC wiki page)
+
+\begin{enumerate}
+	\item Noble element: vanishing electronegativity (tendency of an atom to attract a pair of electrons that it shares with another atom) means that electrons produced by ionizing radiation will not be absorbed as they drift towards the detector.
+	\item Argon scintillates when an energetic charged particle passes by, releasing scintillation photons, the number of which is proportional to the energy deposited by the passing particle.
+	\item It's density is 1000 times denser than Nygren's design, which is important for neutrino physics as it increases the chance of a neutrino-nucleon interaction.
+	\item Argon is pretty cheap too.
+\end{enumerate}
+
+\subsection{System Architecture}
+
+We have to consider some factors when studying the DUNE DAQ (data acquisition) system:
+
+\begin{enumerate}
+	\item Hardware and maintenance cost per channel.
+	
+	\item Technology life-cycle (TLC) of the components. We need long-lasting essential components such as the FPGA (Field Programmable Gate Array) and the network components.
+	
+	\item Component power consumption: deep underground components with higher power consumption will increase the cooling and running cost.
+	
+	\item DUNE will run for 20 years so the reliability and maintenance of components are more important than in other large scale projects.
+	
+	\item Emphasis on modular design of hardware and firmware to avoid a change affecting the rest of the sub-modules.
+	
+	\item Fast R\&D and fast firmware modification: If the tools used are more abstract and are rooted in C++, this will appeal to the vast majority of the users of this tech (physicists).
+\end{enumerate}
+
+Requirements for the architectural design of DUNE DAQ:
+
+\begin{enumerate}
+	\item Enough bandwidth provided for the data stream
+	
+	\item Supernova detection, trigger buffer
+	
+	\item Detector performance, electronics' noise, level and source (?)
+	
+\end{enumerate}
+
+There are strong trade offs between the above requirements:
+
+\begin{itemize}
+	\item High bandwidth networking is expensive, but could be avoided using trigger primitives (?), but the efficiency of this trigger depends on the detector noise performance.
+	\item One can reduce the noise in the acquired signal by applying a digital filter in the front end DAQ before the trigger generating algorithm. However, this is at the cost of using lots of gates and resources in the FPGA.
+\end{itemize}
+
+DAQ architecture can be split into two parts:
+
+\begin{itemize}
+	\item Front end DAQ, comprised of electronics that acquire the data stream from readout-electronics from the TPC detector, so it can process and deliver it to the back end (computation farm).
+	\item Back-end DAQ, comprised of an offline storing, reconstruction computation farm.
+\end{itemize}
+
+\section{FELIX}
+
+FELIX is a PCIe based high-throughput approach for interfacing front-end and trigger electronics in the ATLAS Upgrade framework:
+
+\begin{itemize}
+	\item ``The ATLAS Phase-I upgrade (2018) requires a Trigger and Data Acquisition (TDAQ) system able to trigger and record data from up to three times the nominal LHC instantaneous luminosity."
+	
+	\item The `Front-End LInk eXchange (FELIX)' system provides the infrastructure to achieve this in a scalable, detector agnostic (?) and easily upgradeable way.
+	
+	\item FELIX enables the reduction of custom electronics in favour of software running on commercial servers.
+	
+	\item FELIX is a PC-based networking gateway with the FPGA mounted on PCIe Gen3 cards (high speed connections used in motherboards to connect GPUs, SSD's, wifi chips e.t.c)
+\end{itemize}
+
+\subsection{Data transfer}
+
+On one side of the FELIX system, the GigaBit Transceiver (GBT) architecture and a protocol developed by CERN provides 4.8 Gb/s radiation-hard optical link for data transmission from the on-detector front-end electronics. When all the data is multiplexed, the GBT protocol provides up to 42 independent data links, sharing the same fibre (?). The GBT frame consists of a 116 bit data (payload) and a 4 bit header, the latter of which is used to align the frame at the receiver side. It can be DATA (0101) or IDLE (0110). I believe Kostas mentioned this to me in his presentation.
+
+FELIX has to handle the Time, Trigger and Control (TTC) system \footnote{a system that executes one or more sets of tasks according to a pre-determined and set task schedule}, that is based on the recovered LHC clock, by forwarding the machine-synchronous trigger information. This info will be distributed to the aforementioned on-detector electronics over low and fixed latency GBT links. It will also be distributed to the first-level trigger systems.
+
+For the FrontEnds which needs a higher throughput toward FELIX, a customized lightweight FULL mode is defined. The link speed is 9.6 Gb/s, but as data is encoded in 8b/10b a maximum user payload of 7.68 Gb/s can be achieved, which is an improvement on the standard 4.8 Gb/s. Integration tests reveal that the demonstrator and prototype FELIX cards can stably distribute TTC info, recieve data from FrontEnd, and save it to the disk through the PCIe-3 interface \cite{anderson2016felix}. 
+
+\section{4 Tonne Demonstrator for Large-Scale Dual-Phase Liquid Argon TPC's}
+
+10 kilo-tonne dual-phase liquid argon TPC is one of the main detector options considered for DUNE. The detector relies on amplification of the ionisation charge in ultra-pure argon vapour, which holds several advantages over the single-phase liquid argon TPC. LAr TPC's offer unprecedented 3D imaging capabilities and the functionality of a homogeneous calorimeter. High-resolution imaging is the key to efficient background noise rejection.
+
+When a powerful neutrino beam is hypothetically shot from the United States' Fermilab to these LAr TPC's in the Sanford Underground Research facility in South Dakota, DUNE aims to serach for the leptonic CP violation and determine the ordering of the neutrino masses.
+
+Another objective is to extend the sensitivity of proton lifetime in a variety of possible decay channels, and collect high-statistics neutrino samples from atmospheric and astronomical sources.
+
+\subsection{Quick note on CP violation and neutrinos}
+
+CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex. Theoretically, this could arise from complex Yukawa couplings\footnote{interaction between a scalar field and Dirac field, could be used to describe nuclear force between nucleons, but mainly used to describe the coupling between the Higgs field and the massless quark/lepton fields} and/or a relative CP-violating phase in the vacuum expectation value (VEV) of the Higgs fields.
+
+You would expect an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to leptonic CPV (LCPV). The discovery of neutrino oscillation provides evidence for non-vanishing neutrino masses and leptonic mixing.
+
+We are not sure why neutrino masses are so small. We think there is a connection between low-energy neutrino physics and leptogenesis, which could provide insight into the scenario that led to the baryon asymmetry of the universe.
+
+\subsection{Detector details}
+
+Single phase liquid argon detectors, readout by wires immersed in the liquid, do not require the amplification of the ionized electron charge. The charge is localised using alternative induction and collection wire planes with different orientations. This was tested by ProtonDune-SP at CERN.
+
+The dual phase version is between 20 and 50 ktonnes and, in contrast to the previous example, relies on the amplification of ionisation charges in the ultra-pure cold argon vapour layer above the liquid, obtaining low-energy detection thresholds with high signal-to-noise ratio over drift distances exceeding 10m.
+
+``Ionisation charges produced by neutrino interactions would drift vertically towards the liquid-vapour boundary where they are extracted into the gas phase, amplified by Large Electron Multipliers (LEMs), and collected on finely segmented anodes"; the electron extraction, amplification and collection are performed inside a 3 x 1 $m^2$ frame called the charge readout plane (CRP). Bear in mind the detector prototype volume is 3 x 1 x 1 $m^3$.
+
+Five photo-multiplier tubes are mounted underneath the TPC drift cage. They detect the Argon (prompt S1) scintillation photons formed from passing charged particles, as well as the (proportional S2) secondary scintillation light from the electroluminescence of the electrons extracted in the argon vapour. S1 is at least several orders of magnitude higher in detection amplitude than S2 in a tested TPC.
+
+A wavelength shifter converts the deep ultraviolet photons to the visible spectrum within the sensitivity of the receiving PMT photo-cathode. These photo-cathodes give the absolute time on an event $T_0$. The CRP applies an electric field in the liquid above 2 kV/cm to move the electrons into the vapour.
+
+There was a measured correlation between the electroluminescence in the gas from S2 scintillation, and the collected charge from the CRP system, as you would intuitively expect \cite{aimard20184}.
+
+\section{HLS}
+
+High-level synthesis (HLS) is an automated design process that interprets an algorithmic description of a desired behavior and creates digital hardware that implements that behavior.
+
+Synthesis begins with a high-level specification of the problem, where behavior is generally decoupled from low-level circuit mechanics such as clock-level timing. Early HLS explored a variety of input specification languages, although recent research and commercial applications generally accept synthesizable subsets of ANSI C/C++/SystemC/MATLAB.
+
+The code is analysed, architecturally constrained, and scheduled to transcompile into a register-transfer level (RTL) design in a hardware description language (HDL), which is in turn commonly synthesized to the gate level by the use of a logic synthesis tool.
+
+RTl is a design abstraction which models a synchronous\footnote{A circuit that changes the state of memory elements in a way synchronised by a clock signal} digital circuit in terms of the flow of data between hardware registers\footnote{Circuits composed of flip flops - a sub circuit that has two stable states used to store state information (a basic storage element in sequential logic). These hardware registers have the ability to read or write multiple bits at a time and can use an address to select a particular register. They are used as an interface between the software and the computer peripherals.}, and the logical operations performed on those signals.
+
+RTL is used in HDLs i.e. languages that describe the structure and behaviour of electronic circuits, and more commonly digital logic circuits. It allows for circuitry simulation and digital analysis. HDLs look like programming languages such as C, but the main difference is that HDLs include the notion of time. RTLs are used in HDLs to create high-level representations of a circuit, from which lower-level representations and ultimately actual wiring can be derived. Design at the RTL levle is typical practise in modern digital design.
+
+RTL clock cycle data is given in Vivado performance estimate data, as it can read how long a certain block, loop or function in the code took to complete; this is called the latency.
+
+
+
+\subsection{HLS Design Flow}
+
+\begin{enumerate}
+	\item Compile, execute (simulate), and debug the C algorithm.
+	
+	- This involves validating that the C program correctly implements the required processes.
+	
+	There is also post-synthesis validation that compares the synthesised RTL and C programs to see if they perform the same actions.
+	
+	In order for the former to occur, there must be a test bench C script that includes a top-level function main() as well as the function to be synthesised. 
+	
+	\item Synthesize the C algorithm into an RTL implementation, optionally using user optimization directives.
+	
+	\item Generate comprehensive reports and analyze the design.
+	
+	After C synthesis, output files are stored in a directory named \texttt{syn} which contain folders for each RTL output format, and a report folder. The report folder contains files reporting on the performance and design corresponding to the top-level function and each individual subfunction. 
+	
+	\item Verify the RTL implementation using a pushbutton flow.
+	\item Package the RTL implementation into a selection of IP formats.
+\end{enumerate}
+
+
+
+\subsubsection{Inputs}
+
+\begin{itemize}
+	\item C function written in C, C++, or SystemC
+	
+	This is the primary input to Vivado HLS.
+	
+	\item Constraints
+	
+	Constraints are required and include the clock period, clock uncertainty, and FPGA target. The clock uncertainty defaults to 12.5\% of the clock period if not specified.
+	
+	\item Directives
+	
+	Directives are optional and direct the synthesis process to implement a specific behavior or optimization.
+	
+	\item C test bench and associated files
+	
+	Vivado HLS uses the C test bench to simulate the C function prior to synthesis and to verify the RTL output using C/RTL co-simulation.
+\end{itemize}
+
+\subsubsection{Outputs}
+
+\begin{itemize}
+	\item RTL implementation files in hardware description language (HDL) formats
+	
+	This is the primary output from Vivado HLS. Using Vivado synthesis, you can synthesize the RTL into a gate-level implementation and an FPGA bitstream file.
+	
+	Vivado HLS packages the implementation files as an IP block for use with other tools in the Xilinx design flow. Using logic synthesis, you can synthesize the packaged IP into an FPGA bitstream.
+	
+	\item Report files
+	
+	This output is the result of synthesis, C/RTL co-simulation, and IP packaging.
+\end{itemize}
+
+\subsection{Optimization}
+
+Different optimization directives can be applied before C synthesis:
+
+\begin{itemize}
+	\item Instruct a code task to execute in a pipeline, allowing the next execution of a task to begin before the current one finishes
+	\item Specify a latency for the completion of functions and loops (one of the reasons for this is to match the FPGA clock frequency).
+	\item Specify a limit to the resources used
+	\item Select the I/O protocol to make sure the final design can be connected to other hardware blocks with the same I/O protocol.
+\end{itemize}
+
+\subsection{Analysis of the C Synthesis Results}
+
+The first part of the analysis process involves the content of the synthesis reports. We can analyse the performance estimates which involve:
+
+\begin{itemize}
+	\item Timing - the target clock frequency, clock uncertainty and the fastest achievable clock frequency of the design.
+	\item Latency - The latency and initiation interval (II) for the block and any sub-blocks instantiated in the main block. Recall the latency is the number of clock cycles it takes for the program to produce the output, and the initiation interval is the number of clock cycles before new inputs can be processed. A summary of this is included, with greater detail provided in the subsequent section.
+	\item Without pipeline directives (see the section on optimization) the latency is one cycle less than the II.
+	\item Utilization estimates - resources such as the LUTs, FF's, DSP48s used to implement the synthesised design. This also includes the BRAM used, and whether it is single-port or dual-port.
+\end{itemize}
+
+The analysis perspective in Vivado HLS provides a view of the module hierarchy - the resources and latency for each block in the RTL code. This can be observed in more detail in the performance profile for a selected block.
+
+Within the analysis perspective is the schedule viewer tab, which allows for the identification of loop dependencies preventing parallelism, timing violations and data dependencies. One can filter the operations by type or by cluster.
+
+
+\subsection{HLS Directives}
+
+Directives applied to an object or scope will apply it to all the sub-objects within. For example, applying a directive to an interface applies it to the top-level function of the C program, as this is the scope containing the interface. Applying a directive to a loop applies it to all objects contained within the loop.
+
+Directives can be stored as a Tcl command within directives.tcl, or within the source code as a pragma. Do the former for transient directives and the latter for likely permanent directives\footnote{Such as TRIPCOUNT and INTERFACE}, for all solutions. Pragmas must be validated during C synthesis and will output errors if configured incorrectly.
+
+\texttt{\#pragma} commands for directives include:
+
+\begin{itemize}
+	
+	\item \texttt{\#pragma HLS PIPELINE II=1} to get Vivado to try to reduce the initiation interval to 1 clock cycle by initiating process during other processes.
+	
+	\item \texttt{\#pragma HLS unroll [factor = N]} to try to run N iterations of the loop in parallel (omitting the factor = N automatically runs all iterations in parallel) which results in an increase in resources used, but a higher system performance and more throughput.
+	
+	\item \texttt{\#pragma HLS DATAFLOW} to enable task-level pipelining, allowing functions and loops to overlap in their operation, increasing throughput.
+	
+	\item \texttt{\#pragma HLS allocation instances=<list>} (nextline) \texttt{limit=<value> <type>} specifies the instance restrictions to limit resource allocation in the implemented kernel. 
+\end{itemize}
+
+with many more available at \url{https://www.xilinx.com/html_docs/xilinx2019_1/sdaccel_doc/hls-pragmas-okr1504034364623.html\#zof1504034359187}.
+
+\subsection{Arbitrary Precision Types}
+
+The different numerical data types are as follows:
+
+\begin{itemize}
+	\item char - 8 bit
+	\item short - 16 bit
+	\item int - 32 bit
+	\item long long - 64 bit
+	\item float - 32 bit
+	\item double - 64 bit
+	\item int16\_t and int32\_t  - 16 and 32 bit exact width integer types
+\end{itemize}
+
+Creating hardware means that accurate bit-widths are required. Using standard C data types for hardware design results in unnecessary hardware costs. Operations can use more LUTs and registers than needed for the required accuracy, causing delays that may exceed a given clock cycle, increasing the overall latency. Smaller bit widths (e.g using 17 bit data types for 17 bit multiplication rather than the standard C 32 bit data type) result in hardware operators which are smaller and faster. More logic can then fit in the FPGA and can operate at a higher clock frequency. 
+
+To implement arbitrary ap\_[u]int precision types in C++, include header file ap\_int.h in the project source file. Change the bit types to ap\_int<N> or ap\_uint<N>, where N is a bit-size ranging from 1 to 1024. You can set this limit higher by \texttt{\#define AP\_INT\_MAX\_W N}, but setting this too high can cause slow software compile and run times.
+
+\subsection{Interface Synthesis}
+
+Vivado HLS creates three types of ports on the RTL design:
+
+\begin{enumerate}
+	\item Clock and Reset ports: ap\_clk, ap\_rst
+	\item Block level interface protocols: ap\_start, ap\_done, ap\_ready and ap\_idle.
+	
+	These are the signals that control the block independently of any port-level I/O protocols. ap\_start dictates when the block can start processing data, ap\_ready dictates whether it can accept new inputs, and you can guess what ap\_idle and ap\_done are responsible for.
+	
+	\item Port level interface protocols: created for each argument in the top-level function and the function return.
+	
+	The I/O protocol depends on the type of C argument and on the switch default option. Port level IO protocols sequence the data in and out of the block once operation has been started by the above protocols. If there is no I/O protocol associated with the block output port, it is difficult to know when to read the data. Therefore it is always a good idea to use one on an output.
+\end{enumerate}
+
+The \texttt{DATA\_PACK} optimisation directive can pack all the elements of a struct into a single wide vector, allowing all the members of the struct to be read and written to simultaneously. This overrides the default process for structs, where they are decomposed into their member elements and ports are implemented separately for each element. More data can be consequently accessed in a given clock cycle.
+
+When this is the case, Vivado HLS can automatically unroll the loops consuming this data, improving the throughput. This can be controlled by the \texttt{config\_unroll} command and the \texttt{tripcount\_threshold} option. The syntax is \texttt{config\_unroll -tripcount\_threshold <N>} where N is the minimum number of loops where the loop is not automatically unrolled.
+
+If a struct contains arrays, those arrays can be optimised using the \texttt{ARRAY\_PARTITION} directive to partition the array or the \texttt{ARRAY\_RESHAPE} directive to partition the array and also re-combine the partitioned elements into a wider array. This can greatly improve performance. You cannot use \texttt{DATA\_PACK} and the the array directives in tandem; they are mutually exclusive.
+
+\subsection{AXI4 interfaces}
+
+
+
+\bibliography{dpn.bib}
+\bibliographystyle{unsrt}
+
+\end{document}

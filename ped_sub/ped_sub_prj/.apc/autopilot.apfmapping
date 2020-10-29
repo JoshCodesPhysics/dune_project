@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="functions.cpp" path="/home/joshhorswill10/Documents/dune_project/ped_sub/functions.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="pedsub_test.cpp" path="/home/joshhorswill10/Documents/dune_project/ped_sub/pedsub_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
