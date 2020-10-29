@@ -1,9 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <random>
-#include <algorithm>
-#include <iterator>
-#include <functional>
 
 // Number of ADC samples per packet, number of channels
 // (ADC arrays), number of data waves (number of times
@@ -18,19 +13,19 @@
 #define R_MIN 400
 #define R_MAX 800
 
-// Initial pre-algorithm pedestal value
-#define PED_EST 810
+// Initial pre-algorithm pedestal value:
 
-// Defining data structures containing the ADC samples, channels and waves
-
-typedef std::vector<int> int_array;
-typedef std::vector<int_array> channel_array;
-typedef std::vector<channel_array> wave_array;
+// To properly utilise the testbench, set PED_EST
+// to be either > R_MAX + floor(N_SAMPLES/10),
+// or < R_MIN - floor(N_SAMPLES/10). However it can still
+// be used to observe the data regardless of the value of PED_EST.
+#define PED_EST 390
 
 // Declaring functions.
-int_array ped_alg(int ped_est, int accum, int ADC);
+void ped_alg(int ped_est, int accum, int ADC, int* results);
 
-int_array ped_sub(int ped_val, int_array ADC_vals);
+void ped_sub(int ped_val, int packet_size, int* ADC_vals);
 
-int_array GenerateRandomVector(int NumberCount, int minimum,
-                                      int maximum);
+void set_rnd_seed(int new_seed, int& rnd_seed);
+
+void rand_int(int& rnd_seed);

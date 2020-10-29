@@ -1,22 +1,16 @@
 #include <iostream>
-#include <vector>
 #include "functions.h"
-#include <random>
-#include <algorithm>
-#include <iterator>
-#include <functional>
 
-int_array ped_alg(int ped_est, int accum, int ADC) {
-	// This function takes input ped_est, an estimate of the pedestal
-	// (median) value, and adjusts this value according to whether
-	// the input ADC value is larger or smaller.
-	// The accumulator value (accum) begins at 0, but
+void ped_alg(int ped_est, int accum, int ADC, int* results) {
+	// This function takes an input ped_est, the estimate of the pedestal
+	// (median) value, and can adjust this value according to whether
+	// the input ADC value is larger or smaller for a given number of
+	// iterations.  The accumulator value (accum) begins at 0, but
 	// if ADC[i] >(<) ped_est -> accum +(-) 1. Then if accum reaches
 	// +(-) 10, the new pedestal value (ped) +(-) 1 and the accum value is
 	// reset to zero. This will be performed by a top function outside of
 	// ped_alg, whose only purpose is to output new pedestal, accumulator
 	// and ADC values.
-	
 
 	int ped_new, accum_new, ADC_new;
 
@@ -49,16 +43,16 @@ int_array ped_alg(int ped_est, int accum, int ADC) {
 	}
 
 	// New ADC value has new pedestal value subtracted
-	ADC_new = abs(ADC - ped_new);
+	ADC_new = ADC - ped_new;
 
-	// Return list of new pedestal, new accumulator, and new ADC values
-	return {ped_new, accum_new, ADC_new};
+	// Fill empty results array.
+	results[0] = ped_new;
+	results[1] = accum_new;
+	results[2] = ADC_new;
+
 }
 
-int_array ped_sub(int ped_val, int_array ADC_vals) {
-
-	int accum = 0;
-
+void ped_sub(int ped_val, int packet_size, int* ADC_vals) {
 	// N new ADC samples are stored in array index range
 	// 0 -> N - 1, the accumulator is then stored at index N,
 	// then final pedestal value stored at the
@@ -67,26 +61,52 @@ int_array ped_sub(int ped_val, int_array ADC_vals) {
 	// N + 2 entries. Remember to truncate array if you want
 	// either ADC_new, accum or ped_new.
 	
-	// Defining new ADC vector, starting with pedestal estimate value;
-	// loop through the original ADC values and apply the algorithm.
-	int samples = ADC_vals.size();
-	int new_dim = samples + 2;
-	int_array ADC_new(new_dim);
+	// Defining new ADC vector, starting with pedestal estimate
+	// value; looping through the original ADC values and applying
+	// the algorithm. Note that accum starts at zero.
+
+	int accum = 0;
 	int ped_new = ped_val;
-	int_array ped_vec;
+	int ped_results[3];
 
-	ADC_scan: for (int i = 0; i < samples; i++) {
-		ped_vec = ped_alg(ped_new, accum, ADC_vals[i]);
+	ADC_scan: for (int i = 0; i < packet_size; i++) {
+		ped_alg(ped_new, accum, ADC_vals[i], ped_results);
 
-		ped_new = ped_vec[0];
-		accum = ped_vec[1];
-		ADC_new[i] = ped_vec[2];
+		// Recording output values for use in the next loop.
+		ped_new = ped_results[0];
+		accum = ped_results[1];
+		// Adjusted ADC values replace the old ones
+		ADC_vals[i] = ped_results[2];
 	}
 
-	ADC_new[new_dim - 2] = accum;
-	ADC_new[new_dim - 1] = ped_new;
-	return ADC_new;
+	// Writing final accumulator and pedestal values to the end of the
+	// array.
+
+	ADC_vals[packet_size] = accum;
+	ADC_vals[packet_size + 1] = ped_new;
 }
+
+
+// Following random number generator is from christianpinder.com blog
+// referencing a Park and Miller paper on the topic.
+
+void set_rnd_seed(int new_seed, int& rnd_seed) {
+    rnd_seed = new_seed;
+}
+
+void rand_int(int& rnd_seed) {
+    int k1;
+    int ix = rnd_seed;
+
+    k1 = ix / 127773;
+    ix = 16807 * (ix - k1 * 127773) - k1 * 2836;
+    if (ix < 0)
+        ix += 2147483647;
+    rnd_seed = ix;
+}
+
+// Start of final top function to handle all channels, possibly not
+// needed
 
 // int_array ped_packets(rand_waves ADC_master, int_array ped_est,
 //   		      int packets, int channels, int samples) {
@@ -104,24 +124,3 @@ int_array ped_sub(int ped_val, int_array ADC_vals) {
 
 	// for (i = 0, i < packets, i++) {
 	// 	ADC_new[i] = channel_array(channels);
-
-	
-int_array GenerateRandomVector(int NumberCount, int minimum,
-		                      int maximum) {
-	
-	// This function is just to provide a vector of random integer
-	// vectors for the next function to take as input. Credit goes to
-	// Caleth on Stackoverflow.
-	std::random_device rd;
-	
-	std::mt19937 gen(rd()); // these can be global and/or static,
-	// depending on how you use random elsewhere
-	std::vector<int> values(NumberCount);
-
-	std::uniform_int_distribution<> dis(minimum, maximum);
-	
-	std::generate(values.begin(), values.end(),
-		      [&](){ return dis(gen); });
-	
-	return values;
-}

@@ -1,11 +1,14 @@
 #include <iostream>
 #include "functions.h"
-#include <vector>
-#include <random>
-#include <algorithm>
-#include <iterator>
-#include <functional>
-#include <cmath>
+
+// This testbench generates a number of random ADC values
+// (between R_MIN and R_MAX) for a packet
+// of sample size N_SAMPLES, transferred through a number of channels
+// equal to N_CHANNELS, for a number of packet waves equal to N_WAVES.
+// Currently only the 0th channel is being used to test the ped_sub
+// algorithm from functions.cpp. To see if the algorithm works, select
+// a PED_EST (pedestal estimate) value according to the conditions
+// specified in the header file where it is #define'd.
 
 int main() {
 	
@@ -17,61 +20,83 @@ int main() {
 	// Generating a vector containing the data-wave vectors that
 	// contain the channel vectors that contain the packets of samples.
 	
-	// Defining the master vector (see header file for datatypes)
-	wave_array rand_master(N_WAVES);
+	// Defining the master vector (see header file for datatypes and
+	// #define'd values such as N_WAVES)
+	// We use N_SAMPLES + 2 so there is space for the accumulator and
+	// pedestal values to be stored.
+	int packet_array[N_WAVES][N_CHANNELS][N_SAMPLES + 2];
+
+	// Defining a random number generator seed
+
+	static int rand_seed;
+	set_rnd_seed((R_MAX + R_MIN)/2, rand_seed);
 
 	// Appending random integer data packets to each channel in each wave
 	packet_loop: for (i = 0; i < N_WAVES; i++) {
-		rand_master[i] = channel_array(N_CHANNELS);
-	 	channel_loop: for (j = 0; j < N_CHANNELS; j++) {
-	 		rand_master[i][j] = int_array(N_SAMPLES);
-			std::vector<int> temp_vec =
-                        GenerateRandomVector(N_SAMPLES, R_MIN, R_MAX);
-
+		channel_loop: for (j = 0; j < N_CHANNELS; j++) {
 	 		sample_loop: for (k = 0; k < N_SAMPLES; k++) {
-	 			rand_master[i][j][k] = temp_vec[k];
+	 			rand_int(rand_seed);
+
+	 			// Provides random values within our desired
+				// range
+	 			int rand_value = R_MIN + (rand_seed
+	 					 % (R_MAX - R_MIN + 1));
+				
+	 			packet_array[i][j][k] = rand_value;
 	 		}
 	  	}
 	}
 
-	int_array ped_vec = ped_sub(PED_EST, rand_master[0][0]);
-	// int_array ped_vec2 = ped_sub(PED_EST, rand_master[1][0]);
-	
+	// Copying random integers from ch0 into test array to be adjusted
+	int test_array[N_SAMPLES + 2];
+
+	for (i = 0; i < N_SAMPLES; i++) {
+		test_array[i] = packet_array[0][0][i];
+	}
+
+	// Filling test array with adjusted ADC, accumulator
+	// and pedestal values
+	ped_sub(PED_EST, N_SAMPLES, test_array);
+
+	// Printing results
 	result_loop: for (i = 0; i < N_SAMPLES + 2; i++) {
 		if (i == N_SAMPLES) {
 			std::cout << endl << "Initial pedestal value: "
 				  << PED_EST << endl
 				  << "Final accumulator value for " <<
-				     "ADC packet is: " << ped_vec[i]
+				     "ADC packet is: " << test_array[i]
 				     << endl;
 	  		std::cout << "Final pedestal value for ADC " <<
-	 			      "packet is: " << ped_vec[i + 1]
+	 			      "packet is: " << test_array[i + 1]
 	  			      << endl;
 			break;
 	  	}
 
 	  	else {
 	  		std::cout << "New ADC value for index " << i <<
-	  			     " is: " << ped_vec[i] << endl;
+	  			     " is: " << test_array[i] << endl;
 	  	}
 	}
 
 	std::cout << endl
-		  << "Expected pedestal change: " << floor(N_SAMPLES/10)
+		  << "Expected pedestal change: " << (int)N_SAMPLES/10
 		  << endl << "R_MIN: " << R_MIN << "  R_MAX: " << R_MAX
 		  << "  N_SAMPLES: " << N_SAMPLES << endl;
 
-	if (PED_EST < abs(R_MIN - floor(N_SAMPLES/10))) {
+	// Start of test bench logic, testing results. Subject to change.
+	if (PED_EST < R_MIN - (int)N_SAMPLES/10) {
 		std::cout << endl
-			  << "Pedestal estimate input << ADC range, "
+			  << "Pedestal estimate input < ADC range - "
+			  << "N_SAMPLES/10 " << endl
 			  << "therefore pedestal should have increased"
 			  << " by floor(N_SAMPLES/10) and the "
+			  << endl
 			  << "accumulator should be equal to N_SAMPLES"
 			  << " % 10:" << endl;
 
-		if ((ped_vec[N_SAMPLES + 1] == PED_EST + 
-				               floor(N_SAMPLES/10)) &&
-		    (ped_vec[N_SAMPLES] == N_SAMPLES % 10)) {
+		if ((test_array[N_SAMPLES + 1] == PED_EST +
+				               (int)N_SAMPLES/10) &&
+		    (test_array[N_SAMPLES] == N_SAMPLES % 10)) {
 
 			std::cout << endl
 				  << "Conditions satisfied, test passed!"
@@ -87,17 +112,18 @@ int main() {
 		}
 	}
 	
-	else if (PED_EST > abs(R_MAX + floor(N_SAMPLES/10))) {
+	else if (PED_EST > R_MAX + (int)N_SAMPLES/10) {
 		std::cout << endl
-			  << "Pedestal estimate input >> ADC range, "
-			  << "therefore pedestal should have decreased"
-			  << " by floor(N_SAMPLES/10) and the "
+			  << "Pedestal estimate input > ADC range +"
+			  << " N_SAMPLES/10, therefore pedestal should"
+			  << " have decreased by floor(N_SAMPLES/10) and the "
+			  << endl
 			  << "accumulator should be equal to -(N_SAMPLES"
 			  << " % 10):" << endl;
 
-		if ((ped_vec[N_SAMPLES + 1] == PED_EST - 
-				               floor(N_SAMPLES/10)) &&
-		    (ped_vec[N_SAMPLES] == -(N_SAMPLES % 10))) {
+		if ((test_array[N_SAMPLES + 1] == PED_EST -
+				               (int)N_SAMPLES/10) &&
+		    (test_array[N_SAMPLES] == -(N_SAMPLES % 10))) {
 
 			std::cout << endl
 				  << "Conditions satisfied, test passed!"
@@ -117,9 +143,10 @@ int main() {
 		std::cout << endl
 			  << "To properly utilise this testbench, set PED_EST"
 			  << " to be either"
-	                  << " > R_MAX + floor(N_SAMPLES/10),"
-			  << " or < R_MIN "
-			  << "- floor(N_SAMPLES/10). However it can still"
+	          << " > R_MAX + floor(N_SAMPLES/10),"
+			  << " or < R_MIN - floor(N_SAMPLES/10)."
+			  << endl
+			  << "However it can still"
 			  << " be used to observe the data regardless of "
 			  << "the value of PED_EST." << endl;
 		return 0;
