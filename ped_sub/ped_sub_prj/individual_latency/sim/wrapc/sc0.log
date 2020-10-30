@@ -1,0 +1,5 @@
+   Build using "/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_ped_alg.cpp
+   Compiling pedsub_test.cpp_pre.cpp.tb.cpp
+   Compiling functions.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

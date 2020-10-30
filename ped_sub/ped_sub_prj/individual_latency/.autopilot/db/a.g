@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/a.g.bc ${1+"$@"}

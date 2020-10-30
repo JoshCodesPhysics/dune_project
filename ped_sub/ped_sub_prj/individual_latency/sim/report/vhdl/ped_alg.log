@@ -1,0 +1,227 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_ped_alg.cpp
+   Compiling pedsub_test.cpp_pre.cpp.tb.cpp
+   Compiling functions.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-322] Starting VHDL simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+New ADC value for index 0 is: 263
+New ADC value for index 1 is: 135
+New ADC value for index 2 is: 303
+New ADC value for index 3 is: 351
+New ADC value for index 4 is: 272
+New ADC value for index 5 is: 67
+New ADC value for index 6 is: 270
+New ADC value for index 7 is: 244
+New ADC value for index 8 is: 144
+New ADC value for index 9 is: 153
+New ADC value for index 10 is: 192
+New ADC value for index 11 is: 381
+New ADC value for index 12 is: 361
+New ADC value for index 13 is: 240
+New ADC value for index 14 is: 47
+New ADC value for index 15 is: 126
+New ADC value for index 16 is: 123
+New ADC value for index 17 is: 351
+New ADC value for index 18 is: 298
+New ADC value for index 19 is: 386
+New ADC value for index 20 is: 265
+New ADC value for index 21 is: 99
+New ADC value for index 22 is: 140
+New ADC value for index 23 is: 241
+New ADC value for index 24 is: 336
+New ADC value for index 25 is: 344
+New ADC value for index 26 is: 172
+New ADC value for index 27 is: 246
+New ADC value for index 28 is: 380
+New ADC value for index 29 is: 58
+New ADC value for index 30 is: 55
+New ADC value for index 31 is: 325
+New ADC value for index 32 is: 8
+New ADC value for index 33 is: 55
+New ADC value for index 34 is: 177
+New ADC value for index 35 is: 125
+New ADC value for index 36 is: 289
+New ADC value for index 37 is: 354
+New ADC value for index 38 is: 170
+New ADC value for index 39 is: 99
+New ADC value for index 40 is: 39
+New ADC value for index 41 is: 284
+New ADC value for index 42 is: 397
+New ADC value for index 43 is: 60
+New ADC value for index 44 is: 404
+New ADC value for index 45 is: 47
+New ADC value for index 46 is: 377
+New ADC value for index 47 is: 228
+New ADC value for index 48 is: 21
+New ADC value for index 49 is: 20
+New ADC value for index 50 is: 23
+New ADC value for index 51 is: 398
+New ADC value for index 52 is: 263
+New ADC value for index 53 is: 317
+New ADC value for index 54 is: 343
+New ADC value for index 55 is: 27
+New ADC value for index 56 is: 285
+New ADC value for index 57 is: 80
+New ADC value for index 58 is: 392
+New ADC value for index 59 is: 19
+New ADC value for index 60 is: 291
+New ADC value for index 61 is: 321
+New ADC value for index 62 is: 354
+New ADC value for index 63 is: 253
+
+Initial pedestal value: 390
+Final accumulator value for ADC packet is: 4
+Final pedestal value for ADC packet is: 396
+
+Expected pedestal change: 6
+R_MIN: 400  R_MAX: 800  N_SAMPLES: 64
+
+Pedestal estimate input < ADC range - N_SAMPLES/10 
+therefore pedestal should have increased by floor(N_SAMPLES/10) and the 
+accumulator should be equal to N_SAMPLES % 10:
+
+Conditions satisfied, test passed!
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/opt/ppd/tools/xilinx/Vivado/2020.1/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /opt/ppd/tools/xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_ped_alg_top glbl -prj ped_alg.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims -L unisims_ver -L xpm --initfile /opt/ppd/tools/xilinx/Vivado/2020.1/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s ped_alg 
+Multi-threading is on. Using 34 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ped_alg'
+INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'apatb_ped_alg_top'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling module work.glbl
+Compiling architecture behav of entity xil_defaultlib.ped_alg [ped_alg_default]
+Compiling architecture behav of entity xil_defaultlib.apatb_ped_alg_top
+Built simulation snapshot ped_alg
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Oct 30 15:58:30 2020. For additional details about this file, please refer to the WebTalk help file at /opt/ppd/tools/xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Oct 30 15:58:30 2020...
+
+****** xsim v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/ped_alg/xsim_script.tcl
+# xsim {ped_alg} -autoloadwcfg -tclbatch {ped_alg.tcl}
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source ped_alg.tcl
+## run all
+Note: simulation done!
+Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
+Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
+Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
+$finish called at time : 1154 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 15:58:52 2020...
+New ADC value for index 0 is: 263
+New ADC value for index 1 is: 135
+New ADC value for index 2 is: 303
+New ADC value for index 3 is: 351
+New ADC value for index 4 is: 272
+New ADC value for index 5 is: 67
+New ADC value for index 6 is: 270
+New ADC value for index 7 is: 244
+New ADC value for index 8 is: 144
+New ADC value for index 9 is: 153
+New ADC value for index 10 is: 192
+New ADC value for index 11 is: 381
+New ADC value for index 12 is: 361
+New ADC value for index 13 is: 240
+New ADC value for index 14 is: 47
+New ADC value for index 15 is: 126
+New ADC value for index 16 is: 123
+New ADC value for index 17 is: 351
+New ADC value for index 18 is: 298
+New ADC value for index 19 is: 386
+New ADC value for index 20 is: 265
+New ADC value for index 21 is: 99
+New ADC value for index 22 is: 140
+New ADC value for index 23 is: 241
+New ADC value for index 24 is: 336
+New ADC value for index 25 is: 344
+New ADC value for index 26 is: 172
+New ADC value for index 27 is: 246
+New ADC value for index 28 is: 380
+New ADC value for index 29 is: 58
+New ADC value for index 30 is: 55
+New ADC value for index 31 is: 325
+New ADC value for index 32 is: 8
+New ADC value for index 33 is: 55
+New ADC value for index 34 is: 177
+New ADC value for index 35 is: 125
+New ADC value for index 36 is: 289
+New ADC value for index 37 is: 354
+New ADC value for index 38 is: 170
+New ADC value for index 39 is: 99
+New ADC value for index 40 is: 39
+New ADC value for index 41 is: 284
+New ADC value for index 42 is: 397
+New ADC value for index 43 is: 60
+New ADC value for index 44 is: 404
+New ADC value for index 45 is: 47
+New ADC value for index 46 is: 377
+New ADC value for index 47 is: 228
+New ADC value for index 48 is: 21
+New ADC value for index 49 is: 20
+New ADC value for index 50 is: 23
+New ADC value for index 51 is: 398
+New ADC value for index 52 is: 263
+New ADC value for index 53 is: 317
+New ADC value for index 54 is: 343
+New ADC value for index 55 is: 27
+New ADC value for index 56 is: 285
+New ADC value for index 57 is: 80
+New ADC value for index 58 is: 392
+New ADC value for index 59 is: 19
+New ADC value for index 60 is: 291
+New ADC value for index 61 is: 321
+New ADC value for index 62 is: 354
+New ADC value for index 63 is: 253
+
+Initial pedestal value: 390
+Final accumulator value for ADC packet is: 4
+Final pedestal value for ADC packet is: 396
+
+Expected pedestal change: 6
+R_MIN: 400  R_MAX: 800  N_SAMPLES: 64
+
+Pedestal estimate input < ADC range - N_SAMPLES/10 
+therefore pedestal should have increased by floor(N_SAMPLES/10) and the 
+accumulator should be equal to N_SAMPLES % 10:
+
+Conditions satisfied, test passed!
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***

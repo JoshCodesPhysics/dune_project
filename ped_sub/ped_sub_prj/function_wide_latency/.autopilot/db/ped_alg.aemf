@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1604072910000">
+  <ports id="1" name="ped_val" type="PortType" originalName="ped_val" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>read</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+  </ports>
+  <ports id="2" name="accum" type="PortType" originalName="accum" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>read</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+  </ports>
+  <ports id="3" name="ADC" type="PortType" originalName="ADC" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>read</dataInputObjs>
+    <dataInputObjs>write</dataInputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>write</dataOutputObjs>
+  </ports>
+  <edges id="47" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="49" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="53" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="54" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="57" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="58" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="59" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="62" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="65" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="68" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="69" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="70" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="74" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="75" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="76" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="80" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="82" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="86" source_obj="//@regions.0/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="87" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="88" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="89" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="92" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="93" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="94" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="97" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="99" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="101" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="104" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="106" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="107" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="108" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="109" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="110" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="111" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="113" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.2"/>
+  <edges id="115" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.3"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.4/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.3"/>
+  <edges id="118" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.4"/>
+  <edges id="119" source_obj="//@regions.0/@basic_blocks.4/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.4"/>
+  <edges id="120" source_obj="//@regions.0/@basic_blocks.4/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.5"/>
+  <edges id="121" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.5"/>
+  <edges id="122" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.5"/>
+  <edges id="124" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="125" source_obj="//@regions.0/@basic_blocks.4/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="126" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.1"/>
+  <edges id="148" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="149" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="150" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="151" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="152" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="153" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5"/>
+  <edges id="155" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="-47" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@ports.2"/>
+  <edges id="-49" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@ports.0"/>
+  <edges id="-53" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@ports.1"/>
+  <edges id="-80" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@ports.0"/>
+  <edges id="-92" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@ports.0"/>
+  <edges id="-118" source_obj="//@regions.0/@basic_blocks.4/@node_objs.4" sink_obj="//@ports.2"/>
+  <edges id="-124" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@ports.1"/>
+  <regions anchor_node="-1" region_type="2" typeName="Latency" id="168" RegionName="ped_alg">
+    <basic_blocks id="21" name="_ifconv" type="BlockType">
+      <controlOutputObjs>block_32</controlOutputObjs>
+      <controlOutputObjs>block_24</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="9" name="ADC_read" lineNumber="17" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>ADC</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <dataOutputObjs>ADC</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="ped_val_read" lineNumber="17" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>ped_val</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>ped_val</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="icmp_ln17" lineNumber="17" fileName="functions.cpp" fileDirectory=".." rtlName="icmp_ln17_fu_115_p2" contextFuncName="ped_alg" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.99" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="accum_read" lineNumber="18" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="18" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>accum</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>accum</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="add_ln18" lineNumber="18" fileName="functions.cpp" fileDirectory=".." rtlName="add_ln18_fu_121_p2" contextFuncName="ped_alg" bitwidth="32" opcode="add" m_display="0" m_delay="1.01" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="18" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="icmp_ln21" lineNumber="21" fileName="functions.cpp" fileDirectory=".." rtlName="icmp_ln21_fu_127_p2" contextFuncName="ped_alg" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.99" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="21" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="add_ln22" lineNumber="22" fileName="functions.cpp" fileDirectory=".." rtlName="add_ln22_fu_133_p2" contextFuncName="ped_alg" bitwidth="32" opcode="add" m_display="0" m_delay="1.01" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="22" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="select_ln21" lineNumber="21" fileName="functions.cpp" fileDirectory=".." rtlName="select_ln21_fu_139_p3" contextFuncName="ped_alg" bitwidth="32" opcode="select" m_display="0" m_topoIndex="8" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="21" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="icmp_ln17_1" lineNumber="17" fileName="functions.cpp" fileDirectory=".." rtlName="icmp_ln17_1_fu_147_p2" contextFuncName="ped_alg" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.99" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="select_ln17" lineNumber="17" fileName="functions.cpp" fileDirectory=".." rtlName="select_ln17_fu_153_p3" contextFuncName="ped_alg" bitwidth="32" opcode="select" m_display="0" m_delay="0.44" m_topoIndex="10" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="icmp_ln26" lineNumber="26" fileName="functions.cpp" fileDirectory=".." rtlName="icmp_ln26_fu_161_p2" contextFuncName="ped_alg" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.99" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="26" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="_ln26" lineNumber="26" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="br" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="26" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>block_24</controlInputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>17</validLinenumbers>
+        <validLinenumbers>18</validLinenumbers>
+        <validLinenumbers>21</validLinenumbers>
+        <validLinenumbers>22</validLinenumbers>
+        <validLinenumbers>26</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="32" name="block_32" type="BlockType">
+      <controlInputObjs>_ifconv</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>._crit_edge1</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="add_ln27" lineNumber="27" fileName="functions.cpp" fileDirectory=".." rtlName="add_ln27_fu_180_p2" contextFuncName="ped_alg" bitwidth="32" opcode="add" m_display="0" m_delay="1.01" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="27" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="ped_val_write_ln27" lineNumber="27" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="write" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="27" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>ped_val</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>ped_val</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="_ln29" lineNumber="29" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="br" m_display="0" m_delay="0.67" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="29" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <controlInputObjs>._crit_edge1</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>27</validLinenumbers>
+        <validLinenumbers>29</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="24" name="block_24" type="BlockType">
+      <controlInputObjs>_ifconv</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>block_28</controlOutputObjs>
+      <controlOutputObjs>._crit_edge1</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="icmp_ln31" lineNumber="31" fileName="functions.cpp" fileDirectory=".." rtlName="icmp_ln31_fu_167_p2" contextFuncName="ped_alg" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.99" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="31" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="_ln31" lineNumber="31" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="br" m_display="0" m_delay="0.67" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="31" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>._crit_edge1</controlInputObjs>
+        <controlInputObjs>block_28</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>31</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="28" name="block_28" type="BlockType">
+      <controlInputObjs>block_24</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>._crit_edge1</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="add_ln32" lineNumber="32" fileName="functions.cpp" fileDirectory=".." rtlName="add_ln32_fu_173_p2" contextFuncName="ped_alg" bitwidth="32" opcode="add" m_display="0" m_delay="1.01" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="32" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="ped_val_write_ln32" lineNumber="32" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="write" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="32" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>ped_val</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>ped_val</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="_ln34" lineNumber="34" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="br" m_display="0" m_delay="0.67" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="34" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <controlInputObjs>._crit_edge1</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>32</validLinenumbers>
+        <validLinenumbers>34</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="39" name="._crit_edge1" type="BlockType">
+      <controlInputObjs>block_24</controlInputObjs>
+      <controlInputObjs>block_28</controlInputObjs>
+      <controlInputObjs>block_32</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>mergeST</controlOutputObjs>
+      <controlOutputObjs>._crit_edge1.new</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="accum_flag_2" lineNumber="17" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="1" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+        <controlInputObjs>block_28</controlInputObjs>
+        <controlInputObjs>block_24</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="accum_new_2" lineNumber="17" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+        <controlInputObjs>block_28</controlInputObjs>
+        <controlInputObjs>block_24</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="ped_val_load_3" lineNumber="27" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="27" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+        <controlInputObjs>block_28</controlInputObjs>
+        <controlInputObjs>block_24</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="sub_ln37" lineNumber="37" fileName="functions.cpp" fileDirectory=".." rtlName="ADC_o" contextFuncName="ped_alg" bitwidth="32" opcode="sub" nodeLabel="1.0" m_display="0" m_delay="1.01" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="37" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="ADC_write_ln37" lineNumber="37" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="37" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>ADC</dataInputObjs>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataOutputObjs>ADC</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="_ln17" lineNumber="17" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="17" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <controlInputObjs>._crit_edge1.new</controlInputObjs>
+        <controlInputObjs>mergeST</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>17</validLinenumbers>
+        <validLinenumbers>27</validLinenumbers>
+        <validLinenumbers>37</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="42" name="mergeST" type="BlockType">
+      <controlInputObjs>._crit_edge1</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>._crit_edge1.new</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="accum_write_ln18" lineNumber="18" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="18" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+        <dataInputObjs>accum</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>accum</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="_ln0" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <controlInputObjs>._crit_edge1.new</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>18</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="44" name="._crit_edge1.new" type="BlockType">
+      <controlInputObjs>._crit_edge1</controlInputObjs>
+      <controlInputObjs>mergeST</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="_ln39" lineNumber="39" fileName="functions.cpp" fileDirectory=".." contextFuncName="ped_alg" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="functions.cpp" linenumber="39" fileDirectory="/data/hmo31799/ped_sub" functionName="ped_alg"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="functions.cpp">
+        <validLinenumbers>39</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <regnodes realName="accum_flag_2_reg_75">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="ped_val_read_reg_198">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln32_reg_219">
+    <nodeIds>25</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln17_1_reg_203">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln27_reg_224">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="select_ln17_reg_208">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <regnodes realName="ped_val_load_3_reg_104">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="ADC_read_reg_193">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="accum_new_2_reg_89">
+    <nodeIds>34</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln17_fu_115">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ped_val_load_3_phi_fu_107">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln31_fu_167">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln17_fu_153">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="accum_new_2_phi_fu_93">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln26_fu_161">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln37_fu_187">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="accum_flag_2_phi_fu_79">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln17_1_fu_147">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln21_fu_139">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln27_fu_180">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln18_fu_121">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln21_fu_127">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln22_fu_133">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln32_fu_173">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="ped_val_read_read_fu_42">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_write_fu_54">
+    <nodeIds>26</nodeIds>
+    <nodeIds>30</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln37_write_fu_61">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <ioNodes realName="ADC_read_read_fu_36">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="accum_read_read_fu_48">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln18_write_fu_68">
+    <nodeIds>40</nodeIds>
+  </ioNodes>
+  <ioPorts name="ADC">
+    <contents name="read">
+      <nodeIds>9</nodeIds>
+    </contents>
+    <contents name="write">
+      <nodeIds>37</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="accum">
+    <contents name="read">
+      <nodeIds>12</nodeIds>
+    </contents>
+    <contents name="write">
+      <nodeIds>40</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ped_val">
+    <contents name="read">
+      <nodeIds>10</nodeIds>
+    </contents>
+    <contents name="write">
+      <nodeIds>30</nodeIds>
+      <nodeIds>26</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="43" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="ped_alg" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="2">
+      <basicBlocks>21</basicBlocks>
+      <basicBlocks>24</basicBlocks>
+      <basicBlocks>28</basicBlocks>
+      <basicBlocks>32</basicBlocks>
+      <basicBlocks>39</basicBlocks>
+      <basicBlocks>42</basicBlocks>
+      <basicBlocks>44</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

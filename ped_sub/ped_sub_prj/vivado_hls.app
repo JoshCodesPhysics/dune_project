@@ -10,7 +10,8 @@
         <file name="functions.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
-        <solution name="solution1" status="active"/>
+        <solution name="function_wide_latency" status="inactive"/>
+        <solution name="individual_latency" status="active"/>
     </solutions>
 </project>
 

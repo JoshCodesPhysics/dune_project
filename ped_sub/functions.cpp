@@ -13,29 +13,32 @@ void ped_alg(int& ped_val, int& accum, int& ADC) {
 	// ped_alg, whose only purpose is to output new pedestal, accumulator
 	// and ADC values.
 
-	// Accumulator condition
-	if (ADC > ped_val) {
-	accum++;
+	accumulator_condition : {
+		if (ADC > ped_val) {
+			accum++;
+		}
+
+		else if (ADC < ped_val) {
+			accum--;
+		}
 	}
 
-	else if (ADC < ped_val) {
-	accum--;
+	pedestal_condition : {
+		if (accum >= 10) {
+			ped_val++;
+			accum = 0;
+		}
+
+
+		else if (accum <= -10) {
+			ped_val--;
+			accum = 0;
+		}
 	}
 
-	// pedestal condition
-	if (accum >= 10) {
-	ped_val++;
-	accum = 0;
+	ped_sub: {
+		ADC = ADC - ped_val;
 	}
-
-	else if (accum <= -10) {
-	ped_val--;
-	accum = 0;
-	}
-
-	// New ADC value has new pedestal value subtracted
-	ADC = ADC - ped_val;
-
 }
 
 void ped_sub(int ped_val, int packet_size, int* ADC_vals) {

@@ -1,0 +1,14 @@
+<annotationInfo>
+<item  id="12" filename="functions.cpp" linenumber="17" name="icmp_ln17" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="icmp_ln17_fu_125_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="20" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="14" filename="functions.cpp" linenumber="18" name="add_ln18" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="add_ln18_fu_131_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="15" filename="functions.cpp" linenumber="21" name="icmp_ln21" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="icmp_ln21_fu_137_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="20" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="16" filename="functions.cpp" linenumber="22" name="add_ln22" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="add_ln22_fu_143_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="17" filename="functions.cpp" linenumber="21" name="select_ln21" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="select_ln21_fu_149_p3" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="32" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="18" filename="functions.cpp" linenumber="17" name="icmp_ln17_1" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="icmp_ln17_1_fu_157_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="20" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="19" filename="functions.cpp" linenumber="17" name="select_ln17" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="select_ln17_fu_163_p3" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="32" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="23" filename="functions.cpp" linenumber="27" name="icmp_ln27" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="icmp_ln27_fu_171_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="20" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="26" filename="functions.cpp" linenumber="33" name="icmp_ln33" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="icmp_ln33_fu_177_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="20" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="29" filename="functions.cpp" linenumber="34" name="add_ln34" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="add_ln34_fu_183_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="33" filename="functions.cpp" linenumber="28" name="add_ln28" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="add_ln28_fu_190_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+<item  id="43" filename="functions.cpp" linenumber="40" name="sub_ln40" contextFuncName="ped_alg" moduleName="ped_alg" rtlName="ADC_o" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/data/hmo31799/ped_sub"><\/item>
+</annotationInfo>

@@ -1,0 +1,20 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="ped_alg" label="accumulator_condition" functionLabel="">
+            <pragma name="LATENCY">
+                <option name="min" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="ped_alg" label="pedestal_condition" functionLabel="">
+            <pragma name="LATENCY">
+                <option name="min" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="ped_alg" label="ped_sub" functionLabel="">
+            <pragma name="LATENCY">
+                <option name="min" value="1"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

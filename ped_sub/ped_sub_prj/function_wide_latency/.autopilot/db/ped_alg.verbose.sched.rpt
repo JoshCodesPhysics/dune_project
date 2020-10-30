@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vivado HLS Report for 'ped_alg'
+================================================================
+* Date:           Fri Oct 30 15:48:30 2020
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        ped_sub_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 4.00 ns | 3.131 ns |   0.50 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        2|        2| 8.000 ns | 8.000 ns |    2|    2|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.13>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %ped_val) nounwind, !map !30"   --->   Operation 4 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %accum) nounwind, !map !34"   --->   Operation 5 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %ADC) nounwind, !map !38"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @ped_alg_str) nounwind"   --->   Operation 7 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLatency(i32 5, i32 65535, [1 x i8]* @p_str) nounwind" [functions.cpp:5]   --->   Operation 8 'speclatency' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%ADC_read = call i32 @_ssdm_op_Read.ap_auto.i32P(i32* %ADC) nounwind" [functions.cpp:17]   --->   Operation 9 'read' 'ADC_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%ped_val_read = call i32 @_ssdm_op_Read.ap_auto.i32P(i32* %ped_val) nounwind" [functions.cpp:17]   --->   Operation 10 'read' 'ped_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.99ns)   --->   "%icmp_ln17 = icmp sgt i32 %ADC_read, %ped_val_read" [functions.cpp:17]   --->   Operation 11 'icmp' 'icmp_ln17' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%accum_read = call i32 @_ssdm_op_Read.ap_auto.i32P(i32* %accum) nounwind" [functions.cpp:18]   --->   Operation 12 'read' 'accum_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.01ns)   --->   "%add_ln18 = add nsw i32 %accum_read, 1" [functions.cpp:18]   --->   Operation 13 'add' 'add_ln18' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.99ns)   --->   "%icmp_ln21 = icmp slt i32 %ADC_read, %ped_val_read" [functions.cpp:21]   --->   Operation 14 'icmp' 'icmp_ln21' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (1.01ns)   --->   "%add_ln22 = add nsw i32 %accum_read, -1" [functions.cpp:22]   --->   Operation 15 'add' 'add_ln22' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns) (grouped into LUT with out node select_ln17)   --->   "%select_ln21 = select i1 %icmp_ln21, i32 %add_ln22, i32 %accum_read" [functions.cpp:21]   --->   Operation 16 'select' 'select_ln21' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.99ns)   --->   "%icmp_ln17_1 = icmp ne i32 %ADC_read, %ped_val_read" [functions.cpp:17]   --->   Operation 17 'icmp' 'icmp_ln17_1' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.44ns) (out node of the LUT)   --->   "%select_ln17 = select i1 %icmp_ln17, i32 %add_ln18, i32 %select_ln21" [functions.cpp:17]   --->   Operation 18 'select' 'select_ln17' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.99ns)   --->   "%icmp_ln26 = icmp sgt i32 %select_ln17, 9" [functions.cpp:26]   --->   Operation 19 'icmp' 'icmp_ln26' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "br i1 %icmp_ln26, label %0, label %1" [functions.cpp:26]   --->   Operation 20 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.99ns)   --->   "%icmp_ln31 = icmp slt i32 %select_ln17, -9" [functions.cpp:31]   --->   Operation 21 'icmp' 'icmp_ln31' <Predicate = (!icmp_ln26)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.67ns)   --->   "br i1 %icmp_ln31, label %2, label %._crit_edge1" [functions.cpp:31]   --->   Operation 22 'br' <Predicate = (!icmp_ln26)> <Delay = 0.67>
+ST_1 : Operation 23 [1/1] (1.01ns)   --->   "%add_ln32 = add nsw i32 %ped_val_read, -1" [functions.cpp:32]   --->   Operation 23 'add' 'add_ln32' <Predicate = (!icmp_ln26 & icmp_ln31)> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %ped_val, i32 %add_ln32) nounwind" [functions.cpp:32]   --->   Operation 24 'write' <Predicate = (!icmp_ln26 & icmp_ln31)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.67ns)   --->   "br label %._crit_edge1" [functions.cpp:34]   --->   Operation 25 'br' <Predicate = (!icmp_ln26 & icmp_ln31)> <Delay = 0.67>
+ST_1 : Operation 26 [1/1] (1.01ns)   --->   "%add_ln27 = add nsw i32 %ped_val_read, 1" [functions.cpp:27]   --->   Operation 26 'add' 'add_ln27' <Predicate = (icmp_ln26)> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %ped_val, i32 %add_ln27) nounwind" [functions.cpp:27]   --->   Operation 27 'write' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.67ns)   --->   "br label %._crit_edge1" [functions.cpp:29]   --->   Operation 28 'br' <Predicate = (icmp_ln26)> <Delay = 0.67>
+
+State 2 <SV = 1> <Delay = 1.01>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%accum_flag_2 = phi i1 [ true, %0 ], [ true, %2 ], [ %icmp_ln17_1, %1 ]" [functions.cpp:17]   --->   Operation 29 'phi' 'accum_flag_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%accum_new_2 = phi i32 [ 0, %0 ], [ 0, %2 ], [ %select_ln17, %1 ]" [functions.cpp:17]   --->   Operation 30 'phi' 'accum_new_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%ped_val_load_3 = phi i32 [ %add_ln27, %0 ], [ %add_ln32, %2 ], [ %ped_val_read, %1 ]" [functions.cpp:27]   --->   Operation 31 'phi' 'ped_val_load_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (1.01ns)   --->   "%sub_ln37 = sub nsw i32 %ADC_read, %ped_val_load_3" [functions.cpp:37]   --->   Operation 32 'sub' 'sub_ln37' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %ADC, i32 %sub_ln37) nounwind" [functions.cpp:37]   --->   Operation 33 'write' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "br i1 %accum_flag_2, label %mergeST, label %._crit_edge1.new" [functions.cpp:17]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %accum, i32 %accum_new_2) nounwind" [functions.cpp:18]   --->   Operation 35 'write' <Predicate = (accum_flag_2)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "br label %._crit_edge1.new"   --->   Operation 36 'br' <Predicate = (accum_flag_2)> <Delay = 0.00>
+
+State 3 <SV = 5> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "ret void" [functions.cpp:39]   --->   Operation 37 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 3.13ns
+The critical path consists of the following:
+	wire read on port 'accum' (functions.cpp:18) [12]  (0 ns)
+	'add' operation ('add_ln18', functions.cpp:18) [13]  (1.02 ns)
+	'select' operation ('select_ln17', functions.cpp:17) [18]  (0.449 ns)
+	'icmp' operation ('icmp_ln31', functions.cpp:31) [22]  (0.991 ns)
+	multiplexor before 'phi' operation ('accum_flag_2', functions.cpp:17) with incoming values : ('icmp_ln17_1', functions.cpp:17) [33]  (0.675 ns)
+
+ <State 2>: 1.02ns
+The critical path consists of the following:
+	'phi' operation ('ped_val_load_3', functions.cpp:27) with incoming values : ('ped_val_read', functions.cpp:17) ('add_ln32', functions.cpp:32) ('add_ln27', functions.cpp:27) [35]  (0 ns)
+	'sub' operation ('sub_ln37', functions.cpp:37) [36]  (1.02 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

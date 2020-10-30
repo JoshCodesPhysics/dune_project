@@ -42,9 +42,14 @@
 			<location>/data/hmo31799/ped_sub/functions.h</location>
 		</link>
 		<link>
-			<name>solution1/constraints</name>
+			<name>function_wide_latency/constraints</name>
 			<type>2</type>
-			<location>/data/hmo31799/ped_sub/ped_sub_prj/solution1/.tcls</location>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/function_wide_latency/.tcls</location>
+		</link>
+		<link>
+			<name>individual_latency/constraints</name>
+			<type>2</type>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/.tcls</location>
 		</link>
 		<link>
 			<name>source/functions.cpp</name>
@@ -57,19 +62,34 @@
 			<location>/data/hmo31799/ped_sub/pedsub_test.cpp</location>
 		</link>
 		<link>
-			<name>solution1/constraints/.xml.directive</name>
+			<name>function_wide_latency/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/data/hmo31799/ped_sub/ped_sub_prj/solution1/solution1.directive</location>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/function_wide_latency/function_wide_latency.directive</location>
 		</link>
 		<link>
-			<name>solution1/constraints/directives.tcl</name>
+			<name>function_wide_latency/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/data/hmo31799/ped_sub/ped_sub_prj/solution1/directives.tcl</location>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/function_wide_latency/directives.tcl</location>
 		</link>
 		<link>
-			<name>solution1/constraints/script.tcl</name>
+			<name>function_wide_latency/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/data/hmo31799/ped_sub/ped_sub_prj/solution1/script.tcl</location>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/function_wide_latency/script.tcl</location>
+		</link>
+		<link>
+			<name>individual_latency/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/individual_latency.directive</location>
+		</link>
+		<link>
+			<name>individual_latency/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/directives.tcl</location>
+		</link>
+		<link>
+			<name>individual_latency/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>
