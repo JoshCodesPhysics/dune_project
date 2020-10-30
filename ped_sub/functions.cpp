@@ -1,54 +1,40 @@
 #include <iostream>
 #include "functions.h"
 
-void ped_alg(int ped_est, int accum, int ADC, int* results) {
-	// This function takes an input ped_est, the estimate of the pedestal
-	// (median) value, and can adjust this value according to whether
-	// the input ADC value is larger or smaller for a given number of
-	// iterations.  The accumulator value (accum) begins at 0, but
-	// if ADC[i] >(<) ped_est -> accum +(-) 1. Then if accum reaches
+void ped_alg(int& ped_val, int& accum, int& ADC) {
+	// This function takes an input ped_val, the estimate or previous
+	// pedestal (median) value, and can adjust this value according
+	// to whether the input ADC value is larger or smaller for a given
+	// number of iterations.
+	// The accumulator value (accum) begins at 0, but
+	// if 'ADC[i] >(<) ped_est' -> 'accum +(-) 1'. Then if accum reaches
 	// +(-) 10, the new pedestal value (ped) +(-) 1 and the accum value is
 	// reset to zero. This will be performed by a top function outside of
 	// ped_alg, whose only purpose is to output new pedestal, accumulator
 	// and ADC values.
 
-	int ped_new, accum_new, ADC_new;
-
 	// Accumulator condition
-	if (ADC > ped_est) {
-	accum_new = accum + 1;
+	if (ADC > ped_val) {
+	accum++;
 	}
 
-	else if (ADC < ped_est) {
-	accum_new = accum - 1;
-	}
-
-	else {
-	accum_new = accum;
+	else if (ADC < ped_val) {
+	accum--;
 	}
 
 	// pedestal condition
-	if (accum_new >= 10) {
-	ped_new = ped_est + 1;
-	accum_new = 0;
+	if (accum >= 10) {
+	ped_val++;
+	accum = 0;
 	}
 
-	else if (accum_new <= -10) {
-	ped_new = ped_est - 1;
-	accum_new = 0;
-	}
-
-	else {
-	ped_new = ped_est;
+	else if (accum <= -10) {
+	ped_val--;
+	accum = 0;
 	}
 
 	// New ADC value has new pedestal value subtracted
-	ADC_new = ADC - ped_new;
-
-	// Fill empty results array.
-	results[0] = ped_new;
-	results[1] = accum_new;
-	results[2] = ADC_new;
+	ADC = ADC - ped_val;
 
 }
 
@@ -67,16 +53,12 @@ void ped_sub(int ped_val, int packet_size, int* ADC_vals) {
 
 	int accum = 0;
 	int ped_new = ped_val;
-	int ped_results[3];
+	int ADC_temp;
 
 	ADC_scan: for (int i = 0; i < packet_size; i++) {
-		ped_alg(ped_new, accum, ADC_vals[i], ped_results);
-
-		// Recording output values for use in the next loop.
-		ped_new = ped_results[0];
-		accum = ped_results[1];
-		// Adjusted ADC values replace the old ones
-		ADC_vals[i] = ped_results[2];
+		ADC_temp = ADC_vals[i];
+		ped_alg(ped_new, accum, ADC_temp);
+		ADC_vals[i] = ADC_temp;
 	}
 
 	// Writing final accumulator and pedestal values to the end of the

@@ -11,7 +11,7 @@ add_files		functions.cpp
 add_files -tb 		pedsub_test.cpp
 
 # Specify the top-level function for synthesis
-set_top			ped_sub
+set_top			ped_alg
 
 ############################
 # Solution settings

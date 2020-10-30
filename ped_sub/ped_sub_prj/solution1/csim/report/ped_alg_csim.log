@@ -1,0 +1,83 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../functions.cpp in debug mode
+   Generating csim.exe
+New ADC value for index 0 is: 263
+New ADC value for index 1 is: 135
+New ADC value for index 2 is: 303
+New ADC value for index 3 is: 351
+New ADC value for index 4 is: 272
+New ADC value for index 5 is: 67
+New ADC value for index 6 is: 270
+New ADC value for index 7 is: 244
+New ADC value for index 8 is: 144
+New ADC value for index 9 is: 153
+New ADC value for index 10 is: 192
+New ADC value for index 11 is: 381
+New ADC value for index 12 is: 361
+New ADC value for index 13 is: 240
+New ADC value for index 14 is: 47
+New ADC value for index 15 is: 126
+New ADC value for index 16 is: 123
+New ADC value for index 17 is: 351
+New ADC value for index 18 is: 298
+New ADC value for index 19 is: 386
+New ADC value for index 20 is: 265
+New ADC value for index 21 is: 99
+New ADC value for index 22 is: 140
+New ADC value for index 23 is: 241
+New ADC value for index 24 is: 336
+New ADC value for index 25 is: 344
+New ADC value for index 26 is: 172
+New ADC value for index 27 is: 246
+New ADC value for index 28 is: 380
+New ADC value for index 29 is: 58
+New ADC value for index 30 is: 55
+New ADC value for index 31 is: 325
+New ADC value for index 32 is: 8
+New ADC value for index 33 is: 55
+New ADC value for index 34 is: 177
+New ADC value for index 35 is: 125
+New ADC value for index 36 is: 289
+New ADC value for index 37 is: 354
+New ADC value for index 38 is: 170
+New ADC value for index 39 is: 99
+New ADC value for index 40 is: 39
+New ADC value for index 41 is: 284
+New ADC value for index 42 is: 397
+New ADC value for index 43 is: 60
+New ADC value for index 44 is: 404
+New ADC value for index 45 is: 47
+New ADC value for index 46 is: 377
+New ADC value for index 47 is: 228
+New ADC value for index 48 is: 21
+New ADC value for index 49 is: 20
+New ADC value for index 50 is: 23
+New ADC value for index 51 is: 398
+New ADC value for index 52 is: 263
+New ADC value for index 53 is: 317
+New ADC value for index 54 is: 343
+New ADC value for index 55 is: 27
+New ADC value for index 56 is: 285
+New ADC value for index 57 is: 80
+New ADC value for index 58 is: 392
+New ADC value for index 59 is: 19
+New ADC value for index 60 is: 291
+New ADC value for index 61 is: 321
+New ADC value for index 62 is: 354
+New ADC value for index 63 is: 253
+
+Initial pedestal value: 390
+Final accumulator value for ADC packet is: 4
+Final pedestal value for ADC packet is: 396
+
+Expected pedestal change: 6
+R_MIN: 400  R_MAX: 800  N_SAMPLES: 64
+
+Pedestal estimate input < ADC range - N_SAMPLES/10 
+therefore pedestal should have increased by floor(N_SAMPLES/10) and the 
+accumulator should be equal to N_SAMPLES % 10:
+
+Conditions satisfied, test passed!
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

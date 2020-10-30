@@ -22,7 +22,7 @@
 #define PED_EST 390
 
 // Declaring functions.
-void ped_alg(int ped_est, int accum, int ADC, int* results);
+void ped_alg(int& ped_val, int& accum, int& ADC);
 
 void ped_sub(int ped_val, int packet_size, int* ADC_vals);
 

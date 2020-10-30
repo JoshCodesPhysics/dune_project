@@ -47,7 +47,8 @@ int main() {
 	  	}
 	}
 
-	// Copying random integers from ch0 into test array to be adjusted
+	// Copying random integers from the first packet of ch0
+	// into test array to be adjusted.
 	int test_array[N_SAMPLES + 2];
 
 	for (i = 0; i < N_SAMPLES; i++) {
