@@ -21,6 +21,5 @@ first section of functions.h
 
 ### Running test bench
 
-Choose a PED\_EST value in range < ``R_MIN - <int>N_SAMPLES/10`` or
-> ``R_max + <int>N_SAMPLES/10``. 
+Choose a PED\_EST value in range \< ``R_MIN - <int>N_SAMPLES/10`` or \> ``R_max + <int>N_SAMPLES/10``. 
 
