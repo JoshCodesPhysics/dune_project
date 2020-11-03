@@ -13,5 +13,5 @@ create_clock -period 250MHz -name default
 source "./ped_sub_prj/function_wide_latency/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -rtl vhdl
 export_design -format ip_catalog

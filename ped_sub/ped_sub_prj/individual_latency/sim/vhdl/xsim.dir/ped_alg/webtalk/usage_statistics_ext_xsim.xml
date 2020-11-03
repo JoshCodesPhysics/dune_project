@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Fri Oct 30 15:58:48 2020'>
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Nov  3 11:13:44 2020'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2902540" description="" />
-  <keyValuePair key="date_generated" value="Fri Oct 30 15:58:46 2020" description="" />
+  <keyValuePair key="date_generated" value="Tue Nov  3 11:13:42 2020" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="XSIM v2020.1 (64-bit)" description="" />
-  <keyValuePair key="project_id" value="4a24f8ce-8d5f-4cfa-a57a-564fd8d262eb" description="" />
+  <keyValuePair key="project_id" value="32d62493-7216-4a7c-ac4a-724780527630" description="" />
   <keyValuePair key="project_iteration" value="2" description="" />
   <keyValuePair key="random_id" value="69a15671-6cca-487f-ab12-cc30b3e65626" description="" />
   <keyValuePair key="registration_id" value="210751439_174129659_210646320_025" description="" />
@@ -20,7 +20,7 @@
  </section>
  <section name="user_environment" level="1" order="2" description="">
   <keyValuePair key="cpu_name" value="Intel(R) Xeon(R) CPU E5-2695 v4 @ 2.10GHz" description="" />
-  <keyValuePair key="cpu_speed" value="2065.264 MHz" description="" />
+  <keyValuePair key="cpu_speed" value="1309.552 MHz" description="" />
   <keyValuePair key="os_name" value="CentOS" description="" />
   <keyValuePair key="os_release" value="CentOS Linux release 7.8.2003 (Core)" description="" />
   <keyValuePair key="system_ram" value="33.000 GB" description="" />

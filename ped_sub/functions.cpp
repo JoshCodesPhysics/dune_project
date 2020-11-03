@@ -1,11 +1,17 @@
 #include <iostream>
 #include "functions.h"
 
-void ped_alg(int& ped_val, int& accum, int& ADC) {
+void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
+		     word_t tdata, bool tvalid, bool tkeep0,
+			 bool tkeep1, bool tready) {
 	// This function takes an input ped_val, the estimate or previous
 	// pedestal (median) value, and can adjust this value according
 	// to whether the input ADC value is larger or smaller for a given
 	// number of iterations.
+	//
+	// The input booleans are signal ports for the running conditions of
+	// the algorithm. These will be simulated and input by ped_sub().
+	//
 	// The accumulator value (accum) begins at 0, but
 	// if 'ADC[i] >(<) ped_est' -> 'accum +(-) 1'. Then if accum reaches
 	// +(-) 10, the new pedestal value (ped) +(-) 1 and the accum value is
@@ -13,35 +19,53 @@ void ped_alg(int& ped_val, int& accum, int& ADC) {
 	// ped_alg, whose only purpose is to output new pedestal, accumulator
 	// and ADC values.
 
-	accumulator_condition : {
-		if (ADC > ped_val) {
-			accum++;
+	// Run if no back pressure from tready, and the tvalid and tkeep
+	// signals are high.
+	if (!tready && tvalid && tkeep0 && tkeep1) {
+
+		//Extracting 12 bit ADC value from 16 bit word
+		int mask = 4095;
+
+		word_t trunc = mask & tdata;
+
+		ADC.bf = trunc;
+
+		// Running logic to change accumulator and/or pedestal
+		accumulator_condition : {
+			if (ADC.bf > ped_val) {
+				accum++;
+			}
+
+			else if (ADC.bf < ped_val) {
+				accum--;
+			}
 		}
 
-		else if (ADC < ped_val) {
-			accum--;
+		pedestal_condition : {
+			if (accum >= 10) {
+				ped_val++;
+				accum = 0;
+			}
+
+			else if (accum <= -10) {
+				ped_val--;
+				accum = 0;
+			}
 		}
-	}
 
-	pedestal_condition : {
-		if (accum >= 10) {
-			ped_val++;
-			accum = 0;
+		// Subtract the pedestal from the original value and assign it
+		// to the placeholder variable
+
+		ped_subtraction: {
+				ADC = ADC.bf - ped_val;
 		}
-
-
-		else if (accum <= -10) {
-			ped_val--;
-			accum = 0;
-		}
-	}
-
-	ped_sub: {
-		ADC = ADC - ped_val;
 	}
 }
 
-void ped_sub(int ped_val, int packet_size, int* ADC_vals) {
+void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
+		    word_t* packet, bool& tvalid, bool& tkeep0,
+			bool& tkeep1, bool& tready, bool& tlast,
+			bool& tuser) {
 	// N new ADC samples are stored in array index range
 	// 0 -> N - 1, the accumulator is then stored at index N,
 	// then final pedestal value stored at the
@@ -54,15 +78,47 @@ void ped_sub(int ped_val, int packet_size, int* ADC_vals) {
 	// value; looping through the original ADC values and applying
 	// the algorithm. Note that accum starts at zero.
 
-	int accum = 0;
-	int ped_new = ped_val;
-	int ADC_temp;
+	// Defining the loop variables
+	char accum = 0;
+	ADC_t ped_new = ped_val;
+	ADC_t ADC_temp;
+	int i = 0;
 
-	ADC_scan: for (int i = 0; i < packet_size; i++) {
-		ADC_temp = ADC_vals[i];
-		ped_alg(ped_new, accum, ADC_temp);
+	// Simulating the signal booleans
+
+	tuser = false;
+	tlast = false;
+	tready = false;
+
+	// While we have not reached the end of the frame or packet,
+	// scan the ADC values and adjust them accordingly
+	// (as well as the pedestal and accumulator).
+	ADC_scan: while (!tlast && !tuser) {
+
+		if (i == 0) {
+			tvalid = true;
+			tkeep0 = tvalid;
+			tkeep1 = tkeep0;
+		}
+
+		word_t temp_word = packet[i];
+
+		ped_alg(ped_new, accum, ADC_temp, temp_word,
+				tvalid, tkeep0, tkeep1, tready);
+
 		ADC_vals[i] = ADC_temp;
+
+		// End of frame or packet, cancel next loop.
+		if (i == packet_size - 1) {
+			tuser = tlast = true;
+		}
+
+		i++;
+		ADC_temp = 0;
+
 	}
+
+	tuser = tlast = false;
 
 	// Writing final accumulator and pedestal values to the end of the
 	// array.

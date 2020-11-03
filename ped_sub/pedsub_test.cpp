@@ -24,7 +24,7 @@ int main() {
 	// #define'd values such as N_WAVES)
 	// We use N_SAMPLES + 2 so there is space for the accumulator and
 	// pedestal values to be stored.
-	int packet_array[N_WAVES][N_CHANNELS][N_SAMPLES + 2];
+	word_t packet_array[N_WAVES][N_CHANNELS][N_SAMPLES + 2];
 
 	// Defining a random number generator seed
 
@@ -39,7 +39,7 @@ int main() {
 
 	 			// Provides random values within our desired
 				// range
-	 			int rand_value = R_MIN + (rand_seed
+	 			ADC_t rand_value = R_MIN + (rand_seed
 	 					 % (R_MAX - R_MIN + 1));
 				
 	 			packet_array[i][j][k] = rand_value;
@@ -49,15 +49,20 @@ int main() {
 
 	// Copying random integers from the first packet of ch0
 	// into test array to be adjusted.
-	int test_array[N_SAMPLES + 2];
+	ADC_t test_array[N_SAMPLES + 2];
 
 	for (i = 0; i < N_SAMPLES; i++) {
 		test_array[i] = packet_array[0][0][i];
 	}
 
+	ADC_t entry_array[N_SAMPLES + 2];
+
+	bool tvalid, tkeep0, tkeep1, tready, tlast, tuser;
+
 	// Filling test array with adjusted ADC, accumulator
 	// and pedestal values
-	ped_sub(PED_EST, N_SAMPLES, test_array);
+	ped_sub(PED_EST, N_SAMPLES, test_array, entry_array,
+			tvalid, tkeep0, tkeep1, tready, tlast, tuser);
 
 	// Printing results
 	result_loop: for (i = 0; i < N_SAMPLES + 2; i++) {

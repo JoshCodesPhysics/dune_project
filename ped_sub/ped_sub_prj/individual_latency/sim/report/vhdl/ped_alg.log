@@ -95,13 +95,13 @@ Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
 Running: /opt/ppd/tools/xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_ped_alg_top glbl -prj ped_alg.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims -L unisims_ver -L xpm --initfile /opt/ppd/tools/xilinx/Vivado/2020.1/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s ped_alg 
 Multi-threading is on. Using 34 slave threads.
 Determining compilation order of HDL files.
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/glbl.v" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/glbl.v" into library work
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ped_alg'
-INFO: [VRFC 10-163] Analyzing VHDL file "/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'apatb_ped_alg_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ped_alg'
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
@@ -125,9 +125,9 @@ Built simulation snapshot ped_alg
   **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
-source /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Oct 30 15:58:30 2020. For additional details about this file, please refer to the WebTalk help file at /opt/ppd/tools/xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Fri Oct 30 15:58:30 2020...
+source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/xsim.dir/ped_alg/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Nov  3 11:13:31 2020. For additional details about this file, please refer to the WebTalk help file at /opt/ppd/tools/xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov  3 11:13:31 2020...
 
 ****** xsim v2020.1 (64-bit)
   **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
@@ -141,12 +141,12 @@ Time resolution is 1 ps
 source ped_alg.tcl
 ## run all
 Note: simulation done!
-Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
+Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
 Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
-Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
+Time: 1154 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/sim/vhdl/ped_alg.autotb.vhd
 $finish called at time : 1154 ns
 ## quit
-INFO: [Common 17-206] Exiting xsim at Fri Oct 30 15:58:52 2020...
+INFO: [Common 17-206] Exiting xsim at Tue Nov  3 11:13:47 2020...
 New ADC value for index 0 is: 263
 New ADC value for index 1 is: 135
 New ADC value for index 2 is: 303

@@ -21,10 +21,24 @@
 // be used to observe the data regardless of the value of PED_EST.
 #define PED_EST 390
 
-// Declaring functions.
-void ped_alg(int& ped_val, int& accum, int& ADC);
+// Readable word datatype for signed 16 bit integer.
+typedef short word_t;
 
-void ped_sub(int ped_val, int packet_size, int* ADC_vals);
+// Bit field for storing 12 bit integer from word input
+struct ADC_t
+{
+	unsigned bf: 12;
+};
+
+// Declaring functions.
+void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
+	         word_t tdata, bool tvalid, bool tkeep0,
+			 bool tkeep1, bool tready);
+
+void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
+	         word_t* packet, bool& tvalid, bool& tkeep0,
+		     bool& tkeep1, bool& tready, bool& tlast,
+		     bool& tuser);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 

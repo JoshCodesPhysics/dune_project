@@ -1,0 +1,698 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../pedsub_test.cpp in debug mode
+../../../../pedsub_test.cpp: In function ‘int main()’:
+../../../../pedsub_test.cpp:42:31: error: conversion from ‘int’ to non-scalar type ‘ADC_t’ requested
+      ADC_t rand_value = R_MIN + (rand_seed
+                                
+../../../../pedsub_test.cpp:45:30: error: cannot convert ‘ADC_t’ to ‘word_t {aka short int}’ in assignment
+      packet_array[i][j][k] = rand_value;
+                              ^~~~~~~~~~
+../../../../pedsub_test.cpp:55:39: error: no match for ‘operator=’ (operand types are ‘ADC_t’ and ‘word_t {aka short int}’)
+   test_array[i] = packet_array[0][0][i];
+                                       ^
+In file included from ../../../../pedsub_test.cpp:2:0:
+../../../../functions.h:28:8: note: candidate: constexpr ADC_t& ADC_t::operator=(const ADC_t&)
+ struct ADC_t
+        ^~~~~
+../../../../functions.h:28:8: note:   no known conversion for argument 1 from ‘word_t {aka short int}’ to ‘const ADC_t&’
+../../../../functions.h:28:8: note: candidate: constexpr ADC_t& ADC_t::operator=(ADC_t&&)
+../../../../functions.h:28:8: note:   no known conversion for argument 1 from ‘word_t {aka short int}’ to ‘ADC_t&&’
+../../../../pedsub_test.cpp:65:48: error: could not convert ‘390’ from ‘int’ to ‘ADC_t’
+    tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+                                                ^
+../../../../pedsub_test.cpp:73:28: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘ADC_t’)
+    std::cout << endl << "Initial pedestal value: "
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       << PED_EST << endl
+       ~~~~~~~~~~~~~~~~~~    
+       << "Final accumulator value for " <<
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          "ADC packet is: " << test_array[i]
+          ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = ADC_t] <near match>
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note:   conversion of argument 1 would be ill-formed:
+../../../../pedsub_test.cpp:72:41: error: cannot bind ‘std::basic_ostream<char>’ lvalue to ‘std::basic_ostream<char>&&’
+    std::cout << endl << "Initial pedestal value: "
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       << PED_EST << endl
+       ~~~~~~~~~~~~~~~~~~                 
+       << "Final accumulator value for " <<
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+          "ADC packet is: " << test_array[i]
+          ~~~~~~~~~~~~~~~~~               
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::ios_base& (*)(std::ios_base&)’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘bool’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short unsigned int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘float’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘const void*’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const unsigned char*’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const signed char*’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const char*’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const char*’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   mismatched types ‘const _CharT*’ and ‘ADC_t’
+          "ADC packet is: " << test_array[i]
+                                           ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘unsigned char’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘signed char’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘char’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘char’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘ADC_t’)
+          "ADC packet is: " << test_array[i]
+                                           ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:46:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const std::error_code&’
+          "ADC packet is: " << test_array[i]
+                               ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/string:52:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/locale_classes.h:40,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:41,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:73:43: note:   ‘ADC_t’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+          "ADC packet is: " << test_array[i]
+                                           ^
+../../../../pedsub_test.cpp:76:26: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘ADC_t’)
+      std::cout << "Final pedestal value for ADC " <<
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            "packet is: " << test_array[i + 1]
+            ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = ADC_t] <near match>
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note:   conversion of argument 1 would be ill-formed:
+../../../../pedsub_test.cpp:75:51: error: cannot bind ‘std::basic_ostream<char>’ lvalue to ‘std::basic_ostream<char>&&’
+      std::cout << "Final pedestal value for ADC " <<
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+            "packet is: " << test_array[i + 1]
+            ~~~~~~~~~~~~~                           
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::ios_base& (*)(std::ios_base&)’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘bool’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short unsigned int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘float’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘const void*’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘const unsigned char*’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘const signed char*’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘const char*’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘const char*’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   mismatched types ‘const _CharT*’ and ‘ADC_t’
+            "packet is: " << test_array[i + 1]
+                                             ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘unsigned char’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘signed char’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘char’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘char’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘ADC_t’)
+            "packet is: " << test_array[i + 1]
+                                             ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:46:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   cannot convert ‘test_array[(i + 1)]’ (type ‘ADC_t’) to type ‘const std::error_code&’
+            "packet is: " << test_array[i + 1]
+                             ~~~~~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/string:52:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/locale_classes.h:40,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:41,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:76:45: note:   ‘ADC_t’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+            "packet is: " << test_array[i + 1]
+                                             ^
+../../../../pedsub_test.cpp:83:20: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘ADC_t’)
+      std::cout << "New ADC value for index " << i <<
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            " is: " << test_array[i] << endl;
+            ~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = ADC_t] <near match>
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:628:5: note:   conversion of argument 1 would be ill-formed:
+../../../../pedsub_test.cpp:82:51: error: cannot bind ‘std::basic_ostream<char>’ lvalue to ‘std::basic_ostream<char>&&’
+      std::cout << "New ADC value for index " << i <<
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+            " is: " << test_array[i] << endl;
+            ~~~~~~~                                 
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:108:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:117:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:127:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::ios_base& (*)(std::ios_base&)’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:166:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:170:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:174:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘bool’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:181:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘short unsigned int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘int’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:192:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:201:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:205:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long long unsigned int’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:220:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:224:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘float’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:232:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘long double’
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:245:7: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘const void*’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘ADC_t’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:574:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const unsigned char*’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:569:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const signed char*’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:556:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const char*’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:638:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const char*’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:539:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   mismatched types ‘const _CharT*’ and ‘ADC_t’
+            " is: " << test_array[i] << endl;
+                                   ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:519:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘unsigned char’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:514:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘signed char’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:508:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘char’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:502:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘char’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:497:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘ADC_t’)
+            " is: " << test_array[i] << endl;
+                                   ^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:46:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/system_error:209:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   cannot convert ‘test_array[i]’ (type ‘ADC_t’) to type ‘const std::error_code&’
+            " is: " << test_array[i] << endl;
+                       ~~~~~~~~~~~~^
+In file included from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/string:52:0,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/locale_classes.h:40,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/ios_base.h:41,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ios:42,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:38,
+                 from /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39,
+                 from ../../../../pedsub_test.cpp:1:
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/bits/basic_string.h:5325:5: note:   template argument deduction/substitution failed:
+../../../../pedsub_test.cpp:83:35: note:   ‘ADC_t’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+            " is: " << test_array[i] << endl;
+                                   ^
+../../../../pedsub_test.cpp:103:34: error: no match for ‘operator==’ (operand types are ‘ADC_t’ and ‘int’)
+   if ((test_array[N_SAMPLES + 1] == PED_EST +
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+                    (int)N_SAMPLES/10) &&
+                    ~~~~~~~~~~~~~~~~~
+../../../../pedsub_test.cpp:105:30: error: no match for ‘operator==’ (operand types are ‘ADC_t’ and ‘int’)
+       (test_array[N_SAMPLES] == N_SAMPLES % 10)) {
+        ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+../../../../pedsub_test.cpp:130:34: error: no match for ‘operator==’ (operand types are ‘ADC_t’ and ‘int’)
+   if ((test_array[N_SAMPLES + 1] == PED_EST -
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+                    (int)N_SAMPLES/10) &&
+                    ~~~~~~~~~~~~~~~~~
+../../../../pedsub_test.cpp:132:30: error: no match for ‘operator==’ (operand types are ‘ADC_t’ and ‘int’)
+       (test_array[N_SAMPLES] == -(N_SAMPLES % 10))) {
+        ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+make: *** [obj/pedsub_test.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

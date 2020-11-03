@@ -669,3 +669,310 @@ INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 Command   cosim_design done; 43.82 sec.
 Command ap_source done; 47.58 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency opened at Tue Nov 03 11:13:03 GMT 2020
+Execute     config_clock -quiet -name default -period 4 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/dsp48e2.hlp 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.19 sec.
+Command     ap_source done; 0.19 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus_fpv7 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus_fpv7.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xczu9eg-ffvb1156-2-e 
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data single -quiet 
+Command       ap_part_info done; 3.41 sec.
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute       add_library xilinx/zynquplus/zynquplus:xczu9eg:-ffvb1156:-2-e 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xczu9eg-ffvb1156-2-e 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data resources 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         config_chip_info -quiet -resource {SLICE 34260} {LUT 274080} {FF 548160} {DSP48E 2520} {BRAM 1824} {URAM 0} 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.11 sec.
+Execute       add_library xilinx/zynquplus/zynquplus_fpv7 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xczu9eg-ffvb1156-2-e'
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.72 sec.
+Execute     ap_part_info -data single -name xczu9eg-ffvb1156-2-e 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data resources 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     config_chip_info -quiet -resource {SLICE 34260} {LUT 274080} {FF 548160} {DSP48E 2520} {BRAM 1824} {URAM 0} 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.14 sec.
+Execute   cosim_design -rtl vhdl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/generic/autopilot/common.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/generic/autopilot/op.gen 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/generic/autopilot/interface.gen 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus_fpv7.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=4.000 (was NA)
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data names -quiet 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info -quiet 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.rtl_wrap.cfg.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     is_encrypted /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test.cpp 
+Execute     is_encrypted /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+INFO-FLOW: TB processing: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test.cpp /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/pedsub_test.cpp_pre.cpp
+Execute     tidy_31 xilinx-tb-xfmat /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/pedsub_test.cpp_pre.cpp std=c++11 
+INFO-FLOW: exec /opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/pedsub_test.cpp_pre.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command     tidy_31 done; 0.41 sec.
+Execute     tidy_31 xilinx-tb31-process /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/pedsub_test.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/pedsub_test.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command     tidy_31 done; 0.45 sec.
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+INFO-FLOW: TB processing: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/functions.cpp_pre.cpp
+Execute     tidy_31 xilinx-tb-xfmat /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/functions.cpp_pre.cpp std=c++11 
+INFO-FLOW: exec /opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/functions.cpp_pre.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command     tidy_31 done; 0.36 sec.
+Execute     tidy_31 xilinx-tb31-process /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/functions.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/functions.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command     tidy_31 done; 0.8 sec.
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.rtl_wrap.cfg.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.rtl_wrap.cfg.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.rtl_wrap.cfg.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command     ap_source done; 0.62 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/ped_alg.tbgen.tcl 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute     source .run_sim.tcl 
+Execute       source check_sim.tcl 
+Execute       source .sim.status.tcl 
+INFO: [COSIM 212-322] Starting VHDL simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command     ap_source done; 28.12 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+Command   cosim_design done; 41.28 sec.
+Command ap_source done; 45.46 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency opened at Tue Nov 03 18:05:58 GMT 2020
+Execute     config_clock -quiet -name default -period 4 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/dsp48e2.hlp 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.17 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus_fpv7 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/zynquplus/zynquplus_fpv7.gen 
+Execute       source /opt/ppd/tools/xilinx/Vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xczu9eg-ffvb1156-2-e 
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data single -quiet 
+Command       ap_part_info done; 3.43 sec.
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute       add_library xilinx/zynquplus/zynquplus:xczu9eg:-ffvb1156:-2-e 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xczu9eg-ffvb1156-2-e 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data resources 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         config_chip_info -quiet -resource {SLICE 34260} {LUT 274080} {FF 548160} {DSP48E 2520} {BRAM 1824} {URAM 0} 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.17 sec.
+Execute       add_library xilinx/zynquplus/zynquplus_fpv7 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xczu9eg-ffvb1156-2-e'
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.78 sec.
+Execute     ap_part_info -data single -name xczu9eg-ffvb1156-2-e 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data resources 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     config_chip_info -quiet -resource {SLICE 34260} {LUT 274080} {FF 548160} {DSP48E 2520} {BRAM 1824} {URAM 0} 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.41 sec.
+Execute   csim_design -quiet 
+Execute     source /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     is_encrypted /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test.cpp 
+Execute     is_xip /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test.cpp 
+Execute     is_encrypted /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp 
+Execute     is_xip /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp 
+Execute     ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 1.77 sec.
+Command ap_source done; error code: 1; 6.44 sec.
+Execute cleanup_all 
