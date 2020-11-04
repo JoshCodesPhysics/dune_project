@@ -8,10 +8,32 @@
 // Currently only the 0th channel is being used to test the ped_sub
 // algorithm from functions.cpp. To see if the algorithm works, select
 // a PED_EST (pedestal estimate) value according to the conditions
-// specified in the header file where it is #define'd.
+// specified at the beginning of the main function where it is defined.
 
 int main() {
 	
+	//Important constants, defined here due to required data type:
+
+	// Number of ADC samples per packet, number of channels
+	// (ADC arrays), number of data waves (number of times
+	// the array values are replaced with new ones):
+
+	int N_SAMPLES = 64;
+	int N_CHANNELS = 10;
+	int N_WAVES = 5;
+
+	// Min and max values for the random integer array:
+
+	int R_MIN = 400;
+	int R_MAX = 800;
+
+	// To properly utilise the testbench, set PED_EST
+	// to be either > R_MAX + floor(N_SAMPLES/10),
+	// or < R_MIN - floor(N_SAMPLES/10). However it can still
+	// be used to observe the data regardless of the value of PED_EST.
+	word_t PED_EST;
+	PED_EST = 390;
+
 	// iterators
 	int i, j, k;
 	
@@ -20,15 +42,15 @@ int main() {
 	// Generating a vector containing the data-wave vectors that
 	// contain the channel vectors that contain the packets of samples.
 	
-	// Defining the master vector (see header file for datatypes and
-	// #define'd values such as N_WAVES)
+	// Defining the master vector, see above for constant definitions.
+
 	// We use N_SAMPLES + 2 so there is space for the accumulator and
 	// pedestal values to be stored.
 	word_t packet_array[N_WAVES][N_CHANNELS][N_SAMPLES + 2];
 
 	// Defining a random number generator seed
 
-	static int rand_seed;
+	int rand_seed;
 	set_rnd_seed((R_MAX + R_MIN)/2, rand_seed);
 
 	// Appending random integer data packets to each channel in each wave
@@ -39,7 +61,8 @@ int main() {
 
 	 			// Provides random values within our desired
 				// range
-	 			ADC_t rand_value = R_MIN + (rand_seed
+	 			word_t rand_value;
+	 			rand_value = R_MIN + (rand_seed
 	 					 % (R_MAX - R_MIN + 1));
 				
 	 			packet_array[i][j][k] = rand_value;
@@ -49,20 +72,18 @@ int main() {
 
 	// Copying random integers from the first packet of ch0
 	// into test array to be adjusted.
-	ADC_t test_array[N_SAMPLES + 2];
+	word_t test_array[N_SAMPLES + 2];
 
 	for (i = 0; i < N_SAMPLES; i++) {
 		test_array[i] = packet_array[0][0][i];
 	}
 
-	ADC_t entry_array[N_SAMPLES + 2];
-
 	bool tvalid, tkeep0, tkeep1, tready, tlast, tuser;
 
 	// Filling test array with adjusted ADC, accumulator
 	// and pedestal values
-	ped_sub(PED_EST, N_SAMPLES, test_array, entry_array,
-			tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+	ped_sub(PED_EST, N_SAMPLES, test_array, tvalid,
+			tkeep0, tkeep1, tready, tlast, tuser);
 
 	// Printing results
 	result_loop: for (i = 0; i < N_SAMPLES + 2; i++) {

@@ -4,14 +4,14 @@
 // (ADC arrays), number of data waves (number of times
 // the array values are replaced with new ones):
 
-#define N_SAMPLES 64
-#define N_CHANNELS 10
-#define N_WAVES 5
+//#define N_SAMPLES 64
+//#define N_CHANNELS 10
+//#define N_WAVES 5
 
 // Min and max values for the random integer array:
 
-#define R_MIN 400
-#define R_MAX 800
+//#define R_MIN 400
+//#define R_MAX 800
 
 // Initial pre-algorithm pedestal value:
 
@@ -19,7 +19,7 @@
 // to be either > R_MAX + floor(N_SAMPLES/10),
 // or < R_MIN - floor(N_SAMPLES/10). However it can still
 // be used to observe the data regardless of the value of PED_EST.
-#define PED_EST 390
+//#define PED_EST 390
 
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
@@ -31,14 +31,13 @@ struct ADC_t
 };
 
 // Declaring functions.
-void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
+void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 	         word_t tdata, bool tvalid, bool tkeep0,
 			 bool tkeep1, bool tready);
 
-void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
-	         word_t* packet, bool& tvalid, bool& tkeep0,
-		     bool& tkeep1, bool& tready, bool& tlast,
-		     bool& tuser);
+void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+		     bool& tvalid, bool& tkeep0, bool& tkeep1,
+			 bool& tready, bool& tlast, bool& tuser);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 

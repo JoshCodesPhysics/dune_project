@@ -1,7 +1,7 @@
 #include <iostream>
 #include "functions.h"
 
-void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
+void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 		     word_t tdata, bool tvalid, bool tkeep0,
 			 bool tkeep1, bool tready) {
 	// This function takes an input ped_val, the estimate or previous
@@ -28,15 +28,15 @@ void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
 
 		word_t trunc = mask & tdata;
 
-		ADC.bf = trunc;
+		ADC = trunc;
 
 		// Running logic to change accumulator and/or pedestal
 		accumulator_condition : {
-			if (ADC.bf > ped_val) {
+			if (ADC > ped_val) {
 				accum++;
 			}
 
-			else if (ADC.bf < ped_val) {
+			else if (ADC < ped_val) {
 				accum--;
 			}
 		}
@@ -57,15 +57,14 @@ void ped_alg(ADC_t& ped_val, char& accum, ADC_t& ADC,
 		// to the placeholder variable
 
 		ped_subtraction: {
-				ADC = ADC.bf - ped_val;
+				ADC = ADC - ped_val;
 		}
 	}
 }
 
-void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
-		    word_t* packet, bool& tvalid, bool& tkeep0,
-			bool& tkeep1, bool& tready, bool& tlast,
-			bool& tuser) {
+void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+		    bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
+			bool& tlast, bool& tuser) {
 	// N new ADC samples are stored in array index range
 	// 0 -> N - 1, the accumulator is then stored at index N,
 	// then final pedestal value stored at the
@@ -80,8 +79,8 @@ void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
 
 	// Defining the loop variables
 	char accum = 0;
-	ADC_t ped_new = ped_val;
-	ADC_t ADC_temp;
+	word_t ped_new = ped_val;
+	word_t ADC_temp;
 	int i = 0;
 
 	// Simulating the signal booleans
@@ -106,7 +105,7 @@ void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
 		ped_alg(ped_new, accum, ADC_temp, temp_word,
 				tvalid, tkeep0, tkeep1, tready);
 
-		ADC_vals[i] = ADC_temp;
+		packet[i] = ADC_temp;
 
 		// End of frame or packet, cancel next loop.
 		if (i == packet_size - 1) {
@@ -123,8 +122,8 @@ void ped_sub(ADC_t ped_val, int packet_size, ADC_t ADC_vals,
 	// Writing final accumulator and pedestal values to the end of the
 	// array.
 
-	ADC_vals[packet_size] = accum;
-	ADC_vals[packet_size + 1] = ped_new;
+	packet[packet_size] = accum;
+	packet[packet_size + 1] = ped_new;
 }
 
 
@@ -145,23 +144,3 @@ void rand_int(int& rnd_seed) {
         ix += 2147483647;
     rnd_seed = ix;
 }
-
-// Start of final top function to handle all channels, possibly not
-// needed
-
-// int_array ped_packets(rand_waves ADC_master, int_array ped_est,
-//   		      int packets, int channels, int samples) {
-        // This functions handles packet waves of ADC samples for a
-        // number of channels, and stores the pedestal values between
-        // each wave for each channel, returning a final integer array
-        // of adjusted pedestal values for each channel. More packet
-        // waves = better final pedestal values. For data types see
-	// header file
-
-	// int_array accum_vec(channels, 0);
-	// int_array ped_vec(channels, 0)
-	// rand_waves ADC_new(packets);
-	// int i, j, k;
-
-	// for (i = 0, i < packets, i++) {
-	// 	ADC_new[i] = channel_array(channels);
