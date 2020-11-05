@@ -36,6 +36,18 @@
                 "value": "1"
               }]
           }
+        },
+        {
+          "functionName": "ped_alg",
+          "label": "ped_subtraction",
+          "functionLabel": "",
+          "pragma": {
+            "name": "LATENCY",
+            "option": [{
+                "name": "min",
+                "value": "2"
+              }]
+          }
         }
       ]
     }]}

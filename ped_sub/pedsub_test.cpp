@@ -31,6 +31,7 @@ int main() {
 	// to be either > R_MAX + floor(N_SAMPLES/10),
 	// or < R_MIN - floor(N_SAMPLES/10). However it can still
 	// be used to observe the data regardless of the value of PED_EST.
+
 	word_t PED_EST;
 	PED_EST = 390;
 

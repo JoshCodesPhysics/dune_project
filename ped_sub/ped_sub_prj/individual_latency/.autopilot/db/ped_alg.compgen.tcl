@@ -19,7 +19,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_ped_val \
     op interface \
-    ports { ped_val_i { I 32 vector } ped_val_o { O 32 vector } ped_val_o_ap_vld { O 1 bit } } \
+    ports { ped_val_i { I 16 vector } ped_val_o { O 16 vector } ped_val_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -34,7 +34,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_accum \
     op interface \
-    ports { accum_i { I 32 vector } accum_o { O 32 vector } accum_o_ap_vld { O 1 bit } } \
+    ports { accum_i { I 8 vector } accum_o { O 8 vector } accum_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -44,12 +44,87 @@ eval "cg_default_interface_gen_dc { \
     id 3 \
     name ADC \
     type other \
-    dir IO \
+    dir O \
     reset_level 1 \
     sync_rst true \
     corename dc_ADC \
     op interface \
-    ports { ADC_i { I 32 vector } ADC_o { O 32 vector } ADC_o_ap_vld { O 1 bit } } \
+    ports { ADC { O 16 vector } ADC_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 4 \
+    name tdata \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_tdata \
+    op interface \
+    ports { tdata { I 16 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 5 \
+    name tvalid \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_tvalid \
+    op interface \
+    ports { tvalid { I 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 6 \
+    name tkeep0 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_tkeep0 \
+    op interface \
+    ports { tkeep0 { I 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 7 \
+    name tkeep1 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_tkeep1 \
+    op interface \
+    ports { tkeep1 { I 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 8 \
+    name tready \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_tready \
+    op interface \
+    ports { tready { I 1 bit } } \
 } "
 }
 

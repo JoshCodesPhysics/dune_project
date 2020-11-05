@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'ped_alg'" level="0">
-<item name = "Date">Fri Oct 30 15:56:42 2020
+<item name = "Date">Thu Nov  5 13:20:22 2020
 </item>
-<item name = "Version">2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)</item>
+<item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">ped_sub_prj</item>
 <item name = "Solution">individual_latency</item>
 <item name = "Product family">zynquplus</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 3.131 ns, 0.50 ns</column>
+<column name="ap_clk">4.00 ns, 3.019 ns, 0.50 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3, 3, 12.000 ns, 12.000 ns, 3, 3, none</column>
+<column name="">1, 4, 4.000 ns, 16.000 ns, 1, 4, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,12 +47,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 359, -</column>
+<column name="Expression">-, -, 0, 186, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 84, -</column>
-<column name="Register">-, -, 101, -, -</column>
+<column name="Multiplexer">-, -, -, 90, -</column>
+<column name="Register">-, -, 55, -, -</column>
 <specialColumn name="Available">1824, 2520, 548160, 274080, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -77,37 +77,44 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln18_fu_131_p2">+, 0, 0, 39, 32, 1</column>
-<column name="add_ln22_fu_143_p2">+, 0, 0, 39, 32, 2</column>
-<column name="add_ln28_fu_190_p2">+, 0, 0, 39, 32, 1</column>
-<column name="add_ln34_fu_183_p2">+, 0, 0, 39, 32, 2</column>
-<column name="ADC_o">-, 0, 0, 39, 32, 32</column>
-<column name="icmp_ln17_1_fu_157_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln17_fu_125_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln21_fu_137_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln27_fu_171_p2">icmp, 0, 0, 20, 32, 4</column>
-<column name="icmp_ln33_fu_177_p2">icmp, 0, 0, 20, 32, 5</column>
-<column name="select_ln17_fu_163_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln21_fu_149_p3">select, 0, 0, 32, 1, 32</column>
+<column name="add_ln36_fu_214_p2">+, 0, 0, 15, 1, 8</column>
+<column name="add_ln40_fu_226_p2">+, 0, 0, 15, 2, 8</column>
+<column name="add_ln46_fu_273_p2">+, 0, 0, 23, 16, 1</column>
+<column name="add_ln51_fu_266_p2">+, 0, 0, 23, 16, 2</column>
+<column name="ADC">-, 0, 0, 23, 16, 16</column>
+<column name="and_ln24_fu_183_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln35_1_fu_240_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln35_fu_208_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln39_fu_220_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln45_fu_254_p2">icmp, 0, 0, 11, 8, 4</column>
+<column name="icmp_ln50_fu_260_p2">icmp, 0, 0, 11, 8, 5</column>
+<column name="or_ln24_1_fu_195_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln24_fu_177_p2">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln35_fu_246_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln39_fu_232_p3">select, 0, 0, 8, 1, 8</column>
+<column name="xor_ln24_1_fu_189_p2">xor, 0, 0, 2, 2, 1</column>
+<column name="xor_ln24_fu_171_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="accum_flag_2_reg_85">9, 2, 1, 2</column>
-<column name="accum_new_2_reg_99">9, 2, 32, 64</column>
-<column name="accum_o">9, 2, 32, 64</column>
-<column name="ap_NS_fsm">27, 5, 1, 5</column>
-<column name="ped_val_load_3_reg_114">15, 3, 32, 96</column>
-<column name="ped_val_o">15, 3, 32, 96</column>
+<column name="accum_flag_2_reg_142">9, 2, 1, 2</column>
+<column name="accum_new_2_reg_156">9, 2, 8, 16</column>
+<column name="accum_o">9, 2, 8, 16</column>
+<column name="ap_NS_fsm">33, 6, 1, 6</column>
+<column name="ped_val_load_3_reg_131">15, 3, 16, 48</column>
+<column name="ped_val_o">15, 3, 16, 48</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ADC_read_reg_203">32, 0, 32, 0</column>
-<column name="accum_flag_2_reg_85">1, 0, 1, 0</column>
-<column name="accum_new_2_reg_99">32, 0, 32, 0</column>
-<column name="ap_CS_fsm">4, 0, 4, 0</column>
-<column name="ped_val_load_3_reg_114">32, 0, 32, 0</column>
+<column name="accum_flag_2_reg_142">1, 0, 1, 0</column>
+<column name="accum_new_2_reg_156">8, 0, 8, 0</column>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
+<column name="or_ln24_1_reg_286">1, 0, 1, 0</column>
+<column name="ped_val_load_3_reg_131">16, 0, 16, 0</column>
+<column name="trunc_reg_290">12, 0, 12, 0</column>
+<column name="zext_ln29_reg_295">12, 0, 16, 4</column>
 </table>
 </item>
 </section>
@@ -123,15 +130,19 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, ped_alg, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, ped_alg, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, ped_alg, return value</column>
-<column name="ped_val_i">in, 32, ap_ovld, ped_val, pointer</column>
-<column name="ped_val_o">out, 32, ap_ovld, ped_val, pointer</column>
+<column name="ped_val_i">in, 16, ap_ovld, ped_val, pointer</column>
+<column name="ped_val_o">out, 16, ap_ovld, ped_val, pointer</column>
 <column name="ped_val_o_ap_vld">out, 1, ap_ovld, ped_val, pointer</column>
-<column name="accum_i">in, 32, ap_ovld, accum, pointer</column>
-<column name="accum_o">out, 32, ap_ovld, accum, pointer</column>
+<column name="accum_i">in, 8, ap_ovld, accum, pointer</column>
+<column name="accum_o">out, 8, ap_ovld, accum, pointer</column>
 <column name="accum_o_ap_vld">out, 1, ap_ovld, accum, pointer</column>
-<column name="ADC_i">in, 32, ap_ovld, ADC, pointer</column>
-<column name="ADC_o">out, 32, ap_ovld, ADC, pointer</column>
-<column name="ADC_o_ap_vld">out, 1, ap_ovld, ADC, pointer</column>
+<column name="ADC">out, 16, ap_vld, ADC, pointer</column>
+<column name="ADC_ap_vld">out, 1, ap_vld, ADC, pointer</column>
+<column name="tdata">in, 16, ap_none, tdata, scalar</column>
+<column name="tvalid">in, 1, ap_none, tvalid, scalar</column>
+<column name="tkeep0">in, 1, ap_none, tkeep0, scalar</column>
+<column name="tkeep1">in, 1, ap_none, tkeep1, scalar</column>
+<column name="tready">in, 1, ap_none, tready, scalar</column>
 </table>
 </item>
 </section>

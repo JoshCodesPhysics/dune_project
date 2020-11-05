@@ -16,20 +16,22 @@
     "DirectiveTcl": [
       "set_directive_latency ped_alg\/accumulator_condition -min 2",
       "set_directive_latency ped_alg\/pedestal_condition -min 2",
-      "set_directive_latency ped_alg\/ped_sub -min 1"
+      "set_directive_latency ped_alg\/ped_sub -min 1",
+      "set_directive_latency ped_alg\/ped_subtraction -min 2"
     ],
     "DirectiveInfo": [
       "latency ped_alg\/accumulator_condition {{min 2}} {}",
       "latency ped_alg\/pedestal_condition {{min 2}} {}",
-      "latency ped_alg\/ped_sub {{min 1}} {}"
+      "latency ped_alg\/ped_sub {{min 1}} {}",
+      "latency ped_alg\/ped_subtraction {{min 2}} {}"
     ]
   },
   "Args": {
     "ped_val": {
       "index": "0",
       "type": {
-        "dataType": "int",
-        "dataWidth": "32",
+        "dataType": "short",
+        "dataWidth": "16",
         "multiInterfaceRef": [
           "ped_val_i",
           "ped_val_o"
@@ -39,8 +41,8 @@
     "accum": {
       "index": "1",
       "type": {
-        "dataType": "int",
-        "dataWidth": "32",
+        "dataType": "char",
+        "dataWidth": "8",
         "multiInterfaceRef": [
           "accum_i",
           "accum_o"
@@ -50,12 +52,49 @@
     "ADC": {
       "index": "2",
       "type": {
-        "dataType": "int",
-        "dataWidth": "32",
-        "multiInterfaceRef": [
-          "ADC_i",
-          "ADC_o"
-        ]
+        "dataType": "short",
+        "dataWidth": "16",
+        "interfaceRef": "ADC"
+      }
+    },
+    "tdata": {
+      "index": "3",
+      "type": {
+        "dataType": "short",
+        "dataWidth": "16",
+        "interfaceRef": "tdata"
+      }
+    },
+    "tvalid": {
+      "index": "4",
+      "type": {
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tvalid"
+      }
+    },
+    "tkeep0": {
+      "index": "5",
+      "type": {
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tkeep0"
+      }
+    },
+    "tkeep1": {
+      "index": "6",
+      "type": {
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tkeep1"
+      }
+    },
+    "tready": {
+      "index": "7",
+      "type": {
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tready"
       }
     }
   },
@@ -67,7 +106,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "3",
+    "Latency": "1",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -87,9 +126,9 @@
     "Vhdl": ["impl\/vhdl\/ped_alg.vhd"],
     "Verilog": ["impl\/verilog\/ped_alg.v"],
     "Misc": ["impl\/misc\/logo.png"],
-    "DesignXml": "\/data\/hmo31799\/ped_sub\/ped_sub_prj\/individual_latency\/.autopilot\/db\/ped_alg.design.xml",
-    "DebugDir": "\/data\/hmo31799\/ped_sub\/ped_sub_prj\/individual_latency\/.debug",
-    "ProtoInst": ["\/data\/hmo31799\/ped_sub\/ped_sub_prj\/individual_latency\/.debug\/ped_alg.protoinst"]
+    "DesignXml": "\/home\/joshhorswill10\/Documents\/dune_project\/ped_sub\/ped_sub_prj\/individual_latency\/.autopilot\/db\/ped_alg.design.xml",
+    "DebugDir": "\/home\/joshhorswill10\/Documents\/dune_project\/ped_sub\/ped_sub_prj\/individual_latency\/.debug",
+    "ProtoInst": ["\/home\/joshhorswill10\/Documents\/dune_project\/ped_sub\/ped_sub_prj\/individual_latency\/.debug\/ped_alg.protoinst"]
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
@@ -100,10 +139,10 @@
     "accum_i": {
       "type": "data",
       "dir": "in",
-      "width": "32",
+      "width": "8",
       "ctype": {"DATA": {
           "Type": "integer signed",
-          "Width": "32"
+          "Width": "8"
         }},
       "bundle_name": "accum",
       "bundle_role": "i"
@@ -111,35 +150,24 @@
     "accum_o": {
       "type": "data",
       "dir": "out",
-      "width": "32",
+      "width": "8",
       "ctype": {"DATA": {
           "Type": "integer signed",
-          "Width": "32"
+          "Width": "8"
         }},
       "bundle_name": "accum",
       "bundle_role": "o"
     },
-    "ADC_i": {
-      "type": "data",
-      "dir": "in",
-      "width": "32",
-      "ctype": {"DATA": {
-          "Type": "integer signed",
-          "Width": "32"
-        }},
-      "bundle_name": "ADC",
-      "bundle_role": "i"
-    },
-    "ADC_o": {
+    "ADC": {
       "type": "data",
       "dir": "out",
-      "width": "32",
+      "width": "16",
       "ctype": {"DATA": {
           "Type": "integer signed",
-          "Width": "32"
+          "Width": "16"
         }},
       "bundle_name": "ADC",
-      "bundle_role": "o"
+      "bundle_role": "default"
     },
     "ap_clk": {
       "type": "clock",
@@ -168,10 +196,10 @@
     "ped_val_i": {
       "type": "data",
       "dir": "in",
-      "width": "32",
+      "width": "16",
       "ctype": {"DATA": {
           "Type": "integer signed",
-          "Width": "32"
+          "Width": "16"
         }},
       "bundle_name": "ped_val",
       "bundle_role": "i"
@@ -179,13 +207,68 @@
     "ped_val_o": {
       "type": "data",
       "dir": "out",
-      "width": "32",
+      "width": "16",
       "ctype": {"DATA": {
           "Type": "integer signed",
-          "Width": "32"
+          "Width": "16"
         }},
       "bundle_name": "ped_val",
       "bundle_role": "o"
+    },
+    "tdata": {
+      "type": "data",
+      "dir": "in",
+      "width": "16",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "16"
+        }},
+      "bundle_name": "tdata",
+      "bundle_role": "default"
+    },
+    "tkeep0": {
+      "type": "data",
+      "dir": "in",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tkeep0",
+      "bundle_role": "default"
+    },
+    "tkeep1": {
+      "type": "data",
+      "dir": "in",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tkeep1",
+      "bundle_role": "default"
+    },
+    "tready": {
+      "type": "data",
+      "dir": "in",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tready",
+      "bundle_role": "default"
+    },
+    "tvalid": {
+      "type": "data",
+      "dir": "in",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tvalid",
+      "bundle_role": "default"
     }
   },
   "RtlPorts": {
@@ -215,11 +298,11 @@
     },
     "ped_val_i": {
       "dir": "in",
-      "width": "32"
+      "width": "16"
     },
     "ped_val_o": {
       "dir": "out",
-      "width": "32"
+      "width": "16"
     },
     "ped_val_o_ap_vld": {
       "dir": "out",
@@ -227,26 +310,42 @@
     },
     "accum_i": {
       "dir": "in",
-      "width": "32"
+      "width": "8"
     },
     "accum_o": {
       "dir": "out",
-      "width": "32"
+      "width": "8"
     },
     "accum_o_ap_vld": {
       "dir": "out",
       "width": "1"
     },
-    "ADC_i": {
+    "ADC": {
+      "dir": "out",
+      "width": "16"
+    },
+    "ADC_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tdata": {
       "dir": "in",
-      "width": "32"
+      "width": "16"
     },
-    "ADC_o": {
-      "dir": "out",
-      "width": "32"
+    "tvalid": {
+      "dir": "in",
+      "width": "1"
     },
-    "ADC_o_ap_vld": {
-      "dir": "out",
+    "tkeep0": {
+      "dir": "in",
+      "width": "1"
+    },
+    "tkeep1": {
+      "dir": "in",
+      "width": "1"
+    },
+    "tready": {
+      "dir": "in",
       "width": "1"
     }
   },
@@ -261,21 +360,23 @@
       }},
     "Metrics": {"ped_alg": {
         "Latency": {
-          "LatencyBest": "3",
+          "LatencyBest": "1",
           "LatencyAvg": "3",
-          "LatencyWorst": "3",
-          "PipelineII": "4",
+          "LatencyWorst": "4",
+          "PipelineIIMin": "2",
+          "PipelineIIMax": "5",
+          "PipelineII": "2 ~ 5",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "3.131"
+          "Estimate": "3.019"
         },
         "Area": {
-          "FF": "101",
-          "LUT": "443",
+          "FF": "55",
+          "LUT": "276",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -292,8 +393,8 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-10-30 15:56:43 GMT",
+    "Time": "2020-11-05 13:20:22 GMT",
     "ToolName": "vivado_hls",
-    "ToolVersion": "2020.1"
+    "ToolVersion": "2019.2"
   }
 }

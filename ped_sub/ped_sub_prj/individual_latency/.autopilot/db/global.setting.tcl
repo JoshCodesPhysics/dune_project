@@ -42,7 +42,7 @@ set SCTraceOption all
 set TargetInfo xczu9eg:-ffvb1156:-2-e
 set SourceFiles {sc {} c ../../functions.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile /data/hmo31799/ped_sub/ped_sub_prj/individual_latency/individual_latency.directive
+set DirectiveFile /home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/individual_latency.directive
 set TBFiles {verilog ../../pedsub_test.cpp bc ../../pedsub_test.cpp vhdl ../../pedsub_test.cpp sc ../../pedsub_test.cpp cas ../../pedsub_test.cpp c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

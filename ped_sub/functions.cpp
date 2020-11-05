@@ -62,6 +62,15 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 	}
 }
 
+void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
+		 	 	   bool tready, bool tlast, bool tuser) {
+
+	std::cout << "tvalid | tkeep0 | tkeep1 | tuser | tlast | tready"
+				  << " : \n" << tvalid << " | " << tkeep0 << " | "
+				  << tkeep1 << " | " << tuser << " | " << tlast
+				  << " | " << tready << "\n";
+}
+
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 		    bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
 			bool& tlast, bool& tuser) {
@@ -85,9 +94,21 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 	// Simulating the signal booleans
 
+	std::cout << "\nBefore assigning values: \n";
+
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+
 	tuser = false;
 	tlast = false;
 	tready = false;
+
+	tvalid = tkeep0 = tkeep1 = true;
+
+	// Signals before scanning has begun:
+
+	std::cout << "\nBefore scanning: \n";
+
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
 
 	// While we have not reached the end of the frame or packet,
 	// scan the ADC values and adjust them accordingly
@@ -99,6 +120,10 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 			tkeep0 = tvalid;
 			tkeep1 = tkeep0;
 		}
+
+		std::cout << "\nSignals at start of loop " << i << ":\n";
+
+		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
 
 		word_t temp_word = packet[i];
 
@@ -115,6 +140,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 		i++;
 		ADC_temp = 0;
 
+		std::cout << "\nSignals at end of loop " << i << ":\n";
+
+		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+
+		std::cout << "\n";
 	}
 
 	tuser = tlast = false;
@@ -124,6 +154,12 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 	packet[packet_size] = accum;
 	packet[packet_size + 1] = ped_new;
+
+	std::cout << "\nSignals at the end of the testbench: \n";
+
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+
+	std::cout << "\n";
 }
 
 

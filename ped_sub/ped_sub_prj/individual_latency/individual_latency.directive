@@ -15,6 +15,11 @@
                 <option name="min" value="1"/>
             </pragma>
         </directive>
+        <directive functionName="ped_alg" label="ped_subtraction" functionLabel="">
+            <pragma name="LATENCY">
+                <option name="min" value="2"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

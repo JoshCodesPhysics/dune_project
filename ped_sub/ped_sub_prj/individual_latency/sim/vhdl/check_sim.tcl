@@ -1,6 +1,6 @@
 # ==============================================================
-# Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2020.1 (64-bit)
-# Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+# Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+# Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 # ==============================================================
 proc sc_sim_check {ret err logfile} {
 	if {$::AESL_AUTOSIM::gDebug == 1} {
@@ -82,7 +82,11 @@ proc check_tvin_file {} {
     set rtlfilelist {
          "c.ped_alg.autotvin_ped_val.dat"
          "c.ped_alg.autotvin_accum.dat"
-         "c.ped_alg.autotvin_ADC.dat"
+         "c.ped_alg.autotvin_tdata.dat"
+         "c.ped_alg.autotvin_tvalid.dat"
+         "c.ped_alg.autotvin_tkeep0.dat"
+         "c.ped_alg.autotvin_tkeep1.dat"
+         "c.ped_alg.autotvin_tready.dat"
          "c.ped_alg.autotvout_ped_val.dat"
          "c.ped_alg.autotvout_accum.dat"
          "c.ped_alg.autotvout_ADC.dat"

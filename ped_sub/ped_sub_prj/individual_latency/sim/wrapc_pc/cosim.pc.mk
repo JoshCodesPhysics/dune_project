@@ -1,16 +1,17 @@
 # ==============================================================
-# Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2020.1 (64-bit)
-# Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+# Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+# Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 # ==============================================================
 __SIM_FPO__ = 1
 __SIM_MATHHLS__ = 1
+__SIM_OPENCV__ = 1
 __SIM_FFT__ = 1
 __SIM_FIR__ = 1
 __SIM_DDS__ = 1
 
-override TARGET := cosim.pc.exe
+TARGET := cosim.pc.exe
 
-AUTOPILOT_ROOT := /opt/ppd/tools/xilinx/Vivado/2020.1
+AUTOPILOT_ROOT := /tools/Xilinx/Vivado/2019.2
 AUTOPILOT_MACH := lnx64
 
 ifdef COSIM_M32
@@ -23,7 +24,7 @@ ifdef AP_GCC_M32
 endif
 IFLAG += -fPIC
 ifndef AP_GCC_PATH
-  AP_GCC_PATH := /opt/ppd/tools/xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin
+  AP_GCC_PATH := /tools/Xilinx/Vivado/2019.2/tps/lnx64/gcc-6.2.0/bin
 endif
 AUTOPILOT_TOOL = ${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools
 AUTOPILOT_TECH = ${AUTOPILOT_ROOT}/common/technology
@@ -39,7 +40,9 @@ IFLAG += -I "${AUTOPILOT_ROOT}/common/technology/generic/SystemC/AESL_FP_comp"
 IFLAG += -I "${AUTOPILOT_ROOT}/common/technology/generic/SystemC/AESL_comp"
 IFLAG += -I "${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools/systemc/include"
 IFLAG += -I "${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools/auto_cc/include"
+IFLAG += -I "/usr/include/x86_64-linux-gnu"
 IFLAG += -D__SIM_FPO__
+IFLAG += -D__SIM_OPENCV__
 IFLAG += -D__SIM_FFT__
 IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__

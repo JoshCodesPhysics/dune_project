@@ -5,9 +5,6 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
-    <clockList>
-        <clock name="default" period="250MHz"/>
-    </clockList>
     <config>
         <schedule model="ped_alg"/>
     </config>
@@ -70,5 +67,8 @@
         <library name="DefaultPlatform" value="xilinx/zynquplus/zynquplus"/>
         <library name="DefaultPlatform" value="xilinx/zynquplus/zynquplus_fpv7"/>
     </libraryList>
+    <clockList>
+        <clock default="false" name="default" period="250MHz"/>
+    </clockList>
 </solution>
 
