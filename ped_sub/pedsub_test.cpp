@@ -122,6 +122,7 @@ int main() {
 			  << "accumulator should be equal to N_SAMPLES"
 			  << " % 10:" << endl;
 
+		// Algorithm pass condition for low PED_EST
 		if ((test_array[N_SAMPLES + 1] == PED_EST +
 				               (int)N_SAMPLES/10) &&
 		    (test_array[N_SAMPLES] == N_SAMPLES % 10)) {
@@ -132,6 +133,7 @@ int main() {
 			return 0;
 		}
 
+		// Fail
 		else {
 			std::cout << endl
 				  << "Test failed, conditions not satisfied."
@@ -149,6 +151,7 @@ int main() {
 			  << "accumulator should be equal to -(N_SAMPLES"
 			  << " % 10):" << endl;
 
+		// Algorithm pass condition for high PED_EST
 		if ((test_array[N_SAMPLES + 1] == PED_EST -
 				               (int)N_SAMPLES/10) &&
 		    (test_array[N_SAMPLES] == -(N_SAMPLES % 10))) {
@@ -159,6 +162,7 @@ int main() {
 			return 0;
 		}
 
+		// Fail
 		else {
 			std::cout << endl
 				  << "Test failed, conditions not satisfied."
@@ -167,6 +171,7 @@ int main() {
 		}
 	}
 
+	// PED_EST neither high nor low: still print results
 	else {
 		std::cout << endl
 			  << "To properly utilise this testbench, set PED_EST"

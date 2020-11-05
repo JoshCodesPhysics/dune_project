@@ -66,9 +66,9 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 		   bool tready, bool tlast, bool tuser) {
 
 	std::cout << "tvalid | tkeep0 | tkeep1 | tuser | tlast | tready"
-				  << " : \n" << tvalid << " | " << tkeep0 << " | "
-				  << tkeep1 << " | " << tuser << " | " << tlast
-				  << " | " << tready << "\n";
+	          << " : \n" << tvalid << " | " << tkeep0 << " | "
+		  << tkeep1 << " | " << tuser << " | " << tlast
+		  << " | " << tready << "\n";
 }
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
@@ -124,7 +124,7 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 		word_t temp_word = packet[i];
 
 		ped_alg(ped_new, accum, ADC_temp, temp_word,
-				tvalid, tkeep0, tkeep1, tready);
+			tvalid, tkeep0, tkeep1, tready);
 
 		packet[i] = ADC_temp;
 
