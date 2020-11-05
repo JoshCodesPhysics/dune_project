@@ -6,7 +6,7 @@
 \usepackage{hyperref}
 
 \author{Joshua Horswill}
-\title{Particle Physics with Research Year Abroad Info}
+\title{"Firmware block Implementation for the Proto-DUNEII Hit Finding architecture with the HLS tool"}
 
 \begin{document}
 \maketitle
@@ -15,23 +15,54 @@
 
 \section{DUNE's DAQ architecture; Envisaging the Alternatives}
 
-Background info:
+\subsection{{Overview}}
 
 \begin{itemize}
-	\item There are four modules of liquid argon; each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA.
+	\item There are four TPC (time projection chamber) modules of liquid argon; each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA. The Front End LInk eXchange system contains the focus of this project.
 	\item There are 10 fibres/data streams in the APA, each with 256 wires - hence the APA total of 2560
-	\item The MGT module processes the data stream into computational bits
-	\item The Hit Finder (HF) processor is 10 times faster than the incoming data stream.
-	\item The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
-	\item Each TPG unit processes 64 wires, and so there are 4 of them
-	\item In electronics, a multiplexer, also known as a data selector, is a device that selects between several analog or digital input signals and forwards it to a single output line. This is what happens after the data comes out of the TPG chain.
-	\item The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of data for hit finding.
-	\item TPC stands for time projection chamber.
-	\item Readout window per event between 3-5.5 ms for a 2.25 ms drift time.
+	\item The readout window per event is between 3-5.5 ms for a 2.25 ms drift time.
+	\item The FELIX architecture consists of 10 MGT modules that feed data into 10 Hit Finders (HF), each of which produce hits by processing ADC values in parallel. This enters the HF's via the data router, and then travel into 10 sets of 4 TPG block processors. These are multiplexed (combined) by the arbitrator into the Central Router (CR) interface.
 
+What are these things?
+	
+	\item The MGT module processes the APA data stream into computational bits.
+	\item The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
+	\item The data router receives multiple-channel, single clock-tick packets. The packets initially exist in a format containing the first sample for all channels, and when processed by the data router are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data.
+	\item Each TPG unit processes 64 wires, and so there are 4 of them ($4\times 64 = 256$, the number of wires in a fiber).
+	\item The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of ADC sample data for hit finding.
+	\item There is an AXI4-stream protocol for unpacking and reordering of data in the TPG block.
+	\item There are 4 general signals for various instructions in each component:
+	
+	\begin{enumerate}
+		\item tvalid denotes if the bus data is valid
+		\item tuser flag denotes the end of a frame
+		\item tlast denotes the end of packet
+		\item tready is used to apply back-pressure if the processing units ahead cannot process the data fast enough (all throughput is frozen).
+	\end{enumerate}
+	\item The TPG block strips the header in the Header Stripper/Combiner block (see figure \ref{fig:hsc}) and sends it to the output of the block. Meanwhile the 64 ADC values are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the chain. The data router is then signalled to send the next packet.
 \end{itemize}
 
-Why liquid argon? (See TPC wiki page)
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/HSC}
+	\caption{Focus on the header stripper/combiner and the sub-block chain \cite{manolopoulos_2020}.}
+	\label{fig:hsc}
+\end{figure}
+
+
+See figure \ref{fig:hfprocessor} for a visual representation of the HF structure and figure \ref{fig:fearch} for a similar view of the of the FELIX architecture.
+\\
+
+\begin{figure}
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.6\linewidth]{figures/HF_processor}}
+	\caption{Hit Finder Firmware Architecture \cite{manolopoulos_2020}.}
+	\label{fig:hfprocessor}
+\end{figure}
+
+\subsection{Why liquid argon?}
+
+From the TPC wiki page.
 
 \begin{enumerate}
 	\item Noble element: vanishing electronegativity (tendency of an atom to attract a pair of electrons that it shares with another atom) means that electrons produced by ionizing radiation will not be absorbed as they drift towards the detector.
@@ -90,32 +121,39 @@ FELIX is a PCIe based high-throughput approach for interfacing front-end and tri
 \begin{itemize}
 	\item ``The ATLAS Phase-I upgrade (2018) requires a Trigger and Data Acquisition (TDAQ) system able to trigger and record data from up to three times the nominal LHC instantaneous luminosity."
 	
-	\item The `Front-End LInk eXchange (FELIX)' system provides the infrastructure to achieve this in a scalable, detector agnostic (?) and easily upgradeable way.
+	\item The FELIX system provides the infrastructure to achieve this in a scalable, detector agnostic and easily upgradeable way.
 	
 	\item FELIX enables the reduction of custom electronics in favour of software running on commercial servers.
 	
 	\item FELIX is a PC-based networking gateway with the FPGA mounted on PCIe Gen3 cards (high speed connections used in motherboards to connect GPUs, SSD's, wifi chips e.t.c)
 \end{itemize}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/FE_arch}
+	\caption{Overview of the Felix architecture in ProtoDUNE \cite{manolopoulos_2020}}
+	\label{fig:fearch}
+\end{figure}
+
 \subsection{Data transfer}
 
-On one side of the FELIX system, the GigaBit Transceiver (GBT) architecture and a protocol developed by CERN provides 4.8 Gb/s radiation-hard optical link for data transmission from the on-detector front-end electronics. When all the data is multiplexed, the GBT protocol provides up to 42 independent data links, sharing the same fibre (?). The GBT frame consists of a 116 bit data (payload) and a 4 bit header, the latter of which is used to align the frame at the receiver side. It can be DATA (0101) or IDLE (0110). I believe Kostas mentioned this to me in his presentation.
+On one side of the FELIX system, the GigaBit Transceiver (GBT) architecture and a protocol developed by CERN provides 4.8 Gb/s radiation-hard optical link for data transmission from the on-detector front-end electronics. When all the data is multiplexed, the GBT protocol provides up to 42 independent data links, sharing the same fibre. The GBT frame consists of a 116 bit data (payload) and a 4 bit header, the latter of which is used to align the frame at the receiver side. It can be DATA (0101) or IDLE (0110).
 
 FELIX has to handle the Time, Trigger and Control (TTC) system \footnote{a system that executes one or more sets of tasks according to a pre-determined and set task schedule}, that is based on the recovered LHC clock, by forwarding the machine-synchronous trigger information. This info will be distributed to the aforementioned on-detector electronics over low and fixed latency GBT links. It will also be distributed to the first-level trigger systems.
 
-For the FrontEnds which needs a higher throughput toward FELIX, a customized lightweight FULL mode is defined. The link speed is 9.6 Gb/s, but as data is encoded in 8b/10b a maximum user payload of 7.68 Gb/s can be achieved, which is an improvement on the standard 4.8 Gb/s. Integration tests reveal that the demonstrator and prototype FELIX cards can stably distribute TTC info, recieve data from FrontEnd, and save it to the disk through the PCIe-3 interface \cite{anderson2016felix}. 
+For the FrontEnds which needs a higher throughput toward FELIX, a customized lightweight FULL mode is defined. The link speed is 9.6 Gb/s, but as data is encoded in 8b/10b a maximum user payload of 7.68 Gb/s can be achieved, which is an improvement on the standard 4.8 Gb/s \cite{anderson2016felix}. 
 
 \section{4 Tonne Demonstrator for Large-Scale Dual-Phase Liquid Argon TPC's}
 
 10 kilo-tonne dual-phase liquid argon TPC is one of the main detector options considered for DUNE. The detector relies on amplification of the ionisation charge in ultra-pure argon vapour, which holds several advantages over the single-phase liquid argon TPC. LAr TPC's offer unprecedented 3D imaging capabilities and the functionality of a homogeneous calorimeter. High-resolution imaging is the key to efficient background noise rejection.
 
-When a powerful neutrino beam is hypothetically shot from the United States' Fermilab to these LAr TPC's in the Sanford Underground Research facility in South Dakota, DUNE aims to serach for the leptonic CP violation and determine the ordering of the neutrino masses.
+When a powerful neutrino beam is hypothetically shot from the United States' Fermilab to these LAr TPC's in the Sanford Underground Research facility in South Dakota, DUNE aims to search for the leptonic CP violation and determine the ordering of the neutrino masses.
 
 Another objective is to extend the sensitivity of proton lifetime in a variety of possible decay channels, and collect high-statistics neutrino samples from atmospheric and astronomical sources.
 
 \subsection{Quick note on CP violation and neutrinos}
 
-CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex. Theoretically, this could arise from complex Yukawa couplings\footnote{interaction between a scalar field and Dirac field, could be used to describe nuclear force between nucleons, but mainly used to describe the coupling between the Higgs field and the massless quark/lepton fields} and/or a relative CP-violating phase in the vacuum expectation value (VEV) of the Higgs fields.
+CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex. Theoretically, this could arise from complex Yukawa couplings\footnote{Interaction between a scalar field and Dirac field, could be used to describe nuclear force between nucleons, but mainly used to describe the coupling between the Higgs field and the massless quark/lepton fields} and/or a relative CP-violating phase in the vacuum expectation value (VEV) of the Higgs fields.
 
 You would expect an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to leptonic CPV (LCPV). The discovery of neutrino oscillation provides evidence for non-vanishing neutrino masses and leptonic mixing.
 
@@ -143,12 +181,11 @@ Synthesis begins with a high-level specification of the problem, where behavior 
 
 The code is analysed, architecturally constrained, and scheduled to transcompile into a register-transfer level (RTL) design in a hardware description language (HDL), which is in turn commonly synthesized to the gate level by the use of a logic synthesis tool.
 
-RTl is a design abstraction which models a synchronous\footnote{A circuit that changes the state of memory elements in a way synchronised by a clock signal} digital circuit in terms of the flow of data between hardware registers\footnote{Circuits composed of flip flops - a sub circuit that has two stable states used to store state information (a basic storage element in sequential logic). These hardware registers have the ability to read or write multiple bits at a time and can use an address to select a particular register. They are used as an interface between the software and the computer peripherals.}, and the logical operations performed on those signals.
+RTL is a design abstraction which models a synchronous\footnote{A circuit that changes the state of memory elements in a way synchronised by a clock signal} digital circuit in terms of the flow of data between hardware registers\footnote{Circuits composed of flip flops - a sub circuit that has two stable states used to store state information (a basic storage element in sequential logic). These hardware registers have the ability to read or write multiple bits at a time and can use an address to select a particular register. They are used as an interface between the software and the computer peripherals.}, and the logical operations performed on those signals.
 
 RTL is used in HDLs i.e. languages that describe the structure and behaviour of electronic circuits, and more commonly digital logic circuits. It allows for circuitry simulation and digital analysis. HDLs look like programming languages such as C, but the main difference is that HDLs include the notion of time. RTLs are used in HDLs to create high-level representations of a circuit, from which lower-level representations and ultimately actual wiring can be derived. Design at the RTL levle is typical practise in modern digital design.
 
 RTL clock cycle data is given in Vivado performance estimate data, as it can read how long a certain block, loop or function in the code took to complete; this is called the latency.
-
 
 
 \subsection{HLS Design Flow}
@@ -272,7 +309,7 @@ The different numerical data types are as follows:
 
 Creating hardware means that accurate bit-widths are required. Using standard C data types for hardware design results in unnecessary hardware costs. Operations can use more LUTs and registers than needed for the required accuracy, causing delays that may exceed a given clock cycle, increasing the overall latency. Smaller bit widths (e.g using 17 bit data types for 17 bit multiplication rather than the standard C 32 bit data type) result in hardware operators which are smaller and faster. More logic can then fit in the FPGA and can operate at a higher clock frequency. 
 
-To implement arbitrary ap\_[u]int precision types in C++, include header file ap\_int.h in the project source file. Change the bit types to ap\_int<N> or ap\_uint<N>, where N is a bit-size ranging from 1 to 1024. You can set this limit higher by \texttt{\#define AP\_INT\_MAX\_W N}, but setting this too high can cause slow software compile and run times.
+To implement arbitrary ap\_[u]int precision types in C++, include header file ap\_int.h in the project source file. Change the bit types to ap\_int$\langle$N$\rangle$ or ap\_uint$\langle$N$\rangle$, where N is a bit-size ranging from 1 to 1024. You can set this limit higher by \texttt{\#define AP\_INT\_MAX\_W N}, but setting this too high can cause slow software compile and run times.
 
 \subsection{Interface Synthesis}
 
@@ -295,7 +332,9 @@ When this is the case, Vivado HLS can automatically unroll the loops consuming t
 
 If a struct contains arrays, those arrays can be optimised using the \texttt{ARRAY\_PARTITION} directive to partition the array or the \texttt{ARRAY\_RESHAPE} directive to partition the array and also re-combine the partitioned elements into a wider array. This can greatly improve performance. You cannot use \texttt{DATA\_PACK} and the the array directives in tandem; they are mutually exclusive.
 
-\subsection{AXI4 interfaces}
+\section{Pedestal Subtraction Algorithm}
+
+The pedestal subtraction algorithm is the first sub-block in the TPG core, fed from the Header stripper combiner.
 
 
 
