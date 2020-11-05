@@ -2,8 +2,8 @@
 #include "functions.h"
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-		     word_t tdata, bool tvalid, bool tkeep0,
-			 bool tkeep1, bool tready) {
+             word_t tdata, bool tvalid, bool tkeep0,
+	     bool tkeep1, bool tready) {
 	// This function takes an input ped_val, the estimate or previous
 	// pedestal (median) value, and can adjust this value according
 	// to whether the input ADC value is larger or smaller for a given
@@ -63,7 +63,7 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 }
 
 void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
-		 	 	   bool tready, bool tlast, bool tuser) {
+		   bool tready, bool tlast, bool tuser) {
 
 	std::cout << "tvalid | tkeep0 | tkeep1 | tuser | tlast | tready"
 				  << " : \n" << tvalid << " | " << tkeep0 << " | "
@@ -72,20 +72,16 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 }
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
-		    bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
-			bool& tlast, bool& tuser) {
+             bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
+             bool& tlast, bool& tuser) {
 	// N new ADC samples are stored in array index range
 	// 0 -> N - 1, the accumulator is then stored at index N,
 	// then final pedestal value stored at the
 	// end of the array at index N+1, so uniform datatype
-	// can be returned from this function. New array hence contains
+	// can be output into . New array hence contains
 	// N + 2 entries. Remember to truncate array if you want
 	// either ADC_new, accum or ped_new.
 	
-	// Defining new ADC vector, starting with pedestal estimate
-	// value; looping through the original ADC values and applying
-	// the algorithm. Note that accum starts at zero.
-
 	// Defining the loop variables
 	char accum = 0;
 	word_t ped_new = ped_val;

@@ -84,7 +84,7 @@ int main() {
 	// Filling test array with adjusted ADC, accumulator
 	// and pedestal values
 	ped_sub(PED_EST, N_SAMPLES, test_array, tvalid,
-			tkeep0, tkeep1, tready, tlast, tuser);
+	        tkeep0, tkeep1, tready, tlast, tuser);
 
 	// Printing results
 	result_loop: for (i = 0; i < N_SAMPLES + 2; i++) {

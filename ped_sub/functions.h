@@ -11,12 +11,12 @@ struct ADC_t
 
 // Declaring functions.
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-	         word_t tdata, bool tvalid, bool tkeep0,
-			 bool tkeep1, bool tready);
+	     word_t tdata, bool tvalid, bool tkeep0,
+	     bool tkeep1, bool tready);
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
-		     bool& tvalid, bool& tkeep0, bool& tkeep1,
-			 bool& tready, bool& tlast, bool& tuser);
+             bool& tvalid, bool& tkeep0, bool& tkeep1,
+	     bool& tready, bool& tlast, bool& tuser);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 
