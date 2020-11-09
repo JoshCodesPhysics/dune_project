@@ -1,5 +1,10 @@
 #include <iostream>
 #include "functions.h"
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <limits>
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
              word_t tdata, bool tvalid, bool tkeep0,
@@ -163,10 +168,13 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 // referencing a Park and Miller paper on the topic.
 
 void set_rnd_seed(int new_seed, int& rnd_seed) {
+    // Set new random integer seed
     rnd_seed = new_seed;
 }
 
 void rand_int(int& rnd_seed) {
+    // Setting rnd_seed to random integer, see pedsub_test.cpp
+    // for how to contain this in a given range
     int k1;
     int ix = rnd_seed;
 
@@ -175,4 +183,117 @@ void rand_int(int& rnd_seed) {
     if (ix < 0)
         ix += 2147483647;
     rnd_seed = ix;
+}
+
+std::fstream& GotoLine(std::fstream& file, unsigned int num) {
+	// Function to iterate to a certain line in a file,
+	// for the purpose of reading data on that specific line.
+	file.seekg(std::ios::beg);
+	for(int i = 0; i < num - 1; ++i) {
+		file.ignore(std::numeric_limits<std::streamsize>::max(),
+			    '\n');
+	}
+	
+	return file;
+}
+
+void read_values(std::string input_file, int packet_size, int sample,
+		 int packet, word_t& ADC, bool& tvalid, bool& tkeep0, 
+		 bool& tkeep1, bool& tlast, bool& tuser) {
+	
+	// This function reads a certain line from the input file
+	// and assigns values for the ADC and signal boolean
+	// variables.
+
+	// Input packet_size is number of samples in a packet
+	// (N_SAMPLES). Input sample is which sample in the packet
+	// is being read, with range [0, N_SAMPLES - 1].
+	// Input packet is the number indicating which packet
+	// the sample is being read from, with range
+	// [0, N_WAVES - 1].
+
+	// Open input file
+	std::fstream file(input_file);
+	
+	// Find line to read from input variables
+	int line_number = (packet * packet_size) + (sample + 1);
+
+	// Employ line finder function
+	GotoLine(file, line_number);
+
+	std::string ADC_s;
+
+	file >> ADC_s >> tvalid >> tlast >> tuser >> tkeep0;
+	tkeep1 = tkeep0;
+
+	std::stringstream ss;
+
+	ss << std::hex << ADC_s;
+	ss >> ADC;
+
+	// std::cout << ADC << " " << tvalid << " " << tlast
+	// 	  << " " << tuser << " " << tkeep0 << "\n";
+}
+
+void ped_sub_read(std::string input_file, word_t ped_val, 
+		  int num_packets, word_t* ped_array,
+	          int packet_size, bool& tvalid, bool& tkeep0, bool& tkeep1,
+	          bool& tready, bool& tlast, bool& tuser) {
+	
+	// This function runs ped_alg according to the ADC and boolean
+	// signals acquired from an input text file of the line format
+	// (where | represents the space delimiter): ADC (in hexadecimal) |
+	// tvalid |  tlast | tuser | tkeep. This does not include the header.
+	
+	// ped_val is the pedestal estimate initially fed into the algorithm.
+	// num_packets
+	//
+	// To be continued - perhaps rewrite the input text file with the
+	// results?
+	word_t ADC, ped_new;
+	int num_samples = num_packets * packet_size;
+	int i;
+	int sample = 0;
+	int packet = 0;
+
+	ped_new = ped_val;
+	char accum = 0;
+
+	tlast = tuser = false;
+
+	for (i = 0; i < num_samples; i++) {
+		
+		read_values(input_file, packet_size, sample, packet,
+			    ADC, tvalid, tkeep0, tkeep1, tlast, tuser);
+
+		if (tlast && tuser) {
+			packet++;
+			sample = 0;
+		}
+	}
+	
+}
+
+
+std::string input_file = "packet_data_adjusted.txt";
+int packet_size = 64;
+int sample = 0;
+int packet = 0;
+word_t ADC = 0;
+bool tvalid, tkeep0, tkeep1, tlast, tuser;
+
+int main() {
+	std::string space = " ";
+	std::cout << "Before function, in order ADC, tvalid, tlast "
+		  << "tuser, tkeep0: " << ADC << space << tvalid
+		  << space << tlast << space << tuser << space
+		  << tkeep0 << "\n";
+
+	read_values(input_file, packet_size, sample, packet, ADC, tvalid,
+	            tkeep0, tkeep1, tlast, tuser);
+	
+	std::cout << "After function, in order ADC, tvalid, tlast "
+		  << "tuser, tkeep0: " << ADC << space << tvalid
+		  << space << tlast << space << tuser << space
+		  << tkeep0 << "\n";
 }
