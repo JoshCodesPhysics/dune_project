@@ -6,7 +6,16 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:14:26.105+0000"/>
+        <logs message="tvalid: 0ADC read f@E Simulation failed: SIGSEGV." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:14:26.101+0000"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:13:44.001+0000"/>
+        <logs message="A@E Simulation failed: SIGSEGV." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:13:43.997+0000"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:01:30.570+0000"/>
+        <logs message="ADC read from line 6@E Simulation failed: SIGSEGV." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T15:01:30.566+0000"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T14:59:45.997+0000"/>
+        <logs message="ADC read from li@E Simulation failed: SIGSEGV." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-10T14:59:45.989+0000"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>

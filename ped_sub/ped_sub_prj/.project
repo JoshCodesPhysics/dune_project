@@ -37,11 +37,6 @@
 			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/functions.h</name>
-			<type>1</type>
-			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/functions.h</location>
-		</link>
-		<link>
 			<name>function_wide_latency/constraints</name>
 			<type>2</type>
 			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/function_wide_latency/.tcls</location>
@@ -52,14 +47,19 @@
 			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/.tcls</location>
 		</link>
 		<link>
+			<name>new_testbench/constraints</name>
+			<type>2</type>
+			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/.tcls</location>
+		</link>
+		<link>
 			<name>source/functions.cpp</name>
 			<type>1</type>
 			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/functions.cpp</location>
 		</link>
 		<link>
-			<name>testbench/pedsub_test.cpp</name>
+			<name>testbench/pedsub_test2.cpp</name>
 			<type>1</type>
-			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/pedsub_test.cpp</location>
+			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/pedsub_test2.cpp</location>
 		</link>
 		<link>
 			<name>function_wide_latency/constraints/.xml.directive</name>
@@ -90,6 +90,21 @@
 			<name>individual_latency/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/individual_latency/script.tcl</location>
+		</link>
+		<link>
+			<name>new_testbench/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/new_testbench.directive</location>
+		</link>
+		<link>
+			<name>new_testbench/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/directives.tcl</location>
+		</link>
+		<link>
+			<name>new_testbench/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

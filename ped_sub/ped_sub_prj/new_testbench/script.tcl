@@ -7,10 +7,10 @@ open_project ped_sub_prj
 set_top ped_alg
 add_files functions.cpp
 add_files -tb pedsub_test2.cpp
-open_solution "individual_latency"
+open_solution "new_testbench"
 set_part {xczu9eg-ffvb1156-2-e}
 create_clock -period 250MHz -name default
-source "./ped_sub_prj/individual_latency/directives.tcl"
+source "./ped_sub_prj/new_testbench/directives.tcl"
 csim_design
 csynth_design
 cosim_design -rtl vhdl

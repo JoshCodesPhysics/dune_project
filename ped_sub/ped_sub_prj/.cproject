@@ -161,36 +161,6 @@
                         					
                     </folderInfo>
                     					
-                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.576050568.423164282" name="pedsub_test.cpp" rcbsApplicability="disable" resourcePath="testbench/pedsub_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1238712591.381856846">
-                        						
-                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1238712591.381856846" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1238712591">
-                            							
-                            <option id="gnu.cpp.compiler.option.preprocessor.def.586063817" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-                            							
-                            <option id="gnu.cpp.compiler.option.include.paths.964978690" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/joshhorswill10/Documents/dune_project/ped_sub"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/auto_cc/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/ap_sysc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/systemc/include"/>
-                                							
-                            </option>
-                            							
-                            <option id="gnu.cpp.compiler.option.other.other.1987404578" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
-                            							
-                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.588262501" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-                            						
-                        </tool>
-                        					
-                    </fileInfo>
-                    					
                     <sourceEntries>
                         						
                         <entry excluding="function_wide_latency|individual_latency|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -342,36 +312,6 @@
                         </toolChain>
                         					
                     </folderInfo>
-                    					
-                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.642753384.1115641558" name="pedsub_test.cpp" rcbsApplicability="disable" resourcePath="testbench/pedsub_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1391422909.860370260">
-                        						
-                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1391422909.860370260" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1391422909">
-                            							
-                            <option id="gnu.cpp.compiler.option.preprocessor.def.2067722253" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-                            							
-                            <option id="gnu.cpp.compiler.option.include.paths.766169126" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/joshhorswill10/Documents/dune_project/ped_sub"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/auto_cc/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/ap_sysc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/systemc/include"/>
-                                							
-                            </option>
-                            							
-                            <option id="gnu.cpp.compiler.option.other.other.169393396" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
-                            							
-                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1762300362" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-                            						
-                        </tool>
-                        					
-                    </fileInfo>
                     					
                     <sourceEntries>
                         						

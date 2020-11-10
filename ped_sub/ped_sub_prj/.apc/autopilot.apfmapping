@@ -4,6 +4,6 @@
     <originFiles name="functions.cpp" path="/home/joshhorswill10/Documents/dune_project/ped_sub/functions.cpp"/>
   </source>
   <testbench>
-    <originFiles name="pedsub_test.cpp" path="/home/joshhorswill10/Documents/dune_project/ped_sub/pedsub_test.cpp"/>
+    <originFiles name="pedsub_test2.cpp" path="/home/joshhorswill10/Documents/dune_project/ped_sub/pedsub_test2.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
