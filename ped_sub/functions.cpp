@@ -197,48 +197,32 @@ std::fstream& GotoLine(std::fstream& file, unsigned int num) {
 	return file;
 }
 
-void read_values(std::string input_file, int packet_size, int sample,
-		 int packet, word_t& ADC, bool& tvalid, bool& tkeep0, 
-		 bool& tkeep1, bool& tlast, bool& tuser) {
+void read_values(std::fstream& file, word_t& ADC,
+		 bool& tvalid, bool& tkeep0, bool& tkeep1,
+		 bool& tlast, bool& tuser) {
 	
-	// This function reads a certain line from the input file
-	// and assigns values for the ADC and signal boolean
-	// variables.
-
-	// Input packet_size is number of samples in a packet
-	// (N_SAMPLES). Input sample is which sample in the packet
-	// is being read, with range [0, N_SAMPLES - 1].
-	// Input packet is the number indicating which packet
-	// the sample is being read from, with range
-	// [0, N_WAVES - 1].
-
-	// Open input file
-	std::fstream file(input_file);
+	// This function reads the next line within the input file
+	// and assigns values for the ADC and signal boolean variables.
 	
-	// Find line to read from input variables
-	int line_number = (packet * packet_size) + (sample + 1);
-
-	// Employ line finder function
-	GotoLine(file, line_number);
-
+	// String to store ADC hex value
 	std::string ADC_s;
 
+	// Read variables from the specified line
 	file >> ADC_s >> tvalid >> tlast >> tuser >> tkeep0;
 	tkeep1 = tkeep0;
 
 	std::stringstream ss;
 
+	// Conver the hex string to decimal for the ADC variable
 	ss << std::hex << ADC_s;
 	ss >> ADC;
-
-	// std::cout << ADC << " " << tvalid << " " << tlast
-	// 	  << " " << tuser << " " << tkeep0 << "\n";
 }
 
 void ped_sub_read(std::string input_file, word_t ped_val, 
-		  int num_packets, word_t* ped_array,
-	          int packet_size, bool& tvalid, bool& tkeep0, bool& tkeep1,
-	          bool& tready, bool& tlast, bool& tuser) {
+		  int num_packets, word_t* ped_array, word_t* ADC_array,
+	          char* accum_array, int packet_size, bool& tvalid,
+		  bool& tkeep0, bool& tkeep1, bool& tready, bool& tlast,
+		  bool& tuser) {
 	
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
@@ -246,54 +230,63 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 	// tvalid |  tlast | tuser | tkeep. This does not include the header.
 	
 	// ped_val is the pedestal estimate initially fed into the algorithm.
-	// num_packets
-	//
-	// To be continued - perhaps rewrite the input text file with the
-	// results?
+	// num_packets is the total number of packets being processed.
+	// ped_array is an empty array to store the pedestal values for a
+	// certain packet.
+	// ADC_array is an empty array to store the adjusted ADC values for
+	// all packets.
+	// packet_size indicates the number of samples in a packet
+	
+	// Temporary ADC and pedestal variables to later append
+	// to the arrays
 	word_t ADC, ped_new;
+
+	// Make sure tready is always low to prevent backpressure
+	tready = false;
+
+	// Total number of lines to process
 	int num_samples = num_packets * packet_size;
+
+	// Counters for the 'for' loop
 	int i;
-	int sample = 0;
 	int packet = 0;
 
+	// Starting values for pedestal and accumulator (ped_val is
+	// the estimate).
 	ped_new = ped_val;
 	char accum = 0;
 
-	tlast = tuser = false;
+	// Opening input file
+	std::fstream file(input_file);
 
 	for (i = 0; i < num_samples; i++) {
-		
-		read_values(input_file, packet_size, sample, packet,
-			    ADC, tvalid, tkeep0, tkeep1, tlast, tuser);
 
+		// Values are read from the input file
+		read_values(file, ADC, tvalid, tkeep0, tkeep1,
+			    tlast, tuser);
+
+		std::cout << "ADC before algorithm for line " << i
+			  << ": " << ADC << "\n";
+
+		// ADC value entered twice, ADC is assigned to itself
+		// truncated to 12 bits (subject to change)
+		ped_alg(ped_new, accum, ADC, ADC,
+			tvalid, tkeep0, tkeep1, tready);
+
+		// Append adjusted ADC value to storage array
+		ADC_array[i] = ADC;
+
+		std::cout << "ADC after algorithm for line " << i
+			  << ": " << ADC << "\n";
+
+		// These signals indicate end of packet, append
+		// pedestal value for this packet and continue
+		// to the next one.
 		if (tlast && tuser) {
+			ped_array[packet] = ped_new;
+			accum_array[packet] = accum;
 			packet++;
-			sample = 0;
 		}
 	}
 	
-}
-
-
-std::string input_file = "packet_data_adjusted.txt";
-int packet_size = 64;
-int sample = 0;
-int packet = 0;
-word_t ADC = 0;
-bool tvalid, tkeep0, tkeep1, tlast, tuser;
-
-int main() {
-	std::string space = " ";
-	std::cout << "Before function, in order ADC, tvalid, tlast "
-		  << "tuser, tkeep0: " << ADC << space << tvalid
-		  << space << tlast << space << tuser << space
-		  << tkeep0 << "\n";
-
-	read_values(input_file, packet_size, sample, packet, ADC, tvalid,
-	            tkeep0, tkeep1, tlast, tuser);
-	
-	std::cout << "After function, in order ADC, tvalid, tlast "
-		  << "tuser, tkeep0: " << ADC << space << tvalid
-		  << space << tlast << space << tuser << space
-		  << tkeep0 << "\n";
 }
