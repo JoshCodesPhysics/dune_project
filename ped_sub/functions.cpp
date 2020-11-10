@@ -265,7 +265,7 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 		read_values(file, ADC, tvalid, tkeep0, tkeep1,
 			    tlast, tuser);
 
-		std::cout << "ADC before algorithm for line " << i
+		std::cout << "ADC read from line " << i
 			  << ": " << ADC << "\n";
 
 		// ADC value entered twice, ADC is assigned to itself
@@ -276,8 +276,8 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 		// Append adjusted ADC value to storage array
 		ADC_array[i] = ADC;
 
-		std::cout << "ADC after algorithm for line " << i
-			  << ": " << ADC << "\n";
+		std::cout << "ADC after algorithm from the same line: "
+			  << ADC << "\n";
 
 		// These signals indicate end of packet, append
 		// pedestal value for this packet and continue
