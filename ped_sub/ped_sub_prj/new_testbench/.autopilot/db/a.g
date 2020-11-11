@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/.autopilot/db/a.g.bc ${1+"$@"}

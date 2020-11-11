@@ -6,7 +6,7 @@
 open_project ped_sub_prj
 set_top ped_alg
 add_files functions.cpp
-add_files -tb pedsub_test2.cpp
+add_files -tb pedsub_test2.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "new_testbench"
 set_part {xczu9eg-ffvb1156-2-e}
 create_clock -period 250MHz -name default

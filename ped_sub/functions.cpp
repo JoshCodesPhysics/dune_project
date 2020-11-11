@@ -4,7 +4,6 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <limits>
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
              word_t tdata, bool tvalid, bool tkeep0,
@@ -185,42 +184,8 @@ void rand_int(int& rnd_seed) {
     rnd_seed = ix;
 }
 
-std::fstream& GotoLine(std::fstream& file, unsigned int num) {
-	// Function to iterate to a certain line in a file,
-	// for the purpose of reading data on that specific line.
-	file.seekg(std::ios::beg);
-	for(int i = 0; i < num - 1; ++i) {
-		file.ignore(std::numeric_limits<std::streamsize>::max(),
-			    '\n');
-	}
-	
-	return file;
-}
-
-void read_values(std::fstream& file, word_t& ADC,
-		 bool& tvalid, bool& tkeep0, bool& tkeep1,
-		 bool& tlast, bool& tuser) {
-	
-	// This function reads the next line within the input file
-	// and assigns values for the ADC and signal boolean variables.
-	
-	// String to store ADC hex value
-	std::string ADC_s;
-
-	// Read variables from the specified line
-	file >> ADC_s >> tvalid >> tlast >> tuser >> tkeep0;
-	tkeep1 = tkeep0;
-
-	std::stringstream ss;
-
-	// Conver the hex string to decimal for the ADC variable
-	ss << std::hex << ADC_s;
-	ss >> ADC;
-}
-
-void ped_sub_read(std::string input_file, word_t ped_val, 
-		  int num_packets, word_t* ped_array, word_t* ADC_array,
-	          char* accum_array, int packet_size, bool& tvalid,
+void ped_sub_read(const std::string& input_file, word_t ped_val, word_t* ped_array,
+		  word_t* ADC_array, char* accum_array, bool& tvalid,
 		  bool& tkeep0, bool& tkeep1, bool& tready, bool& tlast,
 		  bool& tuser) {
 	
@@ -230,12 +195,10 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 	// tvalid |  tlast | tuser | tkeep. This does not include the header.
 	
 	// ped_val is the pedestal estimate initially fed into the algorithm.
-	// num_packets is the total number of packets being processed.
 	// ped_array is an empty array to store the pedestal values for a
 	// certain packet.
 	// ADC_array is an empty array to store the adjusted ADC values for
 	// all packets.
-	// packet_size indicates the number of samples in a packet
 	
 	// Temporary ADC and pedestal variables to later append
 	// to the arrays
@@ -244,11 +207,8 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 	// Make sure tready is always low to prevent backpressure
 	tready = false;
 
-	// Total number of lines to process
-	int num_samples = num_packets * packet_size;
-
 	// Counters for the 'for' loop
-	int i;
+	int count = 0;
 	int packet = 0;
 
 	// Starting values for pedestal and accumulator (ped_val is
@@ -256,37 +216,77 @@ void ped_sub_read(std::string input_file, word_t ped_val,
 	ped_new = ped_val;
 	char accum = 0;
 
-	// Opening input file
-	std::fstream file(input_file);
+	// Opening data file
+        std::ifstream data_file(input_file.c_str());
 
-	for (i = 0; i < num_samples; i++) {
-
-		// Values are read from the input file
-		read_values(file, ADC, tvalid, tkeep0, tkeep1,
-			    tlast, tuser);
-
-		std::cout << "ADC read from line " << i
-			  << ": " << ADC << "\n";
-
-		// ADC value entered twice, ADC is assigned to itself
-		// truncated to 12 bits (subject to change)
-		ped_alg(ped_new, accum, ADC, ADC,
-			tvalid, tkeep0, tkeep1, tready);
-
-		// Append adjusted ADC value to storage array
-		ADC_array[i] = ADC;
-
-		std::cout << "ADC after algorithm from the same line: "
-			  << ADC << "\n";
-
-		// These signals indicate end of packet, append
-		// pedestal value for this packet and continue
-		// to the next one.
-		if (tlast && tuser) {
-			ped_array[packet] = ped_new;
-			accum_array[packet] = accum;
-			packet++;
-		}
-	}
+	// Commented print scaffolding
+        // std::cout << "ADC | tvalid | tlast | tuser | tkeep\n";
 	
+	// Run the code if the file opens successfully
+	// (no c++ built in errors for file opening issues)
+	if (data_file.is_open()) {
+
+		// Buffer to read file line
+		std::string buffer;
+		
+		// Loops through all lines, writing each line to the buffer
+		// so the data can be processed
+		while (getline(data_file, buffer)) {
+			
+			// Buffer read print scaffolding
+			// std::cout << buffer << "\n";
+
+			// String to hold the ADC hex string
+			std::string ADC_s;
+
+			// Split buffer
+			std::stringstream ss(buffer);
+
+			// Reading data into our variables
+			ss >> ADC_s >> tvalid >> tlast >> tuser >> tkeep0;
+
+			tkeep1 = tkeep0;
+
+			// Converting the hex into short decimal
+			std::stringstream ss_hex;
+			ss_hex << std::hex << ADC_s;
+			ss_hex >> ADC;
+
+			std::cout << "ADC read from line " << count
+				  << ": " << ADC << "\n";
+			
+			// ADC value entered twice, ADC is assigned to itself
+			// truncated to 12 bits (subject to change).
+			// ped_alg is called every loop, all input variables
+			// are adjusted
+			ped_alg(ped_new, accum, ADC, ADC,
+				tvalid, tkeep0, tkeep1, tready);
+
+			// Append adjusted ADC value to storage array
+			ADC_array[count] = ADC;
+
+			std::cout << "ADC after algorithm from the same line: "
+				  << ADC << "\n";
+
+			// These signals indicate end of packet, append
+			// pedestal value for this packet and continue
+			// to the next one.
+			if (tlast && tuser) {
+				ped_array[packet] = ped_new;
+				accum_array[packet] = accum;
+				packet++;
+			}
+
+			// Add to the count for each loop to keep track of
+			// the line being processed
+			count++;
+		}
+
+		data_file.close();
+	}
+
+	// File failed to close
+	else {
+		std::cout << "File did not open! Simulation failed.\n";
+	}
 }

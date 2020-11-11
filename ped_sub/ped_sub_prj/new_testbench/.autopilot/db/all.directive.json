@@ -1,0 +1,53 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "ped_alg",
+          "label": "accumulator_condition",
+          "functionLabel": "",
+          "pragma": {
+            "name": "LATENCY",
+            "option": [{
+                "name": "min",
+                "value": "2"
+              }]
+          }
+        },
+        {
+          "functionName": "ped_alg",
+          "label": "pedestal_condition",
+          "functionLabel": "",
+          "pragma": {
+            "name": "LATENCY",
+            "option": [{
+                "name": "min",
+                "value": "2"
+              }]
+          }
+        },
+        {
+          "functionName": "ped_alg",
+          "label": "ped_sub",
+          "functionLabel": "",
+          "pragma": {
+            "name": "LATENCY",
+            "option": [{
+                "name": "min",
+                "value": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "ped_alg",
+          "label": "ped_subtraction",
+          "functionLabel": "",
+          "pragma": {
+            "name": "LATENCY",
+            "option": [{
+                "name": "min",
+                "value": "2"
+              }]
+          }
+        }
+      ]
+    }]}

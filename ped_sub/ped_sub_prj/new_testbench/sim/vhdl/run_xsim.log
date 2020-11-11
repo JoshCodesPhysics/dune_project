@@ -1,0 +1,1984 @@
+Running algorithm on input file: 
+
+0x01f4 1 0 0 1
+ADC read from line 0: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 1: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 2: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 3: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 4: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 5: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 6: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 7: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 8: 500
+ADC after algorithm from the same line: -20
+0x01f4 1 0 0 1
+ADC read from line 9: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 10: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 11: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 12: 500
+ADC after algorithm from the same line: -19
+0x01f5 1 0 0 1
+ADC read from line 13: 501
+ADC after algorithm from the same line: -18
+0x01f5 1 0 0 1
+ADC read from line 14: 501
+ADC after algorithm from the same line: -18
+0x01f7 1 0 0 1
+ADC read from line 15: 503
+ADC after algorithm from the same line: -16
+0x01f9 1 0 0 1
+ADC read from line 16: 505
+ADC after algorithm from the same line: -14
+0x01fb 1 0 0 1
+ADC read from line 17: 507
+ADC after algorithm from the same line: -12
+0x01ff 1 0 0 1
+ADC read from line 18: 511
+ADC after algorithm from the same line: -8
+0x0203 1 0 0 1
+ADC read from line 19: 515
+ADC after algorithm from the same line: -3
+0x0208 1 0 0 1
+ADC read from line 20: 520
+ADC after algorithm from the same line: 2
+0x020e 1 0 0 1
+ADC read from line 21: 526
+ADC after algorithm from the same line: 8
+0x0214 1 0 0 1
+ADC read from line 22: 532
+ADC after algorithm from the same line: 14
+0x021a 1 0 0 1
+ADC read from line 23: 538
+ADC after algorithm from the same line: 20
+0x021f 1 0 0 1
+ADC read from line 24: 543
+ADC after algorithm from the same line: 25
+0x0223 1 0 0 1
+ADC read from line 25: 547
+ADC after algorithm from the same line: 29
+0x0225 1 0 0 1
+ADC read from line 26: 549
+ADC after algorithm from the same line: 31
+0x0225 1 0 0 1
+ADC read from line 27: 549
+ADC after algorithm from the same line: 31
+0x0224 1 0 0 1
+ADC read from line 28: 548
+ADC after algorithm from the same line: 30
+0x0220 1 0 0 1
+ADC read from line 29: 544
+ADC after algorithm from the same line: 25
+0x021c 1 0 0 1
+ADC read from line 30: 540
+ADC after algorithm from the same line: 21
+0x0216 1 0 0 1
+ADC read from line 31: 534
+ADC after algorithm from the same line: 15
+0x0210 1 0 0 1
+ADC read from line 32: 528
+ADC after algorithm from the same line: 9
+0x020a 1 0 0 1
+ADC read from line 33: 522
+ADC after algorithm from the same line: 3
+0x0205 1 0 0 1
+ADC read from line 34: 517
+ADC after algorithm from the same line: -2
+0x0200 1 0 0 1
+ADC read from line 35: 512
+ADC after algorithm from the same line: -7
+0x01fc 1 0 0 1
+ADC read from line 36: 508
+ADC after algorithm from the same line: -11
+0x01f9 1 0 0 1
+ADC read from line 37: 505
+ADC after algorithm from the same line: -14
+0x01f7 1 0 0 1
+ADC read from line 38: 503
+ADC after algorithm from the same line: -16
+0x01f6 1 0 0 1
+ADC read from line 39: 502
+ADC after algorithm from the same line: -17
+0x01f5 1 0 0 1
+ADC read from line 40: 501
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 41: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 42: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 43: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 44: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 45: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 46: 500
+ADC after algorithm from the same line: -19
+0x01f4 1 0 0 1
+ADC read from line 47: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 48: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 49: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 50: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 51: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 52: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 53: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 54: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 55: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 56: 500
+ADC after algorithm from the same line: -18
+0x01f4 1 0 0 1
+ADC read from line 57: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 58: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 59: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 60: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 61: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 62: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 1 1 1
+ADC read from line 63: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 64: 500
+ADC after algorithm from the same line: -17
+0x01f5 1 0 0 1
+ADC read from line 65: 501
+ADC after algorithm from the same line: -16
+0x01f6 1 0 0 1
+ADC read from line 66: 502
+ADC after algorithm from the same line: -15
+0x01f8 1 0 0 1
+ADC read from line 67: 504
+ADC after algorithm from the same line: -12
+0x01fa 1 0 0 1
+ADC read from line 68: 506
+ADC after algorithm from the same line: -10
+0x01fd 1 0 0 1
+ADC read from line 69: 509
+ADC after algorithm from the same line: -7
+0x0202 1 0 0 1
+ADC read from line 70: 514
+ADC after algorithm from the same line: -2
+0x0207 1 0 0 1
+ADC read from line 71: 519
+ADC after algorithm from the same line: 3
+0x020c 1 0 0 1
+ADC read from line 72: 524
+ADC after algorithm from the same line: 8
+0x0213 1 0 0 1
+ADC read from line 73: 531
+ADC after algorithm from the same line: 15
+0x0219 1 0 0 1
+ADC read from line 74: 537
+ADC after algorithm from the same line: 21
+0x021f 1 0 0 1
+ADC read from line 75: 543
+ADC after algorithm from the same line: 27
+0x0224 1 0 0 1
+ADC read from line 76: 548
+ADC after algorithm from the same line: 32
+0x0228 1 0 0 1
+ADC read from line 77: 552
+ADC after algorithm from the same line: 36
+0x0229 1 0 0 1
+ADC read from line 78: 553
+ADC after algorithm from the same line: 37
+0x0229 1 0 0 1
+ADC read from line 79: 553
+ADC after algorithm from the same line: 37
+0x0226 1 0 0 1
+ADC read from line 80: 550
+ADC after algorithm from the same line: 34
+0x0222 1 0 0 1
+ADC read from line 81: 546
+ADC after algorithm from the same line: 30
+0x021c 1 0 0 1
+ADC read from line 82: 540
+ADC after algorithm from the same line: 24
+0x0216 1 0 0 1
+ADC read from line 83: 534
+ADC after algorithm from the same line: 17
+0x020f 1 0 0 1
+ADC read from line 84: 527
+ADC after algorithm from the same line: 10
+0x0209 1 0 0 1
+ADC read from line 85: 521
+ADC after algorithm from the same line: 4
+0x0204 1 0 0 1
+ADC read from line 86: 516
+ADC after algorithm from the same line: -1
+0x01ff 1 0 0 1
+ADC read from line 87: 511
+ADC after algorithm from the same line: -6
+0x01fb 1 0 0 1
+ADC read from line 88: 507
+ADC after algorithm from the same line: -10
+0x01f9 1 0 0 1
+ADC read from line 89: 505
+ADC after algorithm from the same line: -12
+0x01f7 1 0 0 1
+ADC read from line 90: 503
+ADC after algorithm from the same line: -14
+0x01f6 1 0 0 1
+ADC read from line 91: 502
+ADC after algorithm from the same line: -15
+0x01f5 1 0 0 1
+ADC read from line 92: 501
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 93: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 94: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 95: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 96: 500
+ADC after algorithm from the same line: -17
+0x01f4 1 0 0 1
+ADC read from line 97: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 98: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 99: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 100: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 101: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 102: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 103: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 104: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 105: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 106: 500
+ADC after algorithm from the same line: -16
+0x01f4 1 0 0 1
+ADC read from line 107: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 108: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 109: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 110: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 111: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 112: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 113: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 114: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 115: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 116: 500
+ADC after algorithm from the same line: -15
+0x01f4 1 0 0 1
+ADC read from line 117: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 118: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 119: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 120: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 121: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 122: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 123: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 124: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 125: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 126: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 1 1 1
+ADC read from line 127: 500
+ADC after algorithm from the same line: -13
+0x022d 1 0 0 1
+ADC read from line 128: 557
+ADC after algorithm from the same line: 44
+0x022d 1 0 0 1
+ADC read from line 129: 557
+ADC after algorithm from the same line: 44
+0x022b 1 0 0 1
+ADC read from line 130: 555
+ADC after algorithm from the same line: 42
+0x0228 1 0 0 1
+ADC read from line 131: 552
+ADC after algorithm from the same line: 39
+0x0222 1 0 0 1
+ADC read from line 132: 546
+ADC after algorithm from the same line: 33
+0x021b 1 0 0 1
+ADC read from line 133: 539
+ADC after algorithm from the same line: 26
+0x0214 1 0 0 1
+ADC read from line 134: 532
+ADC after algorithm from the same line: 19
+0x020d 1 0 0 1
+ADC read from line 135: 525
+ADC after algorithm from the same line: 12
+0x0207 1 0 0 1
+ADC read from line 136: 519
+ADC after algorithm from the same line: 6
+0x0202 1 0 0 1
+ADC read from line 137: 514
+ADC after algorithm from the same line: 0
+0x01fe 1 0 0 1
+ADC read from line 138: 510
+ADC after algorithm from the same line: -4
+0x01fa 1 0 0 1
+ADC read from line 139: 506
+ADC after algorithm from the same line: -8
+0x01f8 1 0 0 1
+ADC read from line 140: 504
+ADC after algorithm from the same line: -10
+0x01f6 1 0 0 1
+ADC read from line 141: 502
+ADC after algorithm from the same line: -12
+0x01f5 1 0 0 1
+ADC read from line 142: 501
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 143: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 144: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 145: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 146: 500
+ADC after algorithm from the same line: -14
+0x01f4 1 0 0 1
+ADC read from line 147: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 148: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 149: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 150: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 151: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 152: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 153: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 154: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 155: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 156: 500
+ADC after algorithm from the same line: -13
+0x01f4 1 0 0 1
+ADC read from line 157: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 158: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 159: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 160: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 161: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 162: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 163: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 164: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 165: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 166: 500
+ADC after algorithm from the same line: -12
+0x01f4 1 0 0 1
+ADC read from line 167: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 168: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 169: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 170: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 171: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 172: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 173: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 174: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 175: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 176: 500
+ADC after algorithm from the same line: -11
+0x01f4 1 0 0 1
+ADC read from line 177: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 178: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 179: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 180: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 181: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 182: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 183: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 184: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 185: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 186: 500
+ADC after algorithm from the same line: -10
+0x01f4 1 0 0 1
+ADC read from line 187: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 188: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 189: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 190: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 1 1 1
+ADC read from line 191: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 192: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 193: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 194: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 195: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 196: 500
+ADC after algorithm from the same line: -9
+0x01f4 1 0 0 1
+ADC read from line 197: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 198: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 199: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 200: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 201: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 202: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 203: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 204: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 205: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 206: 500
+ADC after algorithm from the same line: -8
+0x01f4 1 0 0 1
+ADC read from line 207: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 208: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 209: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 210: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 211: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 212: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 213: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 214: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 215: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 216: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 217: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 218: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 219: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 220: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 221: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 222: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 223: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 224: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 225: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 226: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 227: 500
+ADC after algorithm from the same line: -5
+0x01f5 1 0 0 1
+ADC read from line 228: 501
+ADC after algorithm from the same line: -4
+0x01f6 1 0 0 1
+ADC read from line 229: 502
+ADC after algorithm from the same line: -3
+0x01f7 1 0 0 1
+ADC read from line 230: 503
+ADC after algorithm from the same line: -2
+0x01fa 1 0 0 1
+ADC read from line 231: 506
+ADC after algorithm from the same line: 1
+0x01fd 1 0 0 1
+ADC read from line 232: 509
+ADC after algorithm from the same line: 4
+0x0201 1 0 0 1
+ADC read from line 233: 513
+ADC after algorithm from the same line: 8
+0x0206 1 0 0 1
+ADC read from line 234: 518
+ADC after algorithm from the same line: 13
+0x020c 1 0 0 1
+ADC read from line 235: 524
+ADC after algorithm from the same line: 19
+0x0213 1 0 0 1
+ADC read from line 236: 531
+ADC after algorithm from the same line: 26
+0x021b 1 0 0 1
+ADC read from line 237: 539
+ADC after algorithm from the same line: 34
+0x0222 1 0 0 1
+ADC read from line 238: 546
+ADC after algorithm from the same line: 41
+0x0229 1 0 0 1
+ADC read from line 239: 553
+ADC after algorithm from the same line: 48
+0x022e 1 0 0 1
+ADC read from line 240: 558
+ADC after algorithm from the same line: 53
+0x0231 1 0 0 1
+ADC read from line 241: 561
+ADC after algorithm from the same line: 56
+0x0231 1 0 0 1
+ADC read from line 242: 561
+ADC after algorithm from the same line: 56
+0x0230 1 0 0 1
+ADC read from line 243: 560
+ADC after algorithm from the same line: 54
+0x022c 1 0 0 1
+ADC read from line 244: 556
+ADC after algorithm from the same line: 50
+0x0226 1 0 0 1
+ADC read from line 245: 550
+ADC after algorithm from the same line: 44
+0x021f 1 0 0 1
+ADC read from line 246: 543
+ADC after algorithm from the same line: 37
+0x0217 1 0 0 1
+ADC read from line 247: 535
+ADC after algorithm from the same line: 29
+0x0210 1 0 0 1
+ADC read from line 248: 528
+ADC after algorithm from the same line: 22
+0x0209 1 0 0 1
+ADC read from line 249: 521
+ADC after algorithm from the same line: 15
+0x0204 1 0 0 1
+ADC read from line 250: 516
+ADC after algorithm from the same line: 10
+0x01ff 1 0 0 1
+ADC read from line 251: 511
+ADC after algorithm from the same line: 5
+0x01fb 1 0 0 1
+ADC read from line 252: 507
+ADC after algorithm from the same line: 1
+0x01f8 1 0 0 1
+ADC read from line 253: 504
+ADC after algorithm from the same line: -2
+0x01f7 1 0 0 1
+ADC read from line 254: 503
+ADC after algorithm from the same line: -3
+0x01f5 1 1 1 1
+ADC read from line 255: 501
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 256: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 257: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 258: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 259: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 260: 500
+ADC after algorithm from the same line: -6
+0x01f5 1 0 0 1
+ADC read from line 261: 501
+ADC after algorithm from the same line: -5
+0x01f6 1 0 0 1
+ADC read from line 262: 502
+ADC after algorithm from the same line: -4
+0x01f7 1 0 0 1
+ADC read from line 263: 503
+ADC after algorithm from the same line: -3
+0x01fa 1 0 0 1
+ADC read from line 264: 506
+ADC after algorithm from the same line: 0
+0x01fd 1 0 0 1
+ADC read from line 265: 509
+ADC after algorithm from the same line: 3
+0x0201 1 0 0 1
+ADC read from line 266: 513
+ADC after algorithm from the same line: 7
+0x0207 1 0 0 1
+ADC read from line 267: 519
+ADC after algorithm from the same line: 13
+0x020d 1 0 0 1
+ADC read from line 268: 525
+ADC after algorithm from the same line: 19
+0x0215 1 0 0 1
+ADC read from line 269: 533
+ADC after algorithm from the same line: 27
+0x021d 1 0 0 1
+ADC read from line 270: 541
+ADC after algorithm from the same line: 35
+0x0225 1 0 0 1
+ADC read from line 271: 549
+ADC after algorithm from the same line: 43
+0x022c 1 0 0 1
+ADC read from line 272: 556
+ADC after algorithm from the same line: 50
+0x0231 1 0 0 1
+ADC read from line 273: 561
+ADC after algorithm from the same line: 55
+0x0235 1 0 0 1
+ADC read from line 274: 565
+ADC after algorithm from the same line: 59
+0x0235 1 0 0 1
+ADC read from line 275: 565
+ADC after algorithm from the same line: 59
+0x0234 1 0 0 1
+ADC read from line 276: 564
+ADC after algorithm from the same line: 57
+0x0230 1 0 0 1
+ADC read from line 277: 560
+ADC after algorithm from the same line: 53
+0x022a 1 0 0 1
+ADC read from line 278: 554
+ADC after algorithm from the same line: 47
+0x0222 1 0 0 1
+ADC read from line 279: 546
+ADC after algorithm from the same line: 39
+0x021a 1 0 0 1
+ADC read from line 280: 538
+ADC after algorithm from the same line: 31
+0x0213 1 0 0 1
+ADC read from line 281: 531
+ADC after algorithm from the same line: 24
+0x020b 1 0 0 1
+ADC read from line 282: 523
+ADC after algorithm from the same line: 16
+0x0205 1 0 0 1
+ADC read from line 283: 517
+ADC after algorithm from the same line: 10
+0x0200 1 0 0 1
+ADC read from line 284: 512
+ADC after algorithm from the same line: 5
+0x01fc 1 0 0 1
+ADC read from line 285: 508
+ADC after algorithm from the same line: 1
+0x01f9 1 0 0 1
+ADC read from line 286: 505
+ADC after algorithm from the same line: -2
+0x01f7 1 0 0 1
+ADC read from line 287: 503
+ADC after algorithm from the same line: -4
+0x01f6 1 0 0 1
+ADC read from line 288: 502
+ADC after algorithm from the same line: -5
+0x01f5 1 0 0 1
+ADC read from line 289: 501
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 290: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 291: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 292: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 293: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 294: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 295: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 296: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 297: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 298: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 299: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 300: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 301: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 302: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 303: 500
+ADC after algorithm from the same line: -7
+0x01f4 1 0 0 1
+ADC read from line 304: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 305: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 306: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 307: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 308: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 309: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 310: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 311: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 312: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 313: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 314: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 315: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 316: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 317: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 318: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 1 1 1
+ADC read from line 319: 500
+ADC after algorithm from the same line: -5
+0x022d 1 0 0 1
+ADC read from line 320: 557
+ADC after algorithm from the same line: 52
+0x0233 1 0 0 1
+ADC read from line 321: 563
+ADC after algorithm from the same line: 58
+0x0238 1 0 0 1
+ADC read from line 322: 568
+ADC after algorithm from the same line: 63
+0x0239 1 0 0 1
+ADC read from line 323: 569
+ADC after algorithm from the same line: 64
+0x0238 1 0 0 1
+ADC read from line 324: 568
+ADC after algorithm from the same line: 63
+0x0235 1 0 0 1
+ADC read from line 325: 565
+ADC after algorithm from the same line: 60
+0x022f 1 0 0 1
+ADC read from line 326: 559
+ADC after algorithm from the same line: 54
+0x0227 1 0 0 1
+ADC read from line 327: 551
+ADC after algorithm from the same line: 46
+0x021f 1 0 0 1
+ADC read from line 328: 543
+ADC after algorithm from the same line: 38
+0x0217 1 0 0 1
+ADC read from line 329: 535
+ADC after algorithm from the same line: 30
+0x020f 1 0 0 1
+ADC read from line 330: 527
+ADC after algorithm from the same line: 22
+0x0208 1 0 0 1
+ADC read from line 331: 520
+ADC after algorithm from the same line: 15
+0x0202 1 0 0 1
+ADC read from line 332: 514
+ADC after algorithm from the same line: 9
+0x01fd 1 0 0 1
+ADC read from line 333: 509
+ADC after algorithm from the same line: 4
+0x01fa 1 0 0 1
+ADC read from line 334: 506
+ADC after algorithm from the same line: 0
+0x01f8 1 0 0 1
+ADC read from line 335: 504
+ADC after algorithm from the same line: -2
+0x01f6 1 0 0 1
+ADC read from line 336: 502
+ADC after algorithm from the same line: -4
+0x01f5 1 0 0 1
+ADC read from line 337: 501
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 338: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 339: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 340: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 341: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 342: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 343: 500
+ADC after algorithm from the same line: -6
+0x01f4 1 0 0 1
+ADC read from line 344: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 345: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 346: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 347: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 348: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 349: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 350: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 351: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 352: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 353: 500
+ADC after algorithm from the same line: -5
+0x01f4 1 0 0 1
+ADC read from line 354: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 355: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 356: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 357: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 358: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 359: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 360: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 361: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 362: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 363: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 364: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 365: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 366: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 367: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 368: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 369: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 370: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 371: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 372: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 373: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 374: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 375: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 376: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 377: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 378: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 379: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 380: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 381: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 382: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 1 1 1
+ADC read from line 383: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 384: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 385: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 386: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 387: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 388: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 389: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 390: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 391: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 392: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 393: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 394: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 395: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 396: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 397: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 398: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 399: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 400: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 401: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 402: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 403: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 404: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 405: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 406: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 407: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 408: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 409: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 410: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 411: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 412: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 413: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 414: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 415: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 416: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 417: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 418: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 419: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 420: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 421: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 422: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 423: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 424: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 425: 500
+ADC after algorithm from the same line: 0
+0x01f5 1 0 0 1
+ADC read from line 426: 501
+ADC after algorithm from the same line: 1
+0x01f6 1 0 0 1
+ADC read from line 427: 502
+ADC after algorithm from the same line: 2
+0x01f8 1 0 0 1
+ADC read from line 428: 504
+ADC after algorithm from the same line: 4
+0x01fb 1 0 0 1
+ADC read from line 429: 507
+ADC after algorithm from the same line: 7
+0x01ff 1 0 0 1
+ADC read from line 430: 511
+ADC after algorithm from the same line: 11
+0x0204 1 0 0 1
+ADC read from line 431: 516
+ADC after algorithm from the same line: 16
+0x020a 1 0 0 1
+ADC read from line 432: 522
+ADC after algorithm from the same line: 22
+0x0212 1 0 0 1
+ADC read from line 433: 530
+ADC after algorithm from the same line: 30
+0x021a 1 0 0 1
+ADC read from line 434: 538
+ADC after algorithm from the same line: 38
+0x0223 1 0 0 1
+ADC read from line 435: 547
+ADC after algorithm from the same line: 46
+0x022c 1 0 0 1
+ADC read from line 436: 556
+ADC after algorithm from the same line: 55
+0x0234 1 0 0 1
+ADC read from line 437: 564
+ADC after algorithm from the same line: 63
+0x0239 1 0 0 1
+ADC read from line 438: 569
+ADC after algorithm from the same line: 68
+0x023d 1 0 0 1
+ADC read from line 439: 573
+ADC after algorithm from the same line: 72
+0x023d 1 0 0 1
+ADC read from line 440: 573
+ADC after algorithm from the same line: 72
+0x023b 1 0 0 1
+ADC read from line 441: 571
+ADC after algorithm from the same line: 70
+0x0236 1 0 0 1
+ADC read from line 442: 566
+ADC after algorithm from the same line: 65
+0x022f 1 0 0 1
+ADC read from line 443: 559
+ADC after algorithm from the same line: 58
+0x0227 1 0 0 1
+ADC read from line 444: 551
+ADC after algorithm from the same line: 50
+0x021e 1 0 0 1
+ADC read from line 445: 542
+ADC after algorithm from the same line: 40
+0x0215 1 0 0 1
+ADC read from line 446: 533
+ADC after algorithm from the same line: 31
+0x020d 1 1 1 1
+ADC read from line 447: 525
+ADC after algorithm from the same line: 23
+0x01f4 1 0 0 1
+ADC read from line 448: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 449: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 450: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 451: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 452: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 453: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 454: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 455: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 456: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 457: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 458: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 459: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 460: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 461: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 462: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 463: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 464: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 465: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 466: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 467: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 468: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 469: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 470: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 471: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 472: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 473: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 474: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 475: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 476: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 477: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 478: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 479: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 480: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 481: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 482: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 483: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 484: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 485: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 486: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 487: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 488: 500
+ADC after algorithm from the same line: 0
+0x01f5 1 0 0 1
+ADC read from line 489: 501
+ADC after algorithm from the same line: 1
+0x01f6 1 0 0 1
+ADC read from line 490: 502
+ADC after algorithm from the same line: 2
+0x01f7 1 0 0 1
+ADC read from line 491: 503
+ADC after algorithm from the same line: 3
+0x01fa 1 0 0 1
+ADC read from line 492: 506
+ADC after algorithm from the same line: 6
+0x01fd 1 0 0 1
+ADC read from line 493: 509
+ADC after algorithm from the same line: 9
+0x0201 1 0 0 1
+ADC read from line 494: 513
+ADC after algorithm from the same line: 13
+0x0207 1 0 0 1
+ADC read from line 495: 519
+ADC after algorithm from the same line: 19
+0x020f 1 0 0 1
+ADC read from line 496: 527
+ADC after algorithm from the same line: 27
+0x0217 1 0 0 1
+ADC read from line 497: 535
+ADC after algorithm from the same line: 35
+0x0220 1 0 0 1
+ADC read from line 498: 544
+ADC after algorithm from the same line: 43
+0x022a 1 0 0 1
+ADC read from line 499: 554
+ADC after algorithm from the same line: 53
+0x0232 1 0 0 1
+ADC read from line 500: 562
+ADC after algorithm from the same line: 61
+0x023a 1 0 0 1
+ADC read from line 501: 570
+ADC after algorithm from the same line: 69
+0x023f 1 0 0 1
+ADC read from line 502: 575
+ADC after algorithm from the same line: 74
+0x0241 1 0 0 1
+ADC read from line 503: 577
+ADC after algorithm from the same line: 76
+0x0241 1 0 0 1
+ADC read from line 504: 577
+ADC after algorithm from the same line: 76
+0x023d 1 0 0 1
+ADC read from line 505: 573
+ADC after algorithm from the same line: 72
+0x0237 1 0 0 1
+ADC read from line 506: 567
+ADC after algorithm from the same line: 66
+0x022f 1 0 0 1
+ADC read from line 507: 559
+ADC after algorithm from the same line: 58
+0x0225 1 0 0 1
+ADC read from line 508: 549
+ADC after algorithm from the same line: 47
+0x021c 1 0 0 1
+ADC read from line 509: 540
+ADC after algorithm from the same line: 38
+0x0213 1 0 0 1
+ADC read from line 510: 531
+ADC after algorithm from the same line: 29
+0x020b 1 1 1 1
+ADC read from line 511: 523
+ADC after algorithm from the same line: 21
+0x01f4 1 0 0 1
+ADC read from line 512: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 513: 500
+ADC after algorithm from the same line: -2
+0x01f5 1 0 0 1
+ADC read from line 514: 501
+ADC after algorithm from the same line: -1
+0x01f6 1 0 0 1
+ADC read from line 515: 502
+ADC after algorithm from the same line: 0
+0x01f8 1 0 0 1
+ADC read from line 516: 504
+ADC after algorithm from the same line: 2
+0x01fb 1 0 0 1
+ADC read from line 517: 507
+ADC after algorithm from the same line: 5
+0x01ff 1 0 0 1
+ADC read from line 518: 511
+ADC after algorithm from the same line: 9
+0x0204 1 0 0 1
+ADC read from line 519: 516
+ADC after algorithm from the same line: 14
+0x020b 1 0 0 1
+ADC read from line 520: 523
+ADC after algorithm from the same line: 21
+0x0213 1 0 0 1
+ADC read from line 521: 531
+ADC after algorithm from the same line: 29
+0x021c 1 0 0 1
+ADC read from line 522: 540
+ADC after algorithm from the same line: 38
+0x0226 1 0 0 1
+ADC read from line 523: 550
+ADC after algorithm from the same line: 48
+0x0230 1 0 0 1
+ADC read from line 524: 560
+ADC after algorithm from the same line: 58
+0x0239 1 0 0 1
+ADC read from line 525: 569
+ADC after algorithm from the same line: 66
+0x0240 1 0 0 1
+ADC read from line 526: 576
+ADC after algorithm from the same line: 73
+0x0244 1 0 0 1
+ADC read from line 527: 580
+ADC after algorithm from the same line: 77
+0x0245 1 0 0 1
+ADC read from line 528: 581
+ADC after algorithm from the same line: 78
+0x0244 1 0 0 1
+ADC read from line 529: 580
+ADC after algorithm from the same line: 77
+0x023f 1 0 0 1
+ADC read from line 530: 575
+ADC after algorithm from the same line: 72
+0x0237 1 0 0 1
+ADC read from line 531: 567
+ADC after algorithm from the same line: 64
+0x022e 1 0 0 1
+ADC read from line 532: 558
+ADC after algorithm from the same line: 55
+0x0224 1 0 0 1
+ADC read from line 533: 548
+ADC after algorithm from the same line: 45
+0x021b 1 0 0 1
+ADC read from line 534: 539
+ADC after algorithm from the same line: 36
+0x0211 1 0 0 1
+ADC read from line 535: 529
+ADC after algorithm from the same line: 25
+0x020a 1 0 0 1
+ADC read from line 536: 522
+ADC after algorithm from the same line: 18
+0x0203 1 0 0 1
+ADC read from line 537: 515
+ADC after algorithm from the same line: 11
+0x01fe 1 0 0 1
+ADC read from line 538: 510
+ADC after algorithm from the same line: 6
+0x01fa 1 0 0 1
+ADC read from line 539: 506
+ADC after algorithm from the same line: 2
+0x01f8 1 0 0 1
+ADC read from line 540: 504
+ADC after algorithm from the same line: 0
+0x01f6 1 0 0 1
+ADC read from line 541: 502
+ADC after algorithm from the same line: -2
+0x01f5 1 0 0 1
+ADC read from line 542: 501
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 543: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 544: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 545: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 546: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 547: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 548: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 549: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 550: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 551: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 552: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 553: 500
+ADC after algorithm from the same line: -4
+0x01f4 1 0 0 1
+ADC read from line 554: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 555: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 556: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 557: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 558: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 559: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 560: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 561: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 562: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 563: 500
+ADC after algorithm from the same line: -3
+0x01f4 1 0 0 1
+ADC read from line 564: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 565: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 566: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 567: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 568: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 569: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 570: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 571: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 572: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 573: 500
+ADC after algorithm from the same line: -2
+0x01f4 1 0 0 1
+ADC read from line 574: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 1 1 1
+ADC read from line 575: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 576: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 577: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 578: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 579: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 580: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 581: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 582: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 583: 500
+ADC after algorithm from the same line: -1
+0x01f4 1 0 0 1
+ADC read from line 584: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 585: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 586: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 587: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 588: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 589: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 590: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 591: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 592: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 593: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 594: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 595: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 596: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 597: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 598: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 599: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 600: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 601: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 602: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 603: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 604: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 605: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 606: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 607: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 608: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 609: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 610: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 611: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 612: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 613: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 614: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 615: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 616: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 617: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 618: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 619: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 620: 500
+ADC after algorithm from the same line: 0
+0x01f4 1 0 0 1
+ADC read from line 621: 500
+ADC after algorithm from the same line: 0
+0x01f5 1 0 0 1
+ADC read from line 622: 501
+ADC after algorithm from the same line: 1
+0x01f6 1 0 0 1
+ADC read from line 623: 502
+ADC after algorithm from the same line: 2
+0x01f7 1 0 0 1
+ADC read from line 624: 503
+ADC after algorithm from the same line: 3
+0x01fa 1 0 0 1
+ADC read from line 625: 506
+ADC after algorithm from the same line: 6
+0x01fd 1 0 0 1
+ADC read from line 626: 509
+ADC after algorithm from the same line: 9
+0x0202 1 0 0 1
+ADC read from line 627: 514
+ADC after algorithm from the same line: 14
+0x0208 1 0 0 1
+ADC read from line 628: 520
+ADC after algorithm from the same line: 20
+0x0210 1 0 0 1
+ADC read from line 629: 528
+ADC after algorithm from the same line: 28
+0x0219 1 0 0 1
+ADC read from line 630: 537
+ADC after algorithm from the same line: 37
+0x0223 1 0 0 1
+ADC read from line 631: 547
+ADC after algorithm from the same line: 46
+0x022d 1 0 0 1
+ADC read from line 632: 557
+ADC after algorithm from the same line: 56
+0x0237 1 0 0 1
+ADC read from line 633: 567
+ADC after algorithm from the same line: 66
+0x0240 1 0 0 1
+ADC read from line 634: 576
+ADC after algorithm from the same line: 75
+0x0246 1 0 0 1
+ADC read from line 635: 582
+ADC after algorithm from the same line: 81
+0x0249 1 0 0 1
+ADC read from line 636: 585
+ADC after algorithm from the same line: 84
+0x0249 1 0 0 1
+ADC read from line 637: 585
+ADC after algorithm from the same line: 84
+0x0245 1 0 0 1
+ADC read from line 638: 581
+ADC after algorithm from the same line: 80
+0x023f 1 1 1 1
+ADC read from line 639: 575
+ADC after algorithm from the same line: 74
+
+
+Final pedestal and accumulator results: 
+
+Pedestal for packet 0: 517
+Accumulator for the same packet: -6
+Pedestal for packet 1: 513
+Accumulator for the same packet: 0
+Pedestal for packet 2: 509
+Accumulator for the same packet: -4
+Pedestal for packet 3: 506
+Accumulator for the same packet: 6
+Pedestal for packet 4: 505
+Accumulator for the same packet: -5
+Pedestal for packet 5: 502
+Accumulator for the same packet: -9
+Pedestal for packet 6: 502
+Accumulator for the same packet: 2
+Pedestal for packet 7: 502
+Accumulator for the same packet: 3
+Pedestal for packet 8: 501
+Accumulator for the same packet: -1
+Pedestal for packet 9: 501
+Accumulator for the same packet: 8
+
+
+Testing condition... 
+Final pedestal estimate after packet 10 equals the verified convergent value: 501
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/tools/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_ped_alg_top glbl -prj ped_alg.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims -L unisims_ver -L xpm --initfile /tools/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s ped_alg 
+Multi-threading is on. Using 4 slave threads.
+Determining compilation order of HDL files.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/sim/vhdl/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/sim/vhdl/ped_alg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ped_alg'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joshhorswill10/Documents/dune_project/ped_sub/ped_sub_prj/new_testbench/sim/vhdl/ped_alg.autotb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'apatb_ped_alg_top'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+ERROR: [XSIM 43-3316] Signal SIGSEGV received.
+Printing stacktrace...
+
+[0] /tools/Xilinx/Vivado/2019.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(std::_Rb_tree_increment(std::_Rb_tree_node_base const*)+0x13) [0x7f8f8a14db73]
+[1] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x773ab8]
+[2] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x734aa2]
+[3] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x73502e]
+[4] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x6e1e34]
+[5] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x476697]
+[6] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x480253]
+[7] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x45241d]
+[8] /usr/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3) [0x7f8f89b760b3]
+[9] /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab() [0x46a3d0]
+
+Done
+ERROR: Please check the snapshot name which is created during 'xelab',the current snapshot name "xsim.dir/ped_alg/xsimk" does not exist 
