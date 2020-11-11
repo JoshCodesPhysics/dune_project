@@ -26,13 +26,14 @@ int main() {
 	// have entered the channel
 	const word_t CONVERGE_VALUE = 501;
 
+
+	// Pedestal estimate; can affect testbench outcome
+        const word_t PED_VAL = 520;
+
 	// Empty arrays to contain the results.
         word_t ped_array[NUM_PACKETS];
         char accum_array[NUM_PACKETS];
         word_t ADC_array[NUM_PACKETS*PACKET_SIZE];
-
-	// Pedestal estimate; can affect testbench outcome
-        const word_t PED_VAL = 520;
 
 	// Empty ADC and signal variables to be assigned during
 	// algorithm
