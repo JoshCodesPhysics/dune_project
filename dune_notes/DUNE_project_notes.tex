@@ -6,7 +6,7 @@
 \usepackage{hyperref}
 
 \author{Joshua Horswill}
-\title{"Firmware block Implementation for the Proto-DUNEII Hit Finding architecture with the HLS tool"}
+\title{Firmware Block Implementation for the Proto-DUNEII Hit Finding Architecture with the HLS Tool}
 
 \begin{document}
 \maketitle
@@ -334,9 +334,18 @@ If a struct contains arrays, those arrays can be optimised using the \texttt{ARR
 
 \section{Pedestal Subtraction Algorithm}
 
-The pedestal subtraction algorithm is the first sub-block in the TPG core, fed from the Header stripper combiner.
+The pedestal subtraction algorithm is the first sub-block in the TPG core, fed 64 sample words from the Header-Stripper/Combiner, shown in figure \ref{fig:hsc}. The first 6 words (16 bit data types) are stripped from the incoming samples and sent to the \texttt{pedsub} block, where the 'background noise' of the ADC values is removed. The algorithm is implemented as follows:
 
+\begin{itemize}
+	\item The algorithm works by scanning each sample within the packet, subtracting the pedestal from each ADC value and adjusting the pedestal and accumulator variables according to the size of each ADC value. The algorithm only runs when \texttt{tready} is low and \texttt{tvalid} and \texttt{tkeep} are high. \texttt{tlast} and \texttt{tuser} go high at the end of a packet.
+	\item The user inputs an estimate of the median background value to subtract from the first few samples, as a temporary buffer before the pedestal value is changed by the algorithm.
+	\item The algorithm also starts with an associated accumulator variable, initially equal to zero, that directly changes the pedestal value once it reaches $\pm10$. How does this accumulator variable change?
+	\item The accumulator changes by $\pm1$ depending on the boolean (\texttt{ADCvalue} > \texttt{pedestal}). If this boolean is true, the accumulator increases by one, and false means a decrease by one.
+	\item The next condition is: if before a scan the accumulator is $+10$, the pedestal increases by one, and the accumulator is reset to zero. Then the next ADC value is subtracted by this new increased pedestal. The opposite is the case for an accumulator of $-10$; the pedestal decreases by one and the accumulator resets.
+	\item At the end of each packet, the current value is stored and then retrieved from a state save/restore mechanism, for the next incoming packet.
+\end{itemize} 
 
+Eventually, with a large enough flux of packets, one would obtain a pedestal value appropriate for that input channel, giving more useful ADC values.
 
 \bibliography{dpn.bib}
 \bibliographystyle{unsrt}
