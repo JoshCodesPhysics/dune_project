@@ -23,7 +23,13 @@ void set_rnd_seed(int new_seed, int& rnd_seed);
 
 void rand_int(int& rnd_seed);
 
-void ped_sub_read(const std::string& input_file, word_t ped_val, word_t* ped_array,
-		  word_t* ADC_array, char* accum_array, bool& tvalid,
-                  bool& tkeep0, bool& tkeep1, bool& tready, bool& tlast,
-                  bool& tuser);
+void ped_sub_read(const std::string& input_file, word_t ped_val,
+		  word_t* ped_array, word_t* ADC_array, char* accum_array,
+		  bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
+		  bool& tlast, bool& tuser);
+
+bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
+                 word_t* ADC_validated);
+
+bool ped_test(word_t* ped_array, int num_packets, word_t converge_value,
+              word_t ped_val);

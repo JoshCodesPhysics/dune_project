@@ -184,10 +184,10 @@ void rand_int(int& rnd_seed) {
     rnd_seed = ix;
 }
 
-void ped_sub_read(const std::string& input_file, word_t ped_val, word_t* ped_array,
-		  word_t* ADC_array, char* accum_array, bool& tvalid,
-		  bool& tkeep0, bool& tkeep1, bool& tready, bool& tlast,
-		  bool& tuser) {
+void ped_sub_read(const std::string& input_file, word_t ped_val,
+		  word_t* ped_array, word_t* ADC_array,
+		  char* accum_array, bool& tvalid, bool& tkeep0,
+		  bool& tkeep1, bool& tready, bool& tlast, bool& tuser) {
 	
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
@@ -289,4 +289,136 @@ void ped_sub_read(const std::string& input_file, word_t ped_val, word_t* ped_arr
 	else {
 		std::cout << "File did not open! Simulation failed.\n";
 	}
+}
+
+bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
+		 word_t* ADC_validated) {
+	std::ifstream output(output_file.c_str());
+
+	bool ADC_bool = 0;
+	
+	if (output.is_open()) {
+	
+		std::string buffer;
+		int count = 0;
+		word_t ADC;
+
+		while (getline(output, buffer)) {
+
+			std::string ADC_s;
+			
+			std::stringstream ss(buffer);
+
+			ss >> ADC_s;
+
+			std::stringstream ss_hex;
+                        ss_hex << std::hex << ADC_s;
+                        ss_hex >> ADC;
+
+			ADC_validated[count] = ADC;
+
+			count++;
+		}
+
+		std::cout << "Adjusted ADC value comparison:\n\n";
+
+		for (int i = 0; i < count; i++) {
+
+			std::cout << "ADC adjusted value for line "
+				  << i << ": " << ADC_adjusted[i]
+				  << "\n"
+				  << "ADC validated value for same line: "
+				  << ADC_validated[i]
+				  << "\n";
+
+			if (!(ADC_adjusted[i] == ADC_validated[i])) {
+					
+					std::cout << "ADC values do not"
+						  << " match for line "
+						  << i << ".\n";
+
+					ADC_bool = 1;
+					break;
+			}
+		}
+	}
+
+	else {
+		std::cout << "Output file did not open. Check file path.\n";
+		ADC_bool = 1;
+	}
+
+	return ADC_bool;
+}
+
+bool ped_test(word_t* ped_array, int num_packets, word_t converge_value,
+              word_t ped_val) {
+
+	// Instantaneous success condition: If the final pedestal
+        // value equals the verified convergent value
+        bool equal_condition = (ped_array[num_packets - 1]
+                                == converge_value);
+
+        std::cout << "\n\nTesting condition... \n";
+
+        // Testbench returns a success
+        if (equal_condition) {
+                std::cout << "Final pedestal estimate after packet "
+                          << num_packets << " equals the verified "
+                          << "convergent value: " << converge_value
+                          << "\n";
+                return 0;
+        }
+
+        // Else, see if the value at least converges towards the
+        // correct value
+        else {
+                std::cout << "\nVerified convergence value: "
+                          << converge_value << "\n";
+
+                // Low pedestal
+                if (ped_val < converge_value) {
+                        // It does converge
+                        if ((ped_array[num_packets - 1]
+                             - ped_array[0]) > 0) {
+                                std::cout << "Low pedestal value is "
+                                          << "increasing towards "
+                                          << "the verified "
+                                          << "convergence value."
+                                          << "\n";
+                                return 0;
+                        }
+
+                        // It doesn't
+                        else {
+                                std::cout << "Low pedestal value is not "
+                                          << "increasing towards the verified"
+                                          << " convergence value.\n";
+                                return 1;
+                        }
+                }
+
+                // High pedestal
+		                else {
+                        // It does converge
+                        if ((ped_array[num_packets - 1]
+                             - ped_array[0]) < 0) {
+                                std::cout << "High pedestal value is "
+                                          << "decreasing towards "
+                                          << "the verified "
+                                          << "convergence value.\n";
+                                return 0;
+                        }
+
+                        // It doesn't
+                        else {
+                                std::cout << "High pedestal value is "
+                                          << "not decreasing towards "
+                                          << "the verified "
+                                          << "convergence value.\n";
+                                return 1;
+                        }
+                }
+
+        }
 }
