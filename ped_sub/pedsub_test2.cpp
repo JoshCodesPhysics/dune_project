@@ -32,7 +32,7 @@ int main() {
 	
 	// Number of packets within the input file and the number of
 	// samples contained in each packet.
-        const int NUM_PACKETS = 10;
+        const int NUM_PACKETS = 64;
         const int PACKET_SIZE = 64;
 
 	// Verified correct pedestal value after enough packets
@@ -52,26 +52,26 @@ int main() {
 	// Empty ADC and signal variables to be assigned during
 	// algorithm
         word_t ADC;
-        bool tvalid, tkeep0, tkeep1, tlast, tuser, tready;
+        bool tvalid, tkeep0, tkeep1, tlast, tuser, tready, treset;
 
 	std::cout << "Running algorithm on input file: \n\n";
 
 	// Calling testbench function, which in turn calls ped_alg
         ped_sub_read(input_file, PED_VAL, ped_array,
                      ADC_array, accum_array, tvalid,
-                     tkeep0, tkeep1, tready, tlast, tuser);
+                     tkeep0, tkeep1, tready, tlast, tuser, treset);
 	
 	std::cout << "\n\nFinal pedestal and accumulator results: "
 		  << "\n\n";
         
 	// Printing the final pedestal and accumulator values
 	// for each packet
-	for (int i = 0; i < NUM_PACKETS; i++) {
-		std::cout << "Pedestal for packet " << i <<
-                             ": " << ped_array[i] << "\n";
-                printf("Accumulator for the same packet: %d\n",
-                       accum_array[i]);
-        }
+	// for (int i = 0; i < NUM_PACKETS; i++) {
+	// 	std::cout << "Pedestal for packet " << i <<
+        //                      ": " << ped_array[i] << "\n";
+        //         printf("Accumulator for the same packet: %d\n",
+        //                accum_array[i]);
+        // }
 
 	std::cout << "\n\n";
 

@@ -5,9 +5,10 @@
 #include <sstream>
 #include <vector>
 
+
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
              word_t tdata, bool tvalid, bool tkeep0,
-	     bool tkeep1, bool tready) {
+	     bool tkeep1, bool tready, bool treset) {
 	// This function takes an input ped_val, the estimate or previous
 	// pedestal (median) value, and can adjust this value according
 	// to whether the input ADC value is larger or smaller for a given
@@ -25,7 +26,7 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 
 	// Run if no back pressure from tready, and the tvalid and tkeep
 	// signals are high.
-	if (!tready && tvalid && tkeep0 && tkeep1) {
+	if (!tready && tvalid && tkeep0 && tkeep1 && !treset) {
 
 		//Extracting 12 bit ADC value from 16 bit word
 		int mask = 4095;
@@ -66,14 +67,17 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 	}
 }
 
+
 void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
-		   bool tready, bool tlast, bool tuser) {
+		   bool tready, bool tlast, bool tuser, bool treset) {
 
 	std::cout << "tvalid | tkeep0 | tkeep1 | tuser | tlast | tready"
-	          << " : \n" << tvalid << " | " << tkeep0 << " | "
+	          << " | treset"
+		  << " : \n" << tvalid << " | " << tkeep0 << " | "
 		  << tkeep1 << " | " << tuser << " | " << tlast
-		  << " | " << tready << "\n";
+		  << " | " << tready << " | " << treset << "\n";
 }
+
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
@@ -91,12 +95,13 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 	word_t ped_new = ped_val;
 	word_t ADC_temp;
 	int i = 0;
+	bool treset = false;
 
 	// Simulating the signal booleans
 
 	std::cout << "\nBefore assigning values: \n";
 
-	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser, treset);
 
 	tuser = false;
 	tlast = false;
@@ -108,7 +113,7 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 	std::cout << "\nBefore scanning: \n";
 
-	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser, treset);
 
 	// While we have not reached the end of the frame or packet,
 	// scan the ADC values and adjust them accordingly
@@ -123,12 +128,13 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 		std::cout << "\nSignals at start of loop " << i << ":\n";
 
-		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser,
+			      treset);
 
 		word_t temp_word = packet[i];
 
 		ped_alg(ped_new, accum, ADC_temp, temp_word,
-			tvalid, tkeep0, tkeep1, tready);
+			tvalid, tkeep0, tkeep1, tready, treset);
 
 		packet[i] = ADC_temp;
 
@@ -142,7 +148,8 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 		std::cout << "\nSignals at end of loop " << i << ":\n";
 
-		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+		print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser,
+			      treset);
 
 		std::cout << "\n";
 	}
@@ -157,7 +164,7 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 	std::cout << "\nSignals at the end of the testbench: \n";
 
-	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser);
+	print_signals(tvalid, tkeep0, tkeep1, tready, tlast, tuser, treset);
 
 	std::cout << "\n";
 }
@@ -184,28 +191,64 @@ void rand_int(int& rnd_seed) {
     rnd_seed = ix;
 }
 
+
+void random_signal(bool& signal, int min, int max, int limit,
+		   int& rand_seed) {
+	// Function for generating a randomly high or low signal value.
+	// max and min determine the range of random values that are
+	// generated, and limit is the value that this random value
+	// must be less than or equal to in order to go high, e.g.
+	// min = 1, max = 200, limit = 2, statistically the
+	// signal will go high for 1% of samples.
+
+	int rand_value;
+	
+	// Generating a random integer
+	rand_int(rand_seed);
+
+	// generating the random value within the given range 
+	rand_value = min + (rand_seed % (max - min + 1));
+
+	// random value print scaffolding
+	// std::cout << "rand_value: " << rand_value << "\n";
+
+	// If the random value is below the threshold, set the signal
+	// to high 
+	if (rand_value <= limit) {
+		signal = true;
+	}
+
+	else {
+		signal = false;
+	}
+}
+
+
 void ped_sub_read(const std::string& input_file, word_t ped_val,
 		  word_t* ped_array, word_t* ADC_array,
 		  char* accum_array, bool& tvalid, bool& tkeep0,
-		  bool& tkeep1, bool& tready, bool& tlast, bool& tuser) {
-	
+		  bool& tkeep1, bool& tready, bool& tlast, bool& tuser,
+		  bool& treset) {
+
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
 	// (where | represents the space delimiter): ADC (in hexadecimal) |
 	// tvalid |  tlast | tuser | tkeep. This does not include the header.
-	
+
 	// ped_val is the pedestal estimate initially fed into the algorithm.
 	// ped_array is an empty array to store the pedestal values for a
 	// certain packet.
 	// ADC_array is an empty array to store the adjusted ADC values for
 	// all packets.
-	
+
 	// Temporary ADC and pedestal variables to later append
 	// to the arrays
 	word_t ADC, ped_new;
 
-	// Make sure tready is always low to prevent backpressure
+	// Make sure tready is initially low to prevent backpressure
 	tready = false;
+	// Make sure treset is initially low to prevent infinite loop
+	treset = false;
 
 	// Counters for the 'for' loop
 	int count = 0;
@@ -216,25 +259,36 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 	ped_new = ped_val;
 	char accum = 0;
 
+	// Random seed integer
+	int random_seed;
+
+	// Setting the random seed
+	set_rnd_seed(100, random_seed);
+	
 	// Opening data file
         std::ifstream data_file(input_file.c_str());
 
 	// Commented print scaffolding
         // std::cout << "ADC | tvalid | tlast | tuser | tkeep\n";
-	
+
 	// Run the code if the file opens successfully
 	// (no c++ built in errors for file opening issues)
 	if (data_file.is_open()) {
 
 		// Buffer to read file line
 		std::string buffer;
-		
+
+		// Defining file pointer
+		std::streampos oldpos;
+
 		// Loops through all lines, writing each line to the buffer
 		// so the data can be processed
 		while (getline(data_file, buffer)) {
-			
-			// Buffer read print scaffolding
+			// Buffer string-read print scaffolding
+
 			// std::cout << buffer << "\n";
+
+			// Reading the data:
 
 			// String to hold the ADC hex string
 			std::string ADC_s;
@@ -243,8 +297,10 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 			std::stringstream ss(buffer);
 
 			// Reading data into our variables
-			ss >> ADC_s >> tvalid >> tlast >> tuser >> tkeep0;
+			ss >> ADC_s >> tvalid >> tlast >>
+			      tuser >> tkeep0;
 
+			// Both tkeeps will be the same
 			tkeep1 = tkeep0;
 
 			// Converting the hex into short decimal
@@ -252,44 +308,116 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 			ss_hex << std::hex << ADC_s;
 			ss_hex >> ADC;
 
-			std::cout << "ADC read from line " << count
-				  << ": " << ADC << "\n";
+			// ADC read scaffolding
+
+			// if (count > 1400) {
+			// 	std::cout << "ADC read from line "
+			// 	<< count << ": " << ADC << "\n";
+			// }
+
+			// Checking if treset goes high, and
+			// resetting the while loop to the start
+			// if it is, as well as resetting the
+			// pedestal and accumulator values.
 			
-			// ADC value entered twice, ADC is assigned to itself
-			// truncated to 12 bits (subject to change).
-			// ped_alg is called every loop, all input variables
-			// are adjusted
-			ped_alg(ped_new, accum, ADC, ADC,
-				tvalid, tkeep0, tkeep1, tready);
+			// Random assign
+			random_signal(treset, 1, 12288, 1,
+				      random_seed);
 
-			// Append adjusted ADC value to storage array
-			ADC_array[count] = ADC;
+			if (treset) {
+				ped_new = ped_val;
+				accum = 0;
+				count = 0;
+				data_file.seekg(0);
 
-			std::cout << "ADC after algorithm from the same line: "
-				  << ADC << "\n";
-
-			// These signals indicate end of packet, append
-			// pedestal value for this packet and continue
-			// to the next one.
-			if (tlast && tuser) {
-				ped_array[packet] = ped_new;
-				accum_array[packet] = accum;
-				packet++;
+				// treset print scaffolding
+				std::cout << "\ntreset went high, "
+					     "so entire process "
+					     "will be reset.\n";
 			}
 
-			// Add to the count for each loop to keep track of
-			// the line being processed
-			count++;
-		}
+			// If it is not high, run scan as usual
+			else {
+				
+				// Randomly assigning tready signal
+				random_signal(tready, 1, 600, 1,
+					      random_seed);
+				
 
+				// If tready is high, bookmark
+				// the current file pointer position
+				// and go back to it in the next
+				// loop
+				if (tready) {
+					// Marking current pointer location
+					oldpos =
+					data_file.tellg();
+
+					// Returning pointer to this location
+					// for the next loop
+					data_file.seekg(oldpos);
+
+					// Print scaffolding for this scenario
+					std::cout << "\nLine " << count << 
+						     " had a high tready "
+						     "so pointer will return to "
+						     "that line.\n";
+				}
+
+				// If tready is not high, record the
+				// scan as usual
+				else {	
+					// ADC value entered twice, ADC is
+					// assigned to itself
+					// truncated to 12 bits (subject
+					// to change).
+					// ped_alg is called every loop,
+					// all input variables
+					// are adjusted
+					
+					ped_alg(ped_new, accum, ADC, ADC,
+						tvalid, tkeep0, tkeep1,
+						tready, treset);
+					
+					// Append adjusted ADC value
+					// to storage array
+					ADC_array[count] = ADC;
+
+					// std::cout <<
+					// "ADC after algorithm from"
+					// "the same line: "
+					// << ADC << "\n";
+
+					// These signals indicate end
+					// of packet, append
+					// pedestal value for this
+					// packet and continue
+					// to the next one.
+					if (tlast && tuser) {
+						ped_array[packet] = ped_new;
+						accum_array[packet] = accum;
+						packet++;
+						ped_new = ped_val;
+						accum = 0;
+					}
+
+					// Add to the count for each loop
+					// to keep track of
+					// the line being processed
+					count++;
+				}
+			}
+		}
+		// End of while loop, close file
 		data_file.close();
 	}
 
-	// File failed to close
+	// File failed to open
 	else {
 		std::cout << "File did not open! Simulation failed.\n";
 	}
 }
+
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		 word_t* ADC_validated) {
@@ -302,6 +430,7 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		std::string buffer;
 		int count = 0;
 		word_t ADC;
+		int ADC_temp;
 
 		while (getline(output, buffer)) {
 
@@ -313,7 +442,10 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 
 			std::stringstream ss_hex;
                         ss_hex << std::hex << ADC_s;
-                        ss_hex >> ADC;
+                        ss_hex >> ADC_temp;
+
+			ADC = (0x8000&ADC_temp ?
+			      (int)(0x7FFF&ADC_temp)-0x8000 : ADC_temp);
 
 			ADC_validated[count] = ADC;
 
@@ -348,8 +480,17 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		ADC_bool = 1;
 	}
 
+	if (ADC_bool) {
+		std::cout << "Testbench did not run successfully\n";
+	}
+
+	else {
+		std::cout << "Testbench ran successfully!\n";
+	}
+
 	return ADC_bool;
 }
+
 
 bool ped_test(word_t* ped_array, int num_packets, word_t converge_value,
               word_t ped_val) {
