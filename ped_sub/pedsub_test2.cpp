@@ -34,11 +34,14 @@ int main() {
 	// samples contained in each packet.
         const int NUM_PACKETS = 64;
         const int PACKET_SIZE = 64;
+	const int NUM_SAMPLES = NUM_PACKETS*PACKET_SIZE;
 
 	// Verified correct pedestal value after enough packets
 	// have entered the channel
 	const word_t CONVERGE_VALUE = 501;
 
+	// Seed used to generate randomly high or low treset values
+	const int INPUT_SEED = 45000;
 
 	// Pedestal estimate; can affect testbench outcome
         const word_t PED_VAL = 500;
@@ -46,23 +49,28 @@ int main() {
 	// Empty arrays to contain the results.
         word_t ped_array[NUM_PACKETS];
         char accum_array[NUM_PACKETS];
-        word_t ADC_array[NUM_PACKETS*PACKET_SIZE];
-	word_t ADC_valid[NUM_PACKETS*PACKET_SIZE];
+	word_t ADC_stored[NUM_SAMPLES];
+	bool tvalid_stored[NUM_SAMPLES];
+	bool tlast_user_stored[NUM_SAMPLES];
+	bool tkeep_stored[NUM_SAMPLES];
+        word_t ADC_array[NUM_SAMPLES];
+	word_t ADC_valid[NUM_SAMPLES];
 
 	// Empty ADC and signal variables to be assigned during
 	// algorithm
         word_t ADC;
-        bool tvalid, tkeep0, tkeep1, tlast, tuser, tready, treset;
+        bool tready, treset;
 
 	std::cout << "Running algorithm on input file: \n\n";
 
 	// Calling testbench function, which in turn calls ped_alg
-        ped_sub_read(input_file, PED_VAL, ped_array,
-                     ADC_array, accum_array, tvalid,
-                     tkeep0, tkeep1, tready, tlast, tuser, treset);
+        ped_sub_read(input_file, PED_VAL, ADC_stored, 
+		     tvalid_stored, tlast_user_stored, tkeep_stored,
+		     ped_array, ADC_array, accum_array, tready, treset,
+		     INPUT_SEED);
 	
-	std::cout << "\n\nFinal pedestal and accumulator results: "
-		  << "\n\n";
+	// std::cout << "\n\nFinal pedestal and accumulator results: "
+	// 	  << "\n\n";
         
 	// Printing the final pedestal and accumulator values
 	// for each packet

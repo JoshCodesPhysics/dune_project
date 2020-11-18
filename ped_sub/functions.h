@@ -27,9 +27,11 @@ void random_signal(bool& signal, int max, int min, int limit,
 		   int& random_seed);
 
 void ped_sub_read(const std::string& input_file, word_t ped_val,
-		  word_t* ped_array, word_t* ADC_array, char* accum_array,
-		  bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
-		  bool& tlast, bool& tuser, bool& treset);
+                  word_t* ADC_stored, bool* tvalid_stored,
+                  bool* tlast_user_stored, bool* tkeep_stored,
+                  word_t* ped_array, word_t* ADC_array,
+                  char* accum_array, bool& tready, bool& treset,
+		  int input_seed);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);
