@@ -37,4 +37,4 @@ Variable configuration can be gleaned from the extensive comments at the start o
 - Set ``PACKET_SIZE`` to the number of samples within a given packet
 - Set ``CONVERGE_VALUE`` to the expected pedestal value found after the set number of packets
 - Set ``PED_VAL`` to the desired pedestal estimate value that ``ped_alg`` will start with
-- Set ``INPUT_SEED` to a any integer for a reproducable pseudorandom signal fluctuation with tready and treset.
+- Set ``INPUT_SEED`` to a any integer for a reproducable pseudorandom signal fluctuation with tready and treset.
