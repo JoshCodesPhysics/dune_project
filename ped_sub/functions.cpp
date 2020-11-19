@@ -296,53 +296,82 @@ void data_read(const std::string& input_file, int& count,
 }
 
 
+void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
+		     int packet_size, int& channel) {
+	// State save/restore pedestal and accumulator array members
+        // begin at their default values.
+        
+	for (int j = 0; j < packet_size; j++) {
+                ped_array[j] = ped_val;
+                accum_array[j] = 0;
+        }
+
+	channel = 0;
+}
+
+void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
+		word_t ped_val, int packet_size, int total_samples,
+		int& channel) {
+
+	// Reset pedestal and accumulator saved values
+	ped_accum_reset(ped_array, accum_array, ped_val, packet_size,
+			channel);
+
+	// Reset all adjusted ADC values to zero
+	for (int j = 0; j < total_samples; j++) {
+		ADC_array[j] = 0;
+	}
+}
+
+
 void ped_sub_read(const std::string& input_file, word_t ped_val,
 		  word_t* ADC_stored, bool* tvalid_stored,
 		  bool* tlast_user_stored, bool* tkeep_stored,
 		  word_t* ped_array, word_t* ADC_array,
-		  char* accum_array, bool& tready, bool& treset,
-		  int input_seed) {
+		  char* accum_array, int input_seed, int packet_size,
+		  int num_channels) {
 
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
 	// (where | represents the space delimiter): ADC (in hexadecimal) |
 	// tvalid |  tlast | tuser | tkeep. This does not include the header.
 	
-	// Contingency include for random tready signals going high, so that the
-	// while loop repeats an iteration until it goes low again. Similar
-	// contingency for random treset going high (less likely) so that
-	// the entire process is wiped clean and repeated.
+	// Contingency include for random tready signals going high, so that
+	// the while loop repeats an iteration until it goes low again.
+	// Similar contingency for random treset going high (less likely) so
+	// that the entire process is wiped clean and repeated.
 
 	// ped_val is the pedestal estimate initially fed into the algorithm.
 	// ADC_stored is an empty array to store the read ADC values from the
 	// data file, similarly to tvalid_stored, tlast_user_stored and
 	// tkeep_stored
 	// ped_array is an empty array to store the pedestal values for a
-	// certain packet.
+	// certain channel.
 	// ADC_array is an empty array to store the adjusted ADC values for
-	// all packets (state save/restore)
+	// all packets (using state save/restore arrays)
 	// accum_array is an empty array to store the changing accumulator
 	// values at the end of each packet
 
-	// Temporary ADC and pedestal variables to later append
-	// to the arrays
-	word_t ADC, ped_new;
-
 	// Make sure tready is initially low to prevent backpressure
-	tready = false;
+	bool tready = false;
 	// Make sure treset is initially low to prevent infinite loop
-	treset = false;
+	bool treset = false;
 
 	// Counters for the while loop and data read
 	int count;
-	int packet = 0;
+	int channel = 0;
 	int i = 0;
 	int attempt = 1;
 
-	// Starting values for pedestal and accumulator (ped_val is
-	// the estimate).
-	ped_new = ped_val;
-	char accum = 0;
+	// Temporary pedestal, ADC and accum variables to read and also
+	// append to the SS/R arrays.
+	word_t ADC, ped_new;
+	char accum;
+
+	// State save/restore pedestal and accumulator array members
+	// begin at their default values.
+	ped_accum_reset(ped_array, accum_array, ped_val, packet_size,
+			channel);
 
 	// Random seed integer
 	int random_seed;
@@ -381,10 +410,12 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 			          << " has ended.\n";	  
 			
 			// Reset pedestal and accumulator,
-			// send while counter back to zero
-			ped_new = ped_val;
-			accum = 0;
-			packet = 0;
+			// as well as channel count. Reset
+			// all adjusted ADC values to zero.
+			// Send while counter (i) back to zero
+			full_reset(ped_array, accum_array, ADC_array,
+				   ped_val, packet_size, array_size,
+				   channel);
 			i = 0;
 			attempt++;
 		}
@@ -416,11 +447,25 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 				// truncated to 12 bits (subject
 				// to change).
 				// ped_alg is called every loop.
+
+				// State save/restore for pedestal and
+				// accumulator
+				ped_new = ped_array[channel];
+				accum = accum_array[channel];
 				
 				ped_alg(ped_new, accum, ADC, ADC_stored[i],
 					tvalid_stored[i], tkeep_stored[i],
 					tkeep_stored[i], 
 					tready, treset);
+
+				// Array values for this channel are
+				// overwritten by the output variables from
+				// ped_alg, and used in the next loop.
+				// They are also used for the next packet
+				// that comes through this channel, i.e.
+				// in 64 packets time
+				ped_array[channel] = ped_new;
+				accum_array[channel] = accum;
 				
 				// Append adjusted ADC value
 				// to storage array
@@ -429,14 +474,40 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 				// These signals indicate end
 				// of packet -> append
 				// pedestal value for this
-				// packet and continue
+				// channel and continue
 				// to the next one.
 				if (tlast_user_stored[i]) {
-					ped_array[packet] = ped_new;
-					accum_array[packet] = accum;
-					packet++;
-					ped_new = ped_val;
-					accum = 0;
+					ped_array[channel] = ped_new;
+					accum_array[channel] = accum;
+					 
+					std::cout << "\n Final pedestal "
+						     "value for this "
+						     "channel was: "
+						  << ped_array[channel]
+						  << ".\n";
+					
+					if (channel + 1 < num_channels) {
+						std::cout << "Now loading "
+							     "pedestal and "
+							     "accumulator for"
+							     " channel "
+							  << channel + 1
+							  << ".\n";
+					}
+
+					channel++;
+
+					// Last channel has been processed,
+					// return to pedestal and accumulator
+					// values for channel 0 and process
+					// the next wave of packets
+					if (channel > (num_channels - 1)) {
+						std::cout << "\nLast channel"
+							     " processed, re"
+							     "turning to cha"
+							     "nnel 0.\n";
+						channel = 0;
+					}
 				}
 
 				// Add to the while loop counter every

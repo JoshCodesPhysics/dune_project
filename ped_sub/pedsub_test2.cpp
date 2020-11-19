@@ -23,7 +23,7 @@ int main() {
 	const std::string proj_path = "/home/joshhorswill10/Documents";
 
 	const std::string input_path = "/dune_project/ped_sub/"
-				       "packet_data_in.txt";
+				       "double_packet_in.txt";
 	const std::string output_path = "/dune_project/ped_sub/"
 					"packet_data_out.txt";
 
@@ -32,9 +32,10 @@ int main() {
 	
 	// Number of packets within the input file and the number of
 	// samples contained in each packet.
-        const int NUM_PACKETS = 64;
+        const int NUM_CHANNELS = 64;
         const int PACKET_SIZE = 64;
-	const int NUM_SAMPLES = NUM_PACKETS*PACKET_SIZE;
+	const int PACKET_WAVES = 2;
+	const int NUM_SAMPLES = NUM_CHANNELS * PACKET_SIZE * PACKET_WAVES;
 
 	// Verified correct pedestal value after enough packets
 	// have entered the channel
@@ -47,8 +48,8 @@ int main() {
         const word_t PED_VAL = 500;
 
 	// Empty arrays to contain the results.
-        word_t ped_array[NUM_PACKETS];
-        char accum_array[NUM_PACKETS];
+        word_t ped_array[NUM_CHANNELS];
+        char accum_array[NUM_CHANNELS];
 	word_t ADC_stored[NUM_SAMPLES];
 	bool tvalid_stored[NUM_SAMPLES];
 	bool tlast_user_stored[NUM_SAMPLES];
@@ -56,18 +57,13 @@ int main() {
         word_t ADC_array[NUM_SAMPLES];
 	word_t ADC_valid[NUM_SAMPLES];
 
-	// Empty ADC and signal variables to be assigned during
-	// algorithm
-        word_t ADC;
-        bool tready, treset;
-
 	std::cout << "Running algorithm on input file: \n\n";
 
 	// Calling testbench function, which in turn calls ped_alg
         ped_sub_read(input_file, PED_VAL, ADC_stored, 
 		     tvalid_stored, tlast_user_stored, tkeep_stored,
-		     ped_array, ADC_array, accum_array, tready, treset,
-		     INPUT_SEED);
+		     ped_array, ADC_array, accum_array,
+		     INPUT_SEED, PACKET_SIZE, NUM_CHANNELS);
 	
 	// std::cout << "\n\nFinal pedestal and accumulator results: "
 	// 	  << "\n\n";
@@ -88,7 +84,7 @@ int main() {
 	}
 
 	else {
-		return ped_test(ped_array, NUM_PACKETS, CONVERGE_VALUE,
+		return ped_test(ped_array, NUM_CHANNELS, CONVERGE_VALUE,
 				PED_VAL);
 	}
 }

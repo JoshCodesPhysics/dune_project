@@ -26,12 +26,19 @@ void rand_int(int& rnd_seed);
 void random_signal(bool& signal, int max, int min, int limit,
 		   int& random_seed);
 
+void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
+                     int packet_size, int& channel);
+
+void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
+                word_t ped_val, int packet_size, int total_samples,
+                int& channel);
+
 void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t* ADC_stored, bool* tvalid_stored,
                   bool* tlast_user_stored, bool* tkeep_stored,
                   word_t* ped_array, word_t* ADC_array,
-                  char* accum_array, bool& tready, bool& treset,
-		  int input_seed);
+                  char* accum_array, int input_seed, int packet_size,
+		 int num_channels);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);
