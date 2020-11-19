@@ -193,7 +193,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="function_wide_latency|individual_latency|new_testbench|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="function_wide_latency|individual_latency|new_testbench|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -375,7 +375,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="function_wide_latency|individual_latency|new_testbench|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="function_wide_latency|individual_latency|new_testbench|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

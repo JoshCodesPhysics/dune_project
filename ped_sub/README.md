@@ -33,8 +33,9 @@ Variable configuration can be gleaned from the extensive comments at the start o
 
 - Make sure the variable ``proj_path`` is set to the path of the dune\_project git folder within your file system, and then edit the input file path strings if you want to change which set of input/output files are being parsed.
 
-- Set ``NUM_PACKETS`` to the number of data packets to be parsed within the data file
-- Set ``PACKET_SIZE`` to the number of samples within a given packet
+- Set ``NUM_CHANNELS`` to the number of data channels to be considered.
+- Set ``PACKET_SIZE`` to the number of samples within a given packet.
+- Set ``PACKET_WAVES`` to the number of packets entering a given channel.
 - Set ``CONVERGE_VALUE`` to the expected pedestal value found after the set number of packets
 - Set ``PED_VAL`` to the desired pedestal estimate value that ``ped_alg`` will start with
 - Set ``INPUT_SEED`` to a any integer for a reproducable pseudorandom signal fluctuation with tready and treset.
