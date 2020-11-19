@@ -5,11 +5,14 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
+    <clockList>
+        <clock default="false" name="default" period="250MHz"/>
+    </clockList>
     <config>
         <schedule model="ped_alg"/>
     </config>
     <UIConfigurations>
-        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
+        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/zynquplus/zynquplus</Platform>
             <Platform>xilinx/zynquplus/zynquplus_fpv7</Platform>
             <customLibs/>
@@ -67,8 +70,5 @@
         <library name="DefaultPlatform" value="xilinx/zynquplus/zynquplus"/>
         <library name="DefaultPlatform" value="xilinx/zynquplus/zynquplus_fpv7"/>
     </libraryList>
-    <clockList>
-        <clock name="default" default="false" period="250MHz"/>
-    </clockList>
 </solution>
 

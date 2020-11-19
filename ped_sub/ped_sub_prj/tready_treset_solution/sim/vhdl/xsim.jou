@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Nov 18 16:26:16 2020
+# Process ID: 6301
+# Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/tready_treset_solution/sim/vhdl
+# Command line: xsim -mode tcl -source {xsim.dir/ped_alg/xsim_script.tcl}
+# Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/tready_treset_solution/sim/vhdl/xsim.log
+# Journal file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/tready_treset_solution/sim/vhdl/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/ped_alg/xsim_script.tcl
+source ped_alg.tcl

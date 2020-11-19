@@ -31,9 +31,10 @@ Variable configuration can be gleaned from the extensive comments at the start o
 
 ### Running test bench #2: ``pedsub_test2.cpp``
 
-- Make sure the variable ``input_file`` is set to the full path directory of the data file being parsed
+- Make sure the variable ``proj_path`` is set to the path of the dune\_project git folder within your file system, and then edit the input file path strings if you want to change which set of input/output files are being parsed.
 
 - Set ``NUM_PACKETS`` to the number of data packets to be parsed within the data file
 - Set ``PACKET_SIZE`` to the number of samples within a given packet
 - Set ``CONVERGE_VALUE`` to the expected pedestal value found after the set number of packets
 - Set ``PED_VAL`` to the desired pedestal estimate value that ``ped_alg`` will start with
+- Set ``INPUT_SEED`` to a any integer for a reproducable pseudorandom signal fluctuation with tready and treset.
