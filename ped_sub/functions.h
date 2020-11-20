@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 
+#define N_CH 64
+#define PK_S 64
+#define PK_W 2
+#define N_SA N_CH*PK_S*PK_W
+
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
 
@@ -33,12 +38,19 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
                 word_t ped_val, int packet_size, int total_samples,
                 int& channel);
 
+void array_scan(int array_size, word_t ped_val,
+                word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+                bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
+                word_t ped_array[N_CH], word_t ADC_array[N_SA],
+                char accum_array[N_CH], int input_seed,
+                int packet_size, int num_channels);
+
 void ped_sub_read(const std::string& input_file, word_t ped_val,
-                  word_t* ADC_stored, bool* tvalid_stored,
-                  bool* tlast_user_stored, bool* tkeep_stored,
-                  word_t* ped_array, word_t* ADC_array,
-                  char* accum_array, int input_seed, int packet_size,
-		 int num_channels);
+                  word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+                  bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
+                  word_t ped_array[N_CH], word_t ADC_array[N_SA],
+                  char accum_array[N_CH], int input_seed, int packet_size,
+		  int num_channels);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);

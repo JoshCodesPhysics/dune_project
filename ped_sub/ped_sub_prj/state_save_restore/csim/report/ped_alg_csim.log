@@ -1,6 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../pedsub_test2.cpp in debug mode
+   Compiling ../../../../pedsub_test2.cpp in release mode
+   Compiling ../../../../functions.cpp in release mode
    Generating csim.exe
 Running algorithm on input file: 
 

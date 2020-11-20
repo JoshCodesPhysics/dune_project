@@ -89,7 +89,7 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 	// can be output into . New array hence contains
 	// N + 2 entries. Remember to truncate array if you want
 	// either ADC_new, accum or ped_new.
-	
+
 	// Defining the loop variables
 	char accum = 0;
 	word_t ped_new = ped_val;
@@ -247,7 +247,7 @@ void data_read(const std::string& input_file, int& count,
 
 		// Loops through all lines, writing each line to the buffer
 		// so the data can be processed
-		while (getline(data_file, buffer)) {
+		data_read: while (getline(data_file, buffer)) {
 				
 			// Reading the data:
 
@@ -301,7 +301,7 @@ void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
 	// State save/restore pedestal and accumulator array members
         // begin at their default values.
         
-	for (int j = 0; j < packet_size; j++) {
+	reset_loop: for (int j = 0; j < packet_size; j++) {
                 ped_array[j] = ped_val;
                 accum_array[j] = 0;
         }
@@ -318,19 +318,19 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
 			channel);
 
 	// Reset all adjusted ADC values to zero
-	for (int j = 0; j < total_samples; j++) {
+	ADC_reset_loop: for (int j = 0; j < total_samples; j++) {
 		ADC_array[j] = 0;
 	}
 }
 
 
-void ped_sub_read(const std::string& input_file, word_t ped_val,
-		  word_t* ADC_stored, bool* tvalid_stored,
-		  bool* tlast_user_stored, bool* tkeep_stored,
-		  word_t* ped_array, word_t* ADC_array,
-		  char* accum_array, int input_seed, int packet_size,
-		  int num_channels) {
-
+void array_scan(int array_size, word_t ped_val,
+                word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+                bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
+                word_t ped_array[N_CH], word_t ADC_array[N_SA],
+                char accum_array[N_CH], int input_seed,
+                int packet_size, int num_channels) {
+ 
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
 	// (where | represents the space delimiter): ADC (in hexadecimal) |
@@ -358,7 +358,6 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 	bool treset = false;
 
 	// Counters for the while loop and data read
-	int count;
 	int channel = 0;
 	int i = 0;
 	int attempt = 1;
@@ -379,17 +378,10 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 	// Setting the random seed
 	set_rnd_seed(input_seed, random_seed);
 
-	// Reading data to empty arrays
-	data_read(input_file, count, ADC_stored, tvalid_stored,
-		  tlast_user_stored, tkeep_stored);
-
-	// Finding size of storage arrays
-	int array_size = count;
-
 	// Algorithm scan while loop, executes until iterator reaches index
 	// of the last value in the data arrays. Iterator doesn't always
 	// increase (can revert back to i = 0, or i--)
-	while (i < array_size) {
+	array_scan: while (i < array_size) {
 
 		// Random assign
 		random_signal(treset, 1, 8200, 1, random_seed);
@@ -517,8 +509,38 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 			}
 		}
 	}
-
 	std::cout << "\nEnd of scan.\n\n";
+}
+
+
+void ped_sub_read(const std::string& input_file, word_t ped_val,
+                  word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+                  bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
+                  word_t ped_array[N_CH], word_t ADC_array[N_SA],
+                  char accum_array[N_CH], int input_seed, int packet_size,
+                  int num_channels) {
+	// This is the master (testbench) function to combine the
+	// read and scan protocols to simulate the flow of samples
+	// through the pedestal subtraction algorithm.
+
+	// Count number of lines in file so we know the size of the
+	// required storage array.
+	int count;
+
+	// Reading data to empty arrays
+	data_read(input_file, count, ADC_stored, tvalid_stored,
+		  tlast_user_stored, tkeep_stored);
+
+	// Finding size of storage arrays
+	int array_size = count;
+
+	// Scanning the data stored from the read function and appending
+	// the output values from the ped_alg function to preallocated
+	// arrays.
+	array_scan(array_size, ped_val, ADC_stored, tvalid_stored,
+                   tlast_user_stored, tkeep_stored, ped_array,
+                   ADC_array, accum_array, input_seed, packet_size,
+                   num_channels);
 }
 
 
@@ -542,7 +564,7 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		word_t ADC;
 		int ADC_temp;
 
-		while (getline(output, buffer)) {
+		output_read: while (getline(output, buffer)) {
 			
 			// Same as data_read()
 			std::string ADC_s;
@@ -565,7 +587,7 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		
 		std::cout << "\nAdjusted ADC value comparison:\n\n";
 
-		for (int i = 0; i < count; i++) {
+		comparison_loop: for (int i = 0; i < count; i++) {
 
 			// Printing comparison values for the testbench
 			std::cout << "ADC adjusted value for line "

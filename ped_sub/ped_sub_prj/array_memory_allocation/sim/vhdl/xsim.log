@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Nov 20 17:02:01 2020
+# Process ID: 11246
+# Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/sim/vhdl
+# Command line: xsim -mode tcl -source {xsim.dir/ped_alg/xsim_script.tcl}
+# Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/sim/vhdl/xsim.log
+# Journal file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/sim/vhdl/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/ped_alg/xsim_script.tcl
+# xsim {ped_alg} -autoloadwcfg -tclbatch {ped_alg.tcl}
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source ped_alg.tcl
+## run all
+Note: simulation done!
+Time: 186810 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/sim/vhdl/ped_alg.autotb.vhd
+Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
+Time: 186810 ns  Iteration: 1  Process: /apatb_ped_alg_top/generate_sim_done_proc  File: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/sim/vhdl/ped_alg.autotb.vhd
+$finish called at time : 186810 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Nov 20 17:02:17 2020...

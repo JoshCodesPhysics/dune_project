@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ped_alg" xd:componentRef="ped_alg" xd:initiationInterval="5" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="ped_val" xd:originalName="ped_val" xd:direction="in" xd:interfaceRef="ped_val_i" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="ped_val" xd:originalName="ped_val" xd:direction="out" xd:interfaceRef="ped_val_o" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="16"/>
+  <xd:arg xd:name="accum" xd:originalName="accum" xd:direction="in" xd:interfaceRef="accum_i" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="accum" xd:originalName="accum" xd:direction="out" xd:interfaceRef="accum_o" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="8"/>
+  <xd:arg xd:name="ADC" xd:originalName="ADC" xd:direction="out" xd:interfaceRef="ADC" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="16" xd:firstOut="3"/>
+  <xd:arg xd:name="tdata" xd:originalName="tdata" xd:direction="in" xd:interfaceRef="tdata" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="16" xd:firstOut="3"/>
+  <xd:arg xd:name="tvalid" xd:originalName="tvalid" xd:direction="in" xd:interfaceRef="tvalid" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:arg xd:name="tkeep0" xd:originalName="tkeep0" xd:direction="in" xd:interfaceRef="tkeep0" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:arg xd:name="tkeep1" xd:originalName="tkeep1" xd:direction="in" xd:interfaceRef="tkeep1" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:arg xd:name="tready" xd:originalName="tready" xd:direction="in" xd:interfaceRef="tready" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:arg xd:name="treset" xd:originalName="treset" xd:direction="in" xd:interfaceRef="treset" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:latencyEstimates xd:best-case="1" xd:worst-case="4" xd:average-case="3"/>
+  <xd:resourceEstimates xd:LUT="280" xd:FF="55" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

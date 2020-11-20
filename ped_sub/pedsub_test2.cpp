@@ -20,7 +20,7 @@ int main() {
 	// Unfortunately relative path not possible due to Vivado
 	// Csim issues.
 
-	const std::string proj_path = "/home/joshhorswill10/Documents";
+	const std::string proj_path = "/home/ppd/hmo31799/Documents";
 
 	const std::string input_path = "/dune_project/ped_sub/"
 				       "double_packet_in.txt";
@@ -32,9 +32,9 @@ int main() {
 	
 	// Number of packets within the input file and the number of
 	// samples contained in each packet.
-        const int NUM_CHANNELS = 64;
-        const int PACKET_SIZE = 64;
-	const int PACKET_WAVES = 2;
+        const int NUM_CHANNELS = N_CH;
+        const int PACKET_SIZE = PK_S;
+	const int PACKET_WAVES = PK_W;
 	const int NUM_SAMPLES = NUM_CHANNELS * PACKET_SIZE * PACKET_WAVES;
 
 	// Verified correct pedestal value after enough packets

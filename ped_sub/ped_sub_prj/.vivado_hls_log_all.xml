@@ -6,16 +6,7 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T16:21:37.426+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T16:20:38.767+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T16:18:08.913+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T16:16:59.911+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T15:12:19.564+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T15:09:34.526+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T15:08:24.697+0000"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ped_sub_prj" solutionName="new_testbench" date="2020-11-18T15:06:58.271+0000"/>
-      </csimLog>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>

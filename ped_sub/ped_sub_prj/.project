@@ -37,6 +37,11 @@
 			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/.apc/.tb</location>
 		</link>
 		<link>
+			<name>array_memory_allocation/constraints</name>
+			<type>2</type>
+			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/.tcls</location>
+		</link>
+		<link>
 			<name>function_wide_latency/constraints</name>
 			<type>2</type>
 			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/function_wide_latency/.tcls</location>
@@ -75,6 +80,21 @@
 			<name>tready_treset_solution/constraints</name>
 			<type>2</type>
 			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/tready_treset_solution/.tcls</location>
+		</link>
+		<link>
+			<name>array_memory_allocation/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/array_memory_allocation.directive</location>
+		</link>
+		<link>
+			<name>array_memory_allocation/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/directives.tcl</location>
+		</link>
+		<link>
+			<name>array_memory_allocation/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/ped_sub_prj/array_memory_allocation/script.tcl</location>
 		</link>
 		<link>
 			<name>function_wide_latency/constraints/.xml.directive</name>
