@@ -7,8 +7,9 @@
 
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-             word_t tdata, bool tvalid, bool tkeep0,
-	     bool tkeep1, bool tready, bool treset) {
+             word_t& tdata, bool& tvalid, bool& tkeep0,
+	     bool& tkeep1, bool& tready, bool& treset,
+	     bool& tlast) {
 	// This function takes an input ped_val, the estimate or previous
 	// pedestal (median) value, and can adjust this value according
 	// to whether the input ADC value is larger or smaller for a given
@@ -134,7 +135,8 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 		word_t temp_word = packet[i];
 
 		ped_alg(ped_new, accum, ADC_temp, temp_word,
-			tvalid, tkeep0, tkeep1, tready, treset);
+			tvalid, tkeep0, tkeep1, tready, treset,
+			tlast);
 
 		packet[i] = ADC_temp;
 
@@ -453,7 +455,8 @@ void array_scan(int array_size, word_t ped_val,
 				ped_alg(ped_new, accum, ADC, ADC_stored[i],
 					tvalid_stored[i], tkeep_stored[i],
 					tkeep_stored[i], 
-					tready, treset);
+					tready, treset,
+					tlast_user_stored[i]);
 
 				// Array values for this channel are
 				// overwritten by the output variables from

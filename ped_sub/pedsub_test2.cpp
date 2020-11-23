@@ -45,7 +45,7 @@ int main() {
 	const int INPUT_SEED = 45000;
 	// Probability of treset and tready going high is 1/<limit>
 	const int TRESET_LIMIT = 500000;
-	const int TREADY_LIMIT = 640;
+	const int TREADY_LIMIT = 100000000;
 
 	// Pedestal estimate; can affect testbench outcome
         const word_t PED_VAL = 500;
