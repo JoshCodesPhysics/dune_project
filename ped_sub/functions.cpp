@@ -328,8 +328,8 @@ void array_scan(int array_size, word_t ped_val,
                 word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
                 bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
                 word_t ped_array[N_CH], word_t ADC_array[N_SA],
-                char accum_array[N_CH], int input_seed,
-                int packet_size, int num_channels) {
+                char accum_array[N_CH], int packet_size, int num_channels,
+		int input_seed, int treset_limit, int tready_limit) {
  
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
@@ -351,6 +351,13 @@ void array_scan(int array_size, word_t ped_val,
 	// all packets (using state save/restore arrays)
 	// accum_array is an empty array to store the changing accumulator
 	// values at the end of each packet
+	
+	// input_seed is a random integer seed for the random raising of
+	// treset and tready
+	// treset_limit is used in the probability of treset going high
+	// i.e. 1/treset_limit
+	// tready_limit is essentially parallel to the above, but for
+	// tready.
 
 	// Make sure tready is initially low to prevent backpressure
 	bool tready = false;
@@ -384,10 +391,10 @@ void array_scan(int array_size, word_t ped_val,
 	array_scan: while (i < array_size) {
 
 		// Random assign
-		random_signal(treset, 1, 8200, 1, random_seed);
+		random_signal(treset, 1, treset_limit, 1, random_seed);
 
 		// Randomly assigning tready signal
-		random_signal(tready, 1, 600, 1,
+		random_signal(tready, 1, tready_limit, 1,
 			      random_seed);
 		
 		// Reset entire loop if treset is high
@@ -517,8 +524,8 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
                   bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
-                  char accum_array[N_CH], int input_seed, int packet_size,
-                  int num_channels) {
+                  char accum_array[N_CH], int packet_size, int num_channels,
+		  int input_seed, int treset_limit, int tready_limit) {
 	// This is the master (testbench) function to combine the
 	// read and scan protocols to simulate the flow of samples
 	// through the pedestal subtraction algorithm.
@@ -539,8 +546,8 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 	// arrays.
 	array_scan(array_size, ped_val, ADC_stored, tvalid_stored,
                    tlast_user_stored, tkeep_stored, ped_array,
-                   ADC_array, accum_array, input_seed, packet_size,
-                   num_channels);
+                   ADC_array, accum_array, packet_size, num_channels,
+		   input_seed, treset_limit, tready_limit);
 }
 
 

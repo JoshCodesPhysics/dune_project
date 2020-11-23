@@ -22,10 +22,10 @@ int main() {
 
 	const std::string proj_path = "/home/joshhorswill10/Documents";
 
-	const std::string input_path = "/dune_project/ped_sub/"
-				       "double_packet_in.txt";
-	const std::string output_path = "/dune_project/ped_sub/"
-					"double_packet_out.txt";
+	const std::string input_path = "/dune_project/ped_sub/IO_files/"
+				       "6400_packets_in.txt";
+	const std::string output_path = "/dune_project/ped_sub/IO_files/"
+					"6400_packets_out.txt";
 
 	const std::string input_file = proj_path + input_path;
 	const std::string output_file = proj_path + output_path;
@@ -43,6 +43,9 @@ int main() {
 
 	// Seed used to generate randomly high or low treset values
 	const int INPUT_SEED = 45000;
+	// Probability of treset and tready going high is 1/<limit>
+	const int TRESET_LIMIT = 500000;
+	const int TREADY_LIMIT = 640;
 
 	// Pedestal estimate; can affect testbench outcome
         const word_t PED_VAL = 500;
@@ -62,8 +65,9 @@ int main() {
 	// Calling testbench function, which in turn calls ped_alg
         ped_sub_read(input_file, PED_VAL, ADC_stored, 
 		     tvalid_stored, tlast_user_stored, tkeep_stored,
-		     ped_array, ADC_array, accum_array,
-		     INPUT_SEED, PACKET_SIZE, NUM_CHANNELS);
+		     ped_array, ADC_array, accum_array, PACKET_SIZE,
+		     NUM_CHANNELS, INPUT_SEED, TRESET_LIMIT,
+		     TREADY_LIMIT);
 	
 	// std::cout << "\n\nFinal pedestal and accumulator results: "
 	// 	  << "\n\n";
