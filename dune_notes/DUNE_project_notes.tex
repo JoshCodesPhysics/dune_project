@@ -15,7 +15,7 @@
 
 \section{DUNE's DAQ architecture; Envisaging the Alternatives}
 
-\subsection{{Overview}}
+\subsection{Overview}\label{section:overview}
 
 \begin{itemize}
 	\item There are four TPC (time projection chamber) modules of liquid argon; each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA. The Front End LInk eXchange system contains the focus of this project.
@@ -189,6 +189,7 @@ RTL clock cycle data is given in Vivado performance estimate data, as it can rea
 
 
 \subsection{HLS Design Flow}
+\label{section:HLS_DF}
 
 \begin{enumerate}
 	\item Compile, execute (simulate), and debug the C algorithm.
@@ -337,15 +338,23 @@ If a struct contains arrays, those arrays can be optimised using the \texttt{ARR
 The pedestal subtraction algorithm is the first sub-block in the TPG core, fed 64 sample words from the Header-Stripper/Combiner, shown in figure \ref{fig:hsc}. The first 6 words (16 bit data types) are stripped from the incoming samples and sent to the \texttt{pedsub} block, where the 'background noise' of the ADC values is removed. The algorithm is implemented as follows:
 
 \begin{itemize}
-	\item The algorithm works by scanning each sample within the packet, subtracting the pedestal from each ADC value and adjusting the pedestal and accumulator variables according to the size of each ADC value. The algorithm only runs when \texttt{tready} is low and \texttt{tvalid} and \texttt{tkeep} are high. \texttt{tlast} and \texttt{tuser} go high at the end of a packet.
+	\item The algorithm works by scanning each sample within the packet, subtracting the pedestal from each ADC value and adjusting the pedestal and accumulator variables according to the size of each ADC value. The firmware runs a AXI4 interface between blocks , which operates through a series of boolean signals mentioned in section \ref{section:overview}. \texttt{tkeep} and \texttt{treset} are signals that are not mentioned previously, the former of which goes high when the incoming data should be processed, and the latter goes high when the entire process must be reset and restarted. The algorithm only runs when \texttt{tready} is low and \texttt{tvalid} and \texttt{tkeep} are high. \texttt{tlast} and \texttt{tuser} go high at the end of a packet. \texttt{treset} goes high when an error in the FELIX interface occurs.
 	\item The user inputs an estimate of the median background value to subtract from the first few samples, as a temporary buffer before the pedestal value is changed by the algorithm.
 	\item The algorithm also starts with an associated accumulator variable, initially equal to zero, that directly changes the pedestal value once it reaches $\pm10$. How does this accumulator variable change?
-	\item The accumulator changes by $\pm1$ depending on the boolean (\texttt{ADCvalue} > \texttt{pedestal}). If this boolean is true, the accumulator increases by one, and false means a decrease by one.
+	\item The accumulator changes by $\pm1$ depending on the boolean (\texttt{ADCvalue} $>$ \texttt{pedestal}). If this boolean is true, the accumulator increases by one, and false means a decrease by one.
 	\item The next condition is: if before a scan the accumulator is $+10$, the pedestal increases by one, and the accumulator is reset to zero. Then the next ADC value is subtracted by this new increased pedestal. The opposite is the case for an accumulator of $-10$; the pedestal decreases by one and the accumulator resets.
-	\item At the end of each packet, the current value is stored and then retrieved from a state save/restore mechanism, for the next incoming packet.
+	\item At the end of each packet, the current value for the channel is stored and then retrieved from a state save/restore mechanism, for the next packet entering the channel.
 \end{itemize} 
 
 Eventually, with a large enough flux of packets, one would obtain a pedestal value appropriate for that input channel, giving more useful ADC values.
+
+\subsection{Pedestal Subtraction Testbench}
+
+The testbench of any design is one of the most important parts of any HLS project, and usually requires more time to complete than the source algorithm. The main purpose of the testbench is to validate the design when editing the top function so that it can C-simulate within the HLS compiler, synthesize and RTL/cosimulate to then be exported into an IP block. See section \ref{section:HLS_DF} for more detail on the firmware design flow.
+
+The first testbench design generated an array of random ADC integer values within a reasonable range, and found the ideal pedestal value for that range. Subsequently, the testbench function scanned those ADC values with the subtraction algorithm and validated that the pedestal value converged to the expected value, or was equal to that value after a certain number of packets. This was acceptable to test the first iteration but it did not validate the adjusted ADC values output from the algorithm.
+
+The output from a VHDL implementation of the \texttt{pedsub} algorithm was used to compare the output data of the HLS algorithm from one wave of packets travelling through 64 channels. This included a reading of the AXI4 signals, and a contingency for random raises of treset and tready to see if the data was affected. This testbench also included the state save/restore mechanism to see if the output would be affected by multiple packet waves entering a given channel. The result was as expected, which meant the design was ready for IP format packaging.
 
 \bibliography{dpn.bib}
 \bibliographystyle{unsrt}
