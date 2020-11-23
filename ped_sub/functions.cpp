@@ -26,7 +26,7 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 
 	// Run if no back pressure from tready, and the tvalid and tkeep
 	// signals are high.
-	if (!tready && tvalid && tkeep0 && tkeep1 && !treset) {
+	if (tready && tvalid && tkeep0 && tkeep1 && !treset) {
 
 		//Extracting 12 bit ADC value from 16 bit word
 		int mask = 4095;
@@ -217,11 +217,7 @@ void random_signal(bool& signal, int min, int max, int limit,
 	
 
 	if (rand_value <= limit) {
-		signal = true;
-	}
-
-	else {
-		signal = false;
+		signal = !signal;
 	}
 }
 
@@ -360,7 +356,7 @@ void array_scan(int array_size, word_t ped_val,
 	// tready.
 
 	// Make sure tready is initially low to prevent backpressure
-	bool tready = false;
+	bool tready = true;
 	// Make sure treset is initially low to prevent infinite loop
 	bool treset = false;
 
@@ -417,6 +413,7 @@ void array_scan(int array_size, word_t ped_val,
 				   channel);
 			i = 0;
 			attempt++;
+			treset = false;
 		}
 
 		// If it is not high, run scan as usual
@@ -425,7 +422,7 @@ void array_scan(int array_size, word_t ped_val,
 			// If tready is high, revert to previous loop
 			// and check if tready is still high, recursive
 			// until tready is low, then scan as usual.
-			if (tready) {
+			if (!tready) {
 				// Iterator does not increase, we process
 				// the same loop again
 				
@@ -436,6 +433,7 @@ void array_scan(int array_size, word_t ped_val,
 					     << " so pointer will return to "
 					     "that line and reattempt the "
 					     "scan \n";
+				tready = true;
 			}
 
 			// If tready is not high, record the
