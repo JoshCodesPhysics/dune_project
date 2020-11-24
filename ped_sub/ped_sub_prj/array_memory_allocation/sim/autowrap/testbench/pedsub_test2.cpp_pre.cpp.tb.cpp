@@ -27264,9 +27264,9 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 2 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test2.cpp" 2
 # 1 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h" 1
-# 10 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"
+# 11 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"
 
-# 10 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"
+# 11 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"
 typedef short word_t;
 
 
@@ -27277,8 +27277,9 @@ struct ADC_t
 
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-      word_t tdata, bool tvalid, bool tkeep0,
-      bool tkeep1, bool tready, bool treset);
+      word_t& tdata, bool& tvalid, bool& tkeep0,
+      bool& tkeep1, bool& tready, bool& treset,
+      bool& tlast);
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1,
@@ -27299,18 +27300,18 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
                 int& channel);
 
 void array_scan(int array_size, word_t ped_val,
-                word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                word_t ped_array[64], word_t ADC_array[64*64*2],
-                char accum_array[64], int input_seed,
-                int packet_size, int num_channels);
+                word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                word_t ped_array[64], word_t ADC_array[64*64*100],
+                char accum_array[64], int packet_size, int num_channels,
+  int input_seed, int treset_limit, int tready_limit);
 
 void ped_sub_read(const std::string& input_file, word_t ped_val,
-                  word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                  bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                  word_t ped_array[64], word_t ADC_array[64*64*2],
-                  char accum_array[64], int input_seed, int packet_size,
-    int num_channels);
+                  word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                  bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                  word_t ped_array[64], word_t ADC_array[64*64*100],
+                  char accum_array[64], int packet_size, int num_channels,
+    int input_seed, int treset_limit, int tready_limit);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);
@@ -27333,10 +27334,10 @@ int main() {
 # 23 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test2.cpp"
  const std::string proj_path = "/home/ppd/hmo31799/Documents";
 
- const std::string input_path = "/dune_project/ped_sub/"
-           "double_packet_in.txt";
- const std::string output_path = "/dune_project/ped_sub/"
-     "packet_data_out.txt";
+ const std::string input_path = "/dune_project/ped_sub/IO_files/"
+           "6400_packets_in.txt";
+ const std::string output_path = "/dune_project/ped_sub/IO_files/"
+     "6400_packets_out.txt";
 
  const std::string input_file = proj_path + input_path;
  const std::string output_file = proj_path + output_path;
@@ -27345,7 +27346,7 @@ int main() {
 
         const int NUM_CHANNELS = 64;
         const int PACKET_SIZE = 64;
- const int PACKET_WAVES = 2;
+ const int PACKET_WAVES = 100;
  const int NUM_SAMPLES = NUM_CHANNELS * PACKET_SIZE * PACKET_WAVES;
 
 
@@ -27354,6 +27355,9 @@ int main() {
 
 
  const int INPUT_SEED = 45000;
+
+ const int TRESET_LIMIT = 500000;
+ const int TREADY_LIMIT = 100000000;
 
 
         const word_t PED_VAL = 500;
@@ -27373,9 +27377,10 @@ int main() {
 
         ped_sub_read(input_file, PED_VAL, ADC_stored,
        tvalid_stored, tlast_user_stored, tkeep_stored,
-       ped_array, ADC_array, accum_array,
-       INPUT_SEED, PACKET_SIZE, NUM_CHANNELS);
-# 80 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test2.cpp"
+       ped_array, ADC_array, accum_array, PACKET_SIZE,
+       NUM_CHANNELS, INPUT_SEED, TRESET_LIMIT,
+       TREADY_LIMIT);
+# 84 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test2.cpp"
  std::cout << "\n\n";
 
  if (test_bool) {

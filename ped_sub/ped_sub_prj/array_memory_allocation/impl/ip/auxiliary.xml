@@ -12,6 +12,7 @@
   <xd:arg xd:name="tkeep1" xd:originalName="tkeep1" xd:direction="in" xd:interfaceRef="tkeep1" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
   <xd:arg xd:name="tready" xd:originalName="tready" xd:direction="in" xd:interfaceRef="tready" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
   <xd:arg xd:name="treset" xd:originalName="treset" xd:direction="in" xd:interfaceRef="treset" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
-  <xd:latencyEstimates xd:best-case="1" xd:worst-case="4" xd:average-case="3"/>
-  <xd:resourceEstimates xd:LUT="280" xd:FF="55" xd:BRAM="0" xd:DSP="0"/>
+  <xd:arg xd:name="tlast" xd:originalName="tlast" xd:direction="in" xd:interfaceRef="tlast" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="3"/>
+  <xd:latencyEstimates xd:best-case="1" xd:worst-case="4" xd:average-case="2"/>
+  <xd:resourceEstimates xd:LUT="266" xd:FF="42" xd:BRAM="0" xd:DSP="0"/>
 </xd:acceleratorMap>

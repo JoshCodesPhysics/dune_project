@@ -22,10 +22,10 @@
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>1</Best-caseLatency>
-<Average-caseLatency>3</Average-caseLatency>
+<Average-caseLatency>2</Average-caseLatency>
 <Worst-caseLatency>4</Worst-caseLatency>
 <Best-caseRealTimeLatency>4.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>12.000 ns</Average-caseRealTimeLatency>
+<Average-caseRealTimeLatency>8.000 ns</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>16.000 ns</Worst-caseRealTimeLatency>
 <Interval-min>2</Interval-min>
 <Interval-max>5</Interval-max>
@@ -34,8 +34,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>55</FF>
-<LUT>280</LUT>
+<FF>42</FF>
+<LUT>266</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>
 <URAM>0</URAM>
@@ -215,7 +215,7 @@
 <RtlPorts>
 <name>tdata</name>
 <Object>tdata</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -227,7 +227,7 @@
 <RtlPorts>
 <name>tvalid</name>
 <Object>tvalid</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -239,7 +239,7 @@
 <RtlPorts>
 <name>tkeep0</name>
 <Object>tkeep0</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -251,7 +251,7 @@
 <RtlPorts>
 <name>tkeep1</name>
 <Object>tkeep1</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -263,7 +263,7 @@
 <RtlPorts>
 <name>tready</name>
 <Object>tready</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -275,7 +275,19 @@
 <RtlPorts>
 <name>treset</name>
 <Object>treset</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>bool</CType>
+</RtlPorts>
+<RtlPorts>
+<name>tlast</name>
+<Object>tlast</Object>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>

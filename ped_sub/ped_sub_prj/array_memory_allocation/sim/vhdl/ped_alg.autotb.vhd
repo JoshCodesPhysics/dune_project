@@ -47,7 +47,7 @@ entity apatb_ped_alg_top is
       LENGTH_tkeep1     : INTEGER := 1;
       LENGTH_tready     : INTEGER := 1;
       LENGTH_treset     : INTEGER := 1;
-	    AUTOTB_TRANSACTION_NUM    : INTEGER := 9334
+	    AUTOTB_TRANSACTION_NUM    : INTEGER := 747942
 );
 
 end apatb_ped_alg_top;
@@ -91,6 +91,7 @@ architecture behav of apatb_ped_alg_top is
   signal tkeep1 :  STD_LOGIC;
   signal tready :  STD_LOGIC;
   signal treset :  STD_LOGIC;
+  signal tlast :  STD_LOGIC;
 
   signal ready_cnt : STD_LOGIC_VECTOR(31 DOWNTO 0);
   signal done_cnt	: STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -133,7 +134,8 @@ port (
     tkeep0 :  IN STD_LOGIC;
     tkeep1 :  IN STD_LOGIC;
     tready :  IN STD_LOGIC;
-    treset :  IN STD_LOGIC);
+    treset :  IN STD_LOGIC;
+    tlast :  IN STD_LOGIC);
 end component;
 
 -- The signal of port ped_val_i
@@ -161,6 +163,8 @@ shared variable AESL_REG_tkeep1 : STD_LOGIC_VECTOR(0 downto 0) := (others => '0'
 shared variable AESL_REG_tready : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
 -- The signal of port treset
 shared variable AESL_REG_treset : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+-- The signal of port tlast
+shared variable AESL_REG_tlast : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
       procedure esl_read_token (file textfile: TEXT; textline: inout LINE; token: out STRING; token_len: out INTEGER) is
           variable whitespace : CHARACTER;
           variable i : INTEGER;
@@ -494,7 +498,8 @@ AESL_inst_ped_alg    :   ped_alg port map (
    tkeep0  =>  tkeep0,
    tkeep1  =>  tkeep1,
    tready  =>  tready,
-   treset  =>  treset
+   treset  =>  treset,
+   tlast  =>  tlast
 );
 
 -- Assignment for control signal
@@ -1126,6 +1131,12 @@ begin
     wait;
 end process;
 
+gen_assign_tlast_proc : process
+begin
+  wait until (AESL_clock'event and AESL_clock = '1');
+  wait for 0.45 ns;
+  tlast <= AESL_REG_tlast(0);
+end process;
 generate_ready_cnt_proc : process(ready_initial, AESL_clock)
 begin
     if(AESL_clock'event and AESL_clock = '0') then

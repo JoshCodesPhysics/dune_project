@@ -9,4 +9,4 @@ set depth_list {
 {tready 1}
 {treset 1}
 }
-set trans_num 9334
+set trans_num 747942

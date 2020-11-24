@@ -15,7 +15,7 @@
 namespace ap_rtl {
 
 struct ped_alg : public sc_module {
-    // Port declarations 20
+    // Port declarations 21
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst;
     sc_in< sc_logic > ap_start;
@@ -36,6 +36,7 @@ struct ped_alg : public sc_module {
     sc_in< sc_logic > tkeep1;
     sc_in< sc_logic > tready;
     sc_in< sc_logic > treset;
+    sc_in< sc_logic > tlast;
 
 
     // Module declarations
@@ -50,41 +51,32 @@ struct ped_alg : public sc_module {
     ofstream mHdltvoutHandle;
     sc_signal< sc_lv<5> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
-    sc_signal< sc_lv<1> > or_ln29_3_fu_215_p2;
-    sc_signal< sc_lv<1> > or_ln29_3_reg_306;
-    sc_signal< sc_lv<12> > trunc_fu_221_p1;
-    sc_signal< sc_lv<12> > trunc_reg_310;
-    sc_signal< sc_lv<16> > zext_ln34_fu_225_p1;
-    sc_signal< sc_lv<16> > zext_ln34_reg_315;
+    sc_signal< sc_lv<1> > tready_read_read_fu_70_p2;
+    sc_signal< sc_lv<1> > tvalid_read_read_fu_76_p2;
+    sc_signal< sc_lv<1> > tkeep0_read_read_fu_82_p2;
+    sc_signal< sc_lv<1> > tkeep1_read_read_fu_88_p2;
+    sc_signal< sc_lv<1> > treset_read_read_fu_94_p2;
+    sc_signal< sc_lv<16> > zext_ln35_fu_183_p1;
+    sc_signal< sc_lv<16> > zext_ln35_reg_285;
     sc_signal< sc_logic > ap_CS_fsm_state3;
-    sc_signal< sc_lv<1> > icmp_ln40_1_fu_260_p2;
-    sc_signal< sc_lv<8> > select_ln40_fu_266_p3;
-    sc_signal< sc_lv<16> > add_ln56_fu_286_p2;
-    sc_signal< sc_lv<1> > icmp_ln50_fu_274_p2;
-    sc_signal< sc_lv<1> > icmp_ln55_fu_280_p2;
-    sc_signal< sc_lv<16> > add_ln51_fu_293_p2;
+    sc_signal< sc_lv<1> > icmp_ln41_1_fu_219_p2;
+    sc_signal< sc_lv<8> > select_ln41_fu_225_p3;
+    sc_signal< sc_lv<16> > add_ln57_fu_245_p2;
+    sc_signal< sc_lv<1> > icmp_ln51_fu_233_p2;
+    sc_signal< sc_lv<1> > icmp_ln56_fu_239_p2;
+    sc_signal< sc_lv<16> > add_ln52_fu_252_p2;
     sc_signal< sc_lv<16> > ped_val_load_3_reg_139;
     sc_signal< sc_lv<1> > ap_phi_mux_accum_flag_2_phi_fu_154_p6;
     sc_signal< sc_lv<1> > accum_flag_2_reg_150;
     sc_signal< sc_lv<8> > accum_new_2_reg_164;
     sc_signal< sc_logic > ap_CS_fsm_state4;
     sc_signal< sc_logic > ap_CS_fsm_state5;
-    sc_signal< sc_lv<1> > xor_ln29_fu_179_p0;
-    sc_signal< sc_lv<1> > xor_ln29_1_fu_185_p0;
-    sc_signal< sc_lv<1> > xor_ln29_2_fu_191_p0;
-    sc_signal< sc_lv<1> > or_ln29_fu_197_p0;
-    sc_signal< sc_lv<1> > xor_ln29_fu_179_p2;
-    sc_signal< sc_lv<1> > or_ln29_1_fu_203_p0;
-    sc_signal< sc_lv<1> > xor_ln29_2_fu_191_p2;
-    sc_signal< sc_lv<1> > or_ln29_1_fu_203_p2;
-    sc_signal< sc_lv<1> > xor_ln29_1_fu_185_p2;
-    sc_signal< sc_lv<1> > or_ln29_2_fu_209_p2;
-    sc_signal< sc_lv<1> > or_ln29_fu_197_p2;
-    sc_signal< sc_lv<1> > icmp_ln44_fu_240_p2;
-    sc_signal< sc_lv<8> > add_ln45_fu_246_p2;
-    sc_signal< sc_lv<1> > icmp_ln40_fu_228_p2;
-    sc_signal< sc_lv<8> > add_ln41_fu_234_p2;
-    sc_signal< sc_lv<8> > select_ln44_fu_252_p3;
+    sc_signal< sc_lv<12> > trunc_fu_179_p1;
+    sc_signal< sc_lv<1> > icmp_ln45_fu_199_p2;
+    sc_signal< sc_lv<8> > add_ln46_fu_205_p2;
+    sc_signal< sc_lv<1> > icmp_ln41_fu_187_p2;
+    sc_signal< sc_lv<8> > add_ln42_fu_193_p2;
+    sc_signal< sc_lv<8> > select_ln45_fu_211_p3;
     sc_signal< sc_lv<5> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
@@ -94,9 +86,9 @@ struct ped_alg : public sc_module {
     static const sc_lv<5> ap_ST_fsm_state4;
     static const sc_lv<5> ap_ST_fsm_state5;
     static const sc_lv<32> ap_const_lv32_0;
-    static const sc_lv<1> ap_const_lv1_0;
-    static const sc_lv<32> ap_const_lv32_2;
     static const sc_lv<1> ap_const_lv1_1;
+    static const sc_lv<32> ap_const_lv32_2;
+    static const sc_lv<1> ap_const_lv1_0;
     static const sc_lv<8> ap_const_lv8_0;
     static const sc_lv<32> ap_const_lv32_3;
     static const sc_lv<32> ap_const_lv32_4;
@@ -113,10 +105,10 @@ struct ped_alg : public sc_module {
     void thread_ADC_ap_vld();
     void thread_accum_o();
     void thread_accum_o_ap_vld();
-    void thread_add_ln41_fu_234_p2();
-    void thread_add_ln45_fu_246_p2();
-    void thread_add_ln51_fu_293_p2();
-    void thread_add_ln56_fu_286_p2();
+    void thread_add_ln42_fu_193_p2();
+    void thread_add_ln46_fu_205_p2();
+    void thread_add_ln52_fu_252_p2();
+    void thread_add_ln57_fu_245_p2();
     void thread_ap_CS_fsm_state1();
     void thread_ap_CS_fsm_state3();
     void thread_ap_CS_fsm_state4();
@@ -125,29 +117,22 @@ struct ped_alg : public sc_module {
     void thread_ap_idle();
     void thread_ap_phi_mux_accum_flag_2_phi_fu_154_p6();
     void thread_ap_ready();
-    void thread_icmp_ln40_1_fu_260_p2();
-    void thread_icmp_ln40_fu_228_p2();
-    void thread_icmp_ln44_fu_240_p2();
-    void thread_icmp_ln50_fu_274_p2();
-    void thread_icmp_ln55_fu_280_p2();
-    void thread_or_ln29_1_fu_203_p0();
-    void thread_or_ln29_1_fu_203_p2();
-    void thread_or_ln29_2_fu_209_p2();
-    void thread_or_ln29_3_fu_215_p2();
-    void thread_or_ln29_fu_197_p0();
-    void thread_or_ln29_fu_197_p2();
+    void thread_icmp_ln41_1_fu_219_p2();
+    void thread_icmp_ln41_fu_187_p2();
+    void thread_icmp_ln45_fu_199_p2();
+    void thread_icmp_ln51_fu_233_p2();
+    void thread_icmp_ln56_fu_239_p2();
     void thread_ped_val_o();
     void thread_ped_val_o_ap_vld();
-    void thread_select_ln40_fu_266_p3();
-    void thread_select_ln44_fu_252_p3();
-    void thread_trunc_fu_221_p1();
-    void thread_xor_ln29_1_fu_185_p0();
-    void thread_xor_ln29_1_fu_185_p2();
-    void thread_xor_ln29_2_fu_191_p0();
-    void thread_xor_ln29_2_fu_191_p2();
-    void thread_xor_ln29_fu_179_p0();
-    void thread_xor_ln29_fu_179_p2();
-    void thread_zext_ln34_fu_225_p1();
+    void thread_select_ln41_fu_225_p3();
+    void thread_select_ln45_fu_211_p3();
+    void thread_tkeep0_read_read_fu_82_p2();
+    void thread_tkeep1_read_read_fu_88_p2();
+    void thread_tready_read_read_fu_70_p2();
+    void thread_treset_read_read_fu_94_p2();
+    void thread_trunc_fu_179_p1();
+    void thread_tvalid_read_read_fu_76_p2();
+    void thread_zext_ln35_fu_183_p1();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();
 };

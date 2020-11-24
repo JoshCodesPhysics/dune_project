@@ -20,7 +20,7 @@ int main() {
 	// Unfortunately relative path not possible due to Vivado
 	// Csim issues.
 
-	const std::string proj_path = "/home/joshhorswill10/Documents";
+	const std::string proj_path = "/home/ppd/hmo31799/Documents";
 
 	const std::string input_path = "/dune_project/ped_sub/IO_files/"
 				       "6400_packets_in.txt";

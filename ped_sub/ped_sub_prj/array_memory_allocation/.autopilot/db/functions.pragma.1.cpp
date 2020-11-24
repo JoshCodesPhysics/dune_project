@@ -18749,7 +18749,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 2 "functions.cpp" 2
 # 1 "./functions.h" 1
-# 10 "./functions.h"
+# 11 "./functions.h"
 typedef short word_t;
 
 
@@ -18760,8 +18760,9 @@ struct ADC_t
 
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-      word_t tdata, bool tvalid, bool tkeep0,
-      bool tkeep1, bool tready, bool treset);
+      word_t& tdata, bool& tvalid, bool& tkeep0,
+      bool& tkeep1, bool& tready, bool& treset,
+      bool& tlast);
 
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1,
@@ -18782,18 +18783,18 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
                 int& channel);
 
 void array_scan(int array_size, word_t ped_val,
-                word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                word_t ped_array[64], word_t ADC_array[64*64*2],
-                char accum_array[64], int input_seed,
-                int packet_size, int num_channels);
+                word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                word_t ped_array[64], word_t ADC_array[64*64*100],
+                char accum_array[64], int packet_size, int num_channels,
+  int input_seed, int treset_limit, int tready_limit);
 
 void ped_sub_read(const std::string& input_file, word_t ped_val,
-                  word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                  bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                  word_t ped_array[64], word_t ADC_array[64*64*2],
-                  char accum_array[64], int input_seed, int packet_size,
-    int num_channels);
+                  word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                  bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                  word_t ped_array[64], word_t ADC_array[64*64*100],
+                  char accum_array[64], int packet_size, int num_channels,
+    int input_seed, int treset_limit, int tready_limit);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);
@@ -24566,10 +24567,11 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-             word_t tdata, bool tvalid, bool tkeep0,
-      bool tkeep1, bool tready, bool treset) {
-# 29 "functions.cpp"
- if (!tready && tvalid && tkeep0 && tkeep1 && !treset) {
+             word_t& tdata, bool& tvalid, bool& tkeep0,
+      bool& tkeep1, bool& tready, bool& treset,
+      bool& tlast) {
+# 30 "functions.cpp"
+ if (tready && tvalid && tkeep0 && tkeep1 && !treset) {
 
 
   int mask = 4095;
@@ -24581,7 +24583,7 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 
   accumulator_condition : {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 39 "functions.cpp"
+# 40 "functions.cpp"
 
    if (ADC > ped_val) {
     accum++;
@@ -24594,7 +24596,7 @@ _ssdm_op_SpecLatency(2, 65535, "");
 
   pedestal_condition : {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 49 "functions.cpp"
+# 50 "functions.cpp"
 
    if (accum >= 10) {
     ped_val++;
@@ -24612,11 +24614,19 @@ _ssdm_op_SpecLatency(2, 65535, "");
 
   ped_subtraction: {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 64 "functions.cpp"
+# 65 "functions.cpp"
 
     ADC = ADC - ped_val;
   }
  }
+
+
+ static word_t ped_val_out = ped_val;
+ static char accum_out = accum;
+ static word_t ADC_out = ADC;
+ static bool tready_out = tready;
+
+ static bool tlast_out = tlast;
 }
 
 
@@ -24634,7 +24644,7 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 void ped_sub(word_t ped_val, int packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
              bool& tlast, bool& tuser) {
-# 94 "functions.cpp"
+# 103 "functions.cpp"
  char accum = 0;
  word_t ped_new = ped_val;
  word_t ADC_temp;
@@ -24678,7 +24688,8 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
   word_t temp_word = packet[i];
 
   ped_alg(ped_new, accum, ADC_temp, temp_word,
-   tvalid, tkeep0, tkeep1, tready, treset);
+   tvalid, tkeep0, tkeep1, tready, treset,
+   tlast);
 
   packet[i] = ADC_temp;
 
@@ -24752,13 +24763,9 @@ void random_signal(bool& signal, int min, int max, int limit,
 
 
  rand_value = min + (rand_seed % (max - min + 1));
-# 219 "functions.cpp"
+# 229 "functions.cpp"
  if (rand_value <= limit) {
-  signal = true;
- }
-
- else {
-  signal = false;
+  signal = !signal;
  }
 }
 
@@ -24813,7 +24820,7 @@ void data_read(const std::string& input_file, int& count,
    tvalid_stored[count] = tvalid;
    tlast_user_stored[count] = tlast_user;
    tkeep_stored[count] = tkeep;
-# 289 "functions.cpp"
+# 295 "functions.cpp"
    count++;
   }
  }
@@ -24853,34 +24860,34 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
 
 
 void array_scan(int array_size, word_t ped_val,
-                word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                word_t ped_array[64], word_t ADC_array[64*64*2],
-                char accum_array[64], int input_seed,
-                int packet_size, int num_channels) {_ssdm_SpecArrayDimSize(ADC_stored, 8192);_ssdm_SpecArrayDimSize(tvalid_stored, 8192);_ssdm_SpecArrayDimSize(tlast_user_stored, 8192);_ssdm_SpecArrayDimSize(tkeep_stored, 8192);_ssdm_SpecArrayDimSize(ped_array, 64);_ssdm_SpecArrayDimSize(ADC_array, 8192);_ssdm_SpecArrayDimSize(accum_array, 64);
+                word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                word_t ped_array[64], word_t ADC_array[64*64*100],
+                char accum_array[64], int packet_size, int num_channels,
+  int input_seed, int treset_limit, int tready_limit) {_ssdm_SpecArrayDimSize(ADC_stored, 409600);_ssdm_SpecArrayDimSize(tvalid_stored, 409600);_ssdm_SpecArrayDimSize(tlast_user_stored, 409600);_ssdm_SpecArrayDimSize(tkeep_stored, 409600);_ssdm_SpecArrayDimSize(ped_array, 64);_ssdm_SpecArrayDimSize(ADC_array, 409600);_ssdm_SpecArrayDimSize(accum_array, 64);
 _ssdm_op_SpecInterface(ADC_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(ADC_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(accum_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(ped_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(tkeep_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(tlast_user_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
 _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 332 "functions.cpp"
+# 338 "functions.cpp"
 
-# 356 "functions.cpp"
- bool tready = false;
+# 369 "functions.cpp"
+ bool tready = true;
 
  bool treset = false;
 
@@ -24911,10 +24918,10 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
  array_scan: while (i < array_size) {
 
 
-  random_signal(treset, 1, 8200, 1, random_seed);
+  random_signal(treset, 1, treset_limit, 1, random_seed);
 
 
-  random_signal(tready, 1, 600, 1,
+  random_signal(tready, 1, tready_limit, 1,
          random_seed);
 
 
@@ -24937,6 +24944,7 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
        channel);
    i = 0;
    attempt++;
+   treset = false;
   }
 
 
@@ -24945,7 +24953,7 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
 
 
 
-   if (tready) {
+   if (!tready) {
 
 
 
@@ -24956,19 +24964,21 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
           << " so pointer will return to "
           "that line and reattempt the "
           "scan \n";
+    tready = true;
    }
 
 
 
    else {
-# 445 "functions.cpp"
+# 460 "functions.cpp"
     ped_new = ped_array[channel];
     accum = accum_array[channel];
 
     ped_alg(ped_new, accum, ADC, ADC_stored[i],
      tvalid_stored[i], tkeep_stored[i],
      tkeep_stored[i],
-     tready, treset);
+     tready, treset,
+     tlast_user_stored[i]);
 
 
 
@@ -25034,11 +25044,11 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
 
 
 void ped_sub_read(const std::string& input_file, word_t ped_val,
-                  word_t ADC_stored[64*64*2], bool tvalid_stored[64*64*2],
-                  bool tlast_user_stored[64*64*2], bool tkeep_stored[64*64*2],
-                  word_t ped_array[64], word_t ADC_array[64*64*2],
-                  char accum_array[64], int input_seed, int packet_size,
-                  int num_channels) {_ssdm_SpecArrayDimSize(ADC_stored, 8192);_ssdm_SpecArrayDimSize(tvalid_stored, 8192);_ssdm_SpecArrayDimSize(tlast_user_stored, 8192);_ssdm_SpecArrayDimSize(tkeep_stored, 8192);_ssdm_SpecArrayDimSize(ped_array, 64);_ssdm_SpecArrayDimSize(ADC_array, 8192);_ssdm_SpecArrayDimSize(accum_array, 64);
+                  word_t ADC_stored[64*64*100], bool tvalid_stored[64*64*100],
+                  bool tlast_user_stored[64*64*100], bool tkeep_stored[64*64*100],
+                  word_t ped_array[64], word_t ADC_array[64*64*100],
+                  char accum_array[64], int packet_size, int num_channels,
+    int input_seed, int treset_limit, int tready_limit) {_ssdm_SpecArrayDimSize(ADC_stored, 409600);_ssdm_SpecArrayDimSize(tvalid_stored, 409600);_ssdm_SpecArrayDimSize(tlast_user_stored, 409600);_ssdm_SpecArrayDimSize(tkeep_stored, 409600);_ssdm_SpecArrayDimSize(ped_array, 64);_ssdm_SpecArrayDimSize(ADC_array, 409600);_ssdm_SpecArrayDimSize(accum_array, 64);
 
 
 
@@ -25059,8 +25069,8 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 
  array_scan(array_size, ped_val, ADC_stored, tvalid_stored,
                    tlast_user_stored, tkeep_stored, ped_array,
-                   ADC_array, accum_array, input_seed, packet_size,
-                   num_channels);
+                   ADC_array, accum_array, packet_size, num_channels,
+     input_seed, treset_limit, tready_limit);
 }
 
 

@@ -122,6 +122,14 @@
         "dataWidth": "1",
         "interfaceRef": "treset"
       }
+    },
+    "tlast": {
+      "index": "9",
+      "type": {
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tlast"
+      }
     }
   },
   "Return": {
@@ -277,6 +285,17 @@
       "bundle_name": "tkeep1",
       "bundle_role": "default"
     },
+    "tlast": {
+      "type": "data",
+      "dir": "in",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tlast",
+      "bundle_role": "default"
+    },
     "tready": {
       "type": "data",
       "dir": "in",
@@ -391,6 +410,10 @@
     "treset": {
       "dir": "in",
       "width": "1"
+    },
+    "tlast": {
+      "dir": "in",
+      "width": "1"
     }
   },
   "ModuleInfo": {
@@ -405,7 +428,7 @@
     "Metrics": {"ped_alg": {
         "Latency": {
           "LatencyBest": "1",
-          "LatencyAvg": "3",
+          "LatencyAvg": "2",
           "LatencyWorst": "4",
           "PipelineIIMin": "2",
           "PipelineIIMax": "5",
@@ -419,8 +442,8 @@
           "Estimate": "3.019"
         },
         "Area": {
-          "FF": "55",
-          "LUT": "280",
+          "FF": "42",
+          "LUT": "266",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -437,7 +460,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-11-20 17:00:57 GMT",
+    "Time": "2020-11-24 11:46:45 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

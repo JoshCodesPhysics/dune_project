@@ -265,6 +265,22 @@
         </spirit:portMap>
       </spirit:portMaps>
     </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>tlast</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="data" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="data_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>DATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tlast</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:model>
     <spirit:views>
@@ -280,7 +296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>048b4c35</spirit:value>
+            <spirit:value>cd22be27</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -296,7 +312,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>518db694</spirit:value>
+            <spirit:value>d650d5e1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -312,7 +328,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>78c8a309</spirit:value>
+            <spirit:value>7b2ae7df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -328,7 +344,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e3af56bc</spirit:value>
+            <spirit:value>c3f2c2d1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -668,6 +684,19 @@
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
+      <spirit:port>
+        <spirit:name>tlast</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
     </spirit:ports>
   </spirit:model>
   <spirit:fileSets>
@@ -701,7 +730,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/ped_alg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e3af56bc</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_c3f2c2d1</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -781,14 +810,14 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Ped_alg</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2011201703</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-11-20T17:03:55Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2011241232</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-11-24T12:34:57Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4aef9b04"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a138ce6d"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="71d90a85"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="8a2b78fe"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1b4a031e"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="3a20b899"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="acbe7ca9"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

@@ -66,6 +66,14 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 				ADC = ADC - ped_val;
 		}
 	}
+
+	// Variable copies for 'output'
+	static word_t ped_val_out = ped_val;
+	static char accum_out = accum;
+	static word_t ADC_out = ADC;
+	static bool tready_out = tready;
+	// Not needed but jus so tlast isn't hanging
+	static bool tlast_out = tlast;
 }
 
 

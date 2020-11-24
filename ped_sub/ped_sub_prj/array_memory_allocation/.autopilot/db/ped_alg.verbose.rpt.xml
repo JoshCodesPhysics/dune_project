@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'ped_alg'" level="0">
-<item name = "Date">Fri Nov 20 17:00:55 2020
+<item name = "Date">Tue Nov 24 11:46:42 2020
 </item>
 <item name = "Version">2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)</item>
 <item name = "Project">ped_sub_prj</item>
@@ -47,12 +47,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 190, -</column>
+<column name="Expression">-, -, 0, 176, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 90, -</column>
-<column name="Register">-, -, 55, -, -</column>
+<column name="Register">-, -, 42, -, -</column>
 <specialColumn name="Available">1824, 2520, 548160, 274080, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -77,25 +77,18 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln41_fu_234_p2">+, 0, 0, 15, 1, 8</column>
-<column name="add_ln45_fu_246_p2">+, 0, 0, 15, 2, 8</column>
-<column name="add_ln51_fu_293_p2">+, 0, 0, 23, 16, 1</column>
-<column name="add_ln56_fu_286_p2">+, 0, 0, 23, 16, 2</column>
+<column name="add_ln42_fu_193_p2">+, 0, 0, 15, 1, 8</column>
+<column name="add_ln46_fu_205_p2">+, 0, 0, 15, 2, 8</column>
+<column name="add_ln52_fu_252_p2">+, 0, 0, 23, 16, 1</column>
+<column name="add_ln57_fu_245_p2">+, 0, 0, 23, 16, 2</column>
 <column name="ADC">-, 0, 0, 23, 16, 16</column>
-<column name="icmp_ln40_1_fu_260_p2">icmp, 0, 0, 13, 16, 16</column>
-<column name="icmp_ln40_fu_228_p2">icmp, 0, 0, 13, 16, 16</column>
-<column name="icmp_ln44_fu_240_p2">icmp, 0, 0, 13, 16, 16</column>
-<column name="icmp_ln50_fu_274_p2">icmp, 0, 0, 11, 8, 4</column>
-<column name="icmp_ln55_fu_280_p2">icmp, 0, 0, 11, 8, 5</column>
-<column name="or_ln29_1_fu_203_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln29_2_fu_209_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln29_3_fu_215_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln29_fu_197_p2">or, 0, 0, 2, 1, 1</column>
-<column name="select_ln40_fu_266_p3">select, 0, 0, 8, 1, 8</column>
-<column name="select_ln44_fu_252_p3">select, 0, 0, 8, 1, 8</column>
-<column name="xor_ln29_1_fu_185_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln29_2_fu_191_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln29_fu_179_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="icmp_ln41_1_fu_219_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln41_fu_187_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln45_fu_199_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="icmp_ln51_fu_233_p2">icmp, 0, 0, 11, 8, 4</column>
+<column name="icmp_ln56_fu_239_p2">icmp, 0, 0, 11, 8, 5</column>
+<column name="select_ln41_fu_225_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln45_fu_211_p3">select, 0, 0, 8, 1, 8</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -113,10 +106,8 @@
 <column name="accum_flag_2_reg_150">1, 0, 1, 0</column>
 <column name="accum_new_2_reg_164">8, 0, 8, 0</column>
 <column name="ap_CS_fsm">5, 0, 5, 0</column>
-<column name="or_ln29_3_reg_306">1, 0, 1, 0</column>
 <column name="ped_val_load_3_reg_139">16, 0, 16, 0</column>
-<column name="trunc_reg_310">12, 0, 12, 0</column>
-<column name="zext_ln34_reg_315">12, 0, 16, 4</column>
+<column name="zext_ln35_reg_285">12, 0, 16, 4</column>
 </table>
 </item>
 </section>
@@ -140,12 +131,13 @@
 <column name="accum_o_ap_vld">out, 1, ap_ovld, accum, pointer</column>
 <column name="ADC">out, 16, ap_vld, ADC, pointer</column>
 <column name="ADC_ap_vld">out, 1, ap_vld, ADC, pointer</column>
-<column name="tdata">in, 16, ap_none, tdata, scalar</column>
-<column name="tvalid">in, 1, ap_none, tvalid, scalar</column>
-<column name="tkeep0">in, 1, ap_none, tkeep0, scalar</column>
-<column name="tkeep1">in, 1, ap_none, tkeep1, scalar</column>
-<column name="tready">in, 1, ap_none, tready, scalar</column>
-<column name="treset">in, 1, ap_none, treset, scalar</column>
+<column name="tdata">in, 16, ap_none, tdata, pointer</column>
+<column name="tvalid">in, 1, ap_none, tvalid, pointer</column>
+<column name="tkeep0">in, 1, ap_none, tkeep0, pointer</column>
+<column name="tkeep1">in, 1, ap_none, tkeep1, pointer</column>
+<column name="tready">in, 1, ap_none, tready, pointer</column>
+<column name="treset">in, 1, ap_none, treset, pointer</column>
+<column name="tlast">in, 1, ap_none, tlast, pointer</column>
 </table>
 </item>
 </section>

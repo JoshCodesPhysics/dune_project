@@ -17,25 +17,27 @@ set C_modelArgList {
 	{ ped_val int 16 regular {pointer 2}  }
 	{ accum int 8 regular {pointer 2}  }
 	{ ADC int 16 regular {pointer 1}  }
-	{ tdata int 16 regular  }
-	{ tvalid uint 1 regular  }
-	{ tkeep0 uint 1 regular  }
-	{ tkeep1 uint 1 regular  }
-	{ tready uint 1 regular  }
-	{ treset uint 1 regular  }
+	{ tdata int 16 regular {pointer 0}  }
+	{ tvalid int 1 regular {pointer 0}  }
+	{ tkeep0 int 1 regular {pointer 0}  }
+	{ tkeep1 int 1 regular {pointer 0}  }
+	{ tready int 1 regular {pointer 0}  }
+	{ treset int 1 regular {pointer 0}  }
+	{ tlast int 1 unused {pointer 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "ped_val", "interface" : "wire", "bitwidth" : 16, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "ped_val","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "accum", "interface" : "wire", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "accum","cData": "char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "ADC", "interface" : "wire", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "ADC","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
- 	{ "Name" : "tdata", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "tdata","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "tvalid", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tvalid","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "tkeep0", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep0","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "tkeep1", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep1","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "tready", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tready","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} , 
- 	{ "Name" : "treset", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "treset","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} ]}
+ 	{ "Name" : "tdata", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "tdata","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tvalid", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tvalid","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tkeep0", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep0","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tkeep1", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep1","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tready", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tready","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "treset", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "treset","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tlast", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tlast","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 20
+set portNum 21
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -57,6 +59,7 @@ set portList {
 	{ tkeep1 sc_in sc_logic 1 signal 6 } 
 	{ tready sc_in sc_logic 1 signal 7 } 
 	{ treset sc_in sc_logic 1 signal 8 } 
+	{ tlast sc_in sc_logic 1 signal 9 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -78,7 +81,8 @@ set NewPortList {[
  	{ "name": "tkeep0", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tkeep0", "role": "default" }} , 
  	{ "name": "tkeep1", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tkeep1", "role": "default" }} , 
  	{ "name": "tready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tready", "role": "default" }} , 
- 	{ "name": "treset", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "treset", "role": "default" }}  ]}
+ 	{ "name": "treset", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "treset", "role": "default" }} , 
+ 	{ "name": "tlast", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tlast", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -103,7 +107,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "tkeep0", "Type" : "None", "Direction" : "I"},
 			{"Name" : "tkeep1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "tready", "Type" : "None", "Direction" : "I"},
-			{"Name" : "treset", "Type" : "None", "Direction" : "I"}]}]}
+			{"Name" : "treset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "tlast", "Type" : "None", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -111,12 +116,13 @@ set ArgLastReadFirstWriteLatency {
 		ped_val {Type IO LastRead 2 FirstWrite 2}
 		accum {Type IO LastRead 2 FirstWrite 4}
 		ADC {Type O LastRead -1 FirstWrite 3}
-		tdata {Type I LastRead 0 FirstWrite -1}
+		tdata {Type I LastRead 2 FirstWrite -1}
 		tvalid {Type I LastRead 0 FirstWrite -1}
 		tkeep0 {Type I LastRead 0 FirstWrite -1}
 		tkeep1 {Type I LastRead 0 FirstWrite -1}
 		tready {Type I LastRead 0 FirstWrite -1}
-		treset {Type I LastRead 0 FirstWrite -1}}}
+		treset {Type I LastRead 0 FirstWrite -1}
+		tlast {Type I LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -138,6 +144,7 @@ set Spec2ImplPortList {
 	tkeep1 { ap_none {  { tkeep1 in_data 0 1 } } }
 	tready { ap_none {  { tready in_data 0 1 } } }
 	treset { ap_none {  { treset in_data 0 1 } } }
+	tlast { ap_none {  { tlast in_data 0 1 } } }
 }
 
 set busDeadlockParameterList { 
