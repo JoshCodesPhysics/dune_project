@@ -23,7 +23,13 @@ set C_modelArgList {
 	{ tkeep1 int 1 regular {pointer 0}  }
 	{ tready int 1 regular {pointer 0}  }
 	{ treset int 1 regular {pointer 0}  }
-	{ tlast int 1 unused {pointer 0}  }
+	{ tlast int 1 regular {pointer 0}  }
+	{ tvalid_out int 1 regular {pointer 1}  }
+	{ tkeep0_out int 1 regular {pointer 1}  }
+	{ tkeep1_out int 1 regular {pointer 1}  }
+	{ tready_out int 1 regular {pointer 1}  }
+	{ treset_out int 1 regular {pointer 1}  }
+	{ tlast_out int 1 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "ped_val", "interface" : "wire", "bitwidth" : 16, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "ped_val","cData": "short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
@@ -35,9 +41,15 @@ set C_modelArgMapList {[
  	{ "Name" : "tkeep1", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep1","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "tready", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tready","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "treset", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "treset","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
- 	{ "Name" : "tlast", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tlast","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
+ 	{ "Name" : "tlast", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tlast","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tvalid_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tvalid_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tkeep0_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep0_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tkeep1_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tkeep1_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tready_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tready_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "treset_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "treset_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "tlast_out", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "tlast_out","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 21
+set portNum 33
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -60,6 +72,18 @@ set portList {
 	{ tready sc_in sc_logic 1 signal 7 } 
 	{ treset sc_in sc_logic 1 signal 8 } 
 	{ tlast sc_in sc_logic 1 signal 9 } 
+	{ tvalid_out sc_out sc_logic 1 signal 10 } 
+	{ tvalid_out_ap_vld sc_out sc_logic 1 outvld 10 } 
+	{ tkeep0_out sc_out sc_logic 1 signal 11 } 
+	{ tkeep0_out_ap_vld sc_out sc_logic 1 outvld 11 } 
+	{ tkeep1_out sc_out sc_logic 1 signal 12 } 
+	{ tkeep1_out_ap_vld sc_out sc_logic 1 outvld 12 } 
+	{ tready_out sc_out sc_logic 1 signal 13 } 
+	{ tready_out_ap_vld sc_out sc_logic 1 outvld 13 } 
+	{ treset_out sc_out sc_logic 1 signal 14 } 
+	{ treset_out_ap_vld sc_out sc_logic 1 outvld 14 } 
+	{ tlast_out sc_out sc_logic 1 signal 15 } 
+	{ tlast_out_ap_vld sc_out sc_logic 1 outvld 15 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -82,7 +106,19 @@ set NewPortList {[
  	{ "name": "tkeep1", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tkeep1", "role": "default" }} , 
  	{ "name": "tready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tready", "role": "default" }} , 
  	{ "name": "treset", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "treset", "role": "default" }} , 
- 	{ "name": "tlast", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tlast", "role": "default" }}  ]}
+ 	{ "name": "tlast", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tlast", "role": "default" }} , 
+ 	{ "name": "tvalid_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tvalid_out", "role": "default" }} , 
+ 	{ "name": "tvalid_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "tvalid_out", "role": "ap_vld" }} , 
+ 	{ "name": "tkeep0_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tkeep0_out", "role": "default" }} , 
+ 	{ "name": "tkeep0_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "tkeep0_out", "role": "ap_vld" }} , 
+ 	{ "name": "tkeep1_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tkeep1_out", "role": "default" }} , 
+ 	{ "name": "tkeep1_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "tkeep1_out", "role": "ap_vld" }} , 
+ 	{ "name": "tready_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tready_out", "role": "default" }} , 
+ 	{ "name": "tready_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "tready_out", "role": "ap_vld" }} , 
+ 	{ "name": "treset_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "treset_out", "role": "default" }} , 
+ 	{ "name": "treset_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "treset_out", "role": "ap_vld" }} , 
+ 	{ "name": "tlast_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tlast_out", "role": "default" }} , 
+ 	{ "name": "tlast_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "tlast_out", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -108,7 +144,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "tkeep1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "tready", "Type" : "None", "Direction" : "I"},
 			{"Name" : "treset", "Type" : "None", "Direction" : "I"},
-			{"Name" : "tlast", "Type" : "None", "Direction" : "I"}]}]}
+			{"Name" : "tlast", "Type" : "None", "Direction" : "I"},
+			{"Name" : "tvalid_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tkeep0_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tkeep1_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tready_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "treset_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tlast_out", "Type" : "Vld", "Direction" : "O"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -122,7 +164,13 @@ set ArgLastReadFirstWriteLatency {
 		tkeep1 {Type I LastRead 0 FirstWrite -1}
 		tready {Type I LastRead 0 FirstWrite -1}
 		treset {Type I LastRead 0 FirstWrite -1}
-		tlast {Type I LastRead -1 FirstWrite -1}}}
+		tlast {Type I LastRead 4 FirstWrite -1}
+		tvalid_out {Type O LastRead -1 FirstWrite 4}
+		tkeep0_out {Type O LastRead -1 FirstWrite 4}
+		tkeep1_out {Type O LastRead -1 FirstWrite 4}
+		tready_out {Type O LastRead -1 FirstWrite 4}
+		treset_out {Type O LastRead -1 FirstWrite 4}
+		tlast_out {Type O LastRead -1 FirstWrite 4}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -145,6 +193,12 @@ set Spec2ImplPortList {
 	tready { ap_none {  { tready in_data 0 1 } } }
 	treset { ap_none {  { treset in_data 0 1 } } }
 	tlast { ap_none {  { tlast in_data 0 1 } } }
+	tvalid_out { ap_vld {  { tvalid_out out_data 1 1 }  { tvalid_out_ap_vld out_vld 1 1 } } }
+	tkeep0_out { ap_vld {  { tkeep0_out out_data 1 1 }  { tkeep0_out_ap_vld out_vld 1 1 } } }
+	tkeep1_out { ap_vld {  { tkeep1_out out_data 1 1 }  { tkeep1_out_ap_vld out_vld 1 1 } } }
+	tready_out { ap_vld {  { tready_out out_data 1 1 }  { tready_out_ap_vld out_vld 1 1 } } }
+	treset_out { ap_vld {  { treset_out out_data 1 1 }  { treset_out_ap_vld out_vld 1 1 } } }
+	tlast_out { ap_vld {  { tlast_out out_data 1 1 }  { tlast_out_ap_vld out_vld 1 1 } } }
 }
 
 set busDeadlockParameterList { 

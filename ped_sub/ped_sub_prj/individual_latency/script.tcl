@@ -5,8 +5,8 @@
 ############################################################
 open_project ped_sub_prj
 set_top ped_alg
-add_files functions.h
 add_files functions.cpp
+add_files functions.h
 add_files -tb pedsub_test2.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "individual_latency"
 set_part {xczu9eg-ffvb1156-2-e}

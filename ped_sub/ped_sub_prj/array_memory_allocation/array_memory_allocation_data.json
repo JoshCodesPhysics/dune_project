@@ -48,6 +48,7 @@
     "ped_val": {
       "index": "0",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "short",
         "dataWidth": "16",
         "multiInterfaceRef": [
@@ -59,6 +60,7 @@
     "accum": {
       "index": "1",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "char",
         "dataWidth": "8",
         "multiInterfaceRef": [
@@ -70,6 +72,7 @@
     "ADC": {
       "index": "2",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "short",
         "dataWidth": "16",
         "interfaceRef": "ADC"
@@ -78,6 +81,7 @@
     "tdata": {
       "index": "3",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "short",
         "dataWidth": "16",
         "interfaceRef": "tdata"
@@ -86,6 +90,7 @@
     "tvalid": {
       "index": "4",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "tvalid"
@@ -94,6 +99,7 @@
     "tkeep0": {
       "index": "5",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "tkeep0"
@@ -102,6 +108,7 @@
     "tkeep1": {
       "index": "6",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "tkeep1"
@@ -110,6 +117,7 @@
     "tready": {
       "index": "7",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "tready"
@@ -118,6 +126,7 @@
     "treset": {
       "index": "8",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "treset"
@@ -126,9 +135,64 @@
     "tlast": {
       "index": "9",
       "type": {
+        "kinds": ["pointer"],
         "dataType": "bool",
         "dataWidth": "1",
         "interfaceRef": "tlast"
+      }
+    },
+    "tvalid_out": {
+      "index": "10",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tvalid_out"
+      }
+    },
+    "tkeep0_out": {
+      "index": "11",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tkeep0_out"
+      }
+    },
+    "tkeep1_out": {
+      "index": "12",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tkeep1_out"
+      }
+    },
+    "tready_out": {
+      "index": "13",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tready_out"
+      }
+    },
+    "treset_out": {
+      "index": "14",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "treset_out"
+      }
+    },
+    "tlast_out": {
+      "index": "15",
+      "type": {
+        "kinds": ["pointer"],
+        "dataType": "bool",
+        "dataWidth": "1",
+        "interfaceRef": "tlast_out"
       }
     }
   },
@@ -274,6 +338,17 @@
       "bundle_name": "tkeep0",
       "bundle_role": "default"
     },
+    "tkeep0_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tkeep0_out",
+      "bundle_role": "default"
+    },
     "tkeep1": {
       "type": "data",
       "dir": "in",
@@ -283,6 +358,17 @@
           "Width": "1"
         }},
       "bundle_name": "tkeep1",
+      "bundle_role": "default"
+    },
+    "tkeep1_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tkeep1_out",
       "bundle_role": "default"
     },
     "tlast": {
@@ -296,6 +382,17 @@
       "bundle_name": "tlast",
       "bundle_role": "default"
     },
+    "tlast_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tlast_out",
+      "bundle_role": "default"
+    },
     "tready": {
       "type": "data",
       "dir": "in",
@@ -305,6 +402,17 @@
           "Width": "1"
         }},
       "bundle_name": "tready",
+      "bundle_role": "default"
+    },
+    "tready_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tready_out",
       "bundle_role": "default"
     },
     "treset": {
@@ -318,6 +426,17 @@
       "bundle_name": "treset",
       "bundle_role": "default"
     },
+    "treset_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "treset_out",
+      "bundle_role": "default"
+    },
     "tvalid": {
       "type": "data",
       "dir": "in",
@@ -327,6 +446,17 @@
           "Width": "1"
         }},
       "bundle_name": "tvalid",
+      "bundle_role": "default"
+    },
+    "tvalid_out": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
+        }},
+      "bundle_name": "tvalid_out",
       "bundle_role": "default"
     }
   },
@@ -414,6 +544,54 @@
     "tlast": {
       "dir": "in",
       "width": "1"
+    },
+    "tvalid_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tvalid_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tkeep0_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tkeep0_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tkeep1_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tkeep1_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tready_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tready_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "treset_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "treset_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tlast_out": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tlast_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
     }
   },
   "ModuleInfo": {
@@ -428,7 +606,7 @@
     "Metrics": {"ped_alg": {
         "Latency": {
           "LatencyBest": "1",
-          "LatencyAvg": "2",
+          "LatencyAvg": "3",
           "LatencyWorst": "4",
           "PipelineIIMin": "2",
           "PipelineIIMax": "5",
@@ -442,8 +620,8 @@
           "Estimate": "3.019"
         },
         "Area": {
-          "FF": "42",
-          "LUT": "266",
+          "FF": "43",
+          "LUT": "276",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -460,7 +638,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-11-24 11:46:45 GMT",
+    "Time": "2020-11-25 16:30:34 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

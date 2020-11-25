@@ -21,5 +21,17 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("tready", 1, hls_in, 7, "ap_none", "in_data", 1),
 	Port_Property("treset", 1, hls_in, 8, "ap_none", "in_data", 1),
 	Port_Property("tlast", 1, hls_in, 9, "ap_none", "in_data", 1),
+	Port_Property("tvalid_out", 1, hls_out, 10, "ap_vld", "out_data", 1),
+	Port_Property("tvalid_out_ap_vld", 1, hls_out, 10, "ap_vld", "out_vld", 1),
+	Port_Property("tkeep0_out", 1, hls_out, 11, "ap_vld", "out_data", 1),
+	Port_Property("tkeep0_out_ap_vld", 1, hls_out, 11, "ap_vld", "out_vld", 1),
+	Port_Property("tkeep1_out", 1, hls_out, 12, "ap_vld", "out_data", 1),
+	Port_Property("tkeep1_out_ap_vld", 1, hls_out, 12, "ap_vld", "out_vld", 1),
+	Port_Property("tready_out", 1, hls_out, 13, "ap_vld", "out_data", 1),
+	Port_Property("tready_out_ap_vld", 1, hls_out, 13, "ap_vld", "out_vld", 1),
+	Port_Property("treset_out", 1, hls_out, 14, "ap_vld", "out_data", 1),
+	Port_Property("treset_out_ap_vld", 1, hls_out, 14, "ap_vld", "out_vld", 1),
+	Port_Property("tlast_out", 1, hls_out, 15, "ap_vld", "out_data", 1),
+	Port_Property("tlast_out_ap_vld", 1, hls_out, 15, "ap_vld", "out_vld", 1),
 };
 const char* HLS_Design_Meta::dut_name = "ped_alg";

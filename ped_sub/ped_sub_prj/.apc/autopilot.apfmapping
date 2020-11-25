@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="functions.h" path="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"/>
     <originFiles name="functions.cpp" path="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"/>
+    <originFiles name="functions.h" path="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.h"/>
   </source>
   <testbench>
     <originFiles name="pedsub_test2.cpp" path="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/pedsub_test2.cpp"/>

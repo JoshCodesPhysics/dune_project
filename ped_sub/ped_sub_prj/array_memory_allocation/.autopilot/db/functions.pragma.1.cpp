@@ -18759,12 +18759,12 @@ struct ADC_t
 };
 
 
-void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-      word_t& tdata, bool& tvalid, bool& tkeep0,
-      bool& tkeep1, bool& tready, bool& treset,
-      bool& tlast);
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+      word_t* tdata, bool* tvalid, bool* tkeep0,
+      bool* tkeep1, bool* tready, bool* treset,
+      bool* tlast);
 
-void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1,
       bool& tready, bool& tlast, bool& tuser);
 
@@ -24566,46 +24566,48 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 7 "functions.cpp" 2
 
 
-void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-             word_t& tdata, bool& tvalid, bool& tkeep0,
-      bool& tkeep1, bool& tready, bool& treset,
-      bool& tlast) {
-# 30 "functions.cpp"
- if (tready && tvalid && tkeep0 && tkeep1 && !treset) {
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+             word_t* tdata, bool* tvalid, bool* tkeep0,
+      bool* tkeep1, bool* tready, bool* treset,
+      bool* tlast, bool* tvalid_out, bool* tkeep0_out,
+   bool* tkeep1_out, bool* tready_out,
+   bool* treset_out, bool* tlast_out) {
+# 32 "functions.cpp"
+ if (*tready && *tvalid && *tkeep0 && *tkeep1 && !(*treset)) {
 
 
   int mask = 4095;
 
-  word_t trunc = mask & tdata;
+  word_t trunc = mask & (*tdata);
 
-  ADC = trunc;
+  *ADC = trunc;
 
 
   accumulator_condition : {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 40 "functions.cpp"
+# 42 "functions.cpp"
 
-   if (ADC > ped_val) {
-    accum++;
+   if (*ADC > *ped_val) {
+    (*accum)++;
    }
 
-   else if (ADC < ped_val) {
-    accum--;
+   else if (*ADC < *ped_val) {
+    (*accum)--;
    }
   }
 
   pedestal_condition : {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 50 "functions.cpp"
+# 52 "functions.cpp"
 
-   if (accum >= 10) {
-    ped_val++;
-    accum = 0;
+   if (*accum >= 10) {
+    (*ped_val)++;
+    *accum = 0;
    }
 
-   else if (accum <= -10) {
-    ped_val--;
-    accum = 0;
+   else if (*accum <= -10) {
+    (*ped_val)--;
+    *accum = 0;
    }
   }
 
@@ -24614,19 +24616,18 @@ _ssdm_op_SpecLatency(2, 65535, "");
 
   ped_subtraction: {
 _ssdm_op_SpecLatency(2, 65535, "");
-# 65 "functions.cpp"
+# 67 "functions.cpp"
 
-    ADC = ADC - ped_val;
+    *ADC = *ADC - *ped_val;
   }
  }
 
-
- static word_t ped_val_out = ped_val;
- static char accum_out = accum;
- static word_t ADC_out = ADC;
- static bool tready_out = tready;
-
- static bool tlast_out = tlast;
+ *tvalid_out = *tvalid;
+ *tkeep0_out = *tkeep0;
+ *tkeep1_out = *tkeep1;
+ *tready_out = *tready;
+ *treset_out = *treset;
+ *tlast_out = *tlast;
 }
 
 
@@ -24641,13 +24642,13 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 }
 
 
-void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
              bool& tlast, bool& tuser) {
-# 103 "functions.cpp"
+# 104 "functions.cpp"
  char accum = 0;
  word_t ped_new = ped_val;
- word_t ADC_temp;
+ word_t ADC_temp = 0;
  int i = 0;
  bool treset = false;
 
@@ -24662,6 +24663,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
  tready = false;
 
  tvalid = tkeep0 = tkeep1 = true;
+
+
+
+ bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+ tlast_save;
 
 
 
@@ -24687,9 +24693,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
   word_t temp_word = packet[i];
 
-  ped_alg(ped_new, accum, ADC_temp, temp_word,
-   tvalid, tkeep0, tkeep1, tready, treset,
-   tlast);
+  ped_alg(&ped_new, &accum, &ADC_temp, &temp_word,
+   &tvalid, &tkeep0, &tkeep1, &tready, &treset,
+   &tlast, &tvalid_save, &tkeep0_save,
+   &tkeep1_save, &tready_save, &treset_save,
+   &tlast_save);
 
   packet[i] = ADC_temp;
 
@@ -24763,7 +24771,7 @@ void random_signal(bool& signal, int min, int max, int limit,
 
 
  rand_value = min + (rand_seed % (max - min + 1));
-# 229 "functions.cpp"
+# 237 "functions.cpp"
  if (rand_value <= limit) {
   signal = !signal;
  }
@@ -24820,7 +24828,7 @@ void data_read(const std::string& input_file, int& count,
    tvalid_stored[count] = tvalid;
    tlast_user_stored[count] = tlast_user;
    tkeep_stored[count] = tkeep;
-# 295 "functions.cpp"
+# 303 "functions.cpp"
    count++;
   }
  }
@@ -24866,30 +24874,35 @@ void array_scan(int array_size, word_t ped_val,
                 char accum_array[64], int packet_size, int num_channels,
   int input_seed, int treset_limit, int tready_limit) {_ssdm_SpecArrayDimSize(ADC_stored, 409600);_ssdm_SpecArrayDimSize(tvalid_stored, 409600);_ssdm_SpecArrayDimSize(tlast_user_stored, 409600);_ssdm_SpecArrayDimSize(tkeep_stored, 409600);_ssdm_SpecArrayDimSize(ped_array, 64);_ssdm_SpecArrayDimSize(ADC_array, 409600);_ssdm_SpecArrayDimSize(accum_array, 64);
 _ssdm_op_SpecInterface(ADC_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(ADC_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(accum_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(ped_array, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(tkeep_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(tlast_user_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
 _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-# 338 "functions.cpp"
+# 346 "functions.cpp"
 
-# 369 "functions.cpp"
+# 377 "functions.cpp"
  bool tready = true;
 
  bool treset = false;
+
+
+
+ bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+   tlast_save;
 
 
  int channel = 0;
@@ -24970,15 +24983,18 @@ _ssdm_op_SpecInterface(tvalid_stored, "ap_memory", 0, 0, "", 0, 0, "", "", "", 0
 
 
    else {
-# 460 "functions.cpp"
+# 473 "functions.cpp"
     ped_new = ped_array[channel];
     accum = accum_array[channel];
 
-    ped_alg(ped_new, accum, ADC, ADC_stored[i],
-     tvalid_stored[i], tkeep_stored[i],
-     tkeep_stored[i],
-     tready, treset,
-     tlast_user_stored[i]);
+    ped_alg(&ped_new, &accum, &ADC, &ADC_stored[i],
+     &tvalid_stored[i], &tkeep_stored[i],
+     &tkeep_stored[i],
+     &tready, &treset,
+     &tlast_user_stored[i],
+     &tvalid_save, &tkeep0_save,
+     &tkeep1_save, &tready_save, &treset_save,
+     &tlast_save);
 
 
 

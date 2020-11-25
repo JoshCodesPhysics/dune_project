@@ -6,10 +6,12 @@
 #include <vector>
 
 
-void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-             word_t& tdata, bool& tvalid, bool& tkeep0,
-	     bool& tkeep1, bool& tready, bool& treset,
-	     bool& tlast) {
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+             word_t* tdata, bool* tvalid, bool* tkeep0,
+	     bool* tkeep1, bool* tready, bool* treset,
+	     bool* tlast, bool* tvalid_out, bool* tkeep0_out,
+		 bool* tkeep1_out, bool* tready_out,
+		 bool* treset_out, bool* tlast_out) {
 	// This function takes an input ped_val, the estimate or previous
 	// pedestal (median) value, and can adjust this value according
 	// to whether the input ADC value is larger or smaller for a given
@@ -27,35 +29,35 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 
 	// Run if no back pressure from tready, and the tvalid and tkeep
 	// signals are high.
-	if (tready && tvalid && tkeep0 && tkeep1 && !treset) {
+	if (*tready && *tvalid && *tkeep0 && *tkeep1 && !(*treset)) {
 
 		//Extracting 12 bit ADC value from 16 bit word
 		int mask = 4095;
 
-		word_t trunc = mask & tdata;
+		word_t trunc = mask & (*tdata);
 
-		ADC = trunc;
+		*ADC = trunc;
 
 		// Running logic to change accumulator and/or pedestal
 		accumulator_condition : {
-			if (ADC > ped_val) {
-				accum++;
+			if (*ADC > *ped_val) {
+				(*accum)++;
 			}
 
-			else if (ADC < ped_val) {
-				accum--;
+			else if (*ADC < *ped_val) {
+				(*accum)--;
 			}
 		}
 
 		pedestal_condition : {
-			if (accum >= 10) {
-				ped_val++;
-				accum = 0;
+			if (*accum >= 10) {
+				(*ped_val)++;
+				*accum = 0;
 			}
 
-			else if (accum <= -10) {
-				ped_val--;
-				accum = 0;
+			else if (*accum <= -10) {
+				(*ped_val)--;
+				*accum = 0;
 			}
 		}
 
@@ -63,17 +65,16 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 		// to the placeholder variable
 
 		ped_subtraction: {
-				ADC = ADC - ped_val;
+				*ADC = *ADC - *ped_val;
 		}
 	}
 
-	// Variable copies for 'output'
-	static word_t ped_val_out = ped_val;
-	static char accum_out = accum;
-	static word_t ADC_out = ADC;
-	static bool tready_out = tready;
-	// Not needed but jus so tlast isn't hanging
-	static bool tlast_out = tlast;
+	*tvalid_out = *tvalid;
+	*tkeep0_out = *tkeep0;
+	*tkeep1_out = *tkeep1;
+	*tready_out = *tready;
+	*treset_out = *treset;
+	*tlast_out = *tlast;
 }
 
 
@@ -88,7 +89,7 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 }
 
 
-void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
              bool& tlast, bool& tuser) {
 	// N new ADC samples are stored in array index range
@@ -102,7 +103,7 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 	// Defining the loop variables
 	char accum = 0;
 	word_t ped_new = ped_val;
-	word_t ADC_temp;
+	word_t ADC_temp = 0;
 	int i = 0;
 	bool treset = false;
 
@@ -117,6 +118,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 	tready = false;
 
 	tvalid = tkeep0 = tkeep1 = true;
+
+	// Copy booleans for output (test)
+
+	bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+	tlast_save;
 
 	// Signals before scanning has begun:
 
@@ -142,9 +148,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
 		word_t temp_word = packet[i];
 
-		ped_alg(ped_new, accum, ADC_temp, temp_word,
-			tvalid, tkeep0, tkeep1, tready, treset,
-			tlast);
+		ped_alg(&ped_new, &accum, &ADC_temp, &temp_word,
+			&tvalid, &tkeep0, &tkeep1, &tready, &treset,
+			&tlast, &tvalid_save, &tkeep0_save,
+			&tkeep1_save, &tready_save, &treset_save,
+			&tlast_save);
 
 		packet[i] = ADC_temp;
 
@@ -370,6 +378,11 @@ void array_scan(int array_size, word_t ped_val,
 	// Make sure treset is initially low to prevent infinite loop
 	bool treset = false;
 
+	// Copy booleans for output (test)
+
+	bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+		 tlast_save;
+
 	// Counters for the while loop and data read
 	int channel = 0;
 	int i = 0;
@@ -460,11 +473,14 @@ void array_scan(int array_size, word_t ped_val,
 				ped_new = ped_array[channel];
 				accum = accum_array[channel];
 				
-				ped_alg(ped_new, accum, ADC, ADC_stored[i],
-					tvalid_stored[i], tkeep_stored[i],
-					tkeep_stored[i], 
-					tready, treset,
-					tlast_user_stored[i]);
+				ped_alg(&ped_new, &accum, &ADC, &ADC_stored[i],
+					&tvalid_stored[i], &tkeep_stored[i],
+					&tkeep_stored[i],
+					&tready, &treset,
+					&tlast_user_stored[i],
+					&tvalid_save, &tkeep0_save,
+					&tkeep1_save, &tready_save, &treset_save,
+					&tlast_save);
 
 				// Array values for this channel are
 				// overwritten by the output variables from
