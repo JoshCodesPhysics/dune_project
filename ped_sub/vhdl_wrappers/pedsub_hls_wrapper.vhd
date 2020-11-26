@@ -22,11 +22,7 @@ use IEEE.NUMERIC_STD.ALL;
 use work.dtpc_stream_defs.all;
 
 entity PedSub_wrapper is
-	generic (
-		ENABLE_SSR  : boolean := TRUE
-	);
 Port (
-	clk		   : in   std_logic;
 	clk                : in  std_logic;
     	reset              : in  std_logic;
     	localreset         : in  std_logic;
@@ -43,17 +39,40 @@ Port (
 end PedSub_wrapper;
 
 architecture Behavioural of PedSub_wrapper is
-
-	signal treset : std_logic := '0';
-
+	
 begin
-
-	treset <= reset or localreset;
-
-	pedsub : entity work.PedestalSubtraction
+	ped_alg : entity work.PedestalSubtraction
 	port map(
 	  ap_clk		=> clk,
 	  ap_rst		=> reset,
-	  		=> s_axis_data_w,
-	   => 
+       -- How do I access these signals that aren't on s_axis or m_axis?
 
+	  ped_val_i		=> median, -- or PedSub_median in SSR?
+	  ped_val_o		=> medium_RamOut, -- or pedSub_median_out?
+       -- ped_val_o_ap_vld	=> pedSub_valid, -- Not sure if necessary
+	  accum_i		=> accumulator, -- or PedSub_accum in SSR
+	  accum_o		=> accumulator_RamOut, -- or PedSub_accum_out?
+
+       -- Is the signal reading in: s_axis_data + '_r' or '_w'
+	  tdata			=> s_axis_data_w.tdata,
+	  tvalid		=> s_axis_data_w.tvalid,
+	  tkeep0		=> s_axis_data_w.tkeep(0), -- Is this correct?
+	  tkeep1		=> s_axis_data_w.tkeep(1),
+
+       -- Is this _r?
+	  tready		=> m_axis_data_r.tready,
+
+       -- Not sure what to do about treset and ap_rst so I set one to reset
+       -- and the other to localreset
+	  treset		=> localreset,
+       -- _w or _r?	  
+	  tlast			=> s_axis_data_w.tlast,
+	  tvalid_out		=> m_axis_data_w.tvalid,
+	  tkeep0_out		=> m_axis_data_w.tkeep(0),
+	  tkeep1_out		=> m_axis_data_w.tkeep(1),
+	  tready_out		=> s_axis_data_r.tready,
+	  treset_out		=> -- not sure about this one
+	  tlast_out		=> m_axis_data_w.tlast
+	);
+
+end Behavioral;
