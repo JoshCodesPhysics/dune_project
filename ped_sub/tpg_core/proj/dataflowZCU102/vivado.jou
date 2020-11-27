@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Nov 27 00:26:01 2020
+# Process ID: 12729
+# Current directory: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102
+# Command line: vivado dataflowZCU102/dataflowZCU102.xpr
+# Log file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/vivado.log
+# Journal file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dataflowZCU102/dataflowZCU102.xpr
+import_files -norecurse /data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1

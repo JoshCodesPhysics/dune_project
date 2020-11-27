@@ -1,0 +1,5 @@
+name: dataflowZCU102
+toolset: vivado
+topCmp: projects/tpgen-1fibre
+topDep: zcu102_basex.dep
+topPkg: dataflow-firmware

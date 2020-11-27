@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Nov 27 00:11:18 2020
+# Process ID: 9844
+# Current directory: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102
+# Command line: vivado dataflowZCU102/dataflowZCU102.xpr
+# Log file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/vivado.log
+# Journal file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dataflowZCU102/dataflowZCU102.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip'.
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+open_project: Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 7559.703 ; gain = 1045.812 ; free physical = 2910 ; free virtual = 82954
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:20:29 2020...
