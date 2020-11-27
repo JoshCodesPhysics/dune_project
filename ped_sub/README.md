@@ -2,7 +2,7 @@
 
 Source file: functions.cpp
 
-Test bench: pedsub\_test.cpp
+Test benches: pedsub\_test.cpp, pedsub\_test2.cpp
 
 Header file: functions.h
 
@@ -17,9 +17,25 @@ type ``vivado_hls -p ped_sub_proj``
 ## Configuration
 
 To configure pedestal estimate, packet size, ADC range and more, see the
-first section of functions.h
+first section of the main() function
 
-### Running test bench
+## Setting a test bench
+
+Vivado HLS can only process one test bench at a time, so make sure you have your desired test bench set within the tcl file or the GUI menu.
+
+### Running test bench #1: ``pedsub_test.cpp``
 
 Choose a PED\_EST value in range \< ``R_MIN - <int>N_SAMPLES/10`` or \> ``R_max + <int>N_SAMPLES/10``. 
 
+Variable configuration can be gleaned from the extensive comments at the start of main()
+
+### Running test bench #2: ``pedsub_test2.cpp``
+
+- Make sure the variable ``proj_path`` is set to the path of the dune\_project git folder within your file system, and then edit the input file path strings if you want to change which set of input/output files are being parsed.
+
+- Set ``NUM_CHANNELS`` to the number of data channels to be considered.
+- Set ``PACKET_SIZE`` to the number of samples within a given packet.
+- Set ``PACKET_WAVES`` to the number of packets entering a given channel.
+- Set ``CONVERGE_VALUE`` to the expected pedestal value found after the set number of packets
+- Set ``PED_VAL`` to the desired pedestal estimate value that ``ped_alg`` will start with
+- Set ``INPUT_SEED`` to a any integer for a reproducable pseudorandom signal fluctuation with tready and treset.

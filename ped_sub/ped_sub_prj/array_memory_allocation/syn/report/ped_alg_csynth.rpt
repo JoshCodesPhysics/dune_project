@@ -1,0 +1,175 @@
+
+
+================================================================
+== Vivado HLS Report for 'ped_alg'
+================================================================
+* Date:           Wed Nov 25 16:30:30 2020
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        ped_sub_prj
+* Solution:       array_memory_allocation
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 4.00 ns | 3.019 ns |   0.50 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max    | min | max |   Type  |
+    +---------+---------+----------+-----------+-----+-----+---------+
+    |        1|        4| 4.000 ns | 16.000 ns |    1|    4|   none  |
+    +---------+---------+----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     186|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      90|    -|
+|Register         |        -|      -|      43|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|      43|     276|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     1824|   2520|  548160|  274080|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |add_ln44_fu_286_p2     |     +    |      0|  0|  15|           1|           8|
+    |add_ln48_fu_298_p2     |     +    |      0|  0|  15|           2|           8|
+    |add_ln54_fu_345_p2     |     +    |      0|  0|  23|          16|           1|
+    |add_ln59_fu_338_p2     |     +    |      0|  0|  23|          16|           2|
+    |ADC                    |     -    |      0|  0|  23|          16|          16|
+    |and_ln32_1_fu_248_p2   |    and   |      0|  0|   2|           1|           1|
+    |and_ln32_2_fu_254_p2   |    and   |      0|  0|   2|           1|           1|
+    |and_ln32_fu_242_p2     |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln43_1_fu_312_p2  |   icmp   |      0|  0|  13|          16|          16|
+    |icmp_ln43_fu_280_p2    |   icmp   |      0|  0|  13|          16|          16|
+    |icmp_ln47_fu_292_p2    |   icmp   |      0|  0|  13|          16|          16|
+    |icmp_ln53_fu_326_p2    |   icmp   |      0|  0|  11|           8|           4|
+    |icmp_ln58_fu_332_p2    |   icmp   |      0|  0|  11|           8|           5|
+    |or_ln32_fu_266_p2      |    or    |      0|  0|   2|           1|           1|
+    |select_ln43_fu_318_p3  |  select  |      0|  0|   8|           1|           8|
+    |select_ln47_fu_304_p3  |  select  |      0|  0|   8|           1|           8|
+    |xor_ln32_fu_260_p2     |    xor   |      0|  0|   2|           2|           1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 186|         123|         113|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |accum_flag_2_reg_213    |   9|          2|    1|          2|
+    |accum_new_2_reg_227     |   9|          2|    8|         16|
+    |accum_o                 |   9|          2|    8|         16|
+    |ap_NS_fsm               |  33|          6|    1|          6|
+    |ped_val_load_3_reg_202  |  15|          3|   16|         48|
+    |ped_val_o               |  15|          3|   16|         48|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   |  90|         18|   50|        136|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------+----+----+-----+-----------+
+    |          Name          | FF | LUT| Bits| Const Bits|
+    +------------------------+----+----+-----+-----------+
+    |accum_flag_2_reg_213    |   1|   0|    1|          0|
+    |accum_new_2_reg_227     |   8|   0|    8|          0|
+    |ap_CS_fsm               |   5|   0|    5|          0|
+    |or_ln32_reg_383         |   1|   0|    1|          0|
+    |ped_val_load_3_reg_202  |  16|   0|   16|          0|
+    |zext_ln37_reg_387       |  12|   0|   16|          4|
+    +------------------------+----+----+-----+-----------+
+    |Total                   |  43|   0|   47|          4|
+    +------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ap_start           |  in |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ap_done            | out |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ap_idle            | out |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ap_ready           | out |    1| ap_ctrl_hs |    ped_alg   | return value |
+|ped_val_i          |  in |   16|   ap_ovld  |    ped_val   |    pointer   |
+|ped_val_o          | out |   16|   ap_ovld  |    ped_val   |    pointer   |
+|ped_val_o_ap_vld   | out |    1|   ap_ovld  |    ped_val   |    pointer   |
+|accum_i            |  in |    8|   ap_ovld  |     accum    |    pointer   |
+|accum_o            | out |    8|   ap_ovld  |     accum    |    pointer   |
+|accum_o_ap_vld     | out |    1|   ap_ovld  |     accum    |    pointer   |
+|ADC                | out |   16|   ap_vld   |      ADC     |    pointer   |
+|ADC_ap_vld         | out |    1|   ap_vld   |      ADC     |    pointer   |
+|tdata              |  in |   16|   ap_none  |     tdata    |    pointer   |
+|tvalid             |  in |    1|   ap_none  |    tvalid    |    pointer   |
+|tkeep0             |  in |    1|   ap_none  |    tkeep0    |    pointer   |
+|tkeep1             |  in |    1|   ap_none  |    tkeep1    |    pointer   |
+|tready             |  in |    1|   ap_none  |    tready    |    pointer   |
+|treset             |  in |    1|   ap_none  |    treset    |    pointer   |
+|tlast              |  in |    1|   ap_none  |     tlast    |    pointer   |
+|tvalid_out         | out |    1|   ap_vld   |  tvalid_out  |    pointer   |
+|tvalid_out_ap_vld  | out |    1|   ap_vld   |  tvalid_out  |    pointer   |
+|tkeep0_out         | out |    1|   ap_vld   |  tkeep0_out  |    pointer   |
+|tkeep0_out_ap_vld  | out |    1|   ap_vld   |  tkeep0_out  |    pointer   |
+|tkeep1_out         | out |    1|   ap_vld   |  tkeep1_out  |    pointer   |
+|tkeep1_out_ap_vld  | out |    1|   ap_vld   |  tkeep1_out  |    pointer   |
+|tready_out         | out |    1|   ap_vld   |  tready_out  |    pointer   |
+|tready_out_ap_vld  | out |    1|   ap_vld   |  tready_out  |    pointer   |
+|treset_out         | out |    1|   ap_vld   |  treset_out  |    pointer   |
+|treset_out_ap_vld  | out |    1|   ap_vld   |  treset_out  |    pointer   |
+|tlast_out          | out |    1|   ap_vld   |   tlast_out  |    pointer   |
+|tlast_out_ap_vld   | out |    1|   ap_vld   |   tlast_out  |    pointer   |
++-------------------+-----+-----+------------+--------------+--------------+
+

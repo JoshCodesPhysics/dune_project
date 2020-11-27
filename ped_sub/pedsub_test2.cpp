@@ -8,121 +8,87 @@
 
 int main() {
 
-	// String containing full path of the input file
-	// WILL NEED TO EDIT FOR YOUR PATH
-	// Unfortunately relative path not possible due to Vivado
-	// Csim
-        const std::string input_file =
-        		         "/home/joshhorswill10/Documents"
-				 "/dune_project/ped_sub/"
-			         "packet_data_adjusted.txt";
+	// Pedestal convergence test or ADC comparison test boolean:
+	// false for pedestal convergence and true for ADC
+	// comparison
+	bool test_bool = true;
 
+	// String containing path to project directory (edit path_proj)
+	// as well as default input/output file paths
+	// WILL NEED TO EDIT YOUR PROJECT PATH FOR THIS TO WORK
+
+	// Unfortunately relative path not possible due to Vivado
+	// Csim issues.
+
+	const std::string proj_path = "/home/ppd/hmo31799/Documents";
+
+	const std::string input_path = "/dune_project/ped_sub/IO_files/"
+				       "6400_packets_in.txt";
+	const std::string output_path = "/dune_project/ped_sub/IO_files/"
+					"6400_packets_out.txt";
+
+	const std::string input_file = proj_path + input_path;
+	const std::string output_file = proj_path + output_path;
+	
 	// Number of packets within the input file and the number of
 	// samples contained in each packet.
-        const int NUM_PACKETS = 10;
-        const int PACKET_SIZE = 64;
+        const int NUM_CHANNELS = N_CH;
+        const int PACKET_SIZE = PK_S;
+	const int PACKET_WAVES = PK_W;
+	const int NUM_SAMPLES = NUM_CHANNELS * PACKET_SIZE * PACKET_WAVES;
 
 	// Verified correct pedestal value after enough packets
 	// have entered the channel
 	const word_t CONVERGE_VALUE = 501;
 
-	// Empty arrays to contain the results.
-        word_t ped_array[NUM_PACKETS];
-        char accum_array[NUM_PACKETS];
-        word_t ADC_array[NUM_PACKETS*PACKET_SIZE];
+	// Seed used to generate randomly high or low treset values
+	const int INPUT_SEED = 45000;
+	// Probability of treset and tready going high is 1/<limit>
+	const int TRESET_LIMIT = 500000;
+	const int TREADY_LIMIT = 100000000;
 
 	// Pedestal estimate; can affect testbench outcome
-        const word_t PED_VAL = 520;
+        const word_t PED_VAL = 500;
 
-	// Empty ADC and signal variables to be assigned during
-	// algorithm
-        word_t ADC;
-        bool tvalid, tkeep0, tkeep1, tlast, tuser, tready;
+	// Empty arrays to contain the results.
+        word_t ped_array[NUM_CHANNELS];
+        char accum_array[NUM_CHANNELS];
+	word_t ADC_stored[NUM_SAMPLES];
+	bool tvalid_stored[NUM_SAMPLES];
+	bool tlast_user_stored[NUM_SAMPLES];
+	bool tkeep_stored[NUM_SAMPLES];
+        word_t ADC_array[NUM_SAMPLES];
+	word_t ADC_valid[NUM_SAMPLES];
 
 	std::cout << "Running algorithm on input file: \n\n";
 
 	// Calling testbench function, which in turn calls ped_alg
-        ped_sub_read(input_file, PED_VAL, ped_array,
-                     ADC_array, accum_array, tvalid,
-                     tkeep0, tkeep1, tready, tlast, tuser);
+        ped_sub_read(input_file, PED_VAL, ADC_stored, 
+		     tvalid_stored, tlast_user_stored, tkeep_stored,
+		     ped_array, ADC_array, accum_array, PACKET_SIZE,
+		     NUM_CHANNELS, INPUT_SEED, TRESET_LIMIT,
+		     TREADY_LIMIT);
 	
-	std::cout << "\n\nFinal pedestal and accumulator results: "
-		  << "\n\n";
+	// std::cout << "\n\nFinal pedestal and accumulator results: "
+	// 	  << "\n\n";
         
 	// Printing the final pedestal and accumulator values
 	// for each packet
-	for (int i = 0; i < NUM_PACKETS; i++) {
-		std::cout << "Pedestal for packet " << i <<
-                             ": " << ped_array[i] << "\n";
-                printf("Accumulator for the same packet: %d\n",
-                       accum_array[i]);
-        }
+	// for (int i = 0; i < NUM_PACKETS; i++) {
+	// 	std::cout << "Pedestal for packet " << i <<
+        //                      ": " << ped_array[i] << "\n";
+        //         printf("Accumulator for the same packet: %d\n",
+        //                accum_array[i]);
+        // }
 
-	// Instantaneous success condition: If the final pedestal
-	// value equals the verified convergent value
-	bool equal_condition = (ped_array[NUM_PACKETS - 1]
-			        == CONVERGE_VALUE);
+	std::cout << "\n\n";
 
-	std::cout << "\n\nTesting condition... \n";
-
-	// Testbench returns a success
-	if (equal_condition) {
-		std::cout << "Final pedestal estimate after packet "
-			  << NUM_PACKETS << " equals the verified "
-			  << "convergent value: " << CONVERGE_VALUE
-			  << "\n";
-		return 0;
+	if (test_bool) {
+		return ADC_compare(output_file, ADC_array, ADC_valid);
 	}
 
-	// Else, see if the value at least converges towards the
-	// correct value
 	else {
-		std::cout << "\nVerified convergence value: "
-			  << CONVERGE_VALUE << "\n";
-		
-		// Low pedestal
-		if (PED_VAL < CONVERGE_VALUE) {
-			// It does converge
-			if ((ped_array[NUM_PACKETS - 1]
-			     - ped_array[0]) > 0) {
-				std::cout << "Low pedestal value is "
-				          << "increasing towards "
-				          << "the verified "
-				          << "convergence value."
-					  << "\n";
-				return 0;
-			}
-			
-			// It doesn't
-			else {
-				std::cout << "Low pedestal value is not "
-					  << "increasing towards the verified"
-					  << " convergence value.\n";
-				return 1;
-			}
-		}
-
-		// High pedestal
-		else {
-			// It does converge
-			if ((ped_array[NUM_PACKETS - 1]
-			     - ped_array[0]) < 0) {	
-				std::cout << "High pedestal value is "
-				          << "decreasing towards "
-				          << "the verified "
-				          << "convergence value.\n";
-				return 0;
-			}
-
-			// It doesn't
-			else {
-				std::cout << "High pedestal value is "
-				          << "not decreasing towards "
-				          << "the verified "
-				          << "convergence value.\n";
-				return 1;
-			}
-		}
-
+		return ped_test(ped_array, NUM_CHANNELS, CONVERGE_VALUE,
+				PED_VAL);
 	}
 }
