@@ -9,17 +9,18 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source fmc0_8chan_9g6.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1434.582 ; gain = 2.023 ; free physical = 131 ; free virtual = 3808
 Command: synth_design -top fmc0_8chan_9g6 -part xczu9eg-ffvb1156-2-e -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16647 
+INFO: Helper process launched with PID 22282 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1572.402 ; gain = 79.992 ; free physical = 236 ; free virtual = 80227
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:29 . Memory (MB): peak = 1573.340 ; gain = 84.992 ; free physical = 105 ; free virtual = 3094
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.v:62]
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_top' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_top.v:175]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.v:62]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_top' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_top.v:175]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -112,7 +113,7 @@ INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_top' [/data/km
 	Parameter C_TX_USER_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_TX_USRCLK_FREQUENCY bound to: 240.000000 - type: float 
 	Parameter C_TX_USRCLK2_FREQUENCY bound to: 240.000000 - type: float 
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_gthe4' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_gthe4' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_gthe4.v:143]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -172,8 +173,8 @@ INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_gthe4' [/data/
 	Parameter P_CPLL_CAL_WAIT_DEASSERT_CPLLPD bound to: 16'b0000000100000000 
 	Parameter P_CPLL_CAL_TXOUTCLK_PERIOD_DIV100 bound to: 18'b000000000000010101 
 	Parameter P_CDR_TIMEOUT_FREERUN_CYC bound to: 26'b00000011100001110101001000 
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gthe4_common_wrapper' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_common_wrapper.v:56]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_common' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gthe4_common_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_common_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_common' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
 	Parameter GTHE4_COMMON_AEN_QPLL0_FBDIV bound to: 1'b1 
 	Parameter GTHE4_COMMON_AEN_QPLL1_FBDIV bound to: 1'b1 
 	Parameter GTHE4_COMMON_AEN_SDM0TOGGLE bound to: 1'b0 
@@ -462,12 +463,12 @@ INFO: [Synth 8-6157] synthesizing module 'GTHE4_COMMON' [/opt/ppd/tools/xilinx/V
 	Parameter SIM_MODE bound to: FAST - type: string 
 	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'GTHE4_COMMON' (1#1) [/opt/ppd/tools/xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:8353]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_common' (2#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gthe4_common_wrapper' (3#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_common_wrapper.v:56]
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gthe4_channel_wrapper' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_common' (2#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gthe4_common_wrapper' (3#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_common_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gthe4_channel_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_channel_wrapper.v:56]
 	Parameter MASTER_EN bound to: 0 - type: integer 
 	Parameter NUM_CHANNELS bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
 	Parameter NUM_CHANNELS bound to: 4 - type: integer 
 	Parameter GTHE4_CHANNEL_ACJTAG_DEBUG_MODE bound to: 1'b0 
 	Parameter GTHE4_CHANNEL_ACJTAG_MODE bound to: 1'b0 
@@ -1953,24 +1954,24 @@ INFO: [Synth 8-6157] synthesizing module 'GTHE4_CHANNEL' [/opt/ppd/tools/xilinx/
 	Parameter USE_PCS_CLK_PHASE_SEL bound to: 1'b0 
 	Parameter Y_ALL_MODE bound to: 1'b0 
 INFO: [Synth 8-6155] done synthesizing module 'GTHE4_CHANNEL' (4#1) [/opt/ppd/tools/xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:7161]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' (5#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gthe4_channel_wrapper' (6#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_channel_wrapper.v:56]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' (5#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gthe4_channel_wrapper' (6#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
 	Parameter C_USER_GTPOWERGOOD_DELAY_EN bound to: 1 - type: integer 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
-INFO: [Synth 8-226] default block is never used [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:137]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' (7#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
+INFO: [Synth 8-226] default block is never used [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' (7#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
 	Parameter INITIALIZE bound to: 5'b00000 
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' (8#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' (8#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
 	Parameter P_FREERUN_FREQUENCY bound to: 240.000000 - type: float 
 	Parameter P_USE_CPLL_CAL bound to: 0 - type: integer 
 	Parameter P_TX_PLL_TYPE bound to: 1 - type: integer 
@@ -2002,35 +2003,35 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset
 	Parameter ST_RESET_RX_WAIT_USERRDY bound to: 3'b101 
 	Parameter ST_RESET_RX_WAIT_RESETDONE bound to: 3'b110 
 	Parameter ST_RESET_RX_IDLE bound to: 3'b111 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' (9#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
-INFO: [Synth 8-155] case statement is not full and has no default [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' (9#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-155] case statement is not full and has no default [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' (10#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' (11#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' (10#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' (11#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
 	Parameter P_TX_USER_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter P_TX_DATA_ENCODING bound to: 1 - type: integer 
 	Parameter P_TOTAL_NUMBER_OF_CHANNELS bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' (12#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' (12#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
 	Parameter P_RX_USER_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter P_RX_DATA_DECODING bound to: 1 - type: integer 
 	Parameter P_TOTAL_NUMBER_OF_CHANNELS bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' (13#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gtwizard_gthe4' (14#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_gthe4.v:143]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gtwizard_top' (15#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_top.v:175]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6' (16#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' (13#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gtwizard_gthe4' (14#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_gtwizard_top' (15#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_top.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6' (16#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.v:62]
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has unconnected port rxdata_in[1023]
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has unconnected port rxdata_in[1022]
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has unconnected port rxdata_in[1021]
@@ -2133,7 +2134,7 @@ WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has 
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has unconnected port rxdata_in[892]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1710.301 ; gain = 217.891 ; free physical = 494 ; free virtual = 78202
+Finished RTL Elaboration : Time (s): cpu = 00:01:19 ; elapsed = 00:04:20 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 373 ; free virtual = 2185
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2146,36 +2147,36 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1710.301 ; gain = 217.891 ; free physical = 503 ; free virtual = 78210
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:04:27 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 385 ; free virtual = 2228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1710.301 ; gain = 217.891 ; free physical = 503 ; free virtual = 78210
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:20 ; elapsed = 00:04:27 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 385 ; free virtual = 2228
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_ooc.xdc] for cell 'inst'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'inst'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fmc0_8chan_9g6_propImpl.xdc].
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_ooc.xdc] for cell 'inst'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fmc0_8chan_9g6_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fmc0_8chan_9g6_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.078 ; gain = 0.000 ; free physical = 228 ; free virtual = 76725
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.344 ; gain = 0.000 ; free physical = 114 ; free virtual = 1352
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2616.078 ; gain = 0.000 ; free physical = 208 ; free virtual = 76703
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.344 ; gain = 0.000 ; free physical = 100 ; free virtual = 1329
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2616.082 ; gain = 0.000 ; free physical = 336 ; free virtual = 76683
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2616.082 ; gain = 0.004 ; free physical = 350 ; free virtual = 76697
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.348 ; gain = 0.000 ; free physical = 117 ; free virtual = 1306
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:01 . Memory (MB): peak = 2568.348 ; gain = 0.004 ; free physical = 125 ; free virtual = 1289
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:19 ; elapsed = 00:02:08 . Memory (MB): peak = 2616.082 ; gain = 1123.672 ; free physical = 233 ; free virtual = 76544
+Finished Constraint Validation : Time (s): cpu = 00:01:48 ; elapsed = 00:08:32 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 90 ; free virtual = 936
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -2183,14 +2184,14 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:19 ; elapsed = 00:02:08 . Memory (MB): peak = 2616.082 ; gain = 1123.672 ; free physical = 233 ; free virtual = 76544
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:48 ; elapsed = 00:08:36 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 99 ; free virtual = 866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:19 ; elapsed = 00:02:08 . Memory (MB): peak = 2616.082 ; gain = 1123.672 ; free physical = 230 ; free virtual = 76541
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:48 ; elapsed = 00:09:43 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 83 ; free virtual = 476
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_all_reg' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_tx_reg' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
@@ -2248,7 +2249,7 @@ ST_RESET_ALL_TX_PLL_WAIT |                              010 |                   
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_all_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:20 ; elapsed = 00:02:09 . Memory (MB): peak = 2616.082 ; gain = 1123.672 ; free physical = 248 ; free virtual = 76493
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:50 ; elapsed = 00:12:18 . Memory (MB): peak = 2568.355 ; gain = 1080.008 ; free physical = 123 ; free virtual = 1404
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2344,7 +2345,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:02:11 . Memory (MB): peak = 2616.082 ; gain = 1123.672 ; free physical = 357 ; free virtual = 76515
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:12:44 . Memory (MB): peak = 2568.355 ; gain = 1080.008 ; free physical = 115 ; free virtual = 1278
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2352,215 +2353,3 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:04:12 . Memory (MB): peak = 2852.738 ; gain = 1360.328 ; free physical = 4157 ; free virtual = 78336
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:04:12 . Memory (MB): peak = 2874.770 ; gain = 1382.359 ; free physical = 4128 ; free virtual = 78307
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:56 ; elapsed = 00:04:13 . Memory (MB): peak = 2882.777 ; gain = 1390.367 ; free physical = 4089 ; free virtual = 78268
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 4027 ; free virtual = 78206
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 4026 ; free virtual = 78206
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 3991 ; free virtual = 78170
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 3990 ; free virtual = 78169
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 3989 ; free virtual = 78168
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 3981 ; free virtual = 78160
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+--------------+------+
-|      |Cell          |Count |
-+------+--------------+------+
-|1     |CARRY8        |     4|
-|2     |GTHE4_CHANNEL |     8|
-|3     |GTHE4_COMMON  |     2|
-|4     |LUT1          |    32|
-|5     |LUT2          |   104|
-|6     |LUT3          |    41|
-|7     |LUT4          |    22|
-|8     |LUT5          |    28|
-|9     |LUT6          |    31|
-|10    |FDCE          |    58|
-|11    |FDPE          |    40|
-|12    |FDRE          |   244|
-|13    |FDSE          |     6|
-+------+--------------+------+
-
-Report Instance Areas: 
-+------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
-|      |Instance                                                                                                                     |Module                                               |Cells |
-+------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
-|1     |top                                                                                                                          |                                                     |   620|
-|2     |  inst                                                                                                                       |fmc0_8chan_9g6_gtwizard_top                          |   620|
-|3     |    \gen_gtwizard_gthe4_top.fmc0_8chan_9g6_gtwizard_gthe4_inst                                                               |fmc0_8chan_9g6_gtwizard_gthe4                        |   620|
-|4     |      \gen_gtwizard_gthe4.gen_channel_container[25].gen_enabled_channel.gthe4_channel_wrapper_inst                           |fmc0_8chan_9g6_gthe4_channel_wrapper                 |     8|
-|5     |        channel_inst                                                                                                         |gtwizard_ultrascale_v1_7_5_gthe4_channel_43          |     8|
-|6     |      \gen_gtwizard_gthe4.gen_channel_container[26].gen_enabled_channel.gthe4_channel_wrapper_inst                           |fmc0_8chan_9g6_gthe4_channel_wrapper_0               |     8|
-|7     |        channel_inst                                                                                                         |gtwizard_ultrascale_v1_7_5_gthe4_channel             |     8|
-|8     |      \gen_gtwizard_gthe4.gen_common.gen_common_container[25].gen_enabled_common.gthe4_common_wrapper_inst                   |fmc0_8chan_9g6_gthe4_common_wrapper                  |     2|
-|9     |        common_inst                                                                                                          |gtwizard_ultrascale_v1_7_5_gthe4_common_42           |     2|
-|10    |      \gen_gtwizard_gthe4.gen_common.gen_common_container[26].gen_enabled_common.gthe4_common_wrapper_inst                   |fmc0_8chan_9g6_gthe4_common_wrapper_1                |     2|
-|11    |        common_inst                                                                                                          |gtwizard_ultrascale_v1_7_5_gthe4_common              |     2|
-|12    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[0].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood     |    25|
-|13    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[1].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_2   |    25|
-|14    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[2].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_3   |    26|
-|15    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[3].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_4   |    25|
-|16    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[4].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_5   |    25|
-|17    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[5].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_6   |    26|
-|18    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[6].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_7   |    25|
-|19    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[7].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_8   |    25|
-|20    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[0].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer          |     5|
-|21    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[0].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_9        |     5|
-|22    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[1].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_10       |     6|
-|23    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[1].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_11       |     6|
-|24    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[2].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_12       |     5|
-|25    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[2].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_13       |     5|
-|26    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[3].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_14       |     5|
-|27    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[3].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_15       |     5|
-|28    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[4].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_16       |     5|
-|29    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[4].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_17       |     5|
-|30    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[5].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_18       |     6|
-|31    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[5].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_19       |     6|
-|32    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[6].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_20       |     5|
-|33    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[6].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_21       |     5|
-|34    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[7].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_22       |     5|
-|35    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[7].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_23       |     5|
-|36    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst                                 |gtwizard_ultrascale_v1_7_5_gtwiz_reset               |   312|
-|37    |        bit_synchronizer_gtpowergood_inst                                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_24       |     6|
-|38    |        bit_synchronizer_gtwiz_reset_rx_datapath_dly_inst                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_25       |     5|
-|39    |        bit_synchronizer_gtwiz_reset_rx_pll_and_datapath_dly_inst                                                            |gtwizard_ultrascale_v1_7_5_bit_synchronizer_26       |     8|
-|40    |        bit_synchronizer_gtwiz_reset_tx_datapath_dly_inst                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_27       |     5|
-|41    |        bit_synchronizer_gtwiz_reset_tx_pll_and_datapath_dly_inst                                                            |gtwizard_ultrascale_v1_7_5_bit_synchronizer_28       |     8|
-|42    |        bit_synchronizer_gtwiz_reset_userclk_rx_active_inst                                                                  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_29       |    11|
-|43    |        bit_synchronizer_gtwiz_reset_userclk_tx_active_inst                                                                  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_30       |     9|
-|44    |        bit_synchronizer_plllock_rx_inst                                                                                     |gtwizard_ultrascale_v1_7_5_bit_synchronizer_31       |    10|
-|45    |        bit_synchronizer_plllock_tx_inst                                                                                     |gtwizard_ultrascale_v1_7_5_bit_synchronizer_32       |    11|
-|46    |        bit_synchronizer_rxcdrlock_inst                                                                                      |gtwizard_ultrascale_v1_7_5_bit_synchronizer_33       |     8|
-|47    |        reset_synchronizer_gtwiz_reset_all_inst                                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer        |     5|
-|48    |        reset_synchronizer_gtwiz_reset_rx_any_inst                                                                           |gtwizard_ultrascale_v1_7_5_reset_synchronizer_34     |     7|
-|49    |        reset_synchronizer_gtwiz_reset_rx_datapath_inst                                                                      |gtwizard_ultrascale_v1_7_5_reset_synchronizer_35     |     6|
-|50    |        reset_synchronizer_gtwiz_reset_rx_pll_and_datapath_inst                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer_36     |     6|
-|51    |        reset_synchronizer_gtwiz_reset_tx_any_inst                                                                           |gtwizard_ultrascale_v1_7_5_reset_synchronizer_37     |     7|
-|52    |        reset_synchronizer_gtwiz_reset_tx_datapath_inst                                                                      |gtwizard_ultrascale_v1_7_5_reset_synchronizer_38     |     5|
-|53    |        reset_synchronizer_gtwiz_reset_tx_pll_and_datapath_inst                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer_39     |     6|
-|54    |        reset_synchronizer_rx_done_inst                                                                                      |gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer    |     6|
-|55    |        reset_synchronizer_tx_done_inst                                                                                      |gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer_40 |     6|
-|56    |        reset_synchronizer_txprogdivreset_inst                                                                               |gtwizard_ultrascale_v1_7_5_reset_synchronizer_41     |     5|
-+------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:04:14 . Memory (MB): peak = 2882.781 ; gain = 1390.371 ; free physical = 3979 ; free virtual = 78158
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2055 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:38 ; elapsed = 00:03:13 . Memory (MB): peak = 2882.781 ; gain = 484.590 ; free physical = 4012 ; free virtual = 78191
-Synthesis Optimization Complete : Time (s): cpu = 00:01:58 ; elapsed = 00:04:15 . Memory (MB): peak = 2882.785 ; gain = 1390.371 ; free physical = 4022 ; free virtual = 78202
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2945.797 ; gain = 0.000 ; free physical = 3824 ; free virtual = 78004
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [Common 17-83] Releasing license: Synthesis
-83 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:02 ; elapsed = 00:04:18 . Memory (MB): peak = 2945.797 ; gain = 1465.520 ; free physical = 3884 ; free virtual = 78063
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2945.797 ; gain = 0.000 ; free physical = 3884 ; free virtual = 78063
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/fmc0_8chan_9g6.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fmc0_8chan_9g6, cache-ID = a61f0390719b5be5
-INFO: [Coretcl 2-1174] Renamed 55 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2969.812 ; gain = 0.000 ; free physical = 3670 ; free virtual = 77858
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/fmc0_8chan_9g6.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file fmc0_8chan_9g6_utilization_synth.rpt -pb fmc0_8chan_9g6_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:43:30 2020...

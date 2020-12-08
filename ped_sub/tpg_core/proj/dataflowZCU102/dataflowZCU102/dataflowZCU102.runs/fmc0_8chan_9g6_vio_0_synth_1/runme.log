@@ -9,18 +9,19 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source fmc0_8chan_9g6_vio_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1434.590 ; gain = 2.023 ; free physical = 131 ; free virtual = 3808
 Command: synth_design -top fmc0_8chan_9g6_vio_0 -part xczu9eg-ffvb1156-2-e -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16654 
+INFO: Helper process launched with PID 22281 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1568.973 ; gain = 75.996 ; free physical = 238 ; free virtual = 80169
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:31 . Memory (MB): peak = 1570.352 ; gain = 80.996 ; free physical = 114 ; free virtual = 3075
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_vio_0' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:59]
-WARNING: [Synth 8-3848] Net sl_iport0 in module/entity fmc0_8chan_9g6_vio_0 does not have driver. [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:92]
-INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_vio_0' (8#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:59]
+INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_vio_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:59]
+WARNING: [Synth 8-3848] Net sl_iport0 in module/entity fmc0_8chan_9g6_vio_0 does not have driver. [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_vio_0' (8#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:59]
 WARNING: [Synth 8-3331] design vio_v3_0_19_probe_out_one__parameterized0 has unconnected port Bus_rst
 WARNING: [Synth 8-3331] design vio_v3_0_19_probe_out_one has unconnected port Bus_rst
 WARNING: [Synth 8-3331] design vio_v3_0_19_probe_out_one has unconnected port Read
@@ -123,7 +124,7 @@ WARNING: [Synth 8-3331] design vio_v3_0_19_vio has unconnected port probe_in88[0
 WARNING: [Synth 8-3331] design vio_v3_0_19_vio has unconnected port probe_in89[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1620.727 ; gain = 127.750 ; free physical = 278 ; free virtual = 80154
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:42 . Memory (MB): peak = 1621.113 ; gain = 131.758 ; free physical = 176 ; free virtual = 3193
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -132,71 +133,71 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0 [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0 [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/synth/fmc0_8chan_9g6_vio_0.v:882]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1620.727 ; gain = 127.750 ; free physical = 265 ; free virtual = 80142
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:45 . Memory (MB): peak = 1621.113 ; gain = 131.758 ; free physical = 110 ; free virtual = 3184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1620.727 ; gain = 127.750 ; free physical = 265 ; free virtual = 80142
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:45 . Memory (MB): peak = 1621.113 ; gain = 131.758 ; free physical = 110 ; free virtual = 3184
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0_ooc.xdc]
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0_ooc.xdc]
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc]
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc]
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0_ooc.xdc]
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0_ooc.xdc]
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc]
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2597.809 ; gain = 0.000 ; free physical = 319 ; free virtual = 77976
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2550.781 ; gain = 0.000 ; free physical = 391 ; free virtual = 2175
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2597.812 ; gain = 0.000 ; free physical = 319 ; free virtual = 77976
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2597.812 ; gain = 0.004 ; free physical = 318 ; free virtual = 77974
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2550.785 ; gain = 0.000 ; free physical = 357 ; free virtual = 2167
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.71 . Memory (MB): peak = 2550.785 ; gain = 0.004 ; free physical = 354 ; free virtual = 2160
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:01:13 . Memory (MB): peak = 2597.812 ; gain = 1104.836 ; free physical = 335 ; free virtual = 77997
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:04:37 . Memory (MB): peak = 2550.785 ; gain = 1061.430 ; free physical = 330 ; free virtual = 2191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -204,13 +205,13 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:01:13 . Memory (MB): peak = 2597.812 ; gain = 1104.836 ; free physical = 335 ; free virtual = 77997
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:04:37 . Memory (MB): peak = 2550.785 ; gain = 1061.430 ; free physical = 330 ; free virtual = 2191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:01:13 . Memory (MB): peak = 2597.812 ; gain = 1104.836 ; free physical = 338 ; free virtual = 78000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:04:37 . Memory (MB): peak = 2550.785 ; gain = 1061.430 ; free physical = 332 ; free virtual = 2194
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "wr_probe_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wr_probe_out" won't be mapped to RAM because it is too sparse
@@ -227,7 +228,7 @@ INFO: [Synth 8-5546] ROM "wr_en_int0" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "rd_en_int0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rd_en_int0" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:01:14 . Memory (MB): peak = 2597.812 ; gain = 1104.836 ; free physical = 316 ; free virtual = 77978
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:04:41 . Memory (MB): peak = 2550.793 ; gain = 1061.438 ; free physical = 288 ; free virtual = 2165
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -477,7 +478,7 @@ INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\PROBE_IN_WIDTH_INST/probe_width_int_reg[7] )
 INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[8]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[9]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:16 . Memory (MB): peak = 2597.812 ; gain = 1104.836 ; free physical = 249 ; free virtual = 77915
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:04:49 . Memory (MB): peak = 2550.793 ; gain = 1061.438 ; free physical = 159 ; free virtual = 2098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -485,203 +486,5 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:03:19 . Memory (MB): peak = 2842.469 ; gain = 1349.492 ; free physical = 250 ; free virtual = 74329
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:03:19 . Memory (MB): peak = 2843.469 ; gain = 1350.492 ; free physical = 248 ; free virtual = 74327
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:02 ; elapsed = 00:03:20 . Memory (MB): peak = 2864.516 ; gain = 1371.539 ; free physical = 240 ; free virtual = 74319
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 333 ; free virtual = 74416
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 333 ; free virtual = 74415
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 333 ; free virtual = 74415
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 333 ; free virtual = 74416
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 332 ; free virtual = 74415
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 332 ; free virtual = 74415
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT1 |     5|
-|2     |LUT2 |    28|
-|3     |LUT3 |    67|
-|4     |LUT4 |    78|
-|5     |LUT5 |    26|
-|6     |LUT6 |   115|
-|7     |FDRE |   535|
-+------+-----+------+
-
-Report Instance Areas: 
-+------+---------------------------------------+------------------------------------------+------+
-|      |Instance                               |Module                                    |Cells |
-+------+---------------------------------------+------------------------------------------+------+
-|1     |top                                    |                                          |   854|
-|2     |  inst                                 |vio_v3_0_19_vio                           |   854|
-|3     |    U_XSDB_SLAVE                       |xsdbs_v1_0_2_xsdbs                        |   248|
-|4     |    DECODER_INST                       |vio_v3_0_19_decoder                       |    86|
-|5     |    PROBE_IN_INST                      |vio_v3_0_19_probe_in_one                  |   309|
-|6     |    PROBE_IN_WIDTH_INST                |vio_v3_0_19_probe_width                   |    13|
-|7     |    PROBE_OUT_ALL_INST                 |vio_v3_0_19_probe_out_all                 |   176|
-|8     |      \G_PROBE_OUT[0].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one                 |     3|
-|9     |      \G_PROBE_OUT[1].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one_0               |     3|
-|10    |      \G_PROBE_OUT[2].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one_1               |     3|
-|11    |      \G_PROBE_OUT[3].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one_2               |     3|
-|12    |      \G_PROBE_OUT[4].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one_3               |     3|
-|13    |      \G_PROBE_OUT[5].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one_4               |     3|
-|14    |      \G_PROBE_OUT[6].PROBE_OUT0_INST  |vio_v3_0_19_probe_out_one__parameterized0 |   116|
-|15    |    PROBE_OUT_WIDTH_INST               |vio_v3_0_19_probe_width__parameterized0   |     6|
-+------+---------------------------------------+------------------------------------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.520 ; gain = 1371.543 ; free physical = 333 ; free virtual = 74415
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 284 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:02:23 . Memory (MB): peak = 2864.520 ; gain = 394.457 ; free physical = 374 ; free virtual = 74457
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:03:21 . Memory (MB): peak = 2864.523 ; gain = 1371.543 ; free physical = 385 ; free virtual = 74467
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2917.535 ; gain = 0.000 ; free physical = 358 ; free virtual = 74381
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [Common 17-83] Releasing license: Synthesis
-143 Infos, 175 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:03:24 . Memory (MB): peak = 2917.535 ; gain = 1436.691 ; free physical = 407 ; free virtual = 74432
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2917.535 ; gain = 0.000 ; free physical = 384 ; free virtual = 74419
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_vio_0_synth_1/fmc0_8chan_9g6_vio_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fmc0_8chan_9g6_vio_0, cache-ID = 100f5875a38a5543
-INFO: [Coretcl 2-1174] Renamed 14 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2941.551 ; gain = 0.000 ; free physical = 322 ; free virtual = 74376
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_vio_0_synth_1/fmc0_8chan_9g6_vio_0.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file fmc0_8chan_9g6_vio_0_utilization_synth.rpt -pb fmc0_8chan_9g6_vio_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:42:28 2020...
+Parent process (pid /opt/ppd/tools/xilinx/Vivado/2018.3/bin/loader: line 213: 21574 Killed                  "$RDI_PROG" "$@"
+21574) has died. This helper process will now exit

@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc rfile:../../../dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc rfile:../../../dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
 current_instance inst
 set_property src_info {type:SCOPED_XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_property LOC GTHE4_CHANNEL_X1Y4 [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[25].*gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST}]

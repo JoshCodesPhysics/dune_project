@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1606437509">
+<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607452484">
   <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top.dcp"/>
@@ -321,10 +321,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/hdl/ped_alg.vhd">
+    <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd"/>
-        <Attr Name="ImportTime" Val="1606436336"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -740,7 +738,7 @@
     <File Path="$PSRCDIR/sources_1/ip/address_LUT/addressTable.coe">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/data_reception/firmware/cgn/addressTable.coe"/>
-        <Attr Name="ImportTime" Val="1606435184"/>
+        <Attr Name="ImportTime" Val="1606820245"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

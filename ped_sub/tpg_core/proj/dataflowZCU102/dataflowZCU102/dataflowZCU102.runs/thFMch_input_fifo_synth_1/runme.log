@@ -9,16 +9,17 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source thFMch_input_fifo.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1438.594 ; gain = 2.023 ; free physical = 131 ; free virtual = 3808
 Command: synth_design -top thFMch_input_fifo -part xczu9eg-ffvb1156-2-e -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16307 
+INFO: Helper process launched with PID 22280 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:39 . Memory (MB): peak = 1562.156 ; gain = 76.996 ; free physical = 226 ; free virtual = 79327
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:02:08 . Memory (MB): peak = 1562.020 ; gain = 76.996 ; free physical = 122 ; free virtual = 2522
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'thFMch_input_fifo' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'thFMch_input_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:75]
 	Parameter C_COMMON_CLOCK bound to: 0 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
@@ -221,11 +222,11 @@ INFO: [Synth 8-638] synthesizing module 'thFMch_input_fifo' [/data/kmanolo/Josh/
 	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:545]
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:545]
 INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray' [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:358]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray' (12#1) [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
-INFO: [Synth 8-256] done synthesizing module 'thFMch_input_fifo' (27#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'thFMch_input_fifo' (27#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/synth/thFMch_input_fifo.vhd:75]
 WARNING: [Synth 8-3331] design wr_status_flags_as has unconnected port WR_RST
 WARNING: [Synth 8-3331] design wr_status_flags_as has unconnected port SRST
 WARNING: [Synth 8-3331] design wr_status_flags_as has unconnected port SAFETY_CKT_WR_RST
@@ -328,7 +329,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper has unconnected port DIN
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper has unconnected port DINB[19]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:25 ; elapsed = 00:02:26 . Memory (MB): peak = 1787.309 ; gain = 302.148 ; free physical = 466 ; free virtual = 76339
+Finished RTL Elaboration : Time (s): cpu = 00:01:26 ; elapsed = 00:07:31 . Memory (MB): peak = 1787.180 ; gain = 302.156 ; free physical = 347 ; free virtual = 1472
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -341,321 +342,36 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:02:26 . Memory (MB): peak = 1787.309 ; gain = 302.148 ; free physical = 610 ; free virtual = 76483
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:27 ; elapsed = 00:07:44 . Memory (MB): peak = 1787.180 ; gain = 302.156 ; free physical = 229 ; free virtual = 1419
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:26 ; elapsed = 00:02:26 . Memory (MB): peak = 1787.309 ; gain = 302.148 ; free physical = 610 ; free virtual = 76483
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:27 ; elapsed = 00:07:44 . Memory (MB): peak = 1787.180 ; gain = 302.156 ; free physical = 229 ; free virtual = 1419
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_ooc.xdc] for cell 'U0'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'U0'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/dont_touch.xdc]
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_ooc.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/dont_touch.xdc]
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'U0'
 Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
 Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
 Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
 Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/thFMch_input_fifo_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/thFMch_input_fifo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.730 ; gain = 0.000 ; free physical = 314 ; free virtual = 74368
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.570 ; gain = 0.000 ; free physical = 103 ; free virtual = 1132
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.730 ; gain = 0.000 ; free physical = 310 ; free virtual = 74365
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.570 ; gain = 0.000 ; free physical = 120 ; free virtual = 1121
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.730 ; gain = 0.000 ; free physical = 310 ; free virtual = 74365
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2594.730 ; gain = 0.000 ; free physical = 317 ; free virtual = 74371
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:47 ; elapsed = 00:03:30 . Memory (MB): peak = 2594.730 ; gain = 1109.570 ; free physical = 6549 ; free virtual = 80628
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xczu9eg-ffvb1156-2-e
-INFO: [Synth 8-6742] Reading net delay rules and data
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:47 ; elapsed = 00:03:30 . Memory (MB): peak = 2594.730 ; gain = 1109.570 ; free physical = 6547 ; free virtual = 80626
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying 'set_property' XDC Constraints
----------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/dont_touch.xdc, line 9).
-Applied set_property DONT_TOUCH = true for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
----------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:03:30 . Memory (MB): peak = 2594.730 ; gain = 1109.570 ; free physical = 6546 ; free virtual = 80625
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:47 ; elapsed = 00:03:30 . Memory (MB): peak = 2594.730 ; gain = 1109.570 ; free physical = 6492 ; free virtual = 80589
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      6 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      6 Bit         XORs := 2     
-	   2 Input      1 Bit         XORs := 34    
-+---Registers : 
-	                6 Bit    Registers := 13    
-	                1 Bit    Registers := 7     
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module memory 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-Module xpm_cdc_gray 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      6 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 5     
-+---Registers : 
-	                6 Bit    Registers := 4     
-Module rd_bin_cntr 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	                6 Bit    Registers := 2     
-Module compare 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 6     
-Module rd_status_flags_as 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
-Module rd_handshaking_flags 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
-Module wr_bin_cntr 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	                6 Bit    Registers := 3     
-Module wr_status_flags_as 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Part Resources:
-DSPs: 2520 (col length:168)
-BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:48 ; elapsed = 00:03:31 . Memory (MB): peak = 2594.730 ; gain = 1109.570 ; free physical = 6452 ; free virtual = 80571
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:20 ; elapsed = 00:05:31 . Memory (MB): peak = 2824.387 ; gain = 1339.227 ; free physical = 3642 ; free virtual = 77832
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:21 ; elapsed = 00:05:31 . Memory (MB): peak = 2853.418 ; gain = 1368.258 ; free physical = 3637 ; free virtual = 77826
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:21 ; elapsed = 00:05:32 . Memory (MB): peak = 2853.418 ; gain = 1368.258 ; free physical = 3633 ; free virtual = 77823
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77793
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77793
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77793
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77793
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77792
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3603 ; free virtual = 77792
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |LUT1     |     2|
-|2     |LUT2     |    18|
-|3     |LUT3     |     5|
-|4     |LUT4     |    14|
-|5     |LUT5     |     4|
-|6     |LUT6     |     8|
-|7     |RAMB18E2 |     1|
-|8     |FDCE     |    32|
-|9     |FDPE     |     5|
-|10    |FDRE     |    48|
-+------+---------+------+
-
-Report Instance Areas: 
-+------+-------------------------------------------------------+-----------------------------+------+
-|      |Instance                                               |Module                       |Cells |
-+------+-------------------------------------------------------+-----------------------------+------+
-|1     |top                                                    |                             |   137|
-|2     |  U0                                                   |fifo_generator_v13_2_3       |   137|
-|3     |    inst_fifo_gen                                      |fifo_generator_v13_2_3_synth |   137|
-|4     |      \gconvfifo.rf                                    |fifo_generator_top           |   137|
-|5     |        \grf.rf                                        |fifo_generator_ramfifo       |   137|
-|6     |          \gntv_or_sync_fifo.gcx.clkx                  |clk_x_pntrs                  |    78|
-|7     |            wr_pntr_cdc_inst                           |xpm_cdc_gray__2              |    34|
-|8     |            rd_pntr_cdc_inst                           |xpm_cdc_gray                 |    34|
-|9     |          \gntv_or_sync_fifo.gl0.rd                    |rd_logic                     |    27|
-|10    |            \gras.rsts                                 |rd_status_flags_as           |     5|
-|11    |            \grhf.rhf                                  |rd_handshaking_flags         |     2|
-|12    |            rpntr                                      |rd_bin_cntr                  |    20|
-|13    |          \gntv_or_sync_fifo.gl0.wr                    |wr_logic                     |    29|
-|14    |            \gwas.wsts                                 |wr_status_flags_as           |     4|
-|15    |            wpntr                                      |wr_bin_cntr                  |    25|
-|16    |          \gntv_or_sync_fifo.mem                       |memory                       |     3|
-|17    |            \gbm.gbmg.gbmgc.ngecc.bmg                  |blk_mem_gen_v8_4_2           |     2|
-|18    |              inst_blk_mem_gen                         |blk_mem_gen_v8_4_2_synth     |     2|
-|19    |                \gnbram.gnativebmg.native_blk_mem_gen  |blk_mem_gen_top              |     2|
-|20    |                  \valid.cstr                          |blk_mem_gen_generic_cstr     |     2|
-|21    |                    \ramloop[0].ram.r                  |blk_mem_gen_prim_width       |     2|
-|22    |                      \prim_noinit.ram                 |blk_mem_gen_prim_wrapper     |     2|
-+------+-------------------------------------------------------+-----------------------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.422 ; gain = 1368.262 ; free physical = 3602 ; free virtual = 77792
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 449 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:03 ; elapsed = 00:04:34 . Memory (MB): peak = 2853.422 ; gain = 560.840 ; free physical = 3632 ; free virtual = 77822
-Synthesis Optimization Complete : Time (s): cpu = 00:02:22 ; elapsed = 00:05:33 . Memory (MB): peak = 2853.426 ; gain = 1368.262 ; free physical = 3633 ; free virtual = 77823
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2907.070 ; gain = 0.000 ; free physical = 3544 ; free virtual = 77734
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [Common 17-83] Releasing license: Synthesis
-18 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:25 ; elapsed = 00:05:34 . Memory (MB): peak = 2907.070 ; gain = 1445.504 ; free physical = 3601 ; free virtual = 77791
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2907.070 ; gain = 0.000 ; free physical = 3601 ; free virtual = 77791
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/thFMch_input_fifo.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP thFMch_input_fifo, cache-ID = f6fbb1c4568345d3
-INFO: [Coretcl 2-1174] Renamed 21 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2931.086 ; gain = 0.000 ; free physical = 3592 ; free virtual = 77782
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/thFMch_input_fifo_synth_1/thFMch_input_fifo.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file thFMch_input_fifo_utilization_synth.rpt -pb thFMch_input_fifo_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:44:38 2020...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.570 ; gain = 0.000 ; free physical = 117 ; free virtual = 1129
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.90 . Memory (MB): peak = 2546.570 ; gain = 0.000 ; free physical = 124 ; free virtual = 1153
