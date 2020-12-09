@@ -1,0 +1,215 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 9644
+License: Customer
+
+Current time: 	Wed Dec 09 10:27:35 GMT 2020
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: CentOS Linux release 7.9.2009 (Core)
+OS Version: 3.10.0-1127.19.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 32
+
+Display: :1
+Screen size: 1848x1016
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 3 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/opt/ppd/tools/xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/opt/ppd/tools/xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hmo31799
+User home directory: /net/home/ppd/hmo31799
+User working directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/ppd/tools/xilinx/Vivado
+HDI_APPROOT: /opt/ppd/tools/xilinx/Vivado/2018.3
+RDI_DATADIR: /opt/ppd/tools/xilinx/Vivado/2018.3/data
+RDI_BINDIR: /opt/ppd/tools/xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /home/ppd/hmo31799/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /home/ppd/hmo31799/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /net/home/ppd/hmo31799/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/opt/ppd/tools/xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.log
+Vivado journal file location: 	/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-9644-mercury006.pp.rl.ac.uk
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/ppd/tools/xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@ep-non-commercial3.te.rl.ac.uk:2100@ep-non-commercial2.te.rl.ac.uk
+XILINX_DSP: /opt/ppd/tools/xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/ppd/tools/xilinx/Vivado/2018.3
+XILINX_SDK: /opt/ppd/tools/xilinx/SDK/2018.3
+XILINX_VIVADO: /opt/ppd/tools/xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /opt/ppd/tools/xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,184 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 66 MB (+66768kb) [00:00:09]
+// [Engine Memory]: 5,153 MB (+5252336kb) [00:00:09]
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: dataflowZCU102.xpr. Version: Vivado v2018.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project dataflowZCU102.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,226 MB. GUI used memory: 40 MB. Current time: 12/9/20, 10:27:38 AM GMT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 83 MB (+13997kb) [00:00:28]
+// [GUI Memory]: 101 MB (+14397kb) [00:00:28]
+// WARNING: HEventQueue.dispatchEvent() is taking  3175 ms.
+// Tcl Message: open_project dataflowZCU102.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,364 MB. GUI used memory: 54 MB. Current time: 12/9/20, 10:27:55 AM GMT
+// Project name: dataflowZCU102; location: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102; part: xczu9eg-ffvb1156-2-e
+dismissDialog("Open Project"); // bx (cp)
+// [GUI Memory]: 110 MB (+4368kb) [00:00:31]
+// Elapsed time: 64 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // g (aR, cp): FALSE
+// [GUI Memory]: 116 MB (+1022kb) [00:01:44]
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // g (aR, cp): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-2029] formal threshold has no actual or default value [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:245]. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-2029] formal threshold has no actual or default value [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:245]. ]", 2, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd;-;;-;16;-;line;-;245;-;;-;16;-;"); // ah (Q, cp)
+// PAPropertyPanels.initPanels (payload.vhd) elapsed time: 0.2s
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-2029] formal threshold has no actual or default value [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:245]. ]", 2, false); // ah (Q, cp)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1320 ms. Increasing delay to 3960 ms.
+// Elapsed time: 23 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aI (aF, cp)
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // u (f, cp): TRUE
+// Elapsed time: 12 seconds
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "ped_alg.vhd"); // OverlayTextField (C, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[3].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd), ped_alg(behav) (ped_alg.vhd)]", 6, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[3].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd), ped_alg(behav) (ped_alg.vhd)]", 6, false, false, false, false, false, true); // B (D, cp) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 5,421 MB. GUI used memory: 61 MB. Current time: 12/9/20, 10:30:03 AM GMT
+// [Engine Memory]: 5,421 MB (+10342kb) [00:02:45]
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// Elapsed time: 10 seconds
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "PedSub_wrapper.vhd", true); // OverlayTextField (C, cp)
+// Elapsed time: 46 seconds
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // u (f, cp): FALSE
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // u (f, cp): TRUE
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "PedSub_wrapper.vhd", true); // OverlayTextField (C, cp)
+// Elapsed time: 44 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[0].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd), gen_pedsub.pedsub_ssr : PedSub_SSR(Behavioral) (PedSub_SSR.vhd)]", 21); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[0].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd), gen_pedsub.pedsub_ssr : PedSub_SSR(Behavioral) (PedSub_SSR.vhd)]", 21); // B (D, cp)
+// Elapsed time: 34 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 1); // B (D, cp)
+// Elapsed time: 17 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 2); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+// Elapsed time: 11 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (D, cp)
+// Elapsed time: 10 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (D, cp)
+// Elapsed time: 11 seconds
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "PedSub_wrapper.vhd", true); // OverlayTextField (C, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[0].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd)]", 30, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[0].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd)]", 30, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(rtl) (zcu102_basex.vhd), payload : payload(rtl) (payload.vhd), sgen[0].hitFinder : dtpc_tpg(Behavioral) (dtpc_tpg.vhd), singleChain_inst : SingleChain(Behavioral) (SingleChain.vhd), g_pedsub.PedSub_inst : PedSub_wrapper(Behavioral) (PedSub_wrapper.vhd), gen_pedsub.pedsub_ssr : PedSub_SSR(Behavioral) (PedSub_SSR.vhd)]", 31, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+floatView(PAResourceOtoP.PAViews_CODE, "PedSub_wrapper.vhd"); // ax (aI, cp)
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "PedSub_wrapper.vhd"); // ax (aI, aK)
+// [GUI Memory]: 124 MB (+1707kb) [00:06:34]
+// Elapsed time: 10 seconds
+selectCodeEditor("PedSub_wrapper.vhd", 112, 469); // cl (w, aK)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PedSub_wrapper.vhd", 327, 472); // cl (w, aK)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,441 MB. GUI used memory: 62 MB. Current time: 12/9/20, 10:34:08 AM GMT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// PAResourceOtoP.PAViews_CODE: Code: close view
+// Elapsed time: 46 seconds
+closeFrame(PAResourceOtoP.PAViews_CODE, "PedSub_wrapper.vhd"); // ax (aI, aK)
+dockFrame(PAResourceOtoP.PAViews_CODE, "PedSub_wrapper.vhd"); // ax (aI, aK)
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "PedSub_wrapper.vhd"); // ax (aI, aK)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (cp):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// Tcl Message: launch_runs synth_1 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Dec  9 10:34:54 2020] Launched synth_1... Run output will be captured here: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: RUN_FAILED
+// ah (cp): Synthesis Failed: addNotify
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah (cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-2029] formal threshold has no actual or default value [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:245]. ]", 2, false); // ah (Q, cp)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aI (aF, cp)
+// Elapsed time: 26 seconds
+floatView(PAResourceOtoP.PAViews_CODE, "payload.vhd"); // ax (aI, cp)
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "payload.vhd"); // ax (aI, aK)
+// Elapsed time: 95 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2037 ms. Increasing delay to 6111 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1150 ms to process. Increasing delay to 2000 ms.

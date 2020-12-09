@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="thFMch_input_fifo_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607452438">
-  <File Type="VDS-TIMING-PB" Name="thFMch_input_fifo_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="thFMch_input_fifo_timing_summary_synth.rpt"/>
+<GenRun Id="thFMch_input_fifo_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607508382">
+  <File Type="RDS-UTIL-PB" Name="thFMch_input_fifo_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="thFMch_input_fifo_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="thFMch_input_fifo.vds"/>
   <File Type="RDS-DCP" Name="thFMch_input_fifo.dcp"/>
   <File Type="PA-TCL" Name="thFMch_input_fifo.tcl"/>
   <File Type="REPORTS-TCL" Name="thFMch_input_fifo_reports.tcl"/>
-  <File Type="RDS-RDS" Name="thFMch_input_fifo.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="thFMch_input_fifo_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="thFMch_input_fifo_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="thFMch_input_fifo_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/thFMch_input_fifo">
     <File Path="$PSRCDIR/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xci">
       <FileInfo>

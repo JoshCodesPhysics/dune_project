@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="fmc0_8chan_9g6_vio_0_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607452446">
-  <File Type="VDS-TIMING-PB" Name="fmc0_8chan_9g6_vio_0_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="fmc0_8chan_9g6_vio_0_timing_summary_synth.rpt"/>
+<GenRun Id="fmc0_8chan_9g6_vio_0_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607508389">
+  <File Type="RDS-UTIL-PB" Name="fmc0_8chan_9g6_vio_0_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="fmc0_8chan_9g6_vio_0_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="fmc0_8chan_9g6_vio_0.vds"/>
   <File Type="RDS-DCP" Name="fmc0_8chan_9g6_vio_0.dcp"/>
   <File Type="PA-TCL" Name="fmc0_8chan_9g6_vio_0.tcl"/>
   <File Type="REPORTS-TCL" Name="fmc0_8chan_9g6_vio_0_reports.tcl"/>
-  <File Type="RDS-RDS" Name="fmc0_8chan_9g6_vio_0.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="fmc0_8chan_9g6_vio_0_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="fmc0_8chan_9g6_vio_0_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="fmc0_8chan_9g6_vio_0_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fmc0_8chan_9g6_vio_0">
     <File Path="$PSRCDIR/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xci">
       <FileInfo>

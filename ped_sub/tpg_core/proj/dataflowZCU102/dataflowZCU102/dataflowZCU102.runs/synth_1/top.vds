@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Nov 27 00:48:30 2020
-# Process ID: 23204
-# Current directory: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1
+# Start of session at: Wed Dec  9 10:34:56 2020
+# Process ID: 12913
+# Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/top.vds
-# Journal file: /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/vivado.jou
+# Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/top.vds
+# Journal file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: synth_design -top top -part xczu9eg-ffvb1156-2-e -flatten_hierarchy none
@@ -15,23 +15,19 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 23312 
+INFO: Helper process launched with PID 12964 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1589.965 ; gain = 94.984 ; free physical = 10518 ; free virtual = 84706
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1590.977 ; gain = 89.969 ; free physical = 95081 ; free virtual = 113122
 ---------------------------------------------------------------------------------
-ERROR: [Synth 8-2032] formal ap_clk is not declared [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:74]
-ERROR: [Synth 8-2029] formal clk has no actual or default value [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:72]
-INFO: [Synth 8-994] clk is declared here [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedestalSubtraction.vhd:29]
-INFO: [Synth 8-994] reset is declared here [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedestalSubtraction.vhd:30]
-INFO: [Synth 8-994] s_axis_data_w is declared here [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedestalSubtraction.vhd:31]
-INFO: [Synth 8-994] m_axis_data_r is declared here [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedestalSubtraction.vhd:34]
-INFO: [Synth 8-2810] unit behavioral ignored due to previous errors [/data/kmanolo/Josh/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:48]
+ERROR: [Synth 8-2029] formal threshold has no actual or default value [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:245]
+INFO: [Synth 8-994] threshold is declared here [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/dtpc_tpg.vhd:50]
+INFO: [Synth 8-2810] unit rtl ignored due to previous errors [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/payload.vhd:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1640.715 ; gain = 145.734 ; free physical = 10536 ; free virtual = 84726
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1642.727 ; gain = 141.719 ; free physical = 95093 ; free virtual = 113134
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
-7 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+4 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:49:07 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 10:35:27 2020...

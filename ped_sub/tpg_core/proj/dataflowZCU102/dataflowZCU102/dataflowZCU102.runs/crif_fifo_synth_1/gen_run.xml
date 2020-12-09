@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="crif_fifo_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607452451">
-  <File Type="VDS-TIMING-PB" Name="crif_fifo_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="crif_fifo_timing_summary_synth.rpt"/>
+<GenRun Id="crif_fifo_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607508393">
+  <File Type="RDS-UTIL-PB" Name="crif_fifo_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="crif_fifo_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="crif_fifo.vds"/>
   <File Type="RDS-DCP" Name="crif_fifo.dcp"/>
   <File Type="PA-TCL" Name="crif_fifo.tcl"/>
   <File Type="REPORTS-TCL" Name="crif_fifo_reports.tcl"/>
-  <File Type="RDS-RDS" Name="crif_fifo.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="crif_fifo_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="crif_fifo_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="crif_fifo_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/crif_fifo">
     <File Path="$PSRCDIR/sources_1/ip/crif_fifo/crif_fifo.xci">
       <FileInfo>

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="distRAM_64x12_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607452456">
-  <File Type="VDS-TIMING-PB" Name="distRAM_64x12_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="distRAM_64x12_timing_summary_synth.rpt"/>
+<GenRun Id="distRAM_64x12_synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1607508397">
+  <File Type="RDS-UTIL-PB" Name="distRAM_64x12_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="distRAM_64x12_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="distRAM_64x12.vds"/>
   <File Type="RDS-DCP" Name="distRAM_64x12.dcp"/>
   <File Type="PA-TCL" Name="distRAM_64x12.tcl"/>
   <File Type="REPORTS-TCL" Name="distRAM_64x12_reports.tcl"/>
-  <File Type="RDS-RDS" Name="distRAM_64x12.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="distRAM_64x12_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="distRAM_64x12_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="distRAM_64x12_utilization_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/distRAM_64x12">
     <File Path="$PSRCDIR/sources_1/ip/distRAM_64x12/distRAM_64x12.xci">
       <FileInfo>

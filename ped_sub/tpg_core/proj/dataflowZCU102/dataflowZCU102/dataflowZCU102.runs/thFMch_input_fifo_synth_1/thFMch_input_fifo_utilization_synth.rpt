@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Fri Nov 27 00:44:37 2020
-| Host         : heplnw061.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Wed Dec  9 10:12:12 2020
+| Host         : mercury006.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -file thFMch_input_fifo_utilization_synth.rpt -pb thFMch_input_fifo_utilization_synth.pb
 | Design       : thFMch_input_fifo
 | Device       : xczu9egffvb1156-2

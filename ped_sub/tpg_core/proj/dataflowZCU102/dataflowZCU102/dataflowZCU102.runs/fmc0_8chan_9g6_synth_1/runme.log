@@ -9,15 +9,14 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source fmc0_8chan_9g6.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1434.582 ; gain = 2.023 ; free physical = 131 ; free virtual = 3808
 Command: synth_design -top fmc0_8chan_9g6 -part xczu9eg-ffvb1156-2-e -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22282 
+INFO: Helper process launched with PID 30682 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:29 . Memory (MB): peak = 1573.340 ; gain = 84.992 ; free physical = 105 ; free virtual = 3094
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1573.328 ; gain = 84.992 ; free physical = 92909 ; free virtual = 111708
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.v:62]
 INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_gtwizard_top' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6_gtwizard_top.v:175]
@@ -2134,7 +2133,7 @@ WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has 
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx has unconnected port rxdata_in[892]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:19 ; elapsed = 00:04:20 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 373 ; free virtual = 2185
+Finished RTL Elaboration : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1710.234 ; gain = 221.898 ; free physical = 92014 ; free virtual = 110819
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2147,10 +2146,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:04:27 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 385 ; free virtual = 2228
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 1710.234 ; gain = 221.898 ; free physical = 92014 ; free virtual = 110819
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:20 ; elapsed = 00:04:27 . Memory (MB): peak = 1710.246 ; gain = 221.898 ; free physical = 385 ; free virtual = 2228
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 1710.234 ; gain = 221.898 ; free physical = 92014 ; free virtual = 110819
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -2164,19 +2163,19 @@ Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fmc0_8chan_9g6_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fmc0_8chan_9g6_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.344 ; gain = 0.000 ; free physical = 114 ; free virtual = 1352
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.355 ; gain = 0.000 ; free physical = 90930 ; free virtual = 109752
 Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.344 ; gain = 0.000 ; free physical = 100 ; free virtual = 1329
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.355 ; gain = 0.000 ; free physical = 90930 ; free virtual = 109752
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.348 ; gain = 0.000 ; free physical = 117 ; free virtual = 1306
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:01 . Memory (MB): peak = 2568.348 ; gain = 0.004 ; free physical = 125 ; free virtual = 1289
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.359 ; gain = 0.000 ; free physical = 90930 ; free virtual = 109752
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2616.359 ; gain = 0.004 ; free physical = 90924 ; free virtual = 109748
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:48 ; elapsed = 00:08:32 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 90 ; free virtual = 936
+Finished Constraint Validation : Time (s): cpu = 00:01:03 ; elapsed = 00:01:46 . Memory (MB): peak = 2616.359 ; gain = 1128.023 ; free physical = 90861 ; free virtual = 109677
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -2184,14 +2183,14 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:48 ; elapsed = 00:08:36 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 99 ; free virtual = 866
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:03 ; elapsed = 00:01:46 . Memory (MB): peak = 2616.359 ; gain = 1128.023 ; free physical = 90861 ; free virtual = 109677
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:48 ; elapsed = 00:09:43 . Memory (MB): peak = 2568.348 ; gain = 1080.000 ; free physical = 83 ; free virtual = 476
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:46 . Memory (MB): peak = 2616.359 ; gain = 1128.023 ; free physical = 90862 ; free virtual = 109678
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_all_reg' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_tx_reg' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
@@ -2249,7 +2248,7 @@ ST_RESET_ALL_TX_PLL_WAIT |                              010 |                   
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_all_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:50 ; elapsed = 00:12:18 . Memory (MB): peak = 2568.355 ; gain = 1080.008 ; free physical = 123 ; free virtual = 1404
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:05 ; elapsed = 00:01:49 . Memory (MB): peak = 2616.359 ; gain = 1128.023 ; free physical = 90884 ; free virtual = 109701
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2345,7 +2344,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:12:44 . Memory (MB): peak = 2568.355 ; gain = 1080.008 ; free physical = 115 ; free virtual = 1278
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:52 . Memory (MB): peak = 2616.359 ; gain = 1128.023 ; free physical = 91186 ; free virtual = 110017
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2353,3 +2352,215 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:32 ; elapsed = 00:03:26 . Memory (MB): peak = 2854.016 ; gain = 1365.680 ; free physical = 89904 ; free virtual = 108801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:03:26 . Memory (MB): peak = 2876.047 ; gain = 1387.711 ; free physical = 89896 ; free virtual = 108792
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:32 ; elapsed = 00:03:27 . Memory (MB): peak = 2884.055 ; gain = 1395.719 ; free physical = 89886 ; free virtual = 108783
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:33 ; elapsed = 00:03:27 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89863 ; free virtual = 108760
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:33 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89863 ; free virtual = 108760
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:33 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89852 ; free virtual = 108749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:33 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89852 ; free virtual = 108749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:34 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89851 ; free virtual = 108748
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:34 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89848 ; free virtual = 108745
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |CARRY8        |     4|
+|2     |GTHE4_CHANNEL |     8|
+|3     |GTHE4_COMMON  |     2|
+|4     |LUT1          |    32|
+|5     |LUT2          |   104|
+|6     |LUT3          |    41|
+|7     |LUT4          |    22|
+|8     |LUT5          |    28|
+|9     |LUT6          |    31|
+|10    |FDCE          |    58|
+|11    |FDPE          |    40|
+|12    |FDRE          |   244|
+|13    |FDSE          |     6|
++------+--------------+------+
+
+Report Instance Areas: 
++------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
+|      |Instance                                                                                                                     |Module                                               |Cells |
++------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
+|1     |top                                                                                                                          |                                                     |   620|
+|2     |  inst                                                                                                                       |fmc0_8chan_9g6_gtwizard_top                          |   620|
+|3     |    \gen_gtwizard_gthe4_top.fmc0_8chan_9g6_gtwizard_gthe4_inst                                                               |fmc0_8chan_9g6_gtwizard_gthe4                        |   620|
+|4     |      \gen_gtwizard_gthe4.gen_channel_container[25].gen_enabled_channel.gthe4_channel_wrapper_inst                           |fmc0_8chan_9g6_gthe4_channel_wrapper                 |     8|
+|5     |        channel_inst                                                                                                         |gtwizard_ultrascale_v1_7_5_gthe4_channel_43          |     8|
+|6     |      \gen_gtwizard_gthe4.gen_channel_container[26].gen_enabled_channel.gthe4_channel_wrapper_inst                           |fmc0_8chan_9g6_gthe4_channel_wrapper_0               |     8|
+|7     |        channel_inst                                                                                                         |gtwizard_ultrascale_v1_7_5_gthe4_channel             |     8|
+|8     |      \gen_gtwizard_gthe4.gen_common.gen_common_container[25].gen_enabled_common.gthe4_common_wrapper_inst                   |fmc0_8chan_9g6_gthe4_common_wrapper                  |     2|
+|9     |        common_inst                                                                                                          |gtwizard_ultrascale_v1_7_5_gthe4_common_42           |     2|
+|10    |      \gen_gtwizard_gthe4.gen_common.gen_common_container[26].gen_enabled_common.gthe4_common_wrapper_inst                   |fmc0_8chan_9g6_gthe4_common_wrapper_1                |     2|
+|11    |        common_inst                                                                                                          |gtwizard_ultrascale_v1_7_5_gthe4_common              |     2|
+|12    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[0].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood     |    25|
+|13    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[1].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_2   |    25|
+|14    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[2].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_3   |    26|
+|15    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[3].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_4   |    25|
+|16    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[4].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_5   |    25|
+|17    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[5].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_6   |    26|
+|18    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[6].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_7   |    25|
+|19    |      \gen_gtwizard_gthe4.gen_pwrgood_delay_inst[7].delay_powergood_inst                                                     |gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood_8   |    25|
+|20    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[0].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer          |     5|
+|21    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[0].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_9        |     5|
+|22    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[1].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_10       |     6|
+|23    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[1].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_11       |     6|
+|24    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[2].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_12       |     5|
+|25    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[2].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_13       |     5|
+|26    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[3].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_14       |     5|
+|27    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[3].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_15       |     5|
+|28    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[4].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_16       |     5|
+|29    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[4].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_17       |     5|
+|30    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[5].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_18       |     6|
+|31    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[5].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_19       |     6|
+|32    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[6].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_20       |     5|
+|33    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[6].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_21       |     5|
+|34    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[7].bit_synchronizer_rxresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_22       |     5|
+|35    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gen_ch_xrd[7].bit_synchronizer_txresetdone_inst  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_23       |     5|
+|36    |      \gen_gtwizard_gthe4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst                                 |gtwizard_ultrascale_v1_7_5_gtwiz_reset               |   312|
+|37    |        bit_synchronizer_gtpowergood_inst                                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_24       |     6|
+|38    |        bit_synchronizer_gtwiz_reset_rx_datapath_dly_inst                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_25       |     5|
+|39    |        bit_synchronizer_gtwiz_reset_rx_pll_and_datapath_dly_inst                                                            |gtwizard_ultrascale_v1_7_5_bit_synchronizer_26       |     8|
+|40    |        bit_synchronizer_gtwiz_reset_tx_datapath_dly_inst                                                                    |gtwizard_ultrascale_v1_7_5_bit_synchronizer_27       |     5|
+|41    |        bit_synchronizer_gtwiz_reset_tx_pll_and_datapath_dly_inst                                                            |gtwizard_ultrascale_v1_7_5_bit_synchronizer_28       |     8|
+|42    |        bit_synchronizer_gtwiz_reset_userclk_rx_active_inst                                                                  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_29       |    11|
+|43    |        bit_synchronizer_gtwiz_reset_userclk_tx_active_inst                                                                  |gtwizard_ultrascale_v1_7_5_bit_synchronizer_30       |     9|
+|44    |        bit_synchronizer_plllock_rx_inst                                                                                     |gtwizard_ultrascale_v1_7_5_bit_synchronizer_31       |    10|
+|45    |        bit_synchronizer_plllock_tx_inst                                                                                     |gtwizard_ultrascale_v1_7_5_bit_synchronizer_32       |    11|
+|46    |        bit_synchronizer_rxcdrlock_inst                                                                                      |gtwizard_ultrascale_v1_7_5_bit_synchronizer_33       |     8|
+|47    |        reset_synchronizer_gtwiz_reset_all_inst                                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer        |     5|
+|48    |        reset_synchronizer_gtwiz_reset_rx_any_inst                                                                           |gtwizard_ultrascale_v1_7_5_reset_synchronizer_34     |     7|
+|49    |        reset_synchronizer_gtwiz_reset_rx_datapath_inst                                                                      |gtwizard_ultrascale_v1_7_5_reset_synchronizer_35     |     6|
+|50    |        reset_synchronizer_gtwiz_reset_rx_pll_and_datapath_inst                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer_36     |     6|
+|51    |        reset_synchronizer_gtwiz_reset_tx_any_inst                                                                           |gtwizard_ultrascale_v1_7_5_reset_synchronizer_37     |     7|
+|52    |        reset_synchronizer_gtwiz_reset_tx_datapath_inst                                                                      |gtwizard_ultrascale_v1_7_5_reset_synchronizer_38     |     5|
+|53    |        reset_synchronizer_gtwiz_reset_tx_pll_and_datapath_inst                                                              |gtwizard_ultrascale_v1_7_5_reset_synchronizer_39     |     6|
+|54    |        reset_synchronizer_rx_done_inst                                                                                      |gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer    |     6|
+|55    |        reset_synchronizer_tx_done_inst                                                                                      |gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer_40 |     6|
+|56    |        reset_synchronizer_txprogdivreset_inst                                                                               |gtwizard_ultrascale_v1_7_5_reset_synchronizer_41     |     5|
++------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:34 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.059 ; gain = 1395.723 ; free physical = 89848 ; free virtual = 108745
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2055 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:02:38 . Memory (MB): peak = 2884.059 ; gain = 489.598 ; free physical = 89884 ; free virtual = 108781
+Synthesis Optimization Complete : Time (s): cpu = 00:01:34 ; elapsed = 00:03:28 . Memory (MB): peak = 2884.062 ; gain = 1395.723 ; free physical = 89894 ; free virtual = 108790
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.070 ; gain = 0.000 ; free physical = 89748 ; free virtual = 108645
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:03:30 . Memory (MB): peak = 2947.070 ; gain = 1482.328 ; free physical = 89810 ; free virtual = 108707
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.070 ; gain = 0.000 ; free physical = 89810 ; free virtual = 108707
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/fmc0_8chan_9g6.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fmc0_8chan_9g6, cache-ID = a61f0390719b5be5
+INFO: [Coretcl 2-1174] Renamed 55 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2971.094 ; gain = 0.000 ; free physical = 89616 ; free virtual = 108518
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fmc0_8chan_9g6_synth_1/fmc0_8chan_9g6.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fmc0_8chan_9g6_utilization_synth.rpt -pb fmc0_8chan_9g6_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 10:11:18 2020...

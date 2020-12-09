@@ -14,38 +14,38 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19064 
+INFO: Helper process launched with PID 4231 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1574.969 ; gain = 82.996 ; free physical = 4229 ; free virtual = 78408
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1575.750 ; gain = 86.996 ; free physical = 91009 ; free virtual = 109906
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:155]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_support' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:71' bound to instance 'U0' of component 'gig_ethernet_pcs_pma_basex_156_25_support' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:222]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_support' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:120]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_support' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:71' bound to instance 'U0' of component 'gig_ethernet_pcs_pma_basex_156_25_support' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:222]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_support' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:120]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_block' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:96' bound to instance 'pcs_pma_block_i' of component 'gig_ethernet_pcs_pma_basex_156_25_block' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:223]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_block' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:153]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_block' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:96' bound to instance 'pcs_pma_block_i' of component 'gig_ethernet_pcs_pma_basex_156_25_block' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_block' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:153]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-WARNING: [Synth 8-5640] Port 's_axi_aclk' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_resetn' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_awaddr' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_awvalid' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_awready' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_wdata' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_wvalid' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_wready' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_bresp' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_bvalid' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_bready' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_araddr' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_arvalid' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_arready' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_rdata' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_rresp' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_rvalid' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
-WARNING: [Synth 8-5640] Port 's_axi_rready' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_aclk' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_resetn' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_awaddr' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_awvalid' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_awready' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_wdata' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_wvalid' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_wready' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_bresp' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_bvalid' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_bready' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_araddr' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_arvalid' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_arready' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_rdata' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_rresp' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_rvalid' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
+WARNING: [Synth 8-5640] Port 's_axi_rready' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:256]
 	Parameter C_ELABORATION_TRANSIENT_DIR bound to: BlankString - type: string 
 	Parameter C_COMPONENT_NAME bound to: gig_ethernet_pcs_pma_basex_156_25 - type: string 
 	Parameter C_RX_GMII_CLK bound to: TXOUTCLK - type: string 
@@ -64,32 +64,32 @@ WARNING: [Synth 8-5640] Port 's_axi_rready' is missing in component declaration 
 	Parameter C_1588 bound to: 0 - type: integer 
 	Parameter B_SHIFTER_ADDR bound to: 10'b1001010000 
 	Parameter GT_RX_BYTE_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_v16_1_5' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/hdl/gig_ethernet_pcs_pma_v16_1_rfs.vhd:17468' bound to instance 'gig_ethernet_pcs_pma_basex_156_25_core' of component 'gig_ethernet_pcs_pma_v16_1_5' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:430]
-WARNING: [Synth 8-5640] Port 'gt0_rxbyteisaligned_out' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:163]
-WARNING: [Synth 8-5640] Port 'gt0_rxbyterealign_out' is missing in component declaration [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:163]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_v16_1_5' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/hdl/gig_ethernet_pcs_pma_v16_1_rfs.vhd:17468' bound to instance 'gig_ethernet_pcs_pma_basex_156_25_core' of component 'gig_ethernet_pcs_pma_v16_1_5' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:430]
+WARNING: [Synth 8-5640] Port 'gt0_rxbyteisaligned_out' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:163]
+WARNING: [Synth 8-5640] Port 'gt0_rxbyterealign_out' is missing in component declaration [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:163]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:72' bound to instance 'transceiver_inst' of component 'gig_ethernet_pcs_pma_basex_156_25_transceiver' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:542]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:161]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:72' bound to instance 'transceiver_inst' of component 'gig_ethernet_pcs_pma_basex_156_25_transceiver' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:542]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:161]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:66' bound to instance 'reclock_encommaalign' of component 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:515]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:79]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:66' bound to instance 'reclock_encommaalign' of component 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:515]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:79]
 	Parameter INITIALISE bound to: 2'b11 
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync1' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:108]
+INFO: [Synth 8-113] binding component instance 'reset_sync1' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:108]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync2' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:119]
+INFO: [Synth 8-113] binding component instance 'reset_sync2' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:119]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync3' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:130]
+INFO: [Synth 8-113] binding component instance 'reset_sync3' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:130]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync4' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:141]
+INFO: [Synth 8-113] binding component instance 'reset_sync4' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:141]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync5' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:152]
+INFO: [Synth 8-113] binding component instance 'reset_sync5' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:152]
 	Parameter INIT bound to: 1'b1 
-INFO: [Synth 8-113] binding component instance 'reset_sync6' to cell 'FDP' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:163]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' (8#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:79]
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_gt' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62' bound to instance 'gig_ethernet_pcs_pma_basex_156_25_gt_i' of component 'gig_ethernet_pcs_pma_basex_156_25_gt' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:855]
-INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62]
-INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top.v:175]
+INFO: [Synth 8-113] binding component instance 'reset_sync6' to cell 'FDP' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:163]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_reset_sync' (8#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_reset_sync.vhd:79]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_gt' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62' bound to instance 'gig_ethernet_pcs_pma_basex_156_25_gt_i' of component 'gig_ethernet_pcs_pma_basex_156_25_gt' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:855]
+INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62]
+INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top.v:175]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -182,7 +182,7 @@ INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_g
 	Parameter C_TX_USER_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter C_TX_USRCLK_FREQUENCY bound to: 62.500000 - type: float 
 	Parameter C_TX_USRCLK2_FREQUENCY bound to: 62.500000 - type: float 
-INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4.v:143]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -242,10 +242,10 @@ INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_g
 	Parameter P_CPLL_CAL_WAIT_DEASSERT_CPLLPD bound to: 16'b0000000100000000 
 	Parameter P_CPLL_CAL_TXOUTCLK_PERIOD_DIV100 bound to: 18'b000000000010100000 
 	Parameter P_CDR_TIMEOUT_FREERUN_CYC bound to: 26'b00000011100001110101001000 
-INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper.v:56]
 	Parameter MASTER_EN bound to: 0 - type: integer 
 	Parameter NUM_CHANNELS bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
 	Parameter NUM_CHANNELS bound to: 1 - type: integer 
 	Parameter GTHE4_CHANNEL_ACJTAG_DEBUG_MODE bound to: 1'b0 
 	Parameter GTHE4_CHANNEL_ACJTAG_MODE bound to: 1'b0 
@@ -1731,9 +1731,9 @@ INFO: [Synth 8-6157] synthesizing module 'GTHE4_CHANNEL' [/opt/ppd/tools/xilinx/
 	Parameter USE_PCS_CLK_PHASE_SEL bound to: 1'b0 
 	Parameter Y_ALL_MODE bound to: 1'b0 
 INFO: [Synth 8-6155] done synthesizing module 'GTHE4_CHANNEL' (9#1) [/opt/ppd/tools/xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:7161]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' (10#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper' (11#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper.v:56]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_channel' (10#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper' (11#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal.v:55]
 	Parameter C_RX_PLL_TYPE bound to: 2 - type: integer 
 	Parameter C_TX_PLL_TYPE bound to: 2 - type: integer 
 	Parameter C_SIM_CPLL_CAL_BYPASS bound to: 1'b0 
@@ -1749,22 +1749,22 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_
 	Parameter ADDR_X079 bound to: 10'b0001111001 
 	Parameter ADDR_X114 bound to: 10'b0100010100 
 	Parameter CPLL_CAL_ONLY_TX bound to: 1'b1 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' (12#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_synchronizer' (12#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
 	Parameter INITIALIZE bound to: 5'b00000 
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' (13#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_bit_synchronizer' (13#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:55]
 	Parameter C_SIM_CPLL_CAL_BYPASS bound to: 1'b0 
 	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter C_FREERUN_FREQUENCY bound to: 31.250000 - type: float 
@@ -1831,32 +1831,32 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_
 	Parameter ADDR_X079 bound to: 10'b0001111001 
 INFO: [Synth 8-6157] synthesizing module 'BUFG_GT' [/opt/ppd/tools/xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:767]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG_GT' (14#1) [/opt/ppd/tools/xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:767]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:55]
 	Parameter REVISION bound to: 1 - type: integer 
 	Parameter RESET_STATE bound to: 0 - type: integer 
 	Parameter MEASURE_STATE bound to: 1 - type: integer 
 	Parameter HOLD_STATE bound to: 2 - type: integer 
 	Parameter UPDATE_STATE bound to: 3 - type: integer 
 	Parameter DONE_STATE bound to: 4 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:85]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:86]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:166]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:166]
-WARNING: [Synth 8-5788] Register freq_cnt_o_reg in module gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:190]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter' (15#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:55]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:672]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:672]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1115]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1115]
-WARNING: [Synth 8-6014] Unused sequential element mask_reg was removed.  [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1080]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx' (16#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_rx.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:85]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:86]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:166]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:166]
+WARNING: [Synth 8-5788] Register freq_cnt_o_reg in module gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_freq_counter' (15#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cal_freqcnt.v:55]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:672]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:672]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1115]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1115]
+WARNING: [Synth 8-6014] Unused sequential element mask_reg was removed.  [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:1080]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx' (16#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_rx.v:55]
 	Parameter C_SIM_CPLL_CAL_BYPASS bound to: 1'b0 
 	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter CPLL_CAL_ONLY_TX bound to: 1'b1 
 	Parameter C_FREERUN_FREQUENCY bound to: 31.250000 - type: float 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx' (17#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_rx.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gte4_drp_arb' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gte4_drp_arb.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx' (17#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_rx.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gte4_drp_arb' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gte4_drp_arb.v:55]
 	Parameter ADDR_TX_PROGCLK_SEL bound to: 10'b0000001100 
 	Parameter ADDR_TX_PROGDIV_CFG bound to: 10'b0000111110 
 	Parameter ADDR_RX_PROGDIV_CFG bound to: 10'b0011000110 
@@ -1877,16 +1877,16 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gte4_drp_ar
 	Parameter DRP_WRITE bound to: 7'b0010000 
 	Parameter DRP_WRITE_ACK bound to: 7'b0100000 
 	Parameter DRP_DONE bound to: 7'b1000000 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gte4_drp_arb' (18#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gte4_drp_arb.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal' (19#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gte4_drp_arb' (18#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gte4_drp_arb.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal' (19#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
 	Parameter C_USER_GTPOWERGOOD_DELAY_EN bound to: 1 - type: integer 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
-INFO: [Synth 8-226] default block is never used [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:137]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' (20#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
+INFO: [Synth 8-226] default block is never used [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gthe4_delay_powergood' (20#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
 	Parameter P_FREERUN_FREQUENCY bound to: 31.250000 - type: float 
 	Parameter P_USE_CPLL_CAL bound to: 0 - type: integer 
 	Parameter P_TX_PLL_TYPE bound to: 2 - type: integer 
@@ -1918,63 +1918,63 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset
 	Parameter ST_RESET_RX_WAIT_USERRDY bound to: 3'b101 
 	Parameter ST_RESET_RX_WAIT_RESETDONE bound to: 3'b110 
 	Parameter ST_RESET_RX_IDLE bound to: 3'b111 
-INFO: [Synth 8-155] case statement is not full and has no default [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-155] case statement is not full and has no default [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' (21#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' (22#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_reset_inv_synchronizer' (21#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset' (22#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
 	Parameter P_TX_USER_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter P_TX_DATA_ENCODING bound to: 1 - type: integer 
 	Parameter P_TOTAL_NUMBER_OF_CHANNELS bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' (23#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_tx' (23#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_tx.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
 	Parameter P_RX_USER_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter P_RX_DATA_DECODING bound to: 1 - type: integer 
 	Parameter P_TOTAL_NUMBER_OF_CHANNELS bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' (24#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4' (25#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4.v:143]
-INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top' (26#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top.v:175]
-INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt' (27#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' (28#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:161]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_5_gtwiz_userdata_rx' (24#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_userdata_rx.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4' (25#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top' (26#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_top.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_gt' (27#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.v:62]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_transceiver' (28#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/transceiver/gig_ethernet_pcs_pma_basex_156_25_transceiver.vhd:161]
 	Parameter INITIALISE bound to: 2'b00 
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:67' bound to instance 'sync_block_reset_done' of component 'gig_ethernet_pcs_pma_basex_156_25_sync_block' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:634]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:80]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:67' bound to instance 'sync_block_reset_done' of component 'gig_ethernet_pcs_pma_basex_156_25_sync_block' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:80]
 	Parameter INITIALISE bound to: 2'b00 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:113]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:113]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:123]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:123]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:133]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:133]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:143]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:143]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:153]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:153]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:163]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' (29#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:80]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_block' (30#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:153]
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_clocking' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:67' bound to instance 'core_clocking_i' of component 'gig_ethernet_pcs_pma_basex_156_25_clocking' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:274]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_clocking' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:84]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:163]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_sync_block' (29#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_sync_block.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_block' (30#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_block.vhd:153]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_clocking' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:67' bound to instance 'core_clocking_i' of component 'gig_ethernet_pcs_pma_basex_156_25_clocking' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:274]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_clocking' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:84]
 	Parameter REFCLK_EN_TX_PATH bound to: 1'b0 
 	Parameter REFCLK_HROW_CK_SEL bound to: 2'b00 
 	Parameter REFCLK_ICNTL_RX bound to: 2'b00 
-INFO: [Synth 8-113] binding component instance 'ibufds_gtrefclk' to cell 'IBUFDS_GTE4' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:106]
-INFO: [Synth 8-113] binding component instance 'usrclk2_bufg_inst' to cell 'BUFG_GT' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:118]
-INFO: [Synth 8-113] binding component instance 'usrclk_bufg_inst' to cell 'BUFG_GT' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:132]
-INFO: [Synth 8-113] binding component instance 'rxrecclk_bufg_inst' to cell 'BUFG_GT' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:150]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_clocking' (31#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:84]
-INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_resets' declared at '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:67' bound to instance 'core_resets_i' of component 'gig_ethernet_pcs_pma_basex_156_25_resets' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:297]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_resets' [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:75]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:82]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_resets' (32#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:75]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_support' (33#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:120]
-INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' (34#1) [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:155]
+INFO: [Synth 8-113] binding component instance 'ibufds_gtrefclk' to cell 'IBUFDS_GTE4' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:106]
+INFO: [Synth 8-113] binding component instance 'usrclk2_bufg_inst' to cell 'BUFG_GT' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:118]
+INFO: [Synth 8-113] binding component instance 'usrclk_bufg_inst' to cell 'BUFG_GT' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:132]
+INFO: [Synth 8-113] binding component instance 'rxrecclk_bufg_inst' to cell 'BUFG_GT' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:150]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_clocking' (31#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocking.vhd:84]
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_basex_156_25_resets' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:67' bound to instance 'core_resets_i' of component 'gig_ethernet_pcs_pma_basex_156_25_resets' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_resets' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:75]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_resets' (32#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_resets.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25_support' (33#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_support.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' (34#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.vhd:155]
 WARNING: [Synth 8-3331] design gig_ethernet_pcs_pma_basex_156_25_clocking has unconnected port mmcm_reset
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx has unconnected port RXOUTCLK_PERIOD_IN[17]
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_rx has unconnected port RXOUTCLK_PERIOD_IN[16]
@@ -2077,7 +2077,7 @@ WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx has 
 WARNING: [Synth 8-3331] design gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_tx has unconnected port WAIT_DEASSERT_CPLLPD_IN[11]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1656.723 ; gain = 164.750 ; free physical = 3795 ; free virtual = 77988
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 1657.512 ; gain = 168.758 ; free physical = 90914 ; free virtual = 109812
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2090,10 +2090,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1656.723 ; gain = 164.750 ; free physical = 3791 ; free virtual = 77976
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1657.512 ; gain = 168.758 ; free physical = 90886 ; free virtual = 109784
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1656.723 ; gain = 164.750 ; free physical = 3791 ; free virtual = 77976
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1657.512 ; gain = 168.758 ; free physical = 90886 ; free virtual = 109784
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2102,38 +2102,38 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_ooc.xdc] for cell 'U0'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'U0'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'U0'
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc].
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_ooc.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.969 ; gain = 0.000 ; free physical = 2639 ; free virtual = 76829
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc].
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.742 ; gain = 0.000 ; free physical = 91073 ; free virtual = 109975
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/gig_ethernet_pcs_pma_basex_156_25_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.969 ; gain = 0.000 ; free physical = 2638 ; free virtual = 76828
-Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'U0'
-Finished Parsing XDC File [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'U0'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.742 ; gain = 0.000 ; free physical = 91073 ; free virtual = 109975
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'U0'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.969 ; gain = 0.000 ; free physical = 2638 ; free virtual = 76827
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.742 ; gain = 0.000 ; free physical = 91072 ; free virtual = 109974
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 38 instances were transformed.
   FD => FDRE: 12 instances
   FDP => FDPE: 24 instances
   SRL16 => SRL16E: 2 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.973 ; gain = 0.000 ; free physical = 2638 ; free virtual = 76827
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2615.973 ; gain = 0.004 ; free physical = 2633 ; free virtual = 76822
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.746 ; gain = 0.000 ; free physical = 91072 ; free virtual = 109974
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2615.746 ; gain = 0.004 ; free physical = 91070 ; free virtual = 109972
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:01:22 . Memory (MB): peak = 2615.973 ; gain = 1124.000 ; free physical = 2285 ; free virtual = 76474
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:01:12 . Memory (MB): peak = 2615.746 ; gain = 1126.992 ; free physical = 91048 ; free virtual = 109950
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -2141,16 +2141,16 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:01:22 . Memory (MB): peak = 2615.973 ; gain = 1124.000 ; free physical = 2285 ; free virtual = 76474
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:01:12 . Memory (MB): peak = 2615.746 ; gain = 1126.992 ; free physical = 91047 ; free virtual = 109950
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst. (constraint file  /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc, line 13).
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc, line 17).
+Applied set_property DONT_TOUCH = true for U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc, line 13).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/dont_touch.xdc, line 17).
 Applied set_property DONT_TOUCH = true for U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:01:22 . Memory (MB): peak = 2615.973 ; gain = 1124.000 ; free physical = 2284 ; free virtual = 76473
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:01:12 . Memory (MB): peak = 2615.746 ; gain = 1126.992 ; free physical = 91051 ; free virtual = 109953
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "XMIT_CONFIG_INT" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "EXT_CODE" won't be mapped to RAM because it is too sparse
@@ -2198,8 +2198,8 @@ INFO: [Synth 8-5544] ROM "sm_reset_rx_timer_clr" won't be mapped to Block RAM be
 INFO: [Synth 8-5544] ROM "sm_reset_rx" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3936] Found unconnected internal register 'progclk_sel_store_reg' and it is trimmed from '16' to '15' bits. [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:708]
-WARNING: [Synth 8-3936] Found unconnected internal register 'x0e1_store_reg' and it is trimmed from '16' to '15' bits. [/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:781]
+WARNING: [Synth 8-3936] Found unconnected internal register 'progclk_sel_store_reg' and it is trimmed from '16' to '15' bits. [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:708]
+WARNING: [Synth 8-3936] Found unconnected internal register 'x0e1_store_reg' and it is trimmed from '16' to '15' bits. [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_cpll_cal_tx.v:781]
 INFO: [Synth 8-5544] ROM "cpll_cal_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cpll_cal_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cpll_cal_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -2337,7 +2337,7 @@ ST_RESET_ALL_TX_PLL_WAIT |                              010 |                   
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_all_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_5_gtwiz_reset'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:01:24 . Memory (MB): peak = 2615.973 ; gain = 1124.000 ; free physical = 3728 ; free virtual = 77913
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:01:16 . Memory (MB): peak = 2615.746 ; gain = 1126.992 ; free physical = 90918 ; free virtual = 109822
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2754,7 +2754,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\pcs_p
 INFO: [Synth 8-3886] merging instance 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/addr_i_reg[20]' (FDE) to 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/addr_i_reg[26]'
 INFO: [Synth 8-3886] merging instance 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/idx_reg[1]' (FDRE) to 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/idx_reg[1]__0'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:30 . Memory (MB): peak = 2615.973 ; gain = 1124.000 ; free physical = 3594 ; free virtual = 77784
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:01:22 . Memory (MB): peak = 2615.746 ; gain = 1126.992 ; free physical = 90798 ; free virtual = 109707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2766,13 +2766,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:03:33 . Memory (MB): peak = 2856.629 ; gain = 1364.656 ; free physical = 5416 ; free virtual = 79609
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:02:54 . Memory (MB): peak = 2857.402 ; gain = 1368.648 ; free physical = 90187 ; free virtual = 109107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:03:33 . Memory (MB): peak = 2868.645 ; gain = 1376.672 ; free physical = 5409 ; free virtual = 79602
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:02:54 . Memory (MB): peak = 2868.418 ; gain = 1379.664 ; free physical = 90183 ; free virtual = 109103
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2786,7 +2786,7 @@ Start Technology Mapping
 INFO: [Synth 8-3886] merging instance 'U0/pcs_pma_block_i/gig_ethernet_pcs_pma_basex_156_25_core/gpcs_pma_inst/IS_2_5G_DISABLED_PRE_SHRINK.TRANSMITTER/CONFIG_K28p5_reg' (FDR) to 'U0/pcs_pma_block_i/gig_ethernet_pcs_pma_basex_156_25_core/gpcs_pma_inst/IS_2_5G_DISABLED_PRE_SHRINK.TRANSMITTER/CONFIG_DATA_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/idx_reg[0]' (FDRE) to 'U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_cpll_cal_gthe4.gen_cpll_cal_inst[0].gen_inst_cpll_cal.gtwizard_ultrascale_v1_7_5_gthe4_cpll_cal_inst/gtwizard_ultrascale_v1_7_5_gte4_drp_arb_i/idx_reg[0]__0'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:16 ; elapsed = 00:03:34 . Memory (MB): peak = 2886.660 ; gain = 1394.688 ; free physical = 5388 ; free virtual = 79581
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:02:55 . Memory (MB): peak = 2887.441 ; gain = 1398.688 ; free physical = 90177 ; free virtual = 109097
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2810,7 +2810,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:03:35 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5378 ; free virtual = 79571
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90170 ; free virtual = 109090
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2823,7 +2823,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:03:35 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5378 ; free virtual = 79571
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90170 ; free virtual = 109090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2835,25 +2835,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5377 ; free virtual = 79569
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90169 ; free virtual = 109089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5377 ; free virtual = 79569
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90169 ; free virtual = 109089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5375 ; free virtual = 79567
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90168 ; free virtual = 109089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5374 ; free virtual = 79567
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90168 ; free virtual = 109089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2969,11 +2969,11 @@ Report Instance Areas:
 |60    |        reclock_encommaalign                                                                                                                |gig_ethernet_pcs_pma_basex_156_25_reset_sync               |     6|
 +------+--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.664 ; gain = 1394.691 ; free physical = 5374 ; free virtual = 79567
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.445 ; gain = 1398.691 ; free physical = 90168 ; free virtual = 109089
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 904 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:02:35 . Memory (MB): peak = 2886.664 ; gain = 435.441 ; free physical = 5410 ; free virtual = 79603
-Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:03:36 . Memory (MB): peak = 2886.668 ; gain = 1394.691 ; free physical = 5411 ; free virtual = 79604
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:02:05 . Memory (MB): peak = 2887.445 ; gain = 440.457 ; free physical = 90206 ; free virtual = 109126
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:02:56 . Memory (MB): peak = 2887.449 ; gain = 1398.691 ; free physical = 90216 ; free virtual = 109136
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2981,7 +2981,7 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-441] Inserted BUFG_GT_SYNC U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT U0/core_clocking_i/rxrecclk_bufg_inst
 INFO: [Opt 31-441] Inserted BUFG_GT_SYNC U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst/gen_gtwizard_gthe4_top.gig_ethernet_pcs_pma_basex_156_25_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT U0/core_clocking_i/usrclk2_bufg_inst
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2933.680 ; gain = 0.000 ; free physical = 5308 ; free virtual = 79500
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2934.457 ; gain = 0.000 ; free physical = 90133 ; free virtual = 109054
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 38 instances were transformed.
   FD => FDRE: 12 instances
@@ -2991,16 +2991,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 288 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:03:38 . Memory (MB): peak = 2933.680 ; gain = 1453.840 ; free physical = 5367 ; free virtual = 79560
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2933.680 ; gain = 0.000 ; free physical = 5367 ; free virtual = 79560
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:02:58 . Memory (MB): peak = 2934.457 ; gain = 1469.297 ; free physical = 90194 ; free virtual = 109115
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2934.457 ; gain = 0.000 ; free physical = 90194 ; free virtual = 109115
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/gig_ethernet_pcs_pma_basex_156_25.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/gig_ethernet_pcs_pma_basex_156_25.dcp' has been generated.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP gig_ethernet_pcs_pma_basex_156_25, cache-ID = 481656182d9475bd
 INFO: [Coretcl 2-1174] Renamed 59 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2957.695 ; gain = 0.000 ; free physical = 5324 ; free virtual = 79520
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2958.480 ; gain = 0.000 ; free physical = 90172 ; free virtual = 109095
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/data/kmanolo/Josh/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/gig_ethernet_pcs_pma_basex_156_25.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/gig_ethernet_pcs_pma_basex_156_25_synth_1/gig_ethernet_pcs_pma_basex_156_25.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file gig_ethernet_pcs_pma_basex_156_25_utilization_synth.rpt -pb gig_ethernet_pcs_pma_basex_156_25_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 00:46:49 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 10:19:34 2020...
