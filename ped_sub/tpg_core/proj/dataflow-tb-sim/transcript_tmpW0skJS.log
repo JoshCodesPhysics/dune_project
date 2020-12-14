@@ -1,0 +1,128 @@
+# do /tmp/tmpW0skJS.do
+# Start time: 11:36:49 on Dec 14,2020
+# vcom /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/framework/firmware/hdl/dtpc_stream_defs.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/stream_blocks/firmware/hdl/dtpc_mon_defs.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/stream_blocks/firmware/hdl/dtpc_mon_probe.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/stream_blocks/firmware/hdl/dtpc_reg_wrapper.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/framework/firmware/hdl/dtpc_helper.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/HeaderStripperCombiner.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/stateSaveRestore.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/fir32_v0.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/xilinxFIR.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/FIR_StateSR.vhd 
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package dtpc_stream_defs
+# -- Compiling package dtpc_mon_defs
+# -- Loading package NUMERIC_STD
+# -- Loading package dtpc_stream_defs
+# -- Loading package dtpc_mon_defs
+# -- Compiling entity dtpc_mon_probe
+# -- Compiling architecture rtl of dtpc_mon_probe
+# -- Compiling entity dtpc_reg_wrapper
+# -- Compiling architecture rtl of dtpc_reg_wrapper
+# -- Compiling entity dtpc_helper
+# -- Compiling architecture rtl of dtpc_helper
+# -- Compiling entity HeaderStripperCombiner
+# -- Compiling architecture Behavioral of HeaderStripperCombiner
+# -- Compiling entity stateSaveRestore
+# -- Compiling architecture Behavioral of stateSaveRestore
+# -- Compiling entity fir32_v0
+# -- Compiling architecture Behavioral of fir32_v0
+# -- Compiling entity xilinxFIR
+# -- Compiling architecture rtl of xilinxFIR
+# -- Compiling entity FIR_StateSR
+# -- Compiling architecture rtl of FIR_StateSR
+# -- Loading entity fir32_v0
+# -- Loading entity stateSaveRestore
+# End time: 11:36:51 on Dec 14,2020, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# Start time: 11:36:51 on Dec 14,2020
+# vcom -2008 /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/fir_wrapper.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package dtpc_stream_defs
+# -- Compiling entity fir_wrapper
+# -- Compiling architecture rtl of fir_wrapper
+# -- Loading entity FIR_StateSR
+# -- Loading entity xilinxFIR
+# End time: 11:36:52 on Dec 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Start time: 11:36:52 on Dec 14,2020
+# vcom /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedValues_tx.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedestalSubtraction.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd 
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ped_alg
+# -- Compiling architecture behav of ped_alg
+# -- Loading package dtpc_stream_defs
+# -- Compiling entity PedValues_tx
+# -- Compiling architecture Behavioral of PedValues_tx
+# -- Compiling entity PedestalSubtraction
+# -- Compiling architecture Behavioral of PedestalSubtraction
+# -- Compiling entity PedSub_SSR
+# -- Compiling architecture Behavioral of PedSub_SSR
+# End time: 11:36:53 on Dec 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# Start time: 11:36:53 on Dec 14,2020
+# vcom -2008 /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package dtpc_stream_defs
+# -- Compiling entity PedSub_wrapper
+# -- Compiling architecture Behavioral of PedSub_wrapper
+# -- Loading entity PedSub_SSR
+# -- Loading entity ped_alg
+# ** Warning: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd(86): (vcom-1272) Length of formal "ped_val_o" is 16; length of actual is 12.
+# ** Warning: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd(88): (vcom-1272) Length of formal "accum_o" is 8; length of actual is 12.
+# End time: 11:36:54 on Dec 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+# Start time: 11:36:54 on Dec 14,2020
+# vcom /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/HitFinder_km.vhd 
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package dtpc_stream_defs
+# -- Compiling entity HitFinder_km
+# -- Compiling architecture Behavioral of HitFinder_km
+# End time: 11:36:55 on Dec 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.6c_3 Compiler 2017.12 Dec 21 2017
+# Start time: 11:36:55 on Dec 14,2020
+# vcom -2008 /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/SingleChain.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/dtpc_tpg.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/utilities/firmware/sim_hdl/dtpc_sim_sink.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/utilities/firmware/sim_hdl/dtpc_sim_src.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/sim_hdl/tb_dtpc_arch.vhd /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/sim_hdl/tb_dtpc_conf.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package dtpc_stream_defs
+# -- Loading package dtpc_mon_defs
+# -- Compiling entity SingleChain
+# -- Compiling architecture Behavioral of SingleChain
+# -- Loading entity PedSub_wrapper
+# -- Loading entity fir_wrapper
+# -- Loading entity HitFinder_km
+# -- Loading entity PedValues_tx
+# -- Loading entity dtpc_mon_probe
+# -- Compiling entity dtpc_tpg
+# -- Compiling architecture Behavioral of dtpc_tpg
+# -- Loading entity HeaderStripperCombiner
+# -- Loading entity SingleChain
+# -- Loading package MATH_REAL
+# -- Compiling entity dtpc_sim_sink
+# -- Compiling architecture behavioural of dtpc_sim_sink
+# -- Compiling entity dtpc_sim_src
+# -- Compiling architecture behavioural of dtpc_sim_src
+# -- Compiling entity tb_dtpc
+# -- Compiling architecture tb of tb_dtpc
+# -- Loading entity dtpc_sim_src
+# -- Loading entity dtpc_sim_sink
+# -- Compiling configuration configProcBlock
+# -- Loading entity tb_dtpc
+# -- Loading architecture tb of tb_dtpc
+# -- Loading entity dtpc_tpg
+# End time: 11:36:56 on Dec 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# quit

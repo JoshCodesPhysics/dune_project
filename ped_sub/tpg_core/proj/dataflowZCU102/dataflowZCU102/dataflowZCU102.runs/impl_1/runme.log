@@ -1,0 +1,820 @@
+
+*** Running vivado
+    with args -log top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: link_design -top top -part xczu9eg-ffvb1156-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.dcp' for cell 'infra/eth/mac'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25.dcp' for cell 'infra/eth/phy'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.dcp' for cell 'mgt/g_fifo[0].fifo0'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.dcp' for cell 'mgt/mgt/fmc0_8chan_9g6_vio_0_inst'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/fmc0_8chan_9g6.dcp' for cell 'mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/crif_fifo/crif_fifo.dcp' for cell 'payload/cr_int/crif_fifo/fifo'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/address_LUT/address_LUT.dcp' for cell 'payload/data_router/data_receiver/generate_version.dpr_writer/rom_address_table'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/RAM_2048x12/RAM_2048x12.dcp' for cell 'payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/ssr_inst/stateRAM_inst'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/distRAM_64x12/distRAM_64x12.dcp' for cell 'payload/sgen[0].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/accum_distRAM_inst'
+INFO: [Project 1-454] Reading design checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12.dcp' for cell 'payload/sgen[0].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/median_distRAM_inst'
+INFO: [Netlist 29-17] Analyzing 367 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: mgt/mgt/fmc0_8chan_9g6_vio_0_inst UUID: 5bb28bc0-bd3f-50f0-a099-676f86b956b6 
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[0].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[0].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[1].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[1].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[2].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[2].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[3].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[3].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[4].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[4].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[5].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[5].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[6].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[6].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[7].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xdc] for cell 'mgt/g_fifo[7].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst/inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6/synth/fmc0_8chan_9g6.xdc] for cell 'mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst/inst'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc] for cell 'mgt/mgt/fmc0_8chan_9g6_vio_0_inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xdc] for cell 'mgt/mgt/fmc0_8chan_9g6_vio_0_inst'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/crif_fifo/crif_fifo.xdc] for cell 'payload/cr_int/crif_fifo/fifo/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/crif_fifo/crif_fifo.xdc] for cell 'payload/cr_int/crif_fifo/fifo/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'fir_compiler_0'. The XDC file /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc will not be read for any cell of this module.
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'infra/eth/phy/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25_board.xdc] for cell 'infra/eth/phy/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'infra/eth/phy/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25_clocks.xdc] for cell 'infra/eth/phy/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'infra/eth/phy/U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/ip_0/synth/gig_ethernet_pcs_pma_basex_156_25_gt.xdc] for cell 'infra/eth/phy/U0/pcs_pma_block_i/transceiver_inst/gig_ethernet_pcs_pma_basex_156_25_gt_i/inst'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'infra/eth/mac/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'infra/eth/mac/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'infra/eth/mac/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'infra/eth/mac/U0'
+Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_util/firmware/ucf/clock_utils.tcl]
+Finished Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_util/firmware/ucf/clock_utils.tcl]
+Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/boards/zcu102/basex/synth/firmware/ucf/zcu102_basex.tcl]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/boards/zcu102/basex/synth/firmware/ucf/zcu102_basex.tcl:69]
+INFO: [Timing 38-2] Deriving generated clocks [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/boards/zcu102/basex/synth/firmware/ucf/zcu102_basex.tcl:69]
+create_generated_clock: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2806.160 ; gain = 184.023 ; free physical = 38053 ; free virtual = 112122
+Finished Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/boards/zcu102/basex/synth/firmware/ucf/zcu102_basex.tcl]
+Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/ucf/zcu102_mgt_clk.tcl]
+Finished Sourcing Tcl File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/ucf/zcu102_mgt_clk.tcl]
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[0].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[0].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[1].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[1].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[2].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[2].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[3].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[3].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[4].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[4].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[5].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[5].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[6].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[6].fifo0/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[7].fifo0/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo_clocks.xdc] for cell 'mgt/g_fifo[7].fifo0/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'axis_register_slice_fr'. The XDC file /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/axis_register_slice_fr/axis_register_slice_fr_clocks.xdc will not be read for any cell of this module.
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'infra/eth/phy/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/synth/gig_ethernet_pcs_pma_basex_156_25.xdc] for cell 'infra/eth/phy/U0'
+Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'infra/eth/mac/U0'
+Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'infra/eth/mac/U0'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[0].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[0].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[1].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[1].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[2].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[2].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[3].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[3].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[4].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[4].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[5].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[5].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[6].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[6].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[7].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[7].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[0].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[0].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[1].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[1].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[2].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[2].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[3].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[3].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[4].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[4].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[5].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[5].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[6].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[6].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[7].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mgt/g_fifo[7].fifo0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'payload/cr_int/crif_fifo/fifo/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'payload/cr_int/crif_fifo/fifo/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'payload/cr_if_fifo/xpm_fifo_axis_inst/gaxis_rst_sync.xpm_cdc_sync_rst_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'payload/cr_if_fifo/xpm_fifo_axis_inst/gaxis_rst_sync.xpm_cdc_sync_rst_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst_axis.tcl] for cell 'payload/cr_if_fifo/xpm_fifo_axis_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst_axis.tcl] for cell 'payload/cr_if_fifo/xpm_fifo_axis_inst'
+Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'payload/data_router/cmp_dpr/cmp_dpr/xpm_memory_sdpram_inst'
+Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'payload/data_router/cmp_dpr/cmp_dpr/xpm_memory_sdpram_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst/inst/gen_gtwizard_gthe4_top.fmc0_8chan_9g6_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[25].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT mgt/mgt/example_wrapper_inst/gtwiz_userclk_rx_inst/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst/inst/gen_gtwizard_gthe4_top.fmc0_8chan_9g6_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[25].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT mgt/mgt/example_wrapper_inst/gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2806.168 ; gain = 0.000 ; free physical = 38087 ; free virtual = 112157
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 103 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 72 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 2 instances
+  RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 16 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+22 Infos, 0 Warnings, 2 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:41 ; elapsed = 00:01:25 . Memory (MB): peak = 2806.168 ; gain = 1306.645 ; free physical = 38087 ; free virtual = 112156
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu9eg'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2870.195 ; gain = 64.004 ; free physical = 38112 ; free virtual = 112173
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 169dacabd
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:02 . Memory (MB): peak = 2870.195 ; gain = 0.000 ; free physical = 38065 ; free virtual = 112126
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2874.246 ; gain = 0.000 ; free physical = 38029 ; free virtual = 112076
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 25c1ff4ba
+
+Time (s): cpu = 00:02:06 ; elapsed = 00:05:27 . Memory (MB): peak = 2874.250 ; gain = 4.055 ; free physical = 38030 ; free virtual = 112076
+
+Phase 2 Retarget
+INFO: [Opt 31-138] Pushed 54 inverter(s) to 283 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 22e2e5066
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:05:30 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 38073 ; free virtual = 112120
+INFO: [Opt 31-389] Phase Retarget created 552 cells and removed 968 cells
+INFO: [Opt 31-1021] In phase Retarget, 253 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: 266f0d111
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:05:31 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 38067 ; free virtual = 112114
+INFO: [Opt 31-389] Phase Constant propagation created 231 cells and removed 699 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 230 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 2626ea3dd
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:05:35 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 38015 ; free virtual = 112062
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 401 cells
+INFO: [Opt 31-1021] In phase Sweep, 1436 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG infra/clocks/I_BUFG_inst to drive 0 load(s) on clock net infra/clocks/I_BUFGCE
+INFO: [Opt 31-194] Inserted BUFG infra/clocks/clk_aux_i_BUFG_inst to drive 0 load(s) on clock net infra/clocks/clk_aux_i_BUFGCE
+INFO: [Opt 31-193] Inserted 2 BUFG(s) on clock nets
+INFO: [Opt 31-274] Optimized connectivity to 1 cascaded buffer cells
+Phase 5 BUFG optimization | Checksum: 1e4593864
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:05:36 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 37916 ; free virtual = 111993
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 1 cells.
+
+Phase 6 Shift Register Optimization
+Phase 6 Shift Register Optimization | Checksum: 1b694ebdf
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:05:38 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 37928 ; free virtual = 112056
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 14b031324
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:05:39 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 37910 ; free virtual = 112056
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 113 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             552  |             968  |                                            253  |
+|  Constant propagation         |             231  |             699  |                                            230  |
+|  Sweep                        |               0  |             401  |                                           1436  |
+|  BUFG optimization            |               0  |               1  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            113  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2882.250 ; gain = 0.000 ; free physical = 37907 ; free virtual = 112056
+Ending Logic Optimization Task | Checksum: 1f1461c2e
+
+Time (s): cpu = 00:02:21 ; elapsed = 00:05:39 . Memory (MB): peak = 2882.250 ; gain = 12.055 ; free physical = 37904 ; free virtual = 112056
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.318 | TNS=-8.383 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 1 BRAM(s) out of a total of 43 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
+Number of BRAM Ports augmented: 34 newly gated: 10 Total Ports: 86
+Ending PowerOpt Patch Enables Task | Checksum: 1d5ec57b0
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36957 ; free virtual = 111113
+Ending Power Optimization Task | Checksum: 1d5ec57b0
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:02:09 . Memory (MB): peak = 4916.555 ; gain = 2034.305 ; free physical = 36973 ; free virtual = 111129
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 20c8e1ff7
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:04 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36978 ; free virtual = 111134
+Ending Final Cleanup Task | Checksum: 20c8e1ff7
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36978 ; free virtual = 111134
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36978 ; free virtual = 111134
+Ending Netlist Obfuscation Task | Checksum: 20c8e1ff7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36978 ; free virtual = 111134
+INFO: [Common 17-83] Releasing license: Implementation
+59 Infos, 0 Warnings, 2 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:04:25 ; elapsed = 00:08:05 . Memory (MB): peak = 4916.555 ; gain = 2110.387 ; free physical = 36978 ; free virtual = 111134
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36978 ; free virtual = 111134
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36970 ; free virtual = 111133
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36970 ; free virtual = 111133
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 4916.555 ; gain = 0.000 ; free physical = 36960 ; free virtual = 111128
+INFO: [runtcl-4] Executing : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+Command: report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 4924.641 ; gain = 8.086 ; free physical = 36956 ; free virtual = 111123
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu9eg'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36961 ; free virtual = 111129
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1f98e238b
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.13 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36961 ; free virtual = 111129
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36961 ; free virtual = 111129
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 113b4c5bf
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36897 ; free virtual = 111064
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 183bb4a27
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:16 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36854 ; free virtual = 111021
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 183bb4a27
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:17 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36854 ; free virtual = 111022
+Phase 1 Placer Initialization | Checksum: 183bb4a27
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:17 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36854 ; free virtual = 111022
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 13796dd09
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:33 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36774 ; free virtual = 110941
+
+Phase 2.2 Physical Synthesis In Placer
+INFO: [Physopt 32-76] Pass 1. Identified 1 candidate net for fanout optimization.
+INFO: [Physopt 32-81] Processed net infra/clocks/rsto_aux. Replicated 14 times.
+INFO: [Physopt 32-232] Optimized 1 net. Created 14 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 14 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36759 ; free virtual = 110926
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-457] Pass 1. Identified 50 candidate cells for DSP register optimization.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[5]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[5]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[8]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[5]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[20]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[12]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[7]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[7]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[12]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[9]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[18]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[16]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[14]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[8]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[5]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[14]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[20]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[6]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[6]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[14]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[18]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[16]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[7]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[9]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[18]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[7]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[12]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[9]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[16]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[9]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[6]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[8]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[2].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[0].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[20]. 12 registers were pushed out.
+INFO: [Physopt 32-457] Pass 2. Identified 14 candidate cells for DSP register optimization.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[14]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[18]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[16]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[3].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[8]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[10]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[12]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[11]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[4]. 1 register was pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_mult_reg[20]. 12 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell payload/sgen[1].hitFinder/singleChain_inst/g_fir.FIR_inst/gen_fir.fir_ssr/FIR32_v0_inst/s_add_l0_reg[6]. 12 registers were pushed out.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 64 nets or cells. Created 680 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36760 ; free virtual = 110927
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36760 ; free virtual = 110927
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |           14  |              0  |                     1  |           0  |           1  |  00:00:01  |
+|  Fanout                        |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |          680  |              0  |                    64  |           0  |           1  |  00:00:13  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |          694  |              0  |                    65  |           0  |           6  |  00:00:14  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2 Physical Synthesis In Placer | Checksum: 6da751d1
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:34 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36759 ; free virtual = 110927
+Phase 2 Global Placement | Checksum: 2436aa26
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:36 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36761 ; free virtual = 110928
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2436aa26
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:36 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36759 ; free virtual = 110927
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 127a9ee90
+
+Time (s): cpu = 00:02:55 ; elapsed = 00:01:38 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36753 ; free virtual = 110920
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 167fdfd66
+
+Time (s): cpu = 00:02:55 ; elapsed = 00:01:38 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36756 ; free virtual = 110924
+
+Phase 3.4 IO Cut Optimizer
+Phase 3.4 IO Cut Optimizer | Checksum: 18048ca0b
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:01:39 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36760 ; free virtual = 110927
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1a631fefb
+
+Time (s): cpu = 00:03:01 ; elapsed = 00:01:41 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36757 ; free virtual = 110924
+
+Phase 3.6 Small Shape Clustering
+Phase 3.6 Small Shape Clustering | Checksum: 1280e05f6
+
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:45 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36740 ; free virtual = 110907
+
+Phase 3.7 Flow Legalize Slice Clusters
+Phase 3.7 Flow Legalize Slice Clusters | Checksum: 8a39d8dc
+
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:45 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36739 ; free virtual = 110906
+
+Phase 3.8 Slice Area Swap
+Phase 3.8 Slice Area Swap | Checksum: 6bab2993
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:49 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36712 ; free virtual = 110879
+
+Phase 3.9 Commit Slice Clusters
+Phase 3.9 Commit Slice Clusters | Checksum: 7d339618
+
+Time (s): cpu = 00:03:19 ; elapsed = 00:01:51 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36710 ; free virtual = 110878
+
+Phase 3.10 Re-assign LUT pins
+Phase 3.10 Re-assign LUT pins | Checksum: efe32383
+
+Time (s): cpu = 00:03:20 ; elapsed = 00:01:53 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36662 ; free virtual = 110819
+
+Phase 3.11 Pipeline Register Optimization
+Phase 3.11 Pipeline Register Optimization | Checksum: 10ad26322
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:54 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36673 ; free virtual = 110830
+
+Phase 3.12 Fast Optimization
+Phase 3.12 Fast Optimization | Checksum: f08499c9
+
+Time (s): cpu = 00:03:39 ; elapsed = 00:02:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36574 ; free virtual = 110821
+Phase 3 Detail Placement | Checksum: f08499c9
+
+Time (s): cpu = 00:03:40 ; elapsed = 00:02:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36566 ; free virtual = 110820
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 562e1cf2
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-46] BUFG insertion identified 0 candidate nets, 0 success, 0 bufg driver replicated, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
+Phase 4.1.1.1 BUFG Insertion | Checksum: 562e1cf2
+
+Time (s): cpu = 00:04:10 ; elapsed = 00:02:08 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36697 ; free virtual = 110854
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.527. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1197de414
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:13 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36645 ; free virtual = 110852
+Phase 4.1 Post Commit Optimization | Checksum: 1197de414
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:13 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36636 ; free virtual = 110854
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1197de414
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:13 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36639 ; free virtual = 110866
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36207 ; free virtual = 110496
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 181bb49e4
+
+Time (s): cpu = 00:04:24 ; elapsed = 00:02:23 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36209 ; free virtual = 110498
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36209 ; free virtual = 110498
+Phase 4.4 Final Placement Cleanup | Checksum: 1c10a2cdc
+
+Time (s): cpu = 00:04:25 ; elapsed = 00:02:23 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36209 ; free virtual = 110498
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c10a2cdc
+
+Time (s): cpu = 00:04:25 ; elapsed = 00:02:24 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36209 ; free virtual = 110498
+Ending Placer Task | Checksum: 10edcd46b
+
+Time (s): cpu = 00:04:25 ; elapsed = 00:02:24 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36303 ; free virtual = 110592
+INFO: [Common 17-83] Releasing license: Implementation
+159 Infos, 0 Warnings, 2 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:35 ; elapsed = 00:02:36 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36304 ; free virtual = 110593
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36304 ; free virtual = 110593
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36806 ; free virtual = 110969
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36800 ; free virtual = 110982
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36841 ; free virtual = 110985
+INFO: [runtcl-4] Executing : report_io -file top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.57 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36811 ; free virtual = 110955
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_placed.rpt -pb top_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.58 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36838 ; free virtual = 110983
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu9eg'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 2f656bf9 ConstDB: 0 ShapeSum: 773a02a2 RouteDB: 683d65d0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 16b1421bd
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:01:02 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36509 ; free virtual = 110755
+Post Restoration Checksum: NetGraph: ea887f69 NumContArr: 51e5ee48 Constraints: 2fb35c7f Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 16c21ca30
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:01:03 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36476 ; free virtual = 110722
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 16c21ca30
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:01:03 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36417 ; free virtual = 110663
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 16c21ca30
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:03 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36417 ; free virtual = 110663
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 210aad28d
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:01:06 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36403 ; free virtual = 110649
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: 20e7c26b3
+
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:12 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36409 ; free virtual = 110655
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.149  | TNS=0.000  | WHS=-0.808 | THS=-36.516|
+
+
+Phase 2.6 Update Timing for Bus Skew
+
+Phase 2.6.1 Update Timing
+Phase 2.6.1 Update Timing | Checksum: 17d047722
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:21 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36392 ; free virtual = 110638
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.149  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.6 Update Timing for Bus Skew | Checksum: 12176fa79
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:21 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36391 ; free virtual = 110638
+Phase 2 Router Initialization | Checksum: 1249f9abc
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:21 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36391 ; free virtual = 110638
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 2b335e343
+
+Time (s): cpu = 00:02:48 ; elapsed = 00:01:33 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36368 ; free virtual = 110614
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 4674
+ Number of Nodes with overlaps = 384
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.581  | TNS=0.000  | WHS=-0.179 | THS=-2.221 |
+
+Phase 4.1 Global Iteration 0 | Checksum: 15d8eeae3
+
+Time (s): cpu = 00:03:47 ; elapsed = 00:01:54 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36370 ; free virtual = 110616
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.691  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 205e008ab
+
+Time (s): cpu = 00:03:54 ; elapsed = 00:01:57 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36372 ; free virtual = 110618
+Phase 4 Rip-up And Reroute | Checksum: 205e008ab
+
+Time (s): cpu = 00:03:54 ; elapsed = 00:01:57 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36372 ; free virtual = 110618
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1b9c4b0b4
+
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36378 ; free virtual = 110624
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.691  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 5.1 Delay CleanUp | Checksum: 20556e4e5
+
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:00 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36378 ; free virtual = 110624
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 20556e4e5
+
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36378 ; free virtual = 110624
+Phase 5 Delay and Skew Optimization | Checksum: 20556e4e5
+
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36378 ; free virtual = 110625
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 196e94d50
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:03 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36376 ; free virtual = 110622
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.691  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1edc153d1
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:04 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36376 ; free virtual = 110622
+Phase 6 Post Hold Fix | Checksum: 1edc153d1
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:04 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36376 ; free virtual = 110622
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.02386 %
+  Global Horizontal Routing Utilization  = 1.16359 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 250d3e4f5
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:04 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36373 ; free virtual = 110619
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 250d3e4f5
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:04 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36371 ; free virtual = 110618
+
+Phase 9 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin mgt/mgt/example_wrapper_inst/fmc0_8chan_9g6_inst/inst/gen_gtwizard_gthe4_top.fmc0_8chan_9g6_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_common.gen_common_container[26].gen_enabled_common.gthe4_common_wrapper_inst/common_inst/gthe4_common_gen.GTHE4_COMMON_PRIM_INST/GTREFCLK01 to physical pin GTHE4_COMMON_X1Y2/COM2_REFCLKOUT3
+Phase 9 Depositing Routes | Checksum: 250d3e4f5
+
+Time (s): cpu = 00:04:17 ; elapsed = 00:02:06 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36372 ; free virtual = 110618
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.691  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 250d3e4f5
+
+Time (s): cpu = 00:04:17 ; elapsed = 00:02:06 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36375 ; free virtual = 110622
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:04:17 ; elapsed = 00:02:07 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36457 ; free virtual = 110703
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+180 Infos, 0 Warnings, 2 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:04:28 ; elapsed = 00:02:18 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36458 ; free virtual = 110704
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36458 ; free virtual = 110704
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36414 ; free virtual = 110697
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36394 ; free virtual = 110702
+INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36443 ; free virtual = 110705
+INFO: [runtcl-4] Executing : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+Command: report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36420 ; free virtual = 110681
+INFO: [runtcl-4] Executing : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+Command: report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:47 ; elapsed = 00:00:21 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36232 ; free virtual = 110495
+INFO: [runtcl-4] Executing : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
+Command: report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+192 Infos, 1 Warnings, 2 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 4924.641 ; gain = 0.000 ; free physical = 36177 ; free virtual = 110451
+INFO: [runtcl-4] Executing : report_route_status -file top_route_status.rpt -pb top_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file top_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file top_bus_skew_routed.rpt -pb top_bus_skew_routed.pb -rpx top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 11:25:10 2020...
