@@ -88,9 +88,16 @@ proc check_tvin_file {} {
          "c.ped_alg.autotvin_tkeep1.dat"
          "c.ped_alg.autotvin_tready.dat"
          "c.ped_alg.autotvin_treset.dat"
+         "c.ped_alg.autotvin_tlast.dat"
          "c.ped_alg.autotvout_ped_val.dat"
          "c.ped_alg.autotvout_accum.dat"
          "c.ped_alg.autotvout_ADC.dat"
+         "c.ped_alg.autotvout_tvalid_out.dat"
+         "c.ped_alg.autotvout_tkeep0_out.dat"
+         "c.ped_alg.autotvout_tkeep1_out.dat"
+         "c.ped_alg.autotvout_tready_out.dat"
+         "c.ped_alg.autotvout_treset_out.dat"
+         "c.ped_alg.autotvout_tlast_out.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
@@ -118,6 +125,12 @@ proc check_tvout_file {} {
          "rtl.ped_alg.autotvout_ped_val.dat"
          "rtl.ped_alg.autotvout_accum.dat"
          "rtl.ped_alg.autotvout_ADC.dat"
+         "rtl.ped_alg.autotvout_tvalid_out.dat"
+         "rtl.ped_alg.autotvout_tkeep0_out.dat"
+         "rtl.ped_alg.autotvout_tkeep1_out.dat"
+         "rtl.ped_alg.autotvout_tready_out.dat"
+         "rtl.ped_alg.autotvout_treset_out.dat"
+         "rtl.ped_alg.autotvout_tlast_out.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

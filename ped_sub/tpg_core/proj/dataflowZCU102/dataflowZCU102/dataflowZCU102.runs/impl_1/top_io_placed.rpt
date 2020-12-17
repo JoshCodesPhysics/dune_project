@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date                      : Wed Dec  9 11:21:27 2020
-| Host                      : mercury006.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date                      : Tue Dec 15 11:43:53 2020
+| Host                      : heplnw061.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command                   : report_io -file top_io_placed.rpt
 | Design                    : top
 | Device                    : xczu9eg
@@ -10,7 +10,7 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 | Package                   : ffvb1156
 | Package Version           : PRODUCTION 1.1 3/3/2017
 | Package Pin Delay Version : PRODUCTION 1.0 7/24/2015
----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 IO Information
 

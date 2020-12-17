@@ -1,0 +1,222 @@
+
+
+================================================================
+== Vivado HLS Report for 'ped_alg'
+================================================================
+* Date:           Thu Dec 17 13:38:29 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        ped_sub_prj
+* Solution:       no_truncation_block
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.019|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|    4|    1|    4|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (!brmerge5)
+	5  / (brmerge5)
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.28>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %ped_val) nounwind, !map !95"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %accum) nounwind, !map !99"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %ADC) nounwind, !map !103"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %tdata) nounwind, !map !107"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tvalid) nounwind, !map !111"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tkeep0) nounwind, !map !115"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tkeep1) nounwind, !map !119"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tready) nounwind, !map !123"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %treset) nounwind, !map !127"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tlast) nounwind, !map !131"   --->   Operation 15 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tvalid_out) nounwind, !map !135"   --->   Operation 16 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tkeep0_out) nounwind, !map !139"   --->   Operation 17 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tkeep1_out) nounwind, !map !143"   --->   Operation 18 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tready_out) nounwind, !map !147"   --->   Operation 19 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %treset_out) nounwind, !map !151"   --->   Operation 20 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tlast_out) nounwind, !map !155"   --->   Operation 21 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @ped_alg_str) nounwind"   --->   Operation 22 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tready_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %tready) nounwind" [functions.cpp:32]   --->   Operation 23 'read' 'tready_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tvalid_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %tvalid) nounwind" [functions.cpp:32]   --->   Operation 24 'read' 'tvalid_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%tkeep0_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %tkeep0) nounwind" [functions.cpp:32]   --->   Operation 25 'read' 'tkeep0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tkeep1_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %tkeep1) nounwind" [functions.cpp:32]   --->   Operation 26 'read' 'tkeep1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%treset_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %treset) nounwind" [functions.cpp:32]   --->   Operation 27 'read' 'treset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node brmerge5)   --->   "%tmp1 = and i1 %tready_read, %tvalid_read" [functions.cpp:32]   --->   Operation 28 'and' 'tmp1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node brmerge5)   --->   "%tmp2 = and i1 %tkeep0_read, %tkeep1_read" [functions.cpp:32]   --->   Operation 29 'and' 'tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns) (grouped into LUT with out node brmerge5)   --->   "%brmerge4_demorgan = and i1 %tmp2, %tmp1" [functions.cpp:32]   --->   Operation 30 'and' 'brmerge4_demorgan' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node brmerge5)   --->   "%brmerge4 = xor i1 %brmerge4_demorgan, true" [functions.cpp:32]   --->   Operation 31 'xor' 'brmerge4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.28ns) (out node of the LUT)   --->   "%brmerge5 = or i1 %treset_read, %brmerge4" [functions.cpp:32]   --->   Operation 32 'or' 'brmerge5' <Predicate = true> <Delay = 0.28> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "br i1 %brmerge5, label %._crit_edge, label %_ifconv" [functions.cpp:32]   --->   Operation 33 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_9 = call i32 (...)* @_ssdm_op_SpecRegionBegin([22 x i8]* @p_str) nounwind" [functions.cpp:42]   --->   Operation 34 'specregionbegin' 'tmp_9' <Predicate = (!brmerge5)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.01>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLatency(i32 2, i32 65535, [1 x i8]* @p_str1) nounwind" [functions.cpp:43]   --->   Operation 35 'speclatency' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%tdata_read = call i16 @_ssdm_op_Read.ap_auto.i16P(i16* %tdata) nounwind" [functions.cpp:43]   --->   Operation 36 'read' 'tdata_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%ped_val_read = call i16 @_ssdm_op_Read.ap_auto.i16P(i16* %ped_val) nounwind" [functions.cpp:43]   --->   Operation 37 'read' 'ped_val_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (1.10ns)   --->   "%tmp = icmp sgt i16 %tdata_read, %ped_val_read" [functions.cpp:43]   --->   Operation 38 'icmp' 'tmp' <Predicate = true> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%accum_read = call i8 @_ssdm_op_Read.ap_auto.i8P(i8* %accum) nounwind" [functions.cpp:44]   --->   Operation 39 'read' 'accum_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.76ns)   --->   "%tmp_1 = add i8 %accum_read, 1" [functions.cpp:44]   --->   Operation 40 'add' 'tmp_1' <Predicate = true> <Delay = 0.76> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (1.10ns)   --->   "%tmp_2 = icmp slt i16 %tdata_read, %ped_val_read" [functions.cpp:47]   --->   Operation 41 'icmp' 'tmp_2' <Predicate = true> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (0.76ns)   --->   "%tmp_3 = add i8 %accum_read, -1" [functions.cpp:48]   --->   Operation 42 'add' 'tmp_3' <Predicate = true> <Delay = 0.76> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node accum_new_1)   --->   "%tmp_3_accum_load = select i1 %tmp_2, i8 %tmp_3, i8 %accum_read" [functions.cpp:47]   --->   Operation 43 'select' 'tmp_3_accum_load' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (1.10ns)   --->   "%tmp_11 = icmp ne i16 %tdata_read, %ped_val_read" [functions.cpp:47]   --->   Operation 44 'icmp' 'tmp_11' <Predicate = true> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (0.39ns) (out node of the LUT)   --->   "%accum_new_1 = select i1 %tmp, i8 %tmp_1, i8 %tmp_3_accum_load" [functions.cpp:47]   --->   Operation 45 'select' 'accum_new_1' <Predicate = true> <Delay = 0.39> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([22 x i8]* @p_str, i32 %tmp_9) nounwind" [functions.cpp:50]   --->   Operation 46 'specregionend' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([19 x i8]* @p_str2) nounwind" [functions.cpp:52]   --->   Operation 47 'specregionbegin' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLatency(i32 2, i32 65535, [1 x i8]* @p_str1) nounwind" [functions.cpp:53]   --->   Operation 48 'speclatency' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.84ns)   --->   "%tmp_4 = icmp sgt i8 %accum_new_1, 9" [functions.cpp:53]   --->   Operation 49 'icmp' 'tmp_4' <Predicate = true> <Delay = 0.84> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %1, label %2" [functions.cpp:53]   --->   Operation 50 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.84ns)   --->   "%tmp_6 = icmp slt i8 %accum_new_1, -9" [functions.cpp:58]   --->   Operation 51 'icmp' 'tmp_6' <Predicate = (!tmp_4)> <Delay = 0.84> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.67ns)   --->   "br i1 %tmp_6, label %3, label %._crit_edge6" [functions.cpp:58]   --->   Operation 52 'br' <Predicate = (!tmp_4)> <Delay = 0.67>
+ST_3 : Operation 53 [1/1] (0.85ns)   --->   "%tmp_7 = add i16 %ped_val_read, -1" [functions.cpp:59]   --->   Operation 53 'add' 'tmp_7' <Predicate = (!tmp_4 & tmp_6)> <Delay = 0.85> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i16P(i16* %ped_val, i16 %tmp_7) nounwind" [functions.cpp:59]   --->   Operation 54 'write' <Predicate = (!tmp_4 & tmp_6)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.67ns)   --->   "br label %._crit_edge6" [functions.cpp:61]   --->   Operation 55 'br' <Predicate = (!tmp_4 & tmp_6)> <Delay = 0.67>
+ST_3 : Operation 56 [1/1] (0.85ns)   --->   "%tmp_5 = add i16 %ped_val_read, 1" [functions.cpp:54]   --->   Operation 56 'add' 'tmp_5' <Predicate = (tmp_4)> <Delay = 0.85> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i16P(i16* %ped_val, i16 %tmp_5) nounwind" [functions.cpp:54]   --->   Operation 57 'write' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.67ns)   --->   "br label %._crit_edge6" [functions.cpp:56]   --->   Operation 58 'br' <Predicate = (tmp_4)> <Delay = 0.67>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_10 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str3) nounwind" [functions.cpp:67]   --->   Operation 59 'specregionbegin' 'tmp_10' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 0.85>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%ped_val_load_3 = phi i16 [ %tmp_5, %1 ], [ %tmp_7, %3 ], [ %ped_val_read, %2 ]" [functions.cpp:54]   --->   Operation 60 'phi' 'ped_val_load_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.85ns)   --->   "%tmp_8 = sub i16 %tdata_read, %ped_val_load_3" [functions.cpp:68]   --->   Operation 61 'sub' 'tmp_8' <Predicate = true> <Delay = 0.85> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i16P(i16* %ADC, i16 %tmp_8) nounwind" [functions.cpp:68]   --->   Operation 62 'write' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%accum_flag_2 = phi i1 [ true, %1 ], [ true, %3 ], [ %tmp_11, %2 ]" [functions.cpp:47]   --->   Operation 63 'phi' 'accum_flag_2' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%accum_new_2 = phi i8 [ 0, %1 ], [ 0, %3 ], [ %accum_new_1, %2 ]" [functions.cpp:47]   --->   Operation 64 'phi' 'accum_new_2' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([19 x i8]* @p_str2, i32 %tmp_s) nounwind" [functions.cpp:62]   --->   Operation 65 'specregionend' 'empty_2' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLatency(i32 2, i32 65535, [1 x i8]* @p_str1) nounwind" [functions.cpp:68]   --->   Operation 66 'speclatency' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str3, i32 %tmp_10) nounwind" [functions.cpp:69]   --->   Operation 67 'specregionend' 'empty_3' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "br i1 %accum_flag_2, label %mergeST, label %._crit_edge6.new" [functions.cpp:47]   --->   Operation 68 'br' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i8P(i8* %accum, i8 %accum_new_2) nounwind" [functions.cpp:44]   --->   Operation 69 'write' <Predicate = (!brmerge5 & accum_flag_2)> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "br label %._crit_edge6.new"   --->   Operation 70 'br' <Predicate = (!brmerge5 & accum_flag_2)> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "br label %._crit_edge" [functions.cpp:70]   --->   Operation 71 'br' <Predicate = (!brmerge5)> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tvalid_out, i1 %tvalid_read) nounwind" [functions.cpp:72]   --->   Operation 72 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tkeep0_out, i1 %tkeep0_read) nounwind" [functions.cpp:73]   --->   Operation 73 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tkeep1_out, i1 %tkeep1_read) nounwind" [functions.cpp:74]   --->   Operation 74 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tready_out, i1 %tready_read) nounwind" [functions.cpp:75]   --->   Operation 75 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %treset_out, i1 %treset_read) nounwind" [functions.cpp:76]   --->   Operation 76 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%tlast_read = call i1 @_ssdm_op_Read.ap_auto.i1P(i1* %tlast) nounwind" [functions.cpp:77]   --->   Operation 77 'read' 'tlast_read' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tlast_out, i1 %tlast_read) nounwind" [functions.cpp:77]   --->   Operation 78 'write' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "ret void" [functions.cpp:78]   --->   Operation 79 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 0.287ns
+The critical path consists of the following:
+	wire read on port 'tready' (functions.cpp:32) [34]  (0 ns)
+	'and' operation ('tmp1', functions.cpp:32) [39]  (0 ns)
+	'and' operation ('brmerge4_demorgan', functions.cpp:32) [41]  (0 ns)
+	'xor' operation ('brmerge4', functions.cpp:32) [42]  (0 ns)
+	'or' operation ('brmerge5', functions.cpp:32) [43]  (0.287 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 3.02ns
+The critical path consists of the following:
+	wire read on port 'tdata' (functions.cpp:43) [48]  (0 ns)
+	'icmp' operation ('tmp', functions.cpp:43) [50]  (1.1 ns)
+	'select' operation ('accum_new_1', functions.cpp:47) [57]  (0.393 ns)
+	'icmp' operation ('tmp_6', functions.cpp:58) [64]  (0.849 ns)
+	multiplexor before 'phi' operation ('accum_flag_2', functions.cpp:47) with incoming values : ('tmp_11', functions.cpp:47) [75]  (0.675 ns)
+
+ <State 4>: 0.853ns
+The critical path consists of the following:
+	'phi' operation ('ped_val_load_3', functions.cpp:54) with incoming values : ('ped_val_read', functions.cpp:43) ('tmp_7', functions.cpp:59) ('tmp_5', functions.cpp:54) [77]  (0 ns)
+	'sub' operation ('tmp_8', functions.cpp:68) [81]  (0.853 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

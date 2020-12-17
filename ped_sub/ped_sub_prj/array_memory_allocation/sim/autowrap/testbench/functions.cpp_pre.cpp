@@ -27272,12 +27272,12 @@ struct ADC_t
 };
 
 
-void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-      word_t& tdata, bool& tvalid, bool& tkeep0,
-      bool& tkeep1, bool& tready, bool& treset,
-      bool& tlast);
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+      word_t* tdata, bool* tvalid, bool* tkeep0,
+      bool* tkeep1, bool* tready, bool* treset,
+      bool* tlast);
 
-void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1,
       bool& tready, bool& tlast, bool& tuser);
 
@@ -34093,40 +34093,42 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 # 9 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
-void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
-             word_t& tdata, bool& tvalid, bool& tkeep0,
-      bool& tkeep1, bool& tready, bool& treset,
-      bool& tlast) {
-# 30 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
- if (tready && tvalid && tkeep0 && tkeep1 && !treset) {
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+             word_t* tdata, bool* tvalid, bool* tkeep0,
+      bool* tkeep1, bool* tready, bool* treset,
+      bool* tlast, bool* tvalid_out, bool* tkeep0_out,
+   bool* tkeep1_out, bool* tready_out,
+   bool* treset_out, bool* tlast_out) {
+# 32 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+ if (*tready && *tvalid && *tkeep0 && *tkeep1 && !(*treset)) {
 
 
   int mask = 4095;
 
-  word_t trunc = mask & tdata;
+  word_t trunc = mask & (*tdata);
 
-  ADC = trunc;
+  *ADC = trunc;
 
 
   accumulator_condition : {
-   if (ADC > ped_val) {
-    accum++;
+   if (*ADC > *ped_val) {
+    (*accum)++;
    }
 
-   else if (ADC < ped_val) {
-    accum--;
+   else if (*ADC < *ped_val) {
+    (*accum)--;
    }
   }
 
   pedestal_condition : {
-   if (accum >= 10) {
-    ped_val++;
-    accum = 0;
+   if (*accum >= 10) {
+    (*ped_val)++;
+    *accum = 0;
    }
 
-   else if (accum <= -10) {
-    ped_val--;
-    accum = 0;
+   else if (*accum <= -10) {
+    (*ped_val)--;
+    *accum = 0;
    }
   }
 
@@ -34134,17 +34136,16 @@ void ped_alg(word_t& ped_val, char& accum, word_t& ADC,
 
 
   ped_subtraction: {
-    ADC = ADC - ped_val;
+    *ADC = *ADC - *ped_val;
   }
  }
 
-
- static word_t ped_val_out = ped_val;
- static char accum_out = accum;
- static word_t ADC_out = ADC;
- static bool tready_out = tready;
-
- static bool tlast_out = tlast;
+ *tvalid_out = *tvalid;
+ *tkeep0_out = *tkeep0;
+ *tkeep1_out = *tkeep1;
+ *tready_out = *tready;
+ *treset_out = *treset;
+ *tlast_out = *tlast;
 }
 
 
@@ -34159,13 +34160,13 @@ void print_signals(bool tvalid, bool tkeep0, bool tkeep1,
 }
 
 
-void ped_sub(word_t ped_val, int packet_size, word_t* packet,
+void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
              bool& tvalid, bool& tkeep0, bool& tkeep1, bool& tready,
              bool& tlast, bool& tuser) {
-# 103 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+# 104 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
  char accum = 0;
  word_t ped_new = ped_val;
- word_t ADC_temp;
+ word_t ADC_temp = 0;
  int i = 0;
  bool treset = false;
 
@@ -34180,6 +34181,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
  tready = false;
 
  tvalid = tkeep0 = tkeep1 = true;
+
+
+
+ bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+ tlast_save;
 
 
 
@@ -34205,9 +34211,11 @@ void ped_sub(word_t ped_val, int packet_size, word_t* packet,
 
   word_t temp_word = packet[i];
 
-  ped_alg(ped_new, accum, ADC_temp, temp_word,
-   tvalid, tkeep0, tkeep1, tready, treset,
-   tlast);
+  ped_alg(&ped_new, &accum, &ADC_temp, &temp_word,
+   &tvalid, &tkeep0, &tkeep1, &tready, &treset,
+   &tlast, &tvalid_save, &tkeep0_save,
+   &tkeep1_save, &tready_save, &treset_save,
+   &tlast_save);
 
   packet[i] = ADC_temp;
 
@@ -34281,7 +34289,7 @@ void random_signal(bool& signal, int min, int max, int limit,
 
 
  rand_value = min + (rand_seed % (max - min + 1));
-# 229 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+# 237 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
  if (rand_value <= limit) {
   signal = !signal;
  }
@@ -34338,7 +34346,7 @@ void data_read(const std::string& input_file, int& count,
    tvalid_stored[count] = tvalid;
    tlast_user_stored[count] = tlast_user;
    tkeep_stored[count] = tkeep;
-# 295 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+# 303 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
    count++;
   }
  }
@@ -34383,10 +34391,15 @@ void array_scan(int array_size, word_t ped_val,
                 word_t ped_array[64], word_t ADC_array[64*64*100],
                 char accum_array[64], int packet_size, int num_channels,
   int input_seed, int treset_limit, int tready_limit) {
-# 369 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+# 377 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
  bool tready = true;
 
  bool treset = false;
+
+
+
+ bool tvalid_save, tkeep0_save, tkeep1_save, tready_save, treset_save,
+   tlast_save;
 
 
  int channel = 0;
@@ -34467,15 +34480,18 @@ void array_scan(int array_size, word_t ped_val,
 
 
    else {
-# 460 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
+# 473 "/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/functions.cpp"
     ped_new = ped_array[channel];
     accum = accum_array[channel];
 
-    ped_alg(ped_new, accum, ADC, ADC_stored[i],
-     tvalid_stored[i], tkeep_stored[i],
-     tkeep_stored[i],
-     tready, treset,
-     tlast_user_stored[i]);
+    ped_alg(&ped_new, &accum, &ADC, &ADC_stored[i],
+     &tvalid_stored[i], &tkeep_stored[i],
+     &tkeep_stored[i],
+     &tready, &treset,
+     &tlast_user_stored[i],
+     &tvalid_save, &tkeep0_save,
+     &tkeep1_save, &tready_save, &treset_save,
+     &tlast_save);
 
 
 

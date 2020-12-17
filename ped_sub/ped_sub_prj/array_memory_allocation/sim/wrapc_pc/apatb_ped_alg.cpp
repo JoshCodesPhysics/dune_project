@@ -49,6 +49,20 @@ using namespace sc_dt;
 #define AUTOTB_TVIN_tready  "../tv/cdatafile/c.ped_alg.autotvin_tready.dat"
 // wrapc file define: "treset"
 #define AUTOTB_TVIN_treset  "../tv/cdatafile/c.ped_alg.autotvin_treset.dat"
+// wrapc file define: "tlast"
+#define AUTOTB_TVIN_tlast  "../tv/cdatafile/c.ped_alg.autotvin_tlast.dat"
+// wrapc file define: "tvalid_out"
+#define AUTOTB_TVOUT_tvalid_out  "../tv/cdatafile/c.ped_alg.autotvout_tvalid_out.dat"
+// wrapc file define: "tkeep0_out"
+#define AUTOTB_TVOUT_tkeep0_out  "../tv/cdatafile/c.ped_alg.autotvout_tkeep0_out.dat"
+// wrapc file define: "tkeep1_out"
+#define AUTOTB_TVOUT_tkeep1_out  "../tv/cdatafile/c.ped_alg.autotvout_tkeep1_out.dat"
+// wrapc file define: "tready_out"
+#define AUTOTB_TVOUT_tready_out  "../tv/cdatafile/c.ped_alg.autotvout_tready_out.dat"
+// wrapc file define: "treset_out"
+#define AUTOTB_TVOUT_treset_out  "../tv/cdatafile/c.ped_alg.autotvout_treset_out.dat"
+// wrapc file define: "tlast_out"
+#define AUTOTB_TVOUT_tlast_out  "../tv/cdatafile/c.ped_alg.autotvout_tlast_out.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
@@ -58,6 +72,18 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_accum  "../tv/rtldatafile/rtl.ped_alg.autotvout_accum.dat"
 // tvout file define: "ADC"
 #define AUTOTB_TVOUT_PC_ADC  "../tv/rtldatafile/rtl.ped_alg.autotvout_ADC.dat"
+// tvout file define: "tvalid_out"
+#define AUTOTB_TVOUT_PC_tvalid_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_tvalid_out.dat"
+// tvout file define: "tkeep0_out"
+#define AUTOTB_TVOUT_PC_tkeep0_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_tkeep0_out.dat"
+// tvout file define: "tkeep1_out"
+#define AUTOTB_TVOUT_PC_tkeep1_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_tkeep1_out.dat"
+// tvout file define: "tready_out"
+#define AUTOTB_TVOUT_PC_tready_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_tready_out.dat"
+// tvout file define: "treset_out"
+#define AUTOTB_TVOUT_PC_treset_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_treset_out.dat"
+// tvout file define: "tlast_out"
+#define AUTOTB_TVOUT_PC_tlast_out  "../tv/rtldatafile/rtl.ped_alg.autotvout_tlast_out.dat"
 
 class INTER_TCL_FILE {
 	public:
@@ -72,6 +98,13 @@ class INTER_TCL_FILE {
 			tkeep1_depth = 0;
 			tready_depth = 0;
 			treset_depth = 0;
+			tlast_depth = 0;
+			tvalid_out_depth = 0;
+			tkeep0_out_depth = 0;
+			tkeep1_out_depth = 0;
+			tready_out_depth = 0;
+			treset_out_depth = 0;
+			tlast_out_depth = 0;
 			trans_num =0;
 		}
 
@@ -100,6 +133,13 @@ class INTER_TCL_FILE {
 			total_list << "{tkeep1 " << tkeep1_depth << "}\n";
 			total_list << "{tready " << tready_depth << "}\n";
 			total_list << "{treset " << treset_depth << "}\n";
+			total_list << "{tlast " << tlast_depth << "}\n";
+			total_list << "{tvalid_out " << tvalid_out_depth << "}\n";
+			total_list << "{tkeep0_out " << tkeep0_out_depth << "}\n";
+			total_list << "{tkeep1_out " << tkeep1_out_depth << "}\n";
+			total_list << "{tready_out " << tready_out_depth << "}\n";
+			total_list << "{treset_out " << treset_out_depth << "}\n";
+			total_list << "{tlast_out " << tlast_out_depth << "}\n";
 			return total_list.str();
 		}
 
@@ -116,6 +156,13 @@ class INTER_TCL_FILE {
 		int tkeep1_depth;
 		int tready_depth;
 		int treset_depth;
+		int tlast_depth;
+		int tvalid_out_depth;
+		int tkeep0_out_depth;
+		int tkeep1_out_depth;
+		int tready_out_depth;
+		int treset_out_depth;
+		int tlast_out_depth;
 		int trans_num;
 
 	private:
@@ -124,28 +171,40 @@ class INTER_TCL_FILE {
 };
 
 extern void ped_alg (
-short (&ped_val),
-char (&accum),
-short (&ADC),
-short (&tdata),
-bool (&tvalid),
-bool (&tkeep0),
-bool (&tkeep1),
-bool (&tready),
-bool (&treset),
-bool (&tlast));
+short* ped_val,
+char* accum,
+short* ADC,
+short* tdata,
+bool* tvalid,
+bool* tkeep0,
+bool* tkeep1,
+bool* tready,
+bool* treset,
+bool* tlast,
+bool* tvalid_out,
+bool* tkeep0_out,
+bool* tkeep1_out,
+bool* tready_out,
+bool* treset_out,
+bool* tlast_out);
 
 void AESL_WRAP_ped_alg (
-short (&ped_val),
-char (&accum),
-short (&ADC),
-short (&tdata),
-bool (&tvalid),
-bool (&tkeep0),
-bool (&tkeep1),
-bool (&tready),
-bool (&treset),
-bool (&tlast))
+short* ped_val,
+char* accum,
+short* ADC,
+short* tdata,
+bool* tvalid,
+bool* tkeep0,
+bool* tkeep1,
+bool* tready,
+bool* treset,
+bool* tlast,
+bool* tvalid_out,
+bool* tkeep0_out,
+bool* tkeep1_out,
+bool* tready_out,
+bool* treset_out,
+bool* tlast_out)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -257,7 +316,7 @@ bool (&tlast))
 							// carray: (0) => (0) @ (1)
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
-								if (&(ped_val) != NULL) // check the null address if the c port is array or others
+								if (&(ped_val[0]) != NULL) // check the null address if the c port is array or others
 								{
 									ped_val_lv0_0_0_1[hls_map_index].range(15, 0) = sc_bv<16>(ped_val_pc_buffer[hls_map_index].range(15, 0));
 									hls_map_index++;
@@ -275,14 +334,14 @@ bool (&tlast))
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
 								// sub                    : i_0
-								// ori_name               : ped_val
+								// ori_name               : ped_val[i_0]
 								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : ped_val
-								// output_left_conversion : ped_val
+								// ori_name_1st_elem      : ped_val[0]
+								// output_left_conversion : ped_val[i_0]
 								// output_type_conversion : (ped_val_lv0_0_0_1[hls_map_index]).to_uint64()
-								if (&(ped_val) != NULL) // check the null address if the c port is array or others
+								if (&(ped_val[0]) != NULL) // check the null address if the c port is array or others
 								{
-									ped_val = (ped_val_lv0_0_0_1[hls_map_index]).to_uint64();
+									ped_val[i_0] = (ped_val_lv0_0_0_1[hls_map_index]).to_uint64();
 									hls_map_index++;
 								}
 							}
@@ -392,7 +451,7 @@ bool (&tlast))
 							// carray: (0) => (0) @ (1)
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
-								if (&(accum) != NULL) // check the null address if the c port is array or others
+								if (&(accum[0]) != NULL) // check the null address if the c port is array or others
 								{
 									accum_lv0_0_0_1[hls_map_index].range(7, 0) = sc_bv<8>(accum_pc_buffer[hls_map_index].range(7, 0));
 									hls_map_index++;
@@ -410,14 +469,14 @@ bool (&tlast))
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
 								// sub                    : i_0
-								// ori_name               : accum
+								// ori_name               : accum[i_0]
 								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : accum
-								// output_left_conversion : accum
+								// ori_name_1st_elem      : accum[0]
+								// output_left_conversion : accum[i_0]
 								// output_type_conversion : (accum_lv0_0_0_1[hls_map_index]).to_uint64()
-								if (&(accum) != NULL) // check the null address if the c port is array or others
+								if (&(accum[0]) != NULL) // check the null address if the c port is array or others
 								{
-									accum = (accum_lv0_0_0_1[hls_map_index]).to_uint64();
+									accum[i_0] = (accum_lv0_0_0_1[hls_map_index]).to_uint64();
 									hls_map_index++;
 								}
 							}
@@ -527,7 +586,7 @@ bool (&tlast))
 							// carray: (0) => (0) @ (1)
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
-								if (&(ADC) != NULL) // check the null address if the c port is array or others
+								if (&(ADC[0]) != NULL) // check the null address if the c port is array or others
 								{
 									ADC_lv0_0_0_1[hls_map_index].range(15, 0) = sc_bv<16>(ADC_pc_buffer[hls_map_index].range(15, 0));
 									hls_map_index++;
@@ -545,14 +604,14 @@ bool (&tlast))
 							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
 								// sub                    : i_0
-								// ori_name               : ADC
+								// ori_name               : ADC[i_0]
 								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : ADC
-								// output_left_conversion : ADC
+								// ori_name_1st_elem      : ADC[0]
+								// output_left_conversion : ADC[i_0]
 								// output_type_conversion : (ADC_lv0_0_0_1[hls_map_index]).to_uint64()
-								if (&(ADC) != NULL) // check the null address if the c port is array or others
+								if (&(ADC[0]) != NULL) // check the null address if the c port is array or others
 								{
-									ADC = (ADC_lv0_0_0_1[hls_map_index]).to_uint64();
+									ADC[i_0] = (ADC_lv0_0_0_1[hls_map_index]).to_uint64();
 									hls_map_index++;
 								}
 							}
@@ -563,6 +622,816 @@ bool (&tlast))
 
 			// release memory allocation
 			delete [] ADC_pc_buffer;
+		}
+
+		// output port post check: "tvalid_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_tvalid_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_tvalid_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_tvalid_out, AESL_token); // data
+
+			sc_bv<1> *tvalid_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tvalid_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tvalid_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					tvalid_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_tvalid_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_tvalid_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: tvalid_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: tvalid_out(0, 0)
+						// {
+							sc_lv<1>* tvalid_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tvalid_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(tvalid_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tvalid_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(tvalid_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tvalid_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : tvalid_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : tvalid_out[0]
+								// output_left_conversion : tvalid_out[i_0]
+								// output_type_conversion : (tvalid_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(tvalid_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tvalid_out[i_0] = (tvalid_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] tvalid_out_pc_buffer;
+		}
+
+		// output port post check: "tkeep0_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_tkeep0_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_tkeep0_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_tkeep0_out, AESL_token); // data
+
+			sc_bv<1> *tkeep0_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tkeep0_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tkeep0_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					tkeep0_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_tkeep0_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_tkeep0_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: tkeep0_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: tkeep0_out(0, 0)
+						// {
+							sc_lv<1>* tkeep0_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tkeep0_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(tkeep0_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tkeep0_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(tkeep0_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tkeep0_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : tkeep0_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : tkeep0_out[0]
+								// output_left_conversion : tkeep0_out[i_0]
+								// output_type_conversion : (tkeep0_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(tkeep0_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tkeep0_out[i_0] = (tkeep0_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] tkeep0_out_pc_buffer;
+		}
+
+		// output port post check: "tkeep1_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_tkeep1_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_tkeep1_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_tkeep1_out, AESL_token); // data
+
+			sc_bv<1> *tkeep1_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tkeep1_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tkeep1_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					tkeep1_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_tkeep1_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_tkeep1_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: tkeep1_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: tkeep1_out(0, 0)
+						// {
+							sc_lv<1>* tkeep1_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tkeep1_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(tkeep1_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tkeep1_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(tkeep1_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tkeep1_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : tkeep1_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : tkeep1_out[0]
+								// output_left_conversion : tkeep1_out[i_0]
+								// output_type_conversion : (tkeep1_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(tkeep1_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tkeep1_out[i_0] = (tkeep1_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] tkeep1_out_pc_buffer;
+		}
+
+		// output port post check: "tready_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_tready_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_tready_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_tready_out, AESL_token); // data
+
+			sc_bv<1> *tready_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tready_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tready_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					tready_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_tready_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_tready_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: tready_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: tready_out(0, 0)
+						// {
+							sc_lv<1>* tready_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tready_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(tready_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tready_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(tready_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tready_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : tready_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : tready_out[0]
+								// output_left_conversion : tready_out[i_0]
+								// output_type_conversion : (tready_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(tready_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tready_out[i_0] = (tready_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] tready_out_pc_buffer;
+		}
+
+		// output port post check: "treset_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_treset_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_treset_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_treset_out, AESL_token); // data
+
+			sc_bv<1> *treset_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'treset_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'treset_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					treset_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_treset_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_treset_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: treset_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: treset_out(0, 0)
+						// {
+							sc_lv<1>* treset_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: treset_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(treset_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									treset_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(treset_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: treset_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : treset_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : treset_out[0]
+								// output_left_conversion : treset_out[i_0]
+								// output_type_conversion : (treset_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(treset_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									treset_out[i_0] = (treset_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] treset_out_pc_buffer;
+		}
+
+		// output port post check: "tlast_out"
+		aesl_fh.read(AUTOTB_TVOUT_PC_tlast_out, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_tlast_out, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_tlast_out, AESL_token); // data
+
+			sc_bv<1> *tlast_out_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tlast_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'tlast_out', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					tlast_out_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_tlast_out, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_tlast_out))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: tlast_out
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: tlast_out(0, 0)
+						// {
+							sc_lv<1>* tlast_out_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tlast_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(tlast_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tlast_out_lv0_0_0_1[hls_map_index].range(0, 0) = sc_bv<1>(tlast_out_pc_buffer[hls_map_index].range(0, 0));
+									hls_map_index++;
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: tlast_out(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : tlast_out[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : tlast_out[0]
+								// output_left_conversion : tlast_out[i_0]
+								// output_type_conversion : (tlast_out_lv0_0_0_1[hls_map_index]).to_uint64()
+								if (&(tlast_out[0]) != NULL) // check the null address if the c port is array or others
+								{
+									tlast_out[i_0] = (tlast_out_lv0_0_0_1[hls_map_index]).to_uint64();
+									hls_map_index++;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] tlast_out_pc_buffer;
 		}
 
 		AESL_transaction_pc++;
@@ -614,6 +1483,34 @@ bool (&tlast))
 		char* tvin_treset = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_treset);
 
+		// "tlast"
+		char* tvin_tlast = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_tlast);
+
+		// "tvalid_out"
+		char* tvout_tvalid_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_tvalid_out);
+
+		// "tkeep0_out"
+		char* tvout_tkeep0_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_tkeep0_out);
+
+		// "tkeep1_out"
+		char* tvout_tkeep1_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_tkeep1_out);
+
+		// "tready_out"
+		char* tvout_tready_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_tready_out);
+
+		// "treset_out"
+		char* tvout_treset_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_treset_out);
+
+		// "tlast_out"
+		char* tvout_tlast_out = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_tlast_out);
+
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
@@ -635,15 +1532,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : ped_val
+						// ori_name              : ped_val[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : ped_val
+						// ori_name_1st_elem     : ped_val[0]
 						// regulate_c_name       : ped_val
-						// input_type_conversion : ped_val
-						if (&(ped_val) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : ped_val[i_0]
+						if (&(ped_val[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<16> ped_val_tmp_mem;
-							ped_val_tmp_mem = ped_val;
+							ped_val_tmp_mem = ped_val[i_0];
 							ped_val_tvin_wrapc_buffer[hls_map_index].range(15, 0) = ped_val_tmp_mem.range(15, 0);
                                  	       hls_map_index++;
 						}
@@ -683,15 +1580,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : accum
+						// ori_name              : accum[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : accum
+						// ori_name_1st_elem     : accum[0]
 						// regulate_c_name       : accum
-						// input_type_conversion : accum
-						if (&(accum) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : accum[i_0]
+						if (&(accum[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<8> accum_tmp_mem;
-							accum_tmp_mem = accum;
+							accum_tmp_mem = accum[i_0];
 							accum_tvin_wrapc_buffer[hls_map_index].range(7, 0) = accum_tmp_mem.range(7, 0);
                                  	       hls_map_index++;
 						}
@@ -731,15 +1628,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : tdata
+						// ori_name              : tdata[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : tdata
+						// ori_name_1st_elem     : tdata[0]
 						// regulate_c_name       : tdata
-						// input_type_conversion : tdata
-						if (&(tdata) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : tdata[i_0]
+						if (&(tdata[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<16> tdata_tmp_mem;
-							tdata_tmp_mem = tdata;
+							tdata_tmp_mem = tdata[i_0];
 							tdata_tvin_wrapc_buffer[hls_map_index].range(15, 0) = tdata_tmp_mem.range(15, 0);
                                  	       hls_map_index++;
 						}
@@ -779,15 +1676,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : tvalid
+						// ori_name              : tvalid[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : tvalid
+						// ori_name_1st_elem     : tvalid[0]
 						// regulate_c_name       : tvalid
-						// input_type_conversion : tvalid
-						if (&(tvalid) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : tvalid[i_0]
+						if (&(tvalid[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<1> tvalid_tmp_mem;
-							tvalid_tmp_mem = tvalid;
+							tvalid_tmp_mem = tvalid[i_0];
 							tvalid_tvin_wrapc_buffer[hls_map_index].range(0, 0) = tvalid_tmp_mem.range(0, 0);
                                  	       hls_map_index++;
 						}
@@ -827,15 +1724,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : tkeep0
+						// ori_name              : tkeep0[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : tkeep0
+						// ori_name_1st_elem     : tkeep0[0]
 						// regulate_c_name       : tkeep0
-						// input_type_conversion : tkeep0
-						if (&(tkeep0) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : tkeep0[i_0]
+						if (&(tkeep0[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<1> tkeep0_tmp_mem;
-							tkeep0_tmp_mem = tkeep0;
+							tkeep0_tmp_mem = tkeep0[i_0];
 							tkeep0_tvin_wrapc_buffer[hls_map_index].range(0, 0) = tkeep0_tmp_mem.range(0, 0);
                                  	       hls_map_index++;
 						}
@@ -875,15 +1772,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : tkeep1
+						// ori_name              : tkeep1[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : tkeep1
+						// ori_name_1st_elem     : tkeep1[0]
 						// regulate_c_name       : tkeep1
-						// input_type_conversion : tkeep1
-						if (&(tkeep1) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : tkeep1[i_0]
+						if (&(tkeep1[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<1> tkeep1_tmp_mem;
-							tkeep1_tmp_mem = tkeep1;
+							tkeep1_tmp_mem = tkeep1[i_0];
 							tkeep1_tvin_wrapc_buffer[hls_map_index].range(0, 0) = tkeep1_tmp_mem.range(0, 0);
                                  	       hls_map_index++;
 						}
@@ -923,15 +1820,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : tready
+						// ori_name              : tready[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : tready
+						// ori_name_1st_elem     : tready[0]
 						// regulate_c_name       : tready
-						// input_type_conversion : tready
-						if (&(tready) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : tready[i_0]
+						if (&(tready[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<1> tready_tmp_mem;
-							tready_tmp_mem = tready;
+							tready_tmp_mem = tready[i_0];
 							tready_tvin_wrapc_buffer[hls_map_index].range(0, 0) = tready_tmp_mem.range(0, 0);
                                  	       hls_map_index++;
 						}
@@ -971,15 +1868,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : treset
+						// ori_name              : treset[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : treset
+						// ori_name_1st_elem     : treset[0]
 						// regulate_c_name       : treset
-						// input_type_conversion : treset
-						if (&(treset) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : treset[i_0]
+						if (&(treset[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<1> treset_tmp_mem;
-							treset_tmp_mem = treset;
+							treset_tmp_mem = treset[i_0];
 							treset_tvin_wrapc_buffer[hls_map_index].range(0, 0) = treset_tmp_mem.range(0, 0);
                                  	       hls_map_index++;
 						}
@@ -1002,10 +1899,58 @@ bool (&tlast))
 		// release memory allocation
 		delete [] treset_tvin_wrapc_buffer;
 
+		// [[transaction]]
+		sprintf(tvin_tlast, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_tlast, tvin_tlast);
+
+		sc_bv<1>* tlast_tvin_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tlast
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tlast(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tlast[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tlast[0]
+						// regulate_c_name       : tlast
+						// input_type_conversion : tlast[i_0]
+						if (&(tlast[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tlast_tmp_mem;
+							tlast_tmp_mem = tlast[i_0];
+							tlast_tvin_wrapc_buffer[hls_map_index].range(0, 0) = tlast_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_tlast, "%s\n", (tlast_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_tlast, tvin_tlast);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tlast_depth);
+		sprintf(tvin_tlast, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_tlast, tvin_tlast);
+
+		// release memory allocation
+		delete [] tlast_tvin_wrapc_buffer;
+
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		ped_alg(ped_val, accum, ADC, tdata, tvalid, tkeep0, tkeep1, tready, treset, tlast);
+		ped_alg(ped_val, accum, ADC, tdata, tvalid, tkeep0, tkeep1, tready, treset, tlast, tvalid_out, tkeep0_out, tkeep1_out, tready_out, treset_out, tlast_out);
 
 		CodeState = DUMP_OUTPUTS;
 
@@ -1026,15 +1971,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : ped_val
+						// ori_name              : ped_val[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : ped_val
+						// ori_name_1st_elem     : ped_val[0]
 						// regulate_c_name       : ped_val
-						// input_type_conversion : ped_val
-						if (&(ped_val) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : ped_val[i_0]
+						if (&(ped_val[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<16> ped_val_tmp_mem;
-							ped_val_tmp_mem = ped_val;
+							ped_val_tmp_mem = ped_val[i_0];
 							ped_val_tvout_wrapc_buffer[hls_map_index].range(15, 0) = ped_val_tmp_mem.range(15, 0);
                                  	       hls_map_index++;
 						}
@@ -1074,15 +2019,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : accum
+						// ori_name              : accum[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : accum
+						// ori_name_1st_elem     : accum[0]
 						// regulate_c_name       : accum
-						// input_type_conversion : accum
-						if (&(accum) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : accum[i_0]
+						if (&(accum[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<8> accum_tmp_mem;
-							accum_tmp_mem = accum;
+							accum_tmp_mem = accum[i_0];
 							accum_tvout_wrapc_buffer[hls_map_index].range(7, 0) = accum_tmp_mem.range(7, 0);
                                  	       hls_map_index++;
 						}
@@ -1122,15 +2067,15 @@ bool (&tlast))
 					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
 						// sub                   : i_0
-						// ori_name              : ADC
+						// ori_name              : ADC[i_0]
 						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : ADC
+						// ori_name_1st_elem     : ADC[0]
 						// regulate_c_name       : ADC
-						// input_type_conversion : ADC
-						if (&(ADC) != NULL) // check the null address if the c port is array or others
+						// input_type_conversion : ADC[i_0]
+						if (&(ADC[0]) != NULL) // check the null address if the c port is array or others
 						{
 							sc_lv<16> ADC_tmp_mem;
-							ADC_tmp_mem = ADC;
+							ADC_tmp_mem = ADC[i_0];
 							ADC_tvout_wrapc_buffer[hls_map_index].range(15, 0) = ADC_tmp_mem.range(15, 0);
                                  	       hls_map_index++;
 						}
@@ -1153,6 +2098,294 @@ bool (&tlast))
 		// release memory allocation
 		delete [] ADC_tvout_wrapc_buffer;
 
+		// [[transaction]]
+		sprintf(tvout_tvalid_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_tvalid_out, tvout_tvalid_out);
+
+		sc_bv<1>* tvalid_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tvalid_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tvalid_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tvalid_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tvalid_out[0]
+						// regulate_c_name       : tvalid_out
+						// input_type_conversion : tvalid_out[i_0]
+						if (&(tvalid_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tvalid_out_tmp_mem;
+							tvalid_out_tmp_mem = tvalid_out[i_0];
+							tvalid_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = tvalid_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_tvalid_out, "%s\n", (tvalid_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_tvalid_out, tvout_tvalid_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tvalid_out_depth);
+		sprintf(tvout_tvalid_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_tvalid_out, tvout_tvalid_out);
+
+		// release memory allocation
+		delete [] tvalid_out_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_tkeep0_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_tkeep0_out, tvout_tkeep0_out);
+
+		sc_bv<1>* tkeep0_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tkeep0_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tkeep0_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tkeep0_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tkeep0_out[0]
+						// regulate_c_name       : tkeep0_out
+						// input_type_conversion : tkeep0_out[i_0]
+						if (&(tkeep0_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tkeep0_out_tmp_mem;
+							tkeep0_out_tmp_mem = tkeep0_out[i_0];
+							tkeep0_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = tkeep0_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_tkeep0_out, "%s\n", (tkeep0_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_tkeep0_out, tvout_tkeep0_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tkeep0_out_depth);
+		sprintf(tvout_tkeep0_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_tkeep0_out, tvout_tkeep0_out);
+
+		// release memory allocation
+		delete [] tkeep0_out_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_tkeep1_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_tkeep1_out, tvout_tkeep1_out);
+
+		sc_bv<1>* tkeep1_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tkeep1_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tkeep1_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tkeep1_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tkeep1_out[0]
+						// regulate_c_name       : tkeep1_out
+						// input_type_conversion : tkeep1_out[i_0]
+						if (&(tkeep1_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tkeep1_out_tmp_mem;
+							tkeep1_out_tmp_mem = tkeep1_out[i_0];
+							tkeep1_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = tkeep1_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_tkeep1_out, "%s\n", (tkeep1_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_tkeep1_out, tvout_tkeep1_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tkeep1_out_depth);
+		sprintf(tvout_tkeep1_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_tkeep1_out, tvout_tkeep1_out);
+
+		// release memory allocation
+		delete [] tkeep1_out_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_tready_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_tready_out, tvout_tready_out);
+
+		sc_bv<1>* tready_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tready_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tready_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tready_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tready_out[0]
+						// regulate_c_name       : tready_out
+						// input_type_conversion : tready_out[i_0]
+						if (&(tready_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tready_out_tmp_mem;
+							tready_out_tmp_mem = tready_out[i_0];
+							tready_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = tready_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_tready_out, "%s\n", (tready_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_tready_out, tvout_tready_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tready_out_depth);
+		sprintf(tvout_tready_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_tready_out, tvout_tready_out);
+
+		// release memory allocation
+		delete [] tready_out_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_treset_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_treset_out, tvout_treset_out);
+
+		sc_bv<1>* treset_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: treset_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: treset_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : treset_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : treset_out[0]
+						// regulate_c_name       : treset_out
+						// input_type_conversion : treset_out[i_0]
+						if (&(treset_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> treset_out_tmp_mem;
+							treset_out_tmp_mem = treset_out[i_0];
+							treset_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = treset_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_treset_out, "%s\n", (treset_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_treset_out, tvout_treset_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.treset_out_depth);
+		sprintf(tvout_treset_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_treset_out, tvout_treset_out);
+
+		// release memory allocation
+		delete [] treset_out_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_tlast_out, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_tlast_out, tvout_tlast_out);
+
+		sc_bv<1>* tlast_out_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: tlast_out
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: tlast_out(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : tlast_out[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : tlast_out[0]
+						// regulate_c_name       : tlast_out
+						// input_type_conversion : tlast_out[i_0]
+						if (&(tlast_out[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> tlast_out_tmp_mem;
+							tlast_out_tmp_mem = tlast_out[i_0];
+							tlast_out_tvout_wrapc_buffer[hls_map_index].range(0, 0) = tlast_out_tmp_mem.range(0, 0);
+                                 	       hls_map_index++;
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_tlast_out, "%s\n", (tlast_out_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_tlast_out, tvout_tlast_out);
+		}
+
+		tcl_file.set_num(1, &tcl_file.tlast_out_depth);
+		sprintf(tvout_tlast_out, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_tlast_out, tvout_tlast_out);
+
+		// release memory allocation
+		delete [] tlast_out_tvout_wrapc_buffer;
+
 		CodeState = DELETE_CHAR_BUFFERS;
 		// release memory allocation: "ped_val"
 		delete [] tvin_ped_val;
@@ -1174,6 +2407,20 @@ bool (&tlast))
 		delete [] tvin_tready;
 		// release memory allocation: "treset"
 		delete [] tvin_treset;
+		// release memory allocation: "tlast"
+		delete [] tvin_tlast;
+		// release memory allocation: "tvalid_out"
+		delete [] tvout_tvalid_out;
+		// release memory allocation: "tkeep0_out"
+		delete [] tvout_tkeep0_out;
+		// release memory allocation: "tkeep1_out"
+		delete [] tvout_tkeep1_out;
+		// release memory allocation: "tready_out"
+		delete [] tvout_tready_out;
+		// release memory allocation: "treset_out"
+		delete [] tvout_treset_out;
+		// release memory allocation: "tlast_out"
+		delete [] tvout_tlast_out;
 
 		AESL_transaction++;
 

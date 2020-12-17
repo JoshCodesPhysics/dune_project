@@ -1,0 +1,7 @@
+Running: xsim.dir/ped_alg/xsimk -simmode gui -wdb ped_alg.wdb -simrunnum 0 -socket 38097
+Design successfully loaded
+Design Loading Memory Usage: 47784 KB (Peak: 47784 KB)
+Design Loading CPU Usage: 40 ms
+Simulation completed
+Simulation Memory Usage: 390840 KB (Peak: 651992 KB)
+Simulation CPU Usage: 204250 ms

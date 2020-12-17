@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Dec  9 11:18:28 2020
-| Host         : mercury006.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Tue Dec 15 11:40:45 2020
+| Host         : heplnw061.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
 | Design       : top
 | Device       : xczu9eg-ffvb1156-2-e

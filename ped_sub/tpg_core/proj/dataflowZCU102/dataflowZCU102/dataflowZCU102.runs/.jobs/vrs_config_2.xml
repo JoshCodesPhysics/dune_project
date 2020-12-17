@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="synth_1" LaunchDir="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="impl_1" LaunchDir="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="route_design"/>
 	<Parameters>
 		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
 	</Parameters>

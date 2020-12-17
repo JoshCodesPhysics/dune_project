@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Dec  9 10:20:52 2020
-| Host         : mercury006.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Tue Dec 15 11:18:10 2020
+| Host         : heplnw061.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -file temac_gbe_v9_0_utilization_synth.rpt -pb temac_gbe_v9_0_utilization_synth.pb
 | Design       : temac_gbe_v9_0
 | Device       : xczu9egffvb1156-2

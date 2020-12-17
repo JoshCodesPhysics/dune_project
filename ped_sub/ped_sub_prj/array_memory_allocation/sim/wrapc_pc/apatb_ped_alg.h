@@ -4,13 +4,19 @@
 // ==============================================================
 
 extern void AESL_WRAP_ped_alg (
-short (&ped_val),
-char (&accum),
-short (&ADC),
-short (&tdata),
-bool (&tvalid),
-bool (&tkeep0),
-bool (&tkeep1),
-bool (&tready),
-bool (&treset),
-bool (&tlast));
+short* ped_val,
+char* accum,
+short* ADC,
+short* tdata,
+bool* tvalid,
+bool* tkeep0,
+bool* tkeep1,
+bool* tready,
+bool* treset,
+bool* tlast,
+bool* tvalid_out,
+bool* tkeep0_out,
+bool* tkeep1_out,
+bool* tready_out,
+bool* treset_out,
+bool* tlast_out);
