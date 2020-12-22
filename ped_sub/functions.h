@@ -40,6 +40,12 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
                 word_t ped_val, int packet_size, int total_samples,
                 int& channel);
 
+void ped_top(int channel, int i, word_t ADC_stored[N_SA],
+             bool tvalid_stored[N_SA],
+             bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
+             word_t ped_array[N_CH], word_t ADC_array[N_SA],
+             char accum_array[N_CH], bool treset, bool tready);
+
 void array_scan(int array_size, word_t ped_val,
                 word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
                 bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
