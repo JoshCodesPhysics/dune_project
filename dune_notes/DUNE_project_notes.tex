@@ -356,6 +356,10 @@ The first testbench design generated an array of random ADC integer values withi
 
 The output from a VHDL implementation of the \texttt{pedsub} algorithm was used to compare the output data of the HLS algorithm from one wave of packets travelling through 64 channels. This included a reading of the AXI4 signals, and a contingency for random raises of treset and tready to see if the data was affected. This testbench also included the state save/restore mechanism to see if the output would be affected by multiple packet waves entering a given channel. The result was as expected, which meant the design was ready for IP format packaging.
 
+\subsection{Internalising the State Save/Restore (SSR) Mechanism into the Top Function}
+
+Once the algorithm VHDL design was verified by the Vivado HLS software, it had to be developed within the Vivado project manager, where the implementation can be tested within Questasim (more commonly known as modelsim) to check all signals are being received and output as expected. Unfortunately this simulation revealed that too much of the state save restore mechanism was being performed within the testbench, and there were issues with the adjusted ADC value output due to multiple signal drivers being responsible for the median being subtracted from the original ADC value.
+
 \bibliography{dpn.bib}
 \bibliographystyle{unsrt}
 

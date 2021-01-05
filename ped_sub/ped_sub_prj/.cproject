@@ -51,17 +51,17 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1116705141" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/data/hmo31799/ped_sub"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -87,17 +87,17 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1649561809" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/data/hmo31799/ped_sub"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -119,7 +119,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.1614287002" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -133,7 +133,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.1131753123" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -169,17 +169,17 @@
                             							
                             <option id="gnu.cpp.compiler.option.include.paths.574553928" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub"/>
-                                								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                 							
                             </option>
                             							
@@ -193,7 +193,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="array_memory_allocation|function_wide_latency|individual_latency|new_testbench|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="array_memory_allocation|function_wide_latency|individual_latency|new_testbench|no_truncation_block|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -253,17 +253,17 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1933352088" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/data/hmo31799/ped_sub"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -279,17 +279,17 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.661968791" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/data/hmo31799/ped_sub"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -301,7 +301,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.1224306862" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -315,7 +315,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.662824809" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -351,17 +351,17 @@
                             							
                             <option id="gnu.cpp.compiler.option.include.paths.862456721" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/etc"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/etc"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/auto_cc/include"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include/ap_sysc"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/lnx64/tools/systemc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/include"/>
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2018.3/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub"/>
-                                								
-                                <listOptionValue builtIn="false" value="/opt/ppd/tools/xilinx/Vivado/2020.1/lnx64/tools/systemc/include"/>
                                 							
                             </option>
                             							
@@ -375,7 +375,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="array_memory_allocation|function_wide_latency|individual_latency|new_testbench|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="array_memory_allocation|function_wide_latency|individual_latency|new_testbench|no_truncation_block|state_save_restore|tready_treset_solution|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

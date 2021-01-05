@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Dec  9 10:10:23 2020
-# Process ID: 32383
+# Start of session at: Tue Dec 15 11:05:00 2020
+# Process ID: 32953
 # Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/axis_register_slice_fr_synth_1
 # Command line: vivado -log axis_register_slice_fr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axis_register_slice_fr.tcl
 # Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/axis_register_slice_fr_synth_1/axis_register_slice_fr.vds

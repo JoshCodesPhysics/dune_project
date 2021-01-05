@@ -1,0 +1,211 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [1.0.0 alpha1] Unreleased
+### Fixes
+- Several `vivado` subcommands still using `top` as Vivado project name.
+- Dep parsing errors not reported. Now exposed by `info` and `dep report` commands.
+- New `ipbus` command group, for ipbus specific commands (i.e. `gendecoders`).
+
+### Changed
+- Factorized `tools.xilinx` module and consolidated console class.
+- Factorized `depparser` module.
+
+### Added
+- Introducing firmware repository setup file `.ipbb.setup`. When included in a package repository, it provides `ipbb` with instructions on how to setup the package once checked out (e.g. `setup git submodules` to automatically checkout git submodules).
+- Parameter substitution added in dep files commands
+- Added tab-completion for dep files in ipbb commands (e.g. `repo create`)
+- Added `srcs reset` command that applies custom packate reset procedures as specified in `.ipbb.setup`.
+- Python dependencies versions specified in `requirements.txt`.
+- New `--usein`/`-u` dep `src` command flag, to specify if a soruce file is used in synthesis, simulation or both.
+- Dep setting can now be hierarchical (e.g. `vivado.sim_top_entity`)
+- Depth, cells and file options for the `vivado report-usage` command
+
+## [0.5.2] - 2019-09-13
+### Fixes
+- Solved an issue in `dep report` leading missing components to be displayed in the wrong place.
+- Fixed few small bugs preventing `sim make-project` to work.
+- Fixed ip path in `sim mifs`
+
+## [0.5.1] - 2019-08-22
+### Fixes
+- Added `MANIFEST.in` to fix a bug in `setup.py` exposed by the newest versions of setuptools.
+
+### Added
+- Top-level entity in Vivado project can be now specified via the dep-file variable `top_entity`. 
+
+## [0.5.0] - 2019-04-30
+### Changed
+- Added `--check-up-to-date` flag to `gendecoders`. When specified makes the command exit with error if any decoder is not up to date.
+
+### Added
+- **Python3** support!
+- Support for ipbus v1.4 Modelsim UDP foreing langiate interface.
+- Setup script `-r` flag, to reset and install ipbb's virtual environment.
+
+## [0.4.4] - 2019-04-18
+### Fixes
+- Minor bug in environment loading from yaml files fixed.
+- Environment variables `IPBB_ROOT` and `IPBB_VENV` now properly exported.
+
+### Changed
+- `vivado synth` and `status`: standardised run status table format
+- Status update interval made configurable via command-line option in `vivado synth`.
+
+## [0.4.3] - 2019-03-06
+### Fixes
+- Fixed bug in `vivado gendecoders` and `sim --cd` preventing the commands from running. 
+
+### Changed
+- Installation and setup helper scripts re-organised. In development mode the virtualenv path renamed `venv` (was `externals`).
+
+### Added
+- VHDL beautify command! `toolbox vhdl-beautify` (required emacs).
+- First implementation of resource usage report from ipbb `vivado resources`.
+
+## [0.4.2] - 2019-02-13
+### Fixes
+- `vivado impl` timing failures severity is now raised to ERROR. 
+
+### Added
+- Protection against synthesis OOC runs in error sending `ipbb` in an infinite loop.
+- `zsh` autocompletion support.
+- Hash/version added to the source repository status reported by `srcs status`.
+
+## [0.4.1] - 2019-02-05
+### Fixes
+- Minor remaining issues from the splitting of cli commands in interface/implementation addressed.
+
+## [0.4.0] - 2019-01-28
+### Changed
+- Modified reposit structure to better with unit tests in the future.
+- Configuration files switched to `yaml`.
+
+### Added
+- `-f/--final` flag to the `setup` dep file command. The corresponding script will be sourced at the _end_ of the project creation sequence.
+
+## [0.3.12] - 2019-01-23
+### Fixes
+- `pip` version constrained to `<19`.
+
+## [0.3.12] - 2019-01-22
+### Fixes
+- `vivado impl` error-catching settings modified to carry on Critical Errors, except for timing errors.
+
+## [0.3.11] - 2018-12-19
+### Fixes
+- Target simulator in `sim ipcores` for QuestaSim. Was `questasim` instead of `questa`.
+
+## [0.3.10] - 2018-12-11
+### Fixes
+- Bug fixed in Modelsim script generator.
+
+## [0.3.9] - 2018-12-01
+### Fixes
+- Support for hashing custom ip libraries linked by `iprepo` 
+
+### Removed
+- `-m` (map) option removed from `src ` dependency command.
+
+## [0.3.8] - 2018-11-26
+### Fixes
+- Dep parser incorrectly interpreting the library option.
+
+### Changed
+- Reworked `modelsim` and `vivado` autodetection logic.
+- Xilinx simulation library path now includes modelsim's version.
+
+### Added
+- Project user settings.
+
+## [0.3.7] - 2018-10-25
+### Fixed
+- `env.sh` hanging when setting up the virtual environment.
+
+## [0.3.6] - 2018-10-08
+### Added
+- `sim make-project` parameters to set sim ip and mac addresses in the `vsim` wrapper script.
+
+## [0.3.5] - 2018-9-27
+### Changed
+- Support for `click 7.0` module.
+
+## [0.3.4] - 2018-8-31
+### Changed
+- `ipb-prog` `vivado program` now capable of extrating bitfiles from tarballs. No need to unpack the tarball anymore.
+
+## [0.3.3] - 2018-8-8
+### Changed
+- Updated `gen_ipus_addr_decode` to the latest version.
+
+### Added
+- Support for ZSH.
+- Supoort for HLS ipcores.
+
+## [0.3.2] - 2018-5-25
+### Changed
+- Improved `srcs status` summary for git tags.
+- Modelsim workflow updated. Xilinx simlib generation moved to a dedicated command `setup-simlib`.
+
+### Added
+- OOC run monitoring in `vivado synth`
+- `ipb-prog vivado` hardware URI option for remote hardware servers.
+- New `toolbox` command group.
+- `toolbox check-dep` command to validate single `dep` files.
+- `vivado check-syntax` command to check vhdl syntax before synthesis.
+- Colorization of Vivado messages.
+
+## [0.3.0] - 2018-03-11
+### Changed
+- `ipcores` and `project` `sim` commands updated to Vivado 2017.4
+- Simplified `ipbb vivado project`: IP syntesis runs are not launched automatically anymore.
+- Improved `add git` branch/tag resolution.
+- Reworked `sim project` to improve speed and reliability.
+- Subcommands `project` renamed `make-project`.
+- Fixed bug in `srcs status`, preventing groups from being displayed correctly.
+- Restored `sim ipcores` compatibility with Vivado 2016 and eralier versions.
+- `tests/bin` renamed `tests/scripts`
+
+### Added
+- `--filter` option to `ipbb dep report`
+- `--jobs` option to `ipbb vivado` `synth` and `impl` commands.
+- Vivado variant autodetection to `ipb-prog vivado`.
+- `srcs run` command, to simplify running commands in the source area.
+- `VivadoConsole` can quite on Vivado's CRITICAL WARNINGS
+- `--tag` option to `vivado package` to customise the tarball name.
+
+## [0.2.9] - 2018-01-08
+### Changed
+- Improved ipbus-decoder code diff.
+- Standardized `vivado project`, `sim project` and `sim ipcores` options.
+
+### Added
+- Check on branch/tag validity when adding git repositories.
+- Suppoer for conda-based environment.
+- The `cleanup` subcommand to `sim` and `vivado` command groups.
+- The `srcstat` command to provide a compact status report of git and svn packages.
+
+## [0.2.8] - 2017-10-05
+### Changed
+- Improved command-line help.
+- Bugfix in `ipbb create vivado`
+ 
+## [0.2.7] - 2017-09-01
+### Added
+- New script `ipb-prog`, for programming Xilinx board via jtag and `vivado_lab`.
+- Virtualenv setup now based on `setuptools`.
+
+### Changed
+- Improved error messages.
+- Consolidated `ipbb dep report` sections, now organised in text tables.
+
+## [0.2.6] - 2017-07-17
+
+### Changed
+- Improved handling of Vivado library paths in Modelsim.
+- Command line help improved. 
+
+## [0.2.5] - 2017-04-23

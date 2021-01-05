@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Dec  9 10:12:15 2020
-# Process ID: 1245
+# Start of session at: Tue Dec 15 11:07:23 2020
+# Process ID: 34845
 # Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/distRAM_64x12_synth_1
 # Command line: vivado -log distRAM_64x12.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source distRAM_64x12.tcl
 # Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/distRAM_64x12_synth_1/distRAM_64x12.vds

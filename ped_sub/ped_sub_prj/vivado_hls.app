@@ -6,9 +6,9 @@
         <SimFlow name="csim" ldflags="" mflags="" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
-        <file name="../../pedsub_test2.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="functions.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="functions.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="../../pedsub_test2.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="functions.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
+        <file name="functions.h" sc="0" tb="false" cflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="function_wide_latency" status="inactive"/>
@@ -16,7 +16,8 @@
         <solution name="new_testbench" status="inactive"/>
         <solution name="tready_treset_solution" status="inactive"/>
         <solution name="state_save_restore" status="inactive"/>
-        <solution name="array_memory_allocation" status="active"/>
+        <solution name="array_memory_allocation" status="inactive"/>
+        <solution name="no_truncation_block" status="active"/>
     </solutions>
 </project>
 

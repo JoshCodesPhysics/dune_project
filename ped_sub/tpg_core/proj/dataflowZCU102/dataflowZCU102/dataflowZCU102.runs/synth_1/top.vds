@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Dec  9 10:50:20 2020
-# Process ID: 18630
+# Start of session at: Tue Dec 15 11:18:14 2020
+# Process ID: 4834
 # Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/top.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18962 
+INFO: Helper process launched with PID 4962 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1590.980 ; gain = 90.969 ; free physical = 94325 ; free virtual = 112757
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1590.980 ; gain = 90.969 ; free physical = 5437 ; free virtual = 83282
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/zcu102_basex.vhd:67]
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/zcu102_basex.vhd:91]
@@ -88,9 +88,9 @@ INFO: [Synth 8-638] synthesizing module 'led_stretcher' [/net/home/ppd/hmo31799/
 	Parameter WIDTH bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'led_stretcher' (3#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_util/firmware/hdl/led_stretcher.vhd:51]
 INFO: [Synth 8-638] synthesizing module 'eth_us_1000basex' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_eth/firmware/hdl/eth_us_1000basex.vhd:66]
-INFO: [Synth 8-3491] module 'temac_gbe_v9_0' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/temac_gbe_v9_0_stub.vhdl:5' bound to instance 'mac' of component 'temac_gbe_v9_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_eth/firmware/hdl/eth_us_1000basex.vhd:124]
-INFO: [Synth 8-638] synthesizing module 'temac_gbe_v9_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/temac_gbe_v9_0_stub.vhdl:45]
-INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/gig_ethernet_pcs_pma_basex_156_25_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'temac_gbe_v9_0' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/temac_gbe_v9_0_stub.vhdl:5' bound to instance 'mac' of component 'temac_gbe_v9_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_eth/firmware/hdl/eth_us_1000basex.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'temac_gbe_v9_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/temac_gbe_v9_0_stub.vhdl:45]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_basex_156_25' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/gig_ethernet_pcs_pma_basex_156_25_stub.vhdl:38]
 INFO: [Synth 8-256] done synthesizing module 'eth_us_1000basex' (4#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_eth/firmware/hdl/eth_us_1000basex.vhd:66]
 INFO: [Synth 8-638] synthesizing module 'ipbus_ctrl' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_util/firmware/hdl/masters/ipbus_ctrl.vhd:90]
 	Parameter MAC_CFG bound to: 1'b0 
@@ -433,8 +433,8 @@ INFO: [Synth 8-638] synthesizing module 'dr_reord' [/net/home/ppd/hmo31799/Docum
 INFO: [Synth 8-226] default block is never used [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_reord.vhd:131]
 INFO: [Synth 8-256] done synthesizing module 'dr_reord' (35#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_reord.vhd:38]
 INFO: [Synth 8-638] synthesizing module 'dr_dpr_if' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:53]
-INFO: [Synth 8-3491] module 'address_LUT' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/address_LUT_stub.vhdl:5' bound to instance 'rom_address_table' of component 'address_lut' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:116]
-INFO: [Synth 8-638] synthesizing module 'address_LUT' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/address_LUT_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'address_LUT' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/address_LUT_stub.vhdl:5' bound to instance 'rom_address_table' of component 'address_lut' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'address_LUT' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/address_LUT_stub.vhdl:15]
 INFO: [Synth 8-226] default block is never used [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:131]
 INFO: [Synth 8-226] default block is never used [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:171]
 WARNING: [Synth 8-3848] Net dpr_ctr_out in module/entity dr_dpr_if does not have driver. [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/data_reception/firmware/hdl/dr_dpr_if.vhd:49]
@@ -672,11 +672,83 @@ INFO: [Synth 8-638] synthesizing module 'SingleChain' [/net/home/ppd/hmo31799/Do
 INFO: [Synth 8-638] synthesizing module 'PedSub_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:48]
 	Parameter ENABLE_SSR bound to: 1 - type: bool 
 INFO: [Synth 8-638] synthesizing module 'PedSub_SSR' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:45]
-INFO: [Synth 8-3491] module 'Median_distRAM_64x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/Median_distRAM_64x12_stub.vhdl:5' bound to instance 'median_distRAM_inst' of component 'Median_distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:227]
-INFO: [Synth 8-638] synthesizing module 'Median_distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/Median_distRAM_64x12_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'distRAM_64x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/distRAM_64x12_stub.vhdl:5' bound to instance 'accum_distRAM_inst' of component 'distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:238]
-INFO: [Synth 8-638] synthesizing module 'distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/distRAM_64x12_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'Median_distRAM_64x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/Median_distRAM_64x12_stub.vhdl:5' bound to instance 'median_distRAM_inst' of component 'Median_distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:227]
+INFO: [Synth 8-638] synthesizing module 'Median_distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/Median_distRAM_64x12_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'distRAM_64x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/distRAM_64x12_stub.vhdl:5' bound to instance 'accum_distRAM_inst' of component 'distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:238]
+INFO: [Synth 8-638] synthesizing module 'distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/distRAM_64x12_stub.vhdl:18]
 INFO: [Synth 8-256] done synthesizing module 'PedSub_SSR' (51#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_SSR.vhd:45]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[0]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[1]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[2]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[3]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[4]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[5]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[6]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[7]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[8]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[9]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[10]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_median[11]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[0]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[1]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[2]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[3]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[4]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[5]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[6]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[7]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[8]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[9]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[10]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 1st driver pin 'PedSub_wrapper:/gen_pedsub.pedsub_ssr/pedSub_accum[11]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-28.0, /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd-48.0 is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:28]
 INFO: [Synth 8-256] done synthesizing module 'PedSub_wrapper' (52#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:48]
 INFO: [Synth 8-638] synthesizing module 'fir_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/fir_wrapper.vhd:22]
 	Parameter ENABLE_SSR bound to: 1 - type: bool 
@@ -717,8 +789,8 @@ WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "u
 WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
 INFO: [Synth 8-256] done synthesizing module 'fir32_v0' (53#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/fir32_v0.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'stateSaveRestore' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/stateSaveRestore.vhd:40]
-INFO: [Synth 8-3491] module 'RAM_2048x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/RAM_2048x12_stub.vhdl:5' bound to instance 'stateRAM_inst' of component 'RAM_2048x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/stateSaveRestore.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'RAM_2048x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/RAM_2048x12_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'RAM_2048x12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/RAM_2048x12_stub.vhdl:5' bound to instance 'stateRAM_inst' of component 'RAM_2048x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/stateSaveRestore.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'RAM_2048x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/RAM_2048x12_stub.vhdl:19]
 INFO: [Synth 8-256] done synthesizing module 'stateSaveRestore' (54#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/stateSaveRestore.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'FIR_StateSR' (55#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/FIR_StateSR.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'fir_wrapper' (56#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/fir_wrapper.vhd:22]
@@ -1091,8 +1163,8 @@ INFO: [Synth 8-638] synthesizing module 'ipbus_syncreg_v__parameterized3' [/net/
 	Parameter SWAP_ORDER bound to: 0 - type: bool 
 INFO: [Synth 8-256] done synthesizing module 'ipbus_syncreg_v__parameterized3' (69#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/ipbus-firmware/components/ipbus_slaves/firmware/hdl/ipbus_syncreg_v.vhd:74]
 INFO: [Synth 8-638] synthesizing module 'crif_fifo_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/cr_interface/firmware/hdl/crif_fifo_wrapper.vhd:37]
-INFO: [Synth 8-3491] module 'crif_fifo' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/crif_fifo_stub.vhdl:5' bound to instance 'fifo' of component 'crif_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/cr_interface/firmware/hdl/crif_fifo_wrapper.vhd:97]
-INFO: [Synth 8-638] synthesizing module 'crif_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/crif_fifo_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'crif_fifo' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/crif_fifo_stub.vhdl:5' bound to instance 'fifo' of component 'crif_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/cr_interface/firmware/hdl/crif_fifo_wrapper.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'crif_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/crif_fifo_stub.vhdl:29]
 INFO: [Synth 8-256] done synthesizing module 'crif_fifo_wrapper' (70#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/cr_interface/firmware/hdl/crif_fifo_wrapper.vhd:37]
 INFO: [Synth 8-638] synthesizing module 'hit_pkt_filter' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/cr_interface/firmware/hdl/hit_pkt_filter.vhd:45]
 	Parameter PROBES_EN bound to: 1 - type: bool 
@@ -1201,7 +1273,7 @@ INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_example_init' [/net/hom
 	Parameter ST_RX_WAIT bound to: 2'b10 
 	Parameter ST_MONITOR bound to: 2'b11 
 INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_example_init' (86#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_init.v:59]
-INFO: [Synth 8-638] synthesizing module 'fmc0_8chan_9g6_vio_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/fmc0_8chan_9g6_vio_0_stub.vhdl:28]
+INFO: [Synth 8-638] synthesizing module 'fmc0_8chan_9g6_vio_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/fmc0_8chan_9g6_vio_0_stub.vhdl:28]
 INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_example_wrapper' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_wrapper.v:57]
 	Parameter P_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter P_TX_MASTER_CH_PACKED_IDX bound to: 0 - type: integer 
@@ -1230,12 +1302,12 @@ INFO: [Synth 8-6157] synthesizing module 'fmc0_8chan_9g6_example_gtwiz_userclk_r
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_gtwiz_userclk_rx.v:125]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_gtwiz_userclk_rx.v:126]
 INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_example_gtwiz_userclk_rx' (89#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_gtwiz_userclk_rx.v:60]
-INFO: [Synth 8-638] synthesizing module 'fmc0_8chan_9g6' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/fmc0_8chan_9g6_stub.vhdl:56]
+INFO: [Synth 8-638] synthesizing module 'fmc0_8chan_9g6' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/fmc0_8chan_9g6_stub.vhdl:56]
 INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_example_wrapper' (90#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_wrapper.v:57]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'example_wrapper_inst'. This will prevent further optimization [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_top.v:1342]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'example_init_inst'. This will prevent further optimization [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_top.v:1094]
 INFO: [Synth 8-6155] done synthesizing module 'fmc0_8chan_9g6_example_top' (91#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/fmc0_8chan_9g6_example_top.v:58]
-INFO: [Synth 8-638] synthesizing module 'thFMch_input_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-18630-mercury006.pp.rl.ac.uk/realtime/thFMch_input_fifo_stub.vhdl:22]
+INFO: [Synth 8-638] synthesizing module 'thFMch_input_fifo' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/.Xil/Vivado-4834-heplnw061.pp.rl.ac.uk/realtime/thFMch_input_fifo_stub.vhdl:22]
 INFO: [Synth 8-256] done synthesizing module 'zcu102_mgt_wrapper_clkx' (92#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/mgt/firmware/hdl/zcu102_mgt_wrapper_clkx.vhd:42]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mgt'. This will prevent further optimization [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/projects/tpgen-1fibre/firmware/hdl/zcu102_basex.vhd:209]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
@@ -1350,7 +1422,7 @@ WARNING: [Synth 8-3331] design PedValues_tx has unconnected port s_axis_data_w[t
 WARNING: [Synth 8-3331] design HitFinder_km has unconnected port axis_in_w[tuser][0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1724.809 ; gain = 224.797 ; free physical = 94785 ; free virtual = 113062
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1723.809 ; gain = 223.797 ; free physical = 5365 ; free virtual = 83213
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1464,10 +1536,10 @@ INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instan
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1724.809 ; gain = 224.797 ; free physical = 94810 ; free virtual = 113087
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1723.809 ; gain = 223.797 ; free physical = 5390 ; free virtual = 83238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1724.809 ; gain = 224.797 ; free physical = 94810 ; free virtual = 113087
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1723.809 ; gain = 223.797 ; free physical = 5390 ; free virtual = 83238
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1539,10 +1611,10 @@ WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {PRIMITIVE_SU
 Finished Sourcing Tcl File [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'payload/data_router/cmp_dpr/cmp_dpr/xpm_memory_sdpram_inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2706.520 ; gain = 0.000 ; free physical = 94012 ; free virtual = 112289
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2707.520 ; gain = 0.000 ; free physical = 4333 ; free virtual = 82314
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2706.520 ; gain = 0.000 ; free physical = 94011 ; free virtual = 112288
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2707.520 ; gain = 0.000 ; free physical = 4329 ; free virtual = 82310
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 9 instances were transformed.
   BUFG => BUFGCE: 4 instances
@@ -1551,8 +1623,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MMCME3_BASE => MMCME4_ADV: 1 instances
   SRL16 => SRL16E: 2 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2706.520 ; gain = 0.000 ; free physical = 94010 ; free virtual = 112287
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2706.520 ; gain = 0.000 ; free physical = 94010 ; free virtual = 112287
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2707.520 ; gain = 0.000 ; free physical = 4324 ; free virtual = 82305
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2707.520 ; gain = 0.000 ; free physical = 4324 ; free virtual = 82304
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'mgt/g_fifo[0].fifo0' at clock pin 'wr_clk' is different from the actual clock period '4.167', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'mgt/g_fifo[1].fifo0' at clock pin 'wr_clk' is different from the actual clock period '4.167', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'mgt/g_fifo[2].fifo0' at clock pin 'wr_clk' is different from the actual clock period '4.167', this can lead to different synthesis results.
@@ -1562,7 +1634,7 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'mgt/g_fifo[6].fifo0' at clock pin 'wr_clk' is different from the actual clock period '4.167', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'mgt/g_fifo[7].fifo0' at clock pin 'wr_clk' is different from the actual clock period '4.167', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:01:35 . Memory (MB): peak = 2706.520 ; gain = 1206.508 ; free physical = 94148 ; free virtual = 112425
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:01:40 . Memory (MB): peak = 2707.520 ; gain = 1207.508 ; free physical = 4720 ; free virtual = 82568
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -1570,7 +1642,7 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:01:35 . Memory (MB): peak = 2706.520 ; gain = 1206.508 ; free physical = 94148 ; free virtual = 112425
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:01:40 . Memory (MB): peak = 2707.520 ; gain = 1207.508 ; free physical = 4719 ; free virtual = 82568
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1681,7 +1753,7 @@ Applied set_property DONT_TOUCH = true for payload/cr_if_fifo/xpm_fifo_axis_inst
 Applied set_property DONT_TOUCH = true for payload/cr_if_fifo/xpm_fifo_axis_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for payload/data_router/cmp_dpr/cmp_dpr/xpm_memory_sdpram_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:01:35 . Memory (MB): peak = 2706.520 ; gain = 1206.508 ; free physical = 94142 ; free virtual = 112420
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:01:40 . Memory (MB): peak = 2707.520 ; gain = 1207.508 ; free physical = 4714 ; free virtual = 82563
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sl" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "tick_int" won't be mapped to RAM because it is too sparse
@@ -1953,7 +2025,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'full_l_reg' [/net/home/ppd/
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'sm_init_reg' using encoding 'sequential' in module 'fmc0_8chan_9g6_example_init'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:01:51 . Memory (MB): peak = 2706.520 ; gain = 1206.508 ; free physical = 94127 ; free virtual = 112408
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:56 . Memory (MB): peak = 2707.520 ; gain = 1207.508 ; free physical = 4698 ; free virtual = 82550
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 
@@ -5103,8 +5175,138 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (infra/i_0
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (infra/i_0/ipbus/udp_if/rx_packet_parser/\unreliable_data_reg[4]__0 )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (infra/i_0/ipbus/udp_if/rx_packet_parser/\unreliable_data_reg[3] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[11] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[11]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[11] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[10] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[10]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[10] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[9] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[9]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[9] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[8] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[8]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[8] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[7] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[7]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[7] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[6] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[6]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[6] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[5] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[5]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[5] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[4] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[4]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[4] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[3] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[3]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[3] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[2] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[2]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[2] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[1] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[1]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[1] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[0] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[0]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[0] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[11] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[11]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[11] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[10] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[10]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[10] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[9] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[9]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[9] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[8] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[8]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[8] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[7] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[7]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[7] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[6] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[6]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[6] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[5] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[5]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[5] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[4] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[4]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[4] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[3] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[3]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[3] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[2] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[2]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[2] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[1] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[1]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[1] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[0] with 1st driver pin 'i_0/payload/sgen[3].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_accum[0]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_accum[0] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[11] with 1st driver pin 'i_0/payload/sgen[2].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[11]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[11] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[10] with 1st driver pin 'i_0/payload/sgen[2].hitFinder/singleChain_inst/g_pedsub.PedSub_inst/gen_pedsub.pedsub_ssr/pedSub_median[10]' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pedSub_median[10] with 2nd driver pin 'GND' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_accum[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[11] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pedSub_median[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_wrapper.vhd:62]
+INFO: [Common 17-14] Message 'Synth 8-6858' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:03:00 . Memory (MB): peak = 2706.520 ; gain = 1206.508 ; free physical = 94042 ; free virtual = 112351
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:03:11 . Memory (MB): peak = 2707.520 ; gain = 1207.508 ; free physical = 4608 ; free virtual = 82489
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -5235,7 +5437,7 @@ Report RTL Partitions:
 |1     |zcu102_basex_infra__GC0         |           1|     12351|
 |2     |fmc0_8chan_9g6_example_top__GC0 |           1|      3018|
 |3     |zcu102_mgt_wrapper_clkx__GC0    |           1|       305|
-|4     |top__GC0                        |           1|     24456|
+|4     |top__GC0                        |           1|     24080|
 +------+--------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
@@ -5273,14 +5475,14 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'eth/mac/rx_mac_aclk' to p
 INFO: [Synth 8-5578] Moved timing constraint from pin 'eth/mac/tx_mac_aclk' to pin 'eth/mac/bbstub_tx_mac_aclk/O'
 INFO: [Synth 8-5819] Moved 29 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:10 ; elapsed = 00:04:45 . Memory (MB): peak = 2993.184 ; gain = 1493.172 ; free physical = 93347 ; free virtual = 111732
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:29 ; elapsed = 00:05:16 . Memory (MB): peak = 2993.176 ; gain = 1493.164 ; free physical = 3663 ; free virtual = 81549
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:04:50 . Memory (MB): peak = 3078.199 ; gain = 1578.188 ; free physical = 93137 ; free virtual = 111584
+Finished Timing Optimization : Time (s): cpu = 00:02:35 ; elapsed = 00:05:21 . Memory (MB): peak = 3077.191 ; gain = 1577.180 ; free physical = 3588 ; free virtual = 81473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5318,7 +5520,7 @@ Report RTL Partitions:
 |1     |zcu102_basex_infra__GC0         |           1|     12351|
 |2     |fmc0_8chan_9g6_example_top__GC0 |           1|      3018|
 |3     |zcu102_mgt_wrapper_clkx__GC0    |           1|       305|
-|4     |top__GC0                        |           1|     24960|
+|4     |top__GC0                        |           1|     24584|
 +------+--------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -5339,7 +5541,7 @@ INFO: [Synth 8-6837] The timing for the instance infra/ipbus/udp_if/ipbus_tx_ram
 INFO: [Synth 8-6837] The timing for the instance infra/ipbus/udp_if/ipbus_tx_ram/ram_reg_bram_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance infra/ipbus/udp_if/ipbus_tx_ram/ram_reg_bram_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:26 ; elapsed = 00:05:06 . Memory (MB): peak = 3086.207 ; gain = 1586.195 ; free physical = 93417 ; free virtual = 111726
+Finished Technology Mapping : Time (s): cpu = 00:02:48 ; elapsed = 00:05:39 . Memory (MB): peak = 3085.199 ; gain = 1585.188 ; free physical = 3780 ; free virtual = 81666
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5357,7 +5559,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:28 ; elapsed = 00:05:08 . Memory (MB): peak = 3086.211 ; gain = 1586.199 ; free physical = 93413 ; free virtual = 111722
+Finished IO Insertion : Time (s): cpu = 00:02:50 ; elapsed = 00:05:41 . Memory (MB): peak = 3085.203 ; gain = 1585.191 ; free physical = 3780 ; free virtual = 81666
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5370,7 +5572,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:28 ; elapsed = 00:05:08 . Memory (MB): peak = 3086.211 ; gain = 1586.199 ; free physical = 93414 ; free virtual = 111723
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:51 ; elapsed = 00:05:41 . Memory (MB): peak = 3085.203 ; gain = 1585.191 ; free physical = 3780 ; free virtual = 81666
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5382,7 +5584,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:30 ; elapsed = 00:05:11 . Memory (MB): peak = 3086.211 ; gain = 1586.199 ; free physical = 93411 ; free virtual = 111720
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:54 ; elapsed = 00:05:44 . Memory (MB): peak = 3085.203 ; gain = 1585.191 ; free physical = 3780 ; free virtual = 81666
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5496,11 +5698,11 @@ Report Cell Usage:
 |45    |FIFO18E2                          |     4|
 |46    |IBUFDS_GTE4                       |     1|
 |47    |LUT1                              |   191|
-|48    |LUT2                              |  2062|
-|49    |LUT3                              |  2671|
-|50    |LUT4                              |  1257|
-|51    |LUT5                              |  1551|
-|52    |LUT6                              |  2513|
+|48    |LUT2                              |  2058|
+|49    |LUT3                              |  2663|
+|50    |LUT4                              |  1213|
+|51    |LUT5                              |  1515|
+|52    |LUT6                              |  2549|
 |53    |MMCME3_BASE                       |     1|
 |54    |MUXF7                             |    38|
 |55    |MUXF8                             |     9|
@@ -5528,8 +5730,8 @@ Report Cell Usage:
 |77    |SRLC32E                           |     4|
 |78    |FDCE                              |   269|
 |79    |FDPE                              |   107|
-|80    |FDRE                              | 11836|
-|81    |FDSE                              |   925|
+|80    |FDRE                              | 11668|
+|81    |FDSE                              |   901|
 |82    |LDP                               |     4|
 |83    |IBUF                              |     5|
 |84    |IBUFDS                            |     1|
@@ -5540,7 +5742,7 @@ Report Instance Areas:
 +------+------------------------------------------------------+----------------------------------------------+------+
 |      |Instance                                              |Module                                        |Cells |
 +------+------------------------------------------------------+----------------------------------------------+------+
-|1     |top                                                   |                                              | 25739|
+|1     |top                                                   |                                              | 25491|
 |2     |  infra                                               |zcu102_basex_infra                            |  6398|
 |3     |    clocks                                            |clocks_us_serdes                              |    64|
 |4     |      clkdiv                                          |ipbus_clock_div                               |    35|
@@ -5655,7 +5857,7 @@ Report Instance Areas:
 |113   |      example_wrapper_inst                            |fmc0_8chan_9g6_example_wrapper                |   733|
 |114   |        gtwiz_userclk_tx_inst                         |fmc0_8chan_9g6_example_gtwiz_userclk_tx       |     3|
 |115   |        gtwiz_userclk_rx_inst                         |fmc0_8chan_9g6_example_gtwiz_userclk_rx       |     3|
-|116   |  payload                                             |payload                                       | 16193|
+|116   |  payload                                             |payload                                       | 15945|
 |117   |    fabric                                            |ipbus_fabric_sel                              |   142|
 |118   |    csr                                               |ipbus_ctrlreg_v                               |    66|
 |119   |    data_router                                       |data_router                                   |  2500|
@@ -5712,39 +5914,39 @@ Report Instance Areas:
 |170   |      \w_gen[1].wsync                                 |syncreg_w__15                                 |    45|
 |171   |      \w_gen[0].wsync                                 |syncreg_w__14                                 |    45|
 |172   |    \sgen[3].ch_mask                                  |dtpc_chmask__1                                |    84|
-|173   |    \sgen[3].hitFinder                                |dtpc_tpg__xdcDup__1                           |  2493|
+|173   |    \sgen[3].hitFinder                                |dtpc_tpg__xdcDup__1                           |  2431|
 |174   |      headerStripComb_inst                            |HeaderStripperCombiner                        |   191|
-|175   |      singleChain_inst                                |SingleChain__xdcDup__1                        |  2193|
+|175   |      singleChain_inst                                |SingleChain__xdcDup__1                        |  2131|
 |176   |        monprb_in                                     |dtpc_mon_probe__22                            |    53|
 |177   |        monprb_ped_out                                |dtpc_mon_probe__23                            |    53|
 |178   |        monprb_fir_out                                |dtpc_mon_probe__24                            |    43|
 |179   |        monprb_hf_out                                 |dtpc_mon_probe__25                            |    53|
-|180   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__1                     |   252|
-|181   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__1                         |   252|
+|180   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__1                     |   202|
+|181   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__1                         |   202|
 |182   |        \g_fir.FIR_inst                               |fir_wrapper__xdcDup__1                        |  1328|
 |183   |          \gen_fir.fir_ssr                            |FIR_StateSR__xdcDup__1                        |  1328|
 |184   |            FIR32_v0_inst                             |fir32_v0                                      |  1250|
-|185   |              \s_mult_reg[20]                         |\s_mult_reg[10]_funnel__3                     |     8|
-|186   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[5]_funnel__5                    |     8|
+|185   |              \s_mult_reg[20]                         |\s_mult_reg[14]_funnel__2                     |     8|
+|186   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[7]_funnel__2                    |     8|
 |187   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__1                    |     8|
-|188   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[3]_funnel__3                    |     8|
-|189   |              \s_mult_reg[18]                         |\s_mult_reg[10]_funnel__4                     |     8|
-|190   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[5]_funnel__2                    |     8|
-|191   |              \s_mult_reg[16]                         |\s_mult_reg[10]_funnel__5                     |     8|
-|192   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[5]_funnel__4                    |     8|
-|193   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[3]_funnel__2                    |     8|
-|194   |              \s_mult_reg[14]                         |\s_mult_reg[10]_funnel__2                     |     8|
-|195   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[5]_funnel__1                    |     8|
-|196   |              \s_mult_reg[12]                         |\s_mult_reg[10]_funnel__1                     |     8|
-|197   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[5]_funnel__3                    |     8|
-|198   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[3]_funnel                       |     8|
-|199   |              \s_mult_reg[10]                         |\s_mult_reg[10]_funnel                        |     8|
-|200   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[5]_funnel                       |     8|
+|188   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[5]_funnel__16                   |     8|
+|189   |              \s_mult_reg[18]                         |\s_mult_reg[14]_funnel__4                     |     8|
+|190   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[7]_funnel__3                    |     8|
+|191   |              \s_mult_reg[16]                         |\s_mult_reg[14]_funnel__1                     |     8|
+|192   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[7]_funnel__1                    |     8|
+|193   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[5]_funnel__19                   |     8|
+|194   |              \s_mult_reg[14]                         |\s_mult_reg[14]_funnel                        |     8|
+|195   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[7]_funnel                       |     8|
+|196   |              \s_mult_reg[12]                         |\s_mult_reg[14]_funnel__3                     |     8|
+|197   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[7]_funnel__5                    |     8|
+|198   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[5]_funnel__18                   |     8|
+|199   |              \s_mult_reg[10]                         |\s_mult_reg[14]_funnel__5                     |     8|
+|200   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[7]_funnel__4                    |     8|
 |201   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel                       |     8|
-|202   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[3]_funnel__1                    |     8|
+|202   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[5]_funnel__17                   |     8|
 |203   |            ssr_inst                                  |stateSaveRestore__xdcDup__1                   |    77|
 |204   |        \g_hf.HFA_inst                                |HitFinder_km                                  |   298|
-|205   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx                                  |   112|
+|205   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx                                  |   100|
 |206   |      monprb_in                                       |dtpc_mon_probe__26                            |    53|
 |207   |      monprb_out                                      |dtpc_mon_probe__27                            |    53|
 |208   |    \sgen[3].sink                                     |dtpc_spy_buf__1                               |   164|
@@ -5757,39 +5959,39 @@ Report Instance Areas:
 |215   |      \w_gen[1].wsync                                 |syncreg_w__17                                 |    45|
 |216   |      \w_gen[0].wsync                                 |syncreg_w__16                                 |    45|
 |217   |    \sgen[2].ch_mask                                  |dtpc_chmask__2                                |    84|
-|218   |    \sgen[2].hitFinder                                |dtpc_tpg__xdcDup__2                           |  2493|
+|218   |    \sgen[2].hitFinder                                |dtpc_tpg__xdcDup__2                           |  2431|
 |219   |      headerStripComb_inst                            |HeaderStripperCombiner__6                     |   191|
-|220   |      singleChain_inst                                |SingleChain__xdcDup__2                        |  2193|
+|220   |      singleChain_inst                                |SingleChain__xdcDup__2                        |  2131|
 |221   |        monprb_in                                     |dtpc_mon_probe__16                            |    53|
 |222   |        monprb_ped_out                                |dtpc_mon_probe__17                            |    53|
 |223   |        monprb_fir_out                                |dtpc_mon_probe__18                            |    43|
 |224   |        monprb_hf_out                                 |dtpc_mon_probe__19                            |    53|
-|225   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__2                     |   252|
-|226   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__2                         |   252|
+|225   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__2                     |   202|
+|226   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__2                         |   202|
 |227   |        \g_fir.FIR_inst                               |fir_wrapper__xdcDup__2                        |  1328|
 |228   |          \gen_fir.fir_ssr                            |FIR_StateSR__xdcDup__2                        |  1328|
 |229   |            FIR32_v0_inst                             |fir32_v0__6                                   |  1250|
-|230   |              \s_mult_reg[20]                         |\s_mult_reg[10]_funnel__9                     |     8|
-|231   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[5]_funnel__9                    |     8|
-|232   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__3                    |     8|
-|233   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[3]_funnel__6                    |     8|
-|234   |              \s_mult_reg[18]                         |\s_mult_reg[10]_funnel__7                     |     8|
-|235   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[5]_funnel__7                    |     8|
-|236   |              \s_mult_reg[16]                         |\s_mult_reg[10]_funnel__10                    |     8|
-|237   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[5]_funnel__8                    |     8|
-|238   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[3]_funnel__4                    |     8|
-|239   |              \s_mult_reg[14]                         |\s_mult_reg[10]_funnel__11                    |     8|
-|240   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[5]_funnel__11                   |     8|
-|241   |              \s_mult_reg[12]                         |\s_mult_reg[10]_funnel__6                     |     8|
-|242   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[5]_funnel__10                   |     8|
-|243   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[3]_funnel__7                    |     8|
-|244   |              \s_mult_reg[10]                         |\s_mult_reg[10]_funnel__8                     |     8|
-|245   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[5]_funnel__6                    |     8|
-|246   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel__2                    |     8|
-|247   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[3]_funnel__5                    |     8|
+|230   |              \s_mult_reg[20]                         |\s_mult_reg[14]_funnel__7                     |     8|
+|231   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[7]_funnel__8                    |     8|
+|232   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__2                    |     8|
+|233   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[5]_funnel__21                   |     8|
+|234   |              \s_mult_reg[18]                         |\s_mult_reg[14]_funnel__9                     |     8|
+|235   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[7]_funnel__9                    |     8|
+|236   |              \s_mult_reg[16]                         |\s_mult_reg[14]_funnel__8                     |     8|
+|237   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[7]_funnel__6                    |     8|
+|238   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[5]_funnel__23                   |     8|
+|239   |              \s_mult_reg[14]                         |\s_mult_reg[14]_funnel__6                     |     8|
+|240   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[7]_funnel__10                   |     8|
+|241   |              \s_mult_reg[12]                         |\s_mult_reg[14]_funnel__10                    |     8|
+|242   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[7]_funnel__11                   |     8|
+|243   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[5]_funnel__20                   |     8|
+|244   |              \s_mult_reg[10]                         |\s_mult_reg[14]_funnel__11                    |     8|
+|245   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[7]_funnel__7                    |     8|
+|246   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel__3                    |     8|
+|247   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[5]_funnel__22                   |     8|
 |248   |            ssr_inst                                  |stateSaveRestore__xdcDup__2                   |    77|
 |249   |        \g_hf.HFA_inst                                |HitFinder_km__6                               |   298|
-|250   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__6                               |   112|
+|250   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__6                               |   100|
 |251   |      monprb_in                                       |dtpc_mon_probe__20                            |    53|
 |252   |      monprb_out                                      |dtpc_mon_probe__21                            |    53|
 |253   |    \sgen[2].sink                                     |dtpc_spy_buf__2                               |   164|
@@ -5802,39 +6004,39 @@ Report Instance Areas:
 |260   |      \w_gen[1].wsync                                 |syncreg_w__19                                 |    45|
 |261   |      \w_gen[0].wsync                                 |syncreg_w__18                                 |    45|
 |262   |    \sgen[1].ch_mask                                  |dtpc_chmask__3                                |    84|
-|263   |    \sgen[1].hitFinder                                |dtpc_tpg__xdcDup__3                           |  2493|
+|263   |    \sgen[1].hitFinder                                |dtpc_tpg__xdcDup__3                           |  2431|
 |264   |      headerStripComb_inst                            |HeaderStripperCombiner__5                     |   191|
-|265   |      singleChain_inst                                |SingleChain__xdcDup__3                        |  2193|
+|265   |      singleChain_inst                                |SingleChain__xdcDup__3                        |  2131|
 |266   |        monprb_in                                     |dtpc_mon_probe__10                            |    53|
 |267   |        monprb_ped_out                                |dtpc_mon_probe__11                            |    53|
 |268   |        monprb_fir_out                                |dtpc_mon_probe__12                            |    43|
 |269   |        monprb_hf_out                                 |dtpc_mon_probe__13                            |    53|
-|270   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__3                     |   252|
-|271   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__3                         |   252|
+|270   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper__xdcDup__3                     |   202|
+|271   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR__xdcDup__3                         |   202|
 |272   |        \g_fir.FIR_inst                               |fir_wrapper__xdcDup__3                        |  1328|
 |273   |          \gen_fir.fir_ssr                            |FIR_StateSR__xdcDup__3                        |  1328|
 |274   |            FIR32_v0_inst                             |fir32_v0__5                                   |  1250|
-|275   |              \s_mult_reg[20]                         |\s_mult_reg[10]_funnel__16                    |     8|
-|276   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[5]_funnel__14                   |     8|
+|275   |              \s_mult_reg[20]                         |\s_mult_reg[14]_funnel__17                    |     8|
+|276   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[7]_funnel__15                   |     8|
 |277   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__5                    |     8|
-|278   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[3]_funnel__8                    |     8|
-|279   |              \s_mult_reg[18]                         |\s_mult_reg[10]_funnel__15                    |     8|
-|280   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[5]_funnel__12                   |     8|
-|281   |              \s_mult_reg[16]                         |\s_mult_reg[10]_funnel__12                    |     8|
-|282   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[5]_funnel__15                   |     8|
-|283   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[3]_funnel__11                   |     8|
-|284   |              \s_mult_reg[14]                         |\s_mult_reg[10]_funnel__13                    |     8|
-|285   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[5]_funnel__16                   |     8|
-|286   |              \s_mult_reg[12]                         |\s_mult_reg[10]_funnel__17                    |     8|
-|287   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[5]_funnel__17                   |     8|
-|288   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[3]_funnel__10                   |     8|
-|289   |              \s_mult_reg[10]                         |\s_mult_reg[10]_funnel__14                    |     8|
-|290   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[5]_funnel__13                   |     8|
+|278   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[5]_funnel__26                   |     8|
+|279   |              \s_mult_reg[18]                         |\s_mult_reg[14]_funnel__16                    |     8|
+|280   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[7]_funnel__14                   |     8|
+|281   |              \s_mult_reg[16]                         |\s_mult_reg[14]_funnel__15                    |     8|
+|282   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[7]_funnel__16                   |     8|
+|283   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[5]_funnel__24                   |     8|
+|284   |              \s_mult_reg[14]                         |\s_mult_reg[14]_funnel__13                    |     8|
+|285   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[7]_funnel__13                   |     8|
+|286   |              \s_mult_reg[12]                         |\s_mult_reg[14]_funnel__14                    |     8|
+|287   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[7]_funnel__17                   |     8|
+|288   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[5]_funnel__27                   |     8|
+|289   |              \s_mult_reg[10]                         |\s_mult_reg[14]_funnel__12                    |     8|
+|290   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[7]_funnel__12                   |     8|
 |291   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel__4                    |     8|
-|292   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[3]_funnel__9                    |     8|
+|292   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[5]_funnel__25                   |     8|
 |293   |            ssr_inst                                  |stateSaveRestore__xdcDup__3                   |    77|
 |294   |        \g_hf.HFA_inst                                |HitFinder_km__5                               |   298|
-|295   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__5                               |   112|
+|295   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__5                               |   100|
 |296   |      monprb_in                                       |dtpc_mon_probe__14                            |    53|
 |297   |      monprb_out                                      |dtpc_mon_probe__15                            |    53|
 |298   |    \sgen[1].sink                                     |dtpc_spy_buf__3                               |   164|
@@ -5847,39 +6049,39 @@ Report Instance Areas:
 |305   |      \w_gen[1].wsync                                 |syncreg_w__2                                  |    45|
 |306   |      \w_gen[0].wsync                                 |syncreg_w__3                                  |    45|
 |307   |    \sgen[0].ch_mask                                  |dtpc_chmask                                   |    84|
-|308   |    \sgen[0].hitFinder                                |dtpc_tpg                                      |  2493|
+|308   |    \sgen[0].hitFinder                                |dtpc_tpg                                      |  2431|
 |309   |      headerStripComb_inst                            |HeaderStripperCombiner__4                     |   191|
-|310   |      singleChain_inst                                |SingleChain                                   |  2193|
+|310   |      singleChain_inst                                |SingleChain                                   |  2131|
 |311   |        monprb_in                                     |dtpc_mon_probe__4                             |    53|
 |312   |        monprb_ped_out                                |dtpc_mon_probe__5                             |    53|
 |313   |        monprb_fir_out                                |dtpc_mon_probe__6                             |    43|
 |314   |        monprb_hf_out                                 |dtpc_mon_probe__7                             |    53|
-|315   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper                                |   252|
-|316   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR                                    |   252|
+|315   |        \g_pedsub.PedSub_inst                         |PedSub_wrapper                                |   202|
+|316   |          \gen_pedsub.pedsub_ssr                      |PedSub_SSR                                    |   202|
 |317   |        \g_fir.FIR_inst                               |fir_wrapper                                   |  1328|
 |318   |          \gen_fir.fir_ssr                            |FIR_StateSR                                   |  1328|
 |319   |            FIR32_v0_inst                             |fir32_v0__4                                   |  1250|
-|320   |              \s_mult_reg[20]                         |\s_mult_reg[10]_funnel__23                    |     8|
-|321   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[5]_funnel__18                   |     8|
-|322   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__6                    |     8|
-|323   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[3]_funnel__13                   |     8|
-|324   |              \s_mult_reg[18]                         |\s_mult_reg[10]_funnel__22                    |     8|
-|325   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[5]_funnel__19                   |     8|
-|326   |              \s_mult_reg[16]                         |\s_mult_reg[10]_funnel__19                    |     8|
-|327   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[5]_funnel__23                   |     8|
-|328   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[3]_funnel__15                   |     8|
-|329   |              \s_mult_reg[14]                         |\s_mult_reg[10]_funnel__21                    |     8|
-|330   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[5]_funnel__22                   |     8|
-|331   |              \s_mult_reg[12]                         |\s_mult_reg[10]_funnel__18                    |     8|
-|332   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[5]_funnel__20                   |     8|
-|333   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[3]_funnel__14                   |     8|
-|334   |              \s_mult_reg[10]                         |\s_mult_reg[10]_funnel__20                    |     8|
-|335   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[5]_funnel__21                   |     8|
-|336   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel__7                    |     8|
-|337   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[3]_funnel__12                   |     8|
+|320   |              \s_mult_reg[20]                         |\s_mult_reg[14]_funnel__23                    |     8|
+|321   |              \s_add_l0_reg[10]                       |\s_add_l0_reg[7]_funnel__20                   |     8|
+|322   |              \s_add_l0_reg[11]                       |\s_add_l0_reg[4]_funnel__7                    |     8|
+|323   |              \s_add_l1_reg[5]                        |\s_add_l1_reg[5]_funnel__30                   |     8|
+|324   |              \s_mult_reg[18]                         |\s_mult_reg[14]_funnel__19                    |     8|
+|325   |              \s_add_l0_reg[9]                        |\s_add_l0_reg[7]_funnel__21                   |     8|
+|326   |              \s_mult_reg[16]                         |\s_mult_reg[14]_funnel__21                    |     8|
+|327   |              \s_add_l0_reg[8]                        |\s_add_l0_reg[7]_funnel__23                   |     8|
+|328   |              \s_add_l1_reg[4]                        |\s_add_l1_reg[5]_funnel__31                   |     8|
+|329   |              \s_mult_reg[14]                         |\s_mult_reg[14]_funnel__20                    |     8|
+|330   |              \s_add_l0_reg[7]                        |\s_add_l0_reg[7]_funnel__22                   |     8|
+|331   |              \s_mult_reg[12]                         |\s_mult_reg[14]_funnel__22                    |     8|
+|332   |              \s_add_l0_reg[6]                        |\s_add_l0_reg[7]_funnel__18                   |     8|
+|333   |              \s_add_l1_reg[3]                        |\s_add_l1_reg[5]_funnel__29                   |     8|
+|334   |              \s_mult_reg[10]                         |\s_mult_reg[14]_funnel__18                    |     8|
+|335   |              \s_add_l0_reg[5]                        |\s_add_l0_reg[7]_funnel__19                   |     8|
+|336   |              \s_add_l0_reg[4]                        |\s_add_l0_reg[4]_funnel__6                    |     8|
+|337   |              \s_add_l1_reg[2]                        |\s_add_l1_reg[5]_funnel__28                   |     8|
 |338   |            ssr_inst                                  |stateSaveRestore                              |    77|
 |339   |        \g_hf.HFA_inst                                |HitFinder_km__4                               |   298|
-|340   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__4                               |   112|
+|340   |        \g_pedValTx.pedValTx_inst                     |PedValues_tx__4                               |   100|
 |341   |      monprb_in                                       |dtpc_mon_probe__8                             |    53|
 |342   |      monprb_out                                      |dtpc_mon_probe__9                             |    53|
 |343   |    \sgen[0].sink                                     |dtpc_spy_buf                                  |   164|
@@ -5889,11 +6091,11 @@ Report Instance Areas:
 |347   |        \w_gen[0].wsync                               |syncreg_w__1                                  |    44|
 +------+------------------------------------------------------+----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:30 ; elapsed = 00:05:11 . Memory (MB): peak = 3086.211 ; gain = 1586.199 ; free physical = 93411 ; free virtual = 111720
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:54 ; elapsed = 00:05:44 . Memory (MB): peak = 3085.203 ; gain = 1585.191 ; free physical = 3780 ; free virtual = 81666
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:08 ; elapsed = 00:04:08 . Memory (MB): peak = 3086.211 ; gain = 604.488 ; free physical = 93448 ; free virtual = 111757
-Synthesis Optimization Complete : Time (s): cpu = 00:02:31 ; elapsed = 00:05:11 . Memory (MB): peak = 3086.215 ; gain = 1586.199 ; free physical = 93459 ; free virtual = 111768
+Synthesis finished with 0 errors, 288 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:28 ; elapsed = 00:04:35 . Memory (MB): peak = 3085.203 ; gain = 601.480 ; free physical = 3816 ; free virtual = 81703
+Synthesis Optimization Complete : Time (s): cpu = 00:02:54 ; elapsed = 00:05:45 . Memory (MB): peak = 3085.207 ; gain = 1585.191 ; free physical = 3826 ; free virtual = 81713
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 314 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -5903,7 +6105,7 @@ Resolution: The tool has removed redundant IBUF. To resolve this warning, check 
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-326] The CLKFBOUT to CLKFBIN net for instance infra/clocks/mmcm with COMPENSATION=INTERNAL is optimized away to aid design routability
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell infra/ipbus/udp_if/internal_ram/ram_reg_bram_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3136.223 ; gain = 0.000 ; free physical = 93366 ; free virtual = 111676
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3136.215 ; gain = 0.000 ; free physical = 3926 ; free virtual = 81812
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 91 instances were transformed.
   BUFG => BUFGCE: 5 instances
@@ -5916,13 +6118,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-1079 Infos, 465 Warnings, 0 Critical Warnings and 0 Errors encountered.
+1081 Infos, 465 Warnings, 200 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:38 ; elapsed = 00:05:18 . Memory (MB): peak = 3136.223 ; gain = 1636.211 ; free physical = 93482 ; free virtual = 111792
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3136.223 ; gain = 0.000 ; free physical = 93482 ; free virtual = 111792
+synth_design: Time (s): cpu = 00:03:03 ; elapsed = 00:05:53 . Memory (MB): peak = 3136.215 ; gain = 1636.203 ; free physical = 4040 ; free virtual = 81926
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3136.215 ; gain = 0.000 ; free physical = 4040 ; free virtual = 81926
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 3160.246 ; gain = 24.023 ; free physical = 93482 ; free virtual = 111796
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 3160.238 ; gain = 24.023 ; free physical = 4039 ; free virtual = 81929
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 10:56:19 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 15 11:24:53 2020...

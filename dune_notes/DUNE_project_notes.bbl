@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{manolopoulos_2020}
+Konstantinos Manolopoulos.
+\newblock Processing framework \&amp; hit finder algorithm, Jul 2020.
+
+\bibitem{anderson2016felix}
+J~Anderson, K~Bauer, A~Borga, H~Boterenbrood, H~Chen, K~Chen, G~Drake,
+  M~D{\"o}nszelmann, D~Francis, D~Guest, et~al.
+\newblock Felix: a pcie based high-throughput approach for interfacing
+  front-end and trigger electronics in the atlas upgrade framework.
+\newblock {\em Journal of Instrumentation}, 11(12):C12023, 2016.
+
+\bibitem{aimard20184}
+Benjamin Aimard, Ch~Alt, J~Asaadi, M~Auger, V~Aushev, D~Autiero, MM~Badoi,
+  A~Balaceanu, G~Balik, L~Balleyguier, et~al.
+\newblock A 4 tonne demonstrator for large-scale dual-phase liquid argon time
+  projection chambers.
+\newblock {\em Journal of Instrumentation}, 13(11):P11003, 2018.
+
+\end{thebibliography}

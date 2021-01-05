@@ -22,6 +22,7 @@ entity apatb_ped_alg_top is
        AUTOTB_TVIN_tkeep1 : STRING := "../tv/cdatafile/c.ped_alg.autotvin_tkeep1.dat";
        AUTOTB_TVIN_tready : STRING := "../tv/cdatafile/c.ped_alg.autotvin_tready.dat";
        AUTOTB_TVIN_treset : STRING := "../tv/cdatafile/c.ped_alg.autotvin_treset.dat";
+       AUTOTB_TVIN_tlast : STRING := "../tv/cdatafile/c.ped_alg.autotvin_tlast.dat";
        AUTOTB_TVIN_ped_val_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_ped_val.dat";
        AUTOTB_TVIN_accum_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_accum.dat";
        AUTOTB_TVIN_tdata_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_tdata.dat";
@@ -30,12 +31,25 @@ entity apatb_ped_alg_top is
        AUTOTB_TVIN_tkeep1_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_tkeep1.dat";
        AUTOTB_TVIN_tready_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_tready.dat";
        AUTOTB_TVIN_treset_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_treset.dat";
+       AUTOTB_TVIN_tlast_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvin_tlast.dat";
        AUTOTB_TVOUT_ped_val : STRING := "../tv/cdatafile/c.ped_alg.autotvout_ped_val.dat";
        AUTOTB_TVOUT_accum : STRING := "../tv/cdatafile/c.ped_alg.autotvout_accum.dat";
        AUTOTB_TVOUT_ADC : STRING := "../tv/cdatafile/c.ped_alg.autotvout_ADC.dat";
+       AUTOTB_TVOUT_tvalid_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_tvalid_out.dat";
+       AUTOTB_TVOUT_tkeep0_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_tkeep0_out.dat";
+       AUTOTB_TVOUT_tkeep1_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_tkeep1_out.dat";
+       AUTOTB_TVOUT_tready_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_tready_out.dat";
+       AUTOTB_TVOUT_treset_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_treset_out.dat";
+       AUTOTB_TVOUT_tlast_out : STRING := "../tv/cdatafile/c.ped_alg.autotvout_tlast_out.dat";
        AUTOTB_TVOUT_ped_val_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_ped_val.dat";
        AUTOTB_TVOUT_accum_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_accum.dat";
        AUTOTB_TVOUT_ADC_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_ADC.dat";
+       AUTOTB_TVOUT_tvalid_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_tvalid_out.dat";
+       AUTOTB_TVOUT_tkeep0_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_tkeep0_out.dat";
+       AUTOTB_TVOUT_tkeep1_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_tkeep1_out.dat";
+       AUTOTB_TVOUT_tready_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_tready_out.dat";
+       AUTOTB_TVOUT_treset_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_treset_out.dat";
+       AUTOTB_TVOUT_tlast_out_out_wrapc : STRING := "../tv/rtldatafile/rtl.ped_alg.autotvout_tlast_out.dat";
       AUTOTB_LAT_RESULT_FILE    : STRING  := "ped_alg.result.lat.rb";
       AUTOTB_PER_RESULT_TRANS_FILE    : STRING  := "ped_alg.performance.result.transaction.xml";
       LENGTH_ped_val     : INTEGER := 1;
@@ -47,6 +61,13 @@ entity apatb_ped_alg_top is
       LENGTH_tkeep1     : INTEGER := 1;
       LENGTH_tready     : INTEGER := 1;
       LENGTH_treset     : INTEGER := 1;
+      LENGTH_tlast     : INTEGER := 1;
+      LENGTH_tvalid_out     : INTEGER := 1;
+      LENGTH_tkeep0_out     : INTEGER := 1;
+      LENGTH_tkeep1_out     : INTEGER := 1;
+      LENGTH_tready_out     : INTEGER := 1;
+      LENGTH_treset_out     : INTEGER := 1;
+      LENGTH_tlast_out     : INTEGER := 1;
 	    AUTOTB_TRANSACTION_NUM    : INTEGER := 747942
 );
 
@@ -92,6 +113,18 @@ architecture behav of apatb_ped_alg_top is
   signal tready :  STD_LOGIC;
   signal treset :  STD_LOGIC;
   signal tlast :  STD_LOGIC;
+  signal tvalid_out :  STD_LOGIC;
+  signal tvalid_out_ap_vld :  STD_LOGIC;
+  signal tkeep0_out :  STD_LOGIC;
+  signal tkeep0_out_ap_vld :  STD_LOGIC;
+  signal tkeep1_out :  STD_LOGIC;
+  signal tkeep1_out_ap_vld :  STD_LOGIC;
+  signal tready_out :  STD_LOGIC;
+  signal tready_out_ap_vld :  STD_LOGIC;
+  signal treset_out :  STD_LOGIC;
+  signal treset_out_ap_vld :  STD_LOGIC;
+  signal tlast_out :  STD_LOGIC;
+  signal tlast_out_ap_vld :  STD_LOGIC;
 
   signal ready_cnt : STD_LOGIC_VECTOR(31 DOWNTO 0);
   signal done_cnt	: STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -135,7 +168,19 @@ port (
     tkeep1 :  IN STD_LOGIC;
     tready :  IN STD_LOGIC;
     treset :  IN STD_LOGIC;
-    tlast :  IN STD_LOGIC);
+    tlast :  IN STD_LOGIC;
+    tvalid_out :  OUT STD_LOGIC;
+    tvalid_out_ap_vld :  OUT STD_LOGIC;
+    tkeep0_out :  OUT STD_LOGIC;
+    tkeep0_out_ap_vld :  OUT STD_LOGIC;
+    tkeep1_out :  OUT STD_LOGIC;
+    tkeep1_out_ap_vld :  OUT STD_LOGIC;
+    tready_out :  OUT STD_LOGIC;
+    tready_out_ap_vld :  OUT STD_LOGIC;
+    treset_out :  OUT STD_LOGIC;
+    treset_out_ap_vld :  OUT STD_LOGIC;
+    tlast_out :  OUT STD_LOGIC;
+    tlast_out_ap_vld :  OUT STD_LOGIC);
 end component;
 
 -- The signal of port ped_val_i
@@ -165,6 +210,24 @@ shared variable AESL_REG_tready : STD_LOGIC_VECTOR(0 downto 0) := (others => '0'
 shared variable AESL_REG_treset : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
 -- The signal of port tlast
 shared variable AESL_REG_tlast : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_tvalid_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port tvalid_out
+shared variable AESL_REG_tvalid_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_tkeep0_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port tkeep0_out
+shared variable AESL_REG_tkeep0_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_tkeep1_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port tkeep1_out
+shared variable AESL_REG_tkeep1_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_tready_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port tready_out
+shared variable AESL_REG_tready_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_treset_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port treset_out
+shared variable AESL_REG_treset_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+shared variable AESL_REG_tlast_out_ap_vld : STD_LOGIC := '0';
+-- The signal of port tlast_out
+shared variable AESL_REG_tlast_out : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
       procedure esl_read_token (file textfile: TEXT; textline: inout LINE; token: out STRING; token_len: out INTEGER) is
           variable whitespace : CHARACTER;
           variable i : INTEGER;
@@ -499,7 +562,19 @@ AESL_inst_ped_alg    :   ped_alg port map (
    tkeep1  =>  tkeep1,
    tready  =>  tready,
    treset  =>  treset,
-   tlast  =>  tlast
+   tlast  =>  tlast,
+   tvalid_out  =>  tvalid_out,
+   tvalid_out_ap_vld  =>  tvalid_out_ap_vld,
+   tkeep0_out  =>  tkeep0_out,
+   tkeep0_out_ap_vld  =>  tkeep0_out_ap_vld,
+   tkeep1_out  =>  tkeep1_out,
+   tkeep1_out_ap_vld  =>  tkeep1_out_ap_vld,
+   tready_out  =>  tready_out,
+   tready_out_ap_vld  =>  tready_out_ap_vld,
+   treset_out  =>  treset_out,
+   treset_out_ap_vld  =>  treset_out_ap_vld,
+   tlast_out  =>  tlast_out,
+   tlast_out_ap_vld  =>  tlast_out_ap_vld
 );
 
 -- Assignment for control signal
@@ -557,7 +632,7 @@ read_file_process_ped_val : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -614,7 +689,7 @@ write_file_process_ped_val : process
     file      fp_size         :   TEXT;
     variable  fstatus         :   FILE_OPEN_STATUS;
     variable  token_line      :   LINE;
-    variable  token           :   STRING(1 to 152);
+    variable  token           :   STRING(1 to 160);
     variable  str             :   STRING(1 to 40);
     variable  transaction_idx :   INTEGER;
     variable  ped_val_count   :   INTEGER;
@@ -675,7 +750,7 @@ read_file_process_accum : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -732,7 +807,7 @@ write_file_process_accum : process
     file      fp_size         :   TEXT;
     variable  fstatus         :   FILE_OPEN_STATUS;
     variable  token_line      :   LINE;
-    variable  token           :   STRING(1 to 152);
+    variable  token           :   STRING(1 to 160);
     variable  str             :   STRING(1 to 40);
     variable  transaction_idx :   INTEGER;
     variable  accum_count   :   INTEGER;
@@ -790,7 +865,7 @@ write_file_process_ADC : process
     file      fp_size         :   TEXT;
     variable  fstatus         :   FILE_OPEN_STATUS;
     variable  token_line      :   LINE;
-    variable  token           :   STRING(1 to 152);
+    variable  token           :   STRING(1 to 160);
     variable  str             :   STRING(1 to 40);
     variable  transaction_idx :   INTEGER;
     variable  ADC_count   :   INTEGER;
@@ -841,7 +916,7 @@ read_file_process_tdata : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -891,7 +966,7 @@ read_file_process_tvalid : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -941,7 +1016,7 @@ read_file_process_tkeep0 : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -991,7 +1066,7 @@ read_file_process_tkeep1 : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -1041,7 +1116,7 @@ read_file_process_tready : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -1091,7 +1166,7 @@ read_file_process_treset : process
   file        fp          :   TEXT;
   variable    fstatus     :   FILE_OPEN_STATUS;
   variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
+  variable    token       :   STRING(1 to 160);
   variable    i           :   INTEGER;
   variable    transaction_finish  :   INTEGER;
   variable    transaction_idx     :   INTEGER:= 0;
@@ -1137,6 +1212,398 @@ begin
   wait for 0.45 ns;
   tlast <= AESL_REG_tlast(0);
 end process;
+read_file_process_tlast : process
+  file        fp          :   TEXT;
+  variable    fstatus     :   FILE_OPEN_STATUS;
+  variable    token_line  :   LINE;
+  variable    token       :   STRING(1 to 160);
+  variable    i           :   INTEGER;
+  variable    transaction_finish  :   INTEGER;
+  variable    transaction_idx     :   INTEGER:= 0;
+  variable    rand        :   T_RANDINT     := init_rand(0);
+  variable    rint        :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVIN_tlast, READ_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVIN_tlast & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    esl_read_token(fp, token_line, token);
+    if(token(1 to 13) /= "[[[runtime]]]") then
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    esl_read_token(fp, token_line, token);
+    while(token(1 to 14) /= "[[[/runtime]]]") loop
+        if(token(1 to 15) /= "[[transaction]]") then
+            assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+        end if;
+        esl_read_token(fp, token_line, token);  -- Skip transaction number
+        esl_read_token(fp, token_line, token);
+        wait for 0.2 ns;
+        while(ready_wire /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+            wait for 0.2 ns;
+        end loop;
+        if(token(1 to 16) /= "[[/transaction]]") then
+            AESL_REG_tlast := esl_str2lv_hex(token, 1 );
+            esl_read_token(fp, token_line, token);
+        end if;
+        wait until AESL_clock'event and AESL_clock = '1';
+        esl_read_token(fp, token_line, token);
+    end loop;
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_tvalid_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_tvalid_out := (others => '0'); 
+    elsif(tvalid_out_ap_vld = '1') then
+        AESL_REG_tvalid_out(0) := tvalid_out;
+        AESL_REG_tvalid_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_tvalid_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  tvalid_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_tvalid_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_tvalid_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_tvalid_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_tvalid_out));
+            writeline(fp, token_line);
+            AESL_REG_tvalid_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_tkeep0_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_tkeep0_out := (others => '0'); 
+    elsif(tkeep0_out_ap_vld = '1') then
+        AESL_REG_tkeep0_out(0) := tkeep0_out;
+        AESL_REG_tkeep0_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_tkeep0_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  tkeep0_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_tkeep0_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_tkeep0_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_tkeep0_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_tkeep0_out));
+            writeline(fp, token_line);
+            AESL_REG_tkeep0_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_tkeep1_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_tkeep1_out := (others => '0'); 
+    elsif(tkeep1_out_ap_vld = '1') then
+        AESL_REG_tkeep1_out(0) := tkeep1_out;
+        AESL_REG_tkeep1_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_tkeep1_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  tkeep1_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_tkeep1_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_tkeep1_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_tkeep1_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_tkeep1_out));
+            writeline(fp, token_line);
+            AESL_REG_tkeep1_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_tready_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_tready_out := (others => '0'); 
+    elsif(tready_out_ap_vld = '1') then
+        AESL_REG_tready_out(0) := tready_out;
+        AESL_REG_tready_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_tready_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  tready_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_tready_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_tready_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_tready_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_tready_out));
+            writeline(fp, token_line);
+            AESL_REG_tready_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_treset_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_treset_out := (others => '0'); 
+    elsif(treset_out_ap_vld = '1') then
+        AESL_REG_treset_out(0) := treset_out;
+        AESL_REG_treset_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_treset_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  treset_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_treset_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_treset_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_treset_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_treset_out));
+            writeline(fp, token_line);
+            AESL_REG_treset_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
+gen_out_tlast_out_proc : process(AESL_clock)
+begin
+  if (AESL_clock'event and AESL_clock = '1') then
+    if(AESL_reset = '1') then
+        AESL_REG_tlast_out := (others => '0'); 
+    elsif(tlast_out_ap_vld = '1') then
+        AESL_REG_tlast_out(0) := tlast_out;
+        AESL_REG_tlast_out_ap_vld := '1';
+    end if;
+  end if;
+end process;
+
+write_file_process_tlast_out : process
+    file      fp              :   TEXT;
+    file      fp_size         :   TEXT;
+    variable  fstatus         :   FILE_OPEN_STATUS;
+    variable  token_line      :   LINE;
+    variable  token           :   STRING(1 to 160);
+    variable  str             :   STRING(1 to 40);
+    variable  transaction_idx :   INTEGER;
+    variable  tlast_out_count   :   INTEGER;
+    variable  hls_stream_size :   INTEGER;
+    variable  i               :   INTEGER;
+    variable  rand            :   T_RANDINT     := init_rand(0);
+    variable  rint            :   INTEGER;
+begin
+    wait until AESL_reset = '0';
+    file_open(fstatus, fp, AUTOTB_TVOUT_tlast_out_out_wrapc, WRITE_MODE);
+    if(fstatus /= OPEN_OK) then
+        assert false report "Open file " & AUTOTB_TVOUT_tlast_out_out_wrapc & " failed!!!" severity note;
+        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
+    end if;
+    write(token_line, string'("[[[runtime]]]"));
+    writeline(fp, token_line);
+    transaction_idx := 0;
+    while (transaction_idx /= AUTOTB_TRANSACTION_NUM) loop
+        wait until AESL_clock'event and AESL_clock = '1';
+	      while(AESL_done /= '1') loop
+            wait until AESL_clock'event and AESL_clock = '1';
+	      end loop;
+        wait for 0.4 ns;
+        write(token_line, string'("[[transaction]]    ") & integer'image(transaction_idx));
+        writeline(fp, token_line);
+        if(AESL_REG_tlast_out_ap_vld = '1')  then
+            write(token_line, "0x" & esl_conv_string_hex(AESL_REG_tlast_out));
+            writeline(fp, token_line);
+            AESL_REG_tlast_out_ap_vld := '0';
+        end if;
+        transaction_idx := transaction_idx + 1;
+        write(token_line, string'("[[/transaction]]"));
+        writeline(fp, token_line);
+    end loop;
+    write(token_line, string'("[[[/runtime]]]"));
+    writeline(fp, token_line);
+    file_close(fp);
+    wait;
+end process;
+
 generate_ready_cnt_proc : process(ready_initial, AESL_clock)
 begin
     if(AESL_clock'event and AESL_clock = '0') then

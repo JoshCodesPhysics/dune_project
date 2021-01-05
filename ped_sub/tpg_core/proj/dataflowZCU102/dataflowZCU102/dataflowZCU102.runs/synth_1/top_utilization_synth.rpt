@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Dec  9 10:56:18 2020
-| Host         : mercury006.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Tue Dec 15 11:24:52 2020
+| Host         : heplnw061.pp.rl.ac.uk running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
 | Device       : xczu9egffvb1156-2
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| CLB LUTs*                  |  7810 |     0 |    274080 |  2.85 |
-|   LUT as Logic             |  7653 |     0 |    274080 |  2.79 |
+| CLB LUTs*                  |  7750 |     0 |    274080 |  2.83 |
+|   LUT as Logic             |  7593 |     0 |    274080 |  2.77 |
 |   LUT as Memory            |   157 |     0 |    144000 |  0.11 |
 |     LUT as Distributed RAM |    16 |     0 |           |       |
 |     LUT as Shift Register  |   141 |     0 |           |       |
-| CLB Registers              | 13141 |     0 |    548160 |  2.40 |
-|   Register as Flip Flop    | 13137 |     0 |    548160 |  2.40 |
+| CLB Registers              | 12949 |     0 |    548160 |  2.36 |
+|   Register as Flip Flop    | 12945 |     0 |    548160 |  2.36 |
 |   Register as Latch        |     4 |     0 |    548160 | <0.01 |
 | CARRY8                     |   175 |     0 |     34260 |  0.51 |
 | F7 Muxes                   |    38 |     0 |    137040 |  0.03 |
@@ -61,8 +61,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 111   |          Yes |           - |          Set |
 | 269   |          Yes |           - |        Reset |
-| 925   |          Yes |         Set |            - |
-| 11836 |          Yes |       Reset |            - |
+| 901   |          Yes |         Set |            - |
+| 11668 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -158,13 +158,13 @@ Table of Contents
 +-------------+-------+---------------------+
 |   Ref Name  |  Used | Functional Category |
 +-------------+-------+---------------------+
-| FDRE        | 11836 |            Register |
-| LUT3        |  2671 |                 CLB |
-| LUT6        |  2513 |                 CLB |
-| LUT2        |  2062 |                 CLB |
-| LUT5        |  1551 |                 CLB |
-| LUT4        |  1257 |                 CLB |
-| FDSE        |   925 |            Register |
+| FDRE        | 11668 |            Register |
+| LUT3        |  2663 |                 CLB |
+| LUT6        |  2549 |                 CLB |
+| LUT2        |  2058 |                 CLB |
+| LUT5        |  1515 |                 CLB |
+| LUT4        |  1213 |                 CLB |
+| FDSE        |   901 |            Register |
 | FDCE        |   269 |            Register |
 | LUT1        |   191 |                 CLB |
 | CARRY8      |   175 |                 CLB |
