@@ -295,7 +295,7 @@ void data_read(const std::string& input_file, int& count,
 
 
 void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
-		     int packet_size, int& channel) {
+		     int packet_size, word_t& channel) {
 	// State save/restore pedestal and accumulator array members
         // begin at their default values.
         
@@ -309,7 +309,7 @@ void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
 
 void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
 		word_t ped_val, int packet_size, int total_samples,
-		int& channel) {
+		word_t& channel) {
 
 	// Reset pedestal and accumulator saved values
 	ped_accum_reset(ped_array, accum_array, ped_val, packet_size,
@@ -322,11 +322,13 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
 }
 
 
-void ped_top(int channel, int i, word_t* ADC_stored[N_SA],
-	     bool* tvalid_stored[N_SA],
-             bool* tlast_user_stored[N_SA], bool* tkeep_stored[N_SA],
-             word_t* ped_array[N_CH], word_t* ADC_array[N_SA],
-             char* accum_array[N_CH], bool* tready, bool* treset) {
+void ped_top(word_t* channel, word_t* tdata,
+	  bool* first_sample, bool* tvalid_in,
+	  bool* tlast_user_in, bool* tkeep_in,
+          word_t ped_array[N_CH], word_t* ADC_adjusted,
+          char accum_array[N_CH], bool* tready_in, bool* treset_in,
+	  bool* tvalid_out, bool* tkeep_out, bool* tlast_user_out,
+	  bool* tready_out, bool* treset_out) {
 	// This function generates temporary variables for the ADC samples,
 	// median and accumulator and restores the median and accumulator
 	// from SS/R arrays. They are edited by ped_alg and then saved again
@@ -335,44 +337,85 @@ void ped_top(int channel, int i, word_t* ADC_stored[N_SA],
 	// and accumulator to be effectively simulated, and so cannot be the
 	// top function.
 	
+	// State save/restore pedestal and accumulator array members
+	// begin at their default values.
+	if (*treset_in || *first_sample) {
+
+				// Reset pedestal and accumulator,
+				// as well as channel count. Reset
+				// all adjusted ADC values to zero.
+				ped_accum_reset(ped_array, accum_array, 500,
+								N_CH, *channel);
+				*ADC_adjusted = *tdata;
+
+				if (*first_sample) {
+						*first_sample = false;
+				}
+
+				std::cout << "Pedestal values after reset: "
+						  << ped_array[32] << "\n";
+	}
+
 	// Temporary pedestal, ADC and accum variables to read and also
 	// append to the SS/R arrays.
 	word_t ADC, ped_new;
 	char accum;
 
-	// Restoring the median and accumulator
-	ped_new = (*ped_array)[channel];
-	accum = (*accum_array)[channel];
+	// Restoring the median and accumulator from SS/R
+	ped_new = ped_array[*channel];
+	accum = accum_array[*channel];
 
 	// Running the pedestal subtraction algorithm
-	ped_alg(&ped_new, &accum, &ADC, &(*ADC_stored)[i],
-		&(*tvalid_stored)[i], &(*tkeep_stored)[i],
-		&(*tkeep_stored)[i],
-		&(*tready), &(*treset),
-		&(*tlast_user_stored)[i]);
+	ped_alg(&ped_new, &accum, &ADC, &(*tdata),
+		&(*tvalid_in), &(*tkeep_in),
+		&(*tkeep_in),
+		&(*tready_in), &(*treset_in),
+		&(*tlast_user_in));
 
 	// Array values for this channel are
 	// overwritten by the output variables from
-	// ped_alg, and used in the next loop.
+	// ped_alg, and used for the next sample for that channel.
 	// They are also used for the next packet
 	// that comes through this channel, i.e.
 	// in 64 packets time
 	
-	(*ped_array)[channel] = ped_new;
-	(*accum_array)[channel] = accum;
+	ped_array[*channel] = ped_new;
+	accum_array[*channel] = accum;
 	
 	// Append adjusted ADC value
 	// to storage array
-	(*ADC_array)[i] = ADC;
+	*ADC_adjusted = ADC;
+
+	// Increase the index of the SS/R arrays once tlast and tuser go high
+	if (*tlast_user_in) {
+		(*channel)++;
+		
+		// Last channel has been processed,
+		// return to pedestal and accumulator
+		// values for channel 0 and process
+		// the next wave of packets
+		if (*channel == N_CH) {
+			*channel = 0;
+			// std::cout << "Final channel, now processing "
+			// 		     "packet for channel 0.\n";
+		}
+
+		else {
+			// std::cout << "End of channel " << *channel
+			//           << ", now beginning channel: "
+			//           << *channel + 1 << "\n";
+
+		}
+	}
 
 	// These writes are just so the boolean signals have
 	// output ports after synthesis
 	
-	(*tvalid_stored)[i] = (*tvalid_stored)[i];
-	(*tkeep_stored)[i] = (*tkeep_stored)[i];
-	(*tlast_user_stored)[i] = (*tlast_user_stored)[i];
-	*tready = *tready;
-	*treset = *treset;
+	*tvalid_out = *tvalid_in;
+	*tkeep_out = *tkeep_in;
+	*tlast_user_out = *tlast_user_in;
+	*tready_out = *tready_in;
+	*treset_out = *treset_in;
 }
 
 
@@ -381,7 +424,7 @@ void array_scan(int array_size, word_t ped_val,
                 bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
                 word_t ped_array[N_CH], word_t ADC_array[N_SA],
                 char accum_array[N_CH], int packet_size, int num_channels,
-		int input_seed, int treset_limit, int tready_limit) {
+	        int input_seed, int treset_limit, int tready_limit) {
  
 	// This function runs ped_alg according to the ADC and boolean
 	// signals acquired from an input text file of the line format
@@ -417,19 +460,10 @@ void array_scan(int array_size, word_t ped_val,
 	bool treset = false;
 
 	// Counters for the while loop and data read
-	int channel = 0;
+	word_t channel = 0;
 	int i = 0;
+	bool first_sample = true;
 	int attempt = 1;
-
-	// Temporary pedestal, ADC and accum variables to read and also
-	// append to the SS/R arrays.
-	word_t ADC, ped_new;
-	char accum;
-
-	// State save/restore pedestal and accumulator array members
-	// begin at their default values.
-	ped_accum_reset(ped_array, accum_array, ped_val, packet_size,
-			channel);
 
 	// Random seed integer
 	int random_seed;
@@ -465,8 +499,8 @@ void array_scan(int array_size, word_t ped_val,
 			// all adjusted ADC values to zero.
 			// Send while counter (i) back to zero
 			full_reset(ped_array, accum_array, ADC_array,
-				   ped_val, packet_size, array_size,
-				   channel);
+				       ped_val, packet_size, array_size,
+				       channel);
 			i = 0;
 			attempt++;
 			treset = false;
@@ -484,7 +518,7 @@ void array_scan(int array_size, word_t ped_val,
 				
 				// Print scaffolding for this scenario
 				std::cout << "\nLine " << i << 
-					     " had a high tready "
+					     " had a low tready "
 					     "during attempt " << attempt
 					     << " so pointer will return to "
 					     "that line and reattempt the "
@@ -494,42 +528,45 @@ void array_scan(int array_size, word_t ped_val,
 
 			// If tready is not high, record the
 			// scan as usual
-			else {	
-				ped_top(channel, i, &ADC_stored, &tvalid_stored,
-             				&tlast_user_stored, &tkeep_stored,
-					&ped_array, &ADC_array, &accum_array,
-					&tready, &treset);
-	
+			else {
+
+				// Initialising an input variable to be later
+				// appended to
+				// the correponding output ADC array
+				word_t ADC_adjusted;
+
+				// Initialising output signal booleans for
+				// the synthesis ports
+				bool tvalid_out, tkeep_out, tlast_user_out,
+				     tready_out, treset_out;
+
+				ped_top(&channel, &(ADC_stored[i]),
+					&first_sample,
+					&(tvalid_stored[i]),
+					&(tlast_user_stored[i]),
+					&(tkeep_stored[i]),
+					ped_array, &ADC_adjusted,
+					accum_array, &tready, &treset,
+					&tvalid_out, &tkeep_out,
+					&tlast_user_out, &tready_out,
+					&treset_out);
+
 				if (tlast_user_stored[i]) {
 					std::cout << "\n Final pedestal "
 						     "value for this "
 						     "channel was: "
 						  << ped_array[channel]
 						  << ".\n";
-					
 					if (channel + 1 < num_channels) {
 						std::cout << "Now loading "
-							     "pedestal and "
-							     "accumulator for"
+							     "pedestal and "						  		       "accumulator for"
 							     " channel "
-							  << channel + 1
+				 			  << channel + 1
 							  << ".\n";
 					}
-
-					channel++;
-
-					// Last channel has been processed,
-					// return to pedestal and accumulator
-					// values for channel 0 and process
-					// the next wave of packets
-					if (channel > (num_channels - 1)) {
-						std::cout << "\nLast channel"
-							     " processed, re"
-							     "turning to cha"
-							     "nnel 0.\n";
-						channel = 0;
-					}
-				}
+				};
+				
+				ADC_array[i] = ADC_adjusted;
 
 				// Add to the while loop counter every
 				// loop to increase the index of the
@@ -547,7 +584,7 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
                   bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
                   char accum_array[N_CH], int packet_size, int num_channels,
-		  int input_seed, int treset_limit, int tready_limit) {
+	          int input_seed, int treset_limit, int tready_limit) {
 	// This is the master (testbench) function to combine the
 	// read and scan protocols to simulate the flow of samples
 	// through the pedestal subtraction algorithm.
