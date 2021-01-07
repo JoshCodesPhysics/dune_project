@@ -6,12 +6,20 @@
 \usepackage{hyperref}
 
 \author{Joshua Horswill}
-\title{Firmware Block Implementation for the Proto-DUNEII Hit Finding Architecture with the HLS Tool}
+\title{Firmware Block Implementation for the Proto-DUNEII Hit Finding Architecture with the HLS Tool - First Semester Report}
 
 \begin{document}
 \maketitle
+
+\begin{abstract}
+	The Deep Underground Neutrino Experiment (DUNE) is a large-scale, international project being developed at CERN and will operate within North America. It will consist of two neutrino detectors placed within an intense neutrino beam fired from Fermilab. The main objectives of the project include answering fundamental questions about the origin of matter (CP violation), the unification of forces (proton decay) and the formation of black holes (supernova neutrino detection). This report focusses on the TPG core within the front end of the detectors, specifically the hit finder architecture that will process optical data generated from argon scintillation within the time projection chambers, as a result of neutrino interactions.
+\end{abstract}
+
 \tableofcontents
 \newpage
+
+\section{Introduction}
+
 
 \section{DUNE's DAQ architecture; Envisaging the Alternatives}
 
@@ -358,7 +366,7 @@ The output from a VHDL implementation of the \texttt{pedsub} algorithm was used 
 
 \subsection{Internalising the State Save/Restore (SSR) Mechanism into the Top Function}
 
-Once the algorithm VHDL design was verified by the Vivado HLS software, it had to be developed within the Vivado project manager, where the implementation can be tested within Questasim (more commonly known as modelsim) to check all signals are being received and output as expected. Unfortunately this simulation revealed that too much of the state save restore mechanism was being performed within the testbench, and there were issues with the adjusted ADC value output due to multiple signal drivers being responsible for the median being subtracted from the original ADC value.
+Once the algorithm VHDL design was verified by the Vivado HLS software, it had to be developed within the Vivado project manager, where the implementation can be tested within Questasim (more commonly known as Modelsim) to check all signals are being received and output as expected. Unfortunately this simulation revealed that too much of the state save restore mechanism was being performed within the testbench. It was also discovered that there was no output on the adjusted ADC signal. This was due to multiple signal drivers being responsible for the median being subtracted from the original ADC value, which were instantiated through a flawed logic block. This led to a rollback of the top function block to include memory-allocated arrays that save and overwrite the pedestal and accumulator for each channel, in addition to every adjusted ADC sample.
 
 \bibliography{dpn.bib}
 \bibliographystyle{unsrt}
