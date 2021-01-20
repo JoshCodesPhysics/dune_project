@@ -12,34 +12,37 @@
 \maketitle
 
 \begin{abstract}
-	The Deep Underground Neutrino Experiment (DUNE) is a large-scale, international project being developed at CERN and will operate within North America. It will consist of two neutrino detectors placed within an intense neutrino beam fired from Fermilab. The main objectives of the project include answering fundamental questions about the origin of matter (CP violation), the unification of forces (proton decay) and the formation of black holes (supernova neutrino detection). This report focusses on the TPG core within the front end of the detectors, specifically the hit finder architecture that will process optical data generated from argon scintillation within the time projection chambers, as a result of neutrino interactions.
+	The Deep Underground Neutrino Experiment (DUNE) is a large-scale, international project being developed at CERN and will operate within North America. It will consist of two underground neutrino detectors placed within an intense neutrino beam fired from Fermilab, the furthest of which will be 1300 kilometres from the source, in the Sanford Underground Research Facility (SURF). The main objectives of the experiment includes answering fundamental questions about the origin of matter (CP violation), the unification of forces (proton decay) and the formation of black holes (supernova neutrino detection)\cite{deep_underground_neutrino_experiment_2020}. This report focusses on the TPG core within the front end of the detectors, specifically the hit finder architecture that processes optical data generated from argon scintillation within the time projection chambers, as a result of neutrino interactions. The focus of  discussion will be on the replacement of existing firmware algorithms written for the detector's FPGAs with designs synthesised in Vivado High Level Synthesis (HLS) software from C++ code, to test the efficiency and convenience of the block design process when compared to writing firmware from scratch in VHDL.
 \end{abstract}
 
+\newpage
 \tableofcontents
+
 \newpage
 
 \section{Introduction}
+The DUNE experiment is an amalgamation of many neutrino-physics communities centred around an opportunity provided by the large investment of the U.S. Department of Energy. This will contribute to a large expansion of the underground experimental architecture of the SURF facility, as well as a megawatt neutrino-beam facility 1300km across the country at Fermilab. This investigation will be groundbreaking for neutrino oscillation studies, searches for proton decay, and for neutrino based astrophysics (black hole and supernova burst phenomena).
 
+Analysing the properties of neutrinos has led to evidence for physics beyond the Standard Model (SM). Oscillations of neutrino flavour, meaning neutrinos being able to transform their flavour after moving through space, is a well established concept. Conclusions can be made from this, including the fact that neutrinos have mass. However, they are unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one million of an electron mass eigenstate. The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for debate\cite{Mertens_2016, cooper2016masses}. Finding the explanation will require more precision and detail in the available experimental information. DUNE exists to carry out an investigation of neutrino oscillations to test `Lepton Sector CP Violation' (LCPV) as well as the ordering of the neutrino masses and the three-neutrino paradigm, in which the quantum mechanical mixing of the three neutrino mass eigenstates produces the three known neutrino flavour states \cite{acciarri2016longbaseline}.
 
-\section{DUNE's DAQ architecture; Envisaging the Alternatives}
+CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex \cite{kobayashi1973cp}. Therefore one would expect to discover an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to LCPV. One of the goals of this investigation is to determine the rates of neutrino CP violation. Another hypotheses proposes that there is a connection between low-energy neutrino physics and leptogenesis \cite{Di_Bari_2012}, which could provide insight into the scenario that led to the baryon asymmetry of the universe. These questions can only by answered by constructing suitable detector equipment, so the next section will explore the features of ProtoDUNE's detector's front-end electronics, which will feed into the next section that discusses the HLS firmware blocks that could instruct the front-end FPGA-based data processors.
 
-\subsection{Overview}\label{section:overview}
+\subsection{Front-End Detector Overview}\label{section:overview}
 
-\begin{itemize}
-	\item There are four TPC (time projection chamber) modules of liquid argon; each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA. The Front End LInk eXchange system contains the focus of this project.
-	\item There are 10 fibres/data streams in the APA, each with 256 wires - hence the APA total of 2560
-	\item The readout window per event is between 3-5.5 ms for a 2.25 ms drift time.
-	\item The FELIX architecture consists of 10 MGT modules that feed data into 10 Hit Finders (HF), each of which produce hits by processing ADC values in parallel. This enters the HF's via the data router, and then travel into 10 sets of 4 TPG block processors. These are multiplexed (combined) by the arbitrator into the Central Router (CR) interface.
+The ProtoDUNE detectors employ time projection chamber modules of liquid argon (LAr TPCs); each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA.  The Front End LInk eXchange system contains the focus of this project.
+There are 10 fibres/data streams in the APA, each with 256 wires - hence the APA total of 2560
+The readout window per event is between 3-5.5 ms for a 2.25 ms drift time.
+The FELIX architecture consists of 10 MGT modules that feed data into 10 Hit Finders (HF), each of which produce hits by processing ADC values in parallel. This enters the HF's via the data router, and then travel into 10 sets of 4 TPG block processors. These are multiplexed (combined) by the arbitrator into the Central Router (CR) interface.
 
 What are these things?
 	
-	\item The MGT module processes the APA data stream into computational bits.
-	\item The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
-	\item The data router receives multiple-channel, single clock-tick packets. The packets initially exist in a format containing the first sample for all channels, and when processed by the data router are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data.
-	\item Each TPG unit processes 64 wires, and so there are 4 of them ($4\times 64 = 256$, the number of wires in a fiber).
-	\item The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of ADC sample data for hit finding.
-	\item There is an AXI4-stream protocol for unpacking and reordering of data in the TPG block.
-	\item There are 4 general signals for various instructions in each component:
+The MGT module processes the APA data stream into computational bits.
+The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
+The data router receives multiple-channel, single clock-tick packets. The packets initially exist in a format containing the first sample for all channels, and when processed by the data router are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data.
+Each TPG unit processes 64 wires, and so there are 4 of them ($4\times 64 = 256$, the number of wires in a fiber).
+The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of ADC sample data for hit finding.
+There is an AXI4-stream protocol for unpacking and reordering of data in the TPG block.
+There are 4 general signals for various instructions in each component:
 	
 	\begin{enumerate}
 		\item tvalid denotes if the bus data is valid
@@ -47,8 +50,7 @@ What are these things?
 		\item tlast denotes the end of packet
 		\item tready is used to apply back-pressure if the processing units ahead cannot process the data fast enough (all throughput is frozen).
 	\end{enumerate}
-	\item The TPG block strips the header in the Header Stripper/Combiner block (see figure \ref{fig:hsc}) and sends it to the output of the block. Meanwhile the 64 ADC values are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the chain. The data router is then signalled to send the next packet.
-\end{itemize}
+The TPG block strips the header in the Header Stripper/Combiner block (see figure \ref{fig:hsc}) and sends it to the output of the block. Meanwhile the 64 ADC values are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the chain. The data router is then signalled to send the next packet.
 
 \begin{figure}[h]
 	\centering
@@ -159,13 +161,6 @@ When a powerful neutrino beam is hypothetically shot from the United States' Fer
 
 Another objective is to extend the sensitivity of proton lifetime in a variety of possible decay channels, and collect high-statistics neutrino samples from atmospheric and astronomical sources.
 
-\subsection{Quick note on CP violation and neutrinos}
-
-CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex. Theoretically, this could arise from complex Yukawa couplings\footnote{Interaction between a scalar field and Dirac field, could be used to describe nuclear force between nucleons, but mainly used to describe the coupling between the Higgs field and the massless quark/lepton fields} and/or a relative CP-violating phase in the vacuum expectation value (VEV) of the Higgs fields.
-
-You would expect an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to leptonic CPV (LCPV). The discovery of neutrino oscillation provides evidence for non-vanishing neutrino masses and leptonic mixing.
-
-We are not sure why neutrino masses are so small. We think there is a connection between low-energy neutrino physics and leptogenesis, which could provide insight into the scenario that led to the baryon asymmetry of the universe.
 
 \subsection{Detector details}
 
