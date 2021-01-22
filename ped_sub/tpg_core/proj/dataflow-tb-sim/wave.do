@@ -1,37 +1,83 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ap_clk
-add wave -noupdate -radix hexadecimal /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tdata
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tvalid
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tkeep0
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tready
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/treset
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ap_rst
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tlast
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tvalid_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tkeep0_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tkeep1_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tready_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/treset_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/tlast_out
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ADC
-add wave -noupdate -radix decimal -childformat {{/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(15) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(14) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(13) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(12) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(11) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(10) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(9) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(8) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(7) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(6) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(5) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(4) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(3) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(2) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(1) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(0) -radix decimal}} -subitemconfig {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(15) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(14) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(13) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(12) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(11) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(10) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(9) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(8) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(7) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(6) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(5) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(4) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(3) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(2) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(1) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i(0) {-height 17 -radix decimal}} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_i
-add wave -noupdate -radix decimal -childformat {{/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(15) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(14) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(13) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(12) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(11) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(10) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(9) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(8) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(7) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(6) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(5) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(4) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(3) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(2) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(1) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(0) -radix decimal}} -subitemconfig {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(15) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(14) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(13) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(12) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(11) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(10) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(9) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(8) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(7) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(6) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(5) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(4) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(3) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(2) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(1) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o(0) {-height 17 -radix decimal}} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_o
-add wave -noupdate -radix decimal -childformat {{/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(7) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(6) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(5) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(4) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(3) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(2) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(1) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(0) -radix decimal}} -subitemconfig {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(7) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(6) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(5) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(4) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(3) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(2) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(1) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i(0) {-height 17 -radix decimal}} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_i
-add wave -noupdate -radix decimal -childformat {{/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(7) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(6) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(5) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(4) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(3) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(2) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(1) -radix decimal} {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(0) -radix decimal}} -subitemconfig {/tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(7) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(6) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(5) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(4) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(3) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(2) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(1) {-height 17 -radix decimal} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o(0) {-height 17 -radix decimal}} /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/accum_o
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ped_val_load_3_reg_202
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/zext_ln37_reg_387
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/zext_ln37_fu_276_p1
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/trunc_fu_272_p1
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/add_ln59_fu_338_p2
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/add_ln54_fu_345_p2
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ap_const_lv16_FFFF
-add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/ped_alg/ap_const_lv16_1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_clk
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tvalid
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tdata
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ADC
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ped_val_i
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ped_val_o
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/accum_i
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/accum_o
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ped_val_load_3_reg_202
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_logic_1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_CS_fsm_state3
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_4_fu_318_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_6_fu_324_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_5_fu_337_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_7_fu_330_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv1_0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv1_1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/accum_flag_2_reg_213
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/accum_new_2_reg_227
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_phi_mux_accum_flag_2_phi_fu_217_p6
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/brmerge5_reg_375
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/accum_new_1_fu_310_p3
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_11_fu_304_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_CS_fsm
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv8_F7
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv8_9
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_rst
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tkeep0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tkeep1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tready
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/treset
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tlast
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tvalid_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tkeep0_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tkeep1_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tready_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/treset_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tlast_out
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_CS_fsm_state1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/brmerge5_fu_266_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_CS_fsm_state4
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_CS_fsm_state5
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp1_fu_242_p0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp1_fu_242_p1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp2_fu_248_p0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp2_fu_248_p1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp2_fu_248_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp1_fu_242_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/brmerge4_demorgan_fu_254_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/brmerge5_fu_266_p0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/brmerge4_fu_260_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_2_fu_284_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_3_fu_290_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_fu_272_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_1_fu_278_p2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/tmp_3_accum_load_fu_296_p3
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_NS_fsm
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_logic_0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_ST_fsm_state1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_ST_fsm_state2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_ST_fsm_state3
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_ST_fsm_state4
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_ST_fsm_state5
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv32_0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv32_2
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv8_0
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv32_3
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv32_4
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv8_1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv8_FF
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv16_FFFF
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_lv16_1
+add wave -noupdate /tb_dtpc/dut/singleChain_inst/g_pedsub/PedSub_inst/gen_pedsub/pedsub_hls_wrapper/ped_alg/ap_const_boolean_1
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {43260106 fs} 0}
+WaveRestoreCursors {{Cursor 1} {13178208833 fs} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 642
-configure wave -valuecolwidth 51
+configure wave -namecolwidth 871
+configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
 configure wave -snapdistance 10
@@ -42,6 +88,6 @@ configure wave -gridoffset 0
 configure wave -gridperiod 1
 configure wave -griddelta 40
 configure wave -timeline 0
-configure wave -timelineunits fs
+configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 fs} {33848325 ps}
+WaveRestoreZoom {0 fs} {33848325105 fs}

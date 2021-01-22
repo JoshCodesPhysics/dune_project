@@ -1,0 +1,532 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jan 20 12:44:23 2021
+# Process ID: 9310
+# Current directory: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102
+# Command line: vivado -mode tcl -log vivado_synth.log -journal vivado_synth.jou
+# Log file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado_synth.log
+# Journal file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado_synth.jou
+#-----------------------------------------------------------
+current_project -quiet
+open_project /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1513.461 ; gain = 35.641 ; free physical = 10687 ; free virtual = 93584
+dataflowZCU102
+get_runs
+synth_1 thFMch_input_fifo_synth_1 fmc0_8chan_9g6_synth_1 fmc0_8chan_9g6_vio_0_synth_1 crif_fifo_synth_1 axis_register_slice_fr_synth_1 RAM_2048x12_synth_1 distRAM_64x12_synth_1 Median_distRAM_64x12_synth_1 fir_compiler_0_synth_1 axis_data_fifo_0_synth_1 address_LUT_synth_1 gig_ethernet_pcs_pma_basex_156_25_synth_1 temac_gbe_v9_0_synth_1 impl_1 thFMch_input_fifo_impl_1 fmc0_8chan_9g6_impl_1 fmc0_8chan_9g6_vio_0_impl_1 crif_fifo_impl_1 axis_register_slice_fr_impl_1 RAM_2048x12_impl_1 distRAM_64x12_impl_1 Median_distRAM_64x12_impl_1 fir_compiler_0_impl_1 axis_data_fifo_0_impl_1 address_LUT_impl_1 gig_ethernet_pcs_pma_basex_156_25_impl_1 temac_gbe_v9_0_impl_1
+get_property STATUS [get_runs Median_distRAM_64x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs Median_distRAM_64x12_impl_1]
+0
+get_property PROGRESS [get_runs Median_distRAM_64x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs Median_distRAM_64x12_impl_1]
+00:00:00
+get_property STATUS [get_runs Median_distRAM_64x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs Median_distRAM_64x12_synth_1]
+0
+get_property PROGRESS [get_runs Median_distRAM_64x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs Median_distRAM_64x12_synth_1]
+00:03:45
+get_property STATUS [get_runs RAM_2048x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs RAM_2048x12_impl_1]
+0
+get_property PROGRESS [get_runs RAM_2048x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs RAM_2048x12_impl_1]
+00:00:00
+get_property STATUS [get_runs RAM_2048x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs RAM_2048x12_synth_1]
+0
+get_property PROGRESS [get_runs RAM_2048x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs RAM_2048x12_synth_1]
+00:05:50
+get_property STATUS [get_runs address_LUT_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs address_LUT_impl_1]
+0
+get_property PROGRESS [get_runs address_LUT_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs address_LUT_impl_1]
+00:00:00
+get_property STATUS [get_runs address_LUT_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs address_LUT_synth_1]
+0
+get_property PROGRESS [get_runs address_LUT_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs address_LUT_synth_1]
+00:05:52
+get_property STATUS [get_runs axis_data_fifo_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs axis_data_fifo_0_impl_1]
+0
+get_property PROGRESS [get_runs axis_data_fifo_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs axis_data_fifo_0_impl_1]
+00:00:00
+get_property STATUS [get_runs axis_data_fifo_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs axis_data_fifo_0_synth_1]
+0
+get_property PROGRESS [get_runs axis_data_fifo_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs axis_data_fifo_0_synth_1]
+00:03:53
+get_property STATUS [get_runs axis_register_slice_fr_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs axis_register_slice_fr_impl_1]
+0
+get_property PROGRESS [get_runs axis_register_slice_fr_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs axis_register_slice_fr_impl_1]
+00:00:00
+get_property STATUS [get_runs axis_register_slice_fr_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs axis_register_slice_fr_synth_1]
+0
+get_property PROGRESS [get_runs axis_register_slice_fr_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs axis_register_slice_fr_synth_1]
+00:03:43
+get_property STATUS [get_runs crif_fifo_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs crif_fifo_impl_1]
+0
+get_property PROGRESS [get_runs crif_fifo_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs crif_fifo_impl_1]
+00:00:00
+get_property STATUS [get_runs crif_fifo_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs crif_fifo_synth_1]
+0
+get_property PROGRESS [get_runs crif_fifo_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs crif_fifo_synth_1]
+00:06:08
+get_property STATUS [get_runs distRAM_64x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs distRAM_64x12_impl_1]
+0
+get_property PROGRESS [get_runs distRAM_64x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs distRAM_64x12_impl_1]
+00:00:00
+get_property STATUS [get_runs distRAM_64x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs distRAM_64x12_synth_1]
+0
+get_property PROGRESS [get_runs distRAM_64x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs distRAM_64x12_synth_1]
+00:03:46
+get_property STATUS [get_runs fir_compiler_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fir_compiler_0_impl_1]
+0
+get_property PROGRESS [get_runs fir_compiler_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fir_compiler_0_impl_1]
+00:00:00
+get_property STATUS [get_runs fir_compiler_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fir_compiler_0_synth_1]
+0
+get_property PROGRESS [get_runs fir_compiler_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fir_compiler_0_synth_1]
+00:04:29
+get_property STATUS [get_runs fmc0_8chan_9g6_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_impl_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_impl_1]
+00:00:00
+get_property STATUS [get_runs fmc0_8chan_9g6_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_synth_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_synth_1]
+00:04:58
+get_property STATUS [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+00:00:00
+get_property STATUS [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+00:03:57
+get_property STATUS [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+0
+get_property PROGRESS [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+00:00:00
+get_property STATUS [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+0
+get_property PROGRESS [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+00:04:08
+get_property STATUS [get_runs impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs impl_1]
+0
+get_property PROGRESS [get_runs impl_1]
+0%
+get_property STATS.ELAPSED [get_runs impl_1]
+00:00:00
+get_property STATUS [get_runs synth_1]
+synth_design ERROR
+get_property NEEDS_REFRESH [get_runs synth_1]
+1
+get_property PROGRESS [get_runs synth_1]
+0%
+get_property STATS.ELAPSED [get_runs synth_1]
+00:00:39
+get_property STATUS [get_runs temac_gbe_v9_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs temac_gbe_v9_0_impl_1]
+0
+get_property PROGRESS [get_runs temac_gbe_v9_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs temac_gbe_v9_0_impl_1]
+00:00:00
+get_property STATUS [get_runs temac_gbe_v9_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs temac_gbe_v9_0_synth_1]
+0
+get_property PROGRESS [get_runs temac_gbe_v9_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs temac_gbe_v9_0_synth_1]
+00:04:11
+get_property STATUS [get_runs thFMch_input_fifo_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs thFMch_input_fifo_impl_1]
+0
+get_property PROGRESS [get_runs thFMch_input_fifo_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs thFMch_input_fifo_impl_1]
+00:00:00
+get_property STATUS [get_runs thFMch_input_fifo_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs thFMch_input_fifo_synth_1]
+0
+get_property PROGRESS [get_runs thFMch_input_fifo_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs thFMch_input_fifo_synth_1]
+00:06:21
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Wed Jan 20 12:44:58 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+get_runs
+synth_1 thFMch_input_fifo_synth_1 fmc0_8chan_9g6_synth_1 fmc0_8chan_9g6_vio_0_synth_1 crif_fifo_synth_1 axis_register_slice_fr_synth_1 RAM_2048x12_synth_1 distRAM_64x12_synth_1 Median_distRAM_64x12_synth_1 fir_compiler_0_synth_1 axis_data_fifo_0_synth_1 address_LUT_synth_1 gig_ethernet_pcs_pma_basex_156_25_synth_1 temac_gbe_v9_0_synth_1 impl_1 thFMch_input_fifo_impl_1 fmc0_8chan_9g6_impl_1 fmc0_8chan_9g6_vio_0_impl_1 crif_fifo_impl_1 axis_register_slice_fr_impl_1 RAM_2048x12_impl_1 distRAM_64x12_impl_1 Median_distRAM_64x12_impl_1 fir_compiler_0_impl_1 axis_data_fifo_0_impl_1 address_LUT_impl_1 gig_ethernet_pcs_pma_basex_156_25_impl_1 temac_gbe_v9_0_impl_1
+get_property STATUS [get_runs Median_distRAM_64x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs Median_distRAM_64x12_impl_1]
+0
+get_property PROGRESS [get_runs Median_distRAM_64x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs Median_distRAM_64x12_impl_1]
+00:00:00
+get_property STATUS [get_runs Median_distRAM_64x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs Median_distRAM_64x12_synth_1]
+0
+get_property PROGRESS [get_runs Median_distRAM_64x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs Median_distRAM_64x12_synth_1]
+00:03:45
+get_property STATUS [get_runs RAM_2048x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs RAM_2048x12_impl_1]
+0
+get_property PROGRESS [get_runs RAM_2048x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs RAM_2048x12_impl_1]
+00:00:00
+get_property STATUS [get_runs RAM_2048x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs RAM_2048x12_synth_1]
+0
+get_property PROGRESS [get_runs RAM_2048x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs RAM_2048x12_synth_1]
+00:05:50
+get_property STATUS [get_runs address_LUT_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs address_LUT_impl_1]
+0
+get_property PROGRESS [get_runs address_LUT_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs address_LUT_impl_1]
+00:00:00
+get_property STATUS [get_runs address_LUT_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs address_LUT_synth_1]
+0
+get_property PROGRESS [get_runs address_LUT_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs address_LUT_synth_1]
+00:05:52
+get_property STATUS [get_runs axis_data_fifo_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs axis_data_fifo_0_impl_1]
+0
+get_property PROGRESS [get_runs axis_data_fifo_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs axis_data_fifo_0_impl_1]
+00:00:00
+get_property STATUS [get_runs axis_data_fifo_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs axis_data_fifo_0_synth_1]
+0
+get_property PROGRESS [get_runs axis_data_fifo_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs axis_data_fifo_0_synth_1]
+00:03:53
+get_property STATUS [get_runs axis_register_slice_fr_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs axis_register_slice_fr_impl_1]
+0
+get_property PROGRESS [get_runs axis_register_slice_fr_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs axis_register_slice_fr_impl_1]
+00:00:00
+get_property STATUS [get_runs axis_register_slice_fr_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs axis_register_slice_fr_synth_1]
+0
+get_property PROGRESS [get_runs axis_register_slice_fr_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs axis_register_slice_fr_synth_1]
+00:03:43
+get_property STATUS [get_runs crif_fifo_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs crif_fifo_impl_1]
+0
+get_property PROGRESS [get_runs crif_fifo_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs crif_fifo_impl_1]
+00:00:00
+get_property STATUS [get_runs crif_fifo_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs crif_fifo_synth_1]
+0
+get_property PROGRESS [get_runs crif_fifo_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs crif_fifo_synth_1]
+00:06:08
+get_property STATUS [get_runs distRAM_64x12_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs distRAM_64x12_impl_1]
+0
+get_property PROGRESS [get_runs distRAM_64x12_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs distRAM_64x12_impl_1]
+00:00:00
+get_property STATUS [get_runs distRAM_64x12_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs distRAM_64x12_synth_1]
+0
+get_property PROGRESS [get_runs distRAM_64x12_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs distRAM_64x12_synth_1]
+00:03:46
+get_property STATUS [get_runs fir_compiler_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fir_compiler_0_impl_1]
+0
+get_property PROGRESS [get_runs fir_compiler_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fir_compiler_0_impl_1]
+00:00:00
+get_property STATUS [get_runs fir_compiler_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fir_compiler_0_synth_1]
+0
+get_property PROGRESS [get_runs fir_compiler_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fir_compiler_0_synth_1]
+00:04:29
+get_property STATUS [get_runs fmc0_8chan_9g6_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_impl_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_impl_1]
+00:00:00
+get_property STATUS [get_runs fmc0_8chan_9g6_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_synth_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_synth_1]
+00:04:58
+get_property STATUS [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_vio_0_impl_1]
+00:00:00
+get_property STATUS [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+0
+get_property PROGRESS [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs fmc0_8chan_9g6_vio_0_synth_1]
+00:03:57
+get_property STATUS [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+0
+get_property PROGRESS [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs gig_ethernet_pcs_pma_basex_156_25_impl_1]
+00:00:00
+get_property STATUS [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+0
+get_property PROGRESS [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs gig_ethernet_pcs_pma_basex_156_25_synth_1]
+00:04:08
+get_property STATUS [get_runs impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs impl_1]
+0
+get_property PROGRESS [get_runs impl_1]
+0%
+get_property STATS.ELAPSED [get_runs impl_1]
+00:00:00
+get_property STATUS [get_runs synth_1]
+Queued...
+get_property NEEDS_REFRESH [get_runs synth_1]
+0
+get_property PROGRESS [get_runs synth_1]
+0%
+get_property STATS.ELAPSED [get_runs synth_1]
+00:00:00
+get_property STATUS [get_runs temac_gbe_v9_0_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs temac_gbe_v9_0_impl_1]
+0
+get_property PROGRESS [get_runs temac_gbe_v9_0_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs temac_gbe_v9_0_impl_1]
+00:00:00
+get_property STATUS [get_runs temac_gbe_v9_0_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs temac_gbe_v9_0_synth_1]
+0
+get_property PROGRESS [get_runs temac_gbe_v9_0_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs temac_gbe_v9_0_synth_1]
+00:04:11
+get_property STATUS [get_runs thFMch_input_fifo_impl_1]
+Not started
+get_property NEEDS_REFRESH [get_runs thFMch_input_fifo_impl_1]
+0
+get_property PROGRESS [get_runs thFMch_input_fifo_impl_1]
+0%
+get_property STATS.ELAPSED [get_runs thFMch_input_fifo_impl_1]
+00:00:00
+get_property STATUS [get_runs thFMch_input_fifo_synth_1]
+synth_design Complete!
+get_property NEEDS_REFRESH [get_runs thFMch_input_fifo_synth_1]
+0
+get_property PROGRESS [get_runs thFMch_input_fifo_synth_1]
+100%
+get_property STATS.ELAPSED [get_runs thFMch_input_fifo_synth_1]
+00:06:21
+wait_on_run synth_1 -timeout 1
+[Wed Jan 20 12:44:59 2021] Waiting for synth_1 to finish (timeout in 1 minute)...
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xczu9eg-ffvb1156-2-e -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9573 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1590.973 ; gain = 90.969 ; free physical = 10262 ; free virtual = 93160
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_data_w ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:106]
+WARNING: [Synth 8-2040] formal port tvalid_o of mode in cannot be associated with actual port m_axis_data_w of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:106]
+ERROR: [Synth 8-1085] m_axis_data_w with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:106]
+ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_data_w ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:107]
+WARNING: [Synth 8-2040] formal port tkeep0_o of mode in cannot be associated with actual port m_axis_data_w of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:107]
+ERROR: [Synth 8-1085] m_axis_data_w with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:107]
+ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_data_w ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:108]
+WARNING: [Synth 8-2040] formal port tkeep1_o of mode in cannot be associated with actual port m_axis_data_w of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:108]
+ERROR: [Synth 8-1085] m_axis_data_w with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:108]
+ERROR: [Synth 8-1779] cannot read from 'out' object s_axis_data_r ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:109]
+WARNING: [Synth 8-2040] formal port tready_o of mode in cannot be associated with actual port s_axis_data_r of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:109]
+ERROR: [Synth 8-1085] s_axis_data_r with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:109]
+ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_data_w ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:111]
+WARNING: [Synth 8-2040] formal port tlast_o of mode in cannot be associated with actual port m_axis_data_w of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:111]
+ERROR: [Synth 8-1085] m_axis_data_w with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:111]
+ERROR: [Synth 8-2029] formal treset_o has no actual or default value [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:76]
+INFO: [Synth 8-994] treset_o is declared here [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd:48]
+ERROR: [Synth 8-1779] cannot read from 'out' object m_axis_data_w ; use 'buffer' or 'inout' [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:127]
+WARNING: [Synth 8-2040] formal port tlast of mode in cannot be associated with actual port m_axis_data_w of mode out [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:127]
+ERROR: [Synth 8-1085] m_axis_data_w with mode 'out' cannot be read [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:127]
+INFO: [Synth 8-2810] unit behavioral ignored due to previous errors [/data2/hmo31799/dune_project/ped_sub/tpg_core/src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd:45]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1638.723 ; gain = 138.719 ; free physical = 10275 ; free virtual = 93173
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+4 Infos, 6 Warnings, 0 Critical Warnings and 14 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 20 12:45:35 2021...
+[Wed Jan 20 12:45:35 2021] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1625.484 ; gain = 0.000 ; free physical = 10662 ; free virtual = 93560
+quit
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 20 12:45:35 2021...

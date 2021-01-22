@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jan 12 13:56:06 2021
+# Process ID: 12989
+# Current directory: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102
+# Command line: vivado dataflowZCU102.xpr
+# Log file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.log
+# Journal file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dataflowZCU102.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/ppd/tools/xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:37 ; elapsed = 00:00:28 . Memory (MB): peak = 6728.285 ; gain = 216.754 ; free physical = 409 ; free virtual = 93904
+reset_run synth_1
+launch_runs synth_1
+[Tue Jan 12 14:49:34 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Tue Jan 12 14:54:05 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Tue Jan 12 15:08:58 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Tue Jan 12 15:11:41 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Tue Jan 12 15:15:03 2021] Launched synth_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/synth_1/runme.log
+launch_runs impl_1
+[Tue Jan 12 15:29:31 2021] Launched impl_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 368 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 8192.379 ; gain = 39.273 ; free physical = 15008 ; free virtual = 92930
+Restored from archive | CPU: 3.070000 secs | Memory: 33.414795 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 8192.379 ; gain = 39.273 ; free physical = 15008 ; free virtual = 92930
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 8192.379 ; gain = 0.000 ; free physical = 15011 ; free virtual = 92933
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 108 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 72 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+  RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 16 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+  SRLC32E => SRL16E: 1 instances
+
+open_run: Time (s): cpu = 00:01:07 ; elapsed = 00:01:39 . Memory (MB): peak = 8596.691 ; gain = 1477.441 ; free physical = 14661 ; free virtual = 92607
+open_report: Time (s): cpu = 00:00:28 ; elapsed = 00:00:07 . Memory (MB): peak = 8922.312 ; gain = 0.000 ; free physical = 14414 ; free virtual = 92361
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+launch_runs impl_1 -to_step write_bitstream
+[Tue Jan 12 16:57:07 2021] Launched impl_1...
+Run output will be captured here: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 12 17:00:23 2021...

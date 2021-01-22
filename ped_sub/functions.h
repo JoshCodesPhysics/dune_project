@@ -17,14 +17,17 @@ struct ADC_t
 };
 
 // Declaring functions.
-void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
-	     word_t* tdata, bool* tvalid, bool* tkeep0,
-	     bool* tkeep1, bool* tready, bool* treset,
-	     bool* tlast);
 
-void ped_sub(word_t& ped_val, int& packet_size, word_t* packet,
-             bool& tvalid, bool& tkeep0, bool& tkeep1,
-	     bool& tready, bool& tlast, bool& tuser);
+void ped_simplified(word_t* tdata, word_t* ADC, word_t* accum,
+		            bool* tvalid_i, bool* tvalid_o);
+
+void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
+	     word_t* tdata, int* gen_count,
+		 int* accum_count, int* ped_count, bool* tvalid_i, bool* tkeep0_i,
+	     bool* tkeep1_i, bool* tready_i, bool* treset_i,
+	     bool* tlast_i, bool* tvalid_o, bool* tkeep0_o,
+		 bool* tkeep1_o, bool* tready_o, bool* treset_o,
+		 bool* tlast_o);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 
@@ -40,12 +43,17 @@ void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
                 word_t ped_val, int packet_size, int total_samples,
                 word_t& channel);
 
-void ped_top(word_t* channel, word_t* tdata, bool* first_sample,
+void ped_top(word_t* channel, word_t* tdata, word_t def_ped,
+		     int* gen_count, int* accum_count, int* ped_count,
              bool* tvalid, bool* tlast_user, bool* tkeep,
              word_t ped_array[N_CH], word_t* ADC_adjusted,
              char accum_array[N_CH], bool* treset, bool* tready,
 			 bool* tvalid_out, bool* tkeep_out, bool* tlast_user_out,
 			 bool* tready_out, bool* treset_out);
+
+void ped_simplified_tb(const std::string& input_file, word_t ADC_stored[N_SA],
+		       bool tvalid_stored[N_SA],
+		       bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA]);
 
 void array_scan(int array_size, word_t ped_val,
                 word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],

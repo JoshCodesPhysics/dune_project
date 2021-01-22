@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Dec 15 11:07:25 2020
-# Process ID: 35116
-# Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1
+# Start of session at: Thu Jan 21 16:39:13 2021
+# Process ID: 10383
+# Current directory: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1
 # Command line: vivado -log Median_distRAM_64x12.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Median_distRAM_64x12.tcl
-# Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.vds
-# Journal file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/vivado.jou
+# Log file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.vds
+# Journal file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/vivado.jou
 #-----------------------------------------------------------
 source Median_distRAM_64x12.tcl -notrace
 Command: synth_design -top Median_distRAM_64x12 -part xczu9eg-ffvb1156-2-e -mode out_of_context
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 35480 
+INFO: Helper process launched with PID 10453 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1561.730 ; gain = 76.996 ; free physical = 2963 ; free virtual = 80989
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1561.977 ; gain = 69.996 ; free physical = 3228 ; free virtual = 91277
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Median_distRAM_64x12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'Median_distRAM_64x12' [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:71]
 	Parameter C_FAMILY bound to: zynquplus - type: string 
 	Parameter C_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_DEFAULT_DATA bound to: 000111110100 - type: string 
@@ -52,8 +52,8 @@ INFO: [Synth 8-638] synthesizing module 'Median_distRAM_64x12' [/net/home/ppd/hm
 	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
 	Parameter C_WIDTH bound to: 12 - type: integer 
 	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_12' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_12' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:137]
-INFO: [Synth 8-256] done synthesizing module 'Median_distRAM_64x12' (4#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:71]
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_12' declared at '/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_12' [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:137]
+INFO: [Synth 8-256] done synthesizing module 'Median_distRAM_64x12' (4#1) [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/synth/Median_distRAM_64x12.vhd:71]
 WARNING: [Synth 8-3331] design sdpram has unconnected port sdpo[11]
 WARNING: [Synth 8-3331] design sdpram has unconnected port sdpo[10]
 WARNING: [Synth 8-3331] design sdpram has unconnected port sdpo[9]
@@ -105,7 +105,7 @@ WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qspo_rs
 WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qdpo_rst
 WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qspo_srst
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1608.492 ; gain = 123.758 ; free physical = 2999 ; free virtual = 81025
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1607.730 ; gain = 115.750 ; free physical = 3241 ; free virtual = 91291
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -118,30 +118,30 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1608.492 ; gain = 123.758 ; free physical = 2975 ; free virtual = 81002
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1607.730 ; gain = 115.750 ; free physical = 3241 ; free virtual = 91290
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1608.492 ; gain = 123.758 ; free physical = 2975 ; free virtual = 81002
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1607.730 ; gain = 115.750 ; free physical = 3241 ; free virtual = 91290
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12_ooc.xdc] for cell 'U0'
-Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc]
+Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12_ooc.xdc] for cell 'U0'
+Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2584.559 ; gain = 0.000 ; free physical = 2932 ; free virtual = 80957
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2583.812 ; gain = 0.000 ; free physical = 2522 ; free virtual = 90571
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2584.562 ; gain = 0.000 ; free physical = 2932 ; free virtual = 80957
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2584.562 ; gain = 0.004 ; free physical = 2931 ; free virtual = 80956
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2583.816 ; gain = 0.000 ; free physical = 2522 ; free virtual = 90571
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2583.816 ; gain = 0.004 ; free physical = 2521 ; free virtual = 90570
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:01:16 . Memory (MB): peak = 2584.562 ; gain = 1099.828 ; free physical = 2909 ; free virtual = 80934
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2583.816 ; gain = 1091.836 ; free physical = 2583 ; free virtual = 90633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -149,17 +149,17 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:01:16 . Memory (MB): peak = 2584.562 ; gain = 1099.828 ; free physical = 2909 ; free virtual = 80934
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2583.816 ; gain = 1091.836 ; free physical = 2583 ; free virtual = 90633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:01:16 . Memory (MB): peak = 2584.562 ; gain = 1099.828 ; free physical = 2908 ; free virtual = 80933
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2583.816 ; gain = 1091.836 ; free physical = 2583 ; free virtual = 90633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:01:17 . Memory (MB): peak = 2584.562 ; gain = 1099.828 ; free physical = 2900 ; free virtual = 80925
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2583.816 ; gain = 1091.836 ; free physical = 2585 ; free virtual = 90635
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -244,7 +244,7 @@ WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qspo_rs
 WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qdpo_rst
 WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12 has unconnected port qspo_srst
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:01:18 . Memory (MB): peak = 2584.562 ; gain = 1099.828 ; free physical = 2875 ; free virtual = 80903
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2583.816 ; gain = 1091.836 ; free physical = 2574 ; free virtual = 90625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -271,13 +271,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:03:19 . Memory (MB): peak = 2811.227 ; gain = 1326.492 ; free physical = 229 ; free virtual = 78058
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:03:09 . Memory (MB): peak = 2810.480 ; gain = 1318.500 ; free physical = 2034 ; free virtual = 90081
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:03:19 . Memory (MB): peak = 2811.227 ; gain = 1326.492 ; free physical = 228 ; free virtual = 78058
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:03:09 . Memory (MB): peak = 2810.480 ; gain = 1318.500 ; free physical = 2033 ; free virtual = 90081
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -303,7 +303,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.234 ; gain = 1336.500 ; free physical = 226 ; free virtual = 78052
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:03:09 . Memory (MB): peak = 2820.488 ; gain = 1328.508 ; free physical = 2032 ; free virtual = 90080
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -327,7 +327,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 237 ; free virtual = 78058
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -340,7 +340,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 242 ; free virtual = 78063
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -352,25 +352,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 243 ; free virtual = 78064
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 244 ; free virtual = 78065
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 249 ; free virtual = 78069
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 251 ; free virtual = 78072
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -400,17 +400,17 @@ Report Instance Areas:
 |4     |      \gen_sdp_ram.sdpram_inst    |sdpram                     |    14|
 +------+----------------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:03:19 . Memory (MB): peak = 2821.238 ; gain = 1336.504 ; free physical = 253 ; free virtual = 78074
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.492 ; gain = 1328.512 ; free physical = 2031 ; free virtual = 90079
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:02:15 . Memory (MB): peak = 2821.238 ; gain = 360.434 ; free physical = 297 ; free virtual = 78118
-Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:03:20 . Memory (MB): peak = 2821.242 ; gain = 1336.504 ; free physical = 307 ; free virtual = 78128
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:02:13 . Memory (MB): peak = 2820.492 ; gain = 352.426 ; free physical = 2069 ; free virtual = 90116
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:03:10 . Memory (MB): peak = 2820.496 ; gain = 1328.512 ; free physical = 2069 ; free virtual = 90117
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2859.234 ; gain = 0.000 ; free physical = 284 ; free virtual = 78104
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2858.492 ; gain = 0.000 ; free physical = 2003 ; free virtual = 90051
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 2 instances
@@ -418,16 +418,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 15 Infos, 93 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:03:22 . Memory (MB): peak = 2859.234 ; gain = 1398.094 ; free physical = 331 ; free virtual = 78152
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2859.234 ; gain = 0.000 ; free physical = 332 ; free virtual = 78152
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:03:13 . Memory (MB): peak = 2858.492 ; gain = 1378.645 ; free physical = 2051 ; free virtual = 90099
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2858.492 ; gain = 0.000 ; free physical = 2051 ; free virtual = 90099
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.dcp' has been generated.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Median_distRAM_64x12, cache-ID = 1e151345f75ed72c
 INFO: [Coretcl 2-1174] Renamed 3 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2863.242 ; gain = 0.000 ; free physical = 344 ; free virtual = 78165
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2862.492 ; gain = 0.000 ; free physical = 2050 ; free virtual = 90098
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/Median_distRAM_64x12_synth_1/Median_distRAM_64x12.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Median_distRAM_64x12_utilization_synth.rpt -pb Median_distRAM_64x12_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 15 11:11:15 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 21 16:42:54 2021...

@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.xpr">
+<Project Version="7" Minor="39" Path="/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a1fe496b9770455c8cc220ec46de47e8"/>
+    <Option Name="Id" Val="a6566a3bded140feb90511276c299485"/>
     <Option Name="Part" Val="xczu9eg-ffvb1156-2-e"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -371,6 +371,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/ped_simplified.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/ped_alg.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -378,6 +384,18 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/PedValues_tx.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/ssr_ped.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/hdl/PedSub_HLS_wrapper.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -788,7 +806,7 @@
       <File Path="$PSRCDIR/sources_1/ip/address_LUT/addressTable.coe">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/data_reception/firmware/cgn/addressTable.coe"/>
-          <Attr Name="ImportTime" Val="1606820245"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -839,7 +857,7 @@
       <File Path="$PSRCDIR/sources_1/ip/thFMch_input_fifo/thFMch_input_fifo.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/mgt/firmware/ip/thFMch_input_fifo.xci"/>
-          <Attr Name="ImportTime" Val="1606820243"/>
+          <Attr Name="ImportTime" Val="1610450065"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -854,7 +872,7 @@
       <File Path="$PSRCDIR/sources_1/ip/fmc0_8chan_9g6/fmc0_8chan_9g6.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/mgt/firmware/ip/fmc0_8chan_9g6.xci"/>
-          <Attr Name="ImportTime" Val="1606820243"/>
+          <Attr Name="ImportTime" Val="1610450065"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -869,7 +887,7 @@
       <File Path="$PSRCDIR/sources_1/ip/fmc0_8chan_9g6_vio_0/fmc0_8chan_9g6_vio_0.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/mgt/firmware/ip/fmc0_8chan_9g6_vio_0.xci"/>
-          <Attr Name="ImportTime" Val="1606820243"/>
+          <Attr Name="ImportTime" Val="1610450065"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -884,7 +902,7 @@
       <File Path="$PSRCDIR/sources_1/ip/crif_fifo/crif_fifo.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/cr_interface/firmware/cgn/crif_fifo.xci"/>
-          <Attr Name="ImportTime" Val="1606820244"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -899,7 +917,7 @@
       <File Path="$PSRCDIR/sources_1/ip/axis_register_slice_fr/axis_register_slice_fr.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/stream_blocks/firmware/cgn/axis_register_slice_fr.xci"/>
-          <Attr Name="ImportTime" Val="1606820243"/>
+          <Attr Name="ImportTime" Val="1610450065"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -914,7 +932,7 @@
       <File Path="$PSRCDIR/sources_1/ip/RAM_2048x12/RAM_2048x12.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/cgn/RAM_2048x12.xci"/>
-          <Attr Name="ImportTime" Val="1606820244"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -929,7 +947,7 @@
       <File Path="$PSRCDIR/sources_1/ip/distRAM_64x12/distRAM_64x12.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/cgn/distRAM_64x12.xci"/>
-          <Attr Name="ImportTime" Val="1606820244"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -944,7 +962,7 @@
       <File Path="$PSRCDIR/sources_1/ip/Median_distRAM_64x12/Median_distRAM_64x12.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/cgn/Median_distRAM_64x12.xci"/>
-          <Attr Name="ImportTime" Val="1606820244"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -959,7 +977,7 @@
       <File Path="$PSRCDIR/sources_1/ip/fir_compiler_0/fir_compiler_0.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/processing/firmware/cgn/fir_compiler_0.xci"/>
-          <Attr Name="ImportTime" Val="1606820244"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -974,7 +992,7 @@
       <File Path="$PSRCDIR/sources_1/ip/axis_data_fifo_0/axis_data_fifo_0.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/stream_blocks/firmware/cgn/axis_data_fifo_0.xci"/>
-          <Attr Name="ImportTime" Val="1606820243"/>
+          <Attr Name="ImportTime" Val="1610450065"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -989,7 +1007,7 @@
       <File Path="$PSRCDIR/sources_1/ip/address_LUT/address_LUT.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/dataflow-firmware/components/data_reception/firmware/cgn/address_LUT.xci"/>
-          <Attr Name="ImportTime" Val="1606820245"/>
+          <Attr Name="ImportTime" Val="1610450066"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -1004,7 +1022,7 @@
       <File Path="$PSRCDIR/sources_1/ip/gig_ethernet_pcs_pma_basex_156_25/gig_ethernet_pcs_pma_basex_156_25.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/ipbus-firmware/components/ipbus_eth/firmware/cgn/gig_ethernet_pcs_pma_basex_156_25.xci"/>
-          <Attr Name="ImportTime" Val="1606820233"/>
+          <Attr Name="ImportTime" Val="1610450064"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -1019,7 +1037,7 @@
       <File Path="$PSRCDIR/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../src/ipbus-firmware/components/ipbus_eth/firmware/cgn/temac_gbe_v9_0.xci"/>
-          <Attr Name="ImportTime" Val="1606820233"/>
+          <Attr Name="ImportTime" Val="1610450064"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -1056,14 +1074,15 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design">
           <Option Id="FlattenHierarchy">1</Option>
         </Step>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
@@ -1139,54 +1158,51 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fir_compiler_0_synth_1" Type="Ft3:Synth" SrcSet="fir_compiler_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="fir_compiler_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fir_compiler_0_synth_1" IncludeInArchive="true">
+    <Run Id="fir_compiler_0_synth_1" Type="Ft3:Synth" SrcSet="fir_compiler_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="fir_compiler_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="axis_data_fifo_0_synth_1" Type="Ft3:Synth" SrcSet="axis_data_fifo_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="axis_data_fifo_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/axis_data_fifo_0_synth_1" IncludeInArchive="true">
+    <Run Id="axis_data_fifo_0_synth_1" Type="Ft3:Synth" SrcSet="axis_data_fifo_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="axis_data_fifo_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="address_LUT_synth_1" Type="Ft3:Synth" SrcSet="address_LUT" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="address_LUT" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/address_LUT_synth_1" IncludeInArchive="true">
+    <Run Id="address_LUT_synth_1" Type="Ft3:Synth" SrcSet="address_LUT" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="address_LUT" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="gig_ethernet_pcs_pma_basex_156_25_synth_1" Type="Ft3:Synth" SrcSet="gig_ethernet_pcs_pma_basex_156_25" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="gig_ethernet_pcs_pma_basex_156_25" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/gig_ethernet_pcs_pma_basex_156_25_synth_1" IncludeInArchive="true">
+    <Run Id="gig_ethernet_pcs_pma_basex_156_25_synth_1" Type="Ft3:Synth" SrcSet="gig_ethernet_pcs_pma_basex_156_25" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="gig_ethernet_pcs_pma_basex_156_25" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="temac_gbe_v9_0_synth_1" Type="Ft3:Synth" SrcSet="temac_gbe_v9_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="temac_gbe_v9_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/temac_gbe_v9_0_synth_1" IncludeInArchive="true">
+    <Run Id="temac_gbe_v9_0_synth_1" Type="Ft3:Synth" SrcSet="temac_gbe_v9_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="temac_gbe_v9_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1197,7 +1213,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>

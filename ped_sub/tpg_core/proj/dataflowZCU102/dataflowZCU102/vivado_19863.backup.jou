@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jan 12 11:40:54 2021
+# Process ID: 19863
+# Current directory: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102
+# Command line: vivado dataflowZCU102.xpr
+# Log file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.log
+# Journal file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dataflowZCU102.xpr
+launch_runs synth_1
+wait_on_run synth_1

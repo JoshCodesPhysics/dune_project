@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Dec 15 11:08:57 2020
-# Process ID: 36080
-# Current directory: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1
+# Start of session at: Thu Jan 21 16:42:56 2021
+# Process ID: 11350
+# Current directory: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1
 # Command line: vivado -log fir_compiler_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fir_compiler_0.tcl
-# Log file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/fir_compiler_0.vds
-# Journal file: /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/vivado.jou
+# Log file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/fir_compiler_0.vds
+# Journal file: /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source fir_compiler_0.tcl -notrace
 Command: synth_design -top fir_compiler_0 -part xczu9eg-ffvb1156-2-e -mode out_of_context
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 36217 
+INFO: Helper process launched with PID 11542 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 1561.734 ; gain = 76.996 ; free physical = 1961 ; free virtual = 80003
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1561.727 ; gain = 75.996 ; free physical = 3233 ; free virtual = 91279
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:85]
 	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
 	Parameter C_COMPONENT_NAME bound to: fir_compiler_0 - type: string 
@@ -90,10 +90,10 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [/net/home/ppd/hmo31799
 	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
 	Parameter C_CONFIG_TDATA_WIDTH bound to: 8 - type: integer 
 	Parameter C_RELOAD_TDATA_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'fir_compiler_v7_2_11' declared at '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:61157' bound to instance 'U0' of component 'fir_compiler_v7_2_11' [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:233]
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_11' declared at '/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:61157' bound to instance 'U0' of component 'fir_compiler_v7_2_11' [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:233]
 WARNING: [Synth 8-5858] RAM p_casc_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
 WARNING: [Synth 8-5858] RAM p_path_out_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
-INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (15#1) [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (15#1) [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:85]
 WARNING: [Synth 8-3331] design delay__parameterized28 has unconnected port SCLR_ALT
 WARNING: [Synth 8-3331] design buff__parameterized0 has unconnected port RE
 WARNING: [Synth 8-3331] design delay__parameterized12 has unconnected port SCLR_ALT
@@ -196,7 +196,7 @@ WARNING: [Synth 8-3331] design addsub_mult_add__parameterized0 has unconnected p
 WARNING: [Synth 8-3331] design addsub_mult_add__parameterized0 has unconnected port PIN[casc][21]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:36 . Memory (MB): peak = 1691.496 ; gain = 206.758 ; free physical = 1608 ; free virtual = 79640
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:34 . Memory (MB): peak = 1691.480 ; gain = 205.750 ; free physical = 3220 ; free virtual = 91267
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -209,10 +209,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:39 . Memory (MB): peak = 1691.496 ; gain = 206.758 ; free physical = 1575 ; free virtual = 79605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak = 1691.480 ; gain = 205.750 ; free physical = 3223 ; free virtual = 91270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:39 . Memory (MB): peak = 1691.496 ; gain = 206.758 ; free physical = 1575 ; free virtual = 79605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak = 1691.480 ; gain = 205.750 ; free physical = 3223 ; free virtual = 91270
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -221,23 +221,23 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
-Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
-Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
+Finished Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.srcs/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
+Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2606.609 ; gain = 0.000 ; free physical = 281 ; free virtual = 78102
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2605.602 ; gain = 0.000 ; free physical = 2482 ; free virtual = 90529
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 16 instances were transformed.
   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 16 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2606.613 ; gain = 0.000 ; free physical = 284 ; free virtual = 78105
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2606.613 ; gain = 0.004 ; free physical = 287 ; free virtual = 78108
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2605.605 ; gain = 0.000 ; free physical = 2480 ; free virtual = 90527
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2605.605 ; gain = 0.004 ; free physical = 2480 ; free virtual = 90527
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:01:50 . Memory (MB): peak = 2606.613 ; gain = 1121.875 ; free physical = 3452 ; free virtual = 81269
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:01:40 . Memory (MB): peak = 2605.605 ; gain = 1119.875 ; free physical = 2573 ; free virtual = 90620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -245,18 +245,18 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:01:50 . Memory (MB): peak = 2606.613 ; gain = 1121.875 ; free physical = 3452 ; free virtual = 81269
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:01:40 . Memory (MB): peak = 2605.605 ; gain = 1119.875 ; free physical = 2573 ; free virtual = 90620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /data2/hmo31799/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:50 . Memory (MB): peak = 2606.613 ; gain = 1121.875 ; free physical = 3454 ; free virtual = 81272
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:40 . Memory (MB): peak = 2605.605 ; gain = 1119.875 ; free physical = 2576 ; free virtual = 90623
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "add" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:01:53 . Memory (MB): peak = 2606.613 ; gain = 1121.875 ; free physical = 3415 ; free virtual = 81233
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:01:42 . Memory (MB): peak = 2605.605 ; gain = 1119.875 ; free physical = 2568 ; free virtual = 90616
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -296,7 +296,7 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/i_synt
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/i_synth/\g_single_rate.i_single_rate/g_parallel.g_cnfg_and_reload.i_cnfg_and_reload/g_reload.reload_fsel_invalid_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/i_synth/\g_single_rate.i_single_rate/g_parallel.g_cnfg_and_reload.i_cnfg_and_reload/CONFIG_TLAST_MISSING_reg )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:56 . Memory (MB): peak = 2606.613 ; gain = 1121.875 ; free physical = 3380 ; free virtual = 81201
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:01:44 . Memory (MB): peak = 2605.605 ; gain = 1119.875 ; free physical = 2552 ; free virtual = 90603
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -308,13 +308,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:03:58 . Memory (MB): peak = 2848.270 ; gain = 1363.531 ; free physical = 2024 ; free virtual = 79844
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:03:45 . Memory (MB): peak = 2848.262 ; gain = 1362.531 ; free physical = 2052 ; free virtual = 90103
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:04:00 . Memory (MB): peak = 2872.285 ; gain = 1387.547 ; free physical = 1983 ; free virtual = 79803
+Finished Timing Optimization : Time (s): cpu = 00:01:19 ; elapsed = 00:03:47 . Memory (MB): peak = 2872.277 ; gain = 1386.547 ; free physical = 2055 ; free virtual = 90103
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -427,7 +427,7 @@ WARNING: [Synth 8-5591] srl_style attribute value srl_reg on U0/i_synth/g_single
 WARNING: [Synth 8-5591] srl_style attribute value srl_reg on U0/i_synth/g_single_rate.i_single_rate/g_parallel.g_paths[0].g_symmetric.g_data_sym_array.g_data_sym[6].g_data_sym_casc_buff.i_data_sym_casc_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
 INFO: [Common 17-14] Message 'Synth 8-5591' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:22 ; elapsed = 00:04:02 . Memory (MB): peak = 2888.301 ; gain = 1403.562 ; free physical = 1959 ; free virtual = 79779
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:03:49 . Memory (MB): peak = 2888.293 ; gain = 1402.562 ; free physical = 2090 ; free virtual = 90138
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -450,116 +450,10 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:04:03 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1943 ; free virtual = 79763
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:04:03 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1943 ; free virtual = 79763
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1933 ; free virtual = 79753
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1933 ; free virtual = 79753
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1932 ; free virtual = 79752
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1931 ; free virtual = 79752
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+----------------+------+
-|      |Cell            |Count |
-+------+----------------+------+
-|1     |DSP_ALU         |    16|
-|2     |DSP_A_B_DATA    |    16|
-|3     |DSP_C_DATA      |    16|
-|4     |DSP_MULTIPLIER  |    16|
-|5     |DSP_M_DATA      |    16|
-|6     |DSP_OUTPUT      |    16|
-|7     |DSP_PREADD      |    16|
-|8     |DSP_PREADD_DATA |    16|
-|9     |LUT1            |     4|
-|10    |LUT2            |    49|
-|11    |LUT3            |    13|
-|12    |LUT4            |    15|
-|13    |LUT5            |     9|
-|14    |LUT6            |    18|
-|15    |RAM16X1D        |   193|
-|16    |SRL16E          |   243|
-|17    |SRLC32E         |     3|
-|18    |FDRE            |  1317|
-|19    |FDSE            |    25|
-+------+----------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.305 ; gain = 1403.566 ; free physical = 1931 ; free virtual = 79752
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 407 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:03 ; elapsed = 00:02:58 . Memory (MB): peak = 2888.305 ; gain = 488.449 ; free physical = 1969 ; free virtual = 79789
-Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:04:04 . Memory (MB): peak = 2888.309 ; gain = 1403.566 ; free physical = 1979 ; free virtual = 79800
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 209 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2938.320 ; gain = 0.000 ; free physical = 1866 ; free virtual = 79686
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 209 instances were transformed.
-  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 16 instances
-  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 193 instances
-
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+1
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:27 ; elapsed = 00:04:08 . Memory (MB): peak = 2938.320 ; gain = 1477.176 ; free physical = 1929 ; free virtual = 79749
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2938.320 ; gain = 0.000 ; free physical = 1925 ; free virtual = 79745
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fir_compiler_0, cache-ID = c597d038b7564b88
-INFO: [Coretcl 2-1174] Renamed 181 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.340 ; gain = 0.000 ; free physical = 1811 ; free virtual = 79636
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/net/home/ppd/hmo31799/Documents/dune_project/ped_sub/tpg_core/proj/dataflowZCU102/dataflowZCU102/dataflowZCU102.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file fir_compiler_0_utilization_synth.rpt -pb fir_compiler_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 15 11:13:46 2020...
+21 Infos, 202 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-344] 'source' was cancelled
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 21 16:47:13 2021...
