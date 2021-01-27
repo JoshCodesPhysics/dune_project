@@ -5,21 +5,59 @@
 #include <sstream>
 #include <vector>
 
-void ped_simplified(word_t* tdata, word_t* ADC, word_t* accum,
-		            bool* tvalid_i, bool* tvalid_o) {
+void pedsub_HLS(word_t* tdata, word_t* ADC, word_t* accum_o,
+		    word_t* ped_o, bool* tvalid_i, bool* tvalid_o,
+			bool* tkeep0_i, bool* tkeep0_o, bool* tkeep1_i,
+			bool* tkeep1_o, bool* tready_i,
+			bool* tready_o, bool* treset_i,
+		    bool* treset_o, bool* tlast_i, bool* tlast_o) {
 	// A very simplified ped_alg to see if it simulates properly
+	static word_t accum_stored, ped_stored;
 	
-	if (*tvalid_i) {
-		if (*tdata > 500) {
-			(*accum)++;
-		}
+	if (*treset_i) {
+		accum_stored = 0;
+		ped_stored = PED_INIT;
+	}
 
-		else if (*tdata < 500) {
-			(*accum)--;
-		}
+	else {
 
-	*ADC = *tdata;
-	*tvalid_o = *tvalid_i;
+		if (*tvalid_i && *tkeep0_i && *tkeep1_i && *tready_i) {
+
+			accum_condition: {
+				if (*tdata > ped_stored) {
+					accum_stored++;
+				}
+
+				else if (*tdata < ped_stored) {
+					accum_stored--;
+				}
+			}
+
+			pedestal_condition: {
+				if (accum_stored == 10) {
+					ped_stored++;
+					accum_stored = 0;
+				}
+
+				else if (accum_stored == -10) {
+					ped_stored--;
+					accum_stored = 0;
+				}
+			}
+		}
+	}
+
+	output_assignments: {
+		*ADC = *tdata - ped_stored;
+		*tvalid_o = *tvalid_i;
+		*tkeep0_o = *tkeep0_i;
+		*tkeep1_o = *tkeep1_i;
+		*tready_o = *tready_i;
+		*treset_o = *treset_i;
+		*tlast_o = *tlast_i;
+		*accum_o = accum_stored;
+		*ped_o = ped_stored;
+
 	}
 }
 
@@ -374,17 +412,18 @@ void ped_top(word_t* channel, word_t* tdata,
 	*treset_out = *treset_in;
 }
 
-void ped_simplified_tb(const std::string& input_file, word_t ADC_stored[N_SA],
+void pedsub_HLS_temp_tb(const std::string& input_file, word_t ADC_stored[N_SA],
 		       bool tvalid_stored[N_SA], 
 		       bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA]) {
 
 	// The testbench function for ped_simplified
 	
 	// Temporary input variables
-	word_t accum = 0;
-	int upper_limit = 32767;
+	word_t accum_o, ped_o;
 	word_t tdata, ADC;
-	bool tvalid_i, tvalid_o;
+	bool tvalid_i, tvalid_o, tkeep0_i, tkeep0_o, tkeep1_i,
+	tkeep1_o, tready_i, tready_o, treset_i, treset_o, tlast_i, tlast_o;
+	tready_i = true;
 	int count = 0;
 	int i = 0;
 
@@ -393,23 +432,32 @@ void ped_simplified_tb(const std::string& input_file, word_t ADC_stored[N_SA],
                   tlast_user_stored, tkeep_stored);
 
 	while (i < N_SA) {
+		
+		if (i == 0) {
+			treset_i = true;
+		}
 
 		tvalid_i = tvalid_stored[i];
+		tkeep0_i = tkeep1_i = tkeep_stored[i];
+		tlast_i = tlast_user_stored[i];
 		tdata = ADC_stored[i];
 
 		// std::cout << "ADC_stored[" << i << "]: "
 		// 		  << ADC_stored[i] << "\n";
 
-		ped_simplified(&tdata, &ADC, &accum, &tvalid_i,
-				       &tvalid_o);
+		pedsub_HLS(&tdata, &ADC, &accum_o, &ped_o, &tvalid_i,
+			       &tvalid_o, &tkeep0_i, &tkeep0_o, &tkeep1_i, &tkeep1_o,
+				   &tready_i, &tready_o, &treset_i, &treset_o, &tlast_i,
+				   &tlast_o);
 		
-		std::cout << "tdata, accumulator and tvalid: "
-				  << ADC << "   " << accum << "   " << tvalid_o
+		if (i == 0) {
+			treset_i = false;
+		} 
+		
+		std::cout << "ADC, accumulator, pedestal and tvalid: "
+				  << ADC << "   " << accum_o << "   " << ped_o
+				  << "   " << tvalid_o
 				  << "\n";
-
-		if (accum == upper_limit) {
-			accum = 0;
-		}
 
 		i++;
 	}

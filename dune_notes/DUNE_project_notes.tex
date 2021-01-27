@@ -12,7 +12,7 @@
 \maketitle
 
 \begin{abstract}
-	The Deep Underground Neutrino Experiment (DUNE) is a large-scale, international project being developed at CERN and will operate within North America. It will consist of two underground neutrino detectors placed within an intense neutrino beam fired from Fermilab, the furthest of which will be 1300 kilometres from the source, in the Sanford Underground Research Facility (SURF). The main objectives of the experiment includes answering fundamental questions about the origin of matter (CP violation), the unification of forces (proton decay) and the formation of black holes (supernova neutrino detection)\cite{deep_underground_neutrino_experiment_2020}. This report focusses on the TPG core within the front end of the detectors, specifically the hit finder architecture that processes optical data generated from argon scintillation within the time projection chambers, as a result of neutrino interactions. The focus of  discussion will be on the replacement of existing firmware algorithms written for the detector's FPGAs with designs synthesised in Vivado High Level Synthesis (HLS) software from C++ code, to test the efficiency and convenience of the block design process when compared to writing firmware from scratch in VHDL.
+	The Deep Underground Neutrino Experiment (DUNE) is a large-scale international project being developed at CERN and will operate within North America. It will consist of two underground neutrino detectors placed within an intense neutrino beam fired from Fermilab, the furthest of which will be 1300 kilometres from the source, in the Sanford Underground Research Facility (SURF). The main objectives of the experiment include answering fundamental questions about the origin of matter, namely certain properties of leptonic CP violation. There are also aims to investigate the unification of forces through the analysis of proton decay, and the formation of black holes through supernova neutrino detection\cite{deep_underground_neutrino_experiment_2020}. This report focusses on the TPG cores within the front-end electronics of the detectors, specifically the hit finder architecture that processes optical data generated from argon scintillation within the time projection chambers, as a result of neutrino-nucleon interactions. The focus of  discussion will be on the replacement of existing firmware algorithms written for the detector's Field-Programmable Gate Arrays (FPGAs) with designs synthesised via Vivado High Level Synthesis (HLS) from C++ code. The purpose of this is to test the efficiency and convenience of the block design process when compared to writing firmware from scratch in VHDL.
 \end{abstract}
 
 \newpage
@@ -21,47 +21,63 @@
 \newpage
 
 \section{Introduction}
-The DUNE experiment is an amalgamation of many neutrino-physics communities centred around an opportunity provided by the large investment of the U.S. Department of Energy. This will contribute to a large expansion of the underground experimental architecture of the SURF facility, as well as a megawatt neutrino-beam facility 1300km across the country at Fermilab. This investigation will be groundbreaking for neutrino oscillation studies, searches for proton decay, and for neutrino based astrophysics (black hole and supernova burst phenomena).
 
-Analysing the properties of neutrinos has led to evidence for physics beyond the Standard Model (SM). Oscillations of neutrino flavour, meaning neutrinos being able to transform their flavour after moving through space, is a well established concept. Conclusions can be made from this, including the fact that neutrinos have mass. However, they are unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one million of an electron mass eigenstate. The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for debate\cite{Mertens_2016, cooper2016masses}. Finding the explanation will require more precision and detail in the available experimental information. DUNE exists to carry out an investigation of neutrino oscillations to test `Lepton Sector CP Violation' (LCPV) as well as the ordering of the neutrino masses and the three-neutrino paradigm, in which the quantum mechanical mixing of the three neutrino mass eigenstates produces the three known neutrino flavour states \cite{acciarri2016longbaseline}.
+\subsection{DUNE Experiment Background and Goals}
+The DUNE experiment is an amalgamation of many neutrino-physics communities, centred around an opportunity provided by the large investment of the U.S. Department of Energy. This will contribute to a large expansion of the underground experimental architecture of the SURF facility, as well as a megawatt neutrino-beam facility 1300km across North America at Fermilab. This investigation will be groundbreaking for neutrino oscillation studies, searches for proton decay, and for neutrino based astrophysics (black hole and supernova burst phenomena).
 
-CPV is well established in QCD, where the Cabibbo-Kobayashi-Mashawa (CKM) matrix is complex \cite{kobayashi1973cp}. Therefore one would expect to discover an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to LCPV. One of the goals of this investigation is to determine the rates of neutrino CP violation. Another hypotheses proposes that there is a connection between low-energy neutrino physics and leptogenesis \cite{Di_Bari_2012}, which could provide insight into the scenario that led to the baryon asymmetry of the universe. These questions can only by answered by constructing suitable detector equipment, so the next section will explore the features of ProtoDUNE's detector's front-end electronics, which will feed into the next section that discusses the HLS firmware blocks that could instruct the front-end FPGA-based data processors.
+Analysing the properties of neutrinos has led to evidence for physics beyond the Standard Model (SM). Oscillations of neutrino flavour i.e. a neutrino's ability to transform their flavour after moving through space, is a well established concept. Conclusions can be made from this, including the fact that neutrinos have mass, although unexpectedly small. The sum of the three neutrino mass eigenstates must be less than one million of an electron mass eigenstate \cite{Mertens_2016, cooper2016masses}. The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for debate. Finding the explanation will require more precision and detail in the available experimental information. DUNE exists to carry out an investigation of neutrino oscillations to test `Lepton sector CP Violation' (LCPV) as well as the ordering of the neutrino masses and the three-neutrino paradigm, in which the quantum mechanical mixing of the three neutrino mass eigenstates produces the three known neutrino flavour states \cite{acciarri2016longbaseline}.
 
-\subsection{Front-End Detector Overview}\label{section:overview}
+CPV is well established in Quantum Chromodynamic (QCD), allowed by the complex-natured Cabibbo-Kobayashi-Mashawa (CKM) matrix\footnote{Used to contain the information on the strength of the flavour-changing weak interaction \cite{kobayashi1973cp}.}\cite{kobayashi1973cp}. Therefore one would expect to discover an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to LCPV. One of the goals of this collaboration is to determine the rates at which neutrino CP violation occurs within the lepton sector. Another hypotheses proposes that there is a connection between low-energy neutrino physics and leptogenesis \cite{Di_Bari_2012}, which could provide insight into the scenario that led to the baryon asymmetry of the universe. These questions can only by answered by constructing suitable detector equipment; the next section will explore the features of ProtoDUNE's detector's front-end electronics and Data Acquisition (DAQ) equipment. This will feed into the following section that discusses the HLS firmware blocks that could instruct the front-end FPGA-based data processors.
 
-The ProtoDUNE detectors employ time projection chamber modules of liquid argon (LAr TPCs); each module contains 150 anode plane assemblies (APA's) with 2560 wires per APA.  The Front End LInk eXchange system contains the focus of this project.
-There are 10 fibres/data streams in the APA, each with 256 wires - hence the APA total of 2560
-The readout window per event is between 3-5.5 ms for a 2.25 ms drift time.
-The FELIX architecture consists of 10 MGT modules that feed data into 10 Hit Finders (HF), each of which produce hits by processing ADC values in parallel. This enters the HF's via the data router, and then travel into 10 sets of 4 TPG block processors. These are multiplexed (combined) by the arbitrator into the Central Router (CR) interface.
+\subsection{LAr TPC and Front-End Detector Electronics Overview}\label{section:overview}
 
-What are these things?
+The use of Time Projection Chamber modules of Liquid Argon (LAr TPCs) is a matured and popular technique used by several short-baseline\footnote{The baseline of a neutrino experiment refers to the scale of the beam travel distance. DUNE is `long baseline' as the detector is positioned across the continent from the beam source.} neutrino experiments. They are popular for several reasons:
+
+\begin{itemize}
+	\item Argon is a noble element which has vanishing electronegativity\footnote{Low tendency to attract a shared pair of electrons in an atomic bond.} which means that electrons produced by ionizing radiation will not be absorbed as they drift towards the detector.
+	\item  Liquid Argon is inexpensive yet very dense, increasing the likelihood of a particle interacting by 1000 times when compared to Nygren's TPC design \cite{rubbia1977liquid}. This is important because the cross section for neutrino-nucleon interactions is very small.
+	\item A neutrino-nucleon interaction causes the Argon to scintillate; a secondary energetic charged particle is generated and travels through the liquid, which causes the release of scintillation photons, the number of which is proportional to the energy deposited by the passing particle \cite{adams2018rejecting}. This can contribute to a reconstruction of the event. 
 	
-The MGT module processes the APA data stream into computational bits.
-The data router transforms the data from the MGT for processing in the TPG block, where the hit finding occurs.
-The data router receives multiple-channel, single clock-tick packets. The packets initially exist in a format containing the first sample for all channels, and when processed by the data router are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data.
-Each TPG unit processes 64 wires, and so there are 4 of them ($4\times 64 = 256$, the number of wires in a fiber).
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/The-major-components-of-the-ProtoDUNE-SP-TPC}
+	\caption[ProtoDUNE-SP]{Diagram of the ProtoDUNE single-phase LAr TPC module. This contains two drift volumes, separated by a central cathode plane that is flanked by two anode planes, connected to a field cage that surrounds the entire module. Each anode plane is made of three Anode Plane Assemblies (APAs). These connect and send data to the front-end electronics being discussed in this report \cite{dune_sp_collab}.}
+	\label{fig:the-major-components-of-the-protodune-sp-tpc}
+\end{figure}
+
+
+ There exists both single and dual-phase versions of these LAr TPC modules. Inside single-phase liquid argon detectors, such as the structure featured in figure \ref{fig:the-major-components-of-the-protodune-sp-tpc}, the interactions are readout by wires immersed in the liquid and do not require the amplification of the ionized electron charge. The charge is localised using AC induction and collection wire planes with different orientations. This was tested by ProtonDune-SP at CERN.
+ 
+ The dual phase detectors rely on the amplification of ionisation charges in the ultra-pure cold-argon vapour layer above the liquid, obtaining low-energy detection thresholds with high signal-to-noise ratio over drift distances exceeding 10m. In dual-phase LAr TPCs, ionisation charges produced by neutrino interactions drift vertically towards the liquid-vapour boundary where they are extracted into the `gas phase', amplified by components named Large Electron Multipliers (LEMs), and collected by segmented anodes; the electron extraction, amplification and collection are performed inside a $3 \times 1 \ \text{m}^2$ frame called the charge readout plane (CRP). Bear in mind the dimensions of the detector prototype are $3 \times 1 \times 1 \ \text{m}^3$.
+
+The LAr TPC modules used in the ProtoDUNE II design contain 150 anode plane assemblies (APA's) with 2560 wires per APA. There are 10 fibres/data streams in the APA, each with 256 wires - hence the total of 2560. The Front End LInk eXchange system is used to receive the data from the APAs, and was first developed within the ATLAS collaboration. It is based on custom FPGA-based PCIe I/O cards, combined with commodity servers \cite{borga2019felix}. Within this system contains the focus of this project: the Trigger Primitive Generation (TPG) core, which will be discussed in more detail later.
+
+The readout window per event is between 3-5.5 ms for a 2.25 ms drift time.
+The FELIX architecture that handles this influx of events consists of 10 MGT modules, whose function is to process the APA data stream into computational bits, that feed data into 10 Hit Finders (HF). The hits are produced by processing the incoming ADC (Analog-to-Digital Converted) samples in parallel. The MGT output enters the HFs via the data router\footnote{The data router receives multiple-channel, single clock-tick packets. The packets initially exist in a format containing the first sample for all channels, and when processed by the data router are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data.} and is then transferred into 10 sets of 4 TPG block processors; one set for each MGT output. These are multiplexed\footnote{Combined into a singular signal output} by the arbitrator into the Central Router (CR) interface \cite{abi_barr_martin-albo_azfar_2017, adams2020protodune}. See figure \ref{fig:hfprocessor} for a visualisation of the packet's journey from the MGT output to the CR, and figure \ref{fig:fearch} for the dataflow overview.
+
+\subsection{The TPG Core}
+
+Each TPG unit processes the data from 64 APA wires, and so there are 4 of them for each core\footnote{$4\times 64 = 256$, the number of wires in a fiber, ten fibers for each MGT accounts for all wires within the APA}.
 The TPG data consists of a header and payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of ADC sample data for hit finding.
-There is an AXI4-stream protocol for unpacking and reordering of data in the TPG block.
-There are 4 general signals for various instructions in each component:
+There is an AXI4-stream protocol for unpacking and reordering of data in the TPG block, featuring 4 general signals for various instructions in each component:
 	
 	\begin{enumerate}
-		\item tvalid denotes if the bus data is valid
-		\item tuser flag denotes the end of a frame
-		\item tlast denotes the end of packet
+		\item tvalid denotes if the bus data is valid for processing
+		\item tuser is a flag that denotes the end of a packet frame
+		\item tlast indicates the end of a packet
 		\item tready is used to apply back-pressure if the processing units ahead cannot process the data fast enough (all throughput is frozen).
 	\end{enumerate}
-The TPG block strips the header in the Header Stripper/Combiner block (see figure \ref{fig:hsc}) and sends it to the output of the block. Meanwhile the 64 ADC values are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the chain. The data router is then signalled to send the next packet.
+Within the TPG core is a mechanism that strips the packet header; the Header Stripper/Combiner (HSC), featured in figure \ref{fig:hsc}. The header is sent to the output of the block. Meanwhile, the remaining 64 ADC samples and their associated AXI4 signals are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the chain. The data router is then signalled to send the next packet.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/HSC}
 	\caption{Focus on the header stripper/combiner and the sub-block chain \cite{manolopoulos_2020}.}
 	\label{fig:hsc}
 \end{figure}
 
-
-See figure \ref{fig:hfprocessor} for a visual representation of the HF structure and figure \ref{fig:fearch} for a similar view of the of the FELIX architecture.
-\\
 
 \begin{figure}
 	\centering
@@ -70,17 +86,6 @@ See figure \ref{fig:hfprocessor} for a visual representation of the HF structure
 	\label{fig:hfprocessor}
 \end{figure}
 
-\subsection{Why liquid argon?}
-
-From the TPC wiki page.
-
-\begin{enumerate}
-	\item Noble element: vanishing electronegativity (tendency of an atom to attract a pair of electrons that it shares with another atom) means that electrons produced by ionizing radiation will not be absorbed as they drift towards the detector.
-	\item Argon scintillates when an energetic charged particle passes by, releasing scintillation photons, the number of which is proportional to the energy deposited by the passing particle.
-	\item It's density is 1000 times denser than Nygren's design, which is important for neutrino physics as it increases the chance of a neutrino-nucleon interaction.
-	\item Argon is pretty cheap too.
-\end{enumerate}
-
 \subsection{System Architecture}
 
 We have to consider some factors when studying the DUNE DAQ (data acquisition) system:
@@ -88,7 +93,7 @@ We have to consider some factors when studying the DUNE DAQ (data acquisition) s
 \begin{enumerate}
 	\item Hardware and maintenance cost per channel.
 	
-	\item Technology life-cycle (TLC) of the components. We need long-lasting essential components such as the FPGA (Field Programmable Gate Array) and the network components.
+	\item Technology life-cycle (TLC) of the components. We need long-lasting essential components such as the FPGA and network components.
 	
 	\item Component power consumption: deep underground components with higher power consumption will increase the cooling and running cost.
 	

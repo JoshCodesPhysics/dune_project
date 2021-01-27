@@ -6,6 +6,7 @@
 #define PK_S 64
 #define PK_W 100
 #define N_SA N_CH*PK_S*PK_W
+#define PED_INIT 500
 
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
@@ -18,8 +19,12 @@ struct ADC_t
 
 // Declaring functions.
 
-void ped_simplified(word_t* tdata, word_t* ADC, word_t* accum,
-		            bool* tvalid_i, bool* tvalid_o);
+void pedsub_HLS(word_t* tdata, word_t* ADC, word_t* accum_o,
+		    word_t* ped_o, bool* tvalid_i, bool* tvalid_o,
+			bool* tkeep0_i, bool* tkeep0_o, bool* tkeep1_i,
+			bool* tkeep1_o, bool* tready_i,
+			bool* tready_o, bool* treset_i,
+		    bool* treset_o, bool* tlast_i, bool* tlast_o);
 
 void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
 	     word_t* tdata, int* gen_count,
@@ -51,7 +56,7 @@ void ped_top(word_t* channel, word_t* tdata, word_t def_ped,
 			 bool* tvalid_out, bool* tkeep_out, bool* tlast_user_out,
 			 bool* tready_out, bool* treset_out);
 
-void ped_simplified_tb(const std::string& input_file, word_t ADC_stored[N_SA],
+void pedsub_HLS_temp_tb(const std::string& input_file, word_t ADC_stored[N_SA],
 		       bool tvalid_stored[N_SA],
 		       bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA]);
 

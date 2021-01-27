@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: DUNE_project_notes.aux
 The style file: unsrt.bst
 Database file #1: dpn.bib
-You've used 3 entries,
+Warning--empty institution in rubbia1977liquid
+Warning--empty journal in dune_sp_collab
+You've used 15 entries,
             1791 wiz_defined-function locations,
-            467 strings with 4297 characters,
-and the built_in function-call counts, 808 in all, are:
-= -- 46
-> -- 74
-< -- 0
-+ -- 26
-- -- 23
-* -- 75
-:= -- 150
-add.period$ -- 8
-call.type$ -- 3
-change.case$ -- 3
+            535 strings with 6914 characters,
+and the built_in function-call counts, 3623 in all, are:
+= -- 236
+> -- 303
+< -- 2
++ -- 108
+- -- 93
+* -- 292
+:= -- 639
+add.period$ -- 43
+call.type$ -- 15
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 23
-empty$ -- 65
-format.name$ -- 23
-if$ -- 161
+cite$ -- 17
+duplicate$ -- 127
+empty$ -- 299
+format.name$ -- 93
+if$ -- 754
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 17
-num.names$ -- 3
-pop$ -- 9
+int.to.str$ -- 15
+missing$ -- 10
+newline$ -- 75
+num.names$ -- 14
+pop$ -- 54
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 10
+skip$ -- 60
 stack$ -- 0
-substring$ -- 36
-swap$ -- 3
-text.length$ -- 0
+substring$ -- 134
+swap$ -- 26
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 5
-width$ -- 4
-write$ -- 32
+warning$ -- 2
+while$ -- 22
+width$ -- 17
+write$ -- 154
+(There were 2 warnings)
