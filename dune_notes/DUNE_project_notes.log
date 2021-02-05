@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  27 JAN 2021 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  5 FEB 2021 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,110 +326,80 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `DUNE_project_notes.toc'.
 
- [2]
-Overfull \hbox (9.49019pt too wide) in paragraph at lines 32--32
-[]\OT1/cmr/bx/n/12 LAr TPC and Front-End De-tec-tor Elec-tron-ics Overview 
- []
-
-
-Overfull \vbox (0.12575pt too high) has occurred while \output is active []
-
-
-[3]
-<figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png, id=155, 853.1875pt x
+ [2] [3]
+<figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png, id=115, 853.1875pt x
  919.435pt>
 File: figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png Graphic file (ty
 pe png)
 <use figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>
 Package pdftex.def Info: figures/The-major-components-of-the-ProtoDUNE-SP-TPC.p
-ng  used on input line 45.
+ng  used on input line 51.
 (pdftex.def)             Requested size: 241.49895pt x 260.24593pt.
- [4] [5 <./figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>]
-<figures/HSC.jpg, id=185, 310.15875pt x 141.52875pt>
-File: figures/HSC.jpg Graphic file (type jpg)
-<use figures/HSC.jpg>
-Package pdftex.def Info: figures/HSC.jpg  used on input line 76.
-(pdftex.def)             Requested size: 345.0pt x 157.42702pt.
-<figures/HF_processor.jpg, id=187, 784.43062pt x 385.44pt>
-File: figures/HF_processor.jpg Graphic file (type jpg)
-<use figures/HF_processor.jpg>
-Package pdftex.def Info: figures/HF_processor.jpg  used on input line 84.
-(pdftex.def)             Requested size: 552.0021pt x 271.24709pt.
-
-Overfull \hbox (6.05623pt too wide) in paragraph at lines 98--99
-[]\OT1/cmr/m/n/10 Component power con-sump-tion: deep un-der-ground com-po-nent
-s with higher
- []
-
-[6] [7 <./figures/HSC.jpg> <./figures/HF_processor.jpg>] [8]
-<figures/FE_arch.jpg, id=225, 497.60907pt x 434.37282pt>
+ [4]
+[5 <./figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>] [6]
+<figures/FE_arch.jpg, id=152, 497.60907pt x 434.37282pt>
 File: figures/FE_arch.jpg Graphic file (type jpg)
 <use figures/FE_arch.jpg>
-Package pdftex.def Info: figures/FE_arch.jpg  used on input line 148.
+Package pdftex.def Info: figures/FE_arch.jpg  used on input line 74.
 (pdftex.def)             Requested size: 241.49895pt x 210.80974pt.
- [9 <./figures/FE_arch.jpg>] [10]
-Overfull \hbox (1.11168pt too wide) in paragraph at lines 190--191
-[]\OT1/cmr/m/n/10 The code is anal-ysed, ar-chi-tec-turally con-strained, and s
-ched-uled to transcom-
- []
-
-[11] [12] [13]
-Overfull \hbox (23.80379pt too wide) in paragraph at lines 303--304
-[]\OT1/cmr/m/n/10 with many more avail-able at []$\OT1/cmtt/m/n/10 https : / / 
-www . xilinx . com / html _ docs / xilinx2019 _
- []
-
-[14] [15]
-Overfull \hbox (30.80754pt too wide) in paragraph at lines 342--343
-[]\OT1/cmr/m/n/10 If a struct con-tains ar-rays, those ar-rays can be op-ti-mis
-ed us-ing the \OT1/cmtt/m/n/10 ARRAY[]PARTITION
- []
-
-[16] [17] (./DUNE_project_notes.bbl
+<figures/HF_processor.jpg, id=154, 784.43062pt x 385.44pt>
+File: figures/HF_processor.jpg Graphic file (type jpg)
+<use figures/HF_processor.jpg>
+Package pdftex.def Info: figures/HF_processor.jpg  used on input line 81.
+(pdftex.def)             Requested size: 552.0021pt x 271.24709pt.
+ [7 <./figures/FE_arch.jpg>] [8 <./figures/HF_processor.jpg>]
+<figures/HSC.jpg, id=176, 310.15875pt x 141.52875pt>
+File: figures/HSC.jpg Graphic file (type jpg)
+<use figures/HSC.jpg>
+Package pdftex.def Info: figures/HSC.jpg  used on input line 102.
+(pdftex.def)             Requested size: 241.49895pt x 110.19762pt.
+ [9 <./figures/HSC.jpg>]
+[10] [11] [12] [13] [14] (./DUNE_project_notes.bbl
 Underfull \hbox (badness 1902) in paragraph at lines 14--17
 []\OT1/cmr/m/n/10 Peter S Cooper.  The masses of the neu-tri-nos.  \OT1/cmr/m/i
 t/10 arXiv preprint
  []
 
-[18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 374.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 374.
+[15])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
  (./DUNE_project_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 374.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 374.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
 Package rerunfilecheck Info: File `DUNE_project_notes.out' has not changed.
-(rerunfilecheck)             Checksum: D756BACD5AD44740BF5B2DADB1B81ED2;1493.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 374.
+(rerunfilecheck)             Checksum: C807AC7E4C425AAE843AC10360930E90;931.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
  ) 
 Here is how much of TeX's memory you used:
- 6485 strings out of 481239
- 95680 string characters out of 5920378
- 355190 words of memory out of 5000000
- 21537 multiletter control sequences out of 15000+600000
+ 6464 strings out of 481239
+ 95563 string characters out of 5920378
+ 356506 words of memory out of 5000000
+ 21536 multiletter control sequences out of 15000+600000
  541657 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,29p,1475b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,29p,2003b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm1000.pfb>
-Output written on DUNE_project_notes.pdf (19 pages, 628312 bytes).
+/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+rm1000.pfb>
+Output written on DUNE_project_notes.pdf (16 pages, 623962 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 285 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

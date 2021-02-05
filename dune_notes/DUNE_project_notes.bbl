@@ -32,6 +32,10 @@ Pasquale Di~Bari.
 \newblock An introduction to leptogenesis and neutrino properties.
 \newblock {\em Contemporary Physics}, 53(4):315–338, Jul 2012.
 
+\bibitem{abi_barr_martin-albo_azfar_2017}
+Babak Abi, Giles Barr, Justo Martin-Albo, and Farrukh Azfar.
+\newblock Dune's daq architecture; envisaging the alternatives, Aug 2017.
+
 \bibitem{rubbia1977liquid}
 Carlo Rubbia.
 \newblock The liquid-argon time projection chamber: a new concept for neutrino
@@ -53,6 +57,13 @@ The Collaboration, B.~Abi, R.~Acciarri, Mario Acero, Mark Adamowski, C.~Adams,
 \newblock The single-phase protodune technical design report.
 \newblock 06 2017.
 
+\bibitem{aimard20184}
+Benjamin Aimard, Ch~Alt, J~Asaadi, M~Auger, V~Aushev, D~Autiero, MM~Badoi,
+  A~Balaceanu, G~Balik, L~Balleyguier, et~al.
+\newblock A 4 tonne demonstrator for large-scale dual-phase liquid argon time
+  projection chambers.
+\newblock {\em Journal of Instrumentation}, 13(11):P11003, 2018.
+
 \bibitem{borga2019felix}
 Andrea Borga, Eric Church, Frank Filthaut, Enrico Gamberini, Ren{\'e} Habraken,
   Giovanna~Lehmann Miotto, Thijs Miedema, Frans Schreuder, J{\"o}rn Schumacher,
@@ -60,10 +71,6 @@ Andrea Borga, Eric Church, Frank Filthaut, Enrico Gamberini, Ren{\'e} Habraken,
 \newblock Felix based readout of the single-phase protodune detector.
 \newblock In {\em EPJ Web of Conferences}, volume 214, page 01013. EDP
   Sciences, 2019.
-
-\bibitem{abi_barr_martin-albo_azfar_2017}
-Babak Abi, Giles Barr, Justo Martin-Albo, and Farrukh Azfar.
-\newblock Dune's daq architecture; envisaging the alternatives, Aug 2017.
 
 \bibitem{adams2020protodune}
 D~Adams, M~Bass, M~Bishai, C~Bromberg, J~Calcutt, H~Chen, J~Fried, I~Furic,
@@ -76,18 +83,28 @@ D~Adams, M~Bass, M~Bishai, C~Bromberg, J~Calcutt, H~Chen, J~Fried, I~Furic,
 Konstantinos Manolopoulos.
 \newblock Processing framework \&amp; hit finder algorithm, Jul 2020.
 
-\bibitem{anderson2016felix}
-J~Anderson, K~Bauer, A~Borga, H~Boterenbrood, H~Chen, K~Chen, G~Drake,
-  M~D{\"o}nszelmann, D~Francis, D~Guest, et~al.
-\newblock Felix: a pcie based high-throughput approach for interfacing
-  front-end and trigger electronics in the atlas upgrade framework.
-\newblock {\em Journal of Instrumentation}, 11(12):C12023, 2016.
+\bibitem{coussy2009introduction}
+Philippe Coussy, Daniel~D Gajski, Michael Meredith, and Andres Takach.
+\newblock An introduction to high-level synthesis.
+\newblock {\em IEEE Design \& Test of Computers}, 26(4):8--17, 2009.
 
-\bibitem{aimard20184}
-Benjamin Aimard, Ch~Alt, J~Asaadi, M~Auger, V~Aushev, D~Autiero, MM~Badoi,
-  A~Balaceanu, G~Balik, L~Balleyguier, et~al.
-\newblock A 4 tonne demonstrator for large-scale dual-phase liquid argon time
-  projection chambers.
-\newblock {\em Journal of Instrumentation}, 13(11):P11003, 2018.
+\bibitem{vivado_design_suite_user_guide_2018}
+Dec 2018.
+
+\bibitem{vahid2010digital}
+Frank Vahid.
+\newblock {\em Digital design with RTL design, VHDL, and Verilog}.
+\newblock John Wiley \& Sons, 2010.
+
+\bibitem{bose1996hardware}
+Sanjay~K Bose.
+\newblock {\em Hardware and Software of Personal Computers}.
+\newblock New Age International, 1996.
+
+\bibitem{lo2016model}
+Charles Lo and Paul Chow.
+\newblock Model-based optimization of high level synthesis directives.
+\newblock In {\em 2016 26th International Conference on Field Programmable
+  Logic and Applications (FPL)}, pages 1--10. IEEE, 2016.
 
 \end{thebibliography}
