@@ -48,16 +48,17 @@ int main() {
 	const int TREADY_LIMIT = 100000000;
 
 	// Pedestal estimate; can affect testbench outcome
-    const word_t PED_VAL = 500;
+    	const word_t PED_VAL = 500;
 
 	// Empty arrays to contain the results.
-    word_t ped_array[NUM_CHANNELS];
-    char accum_array[NUM_CHANNELS];
+    	word_t ped_array[NUM_CHANNELS];
+    	word_t accum_array[NUM_CHANNELS];
 	word_t ADC_stored[NUM_SAMPLES];
 	bool tvalid_stored[NUM_SAMPLES];
 	bool tlast_user_stored[NUM_SAMPLES];
 	bool tkeep_stored[NUM_SAMPLES];
-    word_t ADC_array[NUM_SAMPLES];
+    	word_t ADC_array[NUM_SAMPLES];
+
 	word_t ADC_valid[NUM_SAMPLES];
 
 	std::cout << "Running algorithm on input file: \n\n";
@@ -65,15 +66,15 @@ int main() {
 	// Calling separate simplified testbench function, calling
 	// ped_simplified
 
-	ped_simplified_tb(input_file, ADC_stored, tvalid_stored,
-					  tlast_user_stored, tkeep_stored);
+	// pedsub_HLS_temp_tb(input_file, ADC_stored, tvalid_stored,
+	// 				  tlast_user_stored, tkeep_stored);
 
 	// Calling testbench function, which in turn calls ped_alg
-        ped_sub_read(input_file, PED_VAL, ADC_stored,
+    ped_sub_read(input_file, PED_VAL, ADC_stored,
 	         tvalid_stored, tlast_user_stored, tkeep_stored,
 	         ped_array, ADC_array, accum_array, PACKET_SIZE,
-		     NUM_CHANNELS, INPUT_SEED, TRESET_LIMIT,
-		     TREADY_LIMIT);
+		 NUM_CHANNELS, INPUT_SEED, TRESET_LIMIT,
+		 TREADY_LIMIT);
 	
 	// std::cout << "\n\nFinal pedestal and accumulator results: "
 	// 	  << "\n\n";
@@ -95,6 +96,6 @@ int main() {
 
 	else {
 		return ped_test(ped_array, NUM_CHANNELS, CONVERGE_VALUE,
-				PED_VAL);
+	 			PED_VAL);
 	}
 }

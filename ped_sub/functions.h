@@ -7,6 +7,7 @@
 #define PK_W 100
 #define N_SA N_CH*PK_S*PK_W
 #define PED_INIT 500
+#define WIPE_DELAY 4
 
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
@@ -19,20 +20,21 @@ struct ADC_t
 
 // Declaring functions.
 
-void pedsub_HLS(word_t* tdata, word_t* ADC, word_t* accum_o,
-		    word_t* ped_o, bool* tvalid_i, bool* tvalid_o,
-			bool* tkeep0_i, bool* tkeep0_o, bool* tkeep1_i,
-			bool* tkeep1_o, bool* tready_i,
-			bool* tready_o, bool* treset_i,
-		    bool* treset_o, bool* tlast_i, bool* tlast_o);
+void pedsub_HLS(word_t tdata_i, word_t* tdata_o, word_t* accum_o,
+		word_t* ped_o, bool tvalid_i, bool* tvalid_o,
+		bool tkeep0_i, bool* tkeep0_o, bool tkeep1_i,
+		bool* tkeep1_o, bool tready_i,
+		bool* tready_o, bool treset_i,
+		bool* treset_o, bool tlast_i, bool* tlast_o,
+		word_t accum_i = 0, word_t ped_i = PED_INIT);
 
 void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
 	     word_t* tdata, int* gen_count,
-		 int* accum_count, int* ped_count, bool* tvalid_i, bool* tkeep0_i,
+	     int* accum_count, int* ped_count, bool* tvalid_i, bool* tkeep0_i,
 	     bool* tkeep1_i, bool* tready_i, bool* treset_i,
 	     bool* tlast_i, bool* tvalid_o, bool* tkeep0_o,
-		 bool* tkeep1_o, bool* tready_o, bool* treset_o,
-		 bool* tlast_o);
+	     bool* tkeep1_o, bool* tready_o, bool* treset_o,
+	     bool* tlast_o);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 
@@ -41,20 +43,19 @@ void rand_int(int& rnd_seed);
 void random_signal(bool& signal, int max, int min, int limit,
 		   int& random_seed);
 
-void ped_accum_reset(word_t* ped_array, char* accum_array, word_t ped_val,
+void ped_accum_reset(word_t* ped_array, word_t* accum_array, word_t ped_val,
                      int packet_size, word_t& channel);
 
-void full_reset(word_t* ped_array, char* accum_array, word_t* ADC_array,
+void full_reset(word_t* ped_array, word_t* accum_array, word_t* ADC_array,
                 word_t ped_val, int packet_size, int total_samples,
                 word_t& channel);
 
-void ped_top(word_t* channel, word_t* tdata, word_t def_ped,
-		     int* gen_count, int* accum_count, int* ped_count,
-             bool* tvalid, bool* tlast_user, bool* tkeep,
+void ped_top(word_t* channel, word_t tdata_i,
+             bool tvalid_i, bool tlast_i, bool tkeep_i,
              word_t ped_array[N_CH], word_t* ADC_adjusted,
-             char accum_array[N_CH], bool* treset, bool* tready,
-			 bool* tvalid_out, bool* tkeep_out, bool* tlast_user_out,
-			 bool* tready_out, bool* treset_out);
+             word_t accum_array[N_CH], bool tready_i, bool treset_i,
+             bool* tvalid_o, bool* tkeep_o, bool* tlast_o,
+             bool* tready_o, bool* treset_o);
 
 void pedsub_HLS_temp_tb(const std::string& input_file, word_t ADC_stored[N_SA],
 		       bool tvalid_stored[N_SA],
@@ -71,7 +72,7 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
                   bool tlast_user_stored[N_SA], bool tkeep_stored[N_SA],
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
-                  char accum_array[N_CH], int packet_size, int num_channels,
+                  word_t accum_array[N_CH], int packet_size, int num_channels,
 		  int input_seed, int treset_limit, int tready_limit);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
