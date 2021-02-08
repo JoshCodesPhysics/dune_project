@@ -9,5 +9,7 @@
 \BOOKMARK [2][-]{subsection.2.2}{Vivado HLS Design Flow}{section.2}% 9
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Optimisations and Analysis}{subsection.2.2}% 10
 \BOOKMARK [1][-]{section.3}{Pedestal Subtraction Algorithm}{}% 11
-\BOOKMARK [2][-]{subsection.3.1}{Pedestal Subtraction Testbench}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.2}{Internalising the State Save/Restore \(SSR\) Mechanism into the Top Function}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Algorithm Operations}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Development and Findings}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Performance and Resource Utilization Comparison}{subsection.3.2}% 14
+\BOOKMARK [1][-]{section.4}{Future Aims}{}% 15

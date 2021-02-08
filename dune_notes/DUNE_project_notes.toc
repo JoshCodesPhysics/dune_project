@@ -9,5 +9,7 @@
 \contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{10}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{12}{subsubsection.2.2.1}%
 \contentsline {section}{\numberline {3}Pedestal Subtraction Algorithm}{13}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Testbench}{14}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Internalising the State Save/Restore (SSR) Mechanism into the Top Function}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.1}Algorithm Operations}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Development and Findings}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Performance and Resource Utilization Comparison}{16}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Future Aims}{16}{section.4}%
