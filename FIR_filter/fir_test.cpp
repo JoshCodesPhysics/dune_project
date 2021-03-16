@@ -6,26 +6,29 @@
 // output against a model software output.
 
 int main() {
-	// Just temporary input variables to test syntax errors
-	short tdata_i = 5;
-	bool tvalid_i = true;
-	bool tuser_i = false;
-	bool tkeep0_i = true;
-	bool tkeep1_i = true;
-	bool tready_i = true;
-	bool tlast_i = true;
+        
+	const std::string proj_path = "/data/hmo31799";
+	const std::string input_path = "/dune_project/FIR_filter/IO_files/"
+				       "FixedHits_D_pedsub_up_headrm_axi4s.0.txt";
+	const std::string output_path = "/dune_project/FIR_filter/IO_files/"
+					"FixedHits_D_fir0_up_headrm_axi4s.0.txt";
 
-	short tdata_o;
-	bool tvalid_o, tuser_o, tkeep0_o, tkeep1_o,
-	     treset_o, tlast_o;
-
-	bool treset_i = true;
-
-	fir_HLS(tdata_i, &tdata_o, tvalid_i, &tvalid_o, tuser_i,
-		&tuser_o, tkeep0_i, &tkeep0_o, tkeep1_i, &tkeep1_o,
-		tready_i, treset_i, &treset_o, tlast_i, &tlast_o);
+	const std::string input_file = proj_path + input_path;
+	const std::string output_file = proj_path + output_path;	
 	
-	return 0;
+	short tdata_stored[N_SA], tdata_output[N_SA];
+	bool tvalid_stored[N_SA], tuser_stored[N_SA], tlast_stored[N_SA],
+	     tkeep_stored[N_SA];
 
+	int input_seed = 45000;
+	const int TRESET_LIMIT = 5000;
+	const int TREADY_LOW_LIMIT = 400;
+	const int TREADY_HIGH_LIMIT = 6;
+
+	return fir_testbench(input_file, output_file, tdata_stored,
+			     tvalid_stored, tuser_stored, tlast_stored,
+			     tkeep_stored, tdata_output, input_seed,
+			     TRESET_LIMIT, TREADY_LOW_LIMIT,
+			     TREADY_HIGH_LIMIT);
 }
 

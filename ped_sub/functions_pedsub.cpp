@@ -1,5 +1,5 @@
 #include <iostream>
-#include "functions.h"
+#include "../ped_sub/functions.h"
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -259,10 +259,7 @@ void data_read(const std::string& input_file, int& count,
 	// ped_alg processing, so that we can 'pause' during a
 	// high tready.
 
-	word_t ADC, ADC_temp;
-	bool tvalid, tuser, tlast, tkeep;
-	count = 0;
-
+	
 	// Opening data file
         std::ifstream data_file(input_file.c_str());
 	
@@ -270,6 +267,11 @@ void data_read(const std::string& input_file, int& count,
 
 		// Buffer to read file line
 		std::string buffer;
+
+		word_t ADC;
+		int ADC_temp;
+		bool tvalid, tuser, tlast, tkeep;
+		count = 0;
 
 		// Loops through all lines, writing each line to the buffer
 		// so the data can be processed
@@ -498,7 +500,6 @@ void array_scan(int array_size, word_t ped_val,
 	// Counters for the while loop and data read
 	word_t channel;
 	int i = 0;
-	bool first_sample = true;
 	int attempt = 1;
 	// Count to simulate delay between packets where tvalid is low
 	char tlast_delay = 0;
@@ -679,7 +680,7 @@ void array_scan(int array_size, word_t ped_val,
 
 void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
-                  bool tuser_stored[N_SA],bool tlast_stored[N_SA],
+                  bool tuser_stored[N_SA], bool tlast_stored[N_SA],
 		  bool tkeep_stored[N_SA],
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
                   word_t accum_array[N_CH], int packet_size, int num_channels,
@@ -756,7 +757,7 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 		comparison_loop: for (int i = 0; i < count; i++) {
 
 			// Printing comparison values for the testbench
-			std::cout << "ADC adjusted value for line "
+			std::cout << "ADC output value for line "
 				  << i << ": " << ADC_adjusted[i]
 				  << "\n"
 				  << "ADC validated value for same line: "

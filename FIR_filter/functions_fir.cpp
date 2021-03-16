@@ -13,6 +13,9 @@ short fir_coeffs[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2,0,
 // Prospective SSR array
 short master_SSR[2*N_TAP][N_TAP];
 
+// Tap array
+short tap_array[N_TAP];
+
 // Channel counter for SSR top function
 short channel_count;
 
@@ -35,8 +38,7 @@ void output_assign(short tdata_assign, short* tdata_o, bool tvalid_assign,
 }
 
 
-void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
-	     short tdata_i, short* tdata_o,
+void fir_HLS(short tdata_i, short* tdata_o,
 	     bool tvalid_i, bool* tvalid_o, bool tuser_i, bool* tuser_o,
 	     bool tkeep0_i, bool* tkeep0_o, bool tkeep1_i,
              bool* tkeep1_o, bool tready_i, bool treset_i,
@@ -54,10 +56,9 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 	// goes high, the x32 to x64 inputs are saved, and the taps are restored
 	// by the values saved for the next channel.
 	
-	// Array to store the taps (D registers)
-	static short tap_array[N_TAP];
 	// tready restore and addition tree variable
-	static short tdata_previous, sum;
+	static short tdata_previous;
+	int sum = 0;
 	// boolean tready restores
 	static bool tlast_reset, tvalid_previous, tuser_previous,
 		    tkeep_previous, tlast_previous;
@@ -70,13 +71,15 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 		tlast_reset = false;
 		restore_count = 0;
 		sum = 0;
-		
+		channel_count = 0;
 		for (short i = 0; i < N_TAP; i++) {
 			tap_array[i] = 0;
+			for (short j = 0; j < N_TAP*2; j++) {
+				master_SSR[j][i] = 0;
+			}
 		}
-		
 		// Driving outputs regardless
-		output_assign(tdata_i, &(*tdata_o),
+		output_assign(sum, &(*tdata_o),
                               tvalid_i, &(*tvalid_o), tuser_i,
                               &(*tuser_o), tkeep0_i, &(*tkeep0_o),
                               tkeep1_i, &(*tkeep1_o), treset_i,
@@ -90,6 +93,8 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
                                 tdata_i, tvalid_i,
                                 tuser_i, tkeep0_i,
                                 tlast_i);
+		std::cout << "treset went high, resetting arrays and"
+			     " variables\n";
 	}
 	// If treset is not high, run algorithm as usual
 	else {
@@ -127,7 +132,7 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 				}
 			// End of FIR mechanism
 			}
-
+			
 			// Output assignment (sum to FIR tdata output)
 			output_assign(sum, &(*tdata_o),
                                       tvalid_i, &(*tvalid_o), tuser_i,
@@ -141,7 +146,7 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
                                 	&tuser_previous,
                                 	&tkeep_previous,
                                 	&tlast_previous,
-                                	tdata_i, tvalid_i,
+                                	sum, tvalid_i,
                                 	tuser_i, tkeep0_i,
                                 	tlast_i);
 			
@@ -149,14 +154,17 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 			// tlast to prevent complications on the next
 			// packet.
 			if (tlast_reset) {
+				std::cout << "tlast went high, wipe "
+					     "delay active\n";
 				// Increase clock delay counter
 				restore_count++;
 				// If the limit is reached, reset and restore
 				// variables
 				if (restore_count == WIPE_DELAY) {
+					std::cout << "Wipe delay over, tlast"
+						     " restore active\n";
 					tlast_reset = false;
 					restore_count = 0;
-					sum = 0;
 					// SSR takes place here.
 					// Hopefully using master_ssr array
 					for (short i = 0; i < N_TAP; i++) {
@@ -165,8 +173,36 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 						// Next packet's values
 						// are restored to the tap
 						// array
-						ssr_current[i] = tap_array[i];
-						tap_array[i] = ssr_next[i];
+						master_SSR[channel_count][i] =
+						tap_array[i];
+						
+						if (channel_count == 63) {
+							tap_array[i] =
+							master_SSR[0][i];
+						}
+
+						else {
+							tap_array[i] =
+							master_SSR[
+							channel_count+1][i];
+						}
+					}
+
+					std::cout << "master_SSR[" <<
+						     channel_count
+						  << "]: \n";
+					for (short i = 0; i < N_TAP; i++) {
+						std::cout << 
+						master_SSR[channel_count][i]
+						<< " ";
+					}
+					
+					std::cout << "\n";
+
+					channel_count++;
+					
+					if (channel_count > 63) {
+						channel_count = 0;
 					}
 				}
 			}
@@ -181,6 +217,8 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
 		// just before tready went low, until tready goes high again.
 		// Do not run algorithm as normal.
 		else {
+			std::cout << "tready low, outputting previous "
+				     "values\n";
 			output_assign(tdata_previous, &(*tdata_o),
                                           tvalid_previous, &(*tvalid_o),
                                           tuser_previous, &(*tuser_o),
@@ -190,5 +228,194 @@ void fir_HLS(short* ssr_current[N_TAP], short ssr_next[N_TAP],
                                           tlast_previous, &(*tlast_o));
 		}
 	// End of treset else bracket
-	}		 
+	}
+
+	// Print scaffolding
+	// std::cout << "tap_array: \n";
+	// for (short i = 0; i < N_TAP; i++) {
+	// 	std::cout << tap_array[i] << " ";
+	// 	if (i % 8 == 0) {
+	// 		std::cout << "\n";
+	// 	}
+	// }
+	// std::cout << "\n";
+	// std::cout << "tdata output: " << *tdata_o << "\n"; 
+}
+
+void array_scan_fir(short tdata_stored[N_SA],
+		    bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
+		    bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
+		    short tdata_output[N_SA], int input_seed, int treset_limit,
+		    int tready_low_limit, int tready_high_limit) {
+	// This function scans the arrays from the output of data_read
+	// after it processes the input file, and feeds the data to fir_HLS,
+	// saving the tdata output.
+	
+	// Make sure tready is initially low to prevent backpressure
+	bool tready = true;
+	// Make sure treset is initially low to prevent infinite loop
+	bool treset = false;
+
+	// Counter for while loop
+	int i = 0;
+	int attempt = 1;
+	int tlast_delay = 0;
+
+	// Setup for random backpressure and reset
+	int random_seed;
+
+	set_rnd_seed(input_seed, random_seed);
+
+	// Algorithm scan while loop, executes until iterator reaches index
+	// of the last value in the data arrays. Iterator doesn't always
+	// increase (can revert back to i = 0, or i--)
+	array_scan: while (i < N_SA) {
+		
+		// Random assign for tready and treset
+		random_signal(treset, 1, treset_limit, 1, random_seed);
+		random_signal(tready, 1, tready_low_limit, 1,
+                                          random_seed);
+
+		if (treset) {
+			std::cout << "\ntreset went high, "
+                                     "for iteration "
+                                  << i << " "
+                                     "so entire process "
+                                     "will be reset.\n"
+                                  << "Attempt " << attempt
+                                  << " has ended.\n";
+			i = 0;
+			attempt++;
+			treset = false;
+			tlast_delay = 0;
+		}
+		// If treset is not high, run scan as usual
+		else {
+			// Initialising temporary signal booleans for
+			// the synthesis ports
+			bool tvalid_i, tuser_i, tlast_i, tvalid_out,
+                             tuser_out, tkeep_out, tlast_out,
+                             tready_out, treset_out;
+			// Temporary output variable for FIR output
+			short tdata_out;
+			
+			if (i == 0) {
+                                treset = true;
+                        }
+
+			if (tuser_stored[i] && tlast_stored[i] &&
+			   (tlast_delay > 0)) {
+				tuser_i = tlast_i = tvalid_i = false;
+			}
+
+			else {
+                                tuser_i = tuser_stored[i];
+                                tlast_i = tlast_stored[i];
+                                tvalid_i = tvalid_stored[i];
+                        }
+
+			if (i == 4097 || (i > 4107 && i < 4122)) {
+				std::cout << "Tap array for line " << i
+					  << " before block:\n";
+				for (short i = 0; i < N_TAP; i++) {
+					std::cout << tap_array[i] << " ";
+					if (i % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
+
+				std::cout << "\n";
+			}
+
+			fir_HLS(tdata_stored[i], &tdata_out, tvalid_i,
+				&tvalid_out, tuser_i, &tuser_out,
+				tkeep_stored[i], &tkeep_out, tkeep_stored[i],
+				&tkeep_out, tready, treset, &treset_out,
+				tlast_i, &tlast_out);
+
+			if (i == 4118) {
+                                std::cout << "Tap array for line " << i
+                                          << " after block:\n"; 
+                                for (short i = 0; i < N_TAP; i++) {
+                                        std::cout << tap_array[i] << " ";
+                                        if (i % 8 == 0) { 
+                                                std::cout << "\n";
+                                        }
+                                }
+                                
+                                std::cout << "\n";
+				std::cout << "and tdata output: " << tdata_out << "\n";
+                        }
+
+
+			if (tvalid_out) {
+				tdata_output[i] = tdata_out;
+			}
+
+			if (i == 0) {
+				treset = false;
+			}
+	
+			if (tlast_stored[i] && tuser_stored[i]) {
+				if (tlast_delay < WIPE_DELAY) {
+					tlast_delay++;
+					i--;
+				}
+			
+				else {
+					tlast_delay = 0;
+					std::cout << "Channel count is now "
+						  << channel_count << " on "
+						  << "line " << i << "\n";
+				}
+			}
+
+			// If tready is high, revert to previous loop
+			// and check if tready is still high, recursive
+			// until tready is low, then scan as usual.
+			if (!tready) {
+				// Iterator for while loop does not increase,
+				// process same line again
+				std::cout << "\nLine " << i <<
+                                             " had a low tready "
+                                             "during attempt " << attempt
+                                             << " so pointer will return to "
+                                             "that line and reattempt the "
+                                             "scan \n";
+                                random_signal(tready, 1, tready_high_limit, 1,
+                                                              random_seed);
+			}
+
+			else {
+				// Iterator increases if tready is high
+				i++;
+			}
+		}	
+	}
+	std::cout << "End of scan at line " << i << ".\n\n";
+}
+
+
+bool fir_testbench(const std::string& input_file,
+		   const std::string& output_file, short tdata_stored[N_SA],
+		   bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
+		   bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
+		   short tdata_output[N_SA], int input_seed, int treset_limit,
+		   int tready_low_limit, int tready_high_limit) {
+	// This function reads the input file and feeds the data to fir_HLS
+	// so that we can compare the model sw output to our output.
+	
+	int count;
+
+	data_read(input_file, count, tdata_stored, tvalid_stored,
+		  tuser_stored, tlast_stored, tkeep_stored);
+
+
+	array_scan_fir(tdata_stored, tvalid_stored, tuser_stored,
+		       tlast_stored, tkeep_stored, tdata_output, input_seed,
+		       treset_limit, tready_low_limit, tready_high_limit);
+
+	short tdata_validated[N_SA];
+
+	return ADC_compare(output_file, tdata_output, tdata_validated); 
 }
