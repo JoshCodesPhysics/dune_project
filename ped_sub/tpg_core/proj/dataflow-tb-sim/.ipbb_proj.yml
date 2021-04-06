@@ -1,5 +1,0 @@
-name: dataflow-tb-sim
-toolset: sim
-topCmp: components/processing
-topDep: tb_dtpc_tpg.dep
-topPkg: dataflow-firmware
