@@ -3,6 +3,7 @@
 #include "../ped_sub/functions.h"
 
 #define N_TAP 32
+#define CLK_REC 1
 
 void fir_HLS(short tdata_i, short* tdata_o, bool tvalid_i,  
              bool* tvalid_o, bool tuser_i, bool* tuser_o,
@@ -10,16 +11,30 @@ void fir_HLS(short tdata_i, short* tdata_o, bool tvalid_i,
              bool* tkeep1_o, bool tready_i, bool treset_i,
              bool* treset_o, bool tlast_i, bool* tlast_o);
 
+
+void fir_HLS_simplified(short tdata_i, short* tdata_o,
+             		    bool tvalid_i, bool* tvalid_o, bool tuser_i,
+					    bool* tuser_o, bool tkeep0_i, bool* tkeep0_o,
+					    bool tkeep1_i, bool* tkeep1_o, bool tready_i,
+					    bool treset_i, bool* treset_o, bool tlast_i,
+					    bool* tlast_o);
+
+void reg_shift_sum(short tap1[N_TAP], short tap2[N_TAP],
+				   short fir_coeffs_simp[N_TAP], short tdata_in, short* sum);
+
+
 void array_scan_fir(short tdata_stored[N_SA],
                     bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
                     bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
                     short tdata_output[N_SA], int input_seed, int treset_limit,
-                    int tready_low_limit, int tready_high_limit);
+                    int tready_low_limit, int tready_high_limit,
+					bool simplified);
+
 
 bool fir_testbench(const std::string& input_file,
                    const std::string& output_file, short tdata_stored[N_SA],
                    bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
                    bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
                    short tdata_output[N_SA], int input_seed, int treset_limit,
-                   int tready_low_limit, int tready_high_limit);
+                   int tready_low_limit, int tready_high_limit, bool simplified);
 

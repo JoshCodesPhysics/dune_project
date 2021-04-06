@@ -16,6 +16,7 @@ short master_SSR[2*N_TAP][N_TAP];
 // Tap array
 short tap_array[N_TAP];
 
+
 // Channel counter for SSR top function
 short channel_count;
 
@@ -58,7 +59,6 @@ void fir_HLS(short tdata_i, short* tdata_o,
 	
 	// tready restore and addition tree variable
 	static short tdata_previous;
-	int sum = 0;
 	// boolean tready restores
 	static bool tlast_reset, tvalid_previous, tuser_previous,
 		    tkeep_previous, tlast_previous;
@@ -70,16 +70,15 @@ void fir_HLS(short tdata_i, short* tdata_o,
 	if (treset_i) {
 		tlast_reset = false;
 		restore_count = 0;
-		sum = 0;
 		channel_count = 0;
-		for (short i = 0; i < N_TAP; i++) {
+		reset_loop1: for (short i = 0; i < N_TAP; i++) {
 			tap_array[i] = 0;
-			for (short j = 0; j < N_TAP*2; j++) {
+			reset_loop2: for (short j = 0; j < N_TAP*2; j++) {
 				master_SSR[j][i] = 0;
 			}
 		}
 		// Driving outputs regardless
-		output_assign(sum, &(*tdata_o),
+		output_assign(0, &(*tdata_o),
                               tvalid_i, &(*tvalid_o), tuser_i,
                               &(*tuser_o), tkeep0_i, &(*tkeep0_o),
                               tkeep1_i, &(*tkeep1_o), treset_i,
@@ -90,7 +89,7 @@ void fir_HLS(short tdata_i, short* tdata_o,
                                 &tuser_previous,
                                 &tkeep_previous,
                                 &tlast_previous,
-                                tdata_i, tvalid_i,
+                                0, tvalid_i,
                                 tuser_i, tkeep0_i,
                                 tlast_i);
 		std::cout << "treset went high, resetting arrays and"
@@ -102,14 +101,33 @@ void fir_HLS(short tdata_i, short* tdata_o,
 		if (tready_i) {
 			// If the tvalid and tkeep signals are high,
 			// run the algorithm as usual
+			short sum = 0;
+			short mult;
 			if (tvalid_i && tkeep0_i && tkeep1_i) {
+
+				sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+				        // Add the register values * their respective
+				        // coefficients to the sum variables
+				        if (i == N_TAP - 1) {
+				            mult = tdata_i*fir_coeffs[0];
+				            sum += mult;
+				            // sum += tdata_i*fir_coeffs[0];
+				        }
+
+				        else {
+
+				            mult = tap_array[i]*fir_coeffs[i+1];
+				            sum += mult;
+				            // sum += tap_array[i]*fir_coeffs[i+1];
+				        }
+				}
 
 				// Move each input up one element in
 				// the SSR array.
 				// Subsequently, add each new array
 				// element * the respective
 				// coefficient to the total sum. 
-				for (short i = N_TAP - 1;
+				register_loop: for (short i = N_TAP - 1;
 				     i >= 0; i--) {
 					// On final iteration set
 					// the first D register to
@@ -123,12 +141,6 @@ void fir_HLS(short tdata_i, short* tdata_o,
 						tap_array[i] =
 						tap_array[i-1];
 					}
-					
-					// Addition tree represented by
-					// this sum? Subject to change and
-					// directives
-					sum += tap_array[i]*
-					       fir_coeffs[i];
 				}
 			// End of FIR mechanism
 			}
@@ -165,39 +177,67 @@ void fir_HLS(short tdata_i, short* tdata_o,
 						     " restore active\n";
 					tlast_reset = false;
 					restore_count = 0;
+
+					// Fully partitioned proxy array for SSR
+					// short partitioned_store_proxy[N_TAP];
+					// short partitioned_load_proxy[N_TAP];
+
+
+					// proxy_loop: for (short i = 0; i < N_TAP; i++) {
+					// 	partitioned_store_proxy[i] = tap_array[i];
+
+						// if (channel_count == 63) {
+							// partitioned_load_proxy[i] = master_SSR[0][i];
+						// }
+
+						// else {
+							// partitioned_load_proxy[i] =
+							// master_SSR[channel_count+1][i];
+						// }
+
+					// }
+
 					// SSR takes place here.
 					// Hopefully using master_ssr array
-					for (short i = 0; i < N_TAP; i++) {
+					SSR_loop: for (short i = 0; i < N_TAP; i++) {
 						// Current packet's tap
 						// values are saved.
 						// Next packet's values
 						// are restored to the tap
 						// array
-						master_SSR[channel_count][i] =
-						tap_array[i];
-						
+
+
+
+						master_SSR[channel_count][i] = tap_array[i];
+
 						if (channel_count == 63) {
-							tap_array[i] =
-							master_SSR[0][i];
+							tap_array[i] = master_SSR[0][i];
 						}
 
 						else {
-							tap_array[i] =
-							master_SSR[
-							channel_count+1][i];
+							tap_array[i] = master_SSR[channel_count+1][i];
 						}
+
+						// master_SSR[channel_count][i] =
+						// partitioned_store_proxy[i];
+
+						// tap_array[i] =
+						// partitioned_load_proxy[i];
+
+						// This didn't work, try following rest of solution
+						// page in skype
 					}
 
-					std::cout << "master_SSR[" <<
-						     channel_count
-						  << "]: \n";
-					for (short i = 0; i < N_TAP; i++) {
-						std::cout << 
-						master_SSR[channel_count][i]
-						<< " ";
-					}
+					// std::cout << "master_SSR[" <<
+					// 	     channel_count
+					// 	  << "]: \n";
+					// for (short i = 0; i < N_TAP; i++) {
+					// 	std::cout <<
+					// 	master_SSR[channel_count][i]
+					// 	<< " ";
+					// }
 					
-					std::cout << "\n";
+					// std::cout << "\n";
 
 					channel_count++;
 					
@@ -242,11 +282,362 @@ void fir_HLS(short tdata_i, short* tdata_o,
 	// std::cout << "tdata output: " << *tdata_o << "\n"; 
 }
 
+
+void reg_shift_sum(bool* array_bool, short tap1[N_TAP], short tap2[N_TAP],
+				   short fir_coeffs_simp[N_TAP], short tdata_in, short* sum) {
+	// Function that shifts registers and sums the new taps, without causing
+	// dependency issues
+
+	if (*array_bool) {
+		sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+						// Add the register values * their respective
+						// coefficients to the sum variables
+						if (i == N_TAP - 1) {
+							*sum = *sum + tdata_in*fir_coeffs_simp[0];
+						}
+
+						else {
+							*sum = *sum + tap1[i]*fir_coeffs_simp[i+1];
+						}
+			}
+
+		register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+							// Introduce new input to first register
+							if (i==0) {
+								tap2[i] = tdata_in;
+							}
+							// Move all other values up one register
+							else {
+								tap2[i] = tap1[i-1];
+							}
+			}
+	}
+
+	else {
+		sum_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
+						// Add the register values * their respective
+						// coefficients to the sum variables
+						if (i == N_TAP - 1) {
+							*sum = *sum + tdata_in*fir_coeffs_simp[0];
+						}
+
+						else {
+							*sum = *sum + tap2[i]*fir_coeffs_simp[i+1];
+						}
+			}
+
+		register_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
+							// Introduce new input to first register
+							if (i==0) {
+								tap1[i] = tdata_in;
+							}
+							// Move all other values up one register
+							else {
+								tap1[i] = tap2[i-1];
+							}
+			}
+	}
+
+	*array_bool = !(*array_bool);
+}
+
+
+void fir_HLS_simplified(short tdata_i, short* tdata_o,
+             		bool tvalid_i, bool* tvalid_o, bool tuser_i,
+			bool* tuser_o, bool tkeep0_i, bool* tkeep0_o,
+			bool tkeep1_i, bool* tkeep1_o, bool tready_i,
+			bool treset_i, bool* treset_o, bool tlast_i,
+			bool* tlast_o) {
+	// Simplified FIR function to work towards a working modelsim output
+	// Removed SSR mechanism
+
+	// static short tdata_previous;
+
+	// static bool array_bool;
+
+	// static bool tlast_reset, tvalid_previous,
+	// 		tuser_previous, tkeep_previous,
+	// 		tlast_previous;
+
+	static short tdata_previous[CLK_REC];
+	static bool tvalid_previous[CLK_REC], tuser_previous[CLK_REC],
+				tkeep_previous[CLK_REC], tlast_previous[CLK_REC];
+
+	static char restore_count;
+
+	static bool tlast_reset;
+
+		if (tready_i || treset_i) {
+
+			if (treset_i) {
+
+					tlast_reset = false;
+					// array_bool = true;
+					restore_count = 0;
+
+					reset_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+						tap_array[i] = 0;
+					}
+
+					output_assign(0, &(*tdata_o),
+			                              tvalid_i, &(*tvalid_o), tuser_i,
+			                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+			                              tkeep1_i, &(*tkeep1_o), treset_i,
+			                              &(*treset_o), tlast_i, &(*tlast_o));
+
+					previous_reset: for (short i = CLK_REC - 1; i >= 0; i--) {
+						tdata_previous[i] = 0;
+						tvalid_previous[i] = tvalid_i;
+						tuser_previous[i] = tuser_i;
+						tkeep_previous[i] = tkeep0_i;
+						tlast_previous[i] = tlast_i;
+					}
+
+			        // previous_assign(&tdata_previous,
+			        // 				&tvalid_previous,
+					// 				&tuser_previous,
+					// 				&tkeep_previous,
+					// 				&tlast_previous,
+					// 				0, tvalid_i,
+					// 				tuser_i, tkeep0_i,
+					// 				tlast_i);
+
+			        //         std::cout << "treset went high, resetting arrays and"
+			        //                      " variables\n";
+			}
+
+			else {
+				short sum = 0;
+				short mult;
+
+				if (tvalid_i && tkeep0_i && tkeep1_i) {
+					// sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+					// Add the register values * their respective
+					// coefficients to the sum variables
+
+					// 							if (i == N_TAP - 1) {
+					// 								mult = tdata_i*fir_coeffs[0];
+					// 								sum += mult;
+					// 								sum += tdata_i*fir_coeffs[0];
+					// 							}
+
+					// 							else {
+					// 								mult = tap_array[i]*fir_coeffs[i+1];
+					// 								sum += mult;
+					// 								// sum += tap_array[i]*fir_coeffs[i+1];
+					// 							}
+					// }
+
+					register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+										// Introduce new input to first register
+										if (i==0) {
+											tap_array[i] = tdata_i;
+										}
+										// Move all other values up one register
+										else {
+											tap_array[i] = tap_array[i-1];
+										}
+
+										mult = tap_array[i]*fir_coeffs[i];
+										sum += mult;
+					}
+					// End of FIR mechanism
+				}
+
+				output_assign(sum, &(*tdata_o),
+                              tvalid_i, &(*tvalid_o), tuser_i,
+                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+                              tkeep1_i, &(*tkeep1_o), treset_i,
+                              &(*treset_o), tlast_i, &(*tlast_o));
+
+				previous_assign: for (short i = CLK_REC - 1; i >= 0; i--) {
+					if (i == 0) {
+						tdata_previous[i] = sum;
+						tvalid_previous[i] = tvalid_i;
+						tuser_previous[i] = tuser_i;
+						tkeep_previous[i] = tkeep0_i;
+						tlast_previous[i] = tlast_i;
+					}
+
+					else {
+						tdata_previous[i] = tdata_previous[i-1];
+						tvalid_previous[i] = tvalid_previous[i-1];
+						tuser_previous[i] = tuser_previous[i-1];
+						tkeep_previous[i] = tkeep_previous[i-1];
+						tlast_previous[i] = tlast_previous[i-1];
+					}
+				}
+
+			// previous_assign(&tdata_previous,
+            //                	&tvalid_previous,
+            //                	&tuser_previous,
+            //                	&tkeep_previous,
+            //                	&tlast_previous,
+            //              	sum, tvalid_i,
+            //              	tuser_i, tkeep0_i,
+            //               	tlast_i);
+
+			
+				if (tlast_reset) {
+					// std::cout << "tlast went high, wipe "
+					// 	     "delay active\n";
+					restore_count++;
+
+					if (restore_count == WIPE_DELAY) {
+						tlast_reset = false;
+						restore_count = 0;
+
+						reset_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
+							tap_array[i] = 0;
+						}
+					}
+				}
+
+				if (tlast_i && tuser_i) {
+					tlast_reset = true;
+				}
+				// End of tready if bracket
+			}
+		}
+
+		else {
+				// tready scaffolding
+				// std::cout << "\n\n";
+				// for (short i = CLK_REC - 1; i >= 0; i--) {
+				// 	std::cout << "tdata_previous[" << i << "]:"
+				// 			  << tdata_previous[i] << "\n";
+				// }
+
+				output_assign(tdata_previous[CLK_REC-1], &(*tdata_o),
+                              tvalid_previous[CLK_REC-1], &(*tvalid_o),
+                              tuser_previous[CLK_REC-1], &(*tuser_o),
+                              tkeep_previous[CLK_REC-1], &(*tkeep0_o),
+                              tkeep_previous[CLK_REC-1], &(*tkeep1_o),
+                              treset_i, &(*treset_o),
+                              tlast_previous[CLK_REC-1], &(*tlast_o));
+
+				// output_assign(tdata_previous[CLK_REC - 1], &(*tdata_o),
+				// 			  false, &(*tvalid_o), false, &(*tuser_o),
+				// 			  false, &(*tkeep0_o), false, &(*tkeep1_o),
+				// 			  treset_i, &(*treset_o), false, &(*tlast_o));
+		// End of tready else statement
+		}
+}
+
+
+void fir_HLS_axi4s(short tdata_i, short* tdata_o,
+             		bool tvalid_i, bool* tvalid_o, bool tuser_i,
+			bool* tuser_o, bool tkeep0_i, bool* tkeep0_o,
+			bool tkeep1_i, bool* tkeep1_o,
+			bool treset_i, bool* treset_o, bool tlast_i,
+			bool* tlast_o) {
+	// Simplified FIR function to work towards a working modelsim output
+	// Removed SSR mechanism
+
+	static char restore_count;
+
+	static bool tlast_reset;
+
+		if (treset_i) {
+
+					tlast_reset = false;
+					// array_bool = true;
+					restore_count = 0;
+
+					reset_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+						tap_array[i] = 0;
+					}
+
+					output_assign(0, &(*tdata_o),
+			                              tvalid_i, &(*tvalid_o), tuser_i,
+			                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+			                              tkeep1_i, &(*tkeep1_o), treset_i,
+			                              &(*treset_o), tlast_i, &(*tlast_o));
+
+			        //         std::cout << "treset went high, resetting arrays and"
+			        //                      " variables\n";
+		}
+
+		else {
+				short sum = 0;
+				short mult;
+
+				if (tvalid_i && tkeep0_i && tkeep1_i) {
+					// sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+					// Add the register values * their respective
+					// coefficients to the sum variables
+
+					// 							if (i == N_TAP - 1) {
+					// 								mult = tdata_i*fir_coeffs[0];
+					// 								sum += mult;
+					// 								sum += tdata_i*fir_coeffs[0];
+					// 							}
+
+					// 							else {
+					// 								mult = tap_array[i]*fir_coeffs[i+1];
+					// 								sum += mult;
+					// 								// sum += tap_array[i]*fir_coeffs[i+1];
+					// 							}
+					// }
+
+					register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+										// Introduce new input to first register
+										if (i==0) {
+											tap_array[i] = tdata_i;
+										}
+										// Move all other values up one register
+										else {
+											tap_array[i] = tap_array[i-1];
+										}
+
+										mult = tap_array[i]*fir_coeffs[i];
+										sum += mult;
+					}
+					// End of FIR mechanism
+			}
+
+				output_assign(sum, &(*tdata_o),
+                              tvalid_i, &(*tvalid_o), tuser_i,
+                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+                              tkeep1_i, &(*tkeep1_o), treset_i,
+                              &(*treset_o), tlast_i, &(*tlast_o));
+
+				if (tlast_reset) {
+									// std::cout << "tlast went high, wipe "
+									// 	     "delay active\n";
+									restore_count++;
+
+									if (restore_count == WIPE_DELAY) {
+										tlast_reset = false;
+										restore_count = 0;
+
+										reset_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
+											tap_array[i] = 0;
+										}
+									}
+								}
+
+				if (tlast_i && tuser_i) {
+					tlast_reset = true;
+				}
+			}
+
+			// previous_assign(&tdata_previous,
+            //                	&tvalid_previous,
+            //                	&tuser_previous,
+            //                	&tkeep_previous,
+            //                	&tlast_previous,
+            //              	sum, tvalid_i,
+            //              	tuser_i, tkeep0_i,
+            //               	tlast_i);
+}
+
+
 void array_scan_fir(short tdata_stored[N_SA],
 		    bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
 		    bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
 		    short tdata_output[N_SA], int input_seed, int treset_limit,
-		    int tready_low_limit, int tready_high_limit) {
+		    int tready_low_limit, int tready_high_limit, bool simplified) {
 	// This function scans the arrays from the output of data_read
 	// after it processes the input file, and feeds the data to fir_HLS,
 	// saving the tdata output.
@@ -314,38 +705,48 @@ void array_scan_fir(short tdata_stored[N_SA],
                                 tvalid_i = tvalid_stored[i];
                         }
 
-			if (i == 4097 || (i > 4107 && i < 4122)) {
-				std::cout << "Tap array for line " << i
-					  << " before block:\n";
-				for (short i = 0; i < N_TAP; i++) {
-					std::cout << tap_array[i] << " ";
-					if (i % 8 == 0) {
-						std::cout << "\n";
-					}
-				}
+			// if (i == 4097 || (i > 4107 && i < 4122)) {
+			// 	std::cout << "Tap array for line " << i
+			// 		  << " before block:\n";
+			// 	for (short i = 0; i < N_TAP; i++) {
+			// 		std::cout << tap_array[i] << " ";
+			// 		if (i % 8 == 0) {
+			// 			std::cout << "\n";
+			// 		}
+			// 	}
 
-				std::cout << "\n";
-			}
+			// 	std::cout << "\n";
+			// }
 
-			fir_HLS(tdata_stored[i], &tdata_out, tvalid_i,
+			if (simplified) {
+				fir_HLS_simplified(tdata_stored[i], &tdata_out, tvalid_i,
 				&tvalid_out, tuser_i, &tuser_out,
 				tkeep_stored[i], &tkeep_out, tkeep_stored[i],
 				&tkeep_out, tready, treset, &treset_out,
 				tlast_i, &tlast_out);
+			}
 
-			if (i == 4118) {
-                                std::cout << "Tap array for line " << i
-                                          << " after block:\n"; 
-                                for (short i = 0; i < N_TAP; i++) {
-                                        std::cout << tap_array[i] << " ";
-                                        if (i % 8 == 0) { 
-                                                std::cout << "\n";
-                                        }
-                                }
+			else {
+				fir_HLS(tdata_stored[i], &tdata_out, tvalid_i,
+						&tvalid_out, tuser_i, &tuser_out,
+						tkeep_stored[i], &tkeep_out, tkeep_stored[i],
+						&tkeep_out, tready, treset, &treset_out,
+						tlast_i, &tlast_out);
+			}
+
+			// if (i == 4118) {
+            //                     std::cout << "Tap array for line " << i
+            //                               << " after block:\n";
+            //                     for (short i = 0; i < N_TAP; i++) {
+            //                             std::cout << tap_array[i] << " ";
+            //                             if (i % 8 == 0) {
+            //                                     std::cout << "\n";
+            //                             }
+            //                     }
                                 
-                                std::cout << "\n";
-				std::cout << "and tdata output: " << tdata_out << "\n";
-                        }
+            //                     std::cout << "\n";
+			// 	std::cout << "and tdata output: " << tdata_out << "\n";
+            //             }
 
 
 			if (tvalid_out) {
@@ -364,9 +765,9 @@ void array_scan_fir(short tdata_stored[N_SA],
 			
 				else {
 					tlast_delay = 0;
-					std::cout << "Channel count is now "
-						  << channel_count << " on "
-						  << "line " << i << "\n";
+					// std::cout << "Channel count is now "
+					// 	  << channel_count << " on "
+					// 	  << "line " << i << "\n";
 				}
 			}
 
@@ -401,7 +802,7 @@ bool fir_testbench(const std::string& input_file,
 		   bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
 		   bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
 		   short tdata_output[N_SA], int input_seed, int treset_limit,
-		   int tready_low_limit, int tready_high_limit) {
+		   int tready_low_limit, int tready_high_limit, bool simplified) {
 	// This function reads the input file and feeds the data to fir_HLS
 	// so that we can compare the model sw output to our output.
 	
@@ -413,7 +814,7 @@ bool fir_testbench(const std::string& input_file,
 
 	array_scan_fir(tdata_stored, tvalid_stored, tuser_stored,
 		       tlast_stored, tkeep_stored, tdata_output, input_seed,
-		       treset_limit, tready_low_limit, tready_high_limit);
+		       treset_limit, tready_low_limit, tready_high_limit, simplified);
 
 	short tdata_validated[N_SA];
 

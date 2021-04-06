@@ -4,10 +4,10 @@
 // Defining array-size constants
 #define N_CH 64
 #define PK_S 64
-#define PK_W 100
+#define PK_W 1
 #define N_SA N_CH*PK_S*PK_W
 #define PED_INIT 500
-#define WIPE_DELAY 4
+#define WIPE_DELAY 2
 
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
@@ -29,21 +29,13 @@ void previous_assign(word_t* tdata_previous, bool* tvalid_previous,
                      bool tuser_i,
                      bool tkeep_i, bool tlast_i);
 
-void pedsub_HLS(word_t tdata_i, word_t* tdata_o, word_t* accum_o,
-		word_t* ped_o, bool tvalid_i, bool* tvalid_o,
-		bool tuser_i, bool* tuser_o,
-		bool tkeep0_i, bool* tkeep0_o, bool tkeep1_i,
-		bool* tkeep1_o, bool tready_i, bool treset_i,
-		bool* treset_o, bool tlast_i, bool* tlast_o,
-		word_t accum_i = 0, word_t ped_i = PED_INIT);
-
-void ped_alg(word_t* ped_val, char* accum, word_t* ADC,
-	     word_t* tdata, int* gen_count,
-	     int* accum_count, int* ped_count, bool* tvalid_i, bool* tkeep0_i,
-	     bool* tkeep1_i, bool* tready_i, bool* treset_i,
-	     bool* tlast_i, bool* tvalid_o, bool* tkeep0_o,
-	     bool* tkeep1_o, bool* tready_o, bool* treset_o,
-	     bool* tlast_o);
+void pedsub_HLS(word_t tdata_i, word_t* tdata_o, word_t accum_i,
+                word_t* accum_o, word_t ped_i,
+                word_t* ped_o, bool tvalid_i, bool* tvalid_o,
+                bool tuser_i, bool* tuser_o,
+                bool tkeep0_i, bool* tkeep0_o, bool tkeep1_i,
+                bool* tkeep1_o, bool tready_i, bool treset_i,
+                bool* treset_o, bool tlast_i, bool* tlast_o);
 
 void set_rnd_seed(int new_seed, int& rnd_seed);
 
