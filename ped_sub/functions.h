@@ -1,13 +1,26 @@
 #include <iostream>
 #include <string>
+#include "ap_int.h"
+#ifndef FUNCTIONS_
+#define FUNCTIONS_
 
 // Defining array-size constants
 #define N_CH 64
 #define PK_S 64
-#define PK_W 1
+#define PK_W 2
 #define N_SA N_CH*PK_S*PK_W
 #define PED_INIT 500
-#define WIPE_DELAY 2
+#define WIPE_DELAY 3
+#define LR 1097
+
+struct ap_axis_ps {
+    ap_int<16>    data;
+    ap_uint<2>    keep;
+    bool    user;
+    bool    last;
+    bool    ready;
+    bool    valid;
+};
 
 // Readable word datatype for signed 16 bit integer.
 typedef short word_t;
@@ -66,6 +79,14 @@ void data_read(const std::string& input_file, int& count,
                word_t* ADC_stored, bool* tvalid_stored,
                bool* tuser_stored, bool* tlast_stored, bool* tkeep_stored);
 
+void pedsub_HLS_SSR(ap_axis_ps tdata_i, ap_axis_ps* tdata_o);
+
+void array_scan_SSR(word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+					bool tuser_stored[N_SA], bool tlast_stored[N_SA],
+					bool tkeep_stored[N_SA], word_t ADC_array[N_SA],
+					int input_seed, int treset_limit, int tready_low_limit,
+					int tready_high_limit);
+
 void array_scan(int array_size, word_t ped_val,
                 word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
                 bool tuser_stored[N_SA], bool tlast_stored[N_SA],
@@ -82,10 +103,12 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
                   word_t accum_array[N_CH], int packet_size, int num_channels,
 		  int input_seed, int treset_limit, int tready_low_limit,
-		  int tready_high_limit);
+		  int tready_high_limit, bool SSR_bool);
 
 bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
                  word_t* ADC_validated);
 
 bool ped_test(word_t* ped_array, int num_packets, word_t converge_value,
               word_t ped_val);
+
+#endif

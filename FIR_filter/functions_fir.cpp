@@ -1,24 +1,40 @@
 #include <iostream>
 #include "functions_fir.h"
 // To import functions dealing with the same tready system
-#include "../ped_sub/functions.h"
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <stdio.h>
+#include "ap_axi_sdata.h"
 
 // Tap coefficients
-short fir_coeffs[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2,0,0,
-		        0,0,0,0,0,0};
+short fir_coeffs[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2
+        				,0,0,0,0,0,0,0,0};
+
+short fir_coeffs_SSR_axis[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2
+						         ,0,0,0,0,0,0,0,0};
+
+short fir_coeffs_SSR_axis1[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2
+							      ,0,0,0,0,0,0,0,0};
+
 
 // Prospective SSR array
 short master_SSR[2*N_TAP][N_TAP];
+short SSR_main[2*N_TAP][N_TAP] = {0};
 
 // Tap array
-short tap_array[N_TAP];
-
+short tap_array[N_TAP] = {0};
+short tap_array1[N_TAP] = {0};
+short SSR_temp[N_TAP] = {0};
 
 // Channel counter for SSR top function
-short channel_count;
+char channel_count = 0;
+char restore_count = 0;
+char sample_count0 = 0;
+char sample_count1 = 0;
+bool array_bool = true;
+
+bool tlast_rec[CLK_REC] = {false};
 
 
 void output_assign(short tdata_assign, short* tdata_o, bool tvalid_assign,
@@ -26,7 +42,7 @@ void output_assign(short tdata_assign, short* tdata_o, bool tvalid_assign,
 		       bool tkeep0_assign, bool* tkeep0_o, bool tkeep1_assign,
       		       bool* tkeep1_o, bool treset_assign, bool* treset_o,
 		       bool tlast_assign, bool* tlast_o) {
-	
+
 	// Output assignment function to prevent repeated code
 	// previous_assign is imported from functions_pedsub.cpp
 	*tdata_o = tdata_assign;
@@ -38,8 +54,50 @@ void output_assign(short tdata_assign, short* tdata_o, bool tvalid_assign,
 	*tlast_o = tlast_assign;
 }
 
+void reg_shift_sum(bool* array_bool, short tap1[N_TAP], short tap2[N_TAP],
+				   short tdata_in, short* sum) {
+	// Function that shifts registers and sums the new taps, without causing
+	// dependency issues
 
-void fir_HLS(short tdata_i, short* tdata_o,
+	short fir_coeffs2[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2
+								      ,0,0,0,0,0,0,0,0};
+
+	*sum = 0;
+
+	if (*array_bool) {
+		register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+							// Introduce new input to first register
+							if (i==0) {
+								tap2[i] = tdata_in;
+							}
+							// Move all other values up one register
+							else {
+								tap2[i] = tap1[i-1];
+							}
+						*sum = *sum + tap2[i]*fir_coeffs2[i];
+			}
+	}
+
+	else {
+		register_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
+							// Introduce new input to first register
+							if (i==0) {
+								tap1[i] = tdata_in;
+							}
+							// Move all other values up one register
+							else {
+								tap1[i] = tap2[i-1];
+							}
+						*sum = *sum + tap1[i]*fir_coeffs[i];
+			}
+	}
+
+	*array_bool = !(*array_bool);
+}
+
+// Unused functions zone ////////////////////////////////////////////////
+
+void fir_HLS_proto(short tdata_i, short* tdata_o,
 	     bool tvalid_i, bool* tvalid_o, bool tuser_i, bool* tuser_o,
 	     bool tkeep0_i, bool* tkeep0_o, bool tkeep1_i,
              bool* tkeep1_o, bool tready_i, bool treset_i,
@@ -56,7 +114,7 @@ void fir_HLS(short tdata_i, short* tdata_o,
 	// to obtain the final summation and output of the filter. When tlast
 	// goes high, the x32 to x64 inputs are saved, and the taps are restored
 	// by the values saved for the next channel.
-	
+
 	// tready restore and addition tree variable
 	static short tdata_previous;
 	// boolean tready restores
@@ -92,8 +150,8 @@ void fir_HLS(short tdata_i, short* tdata_o,
                                 0, tvalid_i,
                                 tuser_i, tkeep0_i,
                                 tlast_i);
-		std::cout << "treset went high, resetting arrays and"
-			     " variables\n";
+		// std::cout << "treset went high, resetting arrays and"
+		// 	     " variables\n";
 	}
 	// If treset is not high, run algorithm as usual
 	else {
@@ -115,10 +173,18 @@ void fir_HLS(short tdata_i, short* tdata_o,
 				        }
 
 				        else {
-
 				            mult = tap_array[i]*fir_coeffs[i+1];
 				            sum += mult;
 				            // sum += tap_array[i]*fir_coeffs[i+1];
+				        }
+
+				        if (channel_count == 63) {
+				        	std::cout << "sum before tap_array["
+				        			  << i << "]*fir_coeffs[" << i
+									  << "+1]: " << sum << "\n";
+				        	std::cout << "tap_array["
+				        			  << i << "] " << tap_array[i]
+				        			  << " | coefficient: " << fir_coeffs[i+1] << "\n";
 				        }
 				}
 
@@ -126,7 +192,7 @@ void fir_HLS(short tdata_i, short* tdata_o,
 				// the SSR array.
 				// Subsequently, add each new array
 				// element * the respective
-				// coefficient to the total sum. 
+				// coefficient to the total sum.
 				register_loop: for (short i = N_TAP - 1;
 				     i >= 0; i--) {
 					// On final iteration set
@@ -144,7 +210,7 @@ void fir_HLS(short tdata_i, short* tdata_o,
 				}
 			// End of FIR mechanism
 			}
-			
+
 			// Output assignment (sum to FIR tdata output)
 			output_assign(sum, &(*tdata_o),
                                       tvalid_i, &(*tvalid_o), tuser_i,
@@ -161,20 +227,20 @@ void fir_HLS(short tdata_i, short* tdata_o,
                                 	sum, tvalid_i,
                                 	tuser_i, tkeep0_i,
                                 	tlast_i);
-			
+
 			// SSR of D registers several clk's after
 			// tlast to prevent complications on the next
 			// packet.
 			if (tlast_reset) {
-				std::cout << "tlast went high, wipe "
-					     "delay active\n";
+				// std::cout << "tlast went high, wipe "
+				// 	     "delay active\n";
 				// Increase clock delay counter
 				restore_count++;
 				// If the limit is reached, reset and restore
 				// variables
 				if (restore_count == WIPE_DELAY) {
-					std::cout << "Wipe delay over, tlast"
-						     " restore active\n";
+					// std::cout << "Wipe delay over, tlast"
+					// 	     " restore active\n";
 					tlast_reset = false;
 					restore_count = 0;
 
@@ -236,11 +302,11 @@ void fir_HLS(short tdata_i, short* tdata_o,
 					// 	master_SSR[channel_count][i]
 					// 	<< " ";
 					// }
-					
+
 					// std::cout << "\n";
 
 					channel_count++;
-					
+
 					if (channel_count > 63) {
 						channel_count = 0;
 					}
@@ -279,68 +345,10 @@ void fir_HLS(short tdata_i, short* tdata_o,
 	// 	}
 	// }
 	// std::cout << "\n";
-	// std::cout << "tdata output: " << *tdata_o << "\n"; 
+	// std::cout << "tdata output: " << *tdata_o << "\n";
 }
 
-
-void reg_shift_sum(bool* array_bool, short tap1[N_TAP], short tap2[N_TAP],
-				   short fir_coeffs_simp[N_TAP], short tdata_in, short* sum) {
-	// Function that shifts registers and sums the new taps, without causing
-	// dependency issues
-
-	if (*array_bool) {
-		sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-						// Add the register values * their respective
-						// coefficients to the sum variables
-						if (i == N_TAP - 1) {
-							*sum = *sum + tdata_in*fir_coeffs_simp[0];
-						}
-
-						else {
-							*sum = *sum + tap1[i]*fir_coeffs_simp[i+1];
-						}
-			}
-
-		register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-							// Introduce new input to first register
-							if (i==0) {
-								tap2[i] = tdata_in;
-							}
-							// Move all other values up one register
-							else {
-								tap2[i] = tap1[i-1];
-							}
-			}
-	}
-
-	else {
-		sum_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
-						// Add the register values * their respective
-						// coefficients to the sum variables
-						if (i == N_TAP - 1) {
-							*sum = *sum + tdata_in*fir_coeffs_simp[0];
-						}
-
-						else {
-							*sum = *sum + tap2[i]*fir_coeffs_simp[i+1];
-						}
-			}
-
-		register_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
-							// Introduce new input to first register
-							if (i==0) {
-								tap1[i] = tdata_in;
-							}
-							// Move all other values up one register
-							else {
-								tap1[i] = tap2[i-1];
-							}
-			}
-	}
-
-	*array_bool = !(*array_bool);
-}
-
+// End of unused functions zone //////////////////////////////////////////////
 
 void fir_HLS_simplified(short tdata_i, short* tdata_o,
              		bool tvalid_i, bool* tvalid_o, bool tuser_i,
@@ -402,8 +410,6 @@ void fir_HLS_simplified(short tdata_i, short* tdata_o,
 					// 				tuser_i, tkeep0_i,
 					// 				tlast_i);
 
-			        //         std::cout << "treset went high, resetting arrays and"
-			        //                      " variables\n";
 			}
 
 			else {
@@ -411,22 +417,6 @@ void fir_HLS_simplified(short tdata_i, short* tdata_o,
 				short mult;
 
 				if (tvalid_i && tkeep0_i && tkeep1_i) {
-					// sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-					// Add the register values * their respective
-					// coefficients to the sum variables
-
-					// 							if (i == N_TAP - 1) {
-					// 								mult = tdata_i*fir_coeffs[0];
-					// 								sum += mult;
-					// 								sum += tdata_i*fir_coeffs[0];
-					// 							}
-
-					// 							else {
-					// 								mult = tap_array[i]*fir_coeffs[i+1];
-					// 								sum += mult;
-					// 								// sum += tap_array[i]*fir_coeffs[i+1];
-					// 							}
-					// }
 
 					register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
 										// Introduce new input to first register
@@ -524,112 +514,491 @@ void fir_HLS_simplified(short tdata_i, short* tdata_o,
 		}
 }
 
+void fir_HLS_SSR_axi4s(short tdata_i, short* tdata_o,
+        bool tvalid_i, bool* tvalid_o, bool tuser_i,
+		bool* tuser_o, bool tkeep0_i, bool* tkeep0_o,
+		bool tkeep1_i, bool* tkeep1_o, bool tready_i,
+		bool treset_i, bool* treset_o, bool tlast_i,
+		bool* tlast_o) {
 
-void fir_HLS_axi4s(short tdata_i, short* tdata_o,
-             		bool tvalid_i, bool* tvalid_o, bool tuser_i,
+	// Boolean to indicate active tlast delay period
+	static bool delay_bool;
+
+	// Temporary counter to circumvent pipelining issues
+	// ADC_t is 12 bits signed
+	char channel_temp = channel_count;
+
+	// Sum to be added to and then written to *tdata_o
+	short sum = 0;
+
+	// Run block as normal if tready is high
+	if (tready_i) {
+		// Active delay period before variable restore
+		if (delay_bool) {
+			restore_count++;
+			// End of tlast delay
+			if (restore_count == WIPE_DELAY) {
+				// Restore taps and reset counters
+				restore_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+									tap_array[i] = SSR_temp[i];
+				}
+
+				sample_count0 = 0;
+				sample_count1 = 0;
+				delay_bool = false;
+				restore_count = 0;
+
+				// Change channel count
+				if (channel_count == 63) {
+					channel_count = 0;
+				}
+
+				else {
+					channel_count++;
+				}
+			}
+		}
+
+		// Run algorithm and SSR as usual
+		else if (tvalid_i && tkeep0_i && tkeep1_i) {
+			// Loop to cycle tap registers and add to sum
+			register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+				// Introduce new input to first register
+				if (i==0) {
+					tap_array[i] = tdata_i;
+				}
+				// Move all other values up one register
+				else {
+					tap_array[i] = tap_array[i-1];
+				}
+				// Add to sum once shifted
+				sum += tap_array[i]*fir_coeffs_SSR_axis1[i];
+			}
+
+			// SSR mechanism (RAW memory access)
+			// If processing latter half of packet (32nd to 63rd values)
+			// start to save tdata_i to SSR array
+			if (sample_count0 >= N_TAP) {
+				SSR_main[channel_temp][N_TAP-sample_count1 - 1] =
+				tdata_i;
+				// Add to index counter
+				sample_count1++;
+			}
+
+			// During former half (0th to 31st values) read from SSR
+			// array into SSR registers for restoration once tlast_i
+			// goes high
+			else {
+				// Pipeline workaround
+				if (channel_temp == 63) {
+					// So that channel_temp + 1 = 0
+					channel_temp = -1;
+				}
+
+				SSR_temp[sample_count0] =
+				SSR_main[channel_temp+1][sample_count0];
+			}
+
+			// std::cout << "Sample count: " << sample_count << "\n";
+
+			// Add to sample counter
+			sample_count0++;
+
+			// If tlast and tuser go high, begin restore countdown
+			if (tlast_i && tuser_i) {
+				delay_bool = true;
+			}
+			// End of FIR mechanism
+		}
+		// Drive output values
+		output_assign(sum, &(*tdata_o),
+					  tvalid_i, &(*tvalid_o), tuser_i,
+					  &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+					  tkeep1_i, &(*tkeep1_o), treset_i,
+					  &(*treset_o), tlast_i, &(*tlast_o));
+		// End of tready_i if statement
+	}
+}
+
+void fir_HLS_axi4s_simplified(ap_axi4s_fir* tdata_i, ap_axi4s_fir* tdata_o) {
+
+	short tdata_input = tdata_i->data;
+	ap_uint<2> tkeep_input = tdata_i->keep;
+	bool tlast_input = tdata_i->last;
+	// bool tuser_input = tdata_i->user;
+	
+	// Boolean to indicate active tlast delay period
+//	static bool delay_bool;
+
+//	ADC_t channel_temp = channel_count;
+
+//	static short sum;
+
+//	if (delay_bool) {
+//		restore_count++;
+		// End of tlast delay
+//		if (restore_count == WIPE_DELAY) {
+			// Restore taps and reset counters
+//			restore_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+//				tap_array[i] = SSR_temp[i];
+//			}
+
+//			sample_count0 = 0;
+//			sample_count1 = 0;
+//			delay_bool = false;
+//			restore_count = 0;
+//			sum = 0;
+			// Change channel count
+//			if (channel_count == 63) {
+//				channel_count = 0;
+//			}
+
+//			else {
+//				channel_count++;
+//			}
+//		}
+//	}
+
+//	else if (tkeep_input == 3) {
+		// SSR mechanism (RAW memory access)
+		// If processing latter half of packet (32nd to 63rd values)
+		// start to save tdata_i to SSR array
+//		if (sample_count0 >= N_TAP) {
+//			SSR_main[channel_temp][N_TAP-sample_count1 - 1] =
+//			tdata_input;
+			// Add to index counter
+//			sample_count1++;
+//		}
+
+		// During former half (0th to 31st values) read from SSR
+		// array into SSR registers for restoration once tlast_i
+		// goes high
+//		else {
+			// Pipeline workaround
+//			if (channel_temp == 63) {
+				// So that channel_temp + 1 = 0
+//				channel_temp = -1;
+//			}
+
+//			SSR_temp[sample_count0] =
+//			SSR_main[channel_temp+1][sample_count0];
+//		}
+
+		// std::cout << "Sample count: " << sample_count << "\n";
+
+		// Add to sample counter
+//		sample_count0++;
+
+// 		sum = 0;
+// 		register_loop: for (short i = N_TAP - 1; i > 0; i--) {
+			// Introduce new input to first register
+			// sum += tap_array[i-1]*fir_coeffs_SSR_axis1[i];
+// 			tap_array[i] = tap_array[i-1];
+
+// 			if (i == 1) {
+// 				tap_array[i-1] = tdata_input;
+// 			}
+
+			// Move all other values up one register
+			// Add to sum once shifted
+			// sum += tap_array[i]*fir_coeffs_SSR_axis1[i];
+// 		}
+
+// 		if (tlast_input) {
+// 			delay_bool = true;
+// 		}
+//	}
+
+	tdata_o->data = tdata_i->data;
+	tdata_o->keep = tkeep_input;
+	tdata_o->last = tlast_input;
+	// tdata_o->user = tuser_input;
+}
+
+
+void fir_HLS_SSR(short tdata_i, short* tdata_o,
+            bool tvalid_i, bool* tvalid_o, bool tuser_i,
 			bool* tuser_o, bool tkeep0_i, bool* tkeep0_o,
-			bool tkeep1_i, bool* tkeep1_o,
+			bool tkeep1_i, bool* tkeep1_o, bool tready_i,
 			bool treset_i, bool* treset_o, bool tlast_i,
 			bool* tlast_o) {
-	// Simplified FIR function to work towards a working modelsim output
-	// Removed SSR mechanism
+	// This is the adapted fir_HLS_simplified function that includes an SSR
+	// mechanism
 
-	static char restore_count;
+	static short tdata_previous[CLK_REC];
+	static short sample_count0, sample_count1;
+	static bool tvalid_previous[CLK_REC], tuser_previous[CLK_REC],
+				tkeep_previous[CLK_REC], tlast_previous[CLK_REC];
+	// static short SSR_main[2*N_TAP][N_TAP];
 
-	static bool tlast_reset;
+	// static bool tlast_reset;
+
+	short channel_temp = channel_count;
+
+	short fir_coeffs_SSR[32] = {0,0,0,0,0,0,0,0,2,4,6,7,9,11,12,13,13,12,11,9,7,6,4,2
+							    ,0,0,0,0,0,0,0,0};
+
+	if (tready_i || treset_i) {
 
 		if (treset_i) {
 
-					tlast_reset = false;
-					// array_bool = true;
-					restore_count = 0;
+				// tlast_reset = false;
 
-					reset_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-						tap_array[i] = 0;
-					}
+				output_assign(0, &(*tdata_o),
+		                              tvalid_i, &(*tvalid_o), tuser_i,
+		                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+		                              tkeep1_i, &(*tkeep1_o), treset_i,
+		                              &(*treset_o), tlast_i, &(*tlast_o));
 
-					output_assign(0, &(*tdata_o),
-			                              tvalid_i, &(*tvalid_o), tuser_i,
-			                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
-			                              tkeep1_i, &(*tkeep1_o), treset_i,
-			                              &(*treset_o), tlast_i, &(*tlast_o));
-
-			        //         std::cout << "treset went high, resetting arrays and"
-			        //                      " variables\n";
+				previous_reset: for (short i = CLK_REC - 1; i >= 0; i--) {
+					tdata_previous[i] = 0;
+					tvalid_previous[i] = tvalid_i;
+					tuser_previous[i] = tuser_i;
+					tkeep_previous[i] = tkeep0_i;
+					tlast_previous[i] = tlast_i;
+				}
 		}
 
 		else {
-				short sum = 0;
-				short mult;
+			short sum = 0;
+			short mult;
 
-				if (tvalid_i && tkeep0_i && tkeep1_i) {
-					// sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-					// Add the register values * their respective
-					// coefficients to the sum variables
+			if (tvalid_i && tkeep0_i && tkeep1_i) {
 
-					// 							if (i == N_TAP - 1) {
-					// 								mult = tdata_i*fir_coeffs[0];
-					// 								sum += mult;
-					// 								sum += tdata_i*fir_coeffs[0];
-					// 							}
+				// sum_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+				// 	if (i == N_TAP - 1) {
+				// 		mult = tdata_i*fir_coeffs_SSR[0];
+				// 		sum += mult;
+				// 	}
 
-					// 							else {
-					// 								mult = tap_array[i]*fir_coeffs[i+1];
-					// 								sum += mult;
-					// 								// sum += tap_array[i]*fir_coeffs[i+1];
-					// 							}
-					// }
+				// 	else {
+				// 	 	mult = tap_array[i]*fir_coeffs_SSR[i+1];
+				// 		sum += mult;
+				// 	}
 
-					register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
-										// Introduce new input to first register
-										if (i==0) {
-											tap_array[i] = tdata_i;
-										}
-										// Move all other values up one register
-										else {
-											tap_array[i] = tap_array[i-1];
-										}
+					// if (channel_count == 63) {
+			        	// std::cout << "sum before tap_array["
+			        	// 		  << i << "]*fir_coeffs[" << i
+						// 		  << "+1]: " << sum << "\n";
+			        	// std::cout << "tap_array["
+			        	// 		  << i << "] " << tap_array[i]
+			        	// 		  << " | coefficient: " << fir_coeffs_SSR[i+1] << "\n";
+			        // }
+				// }
 
-										mult = tap_array[i]*fir_coeffs[i];
-										sum += mult;
+				// SSR mechanism (RAW memory access)
+				if (sample_count0 >= N_TAP && sample_count0 < 2*N_TAP) {
+					SSR_main[channel_temp][N_TAP-sample_count1 - 1] =
+					tdata_i;
+					sample_count1++;
+				}
+
+				else {
+					if (channel_temp == 63) {
+						SSR_temp[sample_count0] =
+						SSR_main[0][sample_count0];
 					}
-					// End of FIR mechanism
+
+					else {
+						SSR_temp[sample_count0] =
+						SSR_main[channel_temp + 1][sample_count0];
+					}
+				}
+
+				// std::cout << "Sample count: " << sample_count << "\n";
+
+				sample_count0++;
+				// End of FIR mechanism
 			}
 
-				output_assign(sum, &(*tdata_o),
-                              tvalid_i, &(*tvalid_o), tuser_i,
-                              &(*tuser_o), tkeep0_i, &(*tkeep0_o),
-                              tkeep1_i, &(*tkeep1_o), treset_i,
-                              &(*treset_o), tlast_i, &(*tlast_o));
-
-				if (tlast_reset) {
-									// std::cout << "tlast went high, wipe "
-									// 	     "delay active\n";
-									restore_count++;
-
-									if (restore_count == WIPE_DELAY) {
-										tlast_reset = false;
-										restore_count = 0;
-
-										reset_loop2: for (short i = N_TAP - 1; i >= 0; i--) {
-											tap_array[i] = 0;
-										}
-									}
-								}
-
-				if (tlast_i && tuser_i) {
-					tlast_reset = true;
+			if (sample_count0 == 64 && restore_count == WIPE_DELAY-1) {
+				restore_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+						tap_array[i] = SSR_temp[i];
 				}
 			}
 
-			// previous_assign(&tdata_previous,
-            //                	&tvalid_previous,
-            //                	&tuser_previous,
-            //                	&tkeep_previous,
-            //                	&tlast_previous,
-            //              	sum, tvalid_i,
-            //              	tuser_i, tkeep0_i,
-            //               	tlast_i);
+			else if (tvalid_i && tkeep0_i && tkeep1_i) {
+				register_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+					// Introduce new input to first register
+					if (i==0) {
+						tap_array[i] = tdata_i;
+					}
+					// Move all other values up one register
+					else {
+						tap_array[i] = tap_array[i-1];
+					}
+					mult = tap_array[i]*fir_coeffs_SSR[i];
+					sum = sum + mult;
+				}
+			}
+
+			// Setting tdata_o assign to tdata_i for test
+			output_assign(sum, &(*tdata_o),
+                          tvalid_i, &(*tvalid_o), tuser_i,
+                          &(*tuser_o), tkeep0_i, &(*tkeep0_o),
+                          tkeep1_i, &(*tkeep1_o), treset_i,
+                          &(*treset_o), tlast_i, &(*tlast_o));
+
+			previous_assign: for (short i = CLK_REC - 1; i >= 0; i--) {
+				if (i == 0) {
+					// Setting tdata_o assign to tdata_i for test
+					tdata_previous[i] = sum;
+					tvalid_previous[i] = tvalid_i;
+					tuser_previous[i] = tuser_i;
+					tkeep_previous[i] = tkeep0_i;
+					tlast_previous[i] = tlast_i;
+				}
+
+				else {
+					tdata_previous[i] = tdata_previous[i-1];
+					tvalid_previous[i] = tvalid_previous[i-1];
+					tuser_previous[i] = tuser_previous[i-1];
+					tkeep_previous[i] = tkeep_previous[i-1];
+					tlast_previous[i] = tlast_previous[i-1];
+				}
+			}
+
+			if ((tlast_i && tuser_i) || restore_count > 0) {
+				// std::cout << "tlast went high, wipe "
+				// 	     "delay active\n";
+				restore_count++;
+
+				if (restore_count == WIPE_DELAY) {
+					restore_count = 0;
+					sample_count0 = 0;
+					sample_count1 = 0;
+
+					// restore_loop: for (short i = N_TAP-1; i >= 0; i--) {
+					// 	tap_array[i] = SSR_temp[i];
+					// }
+
+					if (channel_temp == 63) {
+
+						// std::cout << "\nGoing back to channel zero."
+						// 		     " Printing restored taps:\n";
+						// for (short i = 0; i <= N_TAP - 1; i++) {
+						 	// std::cout << "\ntap_array[" << i
+							// 	  << "]: " << tap_array[i] << "\n";
+							// std::cout << "\nSSR_temp[" << i
+							// 		  << "]: " << SSR_temp[i] << "\n";
+							// std::cout << "\nmaster_SSR[63][" << i
+						 	//		  << "]: " << master_SSR[channel_count][i] << "\n";
+						// }
+
+						channel_count = 0;
+					}
+
+					else {
+						channel_count++;
+					}
+				}
+			}
+
+			// if (tlast_i && tuser_i) {
+			// 	restore_count++;
+			// }
+			// End of treset else bracket
+		}
+		// End of tready if bracket
+	}
+
+	else {
+			// tready scaffolding
+			// std::cout << "\n\n";
+			// for (short i = CLK_REC - 1; i >= 0; i--) {
+			// 	std::cout << "tdata_previous[" << i << "]:"
+			// 			  << tdata_previous[i] << "\n";
+			// }
+
+			output_assign(tdata_previous[CLK_REC-1], &(*tdata_o),
+                          tvalid_previous[CLK_REC-1], &(*tvalid_o),
+                          tuser_previous[CLK_REC-1], &(*tuser_o),
+                          tkeep_previous[CLK_REC-1], &(*tkeep0_o),
+                          tkeep_previous[CLK_REC-1], &(*tkeep1_o),
+                          treset_i, &(*treset_o),
+                          tlast_previous[CLK_REC-1], &(*tlast_o));
+	// End of tready else statement
+	}
+}
+
+void fir_HLS(ap_fir_hls_in s_axis_data, ap_fir_hls_out* m_axis_data) {
+	// Final function of project. Takes input from and sends output
+	// to Kostas's SSR block.
+
+	static short tdata_previous;
+	static bool tvalid_previous, tuser_previous, tkeep_previous, tlast_previous;
+
+	short tdata_input = s_axis_data.tdata;
+	short tdata_SSR_input = s_axis_data.tdata_SSR;
+	bool tvalid_SSR_input = s_axis_data.tvalid_SSR;
+	bool tvalid_input = s_axis_data.tvalid;
+	ap_uint<2> tkeep_input = s_axis_data.tkeep;
+	bool tuser_input = s_axis_data.tuser;
+	bool tlast_input = s_axis_data.tlast;
+	bool tready_input = m_axis_data->tready;
+
+	static bool delay_flag, delay_flag1, delay_flag2;
+	static short sum;
+	short reg_count;
+
+	if (tready_input) {
+		if (delay_flag) {
+			SSR_temp[0] = tdata_SSR_input;
+			if (delay_flag1) {
+				if (delay_flag2) {
+					restore_loop: for (short i = N_TAP - 1; i >= 0; i--) {
+						tap_array[i] = SSR_temp[i];
+						tap_array1[i] = SSR_temp[i];
+					}
+
+					delay_flag = false;
+					delay_flag1 = false;
+					delay_flag2 = false;
+					sum = 0;
+					sample_count0 = 0;
+				}
+				delay_flag2 = true;
+			}
+			delay_flag1 = true;
+		}
+
+		else if (tvalid_input && (tkeep_input == 3)) {
+			reg_shift_sum(&array_bool, tap_array, tap_array1, tdata_input,
+						     &sum);
+
+			// Me and Gethin looked at the output. 7 values are right on the 2nd wave
+			// and the 0th packet. On the 8th, i.e. when tap[0] of the restored tap is
+			// finally multiplied by not zero, the output sum is wrong. The difference
+			// Between the two outputs is 96, divided by 2 (the coeff) is 48. This is also
+			// the case for 8 samples later. The output difference is 13*48. 48 is the bad one.
+			//  This means that
+			// SSR_temp[0] is restored incorrectly, but the rest of the values are fine.
+			// We need to find out why SSR_temp[0] is shagged. It's probably because I start
+			// saving values one clock too early or too late. Play with that.
+			if (tvalid_SSR_input || sample_count0 < 2*N_TAP) {
+				SSR_temp[2*N_TAP - sample_count0] = tdata_SSR_input;
+			}
+			sample_count0++;
+
+			if (tuser_input && tuser_input) {
+				delay_flag = true;
+			}
+		}
+
+		m_axis_data->tdata = tdata_previous = sum;
+		m_axis_data->tkeep = tkeep_previous = tkeep_input;
+		m_axis_data->tvalid = tvalid_previous = tvalid_input;
+		m_axis_data->tuser = tuser_previous = tuser_input;
+		m_axis_data->tlast = tlast_previous = tlast_input;
+	}
+
+	else {
+		m_axis_data->tdata = tdata_previous;
+		m_axis_data->tkeep = tkeep_previous;
+		m_axis_data->tvalid = tvalid_previous;
+		m_axis_data->tuser = tuser_previous;
+		m_axis_data->tlast = tlast_previous;
+	}
 }
 
 
@@ -646,11 +1015,19 @@ void array_scan_fir(short tdata_stored[N_SA],
 	bool tready = true;
 	// Make sure treset is initially low to prevent infinite loop
 	bool treset = false;
+	bool first_iter = true;
 
 	// Counter for while loop
 	int i = 0;
 	int attempt = 1;
 	int tlast_delay = 0;
+	int sample_count = 0;
+
+	for (short i = 0; i < 2*N_TAP; i++) {
+		for (short j = 0; j < N_TAP; j++) {
+			SSR_main[i][j] = 0;
+		}
+	}
 
 	// Setup for random backpressure and reset
 	int random_seed;
@@ -663,9 +1040,13 @@ void array_scan_fir(short tdata_stored[N_SA],
 	array_scan: while (i < N_SA) {
 		
 		// Random assign for tready and treset
-		random_signal(treset, 1, treset_limit, 1, random_seed);
+		// random_signal(treset, 1, treset_limit, 1, random_seed);
 		random_signal(tready, 1, tready_low_limit, 1,
                                           random_seed);
+
+		if (tuser_stored[i] && tlast_stored[i]) {
+			tready = true;
+		}
 
 		if (treset) {
 			std::cout << "\ntreset went high, "
@@ -684,69 +1065,205 @@ void array_scan_fir(short tdata_stored[N_SA],
 		else {
 			// Initialising temporary signal booleans for
 			// the synthesis ports
-			bool tvalid_i, tuser_i, tlast_i, tvalid_out,
-                             tuser_out, tkeep_out, tlast_out,
-                             tready_out, treset_out;
+
 			// Temporary output variable for FIR output
 			short tdata_out;
+			bool tvalid_out;
+			ap_axi4s_fir tdata_i_struct, tdata_o_struct;
+			ap_fir_hls_in tdata_i_group;
+			ap_fir_hls_out tdata_o_group;
 			
-			if (i == 0) {
-                                treset = true;
-                        }
+			if (i == 0 && first_iter) {
+				treset = true;
+            }
 
 			if (tuser_stored[i] && tlast_stored[i] &&
 			   (tlast_delay > 0)) {
-				tuser_i = tlast_i = tvalid_i = false;
+				tdata_i_struct.last
+				= false;
+				tdata_i_struct.keep = 0;
+				tdata_i_group.tuser = tdata_i_group.tlast
+				= tdata_i_group.tvalid = false;
+				tdata_i_group.tkeep = 0;
+
 			}
 
 			else {
-                                tuser_i = tuser_stored[i];
-                                tlast_i = tlast_stored[i];
-                                tvalid_i = tvalid_stored[i];
-                        }
+				tdata_i_struct.last = tlast_stored[i];
+                tdata_i_struct.keep = 3;
+                tdata_i_group.tuser = tuser_stored[i];
+                tdata_i_group.tlast = tlast_stored[i];
+                tdata_i_group.tkeep = 3;
+                tdata_i_group.tvalid = tvalid_stored[i];
+            }
 
-			// if (i == 4097 || (i > 4107 && i < 4122)) {
-			// 	std::cout << "Tap array for line " << i
-			// 		  << " before block:\n";
-			// 	for (short i = 0; i < N_TAP; i++) {
-			// 		std::cout << tap_array[i] << " ";
-			// 		if (i % 8 == 0) {
-			// 			std::cout << "\n";
-			// 		}
-			// 	}
+			if (i == L_CHK) {
+			 	std::cout << "Tap array for line " << i
+					  << " before block:\n";
+				for (short j = 0; j < N_TAP; j++) {
+					std::cout << tap_array[j] << " ";
+					if (j % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
 
-			// 	std::cout << "\n";
-			// }
+				std::cout << "\n";
+
+				std::cout << "Tap array1 for line " << i
+						  << " before block:\n";
+				for (short j = 0; j < N_TAP; j++) {
+					std::cout << tap_array1[j] << " ";
+					if (j % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
+
+				std::cout << "\n";
+
+				std::cout << "Tap product for line " << i
+						  << " before block:\n";
+				for (short j = 0; j < N_TAP; j++) {
+					std::cout << tap_array[j]*fir_coeffs[j] << " ";
+					if (j % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
+
+				std::cout << "\n";
+
+				std::cout << "Tap product1 for line " << i
+						  << " before block:\n";
+				for (short j = 0; j < N_TAP; j++) {
+					std::cout << tap_array1[j]*fir_coeffs[j] << " ";
+					if (j % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
+
+				std::cout << "\n";
+
+				std::cout << "\nSSR_main for same line: \n";
+
+				for (short j = 0; j < N_TAP; j++) {
+					std::cout << SSR_main[channel_count][j] << " ";
+					if (j % 8 == 0) {
+						std::cout << "\n";
+					}
+				}
+
+				std::cout << "\n";
+
+				std::cout << "tdata_input: " << tdata_stored[i];
+			}
 
 			if (simplified) {
-				fir_HLS_simplified(tdata_stored[i], &tdata_out, tvalid_i,
-				&tvalid_out, tuser_i, &tuser_out,
-				tkeep_stored[i], &tkeep_out, tkeep_stored[i],
-				&tkeep_out, tready, treset, &treset_out,
-				tlast_i, &tlast_out);
+				// fir_HLS_simplified(tdata_stored[i], &tdata_out, tvalid_i,
+				// &tvalid_out, tuser_i, &tuser_out,
+				// tkeep_stored[i], &tkeep_out, tkeep_stored[i],
+				// &tkeep_out, tready, treset, &treset_out,
+				// tlast_i, &tlast_out);
+				tdata_i_struct.data = tdata_stored[i];
+
+				fir_HLS_axi4s_simplified(&tdata_i_struct, &tdata_o_struct);
+
+				tready = true;
+				tvalid_out = tvalid_stored[i];
+				tdata_out = tdata_o_struct.data;
+				// tuser_out = tdata_o_struct.user;
+				// treset_out = treset;
+				// tlast_out = tdata_o_struct.last;
 			}
 
 			else {
-				fir_HLS(tdata_stored[i], &tdata_out, tvalid_i,
-						&tvalid_out, tuser_i, &tuser_out,
-						tkeep_stored[i], &tkeep_out, tkeep_stored[i],
-						&tkeep_out, tready, treset, &treset_out,
-						tlast_i, &tlast_out);
+				// fir_HLS_SSR_axi4s(tdata_stored[i], &tdata_out, tvalid_i,
+				// 		&tvalid_out, tuser_i, &tuser_out,
+				// 		tkeep_stored[i], &tkeep_out, tkeep_stored[i],
+				// 		&tkeep_out, tready, treset, &treset_out,
+				//		tlast_i, &tlast_out);
+
+				tdata_o_group.tready = tready;
+				tdata_i_group.tdata = tdata_stored[i];
+
+				if (sample_count0 >= N_TAP + 1) {
+					SSR_main[channel_count][sample_count0-N_TAP-1] = tdata_stored[i];
+
+					if (channel_count == 63) {
+							tdata_i_group.tdata_SSR = SSR_main[0][sample_count0-N_TAP-1];
+					}
+
+					else {
+						tdata_i_group.tdata_SSR = SSR_main[channel_count + 1][sample_count0-N_TAP-1];
+					}
+
+					tdata_i_group.tvalid_SSR = true;
+				}
+
+				fir_HLS(tdata_i_group, &tdata_o_group);
+
+				tvalid_out = tdata_o_group.tvalid;
+				tdata_out = tdata_o_group.tdata;
 			}
 
-			// if (i == 4118) {
-            //                     std::cout << "Tap array for line " << i
-            //                               << " after block:\n";
-            //                     for (short i = 0; i < N_TAP; i++) {
-            //                             std::cout << tap_array[i] << " ";
-            //                             if (i % 8 == 0) {
-            //                                     std::cout << "\n";
-            //                             }
-            //                     }
+			if (i == L_CHK) {
+                                std::cout << "Tap array for line " << i
+                                          << " after block:\n";
+                                for (short i = 0; i < N_TAP; i++) {
+                                      std::cout << tap_array[i] << " ";
+                                        if (i % 8 == 0) {
+                                                std::cout << "\n";
+                                        }
+                                }
                                 
-            //                     std::cout << "\n";
-			// 	std::cout << "and tdata output: " << tdata_out << "\n";
-            //             }
+                                std::cout << "\n";
+
+                                std::cout << "Tap array1 for line " << i
+                                		  << " after block:\n";
+                                for (short j = 0; j < N_TAP; j++) {
+                                	std::cout << tap_array1[j] << " ";
+                                	if (j % 8 == 0) {
+                                		std::cout << "\n";
+                                	}
+                                }
+
+                				std::cout << "\n";
+
+                				std::cout << "Tap product for line " << i
+                						  << " after block:\n";
+                				for (short j = 0; j < N_TAP; j++) {
+                					std::cout << tap_array[j]*fir_coeffs[j] << " ";
+                					if (j % 8 == 0) {
+                						std::cout << "\n";
+                					}
+                				}
+
+                				std::cout << "\n";
+
+                				std::cout << "Tap product1 for line " << i
+                						  << " after block:\n";
+                				for (short j = 0; j < N_TAP; j++) {
+                					std::cout << tap_array1[j]*fir_coeffs[j] << " ";
+                					if (j % 8 == 0) {
+                						std::cout << "\n";
+                					}
+                				}
+
+                				std::cout << "\n";
+
+                				std::cout << "\nSSR_main for same line: \n";
+
+                				for (short j = 0; j < N_TAP; j++) {
+                					std::cout << SSR_main[channel_count][j] << " ";
+                					if (j % 8 == 0) {
+                						std::cout << "\n";
+                					}
+                				}
+
+                                std::cout << "\n";
+                				std::cout << "channel_count and restore_count after"
+                							 " block: " << channel_count << " | "
+                							 << restore_count << " \n";
+                				std::cout << "and tdata output: " << tdata_out << "\n";
+            }
 
 
 			if (tvalid_out) {
@@ -764,10 +1281,18 @@ void array_scan_fir(short tdata_stored[N_SA],
 				}
 			
 				else {
+					tdata_i_group.tvalid_SSR = false;
 					tlast_delay = 0;
-					// std::cout << "Channel count is now "
-					// 	  << channel_count << " on "
-					// 	  << "line " << i << "\n";
+					if (channel_count == 63) {
+						channel_count = 0;
+					}
+
+					else {
+						channel_count++;
+					}
+					std::cout << "Channel count is now "
+						  << channel_count << " on "
+						  << "line " << i << "\n";
 				}
 			}
 
@@ -777,15 +1302,21 @@ void array_scan_fir(short tdata_stored[N_SA],
 			if (!tready) {
 				// Iterator for while loop does not increase,
 				// process same line again
-				std::cout << "\nLine " << i <<
-                                             " had a low tready "
-                                             "during attempt " << attempt
-                                             << " so pointer will return to "
-                                             "that line and reattempt the "
-                                             "scan \n";
-                                random_signal(tready, 1, tready_high_limit, 1,
-                                                              random_seed);
+			    std::cout << "\nLine " << i <<
+                                            " had a low tready "
+                                            "during attempt " << attempt
+                                            << " so pointer will return to "
+                                            "that line and reattempt the "
+                                            "scan \n";
+                               random_signal(tready, 1, tready_high_limit, 1,
+                                                            random_seed);
 			}
+
+			// else if (first_iter) {
+			// 	std::cout << "\n First iteration, treset goes high to"
+			// 			     " prep the algorithm, i does not increase.\n";
+			// 	first_iter = false;
+			// }
 
 			else {
 				// Iterator increases if tready is high
@@ -802,7 +1333,8 @@ bool fir_testbench(const std::string& input_file,
 		   bool tvalid_stored[N_SA], bool tuser_stored[N_SA],
 		   bool tlast_stored[N_SA], bool tkeep_stored[N_SA],
 		   short tdata_output[N_SA], int input_seed, int treset_limit,
-		   int tready_low_limit, int tready_high_limit, bool simplified) {
+		   int tready_low_limit, int tready_high_limit, bool simplified,
+		   bool auto_pass) {
 	// This function reads the input file and feeds the data to fir_HLS
 	// so that we can compare the model sw output to our output.
 	
@@ -818,5 +1350,13 @@ bool fir_testbench(const std::string& input_file,
 
 	short tdata_validated[N_SA];
 
-	return ADC_compare(output_file, tdata_output, tdata_validated); 
+	if (auto_pass) {
+		bool temp_bool;
+		temp_bool = ADC_compare(output_file, tdata_output, tdata_validated);
+		return 0;
+	}
+
+	else {
+		return ADC_compare(output_file, tdata_output, tdata_validated);
+	}
 }

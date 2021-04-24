@@ -1,9 +1,25 @@
 #include <iostream>
-#include "../ped_sub/functions.h"
+#include "functions.h"
+#include "../FIR_filter/functions_fir.h"
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
+#include "stdio.h"
+#include "ap_int.h"
+
+ap_int<12> ped_SSR[N_CH] = {500};
+
+ap_int<12> accum_SSR[N_CH] = {0};
+
+ap_int<12> channel_counter = 0;
+ap_int<12> ped_stored = PED_INIT;
+ap_int<12> accum_stored = 0;
+ap_int<12> restore_counter = 0;
+
+bool first_wave = true;
+bool packet_start = true;
+bool delay_flag = false;
 
 void output_assignment(word_t tdata_i, word_t* tdata_assign, word_t accum_i,
                 word_t* accum_assign, word_t ped_i,
@@ -187,6 +203,129 @@ void pedsub_HLS(word_t tdata_i, word_t* tdata_o, word_t accum_i,
 			//		  << tlast_previous << "\n";
 		}
 	}
+}
+
+
+void pedsub_HLS_SSR(ap_axis_ps tdata_i, ap_axis_ps* tdata_o) {
+	// New self sufficient pedsub algorithm with SSR functionality
+	static short tdata_previous;
+	static bool tvalid_previous, tuser_previous, tkeep_previous, tlast_previous;
+
+	ap_int<16> tdata_input = tdata_i.data;
+	ap_uint<2> tkeep_input = tdata_i.keep;
+	bool tvalid_input = tdata_i.valid;
+	bool tready_input = tdata_i.ready;
+	bool tuser_input = tdata_i.user;
+	bool tlast_input = tdata_i.last;
+
+	if (tready_input) {
+		ap_int<12> channel_temp = channel_counter;
+		ap_int<12> accum_temp, ped_temp;
+		accum_temp = accum_stored;
+		ped_temp = ped_stored;
+
+		if (delay_flag) {
+			restore_counter++;
+				if (restore_counter + 1 == WIPE_DELAY) {
+					if (channel_temp == N_CH - 1) {
+						channel_counter = 0;
+						first_wave = false;
+					}
+
+					else {
+						channel_counter++;
+					}
+
+					accum_temp = accum_SSR[channel_counter];
+					ped_temp = ped_SSR[channel_counter];
+
+					delay_flag = false;
+					packet_start = true;
+					restore_counter = 0;
+				}
+
+				else if (restore_counter + 1 == WIPE_DELAY - 1) {
+						accum_SSR[channel_temp] = accum_temp;
+						ped_SSR[channel_temp] = ped_temp;
+					}
+		}
+
+		else if (tvalid_input && tkeep_input == 3) {
+
+			accum_ped_condition: {
+					if (tdata_input > ped_temp) {
+
+						if (accum_temp + 1 == 10) {
+							ped_temp++;
+							accum_temp = 0;
+						}
+
+						else {
+							accum_temp ++;
+						}
+					}
+
+					else if (tdata_input < ped_temp) {
+
+						if (accum_temp - 1 == -10) {
+							ped_temp--;;
+							accum_temp = 0;
+						}
+
+						else {
+							accum_temp--;
+						}
+					}
+				}
+
+				if (tlast_input && tuser_input) {
+					delay_flag = true;
+			}
+
+			if (packet_start) {
+				if (first_wave && channel_counter < N_CH - 1) {
+						accum_SSR[channel_counter + 1] = 0;
+						ped_SSR[channel_counter + 1] = PED_INIT;
+				}
+				packet_start = false;
+			}
+		}
+
+		accum_stored = accum_temp;
+		ped_stored = ped_temp;
+
+		tdata_o->data = tdata_input - ped_stored;
+		tdata_o->valid = tvalid_input;
+		tdata_o->keep = tkeep_input;
+		tdata_o->user = tuser_input;
+		tdata_o->last = tlast_input;
+		tdata_o->ready = tready_input;
+
+		previous_assign(&tdata_previous, &tvalid_previous,
+						&tuser_previous, &tkeep_previous,
+						&tlast_previous, tdata_input - ped_stored,
+						tvalid_input, tuser_input, tkeep_input,
+						tlast_input);
+	}
+
+	else {
+		tdata_o->data = tdata_previous;
+		tdata_o->valid = tvalid_previous;
+		tdata_o->keep = tkeep_previous;
+		tdata_o->user = tuser_previous;
+		tdata_o->last = tlast_previous;
+		tdata_o->ready = tready_input;
+	}
+}
+
+
+void pedsub_axi4s_test(ap_axi4s tdata_i, ap_axi4s* tdata_o) {
+	// Test pedsub axi4s block to see if the sim freezes
+
+	tdata_o->data = tdata_i.data;
+	tdata_o->keep = tdata_i.keep;
+	tdata_o->user = tdata_i.user;
+	tdata_o->last = tdata_i.last;
 }
 
 
@@ -455,6 +594,167 @@ void ped_top(word_t* channel, word_t tdata_i,
 	*treset_o = treset_i;
 }
 
+void array_scan_SSR(word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
+					bool tuser_stored[N_SA], bool tlast_stored[N_SA],
+					bool tkeep_stored[N_SA], word_t ADC_array[N_SA],
+					int input_seed, int treset_limit, int tready_low_limit,
+					int tready_high_limit) {
+	bool tready = true;
+	bool treset = true;
+
+	int i = 0;
+	int attempt = 1;
+
+	char tlast_delay = 0;
+
+	int random_seed;
+	set_rnd_seed(input_seed, random_seed);
+
+	while (i < N_SA) {
+		// Random assign
+		random_signal(treset, 1, treset_limit, 1, random_seed);
+
+		// Randomly assigning tready signal if not tlast
+		random_signal(tready, 1, tready_low_limit, 1,
+					  random_seed);
+
+		if (tlast_stored[i] || tuser_stored[i]) {
+			tready = true;
+		}
+
+		// Reset entire loop if treset is high
+		if (treset) {
+			// treset print scaffolding
+			std::cout << "\ntreset went high, "
+						 "for iteration "
+					  << i << " "
+						  "so entire process "
+						  "will be reset.\n"
+					  << "Attempt " << attempt
+					  << " has ended.\n";
+
+					i = 0;
+					attempt++;
+					treset = false;
+		}
+
+		else {
+			ap_axis_ps tdata_struct_in, tdata_struct_out;
+
+			if (i == 0) {
+				treset = true;
+			}
+
+			if (tuser_stored[i] && tlast_stored[i] && tlast_delay > 0) {
+				tdata_struct_in.valid = false;
+				tdata_struct_in.keep = 0;
+				tdata_struct_in.last = false;
+				tdata_struct_in.user = false;
+			}
+
+			else {
+				tdata_struct_in.valid = tvalid_stored[i];
+				tdata_struct_in.keep = 3;
+				tdata_struct_in.last = tlast_stored[i];
+				tdata_struct_in.user = tuser_stored[i];
+			}
+
+			tdata_struct_in.ready = tready;
+			tdata_struct_in.data = ADC_stored[i];
+
+			if (i == LR) {
+				std::cout << "Before block runs for line: " << i <<
+						     "\n";
+				std::cout << "ped_SSR[" << channel_counter << "]: "
+						  << ped_SSR[channel_counter] << "\n"
+						  << "accum_SSR[" << channel_counter << "]: "
+						  << accum_SSR[channel_counter] << "\n"
+						  << "ped_stored: " << ped_stored << "\n"
+						  << "accum_stored: "  << accum_stored << "\n"
+						  << "tdata in: " << tdata_struct_in.data
+						  << "\n"
+						  << "treset: " << treset << "\n"
+						  << "tready: " << tready << "\n"
+						  << "tvalid: " << tdata_struct_in.valid << "\n"
+						  << "tkeep: " << tdata_struct_in.keep << "\n"
+						  << "tlast: " << tdata_struct_in.last << "\n"
+						  << "tuser: " << tdata_struct_in.user << "\n"
+						  << "first_wave: " << first_wave << "\n";
+			}
+
+			pedsub_HLS_SSR(tdata_struct_in, &tdata_struct_out);
+
+			if (i == LR) {
+							std::cout << "After block runs for line: " << i <<
+									     "\n";
+							std::cout << "ped_SSR[" << channel_counter << "]: "
+									  << ped_SSR[channel_counter] << "\n"
+									  << "accum_SSR[" << channel_counter << "]: "
+									  << accum_SSR[channel_counter] << "\n"
+									  << "ped_stored: " << ped_stored << "\n"
+									  << "accum_stored: " << accum_stored << "\n"
+									  << "tdata out: " << tdata_struct_out.data
+									  << "\n"
+									  << "treset: " << treset << "\n"
+									  << "tready: " << tready << "\n"
+									  << "tvalid: " << tdata_struct_out.valid << "\n"
+									  << "tkeep: " << tdata_struct_out.keep << "\n"
+									  << "tlast: " << tdata_struct_out.last << "\n"
+									  << "tuser: " << tdata_struct_out.user << "\n"
+									  << "first_wave: " << first_wave << "\n";
+			}
+
+
+			if (tdata_struct_out.valid) {
+				ADC_array[i] = tdata_struct_out.data;
+			}
+
+			if (i == 0) {
+				treset = false;
+			}
+
+			if (tuser_stored[i] && tlast_stored[i]) {
+				if (tlast_delay < WIPE_DELAY) {
+					tlast_delay++;
+					i--;
+				}
+
+				else {
+					tlast_delay = 0;
+				}
+			}
+
+			// If tready is high, revert to previous loop
+			// and check if tready is still high, recursive
+			// until tready is low, then scan as usual.
+			if (!tready) {
+				// Iterator does not increase, we process
+				// the same loop again
+
+				// Print scaffolding for this scenario
+				std::cout << "\nLine " << i <<
+					     " had a low tready "
+					     "during attempt " << attempt
+					     << " so pointer will return to "
+					     "that line and reattempt the "
+					     "scan \n";
+				random_signal(tready, 1, tready_high_limit, 1,
+							      random_seed);
+			}
+
+			// If tready is high, move on to the next sample.
+			else {
+
+				// Add to the while loop counter every
+				// loop to increase the index of the
+				// array element being written
+				i++;
+			}
+		}
+	}
+	std::cout << "End of scan.\n";
+}
+
 
 void array_scan(int array_size, word_t ped_val,
                 word_t ADC_stored[N_SA], bool tvalid_stored[N_SA],
@@ -685,7 +985,7 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
                   word_t ped_array[N_CH], word_t ADC_array[N_SA],
                   word_t accum_array[N_CH], int packet_size, int num_channels,
 	          int input_seed, int treset_limit, int tready_low_limit,
-			  int tready_high_limit) {
+			  int tready_high_limit, bool SSR_bool) {
 	// This is the master (testbench) function to combine the
 	// read and scan protocols to simulate the flow of samples
 	// through the pedestal subtraction algorithm.
@@ -704,10 +1004,20 @@ void ped_sub_read(const std::string& input_file, word_t ped_val,
 	// Scanning the data stored from the read function and appending
 	// the output values from the ped_alg function to preallocated
 	// arrays.
-	array_scan(array_size, ped_val, ADC_stored, tvalid_stored,
-                   tuser_stored, tlast_stored, tkeep_stored, ped_array,
-                   ADC_array, accum_array, packet_size, num_channels,
-		   input_seed, treset_limit, tready_low_limit, tready_high_limit);
+
+	if (SSR_bool) {
+		array_scan_SSR(ADC_stored, tvalid_stored, tuser_stored,
+					   tlast_stored, tkeep_stored, ADC_array, input_seed,
+					   treset_limit, tready_low_limit, tready_high_limit);
+	}
+
+	else {
+		array_scan(array_size, ped_val, ADC_stored, tvalid_stored,
+	               tuser_stored, tlast_stored, tkeep_stored, ped_array,
+	               ADC_array, accum_array, packet_size, num_channels,
+				   input_seed, treset_limit, tready_low_limit, tready_high_limit);
+	}
+
 }
 
 
@@ -770,6 +1080,11 @@ bool ADC_compare(const std::string& output_file, word_t* ADC_adjusted,
 					std::cout << "ADC values do not"
 						  << " match for line "
 						  << i << ".\n";
+
+					std::cout << "Output vs. validated: "
+							  << ADC_adjusted[i]
+							  << " | " << ADC_validated[i]
+							  << "\n";
 
 					ADC_bool = 1;
 					break;
