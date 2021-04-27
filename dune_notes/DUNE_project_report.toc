@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}DUNE Experiment Goals and Context}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}The Importance of Neutrinos in the Standard Model}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}ProtoDUNE DAQ System}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Single and Dual Phase LAr TPCs}{3}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}FELIX}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}The TPG Core}{6}{subsection.1.5}%
+\contentsline {section}{\numberline {2}HLS}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Background}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{11}{subsubsection.2.2.1}%
+\contentsline {section}{\numberline {3}Development and Findings}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{12}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with External SSR}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Performance and Resource Utilization Comparison}{15}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Pedestal Subtraction with Implemented SSR}{16}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}BRAM Utilisation for the SSR Mechanism}{16}{subsubsection.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.1.6}Performance and Resource Utilization Comparison}{16}{subsubsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{16}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{16}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{16}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{17}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Timing and Accommodating the Tap Restoration}{17}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Performance and Resource Utilization Comparison}{17}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}FIR with Implemented SSR}{17}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Optimising for Back Pressure Functionality}{17}{subsubsection.3.2.7}%
+\contentsline {subsubsection}{\numberline {3.2.8}Performance and Resource Utilization Comparison}{17}{subsubsection.3.2.8}%
+\contentsline {section}{\numberline {4}Design Processs Conclusions}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Timeline analysis}{17}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{17}{section.5}%

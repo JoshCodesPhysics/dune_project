@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: DUNE_project_report.aux
+The style file: ieeetr.bst
+Database file #1: dpn.bib
+Warning--empty institution in rubbia1977liquid
+Warning--empty journal in dune_sp_collab
+You've used 20 entries,
+            1876 wiz_defined-function locations,
+            594 strings with 7555 characters,
+and the built_in function-call counts, 4847 in all, are:
+= -- 409
+> -- 310
+< -- 0
++ -- 113
+- -- 93
+* -- 349
+:= -- 738
+add.period$ -- 25
+call.type$ -- 20
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 236
+empty$ -- 424
+format.name$ -- 93
+if$ -- 1152
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 17
+newline$ -- 68
+num.names$ -- 18
+pop$ -- 90
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 163
+stack$ -- 0
+substring$ -- 134
+swap$ -- 93
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 32
+width$ -- 22
+write$ -- 185
+(There were 2 warnings)

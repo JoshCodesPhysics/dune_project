@@ -1,0 +1,105 @@
+\begin{thebibliography}{10}
+
+\bibitem{deep_underground_neutrino_experiment_2020}
+``Dune science home page.'' \url{https://www.dunescience.org/}, 2020.
+\newblock Accessed 11-01-2021.
+
+\bibitem{Mertens_2016}
+S.~Mertens, ``Direct neutrino mass experiments,'' {\em Journal of Physics:
+  Conference Series}, vol.~718, p.~022013, May 2016.
+
+\bibitem{cooper2016masses}
+P.~S. Cooper, ``The masses of the neutrinos,'' {\em arXiv preprint
+  arXiv:1605.03159}, 2016.
+
+\bibitem{acciarri2016longbaseline}
+R.~Acciarri, M.~A. Acero, M.~Adamowski, C.~Adams, P.~Adamson, S.~Adhikari, {\em
+  et~al.}, ``Long-baseline neutrino facility (lbnf) and deep underground
+  neutrino experiment (dune) conceptual design report volume 1: The lbnf and
+  dune projects,'' 2016.
+
+\bibitem{kobayashi1973cp}
+M.~Kobayashi and T.~Maskawa, ``Cp-violation in the renormalizable theory of
+  weak interaction,'' {\em Progress of theoretical physics}, vol.~49, no.~2,
+  pp.~652--657, 1973.
+
+\bibitem{Di_Bari_2012}
+P.~Di~Bari, ``An introduction to leptogenesis and neutrino properties,'' {\em
+  Contemporary Physics}, vol.~53, p.~315–338, Jul 2012.
+
+\bibitem{abi_barr_martin-albo_azfar_2017}
+B.~Abi, G.~Barr, J.~Martin-Albo, and F.~Azfar, ``Dune's daq architecture;
+  envisaging the alternatives,'' Aug 2017.
+
+\bibitem{rubbia1977liquid}
+C.~Rubbia, ``The liquid-argon time projection chamber: a new concept for
+  neutrino detectors,'' tech. rep., 1977.
+
+\bibitem{adams2018rejecting}
+C.~Adams, M.~Alrashed, R.~An, J.~Anthony, J.~Asaadi, A.~Ashkenazi, M.~Auger,
+  S.~Balasubramanian, B.~Baller, C.~Barnes, {\em et~al.}, ``Rejecting cosmic
+  background for exclusive neutrino interaction studies with liquid argon tpcs;
+  a case study with the microboone detector,'' {\em arXiv preprint
+  arXiv:1812.05679}, 2018.
+
+\bibitem{dune_sp_collab}
+T.~Collaboration, B.~Abi, R.~Acciarri, M.~Acero, M.~Adamowski, C.~Adams,
+  D.~Adams, P.~Adamson, M.~Adinolfi, Z.~Ahmad, C.~Albright, T.~Alion,
+  J.~Anderson, K.~Anderson, C.~Andreopoulos, M.~Andrews, R.~Andrews, J.~Anjos,
+  A.~Ankowski, and R.~Zwaska, ``The single-phase protodune technical design
+  report,'' 06 2017.
+
+\bibitem{aimard20184}
+B.~Aimard, C.~Alt, J.~Asaadi, M.~Auger, V.~Aushev, D.~Autiero, M.~Badoi,
+  A.~Balaceanu, G.~Balik, L.~Balleyguier, {\em et~al.}, ``A 4 tonne
+  demonstrator for large-scale dual-phase liquid argon time projection
+  chambers,'' {\em Journal of Instrumentation}, vol.~13, no.~11, p.~P11003,
+  2018.
+
+\bibitem{borga2019felix}
+A.~Borga, E.~Church, F.~Filthaut, E.~Gamberini, R.~Habraken, G.~L. Miotto,
+  T.~Miedema, F.~Schreuder, J.~Schumacher, R.~Sipos, {\em et~al.}, ``Felix
+  based readout of the single-phase protodune detector,'' in {\em EPJ Web of
+  Conferences}, vol.~214, p.~01013, EDP Sciences, 2019.
+
+\bibitem{adams2020protodune}
+D.~Adams, M.~Bass, M.~Bishai, C.~Bromberg, J.~Calcutt, H.~Chen, J.~Fried,
+  I.~Furic, S.~Gao, D.~Gastler, {\em et~al.}, ``The protodune-sp lartpc
+  electronics production, commissioning, and performance,'' {\em Journal of
+  Instrumentation}, vol.~15, no.~06, p.~P06017, 2020.
+
+\bibitem{manolopoulos_2020}
+K.~Manolopoulos, ``Trigger primitive generation - firmware.''
+  \url{https://indico.fnal.gov/event/44240/contributions/190328/attachments/132052/162111/UPDAQ_TechRev_TPGfw.pdf},
+  Jul 2020.
+
+\bibitem{coussy2009introduction}
+P.~Coussy, D.~D. Gajski, M.~Meredith, and A.~Takach, ``An introduction to
+  high-level synthesis,'' {\em IEEE Design \& Test of Computers}, vol.~26,
+  no.~4, pp.~8--17, 2009.
+
+\bibitem{vivado_design_suite_user_guide_2018}
+``Vivado design suite user guide 2018.''
+  \url{https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug902-vivado-high-level-synthesis.pdf},
+  Dec 2018.
+\newblock Xilinx.
+
+\bibitem{vahid2010digital}
+F.~Vahid, {\em Digital design with RTL design, VHDL, and Verilog}.
+\newblock John Wiley \& Sons, 2010.
+
+\bibitem{bose1996hardware}
+S.~K. Bose, {\em Hardware and Software of Personal Computers}.
+\newblock New Age International, 1996.
+
+\bibitem{lo2016model}
+C.~Lo and P.~Chow, ``Model-based optimization of high level synthesis
+  directives,'' in {\em 2016 26th International Conference on Field
+  Programmable Logic and Applications (FPL)}, pp.~1--10, IEEE, 2016.
+
+\bibitem{rabiner2016theory}
+L.~R. Rabiner, B.~Gold, and C.~Yuen, {\em Theory and application of digital
+  signal processing}.
+\newblock Prentice-Hall, 2016.
+
+\end{thebibliography}
