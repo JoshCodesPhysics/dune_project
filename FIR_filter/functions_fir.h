@@ -9,7 +9,7 @@
 
 #define N_TAP 32
 #define CLK_REC 1
-#define L_CHK 4224
+#define L_CHK 59
 
 #define ADC_t ap_int<12>
 
@@ -30,6 +30,14 @@ struct ap_fir_hls_in{
 	short tdata;
 	short tdata_SSR;
 	bool tvalid_SSR;
+	ap_uint<2> tkeep;
+	bool tlast;
+	bool tuser;
+	bool tvalid;
+};
+
+struct ap_fir_SSR_in{
+	short tdata;
 	ap_uint<2> tkeep;
 	bool tlast;
 	bool tuser;

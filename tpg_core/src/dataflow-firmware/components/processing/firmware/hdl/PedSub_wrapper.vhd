@@ -73,7 +73,7 @@ begin
     );
   else generate
 
-  pedsub_hls_wrapper: entity work.PedSub_HLS_wrapper
+  PedSub_HLS_SSR_wrapper: entity work.PedSub_HLS_SSR_wrapper
       port map(
 	  clk            => clk, 
 	  reset          => reset,   

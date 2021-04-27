@@ -37,7 +37,7 @@ use work.dtpc_mon_defs.all;
 
 entity dtpc_tpg is
   generic (
-    ENABLE_PEDSUB     : boolean := FALSE;
+    ENABLE_PEDSUB     : boolean := TRUE;
     ENABLE_FIR        : boolean := TRUE;
     ENABLE_HF         : boolean := FALSE;
     ENABLE_PEDSUB_SSR : boolean := FALSE;
