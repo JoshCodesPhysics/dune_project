@@ -92,14 +92,19 @@ F.~Vahid, {\em Digital design with RTL design, VHDL, and Verilog}.
 S.~K. Bose, {\em Hardware and Software of Personal Computers}.
 \newblock New Age International, 1996.
 
+\bibitem{hall1997improving}
+M.~Hall and J.~P. McNamee, ``Improving software performance with automatic
+  memoization,'' {\em Johns Hopkins APL Technical Digest}, vol.~18, no.~2,
+  p.~255, 1997.
+
+\bibitem{liptak2006process}
+B.~G. Liptak, {\em Process Control and Optimization. Instrument Engineers'
+  Handbook, Volume II.}
+\newblock CRC Press, 2006.
+
 \bibitem{lo2016model}
 C.~Lo and P.~Chow, ``Model-based optimization of high level synthesis
   directives,'' in {\em 2016 26th International Conference on Field
   Programmable Logic and Applications (FPL)}, pp.~1--10, IEEE, 2016.
-
-\bibitem{rabiner2016theory}
-L.~R. Rabiner, B.~Gold, and C.~Yuen, {\em Theory and application of digital
-  signal processing}.
-\newblock Prentice-Hall, 2016.
 
 \end{thebibliography}

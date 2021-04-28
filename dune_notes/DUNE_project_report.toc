@@ -1,26 +1,26 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}DUNE Experiment Goals and Context}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}DUNE Experiment Goals and Context}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}The Importance of Neutrinos in the Standard Model}{2}{subsubsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.2}ProtoDUNE DAQ System}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}ProtoDUNE DAQ System}{3}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Single and Dual Phase LAr TPCs}{3}{subsubsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.3}FELIX}{5}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}The TPG Core}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}The TPG Core}{6}{subsection.1.4}%
 \contentsline {section}{\numberline {2}HLS}{8}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Background}{8}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{9}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{10}{subsubsection.2.2.1}%
-\contentsline {section}{\numberline {3}Development and Findings}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{11}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{12}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with External SSR}{12}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{16}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{16}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{16}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Redesign of FIR with External SSR}{18}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}FIR with Implemented SSR}{18}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Optimising for Back Pressure Functionality}{19}{subsubsection.3.2.4}%
-\contentsline {section}{\numberline {4}Design Processs Conclusions}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{19}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Timeline analysis}{21}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Final Thoughts}{21}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{21}{section.5}%
+\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{11}{subsubsection.2.2.1}%
+\contentsline {section}{\numberline {3}Development and Findings}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with External SSR}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{18}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{18}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Redesign of FIR with External SSR}{19}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}FIR with Implemented SSR}{19}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Optimising for Back Pressure Functionality}{21}{subsubsection.3.2.4}%
+\contentsline {section}{\numberline {4}Design Processs Conclusions}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Timeline analysis}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Final Thoughts}{22}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{22}{section.5}%
