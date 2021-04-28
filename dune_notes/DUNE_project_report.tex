@@ -19,23 +19,21 @@
 \section{Introduction}
 
 \subsection{DUNE Experiment Goals and Context}
-The DUNE experiment is an amalgamation of many neutrino-physics communities, centred around an opportunity provided by the large investment of the U.S. Department of Energy. This will contribute to a large expansion of the underground experimental architecture of the SURF facility, as well as a megawatt neutrino-beam facility 1300km across North America at Fermilab. This investigation will be groundbreaking for several areas of physics, including neutrino oscillation studies, searches for proton decay, and for neutrino-based astrophysics i.e. black hole and supernova burst phenomena.
+The DUNE experiment is an amalgamation of many neutrino-physics communities, centred around an opportunity provided by the large investment of the U.S. Department of Energy. This will contribute to a large expansion of the underground experimental architecture of the SURF facility, as well as a megawatt neutrino-beam facility positioned 1300km across North America at Fermilab. This investigation will be groundbreaking for several areas of physics, including neutrino oscillation studies, searches for proton decay, and for neutrino-based astrophysics i.e. black hole and supernova burst phenomena.
 
-Analysing the properties of neutrinos has led to evidence for physics beyond the Standard Model (SM). Oscillations of neutrino flavour is a well established concept, from which several conclusions can be made. The first is the fact that neutrinos have mass, although unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one million of an electron mass eigenstate \cite{Mertens_2016, cooper2016masses}. The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for discussion. Finding the explanation will require access to more precision and detail in the available experimental data. DUNE exists to carry out an investigation of neutrino oscillations to test lepton sector CP violation (LCPV) as well as the ordering of the neutrino masses and the three-neutrino paradigm\footnote{The quantum mechanical mixing of the three neutrino mass eigenstates producing the three known neutrino flavour states \cite{acciarri2016longbaseline}}.
+\subsubsection{The Importance of Neutrinos in the Standard Model}
+Analysing the properties of neutrinos has led to evidence for physics beyond the Standard Model (SM). Oscillations of neutrino flavour is a well established concept, from which several conclusions can be made. The first is the fact that neutrinos have mass, although unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one million of an electron mass eigenstate \cite{Mertens_2016, cooper2016masses}. The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for discussion. Finding the explanation will require access to more precision and detail in the available experimental data. DUNE exists to carry out an investigation of neutrino oscillations to test `Lepton-sector Charge Parity Violation' (LCPV) as well as the ordering of neutrino masses and the three-neutrino paradigm\footnote{The quantum mechanical mixing of the three neutrino mass eigenstates producing the three known neutrino flavour states \cite{acciarri2016longbaseline}}.
 
-CPV is well established in Quantum Chromodynamics (QCD), allowed by the complex-natured Cabibbo-Kobayashi-Mashawa (CKM) matrix\footnote{Used to contain the information on the strength of the flavour-changing weak interaction \cite{kobayashi1973cp}.}\cite{kobayashi1973cp}. Therefore one would expect to discover an entirely analagous mechanism to arise in the lepton sector of the standard model (SM), leading to LCPV. One of the collaboration's goals is to determine the rates at which neutrino CP violation occurs within the lepton sector. Another hypothesis proposes that there is a connection between low-energy neutrino physics and leptogenesis \cite{Di_Bari_2012}, which could provide insight into the scenario that led to the baryon asymmetry of the universe. These questions can only be answered by constructing suitable detector equipment; the next section will explore the features of ProtoDUNE's detector's front-end electronics and Data Acquisition (DAQ) system. This will feed into the following section that discusses the HLS firmware blocks that could instruct the front-end FPGA-based data processors.
-
-\subsection{The Importance of Neutrinos in the Standard Model}
-
+CPV is well established in Quantum Chromodynamics (QCD), allowed by the complex-natured Cabibbo-Kobayashi-Mashawa (CKM) matrix\footnote{Used to contain the information on the strength of the flavour-changing weak interaction \cite{kobayashi1973cp}.}\cite{kobayashi1973cp}. One could expect to discover an entirely analogous mechanism to arise in the lepton sector of the standard model (SM), leading to LCPV. One of the collaboration's goals is to determine the rates at which neutrino CP violation occurs within the lepton sector. Another hypothesis proposes that there is a connection between low-energy neutrino physics and leptogenesis \cite{Di_Bari_2012}, which could provide insight into the scenario that led to the baryon asymmetry of the universe. These questions can only be answered by constructing suitable detector equipment; the next section will explore the features of ProtoDUNE's detector's front-end electronics and Data Acquisition (DAQ) system. This will feed into the following section that discusses the HLS firmware blocks that could instruct the front-end FPGA-based data processors.
 \subsection{ProtoDUNE DAQ System}\label{section:overview}
 
-DAQ architecture can be split into two parts: the front-end and the back-end. The front-end is comprised of circuitry that acquires the data stream from readout-electronics inside the TPC detector, so that it can process and deliver the stream to the back-end: an offline storing, event-reconstruction computation farm. The focus of this report will be on the front-end, including the detection modules and the interface to the detector electronics.
+DAQ architecture can be split into two parts: the front-end and the back-end. The front-end is comprised of circuitry that acquires the data stream from readout-electronics inside the  detector, so that it can process and deliver the stream to the back-end: an offline storing, event-reconstruction computation farm. The focus of this report will be on the front-end, including the detection modules and the interface to the detector electronics.
 
 There are several main factors that influence the design of the DUNE DAQ system. One of which is the hardware and maintenance cost per input channel, which is related to the technology life-cycle of each component. This contributes to the need for long-lasting essential parts such as the Xilinx FPGAs and network components. DUNE is set to run for approximately 20 years; the reliability and maintenance of the detector components is more important when compared to other large-scale projects. The power consumption of the detector modules also requires consideration due to cooling contingencies and the variance in running costs.  Modularity of the hardware and firmware blocks is emphasised, so that one change in a sub-module would not affect the rest. This emphasis on customisability carries over to the HLS design process. If the design tools are more abstract and are rooted in commonly used languages such as C++, this will appeal to the vast majority of users (physicists) \cite{abi_barr_martin-albo_azfar_2017}. For more detail on this matter see section \ref{HLS_section}. With these objectives in mind, R\&D and fast firmware modifications can be a quick and efficient process. 
 
 \subsubsection{Single and Dual Phase LAr TPCs}
 
-The use of Time Projection Chamber modules of Liquid Argon (LAr TPCs) is a matured and popular technique used by several short-baseline\footnote{The baseline refers to the scale of the beam travel distance. DUNE is `long baseline' as the detector is positioned across the continent from the beam source.} neutrino experiments. They are popular for several reasons:
+The use of TPC modules of Liquid Argon (LAr TPCs) is a matured and popular technique used by several short-baseline\footnote{The baseline refers to the scale of the beam travel distance. DUNE is `long baseline' as the detector is positioned across the continent from the beam source.} neutrino experiments. They are popular for several reasons:
 
 \begin{itemize}
 	\item Argon is a noble element of vanishing electronegativity, which means that electrons produced by ionizing radiation will not be absorbed as they drift towards the detector.
@@ -148,7 +146,9 @@ The performance of the logic operations come into question when constrained by a
 
 \subsubsection{Optimisations and Analysis}\label{direct}
 
-Directives act as a low-level guidance for the HLS tool, influencing the types of hardware used and the methods of implementing the source code operations. An example of this is the partitioning of an array into registers, allowing for faster data access at the cost of increased resources \cite{lo2016model}. Different optimization directives can be applied before C synthesis; one of the most crucial is the \texttt{pipeline} directive which instructs a code task to execute non-sequentially, allowing the next execution of a task to begin before the current one finishes. Alongside this, the user can employ a specification for the minimum or maximum latency for a task, loop or for the whole function (one of the reasons for this is to match the FPGA clock frequency). Not only can performance be adjusted by directives, but the HLS tool can also specify a limit to the resources used by the block, allowing for a balance between speed and area usage. Additionally, more customisation opportunities arise from the ability to select a block's I/O protocol to make sure the final design can be connected to other hardware blocks with the same framework.
+Directives act as a low-level guidance for the HLS tool, influencing the types of hardware used and the methods of implementing the source code operations. An example of this is the partitioning of an array into registers, allowing for faster data access at the cost of increased resources \cite{lo2016model}. Different optimization directives can be applied before C synthesis; one of the most crucial is the \texttt{pipeline} directive. This instruction forces code tasks to execute non-sequentially, allowing the next execution of a task to begin before the current one finishes. In order to develop a fully pipelined block, code changes must be made to remove internal dependencies such as multiple store and load operations on registers and BRAMs at very different times during the operation of the block. This can be remedied by reducing the number of times a register is written to via logic branching. This can then be further improved upon by applying \texttt{dependence} directives that identify false dependencies between arrays or variables, and allow the function operation to be even more streamlined. The user must take caution and avoid instructing HLS to recognise a false dependency for a variable when there is in fact a true dependency. This can lead to C/RTL co-simulation failure and block malfunction.
+
+Alongside this, the user can employ a specification for the minimum or maximum latency for a task, loop or for the whole function (one of the reasons for this is to match the FPGA clock frequency). Functions called within the top function can be \texttt{INLINE}'d so as to reduce overhead and minimise pipelining issues when calling sub functions. Not only can performance be adjusted by directives, but the HLS tool can also specify a limit to the resources used by the block, allowing for a balance between speed and area usage. Additionally, more customisation opportunities arise from the ability to select a block's I/O protocol to make sure the final design can be connected to other hardware blocks with the same framework.
 
 There are several viable ways to achieve an optimal directive configuration for the purposes of the user, but the best way to gauge the effect of adding directives in the Vivado HLS tool is by analysing the cycle-by-cycle display of operations within the synthesis reports. One can analyse a number of aspects surrounding the performance estimates of the block, perhaps the most important of which is clock timing. This is the fastest achievable clock frequency before the block ceases to function. This must meet the target to synchronise with the surrounding firmware blocks. Secondly, the block latency and initiation interval\footnote{The number of clock cycles before new inputs are processed.} (II) must be reviewed, since the internal operations of the block must have enough time to complete before the next input is processed. Without any pipeline directives, the latency defaults to one clock cycle less than the II so that this can be achieved. Finally, the utilization estimates are key to making the trade-off between latency and FPGA area, be it LUTs, FFs, DSP48s or BRAMs. Limited budget and gate area means that unlimited resource usage is not an option, therefore this must be tracked.
 
@@ -186,20 +186,18 @@ The automatic static variable wipe happens too late; the restoration of values 5
 
 One additional timing concern is ensuring that the outputs are transmitted at the same pace that the inputs are received, which can be achieved with the \texttt{pipeline} directive mentioned in section \ref{direct}. 
 
-
-
-\subsubsection{Performance and Resource Utilization Comparison}
+\subsubsection*{Performance and Resource Utilization Comparison}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/pedsub_block_stats}
+	\includegraphics[width=1.0\linewidth]{figures/pedestal_subtraction_Kostas_stats}
 	\caption[Original algorithm resource usage]{The resource utilisation for the original pedestal subtraction block, including the exact figures above and percentage utilization below, taken from a Vivado Project Manager post-implementation report summary.}
 	\label{fig:pedsubblockstats}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/HLS_block_stats}
+	\includegraphics[width=1.0\linewidth]{figures/pedsub_HLS_stats}
 	\caption[HLS algorithm resource usage]{The resource utilization of the new HLS block, including exact figures above and percentage utilizations below, sourced from the Vivado Project Manager post-implementation report summary.}
 	\label{fig:hlsblockstats}
 \end{figure}
@@ -212,25 +210,65 @@ The original block includes the SSR within the utilization estimates, which is w
 
 \subsubsection{Pedestal Subtraction with Implemented SSR}
 
-\subsubsection{BRAM Utilisation for the SSR Mechanism}
+Look at HLS code and describe how I did it. What did I find out about this since the prelim report? Next section talks about the discovery of external arrays automatically implemented as BRAMs for long term value storage. These are power on initializations (like static variables) but actually are not wiped in between packets as previously thought?
 
-One read and/or write per clock, this is ok though for accumulator and pedestal restore.
+\subsubsection*{BRAM Utilisation for the SSR Mechanism}
 
-\subsubsection{Performance and Resource Utilization Comparison}
+One read and/or write per clock, this is ok though for accumulator and pedestal restore. This may not need to be it's own section but important to discuss.
+
+\subsubsection*{Performance and Resource Utilization Comparison}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/PedSub_SSR_kostas_stats}
+	\caption[Previously built PedSub\_SSR block statistics]{This figure details the resource statistics for the previously built pedestal subtraction algorithm, with the SSR mechanism included in the statistics. This is the result of the block being written from scratch in VHDL.}
+	\label{fig:pedsubssrkostasstats}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/pedsub_HLS_SSR_stats}
+	\caption[pedsub\_HLS\_SSR resource statistics]{This figure details the resource statistics for the pedestal subtraction algorithm generated from HLS with an SSR memory built into the design.}
+	\label{fig:pedsubhlsssrstats}
+\end{figure}
+
 
 \subsection{Finite Impulse Response Filter}
 
+Purpose of the block, how it coordinates with the hit finder.
+
 \subsubsection{Algorithm Operations}
 
-\subsubsection{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}
+Mechanisms described, including the SSR. Generate a flow chart like before.
+
+\subsubsection*{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}
 
 Include stuff about struct inputs and side channels also. tuser bug? Talk about ap\_rst\_n solution to axis directives.
 
 \subsubsection{Redesign of FIR with External SSR}
 
-\subsubsection{Timing and Accommodating the Tap Restoration}
+\subsubsection*{Timing and Accommodating the Tap Restoration}
 
-\subsubsection{Performance and Resource Utilization Comparison}
+First SSR output arrives and is processed during sample 33, so acceptance time must be extended past tlast going high. Talk about logic design to enable full SSR\_temp filling of SSR values. Can talk about how this was realised by looking at outputFile.txt with Gethin.
+
+\subsubsection*{Performance and Resource Utilization Comparison}
+
+Compare the mechanisms of Kostas's block to mine and use this as an explanation for the difference in resources.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/fir32_v0_stats}
+	\caption[Previously written block: fir32\_v0 resource statistics]{This figure details the resource statistics of the previously written FIR filter algorithm with the SSR mechanism not included, to allow for comparison to the analagous redesigned HLS module.}
+	\label{fig:fir32v0stats}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/fir_HLS_stats}
+	\caption[FIR HLS block w/o SSR statistics]{This figure contains the resource statistics for the FIR filter algorithm written in HLS, connected to a previously written external SSR mechanism that is not included in the statistics. The only resources being spent on the SSR are those allocated for accepting an storing the output values from the external SSR block.}
+	\label{fig:firhlsstats}
+\end{figure}
 
 \subsubsection{FIR with Implemented SSR}
 
@@ -240,19 +278,45 @@ In this way, talk about the dependency workaround (for fir\_HLS\_SSR) of using t
 
 \subsubsection{Optimising for Back Pressure Functionality}
 
-\subsubsection{Performance and Resource Utilization Comparison}
+Latency 1 for implemented SSR or it doesn't work. How did I do it? Look at C++ logic and the HLS directives and talk about how I cut down the function run time.
+
+Talk about how it should be easier to get an instant backpressure tready response, and that this latency = 1 workaround is quite gimmicky and can only work in certain situations. More research needs to be done into generating an effective axis interface directive design.
+
+\subsubsection*{Performance and Resource Utilization Comparison}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/FIR_StateSR_stats}
+	\caption[FIR\_StateSR previously written block resource statistics]{This figure shows the resource statistics for the previously built FIR algorithm with the SSR mechanism included in the usage. This is included to allow the comparison to the HLS FIR block with an in-built SSR mechanism.}
+	\label{fig:firstatesrstats}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/fir_HLS_SSR_stats}
+	\caption[fir\_HLS\_SSR resource statistics]{The above graphic demonstrates the resource statistics for the HLS-synthesized FIR algorithm with an in-built SSR memory and access mechanism, to enable the comparison to the version written from scratch in a HDL.}
+	\label{fig:firhlsssrstats}
+\end{figure}
 
 \section{Design Processs Conclusions}
 
 \subsection{Simulation using Questasim}
 
-Talk about partially-pipelined designs (II average = 1, max = 2) often not being compatible with the questasim simulation. Lots of other problems encountered. Waveform debug and outputFile.txt worth mentioning.
+Talk about partially-pipelined designs (II average = 1, max = 2) often not being compatible with the questasim simulation. Lots of other problems encountered, especially with the wrapper! Talk about the dtpc\_hfa.dep, dtpc\_tpg.vhd, tb\_dtpc\_arch.vhd; random tready boolean, different types of input files e.t.c.  Waveform debug and outputFile.txt worth mentioning.
+
+Add WAVEFORM SCREENSHOTS either here or in the performance and resource comparison sections.
 
 \subsection{Timeline analysis}
 
 Analysing time duration of certain processes in the analysis tab?
 
+\subsection{Final Thoughts}
+
+How does it compare to writing from scratch? Is it worth learning? Is the performance worth it for the resource usage? What is the design process like overall? What would I do if I had more time (hit finder block potentially)?
+
 \section{Future of High Level Synthesis and the DUNE Experiment}
+
+How HLS could contribute to experimentalist physics and how it could help the DUNE hit finder architecture be developed.
 
 \bibliographystyle{ieeetr}
 \bibliography{dpn.bib}
