@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  28 APR 2021 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  29 APR 2021 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,72 +360,72 @@ Package pdftex.def Info: figures/HSC.jpg  used on input line 103.
 (pdftex.def)             Requested size: 241.49895pt x 110.19762pt.
 
 [8 <./figures/HSC.jpg>] [9] [10] [11] [12]
-<figures/PedSub_Alg.png, id=317, 566.115pt x 798.985pt>
+<figures/PedSub_Alg.png, id=317, 705.63625pt x 798.985pt>
 File: figures/PedSub_Alg.png Graphic file (type png)
 <use figures/PedSub_Alg.png>
-Package pdftex.def Info: figures/PedSub_Alg.png  used on input line 178.
-(pdftex.def)             Requested size: 276.00105pt x 389.54324pt.
+Package pdftex.def Info: figures/PedSub_Alg.png  used on input line 180.
+(pdftex.def)             Requested size: 345.0pt x 390.64047pt.
  [13] [14 <./figures/PedSub_Alg.png>] [15]
-<figures/pedestal_subtraction_Kostas_stats.png, id=340, 860.21375pt x 445.665pt
+<figures/pedestal_subtraction_Kostas_stats.png, id=341, 860.21375pt x 445.665pt
 >
 File: figures/pedestal_subtraction_Kostas_stats.png Graphic file (type png)
 <use figures/pedestal_subtraction_Kostas_stats.png>
 Package pdftex.def Info: figures/pedestal_subtraction_Kostas_stats.png  used on
- input line 208.
+ input line 210.
 (pdftex.def)             Requested size: 345.0pt x 178.73886pt.
-<figures/pedsub_HLS_stats.png, id=341, 880.28876pt x 468.75125pt>
+<figures/pedsub_HLS_stats.png, id=346, 851.18pt x 433.62pt>
 File: figures/pedsub_HLS_stats.png Graphic file (type png)
 <use figures/pedsub_HLS_stats.png>
-Package pdftex.def Info: figures/pedsub_HLS_stats.png  used on input line 215.
-(pdftex.def)             Requested size: 345.0pt x 183.70631pt.
- [16 <./figures/pedestal_subtraction_Kostas_stats.png>] [17 <./figures/pedsub_H
+Package pdftex.def Info: figures/pedsub_HLS_stats.png  used on input line 217.
+(pdftex.def)             Requested size: 345.0pt x 175.75407pt.
+ [16] [17 <./figures/pedestal_subtraction_Kostas_stats.png> <./figures/pedsub_H
 LS_stats.png>]
-<figures/PedSub_SSR_kostas_stats.png, id=357, 853.1875pt x 493.845pt>
+<figures/PedSub_SSR_kostas_stats.png, id=368, 853.1875pt x 493.845pt>
 File: figures/PedSub_SSR_kostas_stats.png Graphic file (type png)
 <use figures/PedSub_SSR_kostas_stats.png>
 Package pdftex.def Info: figures/PedSub_SSR_kostas_stats.png  used on input lin
-e 240.
+e 244.
 (pdftex.def)             Requested size: 345.0pt x 199.69717pt.
-<figures/pedsub_HLS_SSR_stats.png, id=358, 845.1575pt x 458.71375pt>
+<figures/pedsub_HLS_SSR_stats.png, id=369, 845.1575pt x 458.71375pt>
 File: figures/pedsub_HLS_SSR_stats.png Graphic file (type png)
 <use figures/pedsub_HLS_SSR_stats.png>
 Package pdftex.def Info: figures/pedsub_HLS_SSR_stats.png  used on input line 2
-48.
+52.
 (pdftex.def)             Requested size: 345.0pt x 187.25493pt.
 
-Overfull \hbox (0.4732pt too wide) in paragraph at lines 262--262
+Overfull \hbox (0.4732pt too wide) in paragraph at lines 266--266
 [][]\OT1/cmr/bx/n/10 AXI4 Stream Pro-to-col Di-rec-tive Method for Back Pres-su
 re Be-haviour 
  []
 
-[18 <./figures/PedSub_SSR_kostas_stats.png>]
-<figures/fir32_v0_stats.png, id=367, 865.2325pt x 560.0925pt>
+[18] [19 <./figures/PedSub_SSR_kostas_stats.png> <./figures/pedsub_HLS_SSR_stat
+s.png>]
+<figures/fir32_v0_stats.png, id=386, 865.2325pt x 560.0925pt>
 File: figures/fir32_v0_stats.png Graphic file (type png)
 <use figures/fir32_v0_stats.png>
-Package pdftex.def Info: figures/fir32_v0_stats.png  used on input line 278.
+Package pdftex.def Info: figures/fir32_v0_stats.png  used on input line 282.
 (pdftex.def)             Requested size: 345.0pt x 223.33223pt.
-<figures/fir_HLS_stats.png, id=368, 855.195pt x 479.7925pt>
+<figures/fir_HLS_stats.png, id=387, 855.195pt x 479.7925pt>
 File: figures/fir_HLS_stats.png Graphic file (type png)
 <use figures/fir_HLS_stats.png>
-Package pdftex.def Info: figures/fir_HLS_stats.png  used on input line 285.
+Package pdftex.def Info: figures/fir_HLS_stats.png  used on input line 289.
 (pdftex.def)             Requested size: 345.0pt x 193.5535pt.
- [19 <./figures/pedsub_HLS_SSR_stats.png>] [20 <./figures/fir32_v0_stats.png> <
-./figures/fir_HLS_stats.png>]
-<figures/FIR_StateSR_stats.png, id=386, 836.12375pt x 532.99126pt>
+ [20 <./figures/fir32_v0_stats.png>]
+<figures/FIR_StateSR_stats.png, id=397, 836.12375pt x 532.99126pt>
 File: figures/FIR_StateSR_stats.png Graphic file (type png)
 <use figures/FIR_StateSR_stats.png>
-Package pdftex.def Info: figures/FIR_StateSR_stats.png  used on input line 306.
+Package pdftex.def Info: figures/FIR_StateSR_stats.png  used on input line 310.
 
 (pdftex.def)             Requested size: 345.0pt x 219.92667pt.
-<figures/fir_HLS_SSR_stats.png, id=387, 863.225pt x 548.0475pt>
+<figures/fir_HLS_SSR_stats.png, id=398, 863.225pt x 548.0475pt>
 File: figures/fir_HLS_SSR_stats.png Graphic file (type png)
 <use figures/fir_HLS_SSR_stats.png>
-Package pdftex.def Info: figures/fir_HLS_SSR_stats.png  used on input line 313.
+Package pdftex.def Info: figures/fir_HLS_SSR_stats.png  used on input line 317.
 
 (pdftex.def)             Requested size: 345.0pt x 219.03113pt.
-
-[21 <./figures/FIR_StateSR_stats.png>] (./DUNE_project_report.bbl [22 <./figure
-s/fir_HLS_SSR_stats.png>]
+ [21 <./figures/fir_HLS_stats.png>]
+[22 <./figures/FIR_StateSR_stats.png> <./figures/fir_HLS_SSR_stats.png>]
+(./DUNE_project_report.bbl
 Underfull \hbox (badness 5939) in paragraph at lines 12--14
 []\OT1/cmr/m/n/10 P. S. Cooper, ``The masses of the neu-tri-nos,'' \OT1/cmr/m/i
 t/10 arXiv preprint
@@ -455,25 +455,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--86
 /
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
- [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
+[24])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
+ [25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
  (./DUNE_project_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 342.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
 Package rerunfilecheck Info: File `DUNE_project_report.out' has not changed.
 (rerunfilecheck)             Checksum: 03E2F1943516EEB5A207820BC789C3F1;1995.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
  ) 
 Here is how much of TeX's memory you used:
- 6608 strings out of 481239
- 98839 string characters out of 5920378
- 356320 words of memory out of 5000000
- 21624 multiletter control sequences out of 15000+600000
+ 6612 strings out of 481239
+ 98883 string characters out of 5920378
+ 356391 words of memory out of 5000000
+ 21625 multiletter control sequences out of 15000+600000
  540885 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,29p,1837b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,29p,1837b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -491,10 +491,10 @@ t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 rm1000.pfb>
-Output written on DUNE_project_report.pdf (25 pages, 981366 bytes).
+Output written on DUNE_project_report.pdf (26 pages, 918230 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
- 118 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
  274 words of extra memory for PDF output out of 10000 (max. 10000000)
 
