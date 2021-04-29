@@ -70,52 +70,56 @@
 \citation{lo2016model}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{11}{subsubsection.2.2.1}\protected@file@percent }
 \newlabel{direct}{{2.2.1}{11}{Optimisations and Analysis}{subsubsection.2.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Development and Findings}{12}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{12}{subsection.3.1}\protected@file@percent }
-\newlabel{pedsubalg}{{3.1}{12}{Pedestal Subtraction Algorithm}{subsection.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pipelining example}}{12}{figure.5}\protected@file@percent }
+\newlabel{fig:pipelineexample}{{5}{12}{Pipelining example}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Development and Findings}{13}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{13}{subsection.3.1}\protected@file@percent }
+\newlabel{pedsubalg}{{3.1}{13}{Pedestal Subtraction Algorithm}{subsection.3.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{13}{subsubsection.3.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pedestal subtraction algorithm}}{14}{figure.5}\protected@file@percent }
-\newlabel{fig:pedsubalg}{{5}{14}{Pedestal subtraction algorithm}{figure.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with External SSR}{15}{subsubsection.3.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Original algorithm resource usage}}{17}{figure.6}\protected@file@percent }
-\newlabel{fig:pedsubblockstats}{{6}{17}{Original algorithm resource usage}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces HLS algorithm resource usage}}{17}{figure.7}\protected@file@percent }
-\newlabel{fig:hlsblockstats}{{7}{17}{HLS algorithm resource usage}{figure.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{18}{subsubsection.3.1.3}\protected@file@percent }
-\newlabel{pedsub_w_SSR}{{3.1.3}{18}{Pedestal Subtraction with Implemented SSR}{subsubsection.3.1.3}{}}
-\newlabel{BRAM_SSR}{{3.1.3}{18}{BRAM Utilisation for the SSR Mechanism}{section*.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{18}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{18}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Previously built PedSub\_SSR block statistics}}{19}{figure.8}\protected@file@percent }
-\newlabel{fig:pedsubssrkostasstats}{{8}{19}{Previously built PedSub\_SSR block statistics}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces pedsub\_HLS\_SSR resource statistics}}{19}{figure.9}\protected@file@percent }
-\newlabel{fig:pedsubhlsssrstats}{{9}{19}{pedsub\_HLS\_SSR resource statistics}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Previously written block: fir32\_v0 resource statistics}}{20}{figure.10}\protected@file@percent }
-\newlabel{fig:fir32v0stats}{{10}{20}{Previously written block: fir32\_v0 resource statistics}{figure.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Redesign of FIR with External SSR}{20}{subsubsection.3.2.2}\protected@file@percent }
-\newlabel{fir_ext_SSR}{{3.2.2}{20}{Redesign of FIR with External SSR}{subsubsection.3.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}FIR with Implemented SSR}{20}{subsubsection.3.2.3}\protected@file@percent }
-\newlabel{FIR_SSR}{{3.2.3}{20}{FIR with Implemented SSR}{subsubsection.3.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces FIR HLS block w/o SSR statistics}}{21}{figure.11}\protected@file@percent }
-\newlabel{fig:firhlsstats}{{11}{21}{FIR HLS block w/o SSR statistics}{figure.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Optimising for Back Pressure Functionality}{21}{subsubsection.3.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces FIR\_StateSR previously written block resource statistics}}{22}{figure.12}\protected@file@percent }
-\newlabel{fig:firstatesrstats}{{12}{22}{FIR\_StateSR previously written block resource statistics}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces fir\_HLS\_SSR resource statistics}}{22}{figure.13}\protected@file@percent }
-\newlabel{fig:firhlsssrstats}{{13}{22}{fir\_HLS\_SSR resource statistics}{figure.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with External SSR}{14}{subsubsection.3.1.2}\protected@file@percent }
+\newlabel{pedsub_extern_SSR}{{3.1.2}{14}{Redesign of Pedestal Subtraction with External SSR}{subsubsection.3.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Pedestal subtraction algorithm}}{15}{figure.6}\protected@file@percent }
+\newlabel{fig:pedsubalg}{{6}{15}{Pedestal subtraction algorithm}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Original algorithm resource usage}}{17}{figure.7}\protected@file@percent }
+\newlabel{fig:pedsubblockstats}{{7}{17}{Original algorithm resource usage}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces HLS algorithm resource usage}}{18}{figure.8}\protected@file@percent }
+\newlabel{fig:hlsblockstats}{{8}{18}{HLS algorithm resource usage}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{19}{subsubsection.3.1.3}\protected@file@percent }
+\newlabel{pedsub_w_SSR}{{3.1.3}{19}{Pedestal Subtraction with Implemented SSR}{subsubsection.3.1.3}{}}
+\newlabel{BRAM_SSR}{{3.1.3}{19}{Memory Utilisation for the SSR Mechanism}{section*.3}{}}
 \bibstyle{ieeetr}
 \bibdata{dpn.bib}
 \bibcite{deep_underground_neutrino_experiment_2020}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Previously built PedSub\_SSR block statistics}}{21}{figure.9}\protected@file@percent }
+\newlabel{fig:pedsubssrkostasstats}{{9}{21}{Previously built PedSub\_SSR block statistics}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces pedsub\_HLS\_SSR resource statistics}}{21}{figure.10}\protected@file@percent }
+\newlabel{fig:pedsubhlsssrstats}{{10}{21}{pedsub\_HLS\_SSR resource statistics}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Previously written block: fir32\_v0 resource statistics}}{22}{figure.11}\protected@file@percent }
+\newlabel{fig:fir32v0stats}{{11}{22}{Previously written block: fir32\_v0 resource statistics}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces FIR HLS block w/o SSR statistics}}{22}{figure.12}\protected@file@percent }
+\newlabel{fig:firhlsstats}{{12}{22}{FIR HLS block w/o SSR statistics}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces FIR\_StateSR previously written block resource statistics}}{23}{figure.13}\protected@file@percent }
+\newlabel{fig:firstatesrstats}{{13}{23}{FIR\_StateSR previously written block resource statistics}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces fir\_HLS\_SSR resource statistics}}{23}{figure.14}\protected@file@percent }
+\newlabel{fig:firhlsssrstats}{{14}{23}{fir\_HLS\_SSR resource statistics}{figure.14}{}}
 \bibcite{Mertens_2016}{2}
 \bibcite{cooper2016masses}{3}
 \bibcite{acciarri2016longbaseline}{4}
 \bibcite{kobayashi1973cp}{5}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Design Processs Conclusions}{23}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{23}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Timeline analysis}{23}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Final Thoughts}{23}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{23}{section.5}\protected@file@percent }
 \bibcite{Di_Bari_2012}{6}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{24}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{24}{subsubsection.3.2.1}\protected@file@percent }
+\newlabel{axi4_method}{{3.2.1}{24}{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{section*.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Redesign of FIR with External SSR}{24}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{fir_ext_SSR}{{3.2.2}{24}{Redesign of FIR with External SSR}{subsubsection.3.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}FIR with Implemented SSR}{24}{subsubsection.3.2.3}\protected@file@percent }
+\newlabel{FIR_SSR}{{3.2.3}{24}{FIR with Implemented SSR}{subsubsection.3.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Optimising for Back Pressure Functionality}{24}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Design Processs Conclusions}{24}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{24}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Timeline analysis}{24}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Final Thoughts}{24}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{24}{section.5}\protected@file@percent }
 \bibcite{abi_barr_martin-albo_azfar_2017}{7}
 \bibcite{rubbia1977liquid}{8}
 \bibcite{adams2018rejecting}{9}

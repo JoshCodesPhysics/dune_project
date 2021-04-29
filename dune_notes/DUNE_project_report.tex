@@ -149,11 +149,23 @@ The performance of the logic operations come into question when constrained by a
 
 \subsubsection{Optimisations and Analysis}\label{direct}
 
-Directives act as a low-level guidance for the HLS tool, influencing the types of hardware used and the methods of implementing the source code operations \cite{lo2016model}. A very useful example of this is the division of arrray elements into registers using the \texttt{array\_partition} directive, allowing for faster data access at the cost of increased resources. Different optimization directives can be applied before C synthesis; one of the most crucial is the \texttt{pipeline} directive. This instruction forces code tasks to execute non-sequentially, allowing the next execution of a task to begin before the current one finishes. In order to develop a fully pipelined block, code changes must be made to remove internal dependencies such as multiple store and load operations on registers and BRAMs (or any storage resource) at very different times during the operation of the block. This can be remedied by reducing the number of times to which a register is written via logic branching. This can then be further improved upon by applying \texttt{dependence} directives that identify false dependencies between arrays or variables, and allow the function operation to be even more streamlined. The user must take caution and avoid instructing HLS to recognise a false dependency for a variable when there is in fact a true dependency. This can lead to C/RTL co-simulation failure and block malfunction.
+Directives act as a low-level guidance for the HLS tool, influencing the types of hardware used and the methods of implementing the source code operations \cite{lo2016model}. A very useful example of this is the division of arrray elements into registers using the \texttt{array\_partition} directive, allowing for faster data access at the cost of increased resources.
 
-Alongside this, the user can employ a specification for the minimum or maximum latency for a task, loop or for the whole function (one of the reasons for this is to match the FPGA clock frequency). Functions called within the top function can employ the \texttt{inline} directive so as to reduce overhead and minimise pipelining issues when calling sub functions. Not only can performance be adjusted by directives, but the HLS tool can also specify a limit to the resources used by the block, allowing for a balance between speed and area usage. Additionally, more customisation opportunities arise from the ability to select a block's I/O protocol to make sure the final design can be connected to other hardware blocks with the same framework.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/pipeline_example}
+	\caption[Pipelining example]{This figure contains an example showing how read, compute and write operations can happen in parallel to achieve higher throughput overall, using the \texttt{pipeline} directive.}
+	\label{fig:pipelineexample}
+\end{figure}
 
-There are several viable ways to achieve an optimal directive configuration for the purposes of the user, but the best way to gauge the effect of adding directives in the Vivado HLS tool is by analysing the cycle-by-cycle display of operations within the synthesis reports. One can analyse a number of aspects surrounding the performance estimates of the block, perhaps the most important of which is clock timing. This is the fastest achievable clock frequency before the block ceases to function. This must meet the target to synchronise with the surrounding firmware blocks.
+
+Different optimization directives can be applied before C synthesis; one of the most crucial is the \texttt{pipeline} directive. This instruction forces code tasks to execute non-sequentially, allowing the next execution of a task to begin before the current one finishes, visualised in figure \ref{fig:pipelineexample}.  One can infer from the figure that dependencies between two different operations can affect software's capability to pipeline the entire function, meaning the II cannot equal one until code changes occur and dependency directives are implemented. It can be deduced that if back pressure went high during the operation of the pipelined function \texttt{func(m,n,o)}, 3 cycles (the number of active function `layers' at any one time) would pass until the block is fully paused. This would not provide instantaneous behaviour required, hence the requirement for II = latency, which if we require a fully pipelined design, latency must equal one.
+
+In order to develop a fully pipelined block, code changes must be made to remove internal dependencies such as multiple store and load operations on registers and BRAMs (or any storage resource) at very different times during the operation of the block. This can be remedied by reducing the number of times to which a register is written via logic branching. This can then be further improved upon by applying \texttt{dependence} directives that identify false dependencies between arrays or variables, and allow the function operation to be even more streamlined. The user must take caution with instructing HLS to recognise a false dependency for a variable where there could in fact exist a true dependency. This can lead to C/RTL co-simulation failure and block malfunction.
+
+Functions called within the top function can employ the \texttt{inline} directive so as to reduce overhead and minimise pipelining issues when calling sub functions. Not only can performance be adjusted by directives, but the HLS tool can also specify a limit to the resources used by the block, allowing for a balance between speed and area usage. Additionally, more customisation opportunities arise from the ability to select a block's I/O protocol to make sure the final design can be connected to other hardware blocks with the same framework.
+
+There are several viable ways to achieve an optimal directive configuration for user's purposes, but the best way to gauge the effect of adding directives in the Vivado HLS tool is by analysing the cycle-by-cycle display of operations within the synthesis reports. One can analyse a number of aspects surrounding the performance estimates of the block, perhaps the most important of which is clock timing. This is the fastest achievable clock frequency before the block ceases to function. This must meet the target to synchronise with the surrounding firmware blocks.
 
 Secondly, the block latency and initiation interval\footnote{The number of clock cycles before new inputs are processed.} (II) must be reviewed, since the internal operations of the block must have enough time to complete before the next input is processed. Without any pipeline directives, the latency defaults to one clock cycle less than the II so that this can be achieved. In many cases the top function logic and even the input data types must be rewritten several times before the design reaches its performance objectives. See \ref{pedsub_w_SSR} for an example of this.
 
@@ -183,7 +195,7 @@ The SSR functionality enables a variable restoration every time a packet enters 
 \end{figure}
 
 
-\subsubsection{Redesign of Pedestal Subtraction with External SSR}
+\subsubsection{Redesign of Pedestal Subtraction with External SSR} \label{pedsub_extern_SSR}
 
 The development and debugging of the \texttt{pedsub\_HLS} block led to a number of insights for future use of high-level synthesis when designing detector firmware. The first thing to note is that when developing an algorithm, it is advisable to start with a simplified version of the target function. This is because complex functions are especially prone to invalid signals and incomplete output, which can be difficult to debug when trying to trace back the unfamiliar proxy signals in machine-written VHDL code.
 
@@ -195,13 +207,13 @@ The Vivado HLS synthesis tool recognises a static variable in the same way a C++
 
 However, one main issue faced earlier in the project was the long-term storage of the pedestal and accumulator: static variables were wiped between incoming packets. It can be seen from the \texttt{pedsub\_HLS} Questasim waveform that this variable wipe occurs five clock cycles after the following packet's \texttt{tvalid} signal goes high. A separate SSR storage array mechanism had to be developed for restoring values to a given channel in the long term\footnote{i.e saving and then restoring packets 64 packets later, or a minimum of 4480 clocks after the initial packet enters a channel}. In the preliminary report, HLS was deemed inconvenient when developing a long-term SSR mechanism; the block being called every clock cycle means that new declarations are reset very frequently, unless they are static. Further investigation needed to be made into the optimal approach, and this was found and utilised in the designs featured in sections \ref{pedsub_w_SSR} and \ref{FIR_SSR}.
 
-The automatic static variable wipe happens too late; the restoration of values 5 clock cycles after \texttt{tvalid} goes high means that the first 5 subtractions occur using the previous packet's pedestal, which leads to 5 invalid results for the next channel. A manual restoration of the internal values must occur before \texttt{tvalid} goes high for the next packet. However, this restoration must be after the previous packet's \texttt{tlast} output goes high; the \texttt{tlast} input is not used as this would still truncate the last value. This restoration window is prioritised in order to avoid invalidating the previous packet's ADC output values. It was found that restoring 3 clock cycles after the tlast output goes high allows for the restoration of the pedestal and accumulator to occur from the existing SSR mechanism.
+Returning to the \texttt{tlast} mechanism, it can be discerned that the automatic static variable wipe happens too late; the restoration of values 5 clock cycles after \texttt{tvalid} goes high means that the first 5 subtractions occur using the previous packet's pedestal, which leads to 5 invalid results for the next channel. A manual restoration of the internal values must occur before \texttt{tvalid} goes high for the following packet. However, this restoration must be after the previous packet's \texttt{tlast} output goes high; the \texttt{tlast} input is not used as this would still truncate the last value. This restoration window is prioritised in order to avoid invalidating the previous packet's ADC output values. It was found that restoring 3 clock cycles after the tlast output goes high allows for the restoration of the pedestal and accumulator to occur from the existing SSR mechanism. This is an example of how chronology can affect the output of a block in unpredictable ways.
 
 Another clock timing concern is the required instant response to back pressure signal \texttt{tready}. Traditionally, the block would react too late as a result of the latency delay from input to output. This issue can be circumvented in the case that the block takes a maximum of 1 clock to complete, hence all functional designs mentioned in this report have a full operational time of 1 clock. 
 
-On input, the first logic branch involves the \texttt{tready} input being high or low. If \texttt{tready} is low i.e. back pressure is active and the block operation requires pausing, the mechanism will force an output of the same values sent through 1 clock cycle before the back pressure went active. This can be achieved by constantly saving the previous clock's values and then restoring them to the output once \texttt{tready} input goes low. However, if the block latency was greater than 1 clock cycle and the II $= 1$, back pressure would occur halfway through the operation of one function call, meaning the block would not react in time and erroneous outputs would be sent through to the FIR.
+On input, the first logic branch depends on the \texttt{tready} input being high or low. If \texttt{tready} is low i.e. back pressure is active and the block operation requires pausing, the mechanism will continuously force an output of the same values that were sent through 1 clock cycle before the back pressure went active. This will cease only when tready goes high again. The desired behaviour can be achieved by constantly saving the previous clock's values and then restoring them to the output once the \texttt{tready} input goes low. However, if the block latency was greater than 1 clock cycle and the II $= 1$, back pressure would occur halfway through the operation of one function call, meaning the block would not react in time and erroneous outputs would be sent through to the FIR.
 
-The final timing concern is ensuring that the outputs are transmitted at the same pace that the inputs are received, which can be achieved with the \texttt{pipeline} directive discussed in section \ref{direct} as well as careful optimisation of the logic.
+The final timing concern is ensuring that the outputs are transmitted at the same pace that the inputs are received, which can be achieved with the \texttt{pipeline} directive discussed in section \ref{direct} as well as careful optimisation of the logic. The next section will discuss the disparity in resource cost between the original design and the new HLS design.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
@@ -221,21 +233,27 @@ The final timing concern is ensuring that the outputs are transmitted at the sam
 
 The HLS block was forced to perform at a max latency of one clock cycle with an II equal to the latency, meaning the outputs arrive one cycle after the inputs and the inputs are accepted every clock cycle. This can be compared to the performance of the existing algorithm which has a latency of two and an II of one. The synthesis report shows the block has a clock cycle of 3.6$\pm 0.5$ nanoseconds, and an RTL co-simulation confirmed the block satisfies the target frequency of 250 MHz and a confirmed latency of one clock cycle. The HLS block outputs the same values as the previous design, with a 1 clock cycle delay due to the difference in latency. This was verified by a ModelSim simulation comparison between the blocks, and several model software output files.
 
-% Outdated statistics analysis. Change this and then we can start working on the rest of the technical section. Once that is finished, go for the theoretical side. Finally, write the big picture/contextualise sections.
+When comparing resource utilisation between the \texttt{pedsub} blocks, detailed in figures \ref{fig:pedsubblockstats} and \ref{fig:hlsblockstats}, the most important components to compare are LUTs, FFs, and the input and output (IO)\footnote{These are physical structures that allow the connection of an FPGA target to other devices within the system.} resources for the FPGA target\footnote{A programmable area or chip on the FPGA used to implement a digital circuit, in our case designed via HLS or directly through VHDL.}..
 
-When comparing resource utilisation between the \texttt{pedsub} blocks, detailed in figures \ref{fig:pedsubblockstats} and \ref{fig:hlsblockstats}, the most important components to compare are LUTs, input and output (IO)\footnote{These are physical structures that allow the connection of an FPGA target to other devices within the system.} resources for the FPGA target\footnote{A programmable area or chip on the FPGA used to implement a digital circuit, in our case designed via HLS or directly through VHDL.}, and FFs.
+The utilization tables show that the new design requires $0.06\%$ more LUT usage when compared to the total LUTs available, which although comes to a $274\%$ increase in total LUT usage for the block, is negligible when compared to the total available. Similarly, the FF usage for the HLS design shows an $140\%$ increase from the original, but only a $0.02\%$ difference in total usage of all available FFs. The disparity in LUT and FF usage can be explained by the additional internal logic and registers required to implement the delayed tlast restore mechanism and the instantaneous response to tready. The disparity is also derived from the halved latency of the HLS block when compared to the original block. This disparity could be dealt with by further investigation into the AXI4 Stream Protocol directives described in section \ref{axi4_method}.
 
-The utilization tables show that the new design requires $0.06\%$ more LUT usage when compared to the total LUTs available, which although comes to a $274\%$ increase in total LUT usage for the block, is negligible when compared to the total available. Similarly, the FF usage for the HLS design shows an $140\%$ increase from the original, but only a $0.02\%$ difference in total usage of all available FFs. The disparity in LUT and FF usage can be explained by the additional internal logic and registers required to implement the delayed tlast restore mechanism and the instantaneous response to tready.
+Regardless, the difference in IO resource usage is not negligible, due to the large number of scalar and pointer type ports in the \texttt{pedsub\_HLS} design compared to the original. There is a $25\%$ increase in the FPGA target IO usage of the new design when compared to the total available, and a $195\%$ total increase in the number of IO resources used. This can be remedied by removing unnecessary ports and incorporating multiple ports as members of a C++ \texttt{struct} type input, which can be manipulated further to reduce IO usage. This method is used in the designs featured in section \ref{pedsub_w_SSR}, \ref{fir_ext_SSR} and \ref{FIR_SSR}. The following segment will include discussion on the pedestal subtraction HLS block with built-in state save/restore behaviour.
 
-However, the difference in IO resource usage is not negligible, due to the large number of scalar and pointer type ports in the \texttt{pedsub\_HLS} design compared to the original. There is a $25\%$ increase in the FPGA target IO usage of the new design when compared to the total available, and a $195\%$ total increase in the number of IO resources used. This can be remedied by removing unnecessary ports and incorporating multiple ports as members of a C++ \texttt{struct} type input, which can be manipulated further to reduce IO usage. This method is used in the designs featured in section \ref{pedsub_w_SSR}, \ref{fir_ext_SSR} and \ref{FIR_SSR}.
+% Start working on the rest of the technical section. Once that is finished, go for the theoretical side. Finally, write the big picture/contextualise sections.
 
 \subsubsection{Pedestal Subtraction with Implemented SSR} \label{pedsub_w_SSR}
 
-Look at HLS code and describe how I did it. What did I find out about this since the prelim report? Next section talks about the discovery of external arrays automatically implemented as BRAMs for long term value storage. These are power on initializations (like static variables) but actually are not wiped in between packets as previously thought?
+The pedestal subtraction algorithm \texttt{pedsub\_HLS\_SSR} is a HLS synthesized block including a memory-based SSR mechanism. The basic processing of the accumulator, pedestal and ADC values occur in exactly the same way as the design in section \ref{pedsub_extern_SSR}. However, in order to accommodate the performance deficit that came with storing and loading from a memory, the logic branching had to be adjusted. Additional temporary registers had to be utilised to avoid pipeline dependency issues. Arbitrary bit-width signed data types were used so as to reduce resource usage, and remove the need to truncate or zero pad input or output signals in the wrapper. Sub functions called within the top function were inlined and pipelined to reduce overhead. C++ \texttt{struct} data types were used as the function arguments (i.e. the block ports) with the original AXI4 stream signals as the struct members. For each new design in this project, a new testbench was written to validate the behaviour of the top function in the HLS environment. As previously mentioned, testbench scripts often took more time to write than the top functions themselves, but ultimately provided a priceless quality control for implementing new features.
 
-\subsubsection*{BRAM Utilisation for the SSR Mechanism} \label{BRAM_SSR}
+\subsubsection*{Memory Utilisation for the SSR Mechanism} \label{BRAM_SSR}
 
-One read and/or write per clock, this is ok though for accumulator and pedestal restore. This may not need to be it's own section but important to discuss.
+The biggest change between \texttt{pedsub\_HLS} and \texttt{pedsub\_HLS\_SSR} is the use of two global C++ arrays, defined outside the bounds of the top function, to save and restore the pedestal and accumulator values. These arrays can be accessed by the top function and act as permanent storage entities during runtime, solving the SSR problem faced in the preliminary report. HLS automatically implements these entities as two BRAM components. BRAMs support a very limited data access rate. This can cause problems during HLS synthesis and needs to be worked around in some cases. The maximum access rate that a BRAM can support in this case is twice per clock cycle: one read operation and one write operation.
+
+Fortunately, the only time \texttt{pedsub\_HLS\_SSR} needs to access each memory is to read and write once at the end of the \texttt{tlast} delay period. Therefore no pipelining or memory access issues were met at synthesis; the saving and restoring to the memory occurred seamlessly. However, in order to achieve latency = 1, these arrays had to be fully partitioned into registers to increase the speed that each memory array can be accessed. These registers were generated as `power-on initialisations' similarly to static variables, except the partitioned global arrays are not wiped between packets. In examples such as the \texttt{fir\_HLS\_SSR} block discussed section \ref{FIR_SSR}, the memory is too large to be partitioned, and so BRAMs were necessary to store the SSR values whilst avoiding massive LUT and FF usage from full array partition. Different conditions call for varying memory implementations.
+
+The \texttt{pedsub\_HLS\_SSR} function had to be streamlined extensively in order to fit all operations into one clock cycle, which as mentioned before is a necessary condition for successful back pressure behaviour generated internally, rather than via directives. In order to correctly save and restore the pedestal and accumulator, a static channel counter was used as a memory index between the values of 0 and 63. During the \texttt{tlast} delay period at the end of each packet, the current channel's pedestal and accumulator values were saved 2 clock cycles after \texttt{tlast} went high, and the next channel's values were restored on the following clock cycle. This avoided pipelining dependency issues involving the partitioned arrays and the static accumulator and pedestal variables. The channel counter would increase after the end of each packet.
+
+The \texttt{treset} functionality was removed in order to provide more space for the SSR. This reset mechanism was proven obsolete since all storage entities were automatically wiped by the external FELIX system at the beginning of a data run. The only issue encountered in this case was making sure non zero starting values and booleans were set correctly at the start of a simulation, since these are prepared erroneously by the automatic restart. This can be achieved by declaring and defining global entities as their starting value on the same script line, which are then changed after the first clock cycle.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
@@ -257,25 +275,25 @@ One read and/or write per clock, this is ok though for accumulator and pedestal 
 
 \subsection{Finite Impulse Response Filter}
 
-Purpose of the block, how it coordinates with the hit finder.
+%Purpose of the block, how it coordinates with the hit finder.
 
 \subsubsection{Algorithm Operations}
 
-Mechanisms described, including the SSR. Generate a flow chart like before.
+%Mechanisms described, including the SSR. Generate a flow chart like before.
 
-\subsubsection*{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}
+\subsubsection*{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour} \label{axi4_method}
 
-Include stuff about struct inputs and side channels also. tuser bug? Talk about ap\_rst\_n solution to axis directives.
+%Include stuff about struct inputs and side channels also. tuser bug? Talk about ap\_rst\_n solution to axis directives.
 
 \subsubsection{Redesign of FIR with External SSR} \label{fir_ext_SSR}
 
 \subsubsection*{Timing and Accommodating the Tap Restoration}
 
-First SSR output arrives and is processed during sample 33, so acceptance time must be extended past tlast going high. Talk about logic design to enable full SSR\_temp filling of SSR values. Can talk about how this was realised by looking at outputFile.txt with Gethin.
+%First SSR output arrives and is processed during sample 33, so acceptance time must be extended past tlast going high. Talk about logic design to enable full SSR\_temp filling of SSR values. Can talk about how this was realised by looking at outputFile.txt with Gethin.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
-Compare the mechanisms of Kostas's block to mine and use this as an explanation for the difference in resources.
+%Compare the mechanisms of Kostas's block to mine and use this as an explanation for the difference in resources.
 
 \begin{figure}
 	\centering
@@ -293,15 +311,15 @@ Compare the mechanisms of Kostas's block to mine and use this as an explanation 
 
 \subsubsection{FIR with Implemented SSR} \label{FIR_SSR}
 
-One read and/or write per clock, talk about 32/32 split of restore and save. Taps were partitioned into registers and accessed all at once, but not by multiple loops at the same time (dependency). Completely partitioned arrays into registers can do almost anything you want, compared the limited access of BRAMs.
+%One read and/or write per clock, talk about 32/32 split of restore and save. Taps were partitioned into registers and accessed all at once, but not by multiple loops at the same time (dependency). Completely partitioned arrays into registers can do almost anything you want, compared the limited access of BRAMs.
 
-In this way, talk about the dependency workaround (for fir\_HLS\_SSR) of using two sets of taps for register shift and sum, as well as the SSR\_temp registers for the SSR mechanism. 
+%In this way, talk about the dependency workaround (for fir\_HLS\_SSR) of using two sets of taps for register shift and sum, as well as the SSR\_temp registers for the SSR mechanism. 
 
 \subsubsection{Optimising for Back Pressure Functionality}
 
-Latency 1 for implemented SSR or it doesn't work. How did I do it? Look at C++ logic and the HLS directives and talk about how I cut down the function run time.
+%Latency 1 for implemented SSR or it doesn't work. How did I do it? Look at C++ logic and the HLS directives and talk about how I cut down the function run time.
 
-Talk about how it should be easier to get an instant backpressure tready response, and that this latency = 1 workaround is quite gimmicky and can only work in certain situations. More research needs to be done into generating an effective axis interface directive design.
+%Talk about how it should be easier to get an instant backpressure tready response, and that this latency = 1 workaround is quite gimmicky and can only work in certain situations. More research needs to be done into generating an effective axis interface directive design.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
@@ -323,21 +341,21 @@ Talk about how it should be easier to get an instant backpressure tready respons
 
 \subsection{Simulation using Questasim}
 
-Talk about partially-pipelined designs (II average = 1, max = 2) often not being compatible with the questasim simulation. Lots of other problems encountered, especially with the wrapper! Talk about the dtpc\_hfa.dep, dtpc\_tpg.vhd, tb\_dtpc\_arch.vhd; random tready boolean, different types of input files e.t.c.  Waveform debug and outputFile.txt worth mentioning.
+%Talk about partially-pipelined designs (II average = 1, max = 2) often not being compatible with the questasim simulation. Lots of other problems encountered, especially with the wrapper! Talk about the dtpc\_hfa.dep, dtpc\_tpg.vhd, tb\_dtpc\_arch.vhd; random tready boolean, different types of input files e.t.c.  Waveform debug and outputFile.txt worth mentioning.
 
-Add WAVEFORM SCREENSHOTS either here or in the performance and resource comparison sections.
+%Add WAVEFORM SCREENSHOTS either here or in the performance and resource comparison sections.
 
 \subsection{Timeline analysis}
 
-Analysing time duration of certain processes in the analysis tab?
+%Analysing time duration of certain processes in the analysis tab?
 
 \subsection{Final Thoughts}
 
-How does it compare to writing from scratch? Is it worth learning? Is the performance worth it for the resource usage? What is the design process like overall? What would I do if I had more time (hit finder block potentially)?
+%How does it compare to writing from scratch? Is it worth learning? Is the performance worth it for the resource usage? What is the design process like overall? What would I do if I had more time (hit finder block potentially)?
 
 \section{Future of High Level Synthesis and the DUNE Experiment}
 
-How HLS could contribute to experimentalist physics and how it could help the DUNE hit finder architecture be developed.
+%How HLS could contribute to experimentalist physics and how it could help the DUNE hit finder architecture be developed.
 
 \bibliographystyle{ieeetr}
 \bibliography{dpn.bib}
