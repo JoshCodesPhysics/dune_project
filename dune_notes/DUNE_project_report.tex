@@ -247,15 +247,21 @@ The pedestal subtraction algorithm \texttt{pedsub\_HLS\_SSR} is a HLS synthesize
 
 \subsubsection*{Memory Utilisation for the SSR Mechanism} \label{BRAM_SSR}
 
-The biggest change between \texttt{pedsub\_HLS} and \texttt{pedsub\_HLS\_SSR} is the use of two global C++ arrays, defined outside the bounds of the top function, to save and restore the pedestal and accumulator values. These arrays can be accessed by the top function and act as permanent storage entities during runtime, solving the SSR problem faced in the preliminary report. HLS automatically implements these entities as two BRAM components. BRAMs support a very limited data access rate. This can cause problems during HLS synthesis and needs to be worked around in some cases. The maximum access rate that a BRAM can support in this case is twice per clock cycle: one read operation and one write operation.
+The biggest change between \texttt{pedsub\_HLS} and \texttt{pedsub\_HLS\_SSR} is the use of two global C++ arrays, defined outside the bounds of the top function, to save and restore the pedestal and accumulator values. These arrays can be accessed by the top function and act as permanent storage entities during runtime, solving the SSR problem faced in the preliminary report. HLS automatically implements these entities as two BRAM components. BRAMs support a very limited data access rate. This can cause problems during synthesis of the RTL files and needs to be worked around in some cases. The maximum access rate that a BRAM can support in this case is twice per clock cycle: one read operation and one write operation.
 
 Fortunately, the only time \texttt{pedsub\_HLS\_SSR} needs to access each memory is to read and write once at the end of the \texttt{tlast} delay period. Therefore no pipelining or memory access issues were met at synthesis; the saving and restoring to the memory occurred seamlessly. However, in order to achieve latency = 1, these arrays had to be fully partitioned into registers to increase the speed that each memory array can be accessed. These registers were generated as `power-on initialisations' similarly to static variables, except the partitioned global arrays are not wiped between packets. In examples such as the \texttt{fir\_HLS\_SSR} block discussed section \ref{FIR_SSR}, the memory is too large to be partitioned, and so BRAMs were necessary to store the SSR values whilst avoiding massive LUT and FF usage from full array partition. Different conditions call for varying memory implementations.
 
-The \texttt{pedsub\_HLS\_SSR} function had to be streamlined extensively in order to fit all operations into one clock cycle, which as mentioned before is a necessary condition for successful back pressure behaviour generated internally, rather than via directives. In order to correctly save and restore the pedestal and accumulator, a static channel counter was used as a memory index between the values of 0 and 63. During the \texttt{tlast} delay period at the end of each packet, the current channel's pedestal and accumulator values were saved 2 clock cycles after \texttt{tlast} went high, and the next channel's values were restored on the following clock cycle. This avoided pipelining dependency issues involving the partitioned arrays and the static accumulator and pedestal variables. The channel counter would increase after the end of each packet.
+The \texttt{pedsub\_HLS\_SSR} function had to be streamlined extensively in order to fit all operations into one clock cycle, which as mentioned before is a necessary condition for successful back pressure behaviour generated internally, rather than via directives. In order to correctly save and restore the pedestal and accumulator, a static channel counter was used as a memory index between the values of 0 and 63. During the \texttt{tlast} delay period at the end of each packet, the current channel's pedestal and accumulator values were saved to the SSR memory 2 clock cycles after \texttt{tlast} went high, and the next channel's values were restored on the following clock cycle. This avoided pipelining dependency issues involving the partitioned arrays and the static accumulator and pedestal variables. The channel counter would also increase after the end of each packet.
 
 The \texttt{treset} functionality was removed in order to provide more space for the SSR. This reset mechanism was proven obsolete since all storage entities were automatically wiped by the external FELIX system at the beginning of a data run. The only issue encountered in this case was making sure non zero starting values and booleans were set correctly at the start of a simulation, since these are prepared erroneously by the automatic restart. This can be achieved by declaring and defining global entities as their starting value on the same script line, which are then changed after the first clock cycle.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
+ 
+The main benefits of the redesigned pedestal subtraction block with an in-built SSR are increased performance (faster throughput) and the convenience of a self-sufficient block, with no external systems responsible for the memory access behaviour. The clock period minimum of this design was shorter than the previous algorithm, reported at $2.966\pm0.5$ns. The simulation output for multiple packet waves with a randomly oscillating back pressure signal matches the model output files used to test the original pedestal subtraction SSR block.
+
+In contrast to the design in section \ref{pedsub_extern_SSR}, the IO resource utilization of the HLS block was more efficient than the from-scratch design, with a $16\%$ decrease from the original design's IO usage and a significant $3.36\%$ decrease when compared to the total IO resources available. These statistics can be found in figures \ref{fig:pedsubssrkostasstats} and \ref{fig:pedsubhlsssrstats}. \texttt{Struct} type function arguments and more efficient port generation is responsible for this. However, the resource benefits end here.
+
+The LUT usage of the HLS design is significantly higher at $481\%$ of the original, or a non-negligible $0.26\%$ usage increase of total LUTs available, which can be attributed to the LUTs required to process the operations on 128 registers for the pedestal and accumulator SSR arrays. FF usage increasing by $0.27\%$ of the total amount available can also be attributed to the demanding SSR arrays. Area usage can be dramatically reduced by un-partitioning the SSR memories and pursuing the methods described in section \ref{axi4_method} so as to avoid the demanding requirement for latency = II $= 1$. This would use a small number of BRAMs instead of large numbers of LUTs and FFs, the analogue of which is seen in the original design requiring 32 LUTRAMs.
 
 \begin{figure}
 	\centering
@@ -274,6 +280,16 @@ The \texttt{treset} functionality was removed in order to provide more space for
 
 
 \subsection{Finite Impulse Response Filter}
+
+The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC values, so that the final signal entering the hit finder block is clean enough not to generate false hits.
+
+\begin{center}
+	\begin{figure}
+		\centerline{\includegraphics[width=1.6\linewidth]{figures/FIR_analogue_waveform}}
+		\caption[FIR waveform cleaned]{Detailed in the graphic are the analogue ADC input and output signals generated in a Questasim simulation. Note the clear peaks where the hits occur in the green output below, in contrast to the unfiltered red input above. Plateaus in the signal are a result of the random back pressure events pausing ADC input and output.}
+		\label{fig:firanaloguewaveform}
+	\end{figure}
+\end{center}
 
 %Purpose of the block, how it coordinates with the hit finder.
 
