@@ -227,7 +227,7 @@ The final timing concern is ensuring that the outputs are transmitted at the sam
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/pedsub_HLS_stats}
-	\caption[HLS algorithm resource usage]{The resource utilization of the new HLS block, including exact figures in the statistics table above the graphical representation of the percentage utilizations.}
+	\caption[HLS algorithm resource usage]{The resource utilization of the new pedestal subtraction HLS block connected to an external SSR, including exact figures in the statistics table above the graphical representation of the percentage utilizations.}
 	\label{fig:hlsblockstats}
 \end{figure}
 
@@ -281,7 +281,7 @@ The LUT usage of the HLS design is significantly higher at $481\%$ of the origin
 
 \subsection{Finite Impulse Response Filter}
 
-The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC values, so that the final signal entering the hit finder block is clean enough not to generate false hits.
+The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC values, so that the final signal entering the hit finder block is clean enough not to generate false hits. Included in figure \ref{fig:firanaloguewaveform} is a visual representation of the effect that the low-pass, 32-tap filter has on the incoming ADC values. From this figure one can see how the hits can be more easily identified by the hit finder block, since the peaks are more distinct and the time spent above a certain threshold value can be more accurately measured.
 
 \begin{center}
 	\begin{figure}
@@ -296,6 +296,17 @@ The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC 
 \subsubsection{Algorithm Operations}
 
 %Mechanisms described, including the SSR. Generate a flow chart like before.
+
+The FIR filter's core mechanism involves accepting the same number of samples per packet as the pedestal subtraction algorithm, but the difference is that each incoming ADC value is stored in one of 32 tap registers. A tap shift occurs every time a new input is processed, where the value at tap N moves to tap N+1. In other words, if we number the taps 0 to 31, and N new inputs have been processed since an input denoted X, then the input X will occupy the Nth tap along until it reaches the 31st, where it is forgotten on the next tap shift. Additionally, the final 32 inputs in the packet are saved to an SSR memory array for the channel being processed, and then will be restored to the taps next time that channel receives a packet, 64 processed packets later. This behaviour can be seen in figure \ref{fig:firblockdiagram}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{figures/FIR_block_diagram}
+	\caption[FIR block diagram]{A visualisation of the FIR filter's manipulation of incoming ADC values, including the register shift, coefficient multiplication, sum tree and the saving and restoring of the final 32 tap values \cite{manolopoulos_2020}.}
+	\label{fig:firblockdiagram}
+\end{figure}
+
+The filter mechanism multiplies each tap by a certain customisable coefficient and sums the result of each multiplication to one value, which is sent to the ADC output. In figure \ref{fig:firblockdiagram} and in the original \texttt{FIR\_StateSR} design, an addition tree is utilized to split the sums into 5 separate levels, the number of which that occurred were 16, 8, 4, 2 and 1 in that order. However, the approach taken in HLS was to sum each register individually in a loop, and then fully unroll that loop so all sums occur at the same time. This allowed for the necessarily high performance but required significantly more resources. The next section will discuss a possible workaround that would be investigated further if the project continued into the future.
 
 \subsubsection*{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour} \label{axi4_method}
 
