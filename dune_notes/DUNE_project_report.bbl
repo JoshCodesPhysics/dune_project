@@ -107,4 +107,33 @@ C.~Lo and P.~Chow, ``Model-based optimization of high level synthesis
   directives,'' in {\em 2016 26th International Conference on Field
   Programmable Logic and Applications (FPL)}, pp.~1--10, IEEE, 2016.
 
+\bibitem{marc2018two}
+T.~Marc-Andr{\'e}, ``Two fpga case studies comparing high level synthesis and
+  manual hdl for hep applications,'' {\em arXiv preprint arXiv:1806.10672},
+  2018.
+
+\bibitem{pelcat2016design}
+M.~Pelcat, C.~Bourrasset, L.~Maggiani, and F.~Berry, ``Design productivity of a
+  high level synthesis compiler versus hdl,'' in {\em 2016 International
+  Conference on Embedded Computer Systems: Architectures, Modeling and
+  Simulation (SAMOS)}, pp.~140--147, IEEE, 2016.
+
+\bibitem{8259883}
+A.~Stanciu and C.~Gerigan, ``Comparison between implementations efficiency of
+  hls and hdl using operations over galois fields,'' in {\em 2017 IEEE 23rd
+  International Symposium for Design and Technology in Electronic Packaging
+  (SIITME)}, pp.~171--174, 2017.
+
+\bibitem{6699478}
+F.~Sánchez, R.~Mateos, E.~Bueno, J.~Mingo, and I.~Sanz, ``Comparative of hls
+  and hdl implementations of a grid synchronization algorithm,'' in {\em IECON
+  2013 - 39th Annual Conference of the IEEE Industrial Electronics Society},
+  pp.~2232--2237, 2013.
+
+\bibitem{8603064}
+G.~Akkad, A.~Mansour, B.~ElHassan, F.~L. Roy, and M.~Najem, ``Fft radix-2 and
+  radix-4 fpga acceleration techniques using hls and hdl for digital
+  communication systems,'' in {\em 2018 IEEE International Multidisciplinary
+  Conference on Engineering Technology (IMCET)}, pp.~1--5, 2018.
+
 \end{thebibliography}

@@ -17,8 +17,7 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{deep_underground_neutrino_experiment_2020}
-\citation{Mertens_2016}
-\citation{cooper2016masses}
+\citation{Mertens_2016,cooper2016masses}
 \citation{acciarri2016longbaseline}
 \citation{kobayashi1973cp}
 \citation{kobayashi1973cp}
@@ -40,8 +39,7 @@
 \newlabel{fig:the-major-components-of-the-protodune-sp-tpc}{{1}{4}{ProtoDUNE-SP}{figure.1}{}}
 \citation{aimard20184}
 \citation{borga2019felix}
-\citation{abi_barr_martin-albo_azfar_2017}
-\citation{adams2020protodune}
+\citation{abi_barr_martin-albo_azfar_2017,adams2020protodune}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}FELIX}{5}{subsection.1.3}\protected@file@percent }
 \citation{manolopoulos_2020}
 \citation{manolopoulos_2020}
@@ -93,42 +91,49 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{21}{subsubsection.3.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces pedsub\_HLS\_SSR resource statistics}}{22}{figure.10}\protected@file@percent }
 \newlabel{fig:pedsubhlsssrstats}{{10}{22}{pedsub\_HLS\_SSR resource statistics}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces FIR waveform cleaned}}{22}{figure.11}\protected@file@percent }
-\newlabel{fig:firanaloguewaveform}{{11}{22}{FIR waveform cleaned}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces pedsub FIR block diagram}}{22}{figure.11}\protected@file@percent }
+\newlabel{fig:pedsubfirblockdiagram}{{11}{22}{pedsub FIR block diagram}{figure.11}{}}
 \citation{manolopoulos_2020}
 \citation{manolopoulos_2020}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces FIR block diagram}}{23}{figure.12}\protected@file@percent }
-\newlabel{fig:firblockdiagram}{{12}{23}{FIR block diagram}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces FIR waveform cleaned}}{23}{figure.12}\protected@file@percent }
+\newlabel{fig:firanaloguewaveform}{{12}{23}{FIR waveform cleaned}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces FIR block diagram}}{24}{figure.13}\protected@file@percent }
+\newlabel{fig:firblockdiagram}{{13}{24}{FIR block diagram}{figure.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{25}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{axi4_method}{{3.2.2}{25}{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{subsubsection.3.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{25}{subsubsection.3.2.3}\protected@file@percent }
+\newlabel{fir_ext_SSR}{{3.2.3}{25}{Redesign of FIR with External SSR}{subsubsection.3.2.3}{}}
+\newlabel{fig:cpluspluscode}{{1}{26}{The for loop responsible for the tap shift and summation in C++, using only one set of tap registers}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}The for loop responsible for the tap shift and summation in C++, using only one set of tap registers}{26}{lstlisting.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Previously written block: fir32\_v0 resource statistics}}{27}{figure.14}\protected@file@percent }
+\newlabel{fig:fir32v0stats}{{14}{27}{Previously written block: fir32\_v0 resource statistics}{figure.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{27}{subsubsection.3.2.4}\protected@file@percent }
+\newlabel{FIR_SSR}{{3.2.4}{27}{FIR with Implemented SSR}{subsubsection.3.2.4}{}}
+\citation{marc2018two,pelcat2016design,8259883}
+\citation{6699478,8603064}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces FIR HLS block w/o SSR statistics}}{28}{figure.15}\protected@file@percent }
+\newlabel{fig:firhlsstats}{{15}{28}{FIR HLS block w/o SSR statistics}{figure.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Design Processs Conclusions}{28}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}HLS and Manual HDL Resource Usage with Similar Performance}{28}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces FIR\_StateSR previously written block resource statistics}}{29}{figure.16}\protected@file@percent }
+\newlabel{fig:firstatesrstats}{{16}{29}{FIR\_StateSR previously written block resource statistics}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces fir\_HLS\_SSR resource statistics}}{29}{figure.17}\protected@file@percent }
+\newlabel{fig:firhlsssrstats}{{17}{29}{fir\_HLS\_SSR resource statistics}{figure.17}{}}
 \bibstyle{ieeetr}
 \bibdata{dpn.bib}
 \bibcite{deep_underground_neutrino_experiment_2020}{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Previously written block: fir32\_v0 resource statistics}}{24}{figure.13}\protected@file@percent }
-\newlabel{fig:fir32v0stats}{{13}{24}{Previously written block: fir32\_v0 resource statistics}{figure.13}{}}
-\newlabel{axi4_method}{{3.2.1}{24}{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{section*.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Redesign of FIR with External SSR}{24}{subsubsection.3.2.2}\protected@file@percent }
-\newlabel{fir_ext_SSR}{{3.2.2}{24}{Redesign of FIR with External SSR}{subsubsection.3.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}FIR with Implemented SSR}{24}{subsubsection.3.2.3}\protected@file@percent }
-\newlabel{FIR_SSR}{{3.2.3}{24}{FIR with Implemented SSR}{subsubsection.3.2.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Optimising for Back Pressure Functionality}{24}{subsubsection.3.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Design Processs Conclusions}{24}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{24}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Timeline analysis}{24}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Final Thoughts}{24}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{24}{section.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces FIR HLS block w/o SSR statistics}}{25}{figure.14}\protected@file@percent }
-\newlabel{fig:firhlsstats}{{14}{25}{FIR HLS block w/o SSR statistics}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces FIR\_StateSR previously written block resource statistics}}{25}{figure.15}\protected@file@percent }
-\newlabel{fig:firstatesrstats}{{15}{25}{FIR\_StateSR previously written block resource statistics}{figure.15}{}}
 \bibcite{Mertens_2016}{2}
 \bibcite{cooper2016masses}{3}
 \bibcite{acciarri2016longbaseline}{4}
 \bibcite{kobayashi1973cp}{5}
 \bibcite{Di_Bari_2012}{6}
 \bibcite{abi_barr_martin-albo_azfar_2017}{7}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Simulation using Questasim}{30}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Timeline analysis}{30}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Final Thoughts}{30}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{30}{section.5}\protected@file@percent }
 \bibcite{rubbia1977liquid}{8}
 \bibcite{adams2018rejecting}{9}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces fir\_HLS\_SSR resource statistics}}{26}{figure.16}\protected@file@percent }
-\newlabel{fig:firhlsssrstats}{{16}{26}{fir\_HLS\_SSR resource statistics}{figure.16}{}}
 \bibcite{dune_sp_collab}{10}
 \bibcite{aimard20184}{11}
 \bibcite{borga2019felix}{12}
@@ -141,3 +146,8 @@
 \bibcite{hall1997improving}{19}
 \bibcite{liptak2006process}{20}
 \bibcite{lo2016model}{21}
+\bibcite{marc2018two}{22}
+\bibcite{pelcat2016design}{23}
+\bibcite{8259883}{24}
+\bibcite{6699478}{25}
+\bibcite{8603064}{26}

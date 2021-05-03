@@ -16,11 +16,12 @@
 \BOOKMARK [3][-]{subsubsection.3.1.3}{Pedestal Subtraction with Implemented SSR}{subsection.3.1}% 16
 \BOOKMARK [2][-]{subsection.3.2}{Finite Impulse Response Filter}{section.3}% 17
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Algorithm Operations}{subsection.3.2}% 18
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Redesign of FIR with External SSR}{subsection.3.2}% 19
-\BOOKMARK [3][-]{subsubsection.3.2.3}{FIR with Implemented SSR}{subsection.3.2}% 20
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Optimising for Back Pressure Functionality}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.2}{AXI4 Stream Protocol Directive Method for Back Pressure Behaviour}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Redesign of FIR with External SSR}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.4}{FIR with Implemented SSR}{subsection.3.2}% 21
 \BOOKMARK [1][-]{section.4}{Design Processs Conclusions}{}% 22
-\BOOKMARK [2][-]{subsection.4.1}{Simulation using Questasim}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.2}{Timeline analysis}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.3}{Final Thoughts}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{Future of High Level Synthesis and the DUNE Experiment}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{HLS and Manual HDL Resource Usage with Similar Performance}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.2}{Simulation using Questasim}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.3}{Timeline analysis}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.4}{Final Thoughts}{section.4}% 26
+\BOOKMARK [1][-]{section.5}{Future of High Level Synthesis and the DUNE Experiment}{}% 27
