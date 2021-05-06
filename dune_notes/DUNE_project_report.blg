@@ -3,47 +3,51 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: DUNE_project_report.aux
 The style file: ieeetr.bst
 Database file #1: dpn.bib
-Warning--empty institution in rubbia1977liquid
+I was expecting a `,' or a `}'---line 266 of file dpn.bib
+ : howpublished={\url{http://www-sk.icrr.u-tokyo.ac.jp/sk/sk/atmos-e.html}} 
+ :                                                                          journal={Atmospheric Neutrinos | Super-Kamiokande Official Website}, publisher={Super-Kamiokande Collaboration}, year={1999}}
+I'm skipping whatever remains of this entry
 Warning--empty journal in dune_sp_collab
-You've used 26 entries,
+Warning--empty institution in rubbia1977liquid
+You've used 41 entries,
             1876 wiz_defined-function locations,
-            628 strings with 8960 characters,
-and the built_in function-call counts, 6604 in all, are:
-= -- 574
-> -- 371
+            729 strings with 11613 characters,
+and the built_in function-call counts, 10885 in all, are:
+= -- 1002
+> -- 554
 < -- 0
-+ -- 136
-- -- 110
-* -- 461
-:= -- 970
-add.period$ -- 31
-call.type$ -- 26
-change.case$ -- 24
++ -- 205
+- -- 164
+* -- 758
+:= -- 1562
+add.period$ -- 46
+call.type$ -- 41
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 342
-empty$ -- 607
-format.name$ -- 110
-if$ -- 1596
+cite$ -- 43
+duplicate$ -- 576
+empty$ -- 966
+format.name$ -- 164
+if$ -- 2654
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 23
-newline$ -- 86
-num.names$ -- 24
-pop$ -- 123
+int.to.str$ -- 41
+missing$ -- 36
+newline$ -- 131
+num.names$ -- 38
+pop$ -- 158
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 233
+skip$ -- 438
 stack$ -- 0
-substring$ -- 248
-swap$ -- 135
+substring$ -- 487
+swap$ -- 262
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 48
-width$ -- 28
-write$ -- 241
-(There were 2 warnings)
+while$ -- 85
+width$ -- 43
+write$ -- 389
+(There was 1 error message)

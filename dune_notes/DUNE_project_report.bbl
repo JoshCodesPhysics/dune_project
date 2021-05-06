@@ -4,6 +4,15 @@
 ``Dune science home page.'' \url{https://www.dunescience.org/}, 2020.
 \newblock Accessed 11-01-2021.
 
+\bibitem{2016NuPhB.908....1O}
+T.~{Ohlsson}, ``{Special Issue on ``Neutrino Oscillations: Celebrating the
+  Nobel Prize in Physics 2015'' in Nuclear Physics B},'' {\em Nuclear Physics
+  B}, vol.~908, pp.~1--1, July 2016.
+
+\bibitem{atmospheric_neutrinos}
+``Atmospheric neutrinos: Super-kamiokande official website.''
+  \url{http://www-sk.icrr.u-tokyo.ac.jp/sk/sk/atmos-e.html}.
+
 \bibitem{Mertens_2016}
 S.~Mertens, ``Direct neutrino mass experiments,'' {\em Journal of Physics:
   Conference Series}, vol.~718, p.~022013, May 2016.
@@ -11,6 +20,67 @@ S.~Mertens, ``Direct neutrino mass experiments,'' {\em Journal of Physics:
 \bibitem{cooper2016masses}
 P.~S. Cooper, ``The masses of the neutrinos,'' {\em arXiv preprint
   arXiv:1605.03159}, 2016.
+
+\bibitem{bilenky2020neutrinos}
+S.~Bilenky, ``Neutrinos: Majorana or dirac?,'' 2020.
+
+\bibitem{wu1957experimental}
+C.-S. Wu, E.~Ambler, R.~W. Hayward, D.~D. Hoppes, and R.~P. Hudson,
+  ``Experimental test of parity conservation in beta decay,'' {\em Physical
+  review}, vol.~105, no.~4, p.~1413, 1957.
+
+\bibitem{king2017unified}
+S.~King, ``Unified models of neutrinos, flavour and cp violation,'' {\em
+  Progress in Particle and Nuclear Physics}, vol.~94, pp.~217--256, 2017.
+
+\bibitem{Dolgov_1998}
+A.~D. Dolgov, ``Baryogenesis, 30 years after,'' {\em Surveys in High Energy
+  Physics}, vol.~13, p.~83–117, Nov 1998.
+
+\bibitem{majorana1937teoria}
+E.~Majorana, ``Teoria simmetrica dell’elettrone e del positrone,'' {\em Il
+  Nuovo Cimento (1924-1942)}, vol.~14, no.~4, pp.~171--184, 1937.
+
+\bibitem{schwingenheuer2013status}
+B.~Schwingenheuer, ``Status and prospects of searches for neutrinoless double
+  beta decay,'' {\em Annalen der Physik}, vol.~525, no.~4, pp.~269--280, 2013.
+
+\bibitem{Xu_2015}
+W.~Xu, N.~Abgrall, F.~T. Avignone, A.~S. Barabash, F.~E. Bertrand, V.~Brudanin,
+  M.~Busch, M.~Buuck, D.~Byram, A.~S. Caldwell, and et~al., ``The majorana
+  demonstrator: A search for neutrinoless double-beta decay of76ge,'' {\em
+  Journal of Physics: Conference Series}, vol.~606, p.~012004, May 2015.
+
+\bibitem{khanbekov2013amore}
+N.~Khanbekov, ``Amore: Collaboration for searches for the neutrinoless
+  double-beta decay of the isotope of 100 mo with the aid of 40 ca 100 moo 4 as
+  a cryogenic scintillation detector,'' {\em Physics of Atomic Nuclei},
+  vol.~76, no.~9, pp.~1086--1089, 2013.
+
+\bibitem{Albert_2018}
+J.~B. Albert, G.~Anton, I.~J. Arnquist, I.~Badhrees, P.~Barbeau, D.~Beck,
+  V.~Belov, F.~Bourque, J.~P. Brodsky, E.~Brown, and et~al., ``Sensitivity and
+  discovery potential of the proposed nexo experiment to neutrinoless double-
+ beta decay,'' {\em Physical Review C}, vol.~97, Jun 2018.
+
+\bibitem{rodejohann2007neutrino}
+W.~Rodejohann, ``Neutrino mixing and neutrino telescopes,'' {\em Journal of
+  Cosmology and Astroparticle Physics}, vol.~2007, no.~01, p.~029, 2007.
+
+\bibitem{Cohen_2009}
+A.~G. Cohen, S.~L. Glashow, and Z.~Ligeti, ``Disentangling neutrino
+  oscillations,'' {\em Physics Letters B}, vol.~678, p.~191–196, Jul 2009.
+
+\bibitem{aartsen2018search}
+M.~Aartsen, M.~Ackermann, J.~Adams, J.~Aguilar, M.~Ahlers, M.~Ahrens,
+  I.~Al~Samarai, D.~Altmann, K.~Andeen, T.~Anderson, {\em et~al.}, ``Search for
+  nonstandard neutrino interactions with icecube deepcore,'' {\em Physical
+  Review D}, vol.~97, no.~7, p.~072009, 2018.
+
+\bibitem{boyarsky2019sterile}
+A.~Boyarsky, M.~Drewes, T.~Lasserre, S.~Mertens, and O.~Ruchayskiy, ``Sterile
+  neutrino dark matter,'' {\em Progress in Particle and Nuclear Physics},
+  vol.~104, pp.~1--45, 2019.
 
 \bibitem{acciarri2016longbaseline}
 R.~Acciarri, M.~A. Acero, M.~Adamowski, C.~Adams, P.~Adamson, S.~Adhikari, {\em
@@ -31,6 +101,13 @@ P.~Di~Bari, ``An introduction to leptogenesis and neutrino properties,'' {\em
 B.~Abi, G.~Barr, J.~Martin-Albo, and F.~Azfar, ``Dune's daq architecture;
   envisaging the alternatives,'' Aug 2017.
 
+\bibitem{dune_sp_collab}
+T.~Collaboration, B.~Abi, R.~Acciarri, M.~Acero, M.~Adamowski, C.~Adams,
+  D.~Adams, P.~Adamson, M.~Adinolfi, Z.~Ahmad, C.~Albright, T.~Alion,
+  J.~Anderson, K.~Anderson, C.~Andreopoulos, M.~Andrews, R.~Andrews, J.~Anjos,
+  A.~Ankowski, and R.~Zwaska, ``The single-phase protodune technical design
+  report,'' 06 2017.
+
 \bibitem{rubbia1977liquid}
 C.~Rubbia, ``The liquid-argon time projection chamber: a new concept for
   neutrino detectors,'' tech. rep., 1977.
@@ -41,13 +118,6 @@ C.~Adams, M.~Alrashed, R.~An, J.~Anthony, J.~Asaadi, A.~Ashkenazi, M.~Auger,
   background for exclusive neutrino interaction studies with liquid argon tpcs;
   a case study with the microboone detector,'' {\em arXiv preprint
   arXiv:1812.05679}, 2018.
-
-\bibitem{dune_sp_collab}
-T.~Collaboration, B.~Abi, R.~Acciarri, M.~Acero, M.~Adamowski, C.~Adams,
-  D.~Adams, P.~Adamson, M.~Adinolfi, Z.~Ahmad, C.~Albright, T.~Alion,
-  J.~Anderson, K.~Anderson, C.~Andreopoulos, M.~Andrews, R.~Andrews, J.~Anjos,
-  A.~Ankowski, and R.~Zwaska, ``The single-phase protodune technical design
-  report,'' 06 2017.
 
 \bibitem{aimard20184}
 B.~Aimard, C.~Alt, J.~Asaadi, M.~Auger, V.~Aushev, D.~Autiero, M.~Badoi,
