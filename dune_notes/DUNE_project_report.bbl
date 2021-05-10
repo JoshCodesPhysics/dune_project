@@ -245,6 +245,11 @@ C.~Lo and P.~Chow, ``Model-based optimization of high level synthesis
   directives,'' in {\em 2016 26th International Conference on Field
   Programmable Logic and Applications (FPL)}, pp.~1--10, IEEE, 2016.
 
+\bibitem{xilinx.com_2017}
+``Xilinx axi reference guide (ug1037).''
+  \url{https://www.xilinx.com/support/documentation/ip_documentation/axi_ref_guide/latest/ug1037-vivado-axi-reference-guide.pdf},
+  Jul 2017.
+
 \bibitem{marc2018two}
 T.~Marc-Andr{\'e}, ``Two fpga case studies comparing high level synthesis and
   manual hdl for hep applications,'' {\em arXiv preprint arXiv:1806.10672},

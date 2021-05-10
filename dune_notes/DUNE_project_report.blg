@@ -9,36 +9,36 @@ I was expecting a `,' or a `}'---line 266 of file dpn.bib
 I'm skipping whatever remains of this entry
 Warning--empty journal in dune_sp_collab
 Warning--empty institution in rubbia1977liquid
-You've used 54 entries,
+You've used 55 entries,
             1876 wiz_defined-function locations,
-            813 strings with 14290 characters,
-and the built_in function-call counts, 14916 in all, are:
-= -- 1366
-> -- 806
+            817 strings with 14476 characters,
+and the built_in function-call counts, 15023 in all, are:
+= -- 1376
+> -- 807
 < -- 0
-+ -- 295
++ -- 296
 - -- 241
-* -- 1059
-:= -- 2155
-add.period$ -- 59
-call.type$ -- 54
-change.case$ -- 52
+* -- 1065
+:= -- 2165
+add.period$ -- 60
+call.type$ -- 55
+change.case$ -- 53
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 785
-empty$ -- 1268
+cite$ -- 57
+duplicate$ -- 789
+empty$ -- 1286
 format.name$ -- 241
-if$ -- 3623
+if$ -- 3653
 int.to.chr$ -- 0
-int.to.str$ -- 54
+int.to.str$ -- 55
 missing$ -- 47
-newline$ -- 170
+newline$ -- 173
 num.names$ -- 51
-pop$ -- 192
+pop$ -- 199
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 618
+skip$ -- 622
 stack$ -- 0
 substring$ -- 654
 swap$ -- 377
@@ -48,6 +48,6 @@ top$ -- 0
 type$ -- 0
 warning$ -- 2
 while$ -- 114
-width$ -- 56
-write$ -- 520
+width$ -- 57
+write$ -- 527
 (There was 1 error message)

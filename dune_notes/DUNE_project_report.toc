@@ -27,5 +27,5 @@
 \contentsline {section}{\numberline {4}Design Processs Conclusions}{39}{section.4}%
 \contentsline {subsection}{\numberline {4.1}HLS and Manual HDL Resource Usage with Similar Performance}{39}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Simulation using Questasim}{39}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Final Thoughts}{41}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Future of High Level Synthesis and the DUNE Experiment}{41}{section.5}%
+\contentsline {subsection}{\numberline {4.3}Final Discussion}{41}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion}{41}{section.5}%
