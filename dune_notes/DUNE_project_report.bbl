@@ -47,40 +47,6 @@ R.~Acciarri, M.~A. Acero, M.~Adamowski, C.~Adams, P.~Adamson, S.~Adhikari, {\em
   neutrino experiment (dune) conceptual design report volume 1: The lbnf and
   dune projects,'' 2016.
 
-\bibitem{sachs1964cp}
-R.~Sachs, ``Cp violation in k 0 decays,'' {\em Physical Review Letters},
-  vol.~13, no.~8, p.~286, 1964.
-
-\bibitem{kobayashi1973cp}
-M.~Kobayashi and T.~Maskawa, ``Cp-violation in the renormalizable theory of
-  weak interaction,'' {\em Progress of theoretical physics}, vol.~49, no.~2,
-  pp.~652--657, 1973.
-
-\bibitem{particle2020review}
-P.~D. Group, P.~Zyla, R.~Barnett, J.~Beringer, O.~Dahl, D.~Dwyer, D.~Groom,
-  C.-J. Lin, K.~Lugovsky, E.~Pianori, {\em et~al.}, ``Review of particle
-  physics,'' {\em Progress of Theoretical and Experimental Physics}, vol.~2020,
-  no.~8, p.~083C01, 2020.
-
-\bibitem{Di_Bari_2012}
-P.~Di~Bari, ``An introduction to leptogenesis and neutrino properties,'' {\em
-  Contemporary Physics}, vol.~53, p.~315–338, Jul 2012.
-
-\bibitem{kuzmin1985anomalous}
-V.~A. Kuzmin, V.~A. Rubakov, and M.~E. Shaposhnikov, ``On anomalous electroweak
-  baryon-number non-conservation in the early universe,'' {\em Physics Letters
-  B}, vol.~155, no.~1-2, pp.~36--42, 1985.
-
-\bibitem{kaysor_2020}
-B.~Kaysor, ``The search for leptonic cp violation.''
-  \url{https://cerncourier.com/a/the-search-for-leptonic-cp-violation/}, Aug
-  2020.
-
-\bibitem{maki1962remarks}
-Z.~Maki, M.~Nakagawa, and S.~Sakata, ``Remarks on the unified model of
-  elementary particles,'' {\em Progress of Theoretical Physics}, vol.~28,
-  no.~5, pp.~870--880, 1962.
-
 \bibitem{bilenky2020neutrinos}
 S.~M. Bilenky, ``Neutrinos: Majorana or dirac?,'' {\em Universe}, vol.~6,
   no.~9, p.~134, 2020.
@@ -143,6 +109,45 @@ M.~Aartsen, M.~Ackermann, J.~Adams, J.~Aguilar, M.~Ahlers, M.~Ahrens,
 A.~Boyarsky, M.~Drewes, T.~Lasserre, S.~Mertens, and O.~Ruchayskiy, ``Sterile
   neutrino dark matter,'' {\em Progress in Particle and Nuclear Physics},
   vol.~104, pp.~1--45, 2019.
+
+\bibitem{sachs1964cp}
+R.~Sachs, ``Cp violation in k 0 decays,'' {\em Physical Review Letters},
+  vol.~13, no.~8, p.~286, 1964.
+
+\bibitem{kobayashi1973cp}
+M.~Kobayashi and T.~Maskawa, ``Cp-violation in the renormalizable theory of
+  weak interaction,'' {\em Progress of theoretical physics}, vol.~49, no.~2,
+  pp.~652--657, 1973.
+
+\bibitem{particle2020review}
+P.~D. Group, P.~Zyla, R.~Barnett, J.~Beringer, O.~Dahl, D.~Dwyer, D.~Groom,
+  C.-J. Lin, K.~Lugovsky, E.~Pianori, {\em et~al.}, ``Review of particle
+  physics,'' {\em Progress of Theoretical and Experimental Physics}, vol.~2020,
+  no.~8, p.~083C01, 2020.
+
+\bibitem{Di_Bari_2012}
+P.~Di~Bari, ``An introduction to leptogenesis and neutrino properties,'' {\em
+  Contemporary Physics}, vol.~53, p.~315–338, Jul 2012.
+
+\bibitem{kuzmin1985anomalous}
+V.~A. Kuzmin, V.~A. Rubakov, and M.~E. Shaposhnikov, ``On anomalous electroweak
+  baryon-number non-conservation in the early universe,'' {\em Physics Letters
+  B}, vol.~155, no.~1-2, pp.~36--42, 1985.
+
+\bibitem{kaysor_2020}
+B.~Kaysor, ``The search for leptonic cp violation.''
+  \url{https://cerncourier.com/a/the-search-for-leptonic-cp-violation/}, Aug
+  2020.
+
+\bibitem{maki1962remarks}
+Z.~Maki, M.~Nakagawa, and S.~Sakata, ``Remarks on the unified model of
+  elementary particles,'' {\em Progress of Theoretical Physics}, vol.~28,
+  no.~5, pp.~870--880, 1962.
+
+\bibitem{abi2020volume}
+B.~Abi, R.~Acciarri, M.~A. Acero, G.~Adamov, D.~Adams, M.~Adinolfi, Z.~Ahmad,
+  J.~Ahmed, T.~Alion, S.~A. Monsalve, {\em et~al.}, ``Volume i. introduction to
+  dune,'' {\em Journal of Instrumentation}, vol.~15, no.~08, p.~T08008, 2020.
 
 \bibitem{abi_barr_martin-albo_azfar_2017}
 B.~Abi, G.~Barr, J.~Martin-Albo, and F.~Azfar, ``Dune's daq architecture;
