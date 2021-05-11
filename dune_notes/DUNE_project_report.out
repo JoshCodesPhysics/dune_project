@@ -25,7 +25,7 @@
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Redesign of FIR with External SSR}{subsection.3.2}% 25
 \BOOKMARK [3][-]{subsubsection.3.2.4}{FIR with Implemented SSR}{subsection.3.2}% 26
 \BOOKMARK [1][-]{section.4}{Design Processs Conclusions}{}% 27
-\BOOKMARK [2][-]{subsection.4.1}{HLS and Manual HDL Resource Usage with Similar Performance}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.2}{Simulation using Questasim}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.3}{Final Discussion}{section.4}% 30
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 31
+\BOOKMARK [2][-]{subsection.4.1}{Simulation using Questasim}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.2}{Final Discussion}{section.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Experiences of the Wider Community}{subsection.4.2}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Conclusion}{subsection.4.2}% 31

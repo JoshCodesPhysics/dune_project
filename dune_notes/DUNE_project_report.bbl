@@ -279,4 +279,22 @@ G.~Akkad, A.~Mansour, B.~ElHassan, F.~L. Roy, and M.~Najem, ``Fft radix-2 and
   communication systems,'' in {\em 2018 IEEE International Multidisciplinary
   Conference on Engineering Technology (IMCET)}, pp.~1--5, 2018.
 
+\bibitem{duarte2018fast}
+J.~Duarte, S.~Han, P.~Harris, S.~Jindariani, E.~Kreinar, B.~Kreis, J.~Ngadiuba,
+  M.~Pierini, R.~Rivera, N.~Tran, {\em et~al.}, ``Fast inference of deep neural
+  networks in fpgas for particle physics,'' {\em Journal of Instrumentation},
+  vol.~13, no.~07, p.~P07027, 2018.
+
+\bibitem{zabolotny2019implementation}
+W.~M. Zabo{\l}otny, ``Implementation of omtf trigger algorithm with high-level
+  synthesis,'' in {\em Photonics Applications in Astronomy, Communications,
+  Industry, and High-Energy Physics Experiments 2019}, vol.~11176, p.~1117641,
+  International Society for Optics and Photonics, 2019.
+
+\bibitem{ghanathe2017software}
+N.~Ghanathe, A.~Madorsky, H.~Lam, D.~Acosta, A.~George, M.~Carver, Y.~Xia,
+  A.~Jyothishwara, and M.~Hansen, ``Software and firmware co-development using
+  high-level synthesis,'' {\em Journal of Instrumentation}, vol.~12, no.~01,
+  p.~C01083, 2017.
+
 \end{thebibliography}

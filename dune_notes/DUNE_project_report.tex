@@ -154,7 +154,7 @@ If the neutrinos are Majorana type there would be two other physical complex pha
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/oscillation_prob}
+	\includegraphics[width=0.6\linewidth]{figures/oscillation_prob}
 	\caption[Probability of oscillation]{The probability that muon neutrinos (top) and antineutrinos (bottom) will appear at the far detector as electron neutrinos or antineutrinos respectively, depending on the complex phase value from the PMNS parameterization. The y-axis displays the appearance probability and the x-axis displays the neutrino energy \cite{abi2020long}.}
 	\label{fig:oscillationprob}
 \end{figure}
@@ -191,7 +191,7 @@ There are several main factors that influence the design of the DUNE DAQ system.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/The-major-components-of-the-ProtoDUNE-SP-TPC}
+	\includegraphics[width=0.5\linewidth]{figures/The-major-components-of-the-ProtoDUNE-SP-TPC}
 	\caption[ProtoDUNE-SP]{Diagram of the ProtoDUNE single-phase LAr TPC module. This contains two drift volumes, separated by a central cathode plane that is flanked by two anode planes, connected to a field cage that surrounds the entire module. Each anode plane is made of three Anode Plane Assemblies (APAs). These connect and send data to the front-end electronics being discussed in this report \cite{dune_sp_collab}.}
 	\label{fig:the-major-components-of-the-protodune-sp-tpc}
 \end{figure}
@@ -240,7 +240,6 @@ The readout window per neutrino event is between $3 \text{-} 5.5$ ms for a $2.25
 
 Each TPG unit processes the data from 64 APA wires, and so there are 4 units for each core\footnote{$4\times 64 = 256$, the number of wires in a fiber; ten fibers summed over ten MGTs accounts for all wires within the APA (2560).}.
 The TPG data consists of a header and a payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 bits of ADC sample data for hit finding. There is an AXI4-stream protocol\footnote{A standard interface to connect components that mutually wish to exchange data. The protocol supports multiple data streams that enable upsizing, downsizing and routing operations. The AXI4 protocol is part of an AXI family of micro controller buses, but this one in particular specialises in high performance, memory mapped component requirements.} for the unpacking and reordering of data in the TPG block, featuring 6 general signals for various instructions in each component:
-
 
 	\begin{enumerate}
 		\item \texttt{tvalid} denotes if the bus data is valid for processing.
@@ -527,10 +526,6 @@ In order to communicate with and restore tap values from the external SSR, addit
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
-The maximised performance of the \texttt{fir\_HLS} design required many different trial and error attempts at optimisations. Not only that, but it was necessary to parallelize the most time-expensive function operations: namely, the tap summation and SSR restoration. The significant disparity in the resources featured in figures \ref{fig:fir32v0stats}-\ref{fig:firhlsstats} reflect the increased registers and associated operations required to create a functional FIR design in HLS whilst overcoming the obstacles created by FELIX's required AXI stream behaviour. The LUT usage in the new HLS design is a $250\%$ increase from the amount used by the previous block, with a non-negligible $0.23\%$ increase in the total resource usage. The same goes for the FF usage, with an $102\%$ increase from the previous algorithm's usage, and a notable $0.14\%$ increase in total resource usage.
-
-In contrast to with the pedestal subtraction algorithms, DSP usage is required in both the original and HLS blocks. However, DSP usage in the HDL block is $0.39\%$ higher than the HLS design, in terms of total FPGA usage. This is the desired utilization, and efforts were made to increase DSP48 usage in HLS using directives, to no avail. This would have allowed savings of the resource cost in the LUT category. IO utilization is similar in both the HDL and HLS algorithms, due to the extra ports required for restoration.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/fir32_v0_stats}
@@ -544,6 +539,11 @@ In contrast to with the pedestal subtraction algorithms, DSP usage is required i
 	\caption[FIR HLS block w/o SSR statistics]{This figure contains the resource statistics for the FIR filter algorithm written in HLS, connected to a previously written external SSR mechanism that is not included in the statistics. The only resources being spent on the SSR are those allocated for accepting an storing the output values from the external SSR block.}
 	\label{fig:firhlsstats}
 \end{figure}
+
+
+The maximised performance of the \texttt{fir\_HLS} design required many different trial and error attempts at optimisations. Not only that, but it was necessary to parallelize the most time-expensive function operations: namely, the tap summation and SSR restoration. The significant disparity in the resources featured in figures \ref{fig:fir32v0stats}-\ref{fig:firhlsstats} reflect the increased registers and associated operations required to create a functional FIR design in HLS whilst overcoming the obstacles created by FELIX's required AXI stream behaviour. The LUT usage in the new HLS design is a $250\%$ increase from the amount used by the previous block, with a non-negligible $0.23\%$ increase in the total resource usage. The same goes for the FF usage, with an $102\%$ increase from the previous algorithm's usage, and a notable $0.14\%$ increase in total resource usage.
+
+In contrast to with the pedestal subtraction algorithms, DSP usage is required in both the original and HLS blocks. However, DSP usage in the HDL block is $0.39\%$ higher than the HLS design, in terms of total FPGA usage. This is the desired utilization, and efforts were made to increase DSP48 usage in HLS using directives, to no avail. This would have allowed savings of the resource cost in the LUT category. IO utilization is similar in both the HDL and HLS algorithms, due to the extra ports required for restoration.
 
 \subsubsection{FIR with Implemented SSR} \label{FIR_SSR}
 
@@ -571,13 +571,11 @@ The \texttt{fir\_HLS\_SSR} implementation has the biggest disparity in resources
 
 \section{Design Processs Conclusions}
 
-\subsection{HLS and Manual HDL Resource Usage with Similar Performance}
+Given more time to investigate the \texttt{axis} interface directives detailed in section \ref{axi4_method}, insight could have been provided into the resource usage of pipelined HLS-designed blocks with the same latency as the manual HDL designs. In this case, the efficiency of high-level synthesised implementations could be brought into question; section \ref{Discussion} describes studies done involving this inquiry.
 
-Given more time to investigate the \texttt{axis} interface directives detailed in section \ref{axi4_method}, insight could have been provided into the resource usage of pipelined HLS-designed blocks with the same latency as the manual HDL designs. In this case, the efficiency of high-level synthesised implementations could be brought into question. Papers have been previously written that compare HLS and manual VHDL implementations for high energy physics, among other purposes, and one general conclusion is that HLS produces a less efficient implementation, but allows for faster development time and better design productivity \cite{marc2018two, pelcat2016design, 8259883}. Other papers discuss the tools provided by Vivado HLS as mature enough to consider for the first approach used to design FPGA algorithms. They say HLS can provide similar, or even more efficient implementations when dealing with the re-use of certain resources \cite{6699478, 8603064}.
+During the design of the firmware algorithms discussed in this report, once the user became more familiar with the HLS tools available, design productivity increased dramatically and functional IP blocks were implemented within increasingly shorter periods as time went on. However, this cannot be separated from the fact that AXI4 stream behaviour is far more implementable in manual HDL projects than it is in their HLS counterparts, for a beginner in HLS. One of the main learning curves was using the simulation testbench and Questasim to debug the synthesized IP block, which is discussed in section \ref{quest}.
 
-During the design of the firmware algorithms discussed in this report, once the user became more familiar with the HLS tools available, design productivity increased dramatically and functional IP blocks were implemented within increasingly shorter periods as time went on. However, this cannot be separated from the fact that AXI4 stream behaviour is far more implementable in manual HDL projects than it is in their HLS counterparts, for a beginner in HLS.
-
-\subsection{Simulation using Questasim}
+\subsection{Simulation using Questasim} \label{quest}
 
 \begin{figure}
 	\centerline{\includegraphics[width=1.6\linewidth]{figures/fir_HLS_SSR_waveform_comb}}
@@ -593,27 +591,46 @@ There were several points during development where simulations froze inexplicabl
 
 Finally, on occasion the output write file produced outputs that did not correlate with the waveform, generating questions as to how Questasim visualised outputs versus their actual readout. All of these issues were part of a long trial and error process. The customisability of manual HDL development would provide considerably more transparency into debugging when faced with the Questasim validation phase. HLS provides the edge in productivity during the previous design phases.
 
-\subsection{Final Discussion}
+\subsection{Final Discussion} \label{Discussion}
 
-% Need to fix figure positioning, two references missing info, and write a prototype conclusion. Everything has been proofread 1x by me.
+The pursuit of using HLS to redesign hit finder architecture in the ProtoDUNE II detector has led to a number of discoveries. Conclusions can subsequently be made regarding the accessibility of the software, the performance and efficiency of the generated IP files, and the viability for experimental physicists looking to generate firmware in the future.
 
-List because this part is unfinished.
+\subsubsection{Experiences of the Wider Community} \label{community}
 
-\begin{itemize}
-	\item Chronology affects the operation of HLS blocks unless you use the inbuilt interface systems such as the axis directives
-	\item The high-performance approach to achieving the required behaviour was sub optimal and resource inefficient, and could be improved by using the axis directives or finding another way of implementing back pressure behaviour. This is far easier to achieve in manual HDL.
-	\item Debugging involves lots of trial and error, starting with simplistic designs so less can go wrong (due to lack of transparency into what is causing issues) in contrast to manual HDL debugging.
-	\item The HLS synthesis and analysis GUI is very helpful to HDL firmware novices - timing, DRC's e.t.c. Applying directives and pragmas is very intuitive, allows for different implementations of the same source code
-	\item HLS allows for higher design productivity but less efficient resource usage regardless of the performance. This isn't crippling to the overall utilization for a certain resource, in our case. Talk about overall comparison between original and HLS designs.
-	\item Lots of unnecessary resources used to achieve latency = II = 1, such as extra sets of array registers and partitioning of BRAM memories. However, it is impressive that this kind of throughput can be achieved for relatively complex top functions
-\end{itemize}
+Before these findings are summarised, it is important to note that this is not the first time HLS has been considered for a particle physics application. In fact, many publications exist that compare manual HDL and HLS implementations for a given FPGA algorithm. One general conclusion is that HLS produces a less efficient implementation, but allows for faster development time and better design productivity \cite{marc2018two, pelcat2016design, 8259883}. Other papers discuss the tools provided by Vivado HLS as mature enough to consider as the first approach for designing FPGA algorithms. They say HLS can provide similar efficiency or even more efficient implementations, especially when dealing with the re-use of certain resources \cite{6699478, 8603064, duarte2018fast}.
 
+An article titled `Implementation of OMTF Trigger Algorithm with High-level Synthesis' \cite{zabolotny2019implementation} describes the advantages and disadvantages of HLS. The main algorithm being studied was translated successfully from C++ into an FPGA implementation. Not only that, but the source code was more concise and easier to understand, maintain and test. HLS ensures that data in parallel paths are synchronised in a pipelined design, which is not something one can take for granted when developing VHDL code manually.
 
-%How does it compare to writing from scratch? Is it worth learning? Is the performance worth it for the resource usage? What is the design process like overall? What would I do if I had more time (hit finder block potentially)?
+One of the described drawbacks was that some of the tested algorithms were impossible to correctly translate from C++ into synthesizable HDL code. Additionally, for the user to properly prepare the C++ code they may have to have prior knowledge of FPGA operation, which reduces accessibility. Complex designs took significantly more time to synthesize and implement in Vivado Project Manager, and the generated HDL code is bloated and illegible.
 
-\section{Conclusion}
+Another account is given in the report titled `Software and Firmware Co-development Using High-level Synthesis' \cite{ghanathe2017software}, featuring trigger applications from the CERN CMS experiment. For the purpose of bridging the gap between an initial prototype C++ model and the final FPGA algorithm, HLS was described to be exceptional in saving time between abstraction and implementation.  All HLS modules featured in the CMS report satisfied their strict performance constraints and displayed better resource usage than the manual Verilog implementation. The HLS hardware output matched perfectly with the original results.
 
-%How HLS could contribute to experimentalist physics and how it could help the DUNE hit finder architecture be developed.
+All of the above findings resonate with the discoveries made in this project. Many of the most popular opinions on HLS design are shared across the academic board. A benefit most commonly identified is the ease and accessibility of HLS implementation. Whether the tools of HLS should be employed in an experimental context is best assessed on a case-by-case basis. The reason for this is that a user's success can vary dramatically depending on their required behaviour and previous experience with FPGAs.
+
+\subsubsection{Conclusion}
+
+In this report, the theoretical and experimental motivations for the DUNE experiment have been outlined. Details of the hit finder architecture and the HF algorithms were discussed, and the original VHDL designs were compared to the new HLS implementations. The following segment summarises the discoveries made during the progression of the project.
+
+\subsubsection*{Technical Findings}
+
+One of the biggest revelations during the early stages of the project was the use of static C++ variables. This allowed the block to internally save values between function calls, which meant that no external mechanisms were required to maintain register continuity. The algorithm became self sufficient.
+
+Externally defined C++ arrays were especially helpful when saving variable states between packets for the eventual restoration 64 packets later. These could be partitioned for performance or automatically implemented as BRAMs for low-cost memory storage. These arrays effectively circumvented any externally-driven block wipe between packets, as they were permanently defined. 
+
+Employing arbitrary bit widths using \texttt{ap\_int.h} and the \texttt{ap\_int<bitwidth>} datatype saved area usage, as predicted in section \ref{direct}. Using the C++ \texttt{struct} as a function argument led to the synthesis of port interfaces with drastically lower IO resource usage. A \texttt{struct} is the recommended port type when using \texttt{axis} interface directives with side channels like \texttt{tlast}, \texttt{tuser} and \texttt{tkeep}. This \texttt{axis} directive approach is the best way to generate designs that satisfy general AXI4 stream protocol requirements, such as an instantaneous response to back pressure. However, this approach is met with difficulty and requires further investigation to achieve a successful implementation. It should be noted that the back pressure behaviour of the manually written IPs was easily implemented by a singular line of VHDL code.
+
+The high-performance approach to mimicking AXI4 stream behaviour was effective, and forced the user to streamline their designs much more than the manual HDL versions. It is worth mentioning that even complex functions can support high throughput via persistence and familiarity with the optimisation directives. However, this led to larger area usage than was necessary, since fast block operation was not a priority in this project. Overall, the component utilization of the HLS blocks were significantly larger than those written manually in VHDL, but not large enough to cause implementation issues. LUT and FF usage was especially higher in the HLS versions. Despite this, total resource costs consistently remained below $0.5\%$ of the total available for the ZYNQ UltraScale+ FPGA \footnote{Part name xzcu9eg-ffvb1156-2-e.}.
+
+The following section shall summarise the experience of designing hit finder algorithms with the Vivado HLS software.
+
+\subsubsection*{The User Experience}
+
+The first thing one must realise when writing in a high-abstraction language for the purpose of FPGA implementation is that the style is vastly different to how software is usually developed. One must possess a basic level of knowledge regarding FPGAs and digital circuits, and realise that some code must be written with clock chronology in mind, such as the \texttt{tlast} restore mechanism outlined in section \ref{pedsubalg}. Increased logic branching is encouraged, since it often times can improve performance in FPGA firmware, in contrast to CPU software. Frequently the HLS top function requires more arguments and internal variables to ensure all handshake signals are accepted and correctly sent to the output. These are just a few of many examples that prove it is impossible to separate the C++ coding style from the limitations of HDLs.
+
+Secondly, HLS development requires a consistent trial and error approach, due to the lack of transparency in the synthesized code as mentioned in sections \ref{quest} and \ref{community}. This is a significant disadvantage when compared to the customisability of manual VHDL programming. However, despite this drawback, in addition to the tendency for less efficient resource implementation, HLS allows for higher design productivity. High level synthesis enables physicists to generate IP blocks when originally only trained engineers (who are few and far between in the experimental community), were able to do this. Consequently, the prospects for accelerating the development of firmware for ProtoDUNE II or any other high-performance experiment are enormous.
+
+The work carried out for this report took place during the COVID-19 pandemic and required remote working for the majority of its duration. The user had no exposure or prior knowledge about FPGAs or the HLS software, yet the ease of the HLS design process enabled fast progression and notable success. This is a testament to the power of this method, and is a recommendable option for all software developers and physicists to consider.
+
 \newpage
 \bibliographystyle{ieeetr}
 \bibliography{dpn.bib}
