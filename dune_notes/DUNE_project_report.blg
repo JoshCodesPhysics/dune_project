@@ -9,45 +9,45 @@ I was expecting a `,' or a `}'---line 266 of file dpn.bib
 I'm skipping whatever remains of this entry
 Warning--empty journal in dune_sp_collab
 Warning--empty institution in rubbia1977liquid
-You've used 58 entries,
+You've used 59 entries,
             1876 wiz_defined-function locations,
-            834 strings with 15261 characters,
-and the built_in function-call counts, 16134 in all, are:
-= -- 1477
-> -- 875
+            843 strings with 15410 characters,
+and the built_in function-call counts, 16421 in all, are:
+= -- 1511
+> -- 879
 < -- 0
-+ -- 320
-- -- 262
-* -- 1141
-:= -- 2319
-add.period$ -- 63
-call.type$ -- 58
-change.case$ -- 56
++ -- 322
+- -- 263
+* -- 1154
+:= -- 2352
+add.period$ -- 64
+call.type$ -- 59
+change.case$ -- 57
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 857
-empty$ -- 1366
-format.name$ -- 262
-if$ -- 3928
+cite$ -- 61
+duplicate$ -- 879
+empty$ -- 1389
+format.name$ -- 263
+if$ -- 4005
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 50
-newline$ -- 182
-num.names$ -- 54
-pop$ -- 209
+int.to.str$ -- 59
+missing$ -- 51
+newline$ -- 185
+num.names$ -- 55
+pop$ -- 211
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 684
+skip$ -- 707
 stack$ -- 0
-substring$ -- 692
-swap$ -- 418
+substring$ -- 706
+swap$ -- 433
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 120
-width$ -- 60
-write$ -- 560
+while$ -- 122
+width$ -- 61
+write$ -- 570
 (There was 1 error message)
