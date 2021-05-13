@@ -271,12 +271,6 @@ A.~Stanciu and C.~Gerigan, ``Comparison between implementations efficiency of
   International Symposium for Design and Technology in Electronic Packaging
   (SIITME)}, pp.~171--174, 2017.
 
-\bibitem{6699478}
-F.~Sánchez, R.~Mateos, E.~Bueno, J.~Mingo, and I.~Sanz, ``Comparative of hls
-  and hdl implementations of a grid synchronization algorithm,'' in {\em IECON
-  2013 - 39th Annual Conference of the IEEE Industrial Electronics Society},
-  pp.~2232--2237, 2013.
-
 \bibitem{8603064}
 G.~Akkad, A.~Mansour, B.~ElHassan, F.~L. Roy, and M.~Najem, ``Fft radix-2 and
   radix-4 fpga acceleration techniques using hls and hdl for digital
@@ -288,6 +282,12 @@ J.~Duarte, S.~Han, P.~Harris, S.~Jindariani, E.~Kreinar, B.~Kreis, J.~Ngadiuba,
   M.~Pierini, R.~Rivera, N.~Tran, {\em et~al.}, ``Fast inference of deep neural
   networks in fpgas for particle physics,'' {\em Journal of Instrumentation},
   vol.~13, no.~07, p.~P07027, 2018.
+
+\bibitem{6699478}
+F.~Sánchez, R.~Mateos, E.~Bueno, J.~Mingo, and I.~Sanz, ``Comparative of hls
+  and hdl implementations of a grid synchronization algorithm,'' in {\em IECON
+  2013 - 39th Annual Conference of the IEEE Industrial Electronics Society},
+  pp.~2232--2237, 2013.
 
 \bibitem{zabolotny2019implementation}
 W.~M. Zabo{\l}otny, ``Implementation of omtf trigger algorithm with high-level
