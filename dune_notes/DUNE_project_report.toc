@@ -17,10 +17,12 @@
 \contentsline {section}{\numberline {3}Development and Findings}{21}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{21}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{22}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with an External SSR}{22}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{27}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.2}State Save and Restore}{22}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Redesign of Pedestal Subtraction with an External SSR}{23}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{23}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{28}{subsubsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{29}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{32}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{31}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{33}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{33}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{36}{subsubsection.3.2.4}%

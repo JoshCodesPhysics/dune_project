@@ -101,8 +101,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Background}{15}{subsection.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Hit Finder Firmware Architecture \cite  {manolopoulos_2020}.}}{16}{figure.7}\protected@file@percent }
 \newlabel{fig:hfprocessor}{{7}{16}{Hit Finder Firmware Architecture \cite {manolopoulos_2020}}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Focus on the HSC and the sub-block chain \cite  {manolopoulos_2020}.}}{16}{figure.8}\protected@file@percent }
-\newlabel{fig:hsc}{{8}{16}{Focus on the HSC and the sub-block chain \cite {manolopoulos_2020}}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Focus on the TPG core and the sub-block chain \cite  {manolopoulos_2020}.}}{16}{figure.8}\protected@file@percent }
+\newlabel{fig:hsc}{{8}{16}{Focus on the TPG core and the sub-block chain \cite {manolopoulos_2020}}{figure.8}{}}
 \citation{coussy2009introduction}
 \citation{vivado_design_suite_user_guide_2018}
 \citation{vahid2010digital}
@@ -124,31 +124,34 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{21}{subsection.3.1}\protected@file@percent }
 \newlabel{pedsubalg}{{3.1}{21}{Pedestal Subtraction Algorithm}{subsection.3.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{22}{subsubsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Redesign of Pedestal Subtraction with an External SSR}{22}{subsubsection.3.1.2}\protected@file@percent }
-\newlabel{pedsub_extern_SSR}{{3.1.2}{22}{Redesign of Pedestal Subtraction with an External SSR}{subsubsection.3.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Pedestal subtraction algorithm}}{23}{figure.10}\protected@file@percent }
-\newlabel{fig:pedsubalg}{{10}{23}{Pedestal subtraction algorithm}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}State Save and Restore}{22}{subsubsection.3.1.2}\protected@file@percent }
+\newlabel{save_and_restore}{{3.1.2}{22}{State Save and Restore}{subsubsection.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Redesign of Pedestal Subtraction with an External SSR}{23}{subsubsection.3.1.3}\protected@file@percent }
+\newlabel{pedsub_extern_SSR}{{3.1.3}{23}{Redesign of Pedestal Subtraction with an External SSR}{subsubsection.3.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{23}{subsubsection.3.1.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Pedestal subtraction algorithm}}{24}{figure.10}\protected@file@percent }
+\newlabel{fig:pedsubalg}{{10}{24}{Pedestal subtraction algorithm}{figure.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Original algorithm resource usage}}{26}{figure.11}\protected@file@percent }
 \newlabel{fig:pedsubblockstats}{{11}{26}{Original algorithm resource usage}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces HLS algorithm resource usage}}{26}{figure.12}\protected@file@percent }
-\newlabel{fig:hlsblockstats}{{12}{26}{HLS algorithm resource usage}{figure.12}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Pedestal Subtraction with Implemented SSR}{27}{subsubsection.3.1.3}\protected@file@percent }
-\newlabel{pedsub_w_SSR}{{3.1.3}{27}{Pedestal Subtraction with Implemented SSR}{subsubsection.3.1.3}{}}
-\newlabel{BRAM_SSR}{{3.1.3}{28}{Memory Utilisation for the SSR Mechanism}{section*.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces HLS algorithm resource usage}}{27}{figure.12}\protected@file@percent }
+\newlabel{fig:hlsblockstats}{{12}{27}{HLS algorithm resource usage}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{28}{subsubsection.3.1.5}\protected@file@percent }
+\newlabel{pedsub_w_SSR}{{3.1.5}{28}{Pedestal Subtraction with Implemented SSR}{subsubsection.3.1.5}{}}
+\newlabel{BRAM_SSR}{{3.1.5}{28}{Memory Utilisation for the SSR Mechanism}{section*.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{29}{subsection.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Previously built PedSub\_SSR block statistics}}{30}{figure.13}\protected@file@percent }
 \newlabel{fig:pedsubssrkostasstats}{{13}{30}{Previously built PedSub\_SSR block statistics}{figure.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces pedsub\_HLS\_SSR resource statistics}}{30}{figure.14}\protected@file@percent }
 \newlabel{fig:pedsubhlsssrstats}{{14}{30}{pedsub\_HLS\_SSR resource statistics}{figure.14}{}}
+\citation{manolopoulos_2020}
+\citation{manolopoulos_2020}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces pedsub FIR block diagram}}{31}{figure.15}\protected@file@percent }
 \newlabel{fig:pedsubfirblockdiagram}{{15}{31}{pedsub FIR block diagram}{figure.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces FIR waveform cleaned}}{31}{figure.16}\protected@file@percent }
-\newlabel{fig:firanaloguewaveform}{{16}{31}{FIR waveform cleaned}{figure.16}{}}
-\citation{manolopoulos_2020}
-\citation{manolopoulos_2020}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{31}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces FIR waveform cleaned}}{32}{figure.16}\protected@file@percent }
+\newlabel{fig:firanaloguewaveform}{{16}{32}{FIR waveform cleaned}{figure.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces FIR block diagram}}{32}{figure.17}\protected@file@percent }
 \newlabel{fig:firblockdiagram}{{17}{32}{FIR block diagram}{figure.17}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{32}{subsubsection.3.2.1}\protected@file@percent }
 \citation{xilinx.com_2017}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{33}{subsubsection.3.2.2}\protected@file@percent }
 \newlabel{axi4_method}{{3.2.2}{33}{Axis Directive Method for Back Pressure Behaviour}{subsubsection.3.2.2}{}}
