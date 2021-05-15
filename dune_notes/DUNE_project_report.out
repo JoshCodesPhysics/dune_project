@@ -26,7 +26,11 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Axis Directive Method for Back Pressure Behaviour}{subsection.3.2}% 26
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Redesign of FIR with External SSR}{subsection.3.2}% 27
 \BOOKMARK [3][-]{subsubsection.3.2.4}{FIR with Implemented SSR}{subsection.3.2}% 28
-\BOOKMARK [1][-]{section.4}{Design Process Conclusions}{}% 29
-\BOOKMARK [2][-]{subsection.4.1}{Simulation using Questasim}{section.4}% 30
-\BOOKMARK [2][-]{subsection.4.2}{General Consensus}{section.4}% 31
-\BOOKMARK [2][-]{subsection.4.3}{Conclusion}{section.4}% 32
+\BOOKMARK [2][-]{subsection.3.3}{Comparison Overview}{section.3}% 29
+\BOOKMARK [1][-]{section.4}{Design Process Conclusions}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Simulation using Questasim}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.2}{General Consensus}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.3}{Conclusion}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Technical Findings}{subsection.4.3}% 34
+\BOOKMARK [3][-]{subsubsection.4.3.2}{The User Experience}{subsection.4.3}% 35
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Future Work}{subsection.4.3}% 36

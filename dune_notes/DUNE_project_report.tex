@@ -26,10 +26,13 @@
 
 \begin{document}
 
-\input{titlepage.tex}
+\clearpage\input{titlepage.tex}
+\addtocounter{page}{2}
 
 \newpage
 \tableofcontents
+\newpage
+\listoffigures
 
 \newpage
 
@@ -40,7 +43,7 @@ The DUNE collaboration is an amalgamation of many neutrino-physics communities, 
 
 \subsection{The Importance of Neutrinos in the Standard Model} \label{neutrinos}
 
-The last particle predicted by the standard model (SM) to be experimentally confirmed was the Higgs boson. It was eventually discovered in 2012 by the ATLAS and CMS groups at the CERN Large Hadron Collider experiment in Geneva. This was a milestone of the predictive success achieved by the SM, and opened up a new saga in the exploration of physics beyond the SM (BSM). There has not yet been success when searching for new BSM particles; in this way, the SM has agreed particularly well with experimental results.
+The last particle predicted by the standard model (SM) to be experimentally confirmed was the Higgs boson. It was eventually discovered in 2012 by the ATLAS and CMS groups at the CERN Large Hadron Collider experiment in Geneva. This was a milestone of the predictive success achieved by the SM, and opened up a new saga in the exploration of physics beyond the SM (BSM). Physicists have not yet seen success when searching for BSM particles. In this way, the SM has agreed particularly well with experimental results.
 
 The current formulation of the SM was finalised in the 1970s, after the existence of quarks were experimentally confirmed \cite{griffiths1987introduction}. Since then, all the remaining undiscovered particles predicted by the model have been confirmed, such as the top quark in 1995 \cite{Abe_1995}, the tau neutrino in 2000 \cite{Kodama_2001} and of course the Higgs boson \cite{off2012cern}. An especially accurate prediction of the properties of the weak interaction as well as the W and Z bosons have further validated the SM. So why investigate BSM sectors of physics?
 
@@ -50,21 +53,21 @@ Analysing the properties of neutrino mixing and mass could provide a strong oppo
 
 It would be wrong to say that the SM does not allow for massive neutrinos. It is possible to introduce an interaction term in the Lagrange density, which uses only the standard-model multiplets and generates Majorana masses\footnote{Defined in section \ref{majorana_dirac}.} for the neutrinos. However, this term is nonrenormalisable and violates Baryon minus Lepton number (B-L) conservation \cite{KLINKHAMER_2013}. Adding right-handed neutrinos to the SM would fix this issue, and this idea is discussed further in section \ref{origins_mass}.
 
-A wealth of data has been recorded since the dawn of the 21st century, kickstarted by the first observation of the disappearance of atmospheric muon neutrinos in 1998 \cite{2016NuPhB.908....1O,atmospheric_neutrinos}. As a result, it has since been confirmed that neutrinos oscillate in their flavour. A crucial conclusion can be made from this, which is the fact that neutrinos have mass, although unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one millionth of an electron mass eigenstate \cite{Mertens_2016, cooper2016masses}. This conclusion is drawn from the fact that a fundamental requirement of neutrino oscillation is that the mass eigenstates of each neutrino is not equal to the other. The mass eigenstate cannot be the same as the flavour eigenstate. Section \ref{oscillation} discusses this in more detail.
+A wealth of data has been recorded since the dawn of the 21st century, kickstarted by the first observation of the disappearance of atmospheric muon neutrinos in 1998 \cite{2016NuPhB.908....1O,atmospheric_neutrinos}. As a result, it has since been confirmed that neutrinos oscillate in their flavour. A crucial conclusion can be made from this, which is the fact that neutrinos have mass, although unexpectedly small; the sum of the three neutrino mass eigenstates must be less than one millionth of an electron mass eigenstate \cite{Mertens_2016, cooper2016masses}. This conclusion is drawn from the fact that a fundamental requirement of neutrino oscillation is that the mass eigenstates of each neutrino are unequal to one another. In other words, the mass eigenstate cannot be the same as the flavour eigenstate. Section \ref{oscillation} discusses this in more detail.
 
 The origin of these small neutrino masses and their oscillations is still not confirmed however, and is up for discussion. DUNE exists to carry out an investigation of neutrino oscillations to test `Lepton-sector Charge Parity Violation' (LCPV) as well as the ordering of neutrino masses and the three-neutrino paradigm\footnote{The quantum mechanical mixing of the three neutrino mass eigenstates producing the three known neutrino flavour states \cite{acciarri2016longbaseline}}. Before this is explored however, some preliminary concepts must be discussed.
 
 \subsubsection{Majorana versus Dirac Neutrinos} \label{majorana_dirac}
 
-It is still not confirmed whether neutrinos are Majorana or Dirac particles. Majorana particles and their antiparticles differ only in chirality, whereas Dirac particles are not at all like their antiparticle counterparts. All SM fermions besides the neutrino are known to be of the Dirac variation \cite{bilenky2020neutrinos}. In the 1957 Wu experiment an observation of parity violation in cobalt-60 beta decay was made, leading to the conclusion that neutrinos must be `left-handed' and antineutrinos `right-handed' \cite{wu1957experimental}. This is called helicity, where right and left-handed spins denote a spin vector that is parallel and antiparallel to the momentum vector, respectively.
+It is still not confirmed whether neutrinos are Majorana or Dirac particles. Majorana particles and their antiparticles differ only in their chirality, whereas Dirac particles are not at all like their antiparticle counterparts. All SM fermions besides the neutrino are known to be of the Dirac variation \cite{bilenky2020neutrinos}. In the 1957 Wu experiment an observation of parity violation in cobalt-60 beta decay was made, leading to the conclusion that neutrinos must be `left-handed' and antineutrinos `right-handed' \cite{wu1957experimental}. This is called helicity, where right and left-handed spins denote a spin vector that is parallel and antiparallel to the momentum vector, respectively.
 
 This is not to be confused for a chiral phenomenon, where an entity is not identical to its mirror image. Chiral theories are those which are asymmetric with respect to chiralities i.e. does not respect parity symmetry. For massless particles chirality is the same as helicity. Massive particles on the other hand can have their helicity reversed by changing the frame of reference so that the momentum vector is moving opposite to the spin vector. It is not Lorentz invariant, and chirality and helicity must be distinguished. Therefore, the Wu experiment is not a confirmation that neutrinos are different to antineutrinos since their helicities can be reversed by changing the observational reference frame.
 
-So what evidence is there to suggest that Majorana neutrinos exist? Firstly, the conservation of total lepton number could be analysed, where the total lepton number is given by $L = n_l - n_{\bar{l}} = L_e + L_{\mu} + L_{\tau}$, where $n_l$ is the number of leptons, $n_{\bar{l}}$ is the number of anti-leptons and $L_{flavour}$ denotes the individual lepton number for a given flavour. Lepton flavour is not conserved in neutrino oscillation, but so far the SM supports total lepton number conservation. If there is an experimental observation of the nonconservation of the total lepton number due to the neutrino masses, then this would support the theory that neutrinos are Majorana type \cite{king2017unified}. Majorana neutrinos would violate both total lepton number and B-L conservation via neutrinoless double beta decay \cite{rodejohann2011neutrino}. This interaction is only possible if the Majorana neutrino has at least one type with non-zero mass, the latter of which has already been established.  Neutrinoless double beta decay is a process of great interest, being searched for by a significant number of experiments \cite{schwingenheuer2013status, Xu_2015, khanbekov2013amore, Albert_2018}. Regardless, how does chirality and B-L conservation come into play when discussing baryon asymmetry?
+So what evidence is there to suggest that Majorana neutrinos exist? Firstly, the conservation of total lepton number could be analysed, where the total lepton number for a system is given by $L = n_l - n_{\bar{l}} = L_e + L_{\mu} + L_{\tau}$, where $n_l$ is the number of leptons, $n_{\bar{l}}$ is the number of anti-leptons and $L_{flavour}$ denotes the individual lepton number for a given flavour. Lepton flavour is not conserved in neutrino oscillation, but so far the SM supports total lepton number conservation. If there is an experimental observation of the nonconservation of the total lepton number due to the neutrino masses, then this would support the theory that neutrinos are Majorana type \cite{king2017unified}. Majorana neutrinos would violate both total lepton number and B-L conservation via neutrinoless double beta decay \cite{rodejohann2011neutrino}. This interaction is only possible if neutrinos are of the Majorana variety and have at least one type with non-zero mass, the latter of which has already been established.  Neutrinoless double beta decay is a process of great interest, being searched for by a significant number of experiments \cite{schwingenheuer2013status, Xu_2015, khanbekov2013amore, Albert_2018}. Regardless, how does chirality and B-L conservation come into play when discussing baryon asymmetry?
 
-To answer this, it would be useful to review the Sakharov conditions. In 1967, Andrei Sakharov proposed three necessary conditions for baryogenesis to produce matter and antimatter at different rates \cite{sakharov1998violation}, influenced by cosmic background radiation and a recent discovery of CP violation in neutral kaon decay (described in section \ref{CPV_bar}). The conditions are as follows:
+To answer this, it would be useful to review the Sakharov conditions. In 1967, Andrei Sakharov proposed three necessary conditions for baryogenesis to produce matter and antimatter at different rates \cite{sakharov1998violation}. He was influenced by evidence of cosmic background radiation and a recent discovery of CP violation in neutral kaon decay (described in section \ref{CPV_bar}). The conditions are as follows:
 
-\begin{itemize}
+\begin{enumerate}
 	\item Baryon number violation. 
 	
 	This is a natural result of producing an excess of baryons over anti-baryons
@@ -75,31 +78,31 @@ To answer this, it would be useful to review the Sakharov conditions. In 1967, A
 	
 	\item Interactions occurring outside of a thermal equilibrium.
 	
-	If this was not the case, then CPT symmetry would compensate for processes increasing and decreasing the baryon number. The rate of the baryon-asymmetry generating reaction must be less than the expansion rate of the universe. In this way, the baryons and anti-baryons never achieve thermal equilibrium.
-\end{itemize}
+	If this was not the case, then CPT symmetry would compensate for processes increasing and decreasing the baryon number. The rate of the reaction causing baryon dominance must be less than the expansion rate of the universe. In this way, the baryons and anti-baryons never achieve thermal equilibrium.
+\end{enumerate}
 
-Following this proposal, a substantial number of physicists believe that the matter-antimatter asymmetry is caused by chiral anomalies \cite{Dolgov_1998}. Chiral anomalies are theoretical instances of the nonconservation of a system's total left and right-handed chirality, and is a reason why the lepton number conservation law could be violated. These events are prohibited by B-L conservation, but this law is contradicted by evidence of charge-parity violation.  Hence their relevance in the investigation into baryogenesis.
+Following this proposal, a substantial number of physicists believe that the matter-antimatter asymmetry is caused by chiral anomalies \cite{Dolgov_1998}. Chiral anomalies are theoretical instances where the nonconservation of the total left and right-handed chirality in a system occurs. This is a reason why the lepton number conservation law could be violated. These events are prohibited by B-L conservation, but this law is contradicted by evidence of charge-parity violation.  Hence their relevance in the investigation into baryogenesis.
 
 Neutrino oscillation is a mechanism within the electroweak model that makes it a chiral theory, and is discussed in section \ref{oscillation}.
 
 \subsubsection{Neutrino Oscillation} \label{oscillation}
 
-Neutrino oscillation is the quantum mechanical transformation of a neutrino created with a specific lepton family number into a neutrino with a different family lepton number. This phenomena be measured when the neutrino propagates through space. The probability of oscillation is proportional to the ratio of $D/E$, where $D$ is the distance travelled and $E$ is the energy of the neutrino \cite{rodejohann2007neutrino}. The phenomena was experimentally discovered by the Super-Kamiokande and Sudbury neutrino observatories. This discovery was recognised by the 2015 Nobel prize for physics.
+Neutrino oscillation is the quantum mechanical transformation of a neutrino created with a specific lepton family number into one with a different family lepton number. This phenomena be measured when the neutrino propagates through space. The probability of oscillation is proportional to the ratio of $D/E$, where $D$ is the distance travelled and $E$ is the energy of the neutrino \cite{rodejohann2007neutrino}. The phenomena was established experimentally by the Super-Kamiokande and Sudbury neutrino observatories. This discovery was recognised by the 2015 Nobel prize for physics.
 
-The oscillation phenomena appears due to the mixing of neutrino flavour and mass eigenstates. Previously, the neutrino state produced by weak decay was portrayed as a linear superposition of mass eigenstates with equal energy or equal momenta. This was corrected by describing the neutrino as entangled with the other particles emerging from the decay. For practical purposes, one can describe a travelling neutrino state as a mass eigenstate \cite{Cohen_2009}. As the superposition of neutrino mass eigenstates propagates through space, the quantum mechanical phases of each eigenstate change at slightly different rates, due to their mass differences. A neutrino born as one species will over time become a superposed mixture of $e$, $\mu$ and $\tau$ neutrino states. 
+The oscillation phenomena appears due to the mixing of neutrino flavour and mass eigenstates. Previously, the neutrino state produced by weak decay was portrayed as a linear superposition of mass eigenstates with equal energy or equal momenta. This was corrected by describing the neutrino as entangled with the other particles emerging from the decay. For practical purposes, one can describe a travelling neutrino state as a mass eigenstate \cite{Cohen_2009}. As the superposition of neutrino mass eigenstates propagates through space, the quantum mechanical phases of each eigenstate change at slightly different rates due to their mass differences. A neutrino born as one species will over time become a superposed mixture of $e$, $\mu$ and $\tau$ neutrino states. 
 
 This is the property that makes flavour oscillation impossible without neutrino mass eigenstates that possess unequal mass. Hence, evidence of flavour oscillation confirms massive neutrinos.
 
 The mass differences between neutrino flavours are small compared to their long coherence lengths\footnote{The coherence length is the distance at which a quantum mechanical wavefunction maintains a specified degree of coherence.}. Macroscopic travel distances are required to observe this oscillation effect \cite{aartsen2018search}, such as the long baseline of the DUNE experiment. Section \ref{origins_mass} discusses one of the objectives of DUNE: searching for the mechanism responsible for the mass of neutrinos.
 
 \subsubsection{Neutrino Mass Origins and Sterile Neutrinos} \label{origins_mass}
-It is important to note that many investigations into neutrino physics involve BSM concepts which are contradictory to the SM. Consider the fact that right-handed neutrino singlets are not predicted by the SM \cite{king2017unified}. This indirectly suggests that neutrinos are massless in the SM, yet as mentioned before, the experimental observation of neutrino oscillation contradicts this.
+It is important to note that many investigations into neutrino physics involve BSM concepts which are contradictory to the SM. Consider the fact that right-handed neutrino singlets are not predicted by the SM \cite{king2017unified}. This indirectly suggests that neutrinos are massless, yet as mentioned before, experimental observation of neutrino oscillation contradicts this.
 
 However, this does not mean the SM cannot be modified to accommodate massive neutrinos. One can add a right-handed Lagrangian term to the SM in order to remedy this. If neutrinos have Dirac masses, then an SU(2) singlet (sterile neutrino) could be included, and the mass would be generated via the Dirac mechanism. If neutrinos have Majorana masses, they can be explained via the Majorana mechanism \cite{schechter1980neutrino}.
 
 However, it is not known for certain how neutrino masses arise. In the SM, fermions have mass due to interactions with the Higgs field, which involves left and right-handed versions of each fermion. This means that right-handed neutrinos are theoretically well motivated, since all fermions have been observed with left and right chirality \cite{boyarsky2019sterile}.
 
-The huge disparity in mass scales between neutrinos and the rest of fermions also remains to be explained. A possible solution to this issue could be the existence of a sterile neutrino, yet only left-handed neutrinos have been observed so far. This explanation involves a Majorana mass term for right-handed neutrinos that interact with the left-handed versions in the same way that the Higgs field interacts with the rest of the SM fermions. Right-handed neutrinos are predicted to be heavy since they would induce a very small mass for the `active' left-handed variety. Active neutrinos would be proportional to the reciprocal of the heavy mass. The right-handed neutrinos would have to possess an energy close to the GUT scale (of order $10^{16}$ GeV) to reflect the neutrino mass limits that have been determined. This is called the `Seesaw mechanism' \cite{yanagida1980horizontal}.
+The huge disparity in mass scales between neutrinos and the rest of fermions also remains to be explained. A possible solution to this issue could be the existence of a sterile neutrino, yet only left-handed neutrinos have been observed so far. This explanation involves a Majorana mass term for right-handed neutrinos that interact with the left-handed versions. The interaction would be analogous to the Higgs field interactions with the rest of the SM fermions. Right-handed neutrinos are predicted to be heavy since they would induce a very small mass for the `active' left-handed variety. Active neutrinos would be proportional to the reciprocal of the heavy mass. The right-handed neutrinos would have to possess an energy close to the GUT scale (of order $10^{16}$ GeV) to reflect the neutrino mass limits that have been cosmologically determined. This is called the `Seesaw mechanism' \cite{yanagida1980horizontal}.
 
 The term `sterile neutrino' is used to differentiate right-handed neutrinos or left-handed antineutrinos from the active kind. Active neutrinos possess an isospin charge of $\pm\frac{1}{2}$ and interact weakly as a result. The sterile kind only interact via Yukawa interactions with ordinary leptons and Higgs bosons, which means they influence and are influenced by the gravitational field and can mix with ordinary neutrinos through the Higgs mechanism\footnote{The spontaneous breaking of electroweak symmetry during interactions, causing the bosons interacting with the Higgs field to have mass, when they otherwise would not.}. The sterile neutrino is Majorana type because it would have the same weak hypercharge, weak isospin and electric charge as its antiparticle, since all of these values are zero and therefore unaffected by sign reversal. These combined factors make right-handed neutrinos promising candidates for dark matter \cite{boyarsky2019sterile}. Linking back to section \ref{majorana_dirac} one can associate sterile neutrinos with two contradicting outcomes. The first is that neutrinos and antineutrinos differ only in chirality. The second is that sterile neutrinos exist as separate particles from the common left-handed neutrinos and right-handed antineutrinos.
 
@@ -107,9 +110,9 @@ Now that some context has been provided, these concepts will be tied into one of
 
 \subsection{Charge Parity Violation and Baryon Asymmetry} \label{CPV_bar}
 
-Cosmology tells us that at the beginning of the universe, there existed equal amounts of matter and antimatter. This contrasts the current asymmetrical composition, suggesting there must be differences in the behaviour between baryonic and antibaryonic matter. As outlined by the second Sakharov condition, the symmetry of charge conjugation $\times$ parity must be violated. This means that in a system containing CP-violating matter, if all particles were replaced by their antiparticles and their coordinates were `inverted' by a parity operator, then the behaviour of the system would change. One of the first instances of observed CP violation is the decay of a neutral kaon to two pions: $K^0_S \rightarrow \pi^+ + \pi^-$ \cite{sachs1964cp}. Kaons have been observed mixing between the particle and antiparticle versions of themselves via CP-invariant oscillations. The decay of a Kaon into pions with $\text{C} \times \text{P} = \pm 1$ meant that the initial and final states were different. This was later understood in terms of the dynamics of quarks.
+Cosmology tells us that at the beginning of the universe, there existed equal amounts of matter and antimatter. This contrasts the current asymmetrical composition, suggesting there must be differences in the behaviour between baryonic and antibaryonic matter. As outlined by the second Sakharov condition, the symmetry of charge conjugation $\times$ parity must be violated. This means that in a system containing CP-violating matter, if all particles were replaced by their antiparticles and their coordinates were `inverted' by a parity operator, then the behaviour of the system would change. One of the first instances of observed CP violation is the decay of a neutral kaon to two pions: $K^0_S \rightarrow \pi^+ + \pi^-$ \cite{sachs1964cp}. Kaons have been observed mixing between the particle and antiparticle versions of themselves via CP-invariant oscillations. The decay of a Kaon into pions with $\text{C} \times \text{P} = \pm 1$ means that the initial and final states were different. This was later understood in terms of the dynamics of quarks.
 
-Since this observation, CP violation has been recorded in the strange, beauty and charm quark sectors. All conclusive data is consistent with the theory that CP violation is caused by a single complex phase in the unitary quark-mixing matrix. This is also known as the Cabibbo-Kobayashi-Mashawa (CKM) matrix. The CKM matrix gives the amplitude for a negatively-charged quark to convert through a weak interaction into a positively charged quark. Another way of looking at it is each CKM element contains information on the strength of flavour-changing weak interactions involving freely-propagating quarks \cite{kobayashi1973cp}. See figure \ref{CKM_eq} for the generalised version of the CKM conversion equation.
+Since this observation, CP violation has been recorded in the strange, beauty and charm quark sectors. All conclusive data is consistent with the theory that CP violation is caused by a single complex phase in the unitary quark-mixing matrix. This is also known as the Cabibbo-Kobayashi-Mashawa (CKM) matrix. The CKM matrix gives the amplitude for a negatively-charged quark to convert through a weak interaction into a positively charged quark. Another way of looking at it is that each CKM element contains information on the strength of flavour-changing weak interactions involving freely-propagating quarks \cite{kobayashi1973cp}. See figure \ref{CKM_eq} for the generalised version of the CKM conversion equation.
 
 Four independent parameters are required to fully define the CKM matrix. One of the most common parameterizations is the Wolfenstein parameterization. Within this framework there exists two parameters $\rho$ and $\eta$, whose magnitudes determine the complex phase of the matrix \cite{wolfenstein1983parametrization}. They account for quark behaviour, including CP violating phenomena, with great success.
 
@@ -134,7 +137,7 @@ Four independent parameters are required to fully define the CKM matrix. One of 
 	b \\
 	\end{bmatrix}
 	\end{equation*}
-	\caption{CKM matrix equation}{This equation demonstrates the conversion of the weak interaction doublet partners of negatively charged quarks into the mass eigenstates of the original negatively charged quarks via the CKM matrix. $d$, $s$ and $b$ denote the down, strange and bottom quarks respectively. These are referred to as `down-type' quarks. Similarly, $u$, $c$ and $t$ denote the up, charm and top quarks respectively. They are referred to as `up-type' quarks. Each coefficient $V_{ij}$ represents the probability amplitude that the $j$th down-type quark decays into the $i$th up-type quark. The $q'$ down type quarks on the left hand side denote the weak interaction doublet partners and the $q$ down type quarks on the right hand side denote the original mass eigenstates \cite{particle2020review}.}
+	\caption{The CKM matrix equation}{This equation demonstrates the conversion of the mass eigenstates of the original negatively charged quarks into the weak interaction doublet partners of said negatively charged quarks via the CKM matrix. $d$, $s$ and $b$ denote the down, strange and bottom quarks respectively. These are referred to as `down-type' quarks. Similarly, $u$, $c$ and $t$ denote the up, charm and top quarks respectively. They are referred to as `up-type' quarks. Each coefficient $V_{ij}$ represents the probability amplitude that the $j$th down-type quark decays into the $i$th up-type quark. The $q'$ down type quarks on the left hand side denote the weak interaction doublet partners and the $q$ down type quarks on the right hand side denote the original mass eigenstates \cite{particle2020review}.}
 	\label{CKM_eq}
 \end{figure}
 
@@ -145,7 +148,7 @@ Leptogenesis is a scenario in which heavy neutral leptons, which are their own a
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/CP_mirror_process}
-	\caption[CP violation mirror process]{This figure shows the comparison of two CP mirror-image processes. In process A, a $\pi^+$ decays into a $\mu^+$ and a muon neutrino, that travels a macroscopic distance from the source to a detector, generating an electron from an interaction \cite{kaysor_2020}. In process B, the exact same process occurs but each particle is replaced by it's antiparticle. The `anti-detector' in reality is impossible to implement, but the same detector can be used in both processes if the difference between the cross sections in process A and B are taken into account. The probability for the muon neutrino to produce an electron at the detector oscillates as a function of distance travelled over the particle's energy.}
+	\caption[CP violation mirror process experiment]{This figure shows the comparison of two CP mirror-image processes. In process A, a $\pi^+$ decays into a $\mu^+$ and a muon neutrino, that travels a macroscopic distance from the source to a detector, generating an electron from an interaction \cite{kaysor_2020}. In process B, the same interaction occurs but each particle is replaced by it's antiparticle and the chirality is reversed. The `anti-detector' in reality is impossible to implement, but the same detector can be used in both processes if the difference between the cross sections in process A and B are taken into account. The probability for the muon neutrino to produce an electron at the detector oscillates as a function of distance travelled over the particle's energy.}
 	\label{fig:cpmirrorprocess}
 \end{figure}
 
@@ -153,7 +156,7 @@ To record the rate of CP violation in the lepton sector, one must search for the
 
 Similarly to the fact that quark CP violation arises from a complex phase in the quark-mixing CKM matrix, leptonic CP violation in neutrino oscillation can arise from the complex phase in the leptonic analogue. This is represented by the unitary Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix. The PMNS matrix contains information on the mismatch of quantum states of neutrinos when they freely propagate over a distance and take part in weak interactions \cite{maki1962remarks}. The PMNS matrix is part of a neutrino oscillation model. Now one could ask why is the PMNS matrix important within oscillation physics and the DUNE experiment? To answer this question, we must consider the parameterization of the PMNS matrix.
 
-Neutrinos only interact via the SM charged-current and neutral-current weak interactions. The mass eigenstates can be defined as $\nu_1, \nu_2, \nu_3$ with respective masses $m_1, m_2, m_3$. As mentioned before, they are distinct from the charged-current interaction eigenstates (flavour eigenstates) which can be denoted as $\nu_e, \nu_{\mu}, \nu_{\tau}$, labelled according to the charged-lepton that they couple with during a charged-current weak interaction\footnote{Mediated by the W$\pm$ bosons.}. The mass eigenstates can be expressed as linear combinations of the flavour eigenstates and vice versa \cite{abi2020deep}. This is shown in the eigenstate mixing equation in figure \ref{PMNS_eq}, where the coefficients of the linear combinations make up the elements of the PMNS matrix.
+Neutrinos only interact via the SM charged-current and neutral-current weak interactions. The mass eigenstates can be defined as $\nu_1, \nu_2, \nu_3$ with respective masses $m_1, m_2, m_3$. As mentioned before, they are distinct from the charged-current interaction eigenstates (flavour eigenstates) which can be denoted as $\nu_e, \nu_{\mu}, \nu_{\tau}$. These are labelled according to the charged-lepton that they couple with during a charged-current weak interaction\footnote{Mediated by the W$\pm$ bosons.}. The mass eigenstates can be expressed as linear combinations of the flavour eigenstates and vice versa \cite{abi2020deep}. This is shown in the eigenstate mixing equation in figure \ref{PMNS_eq}, where the coefficients of the linear combinations make up the elements of the PMNS matrix.
 
 \begin{figure}
 	\begin{equation*}
@@ -207,7 +210,7 @@ If the neutrinos are Majorana type there would be two other physical complex pha
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\linewidth]{figures/oscillation_prob}
-	\caption[Probability of oscillation]{The probability that muon neutrinos (top) and antineutrinos (bottom) will appear at the far detector as electron neutrinos or antineutrinos respectively, depending on the complex phase value from the PMNS parameterization. The y-axis displays the appearance probability and the x-axis displays the neutrino energy \cite{abi2020long}.}
+	\caption[The probability of neutrinos oscillating in the DUNE experiment]{The probability that muon neutrinos (top) and antineutrinos (bottom) will appear at the far detector as electron neutrinos or antineutrinos respectively, depending on the complex phase value from the PMNS parameterization. The y-axis displays the appearance probability and the x-axis displays the neutrino energy \cite{abi2020long}.}
 	\label{fig:oscillationprob}
 \end{figure}
 
@@ -218,7 +221,7 @@ The next segment will explore how DUNE in particular will practically approach f
 
 \subsection{An Overview of the DUNE Experiment}
 
-In order for DUNE to achieve its goals, three central components are required. The first is a high-intensity, neutrino sourced generated from a megawatt-class proton accelerator at Fermilab. The second is a large-scale underground far detector situated across the country at the SURF facility. Finally, the third is a composite near detector installed 574 meters the neutrino source. To achieve the required precision on its measurements, the DUNE experiment will need to collect the data from several thousand neutrino interactions over the period of ten years. The number of interactions is influenced by the following:
+In order for DUNE to achieve its goals, three central components are required. The first is a high-intensity neutrino source generated from a megawatt-class proton accelerator at Fermilab. The second is a large-scale underground far detector situated across the country at the SURF facility. Lastly, DUNE requires a composite near detector installed 574 meters from the neutrino source. To achieve the required precision on its measurements, the DUNE experiment will need to collect the data from several thousand neutrino interactions over the period of ten years. The number of interactions is influenced by the following:
 
 \begin{itemize}
 	\item The intensity of the neutrino beam.
@@ -229,9 +232,9 @@ In order for DUNE to achieve its goals, three central components are required. T
 
 The highest power proton beam that a target can sustainably withstand is 1-2 MW, which practically limits the maximum neutrino intensity. Therefore the detector mass must be in the tens-of-kilotons range to achieve the required number of interactions. The cryostats stored within the far detector will hold approximately 17.5kt of liquid argon, reaching a total mass of 70kt per cryostat \cite{abi2020volume}.
 
-Not only must a huge mass of cryostats be used at the far detector, but they shall also be placed 1500m underground at SURF. This is because the rate of cosmic rays at the Earth's surface is $165$ kHz, which would mean that $1$ in $10^6$ events would be due to neutrinos. This would make the achievement of physics goals related to neutrino oscillation unfeasible. At the planned depth of the far detector, the ratio of neutrino events to cosmic ray events would become slightly higher than 1, making the objective far more obtainable. If these requirements are met, how will DUNE achieve an uncertainty of only a few percent when the far detector would only be able to measure the neutrino fluxes to an uncertainty of $10\%$ and the interaction rates to around $20\%$?
+Not only must a huge mass of cryostats be used at the far detector, but they shall also be placed 1500m underground at SURF. This is because the rate of cosmic rays at the Earth's surface is $165$ kHz, which would mean that $1$ in $10^6$ events would be due to neutrinos. This would make the achievement of physics goals related to neutrino oscillation unfeasible. At the planned depth of the far detector, the ratio of neutrino events to cosmic ray events would become slightly higher than 1, making the objective far more obtainable. If these requirements are met, one would wonder how DUNE will achieve a required uncertainty of only a few percent. This seems to be obstructed by the fact that the far detector would only be able to measure the neutrino fluxes to an uncertainty of $10\%$ and the interaction rates to around $20\%$.
 
-The near detector reduces these uncertainties by measuring neutrinos near the beam source in addition to the far detector data, so that physics measurements can be extracted from differences between the two. Another way to optimise measurements is to place the far detector in the optimal distance range. This range would optimise the determination of the neutrino mass hierarchy and the complex phase parameter $\delta_{CP}$, and the observation of CPV. This is between 1000 and 2000 km, as shorter baselines have lower optimal neutrino energies so that observables are too low-energy to be visible. Charge parity sensitivity is also reduced by the ambiguity from unknown mass ordering. At longer baselines CP sensitivity is damaged by matter effects that increase proportionally to distance travelled by the neutrino \cite{abi2020volume}. 
+The near detector reduces these uncertainties by measuring neutrinos near the beam source in addition to the far detector data, so that physics measurements can be extracted from differences between the two. Another way to optimise measurements is to place the far detector in the optimal distance range. This range would optimise the determination of the neutrino mass hierarchy and the complex phase parameter $\delta_{CP}$. The range is between 1000 and 2000 km, as shorter baselines have lower optimal neutrino energies so that observables are too low-energy to be visible. Charge parity sensitivity is also reduced by the ambiguity from unknown mass ordering. At longer baselines, CP sensitivity is damaged by matter effects that increase proportionally to distance travelled by the neutrino \cite{abi2020volume}. 
 
 Section \ref{section:overview} will explore the data acquisition system (DAQ) of the ProtoDUNE detectors. 
 
@@ -246,7 +249,7 @@ There are several main factors that influence the design of the DUNE DAQ system.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/The-major-components-of-the-ProtoDUNE-SP-TPC}
-	\caption[ProtoDUNE-SP]{The ProtoDUNE single-phase (SP) liquid argon time project chamber (LAr TPC) module. This contains two drift volumes, separated by a central cathode plane that is flanked by two anode planes, connected to a field cage that surrounds the entire module. Each anode plane is made of three Anode Plane Assemblies (APAs). These connect and send data to the front-end electronics being discussed in this report \cite{dune_sp_collab}.}
+	\caption[ProtoDUNE-SP diagram]{The ProtoDUNE single-phase (SP) liquid argon time project chamber (LAr TPC) module. This contains two drift volumes, separated by a central cathode plane that is flanked by two anode planes, connected to a field cage that surrounds the entire module. Each anode plane is made of three Anode Plane Assemblies (APAs). These connect and send data to the front-end electronics being discussed in this report \cite{dune_sp_collab}.}
 	\label{fig:the-major-components-of-the-protodune-sp-tpc}
 \end{figure}
 
@@ -279,14 +282,14 @@ The readout window per neutrino event is between $3 - 5.5$ ms for a $2.25$ ms dr
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/FE_arch}
-	\caption{Overview of the Felix architecture in ProtoDUNE \cite{manolopoulos_2020}}
+	\caption[FELIX architecture diagram]{Overview of the FELIX architecture in ProtoDUNE II \cite{manolopoulos_2020}}
 	\label{fig:fearch}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\makebox[\textwidth][c]{\includegraphics[width=1.6\linewidth]{figures/HF_processor}}
-	\caption{Hit Finder Firmware Architecture \cite{manolopoulos_2020}.}
+	\caption[Hit Finder Firmware Architecture]{Hit Finder Firmware Architecture \cite{manolopoulos_2020}.}
 	\label{fig:hfprocessor}
 \end{figure}
 
@@ -311,7 +314,7 @@ The objective of this project is to redesign the firmware algorithms for the TPG
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/HSC}
-	\caption{Focus on the TPG core and the sub-block chain \cite{manolopoulos_2020}.}
+	\caption[Sub block chain in the TPG core]{Focus on the TPG core and the sub-block chain \cite{manolopoulos_2020}.}
 	\label{fig:hsc}
 \end{figure}
 
@@ -374,7 +377,7 @@ Directives act as a low-level guidance for the HLS tool, influencing the types o
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/pipeline_example}
-	\caption[Pipelining example]{This figure contains an example showing how read, compute and write operations can happen in parallel to achieve higher throughput overall, using the \texttt{pipeline} directive.}
+	\caption[Block pipeline example]{This figure contains an example showing how read, compute and write operations can happen in parallel to achieve higher throughput overall, using the \texttt{pipeline} directive.}
 	\label{fig:pipelineexample}
 \end{figure}
 
@@ -418,7 +421,7 @@ SSR functionality enables a variable restoration every time a packet enters a pr
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/PedSub_Alg}
-	\caption[Pedestal subtraction algorithm]{Flow chart detailing the logic flow of the pedestal subtraction algorithm, demonstrating the adjustment of the pedestal and accumulator values, as well as the occurrence of the subtraction from the ADC value.}
+	\caption[Pedestal subtraction algorithm flow chart]{Flow chart detailing the logic flow of the pedestal subtraction algorithm, demonstrating the adjustment of the pedestal and accumulator values, as well as the occurrence of the subtraction from the ADC value.}
 	\label{fig:pedsubalg}
 \end{figure}
 
@@ -439,9 +442,11 @@ The Vivado HLS synthesis tool recognises a static variable in the same way a C++
 
 However, one main issue faced earlier in the project was the long-term storage of the pedestal and accumulator: static variables were wiped between incoming packets. It can be seen from the \texttt{pedsub\_HLS} Questasim waveform that this variable wipe occurs five clock cycles after the following packet's \texttt{tvalid} signal goes high.
 
-A separate SSR storage array mechanism had to be developed for restoring values to a given channel in the long term\footnote{i.e saving and then restoring packets 64 packets later, or a minimum of 4480 clocks after the initial packet enters a channel}. In the preliminary report, HLS was deemed inconvenient when developing a long-term SSR solution; the block being called every clock cycle means that new declarations are reset very frequently, unless they are static. Further investigation needed to be made into the optimal approach, which was eventually found and utilised in the designs featured in sections \ref{pedsub_w_SSR} and \ref{FIR_SSR}.
+A separate SSR storage array mechanism had to be developed for restoring values to a given channel in the long term\footnote{i.e saving and then restoring packets 64 packets later, or a minimum of 4480 clocks after the initial packet enters a channel}. In the preliminary report, HLS was deemed inconvenient when developing a long-term SSR solution; the block being called every clock cycle means that variable definitions are reset very frequently, unless they are static. Further investigation needed to be made into the optimal approach, which was eventually found and utilised in the designs featured in sections \ref{pedsub_w_SSR} and \ref{FIR_SSR}.
 
-Returning to the \texttt{tlast} mechanism, it can be discerned that the automatic static variable wipe happens too late; the restoration of values 5 clock cycles after \texttt{tvalid} goes high for packet $N$ means that the first 5 subtractions occur using the pedestal from packet $N - 1$. This behaviour is not desired, and leads to 5 invalid outputs associated with the packet $N$. To deal with this, a manual restoration of the internal values must occur before \texttt{tvalid} goes high for the packet $N$. However, this restoration must be after \texttt{tlast} output goes high for packet $N-1$. The \texttt{tlast} input is not used as this would invalidate the pedestal subtraction of the 64th sample in packet $N-1$. Analysing the Questasim waveform found that restoring 3 clock cycles after the tlast output goes high allows for the pedestal and accumulator SSR restoration to correctly occur. This also satisfied the above constraints. This is an example of how chronology can affect the output of a block in unpredictable ways.
+Returning to the \texttt{tlast} mechanism, it was be discerned that the automatic static variable wipe happens too late; the restoration of values 5 clock cycles after \texttt{tvalid} goes high for packet $N$ means that the first 5 subtractions occur using the pedestal from packet $N - 1$. This behaviour is not desired, and leads to 5 invalid outputs associated with the packet $N$. To deal with this, a manual restoration of the internal values must occur before \texttt{tvalid} goes high for the packet $N$. However, this restoration must be after \texttt{tlast} output goes high for packet $N-1$. The \texttt{tlast} input is not used as this would invalidate the pedestal subtraction of the 64th sample in packet $N-1$.
+
+Analysing the Questasim waveform led to the realisation that restoring 3 clock cycles after the tlast output goes high allows for the pedestal and accumulator SSR restoration to correctly occur. This also satisfied the above constraints. This is an example of how chronology can affect the output of a block in unpredictable ways.
 
 Another clock timing concern is the required instant response to back pressure signal \texttt{tready}. Traditionally, the block would react too late as a result of the latency delay from input to output. This issue can be circumvented in the case that the block takes a maximum of one clock cycle to complete. Hence, all functional designs mentioned in this report have a latency of one clock cycle. 
 
@@ -456,14 +461,14 @@ The next section will discuss the disparity in resource cost between the origina
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/pedestal_subtraction_Kostas_stats}
-	\caption[Original algorithm resource usage]{The resource utilisation for the original pedestal subtraction block including the exact figures above and percentage utilization below. All resource statistics were taken from the Vivado Project Manager post-implementation report summary, generated for each block. Please note that for all resource bar charts, utilization percentages above $1\%$ have been rounded to the nearest percent. Utilizations below $1\%$ are rounded up to the nearest percent.}
+	\caption[Resource usage of original pedestal subtraction block]{The resource utilisation for the original pedestal subtraction block including the exact figures above and percentage utilization below. All resource statistics were taken from the Vivado Project Manager post-implementation report summary, generated for each block. Please note that for all resource bar charts, utilization percentages above $1\%$ have been rounded to the nearest percent. Utilizations below $1\%$ are rounded up to the nearest percent.}
 	\label{fig:pedsubblockstats}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/pedsub_HLS_stats}
-	\caption[HLS algorithm resource usage]{The resource utilization of the new pedestal subtraction HLS block connected to an external SSR, including exact figures in the statistics table above the graphical representation of the percentage utilizations.}
+	\caption[HLS pedestal subtraction block resource usage]{The resource utilization of the new pedestal subtraction HLS block connected to an external SSR, including exact figures in the statistics table above the graphical representation of the percentage utilizations.}
 	\label{fig:hlsblockstats}
 \end{figure}
 
@@ -480,7 +485,7 @@ The following segment will include discussion on the pedestal subtraction HLS bl
 
 \subsubsection{Pedestal Subtraction with Implemented SSR} \label{pedsub_w_SSR}
 
-The pedestal subtraction algorithm \texttt{pedsub\_HLS\_SSR} is a HLS synthesized block including a memory-based SSR mechanism. The basic processing of the accumulator, pedestal and ADC values occur in exactly the same way as the design in section \ref{pedsub_extern_SSR}. However, in order to accommodate the performance deficit that came with storing and loading from a memory, the logic branching had to be adjusted. Additional temporary registers had to be utilised to avoid pipeline dependency issues. Arbitrary bit-width data types were used to reduce resource usage, and remove the need to truncate or zero-pad input or output signals in the wrapper. Sub functions called within the top function were inlined and pipelined to reduce overhead. C++ \texttt{struct} data types were used as the function arguments (i.e. the block ports) with the original AXI4 stream signals as the struct members.
+The pedestal subtraction algorithm \texttt{pedsub\_HLS\_SSR} is a HLS synthesized block including a memory-based SSR mechanism. The basic processing of the accumulator, pedestal and ADC values occur in exactly the same way as the design in section \ref{pedsub_extern_SSR}. However, to accommodate the performance deficit that came with storing and loading from a memory, the logic branching had to be adjusted. Additional temporary registers had to be utilised to avoid pipeline dependency issues. Arbitrary bit-width data types were used to reduce resource usage, and remove the need to truncate or zero-pad input or output signals in the wrapper. Sub functions called within the top function were inlined and pipelined to reduce overhead. C++ \texttt{struct} data types were used as the function arguments (i.e. the block ports) with the original AXI4 stream signals as the struct members.
 
 \subsubsection*{Memory Utilisation for the SSR Mechanism} \label{BRAM_SSR}
 
@@ -488,7 +493,7 @@ The biggest change between \texttt{pedsub\_HLS} and \texttt{pedsub\_HLS\_SSR} is
 
 Fortunately, the only time \texttt{pedsub\_HLS\_SSR} needs to access each memory is to read and write once during the \texttt{tlast} restoration period. Therefore no pipelining or memory access issues were met at synthesis; the saving and restoring to the memory occurred seamlessly. However, in order to achieve a latency of one clock cycle, these arrays had to be fully partitioned into registers to increase access speed. These registers were generated as `power-on initialisations' similarly to static variables, except the partitioned global arrays are not wiped between packets. For the \texttt{fir\_HLS\_SSR} block discussed section \ref{FIR_SSR}, the SSR memory was too large to be partitioned, and so it was necessary to employ BRAMs for the storing of SSR values. This avoided massive LUT and FF usage from a full array partition. During the project it was found that different conditions call for varying optimal memory implementations.
 
-The \texttt{pedsub\_HLS\_SSR} function had to be streamlined extensively in order to fit all operations into one clock cycle. In order to correctly save and restore the pedestal and accumulator, a static channel counter was used as a memory index between the values of 0 and 63. During the \texttt{tlast} restoration period at the end of each packet, the current channel's pedestal and accumulator values were saved to the SSR memory 2 clock cycles after \texttt{tlast} went high, and the next channel's values were restored on the following clock cycle. This avoided pipelining dependency issues involving the partitioned arrays and the static accumulator and pedestal variables. The channel counter would also increase after the end of each packet.
+The \texttt{pedsub\_HLS\_SSR} function had to be streamlined extensively in order to fit all operations into one clock cycle. In order to correctly save and restore the pedestal and accumulator, a static channel counter was used as a memory index between the values of 0 and 63. During the \texttt{tlast} restoration period at the end of each packet, the current channel's pedestal and accumulator values were saved to the SSR memory 2 clock cycles after \texttt{tlast} went high, and the next channel's values were restored on the following clock cycle. This avoided pipelining dependency issues involving the partitioned SSR arrays and the static accumulator and pedestal variables.
 
 The \texttt{treset} functionality was removed in order to increase performance in compensation for the SSR. This reset mechanism was proven obsolete since all storage entities were automatically wiped by the external FELIX system at the beginning of a data run. The only issue encountered in this case was making sure non zero starting values and booleans were set correctly at the start of a simulation, since these are improperly prepared by the automatic restart. This can be achieved by declaring and defining global entities as their starting value on the same script line, which are then changed after the first clock cycle.
 
@@ -505,7 +510,7 @@ Section \ref{FIR_filter_sec} will detail the operation and redesign of the FIR f
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/PedSub_SSR_kostas_stats}
-	\caption[Previously built PedSub\_SSR block statistics]{The resource statistics for the previously built pedestal subtraction algorithm, with the manual HDL SSR mechanism included in the statistics. This is the result of the block being written from scratch in VHDL. This figure enables a comparison to the statistics of the \texttt{pedsub\_HLS\_SSR} block}
+	\caption[Manual HDL SSR pedestal subtraction block statistics]{The resource statistics for the previously built pedestal subtraction algorithm, with the manual HDL SSR mechanism included in the statistics. This is the result of the block being written from scratch in VHDL. This figure enables a comparison to the statistics of the \texttt{pedsub\_HLS\_SSR} block}
 	\label{fig:pedsubssrkostasstats}
 \end{figure}
 
@@ -513,36 +518,36 @@ Section \ref{FIR_filter_sec} will detail the operation and redesign of the FIR f
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/pedsub_HLS_SSR_stats}
-	\caption[pedsub\_HLS\_SSR resource statistics]{The resource statistics for the pedestal subtraction algorithm generated from HLS with an SSR mechanism built into the design, to be compared to the original \texttt{PedSub\_SSR} block written directly in VHDL.}
+	\caption[HLS SSR pedestal subtraction resource statistics]{The resource statistics for the pedestal subtraction algorithm generated from HLS with an SSR mechanism built into the design, to be compared to the original \texttt{PedSub\_SSR} block written directly in VHDL.}
 	\label{fig:pedsubhlsssrstats}
 \end{figure}
 
 
 \subsection{Finite Impulse Response Filter} \label{FIR_filter_sec}
 
-The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC values, so that the final signal entering the HF block is clean enough to avoid generating false hits. Figure \ref{fig:pedsubfirblockdiagram} displays how the \texttt{pedsub\_HLS\_SSR} and \texttt{fir\_HLS\_SSR} ports connect. Included in figure \ref{fig:firanaloguewaveform} is a visual representation of the effect that the low-pass, 32-tap filter has on the incoming ADC values. From this figure one can see how the hits can be more easily identified by the HF block, since the peaks are more distinct and the time spent above a certain threshold value can be more accurately measured.
+The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC values, so that the final signal entering the HF block is clean enough to avoid generating false hits. Figure \ref{fig:pedsubfirblockdiagram} illustrates the port connections between \texttt{pedsub\_HLS\_SSR} and \texttt{fir\_HLS\_SSR}\footnote{The FIR filter IP.}. Included in figure \ref{fig:firanaloguewaveform} is a visual representation of the effect that a low-pass, 32-tap filter has on the incoming ADC values. From this figure one can see how the hits can be more easily identified by the HF block, since the peaks are more distinct and the time spent above a certain threshold value can be more accurately measured.
 
 \begin{figure}
 	\centerline{\includegraphics[width=1.3\linewidth]{figures/pedsub_FIR_block_diagram}}
-	\caption[pedsub FIR block diagram]{This illustration features the block diagrams of both the pedestal subtraction and FIR HLS IP blocks, and how their IO ports are connected (not including the HSC connection on the left side or the HF connection on the right side). Note \texttt{s\_axis\_data} signifies left-side ports and \texttt{m\_axis\_data} signifies right-side ports.}
+	\caption[Pedestal subtraction - FIR filter block diagram]{The block diagrams of both the pedestal subtraction and FIR filter HLS IP blocks, including the IO ports connections. This does not include the HSC interface on the left side of the pedestal subtraction block or the HF connections to the right side of the FIR filter block. \texttt{s\_axis\_data} and \texttt{tdata\_i} denote left-side ports and \texttt{m\_axis\_data} and \texttt{tdata\_o} denote right-side ports.}
 	\label{fig:pedsubfirblockdiagram}
 \end{figure}
 \begin{center}
 	\begin{figure}
 		\centerline{\includegraphics[width=1.4\linewidth]{figures/FIR_analogue_waveform}}
-		\caption[FIR waveform cleaned]{The analogue waveforms of ADC input and output signals generated in a Questasim simulation. This is not to scale; the green peaks are amplified to much larger values than the red peaks in true scale, reducing the likelihood of false hit readings. Random signal noise is also reduced. Plateaus in the ADC values are a result of the random back pressure events pausing block operation.}
+		\caption[FIR filter waveform]{The analogue waveforms of ADC input and output signals generated in a Questasim simulation. This is not to scale; the green peaks are amplified to much larger values than the red peaks in true scale, reducing the likelihood of false hit readings. Random signal noise is also reduced. Plateaus in the ADC values are a result of the random back pressure events pausing block operation.}
 		\label{fig:firanaloguewaveform}
 	\end{figure}
 \end{center}
 
 \subsubsection{Algorithm Operations}
 
-The FIR filter's core mechanism involves accepting the same number of samples per packet as the pedestal subtraction algorithm, but the difference is that each incoming ADC value is stored in one of 32 taps (dedicated registers). A visualisation of the FIR filter's operations can be seen in figure \ref{fig:firblockdiagram}. A tap shift occurs every time a new input is processed, where the value at tap N moves to tap N+1. In other words, if we number the taps 0 to 31, and N new inputs have been processed since an input denoted I, then the input I will occupy tap $N$. Every clock cycle, input I will shift to tap $N+1$, then tap $N+2$, until it reaches the 31st tap. Input I is then forgotten on the next tap shift. Additionally, the final 32 values of the packet are saved to an SSR memory array for the current channel. This is so the final 32 values can be restored to the tap registers next time the current channel receives a packet, similarly to the behaviour described in section \ref{save_and_restore}. 
+The FIR filter's core mechanism involves accepting the same number of samples per packet as the pedestal subtraction algorithm, but the difference is that each incoming ADC value is stored in one of 32 taps (dedicated registers). A visualisation of the FIR filter's operations can be seen in figure \ref{fig:firblockdiagram}. A tap shift occurs every time a new input is processed, where the value at tap N moves to tap N+1. In other words, if we number the taps 0 to 31, and N new inputs have been processed since an input denoted I, then the input I will occupy tap $N$. Every clock cycle, input I will shift to tap $N+1$, then tap $N+2$, until it reaches the 31st tap. Input I is then forgotten on the next tap shift. Additionally, the final 32 values of the packet are saved to an SSR memory array for the current channel. This is so the final 32 values can be restored to the tap registers next time the current channel receives a packet, similarly to the save and restore behaviour described in section \ref{save_and_restore}. 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/FIR_block_diagram}
-	\caption[FIR block diagram]{A visualisation of the FIR filter's manipulation of incoming ADC values, including the register shift, coefficient multiplication, sum tree and the saving and restoring of the final 32 tap values \cite{manolopoulos_2020}.}
+	\caption[FIR filter flow chart]{A visualisation of the FIR filter's manipulation of incoming ADC values, including the register shift, coefficient multiplication, sum tree and the saving and restoring of the final 32 tap values \cite{manolopoulos_2020}.}
 	\label{fig:firblockdiagram}
 \end{figure}
 
@@ -552,13 +557,13 @@ Section \ref{axi4_method} will discuss a possible workaround that would be inves
 
 \subsubsection{Axis Directive Method for Back Pressure Behaviour} \label{axi4_method}
 
-Initially, it proved difficult to achieve the performance required for the instantaneous back pressure response of a pipelined FIR block. An alternative solution was sought after, in order to obtain this behaviour for a block with latency greater than one clock cycle. A workaround was found, and it involved using \texttt{axis} interface directives on the input and output ports of the design. This enabled HLS to automatically implement the AXI4 stream protocol behaviour. The most important aspect of the \texttt{axis} directive implementation was the automatic, asynchronous back pressure from the \texttt{TVALID} and \texttt{TREADY} handshake detailed in Xilinx's  \href{https://www.xilinx.com/support/documentation/ip_documentation/ug761_axi_reference_guide.pdf}{AXI reference guide} \cite{xilinx.com_2017}. Side channel signals such as \texttt{TKEEP}, \texttt{TUSER} and \texttt{TLAST} can also be added as members of the port \texttt{structs}.
+Initially, it proved difficult to achieve the performance required for the instantaneous back pressure response of a pipelined FIR block. An alternative solution was sought after, in order to obtain this behaviour for a block with latency greater than one clock cycle. A workaround was found, and it involved using \texttt{axis} interface directives on the input and output ports of the design. This enabled HLS to automatically implement the AXI4 stream protocol behaviour. The most important aspect of the \texttt{axis} directive implementation was the automatic, asynchronous back pressure from the \texttt{TVALID} and \texttt{TREADY} handshake detailed in Xilinx's  \href{https://www.xilinx.com/support/documentation/ip_documentation/ug761_axi_reference_guide.pdf}{AXI reference guide} \cite{xilinx.com_2017}. Side channel signals such as \texttt{TKEEP}, \texttt{TUSER} and \texttt{TLAST} could also be added as members of the \texttt{struct} ports.
 
-After correcting the FIR wrapper to accommodate the new HLS AXI stream ports, Questasim simulations demonstrated working back pressure behaviour for blocks of latency greater than 1 clock cycle, when a simplified version of the design is tested. The issue with this approach is that HLS struggles to fully pipeline designs with \texttt{axis} port registers, which is a minimum requirement for all designs used in the TPG core. Additionally, a bug was found that hard-wired \texttt{tuser} to high when the \texttt{tready} output signal was sent to the wrapper's output port. Previously there had been no tready output signal received from the HLS blocks. The combination of these two issues led to seeking a new fix as a consequence of time constraints. However, if more research was to be done, then this method would be investigated further due to it being a better general framework for meeting the needs of FELIX's AXI specification system.
+After correcting the FIR wrapper to accommodate the new HLS AXI stream ports, Questasim simulations demonstrated working back pressure behaviour for blocks of latency greater than 1 clock cycle, when a simplified version of the design is tested. The issue with this approach is that HLS struggles to fully pipeline designs with \texttt{axis} port registers, which is a minimum requirement for all designs used in the TPG core. Additionally, a bug was found that hard-wired \texttt{tuser} to high when the \texttt{tready} output signal was sent to the wrapper's output port. Previously there had been no tready output signal received from the HLS blocks. The combination of these two issues led to pursuing the single clock latency approach as a consequence of project time constraints. It remains to be said that if functional operation was achieved, the \texttt{axis} directive framework would have been a superior, generally-applicable solution for meeting the needs of FELIX's AXI specification system.
 
 \subsubsection{Redesign of FIR with External SSR} \label{fir_ext_SSR}
 
-The HLS redesign of the original FIR block that relies on an external SSR is called \texttt{fir\_HLS}, and when synthesized achieved a minimum clock frequency of $3.4\pm0.5$ns. It mimics the original algorithm, achieving the same output values for input files of 128 packets with random back pressure. The method to achieve these outputs differs slightly due to the optimisations in performance.
+The HLS redesign of the original FIR block that relies on an external SSR is called \texttt{fir\_HLS}, and when synthesized achieved a minimum clock frequency of $3.4\pm0.5$ns. It mimics the original algorithm, achieving the same output values for input files of 128 packets with random back pressure.
 
 Mechanisms for \texttt{tlast} restoration, back pressure logic and struct ports were reused from \texttt{pedsub\_HLS\_SSR} for both this design and the following, discussed in section \ref{FIR_SSR}. Three sets of 32 tap registers were used, two sets of which were used to carry out high-performance computation of the tap shift and sum. The third set was employed for the restoration of SSR values received from the manually-developed SSR mechanism. 32 \texttt{constant} data type registers were used to store the FIR coefficients, for maximum accessibility.
 
@@ -587,7 +592,7 @@ Two sets of tap registers were used in the core filtration mechanism. The reason
 
 If this loop is modified so that there are two arrays that take turns being read from or written to i.e. \texttt{tap\_array0[i] = tap\_array1[i-1]} or vice versa, we can eliminate this dependency and achieve higher performance since all 32 sets of read and write operations can occur at the same time, including the summation. When the \texttt{tlast} signal goes high, the temporary SSR registers are restored to both tap arrays.
 
-In order to correctly restore the state from the external SSR, additional related ports were implemented to accept and validate the incoming SSR tap values. The timing of the tap restoration was important; the SSR block outputs its first ADC value during the processing of the 33rd sample. Eventually, the SSR block outputs the final stored ADC value one clock cycle after the 64th sample has been processed. Contingencies were put in place to accommodate the misaligned output window. This is in contrast to the pedestal subtraction SSR output which restored both the median and accumulator values several clock cycles after the end of the packet, preventing any ambiguity in the restoration.
+In order to correctly restore the state from the external SSR, additional related ports were implemented to accept and validate the incoming SSR tap values. The timing of the tap restoration is important; the SSR block outputs its first ADC value during the processing of the 33rd sample. Eventually, the SSR block outputs the final stored ADC value one clock cycle after the 64th sample has been processed. Contingencies were put in place to accommodate the misaligned output window. This is in contrast to the pedestal subtraction SSR output which restores both the median and accumulator values several clock cycles after the end of the packet, preventing any ambiguity in the restoration.
 
 
 \subsubsection*{Performance and Resource Utilization Comparison}
@@ -595,14 +600,14 @@ In order to correctly restore the state from the external SSR, additional relate
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/fir32_v0_stats}
-	\caption[Previously written block: fir32\_v0 resource statistics]{The resource statistics of the previously written FIR filter algorithm with the SSR mechanism not included, to allow for comparison to the analagous redesigned HLS module.}
+	\caption[Original FIR filter block statistics]{The resource statistics of the previously written FIR filter algorithm with the SSR mechanism not included, to allow for comparison to the analagous redesigned HLS module.}
 	\label{fig:fir32v0stats}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/fir_HLS_stats}
-	\caption[FIR HLS block w/o SSR statistics]{The resource statistics for the FIR filter algorithm written in HLS, connected to a previously written external SSR mechanism that is not included in the utilization. The only resources being spent on the SSR are those allocated for accepting and storing the output values from the external SSR block.}
+	\caption[HLS FIR filter block statistics]{The resource statistics for the FIR filter algorithm written in HLS, connected to a previously written external SSR mechanism that is not included in the utilization. The only resources being spent on the SSR are those allocated for accepting and storing the output values from the external SSR block.}
 	\label{fig:firhlsstats}
 \end{figure}
 
@@ -624,44 +629,46 @@ In order for this block to reach the required performance, false dependency dire
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/FIR_StateSR_stats}
-	\caption[FIR\_StateSR previously written block resource statistics]{The resource statistics for the previously built FIR algorithm with the SSR mechanism included in the usage. This is included to allow the comparison to the HLS FIR block with an in-built SSR mechanism.}
+	\caption[Manual HDL SSR FIR filter block statistics]{The resource statistics for the previously built FIR algorithm with the SSR mechanism included in the usage. This is included to allow the comparison to the HLS FIR block with an in-built SSR mechanism.}
 	\label{fig:firstatesrstats}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/fir_HLS_SSR_stats}
-	\caption[fir\_HLS\_SSR resource statistics]{The resource statistics for the HLS-synthesized FIR algorithm with an in-built SSR memory and access mechanism. This enables a comparison to the manual HDL version.}
+	\caption[HLS SSR FIR filter block statistics]{The resource statistics for the HLS-synthesized FIR algorithm with an in-built SSR memory and access mechanism. This enables a comparison to the manual HDL version.}
 	\label{fig:firhlsssrstats}
 \end{figure}
 
-The \texttt{fir\_HLS\_SSR} implementation has the biggest disparity in resources compared to the original design, likely due to the reasons discussed within section \ref{fir_ext_SSR} in addition to the framework used for the internal SSR. This demanded the storing and retrieving of far more values than \texttt{pedsub\_HLS\_SSR}. Through the analysis of figures \ref{fig:firstatesrstats} and \ref{fig:firhlsssrstats} it can be deduced that the HLS block requires $387\%$ more LUTs than the manual HDL design, with a $0.36\%$ increase in usage of total LUTs available (the largest yet). FF usage in the new block came to a $107\%$ increase from the previous design, again using $0.14\%$ more of the total FFs available.
+The \texttt{fir\_HLS\_SSR} implementation has the biggest disparity in total resource area compared to the original design, likely due to the reasons discussed within section \ref{fir_ext_SSR} in addition to the framework used for the internal SSR. This demanded the storing and retrieving of far more values than \texttt{pedsub\_HLS\_SSR}. Through the analysis of figures \ref{fig:firstatesrstats} and \ref{fig:firhlsssrstats} it can be deduced that the HLS block requires $387\%$ more LUTs than the manual HDL design, with a $0.36\%$ increase in usage of total LUTs available (the largest yet). FF usage in the new block came to a $107\%$ increase from the previous design, again using $0.14\%$ more of the total FFs available.
 
 Similar statistical comparisons emerge from section \ref{fir_ext_SSR} regarding the remaining resources in this section, besides the use of one BRAM component in both blocks for the SSR. This tells us that the main difference between \texttt{fir\_HLS} and \texttt{fir\_HLS\_SSR} is unsurprisingly the LUT usage.
+
+\subsection{Comparison Overview}
+
+The comparison of statistics in sections \ref{pedsubalg} - \ref{FIR_SSR} provides insight into the behaviour most efficiently implemented by HLS when written by a relative beginner. The first and most simplistic design \texttt{pedsub\_HLS} saw the most success. It achieved twice the operational speed and used a similar number of components to the manual HDL version. Subsequently it was found that introducing logical complexity to a maximum-performance design was especially demanding on the consumption of FPGA area. The disparity between HLS and manual HDL designs was largest for the FIR filter, due to the expensive operation of 32 tap shifts and summations occurring six times faster than the original algorithm. Not only that, but correctly accessing 2048 different SSR elements added a notable cost for the self-sufficient version.
+
+Overall, huge resource savings would occur if each design could produce a valid output at a latency of greater than one clock cycle, but this was not the case.
 
 \section{Design Process Conclusions}
 
 Now that the HLS and manual HDL algorithms have been compared, deductions can be made involving the debugging, performance and accessibility of HLS implementations. 
 
-One of the main learning curves of the project was using the simulation testbench and Questasim to debug the synthesized IP block, which is discussed in section \ref{quest}.
-
-Given more time to investigate the \texttt{axis} interface directives detailed in section \ref{axi4_method}, insight could have been provided into the resource usage of pipelined HLS blocks with the same latency as the manual HDL designs. In this case, the efficiency of high-level synthesised implementations could be brought into question. Section \ref{Discussion} describes studies that involve this inquiry.
-
-Section \ref{conclusion} will condense the technical findings and personal experience of the user when developing in the HLS environment.
-
 \subsection{Simulation using Questasim} \label{quest}
 
 \begin{figure}
 	\centerline{\includegraphics[width=1.6\linewidth]{figures/fir_HLS_SSR_waveform_comb}}
-	\caption[fir\_HLS\_SSR all signal waveform]{A slice of the waveform featuring all input and output port signals for \texttt{fir\_HLS\_SSR} in the Questasim simulation environment. The image above features a zoom-in view on signal behaviour at the end of a singular packet, and the image below visualises several packets. Note the accessible digital readout for ADC input and output, rapidly changing packet bunches during high \texttt{tvalid} and \texttt{tkeep} input signals, and no change in the ADC value after a high \texttt{tlast} input. The \texttt{tready} input signal oscillates randomly during the simulation, pausing block operations temporarily. The pause mechanism simulates sequential blocks sending back pressure due to limited throughput and overwhelming traffic. Questasim waveforms provide valuable information into the block operation and the clock timing of each AXI4 signal.}
+	\caption[Full signal waveform of HLS FIR filter block]{A slice of the waveform featuring all input and output port signals for \texttt{fir\_HLS\_SSR} in the Questasim simulation environment. The image above features a zoom-in view on signal behaviour at the end of a singular packet, and the image below visualises several packets. Note the accessible digital readout for ADC input and output, rapidly changing packet bunches during high \texttt{tvalid} and \texttt{tkeep} input signals, and no change in the ADC value after a high \texttt{tlast} input. The \texttt{tready} input signal oscillates randomly during the simulation, pausing block operations temporarily. The pause mechanism simulates sequential blocks sending back pressure due to limited throughput and overwhelming traffic. Questasim waveforms provide valuable information into the block operation and the clock timing of each AXI4 signal.}
 	\label{fig:pedsubhlsssrallsignalwaveform}
 \end{figure}
 
-Arguably, Questasim is a very useful software for gauging the behaviour of HLS IP in a more realistic environment i.e. closer to the conditions the firmware would experience in a detector. However, the disparity between validated results in the HLS testbench environment and the complete malfunction of output signal drivers in the digital circuit can lead to roadblocks in the design process. Increased development productivity comes at a price: once the IP is synthesized in HLS it proves difficult to analyse the machine-generated code.
+Arguably, Questasim is a very useful software for gauging the behaviour of HLS IP in a more realistic environment i.e. closer to the conditions the firmware would experience in a detector. However, the disparity between validated results in the HLS testbench environment and the complete malfunction of output signal drivers in the digital circuit can lead to roadblocks in the design process. Increased development productivity comes at a price. Once the IP is synthesized in HLS it proves difficult to analyse the machine-generated code.
 
-The Questasim waveform can create a window into the signals contributing to an improperly-driven or misbehaving output. Figure \ref{fig:pedsubhlsssrallsignalwaveform} provides a visualisation of the signal patterns for \texttt{pedsub\_HLS\_SSR}. Comparing the output to existing blocks also mapped in the waveform, or the model output text files for a given input file, will often draw attention to the source of an issue. Timing-specific problems are best analysed in the signal waveform as it is the best place to spot misalignments of inputs and outputs. However, if this approach is unsuccessful then the remaining solution is to try a different method of implementing the desired behaviour, or a simplified version of the malfunctioning algorithm. This proved to be time-consuming and imprecise.
+The Questasim waveform can create a window into the signals contributing to an improperly-driven or misbehaving output. Figure \ref{fig:pedsubhlsssrallsignalwaveform} provides a visualisation of the signal patterns for \texttt{pedsub\_HLS\_SSR}. Comparing the output to existing blocks also mapped in the waveform, or the model output text files for a given input file, will often draw attention to the source of an issue.
 
-There were several points during development where simulations froze inexplicably when processing a certain component of the IP, and were fixed by arbitrary changes in the wrapper. Partially pipelined designs i.e. an average II $= 1$ but a maximum of II $= 2$ was one of several causes of said freezing. Other triggers of erroneous simulation runtime included mismanagement of the IP source hierarchy in the project configuration file, or the incorrect activation of certain blocks in the TPG chain. Finally, on occasion the output text file displayed values that did not correlate with the waveform, generating questions as to how Questasim visualised outputs versus their actual readout.
+Timing-specific problems are best analysed in the signal waveform. This enables a precise comparison between functional and malfunctioning designs, where the user can identify misalignments of inputs and outputs. However, if this approach is unsuccessful then the remaining solution is to try a different method of implementing the desired behaviour, or a simplified version of the malfunctioning algorithm. This proved to be time-consuming and imprecise.
+
+There were several points during development where simulations froze inexplicably when processing a certain component of the IP, and were fixed by arbitrary changes in the wrapper. Partially pipelining of a design i.e. an average II $= 1$ but a maximum of II $= 2$ was one of several causes of said freezing. Other triggers of erroneous simulation runtime included mismanagement of the IP source hierarchy in the project configuration file, or the incorrect activation of certain blocks in the TPG chain. On occasion the output text file displayed values that did not correlate with the waveform, generating questions as to how Questasim visualised outputs versus their actual readout.
 
 The customisability of manual HDL development would provide considerably more transparency into debugging when faced with the Questasim validation phase. However, HLS provides the edge in productivity during the previous design phases.
 
@@ -669,7 +676,7 @@ The customisability of manual HDL development would provide considerably more tr
 
 Before conclusions can be made on the research featured in this report, it is important to note that this is not the first time HLS has been considered for a particle physics application.
 
-One general conclusion of the community is that HLS produces a less efficient implementation, but allows for faster development time and better design productivity \cite{marc2018two, pelcat2016design, 8259883}. Other papers discuss the tools provided by Vivado HLS as mature enough to consider as the first approach for designing FPGA algorithms. HLS is reported as providing similar efficiency or even more efficient implementations \cite{8603064, duarte2018fast}, especially when dealing with the re-use of certain resources \cite{6699478}.
+One general conclusion of the community is that HLS produces a less efficient implementation, but allows for faster development time and better design productivity \cite{marc2018two, pelcat2016design, 8259883}. Other papers discuss the tools provided by Vivado HLS as mature enough to consider as the first approach for designing FPGA algorithms. HLS has even been reported to provide similar efficiency or even more efficient implementations \cite{8603064, duarte2018fast}, especially when dealing with the re-use of certain resources \cite{6699478}.
 
 An article titled `Implementation of OMTF Trigger Algorithm with High-level Synthesis' \cite{zabolotny2019implementation} describes the advantages and disadvantages of HLS for the `Overlap Muon Track Finder'. The main algorithm being studied was translated successfully from C++ into an FPGA implementation. Not only that, but the source code was more concise and easier to understand, maintain and test. HLS ensures that data in parallel paths are synchronised in a pipelined design. This is not something one can take for granted when developing VHDL code manually.
 
@@ -679,11 +686,13 @@ Another account is given in the report titled `Software and Firmware Co-developm
 
 All of the above findings resonate with the discoveries made in this project. Many of the most popular opinions on HLS design are shared across the academic board. Whether the tools of HLS should be employed in an experimental context is best assessed on a case-by-case basis. The reason for this is that a user's success can vary dramatically depending on the behaviour that they require and their previous experience with FPGAs.
 
+Given more time to investigate the \texttt{axis} interface directives detailed in section \ref{axi4_method}, similar insight could have been provided into the resource usage of pipelined HLS blocks with the same performance as the manual HDL designs. In this case, the efficiency of high-level synthesised implementations could be brought into question.
+
 \subsection{Conclusion} \label{conclusion}
 
 In this document, the theoretical and experimental motivations for the DUNE experiment have been outlined. Details of the HF architecture and the HF algorithms were discussed, and the original VHDL designs were compared to the new HLS implementations. The following segments summarise the discoveries made during the progression of the project.
 
-\subsubsection*{Technical Findings}
+\subsubsection{Technical Findings}
 
 During the design of the firmware algorithms discussed in this report, once the user became more familiar with the HLS tools, design productivity increased dramatically. Functional IP blocks were implemented within increasingly shorter periods as time went on. 
 
@@ -695,21 +704,23 @@ Employing arbitrary bit widths using \texttt{ap\_int.h} and the \texttt{ap\_int<
 
 It should be noted that the back pressure behaviour of the manually written IPs was easily implemented by a singular line of VHDL code. It can be inferred that AXI4 stream behaviour is far more implementable in manual HDL projects than in their HLS counterparts. This is especially the case for a beginner in FPGA development.
 
-The high-performance approach to mimicking AXI4 stream behaviour was effective, and forced the user to streamline their designs much further than the manual HDL versions. It is worth mentioning that even complex functions can support high throughput via persistence and familiarity with the optimisation directives. For minimum latency, the most useful directives were \texttt{pipeline}, \texttt{array\_partition}, \texttt{dependence} and \texttt{inline}.
+The high-performance approach to mimicking AXI4 stream behaviour was effective, and forced the user to streamline their designs much further than the manual HDL versions. It is worth mentioning that even complex functions can support high throughput via persistence and familiarity with the optimisation directives. For minimum block latency, the most useful directives were \texttt{pipeline}, \texttt{array\_partition}, \texttt{dependence} and \texttt{inline}. However, maximum throughput led to larger area usage than was necessary, since fast block operation was not a priority in the FELIX system.
 
-However, maximum throughput led to larger area usage than was necessary, since fast block operation was not a priority in this project. Overall, the component utilization of the HLS blocks were significantly larger than those written manually in VHDL, but not large enough to cause implementation issues. LUT and FF usage was especially higher in the HLS versions. Despite this, total resource costs consistently remained below $0.5\%$ of the total available for the ZYNQ UltraScale+ FPGA \footnote{Part name xzcu9eg-ffvb1156-2-e.}.
+Overall, the component utilization of the HLS blocks were significantly larger than those written manually in VHDL, but not large enough to cause implementation issues. LUT and FF usage was especially higher in the HLS versions. Despite this, total resource costs consistently remained below $0.5\%$ of the total available for the ZYNQ UltraScale+ FPGA \footnote{Part name xzcu9eg-ffvb1156-2-e.}.
 
-The following section shall summarise the experience of designing HF algorithms with the Vivado HLS software.
+\subsubsection{The User Experience}
 
-\subsubsection*{The User Experience}
-
-The first thing one must realise when writing in a high-abstraction language for the purpose of FPGA implementation is that the style is vastly different to how software is usually developed. One must possess a basic level of knowledge regarding FPGAs and digital circuits, and realise that some code must be written with clock chronology in mind. An example of this is the \texttt{tlast} restoration mechanism outlined in section \ref{pedsubalg}.
+The first thing one must realise when writing in a high-abstraction language for the purpose of FPGA implementation is that the style is vastly different to how software is usually developed. One must possess a basic level of knowledge regarding FPGAs and digital circuits, and realise that sometimes code must be written with clock chronology in mind\footnote{One of the purposes of HLS is to ensure that the user can avoid writing contingencies for clock chronology. However, if interface directives such as \texttt{axis} cannnot be employed, then improvisations must be made that mimic the desired behaviour.}. An example of this is the \texttt{tlast} restoration mechanism outlined in section \ref{pedsubalg}.
 
 Increased logic branching is encouraged, since it often times can improve performance in FPGA firmware, in contrast to CPU software. Frequently the HLS top function requires more arguments and internal variables than usual, to ensure all handshake signals are accepted and correctly sent to the output. These are just a few of many examples that prove it is impossible to separate the C++ coding style from the limitations of HDLs.
 
 Secondly, HLS development requires a consistent trial and error approach due to the illegibility of the synthesized code as mentioned in sections \ref{quest} and \ref{Discussion}. This is a significant disadvantage when compared to the customisability of manual VHDL programming. However, despite this drawback, in addition to the tendency for less efficient resource implementation, HLS allows for higher design productivity. High level synthesis enables physicists unfamiliar with HDLs to generate IP blocks. Originally it was only trained engineers, who are few and far between in the experimental community, that were able to achieve this. Consequently, the prospects for accelerating the development of firmware for ProtoDUNE II or any other high-performance experiment are enormous.
 
 The work carried out for this report took place during the COVID-19 pandemic and required remote working for the majority of its duration. The user had no exposure or prior knowledge about FPGAs or the HLS software, yet the ease of the HLS design process enabled fast progression and notable success. This is a testament to the power of this method, and is a recommendable option for all software developers and physicists to consider.
+
+\subsubsection{Future Work}
+
+
 
 \newpage
 \bibliographystyle{ieeetr}

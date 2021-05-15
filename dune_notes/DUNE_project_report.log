@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  14 MAY 2021 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.8)  15 MAY 2021 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,10 +372,17 @@ LaTeX Info: Redefining \nameref on input line 27.
 
 \c@lstlisting=\count281
  (./titlepage.tex
+<figures/southampton_crest.jpg, id=148, 401.5pt x 680.5425pt>
+File: figures/southampton_crest.jpg Graphic file (type jpg)
+<use figures/southampton_crest.jpg>
+Package pdftex.def Info: figures/southampton_crest.jpg  used on input line 40.
+(pdftex.def)             Requested size: 145.10905pt x 245.96085pt.
+
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./DUNE_project_report.toc
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/southampton_cres
+t.jpg>] [2]) (./DUNE_project_report.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -389,166 +396,165 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `DUNE_project_report.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.34 \newpage
-              [1] [2] [3] [4] [5] [6]
+ [3]
+(./DUNE_project_report.lof)
+\tf@lof=\write5
+\openout5 = `DUNE_project_report.lof'.
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 118.
+ [4] [5] [6] [7] [8] [9]
 
-[7]
-<figures/CP_mirror_process.jpg, id=301, 637.38126pt x 398.48875pt>
+LaTeX Font Warning: Command \large invalid in math mode on input line 121.
+
+<figures/CP_mirror_process.jpg, id=365, 637.38126pt x 398.48875pt>
 File: figures/CP_mirror_process.jpg Graphic file (type jpg)
 <use figures/CP_mirror_process.jpg>
-Package pdftex.def Info: figures/CP_mirror_process.jpg  used on input line 147.
+Package pdftex.def Info: figures/CP_mirror_process.jpg  used on input line 150.
 
 (pdftex.def)             Requested size: 241.49895pt x 150.98343pt.
- [8 <./figures/CP_mirror_process.jpg>]
+[10] [11 <./figures/CP_mirror_process.jpg>]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 160.
+LaTeX Font Warning: Command \large invalid in math mode on input line 163.
 
-[9]
-<figures/oscillation_prob.png, id=329, 481.8pt x 978.65625pt>
+[12]
+<figures/oscillation_prob.png, id=402, 481.8pt x 978.65625pt>
 File: figures/oscillation_prob.png Graphic file (type png)
 <use figures/oscillation_prob.png>
-Package pdftex.def Info: figures/oscillation_prob.png  used on input line 209.
+Package pdftex.def Info: figures/oscillation_prob.png  used on input line 212.
 (pdftex.def)             Requested size: 207.0021pt x 420.47054pt.
- [10] [11 <./figures/oscillation_prob.png>]
-<figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png, id=350, 853.1875pt x
+ [13] [14 <./figures/oscillation_prob.png>] [15]
+<figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png, id=430, 853.1875pt x
  919.435pt>
 File: figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png Graphic file (ty
 pe png)
 <use figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>
 Package pdftex.def Info: figures/The-major-components-of-the-ProtoDUNE-SP-TPC.p
-ng  used on input line 248.
+ng  used on input line 251.
 (pdftex.def)             Requested size: 172.5pt x 185.88994pt.
- [12] [13 <./figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>] [14]
-<figures/FE_arch.jpg, id=390, 497.60907pt x 434.37282pt>
+ [16 <./figures/The-major-components-of-the-ProtoDUNE-SP-TPC.png>] [17]
+<figures/FE_arch.jpg, id=463, 497.60907pt x 434.37282pt>
 File: figures/FE_arch.jpg Graphic file (type jpg)
 <use figures/FE_arch.jpg>
-Package pdftex.def Info: figures/FE_arch.jpg  used on input line 281.
+Package pdftex.def Info: figures/FE_arch.jpg  used on input line 284.
 (pdftex.def)             Requested size: 241.49895pt x 210.80974pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/HF_processor.jpg, id=392, 784.43062pt x 385.44pt>
+<figures/HF_processor.jpg, id=465, 784.43062pt x 385.44pt>
 File: figures/HF_processor.jpg Graphic file (type jpg)
 <use figures/HF_processor.jpg>
-Package pdftex.def Info: figures/HF_processor.jpg  used on input line 288.
+Package pdftex.def Info: figures/HF_processor.jpg  used on input line 291.
 (pdftex.def)             Requested size: 552.0021pt x 271.24709pt.
-[15]
-<figures/HSC.jpg, id=412, 310.15875pt x 141.52875pt>
+[18]
+<figures/HSC.jpg, id=484, 310.15875pt x 141.52875pt>
 File: figures/HSC.jpg Graphic file (type jpg)
 <use figures/HSC.jpg>
-Package pdftex.def Info: figures/HSC.jpg  used on input line 313.
+Package pdftex.def Info: figures/HSC.jpg  used on input line 316.
 (pdftex.def)             Requested size: 241.49895pt x 110.19762pt.
- [16 <./figures/FE_arch.jpg>] [17 <./figures/HF_processor.jpg> <./figures/HSC.j
-pg>] [18] [19] [20]
-<figures/pipeline_example.png, id=474, 925.4575pt x 495.8525pt>
+ [19 <./figures/FE_arch.jpg>] [20 <./figures/HF_processor.jpg> <./figures/HSC.j
+pg>] [21] [22] [23]
+<figures/pipeline_example.png, id=544, 925.4575pt x 495.8525pt>
 File: figures/pipeline_example.png Graphic file (type png)
 <use figures/pipeline_example.png>
-Package pdftex.def Info: figures/pipeline_example.png  used on input line 376.
+Package pdftex.def Info: figures/pipeline_example.png  used on input line 379.
 (pdftex.def)             Requested size: 241.49895pt x 129.3877pt.
- [21 <./figures/pipeline_example.png>] [22] [23]
-<figures/PedSub_Alg.png, id=505, 705.63625pt x 798.985pt>
+ [24 <./figures/pipeline_example.png>] [25] [26]
+<figures/PedSub_Alg.png, id=574, 705.63625pt x 798.985pt>
 File: figures/PedSub_Alg.png Graphic file (type png)
 <use figures/PedSub_Alg.png>
-Package pdftex.def Info: figures/PedSub_Alg.png  used on input line 420.
+Package pdftex.def Info: figures/PedSub_Alg.png  used on input line 423.
 (pdftex.def)             Requested size: 345.0pt x 390.64047pt.
 
-[24] [25 <./figures/PedSub_Alg.png>] [26]
-<figures/pedestal_subtraction_Kostas_stats.png, id=525, 860.21375pt x 445.665pt
+[27] [28 <./figures/PedSub_Alg.png>] [29]
+<figures/pedestal_subtraction_Kostas_stats.png, id=594, 860.21375pt x 445.665pt
 >
 File: figures/pedestal_subtraction_Kostas_stats.png Graphic file (type png)
 <use figures/pedestal_subtraction_Kostas_stats.png>
 Package pdftex.def Info: figures/pedestal_subtraction_Kostas_stats.png  used on
- input line 458.
+ input line 463.
 (pdftex.def)             Requested size: 345.0pt x 178.73886pt.
-<figures/pedsub_HLS_stats.png, id=526, 851.18pt x 433.62pt>
+<figures/pedsub_HLS_stats.png, id=595, 851.18pt x 433.62pt>
 File: figures/pedsub_HLS_stats.png Graphic file (type png)
 <use figures/pedsub_HLS_stats.png>
-Package pdftex.def Info: figures/pedsub_HLS_stats.png  used on input line 465.
+Package pdftex.def Info: figures/pedsub_HLS_stats.png  used on input line 470.
 (pdftex.def)             Requested size: 345.0pt x 175.75407pt.
- [27 <./figures/pedestal_subtraction_Kostas_stats.png>] [28 <./figures/pedsub_H
-LS_stats.png>] [29] [30]
-<figures/PedSub_SSR_kostas_stats.png, id=569, 853.1875pt x 493.845pt>
+ [30 <./figures/pedestal_subtraction_Kostas_stats.png>] [31 <./figures/pedsub_H
+LS_stats.png>] [32] [33]
+<figures/PedSub_SSR_kostas_stats.png, id=634, 853.1875pt x 493.845pt>
 File: figures/PedSub_SSR_kostas_stats.png Graphic file (type png)
 <use figures/PedSub_SSR_kostas_stats.png>
 Package pdftex.def Info: figures/PedSub_SSR_kostas_stats.png  used on input lin
-e 507.
+e 512.
 (pdftex.def)             Requested size: 345.0pt x 199.69717pt.
-<figures/pedsub_HLS_SSR_stats.png, id=570, 845.1575pt x 458.71375pt>
+<figures/pedsub_HLS_SSR_stats.png, id=635, 845.1575pt x 458.71375pt>
 File: figures/pedsub_HLS_SSR_stats.png Graphic file (type png)
 <use figures/pedsub_HLS_SSR_stats.png>
 Package pdftex.def Info: figures/pedsub_HLS_SSR_stats.png  used on input line 5
-15.
+20.
 (pdftex.def)             Requested size: 345.0pt x 187.25493pt.
-<figures/pedsub_FIR_block_diagram.png, id=573, 1124.2pt x 383.4325pt>
+<figures/pedsub_FIR_block_diagram.png, id=639, 1124.2pt x 383.4325pt>
 File: figures/pedsub_FIR_block_diagram.png Graphic file (type png)
 <use figures/pedsub_FIR_block_diagram.png>
 Package pdftex.def Info: figures/pedsub_FIR_block_diagram.png  used on input li
-ne 526.
+ne 531.
 (pdftex.def)             Requested size: 448.50105pt x 152.96658pt.
-<figures/FIR_analogue_waveform.png, id=574, 1899.095pt x 613.29124pt>
+<figures/FIR_analogue_waveform.png, id=640, 1899.095pt x 613.29124pt>
 File: figures/FIR_analogue_waveform.png Graphic file (type png)
 <use figures/FIR_analogue_waveform.png>
 Package pdftex.def Info: figures/FIR_analogue_waveform.png  used on input line 
-532.
+537.
 (pdftex.def)             Requested size: 482.9979pt x 155.98012pt.
- [31 <./figures/PedSub_SSR_kostas_stats.png>] [32 <./figures/pedsub_HLS_SSR_sta
+ [34 <./figures/PedSub_SSR_kostas_stats.png>] [35 <./figures/pedsub_HLS_SSR_sta
 ts.png> <./figures/pedsub_FIR_block_diagram.png>]
-<figures/FIR_block_diagram.png, id=591, 962.59625pt x 678.535pt>
+<figures/FIR_block_diagram.png, id=655, 962.59625pt x 678.535pt>
 File: figures/FIR_block_diagram.png Graphic file (type png)
 <use figures/FIR_block_diagram.png>
-Package pdftex.def Info: figures/FIR_block_diagram.png  used on input line 544.
+Package pdftex.def Info: figures/FIR_block_diagram.png  used on input line 549.
 
 (pdftex.def)             Requested size: 345.0pt x 243.18529pt.
- [33 <./figures/FIR_analogue_waveform.png>]
-[34 <./figures/FIR_block_diagram.png>]
+ [36 <./figures/FIR_analogue_waveform.png>]
+[37 <./figures/FIR_block_diagram.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 570.
- [35]
-<figures/fir32_v0_stats.png, id=618, 865.2325pt x 560.0925pt>
+nput line 575.
+ [38]
+<figures/fir32_v0_stats.png, id=682, 865.2325pt x 560.0925pt>
 File: figures/fir32_v0_stats.png Graphic file (type png)
 <use figures/fir32_v0_stats.png>
-Package pdftex.def Info: figures/fir32_v0_stats.png  used on input line 597.
+Package pdftex.def Info: figures/fir32_v0_stats.png  used on input line 602.
 (pdftex.def)             Requested size: 345.0pt x 223.33223pt.
-<figures/fir_HLS_stats.png, id=619, 855.195pt x 479.7925pt>
+<figures/fir_HLS_stats.png, id=683, 855.195pt x 479.7925pt>
 File: figures/fir_HLS_stats.png Graphic file (type png)
 <use figures/fir_HLS_stats.png>
-Package pdftex.def Info: figures/fir_HLS_stats.png  used on input line 604.
+Package pdftex.def Info: figures/fir_HLS_stats.png  used on input line 609.
 (pdftex.def)             Requested size: 345.0pt x 193.5535pt.
- [36] [37 <./figures/fir32_v0_stats.png> <./figures/fir_HLS_stats.png>]
-<figures/FIR_StateSR_stats.png, id=652, 836.12375pt x 532.99126pt>
+ [39] [40 <./figures/fir32_v0_stats.png> <./figures/fir_HLS_stats.png>]
+<figures/FIR_StateSR_stats.png, id=714, 836.12375pt x 532.99126pt>
 File: figures/FIR_StateSR_stats.png Graphic file (type png)
 <use figures/FIR_StateSR_stats.png>
-Package pdftex.def Info: figures/FIR_StateSR_stats.png  used on input line 626.
+Package pdftex.def Info: figures/FIR_StateSR_stats.png  used on input line 631.
 
 (pdftex.def)             Requested size: 345.0pt x 219.92667pt.
-<figures/fir_HLS_SSR_stats.png, id=653, 863.225pt x 548.0475pt>
+<figures/fir_HLS_SSR_stats.png, id=715, 863.225pt x 548.0475pt>
 File: figures/fir_HLS_SSR_stats.png Graphic file (type png)
 <use figures/fir_HLS_SSR_stats.png>
-Package pdftex.def Info: figures/fir_HLS_SSR_stats.png  used on input line 633.
+Package pdftex.def Info: figures/fir_HLS_SSR_stats.png  used on input line 638.
 
 (pdftex.def)             Requested size: 345.0pt x 219.03113pt.
- [38] [39 <./figures/FIR_StateSR_stats.png> <./figures/fir_HLS_SSR_stats.png>]
-<figures/fir_HLS_SSR_waveform_comb.png, id=675, 1212.53pt x 644.4075pt>
+ [41] [42 <./figures/FIR_StateSR_stats.png> <./figures/fir_HLS_SSR_stats.png>]
+<figures/fir_HLS_SSR_waveform_comb.png, id=733, 1212.53pt x 644.4075pt>
 File: figures/fir_HLS_SSR_waveform_comb.png Graphic file (type png)
 <use figures/fir_HLS_SSR_waveform_comb.png>
 Package pdftex.def Info: figures/fir_HLS_SSR_waveform_comb.png  used on input l
-ine 655.
+ine 660.
 (pdftex.def)             Requested size: 552.0021pt x 293.36319pt.
- [40] [41 <./figures/fir_HLS_SSR_waveform_comb.png>] [42] [43] [44] (./DUNE_pro
-ject_report.bbl
+ [43] [44 <./figures/fir_HLS_SSR_waveform_comb.png>] [45] [46] [47] [48] (./DUN
+E_project_report.bbl
 Underfull \hbox (badness 5939) in paragraph at lines 45--47
 []\OT1/cmr/m/n/10 P. S. Cooper, ``The masses of the neu-tri-nos,'' \OT1/cmr/m/i
 t/10 arXiv preprint
  []
 
-[45] [46] [47]
+[49] [50] [51]
 Underfull \hbox (badness 10000) in paragraph at lines 228--231
 []\OT1/cmr/m/n/10 K. Manolopou-los, ``Trig-ger prim-i-tive gen-er-a-tion - firm
 ware.''
@@ -572,7 +578,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--242
 /
  []
 
-[48]
+[52]
 Underfull \hbox (badness 6893) in paragraph at lines 267--270
 []\OT1/cmr/m/n/10 ``Xilinx axi ref-er-ence guide (ug1037).'' []$\OT1/cmtt/m/n/1
 0 https : / / www . xilinx . com /
@@ -590,25 +596,25 @@ Underfull \hbox (badness 1112) in paragraph at lines 313--317
 are
  []
 
-[49])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 719.
- [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 719.
+[53])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 730.
+ [54]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 730.
  (./DUNE_project_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 719.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 719.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 730.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 730.
 Package rerunfilecheck Info: File `DUNE_project_report.out' has not changed.
-(rerunfilecheck)             Checksum: 864A5ADFC99409B621ED2EF4EE34B1FD;2536.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 719.
+(rerunfilecheck)             Checksum: 5F9D263F440D3DCEAF96C73A2A9A5564;2833.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 730.
  ) 
 Here is how much of TeX's memory you used:
- 9152 strings out of 481239
- 133291 string characters out of 5920378
- 610533 words of memory out of 5000000
- 24019 multiletter control sequences out of 15000+600000
+ 9179 strings out of 481239
+ 133769 string characters out of 5920378
+ 611533 words of memory out of 5000000
+ 24030 multiletter control sequences out of 15000+600000
  542468 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,10n,60p,1575b,1314s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,10n,60p,1596b,1314s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -630,10 +636,10 @@ fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on DUNE_project_report.pdf (51 pages, 1788156 bytes).
+Output written on DUNE_project_report.pdf (54 pages, 1912372 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 768 compressed objects within 8 object streams
- 225 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 954 PDF objects out of 1000 (max. 8388607)
+ 827 compressed objects within 9 object streams
+ 237 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 
