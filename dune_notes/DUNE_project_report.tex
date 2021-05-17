@@ -419,9 +419,11 @@ Finally, the utilization estimates are key to making the trade-off between laten
 
 Bear in mind that some of the observations made in this section are specific to the design of signal filtration algorithms, and is not necessarily optimal for all HLS design projects. There are many more directives and design techniques that can be found in the Xilinx documentation titled \href{https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_3/ug902-vivado-high-level-synthesis.pdf}{UG902}\cite{vivado_design_suite_user_guide_2018}.
 
-Now that a sufficient introduction into the design process has been given, the next section will explore the key work outlined in this report: the firmware algorithms employed by HSC block chain first mentioned in section \ref{tpgcoresec}.
+Now that a sufficient introduction into the design process has been given, the next section will explore the key work outlined in this report: the firmware algorithms employed by HF block chain first mentioned in section \ref{tpgcoresec}.
 
 \section{Development and Findings} \label{dev_and_find}
+
+Of the three firmware blocks in the TPG core, the pedestal subtraction and FIR filter algorithms were successfully implemented in HLS. Sections \ref{pedsubalg} - \ref{comp_overview} outline the operations performed by each algorithm as well as their performance and utilization statistics. Commentary will be made on certain tools and techniques that can be employed to circumvent common problems faced in HLS development. Hopefully this will provide some insight into the relative quality of each redesigned block, and the accessibility of the HLS software.
 
 \subsection{Pedestal Subtraction Algorithm}\label{pedsubalg}
 
@@ -437,7 +439,11 @@ Connected to this block, or implemented within it, is a state save and restore (
 
 \subsubsection{State Save and Restore} \label{save_and_restore}
 
-SSR functionality enables a variable restoration every time a packet enters a previously-processed data channel, allowing for two constantly fine-tuned arrays of pedestal and accumulator values to be used for the remainder of the detector run time. Therefore, once \texttt{tlast} goes high, the final pedestal and accumulator values for the current channel are saved and those stored for the next channel are retrieved from the SSR. Every 64 packets, a saved value is again restored for the next packet entering the same channel. This is because packets are processed for each channel sequentially, beginning from 0 and reaching channel 63. For example, if \texttt{pedsub} finishes processing and saving the state values of channel 5, the algorithm will then process channels $6-63$ and then $0-4$, after which the saved state values for channel 5 will be restored for further processing. This means that once the \texttt{pedsub} block has run for every channel, there will be a better background noise estimate and therefore increasingly accurate ADC output data from the pedestal subtraction.  Eventually, with a large enough flux of packets, one would obtain an optimal pedestal value appropriate for the background noise of each input channel.
+The SSR mechanism ensures the restoration of certain variables for a given data channel, once that channel has accepted at least one packet. Once all 64 data channels have received packets i.e. when the block processes its 65th packet, the SSR memory will have saved values associated with all channels. From this point onwards, each time a new packet enters a given channel, certain variables will be assigned values from the SSR memory element associated with that specific channel.
+
+In the case of the pedestal subtraction algorithm for channel N, the accumulator and pedestal values are saved from channel N at the end of a packet. In the same clock cycle, the values from channel N+1 are restored before the next packet is processed.
+
+The reason for this is that packets are processed by each channel sequentially, beginning from channel 0 and reaching channel 63. For example, when \texttt{pedsub} finishes processing the packet and saving the state values associated with channel 5, the algorithm will then process packets entering channels $6-63$ and then channels $0-4$, after which the saved state values for channel 5 will be restored for further processing. This enables the generation of fine-tuned pedestal and accumulator values for the remainder of the detector run time. Consequently, one would obtain a better background noise estimate and therefore increasingly accurate ADC output data from the pedestal subtraction block.
 
 \begin{figure}
 	\centering
@@ -482,7 +488,7 @@ The next section will discuss the disparity in resource cost between the origina
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{figures/pedestal_subtraction_Kostas_stats}
-	\caption[Resource usage of original pedestal subtraction block]{The resource utilisation for the original pedestal subtraction block including the exact figures above and percentage utilization below. All resource statistics were taken from the Vivado Project Manager post-implementation report summary, generated for each block. Please note that for all resource bar charts, utilization percentages above $1\%$ have been rounded to the nearest percent. Utilizations below $1\%$ are rounded up to the nearest percent.}
+	\caption[Resource usage of original pedestal subtraction block]{The resource utilisation for the manually-developed pedestal subtraction block, including the exact figures above and percentage utilization below. All resource statistics were taken from the Vivado Project Manager post-implementation report summary, generated for each block. Please note that for all resource bar charts, utilization percentages above $1\%$ have been rounded to the nearest percent. Utilizations below $1\%$ are rounded up to the nearest percent.}
 	\label{fig:pedsubblockstats}
 \end{figure}
 
@@ -495,13 +501,13 @@ The next section will discuss the disparity in resource cost between the origina
 
 The HLS block \texttt{pedsub\_HLS} exhibited half the latency of the original pedestal subtraction design. The synthesis report shows the block has a clock cycle of 3.6$\pm 0.5$ nanoseconds, and an RTL co-simulation confirmed the block satisfies the target frequency of 250 MHz. The HLS block outputs the same values as the previous design, ahead by one clock cycle due to the difference in latency. This was verified by a ModelSim simulation comparison between the blocks, and several model software output files.
 
-When comparing resource utilisation between the \texttt{pedsub} and \texttt{pedsub\_HLS} blocks detailed in figures \ref{fig:pedsubblockstats} and \ref{fig:hlsblockstats}, the most important components to consider are LUTs, FFs, and the input and output (IO)\footnote{These are physical structures that allow the connection of an FPGA target to other devices within the system.} resources for the FPGA target\footnote{A programmable area or chip on the FPGA used to implement a digital circuit, in our case designed via HLS or directly through VHDL.}..
+When comparing resource utilisation between the \texttt{pedsub} and \texttt{pedsub\_HLS} blocks detailed in figures \ref{fig:pedsubblockstats} and \ref{fig:hlsblockstats}, the most important components to consider are LUTs and FFs. The input and output (IO)\footnote{These are physical structures that allow the connection of an FPGA target to other devices within the system.} resources for the FPGA target\footnote{A programmable area or chip on the FPGA used to implement a digital circuit, in our case designed via HLS or directly through VHDL.} and the BUFG\footnote{A clock buffer.} should not be taken into consideration when comparing resources.
 
-The utilization tables show that the new design requires $0.06\%$ more LUT usage when compared to the total LUTs available, which although comes to a $274\%$ increase in total LUT usage when compared to the previous algorithm, is negligible when compared to the total available. Similarly, the FF usage for the HLS design shows an $140\%$ increase from the original, but only a $0.02\%$ difference in total usage of all available FFs. The disparity in LUT and FF usage is contributed to by the additional internal logic for the delayed SSR restoration and instantaneous back pressure mechanisms. An obvious third contributing factor is the increased performance of the HLS block. Resource utilization could be reduced by further investigation into the AXI4 Stream Protocol directives described in section \ref{axi4_method}.
+The utilization tables show that the new design requires $0.06\%$ more LUT usage when compared to the total LUTs available, which although comes to a $274\%$ increase in total LUT usage when compared to the previous algorithm, is negligible when compared to the total available. Similarly, the FF usage for the HLS design shows an $140\%$ increase from the original, but only a $0.02\%$ difference in total usage of all available FFs. The disparity in LUT and FF usage is contributed to by the additional internal logic for the delayed SSR restoration and instantaneous back pressure mechanisms. An obvious third contributing factor is the increased performance of the HLS block.
 
-Regardless, the difference in IO resource usage is not negligible, due to the large number of scalar and pointer type ports in the \texttt{pedsub\_HLS} design. There is $25\%$ more utilization of FPGA target IO resources in the new design when compared to the total available, and a $195\%$ total increase in the number of IO resources used when compared to the manual HDL firmware. This can be remedied by removing unnecessary ports and incorporating multiple ports as members of a C++ \texttt{struct} type input. This method is used in the designs featured in section \ref{pedsub_w_SSR}, \ref{fir_ext_SSR} and \ref{FIR_SSR}. Finally, regardless of the efficiency of the HLS design, it is expected for the manual HDL method to have more opportunities for resource-efficient implementation when compared to the automated HLS process. This is the case for all designs featured in this report.
+Resource utilization could be reduced by further investigation into the AXI4 Stream Protocol directives described in section \ref{axi4_method}. Further savings could be made by removing unnecessary ports and incorporating multiple ports as members of a C++ \texttt{struct} type input. This method is used in the designs featured in section \ref{pedsub_w_SSR}, \ref{fir_ext_SSR} and \ref{FIR_SSR}.
 
-The following segment will include discussion on the pedestal subtraction HLS block with in-built SSR behaviour.
+Regardless of the efficiency observed in the HLS design, it is expected for the manual HDL method to have more opportunities for resource-efficient implementation when compared to the automated HLS process. This is the case for all designs featured in this report. The following segment will include discussion on the pedestal subtraction HLS block with in-built SSR behaviour.
 
 
 \subsubsection{Pedestal Subtraction with Implemented SSR} \label{pedsub_w_SSR}
@@ -520,9 +526,7 @@ The variable reset functionality was removed in order to increase performance in
 
 \subsubsection*{Performance and Resource Utilization Comparison}
  
-The main benefits of the redesigned pedestal subtraction block with an in-built SSR are increased performance (faster throughput) and the convenience of a self-sufficient block, with no external systems responsible for the memory access behaviour. The clock period minimum of this design was shorter than the previous algorithm, reported at $3.0\pm0.5$ns. The simulation output for multiple packet waves with a randomly oscillating back pressure signal matches the model output files used to test the original pedestal subtraction SSR block.
-
-In contrast to the design in section \ref{pedsub_extern_SSR}, the IO resource utilization of the HLS block was more efficient than the from-scratch design, with a $16\%$ decrease from the original IO usage and a significant $3.36\%$ decrease when compared to the total IO resources available. These statistics can be found in figures \ref{fig:pedsubssrkostasstats} and \ref{fig:pedsubhlsssrstats}. \texttt{Struct} type function arguments and more efficient port generation is responsible for this. However, the resource benefits end here.
+The main benefits of the redesigned pedestal subtraction block with an in-built SSR are increased performance (faster throughput) and the convenience of a self-sufficient block, with no external systems responsible for the memory access behaviour. The clock period minimum of this design was shorter than the previous algorithm, reported at $3.0\pm0.5$ns. The simulation output for multiple packet waves with a randomly oscillating back pressure signal matches the model output files used to test the original pedestal subtraction SSR block. Based on the statistics featured in figures \ref{fig:pedsubssrkostasstats} and \ref{fig:pedsubhlsssrstats}, comparisons can be made on the number of components required for each design.
 
 The LUT usage of the HLS design is significantly higher at $481\%$ of the original, or a non-negligible $0.26\%$ usage increase of total LUTs available, which can be attributed to the LUTs required to process the operations on 128 registers for the pedestal and accumulator SSR arrays. FF usage increasing by $0.27\%$ of the total amount available can also be attributed to the demanding SSR arrays. Area usage can be dramatically reduced by un-partitioning the SSR memories and pursuing the methods described in section \ref{axi4_method} so as to avoid the demanding requirement for latency = II $= 1$. This would use a small number of BRAMs instead of large numbers of LUTs and FFs, the analogue of which is seen in the original design requiring 32 LUTRAMs.
 
@@ -555,8 +559,8 @@ The FIR algorithm acts as a random noise filter for the pedestal-subtracted ADC 
 \end{figure}
 \begin{center}
 	\begin{figure}
-		\centerline{\includegraphics[width=1.4\linewidth]{figures/FIR_analogue_waveform}}
-		\caption[FIR filter waveform]{The analogue waveforms of ADC input and output signals generated in a Questasim simulation. This is not to scale; the green peaks are amplified to much larger values than the red peaks in true scale, reducing the likelihood of false hit readings. Random signal noise is also reduced. Plateaus in the ADC values are a result of the random back pressure events pausing block operation.}
+		\centerline{\includegraphics[width=1.2\linewidth]{figures/FIR_analogue_waveform}}
+		\caption[FIR filter waveform]{Analogue waveforms of the ADC input and output signals for the FIR filter block, generated early in the development of TPG core firmware. These are not to scale. The waveform above represents the pedestal-subtracted ADC outputs being fed into the FIR filter. These peaks are small in value and suffer from significant random noise. If this signal was fed into the HF algorithm, false hits would be much more likely. The signal below is the FIR filter output, with much larger peaks and much less random signal noise. These ADC values makes it much easier to identify hits and generate less error.}
 		\label{fig:firanaloguewaveform}
 	\end{figure}
 \end{center}
@@ -584,7 +588,7 @@ After correcting the FIR wrapper to accommodate the new HLS AXI stream ports, Qu
 
 \subsubsection{Redesign of FIR with External SSR} \label{fir_ext_SSR}
 
-The HLS redesign of the original FIR block that relies on an external SSR is called \texttt{fir\_HLS}, and when synthesized achieved a minimum clock frequency of $3.4\pm0.5$ns. It mimics the original algorithm, achieving the same output values for input files of 128 packets with random back pressure.
+The HLS redesign of the original FIR block that relies on an external SSR is called \texttt{fir\_HLS}, and when synthesized achieved a minimum clock period of $3.4\pm0.5$ns. It mimics the original algorithm, achieving the same output values for input files of 128 packets with random back pressure.
 
 Mechanisms for \texttt{tlast} restoration, back pressure logic and struct ports were reused from \texttt{pedsub\_HLS\_SSR} for both this design and the following, discussed in section \ref{FIR_SSR}. Three sets of 32 tap registers were used, two sets of which were used to carry out high-performance computation of the tap shift and sum. The third set was employed for the restoration of SSR values received from the manually-developed SSR mechanism. 32 \texttt{constant} data type registers were used to store the FIR coefficients, for maximum accessibility.
 
@@ -632,18 +636,17 @@ In order to correctly restore the state from the external SSR, additional relate
 	\label{fig:firhlsstats}
 \end{figure}
 
-
 The requirement for maximum performance of the \texttt{fir\_HLS} design required many trial and error attempts at optimisation. Not only that, but it was necessary to parallelize the most time-expensive function operations: namely, the tap summation and SSR restoration. The significant disparity in the resources featured in figures \ref{fig:fir32v0stats}-\ref{fig:firhlsstats} reflect the increased registers and associated operations required to create a functional FIR design in HLS whilst overcoming the obstacles created by FELIX's required AXI stream behaviour.
 
 The LUT usage in the new HLS design is a $250\%$ increase from the amount used by the previous block, with a non-negligible $0.23\%$ increase in the total resource usage. The same goes for the number of FFs, with an $102\%$ increase from the previous algorithm, and a notable $0.14\%$ increase in total resource usage.
 
-In contrast to with the pedestal subtraction algorithms, DSP usage is required in both the original and HLS blocks. However, the number of DSPs in the HDL block is $0.39\%$ higher than the HLS design, in terms of total FPGA usage. This is the desired utilization, and efforts were made to increase DSP48 usage in HLS using directives, to no avail. This would have allowed savings of the resource cost in the LUT category. IO utilization is similar in both the HDL and HLS algorithms, due to the extra ports required for SSR restoration.
+In contrast to with the pedestal subtraction algorithms, DSP usage is required in both the original and HLS blocks. However, the number of DSPs in the HDL block is $0.39\%$ higher than the HLS design, in terms of total FPGA usage. This is the desired utilization, and efforts were made to increase DSP48 usage in HLS using directives, to no avail. This would have allowed savings of the resource cost in the LUT category. The next section will described the FIR filter algorithm with a self-sufficient SSR mechanism.
 
 \subsubsection{FIR with Implemented SSR} \label{FIR_SSR}
 
 The \texttt{fir\_HLS\_SSR} block employs a non-partitioned, two-dimensional array implemented as a BRAM, so that the design can be self sufficient when saving and restoring states. Tap restoration to the temporary SSR registers in preparation for the next channel occurs during the first 32 samples of each packet, i.e. one tap value restored per clock cycle. The reason for this is to avoid bottlenecking the read and write operations to the limited-access BRAM. This method ensures that there are no read operations occurring during the final 32 samples. This time period is reserved for the BRAM write operations, saving incoming ADC values so that they can be restored the next time that the current channel receives a packet.
 
-In order for this block to reach the required performance, false dependency directives were applied to the temporary 32-register restoration array and the two-dimensional SSR array. This was a safe optimisation, since both entities were accessed in different branches of logic. Additionally, the same double-array tap shift method was used from section \ref{fir_ext_SSR}. This allowed full parallelization of SSR operations, and the design output was verified in the C/RTL and Questasim simulations.
+In order for this block to reach the required performance, false dependency directives were applied to the temporary 32-register restoration array and the two-dimensional SSR array. This was a safe optimisation, since both entities were accessed in different branches of logic. Additionally, the same double-array tap shift method was used from section \ref{fir_ext_SSR}. This allowed full parallelization of SSR operations, and the design output was verified in the C/RTL and Questasim simulations. This meant that no dependence errors were generated since the RTL and C++ outputs matched.
 
 \subsubsection*{Performance and Resource Utilization Comparison}
 
@@ -663,13 +666,13 @@ In order for this block to reach the required performance, false dependency dire
 
 The \texttt{fir\_HLS\_SSR} implementation has the biggest disparity in total resource area compared to the original design, likely due to the reasons discussed within section \ref{fir_ext_SSR} in addition to the framework used for the internal SSR. This demanded the storing and retrieving of far more values than \texttt{pedsub\_HLS\_SSR}. Through the analysis of figures \ref{fig:firstatesrstats} and \ref{fig:firhlsssrstats} it can be deduced that the HLS block requires $387\%$ more LUTs than the manual HDL design, with a $0.36\%$ increase in usage of total LUTs available (the largest yet). FF usage in the new block came to a $107\%$ increase from the previous design, again using $0.14\%$ more of the total FFs available.
 
-Similar statistical comparisons emerge from section \ref{fir_ext_SSR} regarding the remaining resources in this section, besides the use of one BRAM component in both blocks for the SSR. This tells us that the main difference between \texttt{fir\_HLS} and \texttt{fir\_HLS\_SSR} is unsurprisingly the LUT usage.
+Statistics similar to those generated for \texttt{fir\_HLS} emerge when looking at components that are not FFs and LUTs. An asymmetry that stands out between \texttt{fir\_HLS} and \texttt{fir\_HLS\_SSR} is the use of one BRAM component for the in-built SSR memory, and the increased LUT usage that comes with processing 2048 BRAM elements.
 
-\subsection{Comparison Overview}
+\subsection{Comparison Overview} \label{comp_overview}
 
 The comparison of statistics in sections \ref{pedsubalg} - \ref{FIR_SSR} provides insight into the behaviour most efficiently implemented by HLS when written by a relative beginner. The first and most simplistic design \texttt{pedsub\_HLS} saw the most success. It achieved twice the operational speed and used a similar number of components to the manual HDL version. Subsequently it was found that introducing logical complexity to a maximum-performance design was especially demanding on the consumption of FPGA area. The disparity between HLS and manual HDL designs was largest for the FIR filter, due to the expensive operation of 32 tap shifts and summations occurring six times faster than the original algorithm. Not only that, but correctly accessing 2048 different SSR elements added a notable cost for the self-sufficient version.
 
-Overall, huge resource savings would occur if each design could produce a valid output at a latency of greater than one clock cycle, but this was not the case.
+Overall, huge resource savings would occur if each design could produce a valid output at a latency of greater than one clock cycle, but this was not achievable under the time constraints. Regardless, the fact that single-clock latencies were possible for all implementations is a testament to the power of HLS.
 
 \section{Design Process Conclusions}
 
@@ -711,7 +714,7 @@ Given more time to investigate the \texttt{axis} interface directives detailed i
 
 \subsection{Conclusion} \label{conclusion}
 
-In this document, the theoretical and experimental motivations for the DUNE experiment have been outlined. Details of the HF architecture and the HF algorithms were discussed, and the original VHDL designs were compared to the new HLS implementations. The following segments summarise the discoveries made during the progression of the project.
+In this document, the theoretical and experimental motivations for the DUNE experiment have been outlined. Details of the HF architecture and the HF algorithms were discussed, and the original VHDL designs were compared to the new HLS implementations. The following segments summarise the discoveries made during the progression of the project. The section will conclude with a discussion of how the continuation of this work could be pursued.
 
 \subsubsection{Technical Findings}
 
@@ -735,7 +738,11 @@ The first thing one must realise when writing in a high-abstraction language for
 
 Increased logic branching is encouraged, since it often times can improve performance in FPGA firmware, in contrast to CPU software. Frequently the HLS top function requires more arguments and internal variables than usual, to ensure all handshake signals are accepted and correctly sent to the output. These are just a few of many examples that prove it is impossible to separate the C++ coding style from the limitations of HDLs.
 
-Secondly, HLS development requires a consistent trial and error approach due to the illegibility of the synthesized code as mentioned in sections \ref{quest} and \ref{Discussion}. This is a significant disadvantage when compared to the customisability of manual VHDL programming. However, despite this drawback, in addition to the tendency for less efficient resource implementation, HLS allows for higher design productivity. High level synthesis enables physicists unfamiliar with HDLs to generate IP blocks. Originally it was only trained engineers, who are few and far between in the experimental community, that were able to achieve this. Consequently, the prospects for accelerating the development of firmware for ProtoDUNE II or any other high-performance experiment are enormous.
+Secondly, HLS development requires a consistent trial and error approach due to the illegibility of the synthesized code as mentioned in sections \ref{quest} and \ref{Discussion}. This is a significant disadvantage when compared to the customisability of manual VHDL programming. Despite this drawback, and despite its tendency for less efficient resource implementation, HLS allows for higher design productivity.
+
+High level synthesis enables physicists unfamiliar with HDLs to generate IP blocks. Originally it was only trained engineers, who are few and far between in the experimental community, that were able to achieve this. Detailed documentation and extensive tutorials on the \href{https://www.xilinx.com/support.html}{Xilinx support page} enable beginners to quickly familiarise themselves with the Vivado HLS GUI and console. This is in contrast to the much lengthier training periods for manual HDL development.
+
+Consequently, the prospects for accelerating the development of firmware for ProtoDUNE II or any other high-performance experiment are enormous.
 
 The work carried out for this report took place during the COVID-19 pandemic and required remote working for the majority of its duration. The user had no exposure or prior knowledge about FPGAs or the HLS software, yet the ease of the HLS design process enabled fast progression and notable success. This is a testament to the power of this method, and is a recommendable option for all software developers and physicists to consider.
 
@@ -743,11 +750,11 @@ The work carried out for this report took place during the COVID-19 pandemic and
 
 Despite the fact that most project goals were met, there were some aspects of the project that were left unfinished. The top priority for future work would be the creation of a block that is automatically interfaced by HLS. This is so that clock timing can be exclusively handled by the software and no longer plays a role in design choices.
 
-In the case of both the HLS pedestal subtraction and FIR filter algorithms, automatically generated AXI4 stream ports and associated behaviours would allow for a latency of 2 clock cycles and 6 clock cycles respectively. These latencies are shared by their analogous manual HDL blocks. Enabling sub-maximal performance in the HLS versions would dramatically reduce resource cost, and allow for a fair comparison between software and engineer implementations.
+In the case of both the HLS pedestal subtraction and FIR filter algorithms, automatically generated AXI4 stream ports and associated behaviours would allow for a latency of 2 clock cycles and 6 clock cycles respectively. These latencies are shared by their analogous manual HDL blocks. Enabling sub-maximal performance in the HLS versions would dramatically reduce resource cost, and allow for a fair comparison between software and engineer implementations exhibiting the same performance.
 
 It cannot be ignored that the third sub-block in the TPG block chain remains to be redesigned. This would add further insight into how HLS deals with various operational requirements. Following the successful implementation of all three HLS sub-blocks in the TPG core, one could connect their mutual IO ports and test the functionality and resource cost of a full TPG unit developed in HLS.
 
-The last aspiration would be the generation of DUNE firmware that has not previously been developed in manual HDL. One could gauge the difficulty met when acquiring the correct output signals without the scaffolding of a `blueprint' script. This could be compared to the redesign process. Conclusions could be made on whether HLS is a feasible tool in when developing brand new firmware for the DUNE experiment.
+The last aspiration would be the generation of DUNE firmware that has not previously been developed in manual HDL. One could gauge the difficulty met when acquiring the correct output signals without the scaffolding of a `blueprint' script. This could be compared to the redesign process. Conclusions could be made on whether HLS is a feasible tool in when developing brand-new firmware for the DUNE experiment.
 
 \newpage
 \bibliographystyle{ieeetr}
