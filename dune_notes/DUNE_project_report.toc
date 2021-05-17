@@ -9,28 +9,28 @@
 \contentsline {subsection}{\numberline {1.5}ProtoDUNE DAQ System}{15}{subsection.1.5}%
 \contentsline {subsubsection}{\numberline {1.5.1}Single and Dual Phase LAr TPCs}{16}{subsubsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.6}FELIX}{18}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}The TPG Core}{18}{subsection.1.7}%
-\contentsline {section}{\numberline {2}HLS}{21}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Background}{21}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{22}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{24}{subsubsection.2.2.1}%
-\contentsline {section}{\numberline {3}Development and Findings}{26}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{26}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{26}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}State Save and Restore}{27}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Redesign of Pedestal Subtraction with an External SSR}{27}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{29}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{32}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{34}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{36}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{38}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{38}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{41}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Comparison Overview}{41}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Design Process Conclusions}{43}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{43}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}General Consensus}{45}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Conclusion}{46}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Technical Findings}{46}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}The User Experience}{47}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Future Work}{48}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {1.7}The TPG Core}{19}{subsection.1.7}%
+\contentsline {section}{\numberline {2}HLS}{22}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Background}{22}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{23}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Optimisations and Analysis}{25}{subsubsection.2.2.1}%
+\contentsline {section}{\numberline {3}Development and Findings}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pedestal Subtraction Algorithm}{27}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Algorithm Operations}{27}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}State Save and Restore}{28}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Redesign of Pedestal Subtraction with an External SSR}{28}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{30}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{33}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{35}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{37}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{39}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{39}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{42}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Comparison Overview}{42}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Design Process Conclusions}{44}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{44}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}General Consensus}{46}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Conclusion}{47}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Technical Findings}{47}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}The User Experience}{48}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Future Work}{49}{subsubsection.4.3.3}%
