@@ -277,23 +277,6 @@ The next section will describe the interface system which handles the data acqui
 
 Each LAr TPC module used in the ProtoDUNE II design contains 150 APAs. Every APA accommodates 2560 wires. There are 10 fibres, or data streams, in the APA, filled with 256 wires per fibre. The Front End LInk eXchange (FELIX) system is used to receive the data from the APAs, and was first developed within the ATLAS collaboration. Within this system contains the focus of this project: the TPG core, discussed in section \ref{tpgcoresec}. FELIX is a PC-based networking gateway with an FPGA mounted on PCIe\footnote{High speed connection ports used in motherboards to connect GPUs, SSD's, wifi chips and more.} Gen3 cards \cite{borga2019felix}. This FPGA carries the FELIX firmware that is responsible for receiving, processing and transmitting detector data. Before transmission, this manipulation of data is performed by the hit-finder (HF) architecture. In ProtoDUNE II, FELIX interfaces with and manipulates the data from the APA, during which time it is fed through the TPG core within the HF processor. 
 
-The readout window per neutrino event is between $3 - 5.5$ ms for a $2.25$ ms drift time. The FELIX architecture that handles this influx of events consists of 10 components called `MGT' modules. The function of an MGT is to process the APA data stream into computational bits, which are then fed into 10 HF processors, as seen in figure \ref{fig:fearch}. The hits are produced by processing the incoming ADC (Analog-to-Digital Converted) samples in parallel. The MGT output enters the HFs via the data router, which receives multiple-channel, single clock-tick packets. The packets of ADC values initially exist in a format containing a given sample wave for all channels, until they meet the data router. When packets are processed by the data router they are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data, as seen in figure \ref{fig:dataroutervisual}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\linewidth]{figures/data_router_visual}
-	\caption[Data router visualisation]{A visualisation of the packet processing operation performed by the data router, before sending those packets to the TPG core \cite{manolopoulos_2020}. The top left grid shows the arrangement of samples where packets are categorised by the clock tick in which they arrived. The bottom right grid shows the packet arrangement after being processed by the data router, where packets are categorised by channel in which they arrived, for multiple clock ticks. This is the input described in section \ref{pedsubalg}.}
-	\label{fig:dataroutervisual}
-\end{figure}
-
-The data router consists of three major blocks: the data reception, data storage and unpacker. The data reception block receives inputs from the MGT and converts the incoming packets from a 32-bit to a $4\times16$-bit format. This data is then written into a circular buffer (64-bit dual-port RAM) in the data storage block. Data reception includes behaviour that recognises and exploits repeating patterns from incoming data, allowing smarter buffering of smaller parts of the frame. In other words, data reception avoids storing the same information more than once, increasing its efficiency. Channel data from the storage block is then unpacked by the unpacker. Following this, the data is repacked into the desired four-channel format, to be processed by the same number of TPG units. Finally, this data is transmitted via an AXI4\footnote{This protocol is defined in section \ref{tpgcoresec}.} bus.
-
-The bus data is sent to 10 sets of 4 TPG block processors; one set for each MGT output. The processor outputs are multiplexed\footnote{Combined into a singular signal output.} by the arbitrator into the Central Router (CR) interface \cite{abi_barr_martin-albo_azfar_2017, adams2020protodune} as seen in figure \ref{fig:hfprocessor}. The arbitrator uses FIFOs (first-in first-out memory) to buffer outputs in the case of multiple incoming packets. This allows the multiplexing of 4 TPG blocks into a single output.
-
-When the data reaches the CR interface, it is again processed by three main blocks. The first is a FIFO wrapper that prevents back pressure events. These are instances where the rate of data input is faster than the block chain processing rate, so operation must pause to allow time for the processing to catch up. The second block is a hit packet filter which filters out packets which are corrupted or contain zero hits. The final block is the CRIF packer, which translates each hit packet into a format processable by the CR.
-
-Section \ref{tpgcoresec} will explain the TPG unit in further detail.
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/FE_arch}
@@ -301,30 +284,34 @@ Section \ref{tpgcoresec} will explain the TPG unit in further detail.
 	\label{fig:fearch}
 \end{figure}
 
+The readout window per neutrino event is between $3 - 5.5$ ms for a $2.25$ ms drift time. The FELIX architecture that handles this influx of events consists of 10 components called MGTs (Xilinx's multi-gigabit transceiver modules). The function of an MGT is to process the APA data stream into computational bits, which are then fed into 10 HF processors, as seen in figure \ref{fig:fearch}. The hits are produced by processing the incoming ADC (Analog-to-Digital Converted) samples in parallel. The MGT output enters the HFs via the data router, which receives multiple-channel, single clock-tick packets. The packets of ADC values initially exist in a format containing a given sample wave for all channels, until they meet the data router. When packets are processed by the data router they are converted into a format subsisting of all the samples for a given channel i.e. multiple clock ticks of data, as seen in figure \ref{fig:dataroutervisual}.
+
+\subsubsection{The Data Router}
+
 \begin{figure}
 	\centering
-	\makebox[\textwidth][c]{\includegraphics[width=1.6\linewidth]{figures/HF_processor}}
-	\caption[Hit Finder Firmware Architecture]{Hit Finder Firmware Architecture \cite{manolopoulos_2020}. The data router (left) formats packets for processing in the TPG units (centre), the results of which is multiplexed by the arbitrator (centre-left) into the CR interface for additional formatting. Forward arrows represent ADC values and their associated handshake signals, whilst backwards arrows represent back pressure traffic.}
-	\label{fig:hfprocessor}
+	\includegraphics[width=1.0\linewidth]{figures/data_router_visual}
+	\caption[Data router visualisation]{A visualisation of the packet processing operation performed by the data router, before sending reformatted packets to the TPG core \cite{manolopoulos_2020}. The top left grid shows the arrangement of samples where packets are categorised by the clock tick in which they arrived. The bottom right grid shows the packet arrangement after being processed by the data router, where packets are categorised by the channel in which they arrived, for multiple clock ticks. This is the input described in section \ref{pedsubalg}.}
+	\label{fig:dataroutervisual}
 \end{figure}
 
-\subsection{The TPG Core}\label{tpgcoresec}
+The data router consists of three major blocks: the data reception, data storage and unpacker. The data reception block receives inputs from the MGT and converts the incoming packets from a 32-bit to a $4\times16$-bit format. This data is then written into a circular buffer (64-bit dual-port RAM) in the data storage block. Data reception includes behaviour that recognises and exploits repeating patterns from incoming data, allowing smarter buffering of smaller parts of the frame. In other words, data reception avoids storing the same information more than once, increasing its efficiency. Channel data from the storage block is then unpacked by the unpacker. Following this, the data is repacked into the desired four-channel format, to be processed by the same number of TPG units. Finally, this data is transmitted via an AXI4\footnote{This protocol is defined in section \ref{tpgcoresec}.} bus. The bus data is sent to 10 sets of 4 TPG block processors; one set for each MGT output.
+
+Section \ref{tpgcoresec} will explain the TPG unit in further detail.
+
+\subsubsection{The TPG Core}\label{tpgcoresec}
 
 Each TPG unit processes the data from 64 APA wires, and so there are 4 units for each core\footnote{$4\times 64 = 256$, the number of wires in a fiber; ten fibers summed over ten MGTs accounts for all wires within the APA (2560).}.
 The TPG data consists of a header and a payload. The header determines the source wire, the time stamp, and the origin of the data. The payload is 64 instances of ADC sample data for hit finding. There is an AXI4-stream protocol\footnote{A standard interface to connect components that mutually wish to exchange data. The protocol supports multiple data streams that enable upsizing, downsizing and routing operations. The AXI4 protocol is part of an AXI family of micro controller buses, but this one in particular specialises in high performance, memory mapped component requirements.} for the unpacking and reordering of data in the TPG block, featuring 6 general signals for various instructions in each component:
 
-	\begin{enumerate}
-		\item \texttt{tdata} denotes the 12-bit ADC sample to be processed.
-		\item \texttt{tvalid} denotes if the bus data is valid for processing.
-		\item \texttt{tkeep} goes high when the incoming data should be processed.
-		\item \texttt{tuser} is a flag that denotes the end of a packet frame.
-		\item \texttt{tlast} indicates the end of a packet.
-		\item \texttt{tready} is used to apply back pressure if the processing units ahead cannot process the data fast enough (all throughput is frozen).
-	\end{enumerate}
-
-Within the TPG core is a mechanism that strips the packet header, called the Header Stripper/Combiner (HSC), featured in figure \ref{fig:hsc}. The header is sent to the output of the block. Meanwhile, the remaining 64 ADC samples and their associated AXI4-S signals are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the processing chain. The data router is then signalled to send the next packet forward for input.
-
-The objective of this project is to redesign the firmware algorithms for the TPG sub-blocks in Xilinx's Vivado HLS software suite. This is to acquire a comparison of the performance and resource usage of the HLS design with the existing firmware written by VHDL engineers. Section \ref{HLS_section} goes into more detail on this matter.
+\begin{enumerate}
+	\item \texttt{tdata} denotes the 12-bit ADC sample to be processed.
+	\item \texttt{tvalid} denotes if the bus data is valid for processing.
+	\item \texttt{tkeep} goes high when the incoming data should be processed.
+	\item \texttt{tuser} is a flag that denotes the end of a packet frame.
+	\item \texttt{tlast} indicates the end of a packet.
+	\item \texttt{tready} is used to apply back pressure if the processing units ahead cannot process the data fast enough (all throughput is frozen).
+\end{enumerate}
 
 \begin{figure}
 	\centering
@@ -332,6 +319,25 @@ The objective of this project is to redesign the firmware algorithms for the TPG
 	\caption[Sub block chain in the TPG core]{Focus on the TPG core and the sub-block chain, the purpose of which is to filter noise and identify hits from formatted packets received via the data router. \cite{manolopoulos_2020}.}
 	\label{fig:hsc}
 \end{figure}
+
+Within the TPG core is a mechanism that strips the packet header, called the Header Stripper/Combiner (HSC), featured in figure \ref{fig:hsc}. The header is sent to the output of the block. Meanwhile, the remaining 64 ADC samples and their associated AXI4-S signals are processed by the PedSub (pedestal subtraction), FIR (finite impulse response), and HF sub-blocks in the processing chain. The data router is then signalled to send the next packet forward for input.
+
+The objective of this project is to redesign the firmware algorithms for the TPG sub-blocks in Xilinx's Vivado HLS software suite. This is to acquire a comparison of the performance and resource usage of the HLS design with the existing firmware written by VHDL engineers.
+
+Section \ref{CR_IF} will explain what happens to the output of the TPG core.
+
+\subsubsection{CR Interface} \label{CR_IF}
+
+\begin{figure}
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.6\linewidth]{figures/HF_processor}}
+	\caption[Hit Finder Firmware Architecture]{Hit Finder Firmware Architecture \cite{manolopoulos_2020}. The data router (left) formats packets for processing in the TPG units (centre), the results of which is multiplexed by the arbitrator into the CR interface (right) for additional formatting. Forward arrows represent ADC values and their associated handshake signals, whilst backwards arrows represent back pressure traffic.}
+	\label{fig:hfprocessor}
+\end{figure}
+
+The TPG outputs are multiplexed\footnote{Combined into a singular signal output.} by the arbitrator into the Central Router (CR) interface \cite{abi_barr_martin-albo_azfar_2017, adams2020protodune} as seen in figure \ref{fig:hfprocessor}. The arbitrator uses FIFOs (first-in first-out memory) to buffer outputs in the case of multiple incoming packets. This allows the multiplexing of 4 TPG blocks into a single output.
+
+When the data reaches the CR interface, it is again processed by three main blocks. The first is a FIFO wrapper that prevents back pressure events. These are instances where the rate of data input is faster than the block chain processing rate, so operation must pause to allow time for the processing to catch up. The second block is a hit packet filter which filters out packets which are corrupted or contain zero hits. The final block is the CRIF packer, which translates each hit packet into a format processable by the CR.
 
 \section{HLS}\label{HLS_section}
 
@@ -717,7 +723,7 @@ Externally defined C++ arrays were especially helpful when saving and restoring 
 
 Employing arbitrary bit widths using \texttt{ap\_int.h} and the \texttt{ap\_int<bitwidth>} datatype saved area usage, as predicted in section \ref{direct}. Using the C++ \texttt{struct} datatype as a function argument led to the synthesis of port interfaces with drastically lower IO resource usage. A \texttt{struct} is the recommended port type when using \texttt{axis} interface directives with side channels like \texttt{tlast}, \texttt{tuser} and \texttt{tkeep}. This \texttt{axis} directive approach is the best way to generate designs that satisfy general AXI4 stream protocol requirements, such as an instantaneous response to back pressure. However, this approach is met with difficulty and requires further investigation to achieve a successful implementation.
 
-It should be noted that the back pressure behaviour of the manually written IPs was easily implemented by a singular line of VHDL code that acted as a clock enable to all processes. It can be inferred that AXI4 stream behaviour is far more implementable in manual HDL projects than in their HLS counterparts. This is especially the case for a beginner in FPGA development.
+It should be noted that the back pressure behaviour of the manually written IPs was intuitively implemented by a line of VHDL code that acted as a `clock enable' to all block processes, pausing all operations when back pressure occurred. It can be inferred that AXI4 stream behaviour is far more implementable in manual HDL projects than in their HLS counterparts. This is especially the case for a beginner in FPGA development.
 
 The high-performance approach to mimicking AXI4 stream behaviour was effective, and forced the user to streamline their designs much further than the manual HDL versions. It is worth mentioning that even complex functions can support high throughput via persistence and familiarity with the optimisation directives. For minimum block latency, the most useful directives were \texttt{pipeline}, \texttt{array\_partition}, \texttt{dependence} and \texttt{inline}. However, maximum throughput led to larger area usage than was necessary, since fast block operation was not a priority in the FELIX system.
 
@@ -737,7 +743,7 @@ The work carried out for this report took place during the COVID-19 pandemic and
 
 Despite the fact that most project goals were met, there were some aspects of the project that were left unfinished. The top priority for future work would be the creation of a block that is automatically interfaced by HLS. This is so that clock timing can be exclusively handled by the software and no longer plays a role in design choices.
 
-In the case of both the HLS pedestal subtraction and FIR filter algorithms, automatically generated AXI4 stream ports and associated behaviours would allow for a latency of 2 clock cycles and 6 clock cycles respectively. These latencies are shared by the analogous manual HDL blocks. Enabling sub-maximal performance in the HLS versions would dramatically reduce resource cost, and allow for a fair comparison between software and engineer implementations.
+In the case of both the HLS pedestal subtraction and FIR filter algorithms, automatically generated AXI4 stream ports and associated behaviours would allow for a latency of 2 clock cycles and 6 clock cycles respectively. These latencies are shared by their analogous manual HDL blocks. Enabling sub-maximal performance in the HLS versions would dramatically reduce resource cost, and allow for a fair comparison between software and engineer implementations.
 
 It cannot be ignored that the third sub-block in the TPG block chain remains to be redesigned. This would add further insight into how HLS deals with various operational requirements. Following the successful implementation of all three HLS sub-blocks in the TPG core, one could connect their mutual IO ports and test the functionality and resource cost of a full TPG unit developed in HLS.
 

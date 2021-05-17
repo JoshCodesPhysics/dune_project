@@ -9,7 +9,9 @@
 \contentsline {subsection}{\numberline {1.5}ProtoDUNE DAQ System}{15}{subsection.1.5}%
 \contentsline {subsubsection}{\numberline {1.5.1}Single and Dual Phase LAr TPCs}{16}{subsubsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.6}FELIX}{18}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}The TPG Core}{19}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.6.1}The Data Router}{19}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}The TPG Core}{20}{subsubsection.1.6.2}%
+\contentsline {subsubsection}{\numberline {1.6.3}CR Interface}{21}{subsubsection.1.6.3}%
 \contentsline {section}{\numberline {2}HLS}{22}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Background}{22}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Vivado HLS Design Flow}{23}{subsection.2.2}%
@@ -22,11 +24,11 @@
 \contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{30}{subsubsection.3.1.4}%
 \contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{33}{subsubsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{35}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{37}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{36}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{39}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{39}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{42}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Comparison Overview}{42}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Comparison Overview}{44}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Design Process Conclusions}{44}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Simulation using Questasim}{44}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}General Consensus}{46}{subsection.4.2}%
