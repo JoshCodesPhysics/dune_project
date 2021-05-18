@@ -23,9 +23,9 @@
 \contentsline {subsubsection}{\numberline {3.1.3}Redesign of Pedestal Subtraction with an External SSR}{28}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Static Variables and AXI4 Signal Behaviour}{30}{subsubsection.3.1.4}%
 \contentsline {subsubsection}{\numberline {3.1.5}Pedestal Subtraction with Implemented SSR}{33}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{35}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Finite Impulse Response Filter}{36}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Algorithm Operations}{36}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{39}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Axis Directive Method for Back Pressure Behaviour}{38}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Redesign of FIR with External SSR}{39}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}FIR with Implemented SSR}{42}{subsubsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.3}Comparison Overview}{44}{subsection.3.3}%

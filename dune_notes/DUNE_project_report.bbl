@@ -10,15 +10,15 @@ D.~Griffiths, ``Introduction to elementary particles, john willey \& sons,''
 
 \bibitem{Abe_1995}
 F.~Abe, H.~Akimoto, A.~Akopian, M.~G. Albrow, S.~R. Amendolia, D.~Amidei,
-  J.~Antos, C.~Anway-Wiese, S.~Aota, G.~Apollinari, and et~al., ``Observation
-  of top quark production inp¯pcollisions with the collider detector at
+  J.~Antos, C.~Anway-Wiese, S.~Aota, and G.~e.~a. Apollinari, ``Observation of
+  top quark production in p¯p collisions with the collider detector at
   fermilab,'' {\em Physical Review Letters}, vol.~74, p.~2626–2631, Apr 1995.
 
 \bibitem{Kodama_2001}
 K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
-  B.~Baller, D.~Boehnlein, W.~Freeman, B.~Lundberg, and et~al., ``Observation
-  of tau neutrino interactions,'' {\em Physics Letters B}, vol.~504,
-  p.~218–224, Apr 2001.
+  B.~Baller, D.~Boehnlein, W.~Freeman, and B.~e.~a. Lundberg, ``Observation of
+  tau neutrino interactions,'' {\em Physics Letters B}, vol.~504, p.~218–224,
+  Apr 2001.
 
 \bibitem{off2012cern}
 C.~P. Off, ``Cern experiments observe particle consistent with long-sought
@@ -29,9 +29,9 @@ F.~R. KLINKHAMER, ``Neutrino mass and the standard model,'' {\em Modern Physics
   Letters A}, vol.~28, p.~1350010, Feb 2013.
 
 \bibitem{2016NuPhB.908....1O}
-T.~{Ohlsson}, ``{Special Issue on ``Neutrino Oscillations: Celebrating the
-  Nobel Prize in Physics 2015'' in Nuclear Physics B},'' {\em Nuclear Physics
-  B}, vol.~908, pp.~1--1, July 2016.
+T.~{Ohlsson}, ``{Special Issue on `Neutrino Oscillations: Celebrating the Nobel
+  Prize in Physics 2015' in Nuclear Physics B},'' {\em Nuclear Physics B},
+  vol.~908, p.~1, July 2016.
 
 \bibitem{atmospheric_neutrinos}
 ``Atmospheric neutrinos: Super-kamiokande official website.''
@@ -75,8 +75,8 @@ B.~Schwingenheuer, ``Status and prospects of searches for neutrinoless double
 
 \bibitem{Xu_2015}
 W.~Xu, N.~Abgrall, F.~T. Avignone, A.~S. Barabash, F.~E. Bertrand, V.~Brudanin,
-  M.~Busch, M.~Buuck, D.~Byram, A.~S. Caldwell, and et~al., ``The majorana
-  demonstrator: A search for neutrinoless double-beta decay of76ge,'' {\em
+  M.~Busch, M.~Buuck, D.~Byram, and A.~S. e.~a. Caldwell, ``The majorana
+  demonstrator: A search for neutrinoless double-beta decay of 76ge,'' {\em
   Journal of Physics: Conference Series}, vol.~606, p.~012004, May 2015.
 
 \bibitem{khanbekov2013amore}
@@ -87,7 +87,7 @@ N.~Khanbekov, ``Amore: Collaboration for searches for the neutrinoless
 
 \bibitem{Albert_2018}
 J.~B. Albert, G.~Anton, I.~J. Arnquist, I.~Badhrees, P.~Barbeau, D.~Beck,
-  V.~Belov, F.~Bourque, J.~P. Brodsky, E.~Brown, and et~al., ``Sensitivity and
+  V.~Belov, F.~Bourque, J.~P. Brodsky, and E.~e.~a. Brown, ``Sensitivity and
   discovery potential of the proposed nexo experiment to neutrinoless double-
   beta decay,'' {\em Physical Review C}, vol.~97, Jun 2018.
 
@@ -218,16 +218,16 @@ A.~Borga, E.~Church, F.~Filthaut, E.~Gamberini, R.~Habraken, G.~L. Miotto,
   based readout of the single-phase protodune detector,'' in {\em EPJ Web of
   Conferences}, vol.~214, p.~01013, EDP Sciences, 2019.
 
+\bibitem{manolopoulos_2020}
+K.~Manolopoulos, ``Trigger primitive generation - firmware.''
+  \url{https://indico.fnal.gov/event/44240/contributions/190328/attachments/132052/162111/UPDAQ_TechRev_TPGfw.pdf},
+  Jul 2020.
+
 \bibitem{adams2020protodune}
 D.~Adams, M.~Bass, M.~Bishai, C.~Bromberg, J.~Calcutt, H.~Chen, J.~Fried,
   I.~Furic, S.~Gao, D.~Gastler, {\em et~al.}, ``The protodune-sp lartpc
   electronics production, commissioning, and performance,'' {\em Journal of
   Instrumentation}, vol.~15, no.~06, p.~P06017, 2020.
-
-\bibitem{manolopoulos_2020}
-K.~Manolopoulos, ``Trigger primitive generation - firmware.''
-  \url{https://indico.fnal.gov/event/44240/contributions/190328/attachments/132052/162111/UPDAQ_TechRev_TPGfw.pdf},
-  Jul 2020.
 
 \bibitem{coussy2009introduction}
 P.~Coussy, D.~D. Gajski, M.~Meredith, and A.~Takach, ``An introduction to
