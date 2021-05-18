@@ -1,4 +1,4 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces The CKM matrix equation}}{11}{figure.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces The CKM matrix equation}}{10}{figure.1}%
 \contentsline {figure}{\numberline {2}{\ignorespaces CP violation mirror process experiment}}{11}{figure.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces PMNS matrix equation}}{12}{figure.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces The probability of neutrinos oscillating in the DUNE experiment}}{14}{figure.4}%
@@ -8,16 +8,16 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Sub block chain in the TPG core}}{20}{figure.8}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Hit Finder Firmware Architecture}}{21}{figure.9}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Block pipeline example}}{25}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Pedestal subtraction algorithm flow chart}}{29}{figure.11}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Pedestal subtraction algorithm flow chart}}{30}{figure.11}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Resource usage of original pedestal subtraction block}}{32}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces HLS pedestal subtraction block resource usage}}{32}{figure.13}%
+\contentsline {figure}{\numberline {13}{\ignorespaces HLS pedestal subtraction block resource usage}}{33}{figure.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Manual HDL SSR pedestal subtraction block statistics}}{35}{figure.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces HLS SSR pedestal subtraction resource statistics}}{36}{figure.15}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Pedestal subtraction - FIR filter block diagram}}{37}{figure.16}%
 \contentsline {figure}{\numberline {17}{\ignorespaces FIR filter waveform}}{37}{figure.17}%
 \contentsline {figure}{\numberline {18}{\ignorespaces FIR filter flow chart}}{38}{figure.18}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Original FIR filter block statistics}}{41}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces HLS FIR filter block statistics}}{41}{figure.20}%
+\contentsline {figure}{\numberline {20}{\ignorespaces HLS FIR filter block statistics}}{42}{figure.20}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Manual HDL SSR FIR filter block statistics}}{43}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces HLS SSR FIR filter block statistics}}{43}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Full signal waveform of HLS FIR filter block}}{45}{figure.23}%
+\contentsline {figure}{\numberline {22}{\ignorespaces HLS SSR FIR filter block statistics}}{44}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Full signal waveform of HLS FIR filter block}}{46}{figure.23}%
